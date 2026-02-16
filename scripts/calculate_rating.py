@@ -749,7 +749,6 @@ def calculate_ratings(runs, profiles):
                 "mu": rating.mu,
                 "sigma": rating.sigma,
                 "displayed_rating": round(displayed_rating(rating.mu, rating.sigma), 1),
-                "deviation": round(displayed_deviation(rating.sigma), 1),
                 "handler": profile.get("handler_display", ""),
                 "dog": profile.get("dog_display", ""),
                 "call_name": profile.get("call_name", ""),
@@ -783,7 +782,7 @@ def write_csv(all_ratings):
         writer = csv.writer(f)
         writer.writerow([
             "rank", "handler", "call_name", "registered_name", "size", "country",
-            "mu", "sigma", "displayed_rating", "deviation",
+            "mu", "sigma", "displayed_rating",
             "tier", "num_runs", "last_competition",
         ])
 
@@ -803,7 +802,6 @@ def write_csv(all_ratings):
                     round(team["mu"], 4),
                     round(team["sigma"], 4),
                     team["displayed_rating"],
-                    team["deviation"],
                     tier_label(team["displayed_rating"]),
                     team["num_runs"],
                     team["last_comp"],
@@ -851,7 +849,6 @@ def write_html(all_ratings):
                 f"<td>{dog_cell}</td>"
                 f"<td>{_esc(team['country'])}</td>"
                 f"<td class='num'>{rating:.0f}</td>"
-                f"<td class='num'>±{team['deviation']:.0f}</td>"
                 f"<td class='num'>{team['num_runs']}</td>"
                 f"<td>{_esc(team['last_comp'])}</td>"
                 f"</tr>"
@@ -882,9 +879,8 @@ def write_html(all_ratings):
                         <th onclick="sortTable('table-{size}', 2, 'str')">Dog</th>
                         <th onclick="sortTable('table-{size}', 3, 'str')">Country</th>
                         <th onclick="sortTable('table-{size}', 4, 'num')">Rating</th>
-                        <th onclick="sortTable('table-{size}', 5, 'num')">±Dev</th>
-                        <th onclick="sortTable('table-{size}', 6, 'num')">Runs</th>
-                        <th onclick="sortTable('table-{size}', 7, 'str')">Last Competition</th>
+                        <th onclick="sortTable('table-{size}', 5, 'num')">Runs</th>
+                        <th onclick="sortTable('table-{size}', 6, 'str')">Last Competition</th>
                     </tr>
                 </thead>
                 <tbody>
