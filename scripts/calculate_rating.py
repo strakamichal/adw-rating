@@ -12,6 +12,7 @@ import csv
 import glob
 import os
 import re
+import unicodedata
 from collections import defaultdict
 from math import sqrt
 
@@ -39,6 +40,10 @@ COMPETITIONS = {
     "awc2025":                     {"date": "2025-09-17", "tier": 1, "name": "AWC 2025"},
     "polish_open_soft_2025_inl":   {"date": "2025-11-07", "tier": 2, "name": "Polish Open SOFT 2025 (IN & L)"},
     "polish_open_soft_2025_xsm":   {"date": "2025-11-07", "tier": 2, "name": "Polish Open SOFT 2025 (XS, S & M)"},
+    "polish_open_2025_inl":        {"date": "2025-02-07", "tier": 2, "name": "Polish Open 2025 (IN & L)"},
+    "polish_open_2025_xsm":       {"date": "2025-02-07", "tier": 2, "name": "Polish Open 2025 (XS, S & M)"},
+    "polish_open_2026_inl":        {"date": "2026-02-06", "tier": 2, "name": "Polish Open 2026 (IN & L)"},
+    "polish_open_2026_xsm":       {"date": "2026-02-06", "tier": 2, "name": "Polish Open 2026 (XS, S & M)"},
 }
 
 # ---------------------------------------------------------------------------
@@ -84,28 +89,49 @@ def tier_label(rating):
 # Name normalization
 # ---------------------------------------------------------------------------
 
+def strip_diacritics(s):
+    """Remove diacritics: 'Diviš' -> 'Divis', 'Glejdurová' -> 'Glejdurova'."""
+    nfkd = unicodedata.normalize("NFKD", s)
+    return "".join(c for c in nfkd if not unicodedata.combining(c))
+
+
 def normalize_handler(name):
-    """Normalize handler name: 'Last, First' -> 'first last', lowercase, strip."""
-    name = name.strip().lower()
+    """Normalize handler name to canonical 'first last' form.
+
+    Handles:
+      'Last, First'  -> 'first last'
+      'First Last'   -> sorted('first', 'last') to match regardless of order
+      Diacritics stripped, lowercased.
+    """
+    name = strip_diacritics(name).strip().lower()
     # Convert "Last, First" to "first last"
     if "," in name:
         parts = name.split(",", 1)
         name = f"{parts[1].strip()} {parts[0].strip()}"
     # Collapse multiple spaces
     name = re.sub(r"\s+", " ", name)
-    return name
+    # Sort name parts so "jakub divis" == "divis jakub"
+    parts = name.split()
+    return " ".join(sorted(parts))
 
 
 def extract_call_name(dog_name):
     """Extract call name from dog's registered name.
 
-    Patterns:
-      "Registered Name (CallName)" -> "callname"
-      "CallName" -> "callname"
+    Handles:
+      'Shepworld I\\'m On Fire (Brant)' -> 'brant'
+      'Finrod Frances "Cis"'            -> 'cis'
+      'A3Ch Finrod Frances ...'         -> 'a3ch finrod frances ...' (no call name found)
+      'Day'                             -> 'day'
+    Diacritics stripped, lowercased.
     """
-    dog_name = dog_name.strip()
-    # Try to extract from parentheses: "Shepworld I'm On Fire (Brant)" -> "Brant"
+    dog_name = strip_diacritics(dog_name).strip()
+    # Try to extract from parentheses at end: "... (CallName)" -> "CallName"
     match = re.search(r"\(([^)]+)\)\s*$", dog_name)
+    if match:
+        return match.group(1).strip().lower()
+    # Try to extract from quotes: '... "CallName"' -> "CallName"
+    match = re.search(r'"([^"]+)"\s*$', dog_name)
     if match:
         return match.group(1).strip().lower()
     return dog_name.lower()
@@ -189,6 +215,60 @@ def load_all_runs():
     if skipped_no_identity:
         print(f"Skipped {skipped_no_identity} runs with no parseable team identity")
     print(f"Loaded {len(runs)} individual runs from {len(csv_files)} files")
+
+    # --- Fuzzy dog name merging ---
+    # For each handler, find dog name variants that should be the same dog.
+    # E.g., "day" and "daylight neverending force" for the same handler.
+    runs = _merge_dog_variants(runs)
+
+    return runs
+
+
+def _merge_dog_variants(runs):
+    """Merge team_ids where the same handler has a short call name that is
+    a prefix of (or contained in) a longer registered name.
+
+    Strategy: for each normalized handler, collect all dog name variants.
+    If a short name (<=2 words) appears as a starting word in a longer name,
+    merge the longer name's team_id to the short name's team_id.
+    """
+    # Collect handler -> set of dog parts from team_ids
+    handler_dogs = defaultdict(set)
+    for run in runs:
+        h, d = run["team_id"].split("|||", 1)
+        handler_dogs[h].add(d)
+
+    # Build merge map: long_team_id -> short_team_id
+    merge_map = {}
+    for handler, dogs in handler_dogs.items():
+        dogs = list(dogs)
+        if len(dogs) < 2:
+            continue
+        # Sort by word count (short names first)
+        dogs.sort(key=lambda d: len(d.split()))
+        for i, short in enumerate(dogs):
+            short_words = short.split()
+            if len(short_words) > 2 or not short:
+                continue
+            for long in dogs[i + 1:]:
+                long_words = long.split()
+                if len(long_words) <= len(short_words):
+                    continue
+                # Check if short name's first word starts the long name
+                if long_words[0].startswith(short_words[0]):
+                    long_tid = f"{handler}|||{long}"
+                    short_tid = f"{handler}|||{short}"
+                    if long_tid not in merge_map:
+                        merge_map[long_tid] = short_tid
+
+    if merge_map:
+        merged_count = 0
+        for run in runs:
+            if run["team_id"] in merge_map:
+                run["team_id"] = merge_map[run["team_id"]]
+                merged_count += 1
+        print(f"Merged {merged_count} runs across {len(merge_map)} dog name variants")
+
     return runs
 
 
