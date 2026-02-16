@@ -56,6 +56,10 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 
 MIN_FIELD_SIZE = 6
 
+# Tier weights: multiplier applied to mu delta after each rate() call.
+# Higher tier = results count more. 1.0 = baseline (no boost).
+TIER_WEIGHTS = {1: 2.0, 2: 1.5, 3: 1.0, 4: 0.7}
+
 # Display formula: displayed_rating = 1000 + DISPLAY_SCALE * (mu - 3 * sigma)
 # NOTE: PlackettLuce sigma barely converges in large fields (50+ competitors),
 # so displayed_rating is effectively 1000 + DISPLAY_SCALE * (mu - 25).
@@ -730,12 +734,22 @@ def calculate_ratings(runs, profiles):
                         team_stats[tid]["last_comp"] = comp_name
                         team_stats[tid]["last_comp_date"] = entry["comp_date"]
 
-                # Rate!
+                # Rate with tier weighting
+                tier = entries[0]["comp_tier"]
+                tier_weight = TIER_WEIGHTS.get(tier, 1.0)
+
+                # Save old mu values
+                old_mu = {tid: team_ratings[tid].mu for tid in entry_order}
+
                 result = model.rate(teams, ranks=ranks)
 
-                # Update ratings
+                # Apply tier weight: scale the mu delta
                 for i, tid in enumerate(entry_order):
-                    team_ratings[tid] = result[i][0]
+                    new_rating = result[i][0]
+                    if tier_weight != 1.0:
+                        delta = new_rating.mu - old_mu[tid]
+                        new_rating.mu = old_mu[tid] + delta * tier_weight
+                    team_ratings[tid] = new_rating
 
             # end round loop
         # end competition loop
