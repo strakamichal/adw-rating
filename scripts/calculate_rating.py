@@ -89,6 +89,12 @@ def tier_label(rating):
 # Name normalization
 # ---------------------------------------------------------------------------
 
+# Manual dog name aliases: normalized_call_name -> canonical_call_name
+DOG_ALIASES = {
+    "sayonara": "seeya",
+}
+
+
 def strip_diacritics(s):
     """Remove diacritics: 'Diviš' -> 'Divis', 'Glejdurová' -> 'Glejdurova'."""
     nfkd = unicodedata.normalize("NFKD", s)
@@ -133,8 +139,10 @@ def extract_call_name(dog_name):
     # Try to extract from quotes: '... "CallName"' -> "CallName"
     match = re.search(r'"([^"]+)"\s*$', dog_name)
     if match:
-        return match.group(1).strip().lower()
-    return dog_name.lower()
+        result = match.group(1).strip().lower()
+        return DOG_ALIASES.get(result, result)
+    result = dog_name.lower()
+    return DOG_ALIASES.get(result, result)
 
 
 def make_team_id(handler, dog):
