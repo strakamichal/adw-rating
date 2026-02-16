@@ -94,6 +94,12 @@ DOG_ALIASES = {
     "sayonara": "seeya",
 }
 
+# Manual registered name -> call name mapping (when data never provides
+# the call name in parentheses/quotes for a given registered name)
+REGISTERED_TO_CALL = {
+    "night magic alfa fortuna": "beat",
+}
+
 
 def strip_diacritics(s):
     """Remove diacritics: 'Diviš' -> 'Divis', 'Glejdurová' -> 'Glejdurova'."""
@@ -164,7 +170,11 @@ def parse_dog_name(dog_name):
     # Short name (1-2 words) → treat as call name, no registered name
     if len(normalized.split()) <= 2:
         return normalized, ""
-    # Long name without marker → treat as registered name, no call name
+    # Long name without marker → check manual registered-to-call mapping
+    mapped_call = REGISTERED_TO_CALL.get(normalized)
+    if mapped_call:
+        return mapped_call, normalized
+    # Otherwise treat as registered name only, no call name
     return "", normalized
 
 
