@@ -121,34 +121,62 @@ def normalize_handler(name):
     return " ".join(sorted(parts))
 
 
-def extract_call_name(dog_name):
-    """Extract call name from dog's registered name.
+def parse_dog_name(dog_name):
+    """Parse dog name into (call_name, registered_name).
 
-    Handles:
-      'Shepworld I\\'m On Fire (Brant)' -> 'brant'
-      'Finrod Frances "Cis"'            -> 'cis'
-      'A3Ch Finrod Frances ...'         -> 'a3ch finrod frances ...' (no call name found)
-      'Day'                             -> 'day'
-    Diacritics stripped, lowercased.
+    Returns:
+      call_name: normalized short name (lowercased, diacritics stripped)
+      registered_name: normalized full registered name without call name suffix
+                       (lowercased, diacritics stripped), or "" if only call name
+
+    Examples:
+      'Shepworld I'm On Fire (Brant)' -> ('brant', 'shepworld i'm on fire')
+      'Finrod Frances "Cis"'          -> ('cis', 'finrod frances')
+      'A3Ch Finrod Frances ...'       -> ('', 'a3ch finrod frances ...')
+      'Day'                           -> ('day', '')
     """
     dog_name = strip_diacritics(dog_name).strip()
-    # Try to extract from parentheses at end: "... (CallName)" -> "CallName"
+
+    # Try to extract from parentheses at end: "... (CallName)"
     match = re.search(r"\(([^)]+)\)\s*$", dog_name)
     if match:
-        return match.group(1).strip().lower()
-    # Try to extract from quotes: '... "CallName"' -> "CallName"
+        call = match.group(1).strip().lower()
+        call = DOG_ALIASES.get(call, call)
+        reg = dog_name[:match.start()].strip().lower()
+        # Only keep registered name if it's longer than the call name
+        if len(reg.split()) <= 2:
+            reg = ""
+        return call, reg
+
+    # Try to extract from quotes: '... "CallName"'
     match = re.search(r'"([^"]+)"\s*$', dog_name)
     if match:
-        result = match.group(1).strip().lower()
-        return DOG_ALIASES.get(result, result)
-    result = dog_name.lower()
-    return DOG_ALIASES.get(result, result)
+        call = match.group(1).strip().lower()
+        call = DOG_ALIASES.get(call, call)
+        reg = dog_name[:match.start()].strip().lower()
+        if len(reg.split()) <= 2:
+            reg = ""
+        return call, reg
+
+    # No explicit call name marker
+    normalized = dog_name.lower()
+    normalized = DOG_ALIASES.get(normalized, normalized)
+    # Short name (1-2 words) → treat as call name, no registered name
+    if len(normalized.split()) <= 2:
+        return normalized, ""
+    # Long name without marker → treat as registered name, no call name
+    return "", normalized
 
 
 def make_team_id(handler, dog):
     """Create a normalized team identity from handler and dog names."""
     h = normalize_handler(handler)
-    d = extract_call_name(dog) if dog else ""
+    if dog:
+        call, reg = parse_dog_name(dog)
+        # Prefer call name for ID; fall back to registered name
+        d = call if call else reg
+    else:
+        d = ""
     return f"{h}|||{d}"
 
 
@@ -233,26 +261,40 @@ def load_all_runs():
 
 
 def _merge_dog_variants(runs):
-    """Merge team_ids where the same handler has a short call name that is
-    a prefix of (or contained in) a longer registered name.
+    """Merge team_ids where the same handler has multiple dog name variants
+    that refer to the same dog.
 
-    Strategy: for each normalized handler, collect all dog name variants.
-    If a short name (<=2 words) appears as a starting word in a longer name,
-    merge the longer name's team_id to the short name's team_id.
+    Uses two strategies:
+    1. Call name prefix: short call name (1-2 words) matches the start of a
+       longer dog name part for the same handler.
+    2. Registered name overlap: collect (handler, registered_name) from all runs.
+       If two team_ids for the same handler share a similar registered name,
+       merge the one without a call name into the one with a call name.
     """
-    # Collect handler -> set of dog parts from team_ids
+    # --- Collect per-handler dog info from runs ---
+    # handler -> set of dog_id parts (from team_id)
     handler_dogs = defaultdict(set)
+    # (handler, dog_id) -> set of registered names seen
+    handler_dog_regnames = defaultdict(set)
+
     for run in runs:
         h, d = run["team_id"].split("|||", 1)
         handler_dogs[h].add(d)
+        # Parse the raw dog field to get registered name
+        raw_dog = run.get("dog", "").strip()
+        if raw_dog:
+            _, reg = parse_dog_name(raw_dog)
+            if reg:
+                handler_dog_regnames[(h, d)].add(reg)
 
-    # Build merge map: long_team_id -> short_team_id
     merge_map = {}
+
     for handler, dogs in handler_dogs.items():
         dogs = list(dogs)
         if len(dogs) < 2:
             continue
-        # Sort by word count (short names first)
+
+        # Strategy 1: call name prefix match
         dogs.sort(key=lambda d: len(d.split()))
         for i, short in enumerate(dogs):
             short_words = short.split()
@@ -262,12 +304,59 @@ def _merge_dog_variants(runs):
                 long_words = long.split()
                 if len(long_words) <= len(short_words):
                     continue
-                # Check if short name's first word starts the long name
                 if long_words[0].startswith(short_words[0]):
                     long_tid = f"{handler}|||{long}"
                     short_tid = f"{handler}|||{short}"
                     if long_tid not in merge_map:
                         merge_map[long_tid] = short_tid
+
+        # Strategy 2: registered name overlap
+        # For each pair of dog_ids, check if their registered names overlap
+        for i, d1 in enumerate(dogs):
+            for d2 in dogs[i + 1:]:
+                tid1 = f"{handler}|||{d1}"
+                tid2 = f"{handler}|||{d2}"
+                # Skip if already merged
+                if tid1 in merge_map or tid2 in merge_map:
+                    continue
+                regs1 = handler_dog_regnames.get((handler, d1), set())
+                regs2 = handler_dog_regnames.get((handler, d2), set())
+                if not regs1 or not regs2:
+                    continue
+                if _registered_names_match(regs1, regs2):
+                    # Prefer the team_id with the shorter dog part (call name)
+                    if len(d1.split()) <= len(d2.split()):
+                        merge_map[tid2] = tid1
+                    else:
+                        merge_map[tid1] = tid2
+
+        # Strategy 3: call name appears as a word in registered name
+        # e.g., call="crocodile" matches reg="a3ch crocodile yabalute"
+        for i, d1 in enumerate(dogs):
+            w1 = d1.split()
+            if len(w1) != 1 or not d1:
+                continue  # only single-word call names
+            for d2 in dogs:
+                if d1 == d2:
+                    continue
+                tid1 = f"{handler}|||{d1}"
+                tid2 = f"{handler}|||{d2}"
+                if tid1 in merge_map or tid2 in merge_map:
+                    continue
+                # Check if d1 (call name) appears as a word in the registered
+                # names associated with d2
+                regs2 = handler_dog_regnames.get((handler, d2), set())
+                for reg in regs2:
+                    if d1 in reg.split():
+                        merge_map[tid2] = tid1
+                        break
+
+    # Resolve transitive merges: A->B, B->C => A->C
+    for tid in list(merge_map):
+        target = merge_map[tid]
+        while target in merge_map:
+            target = merge_map[target]
+        merge_map[tid] = target
 
     if merge_map:
         merged_count = 0
@@ -280,6 +369,50 @@ def _merge_dog_variants(runs):
     return runs
 
 
+def _registered_names_match(regs1, regs2):
+    """Check if two sets of registered names likely refer to the same dog.
+
+    Matches if any pair shares >=3 consecutive words starting from the
+    beginning of at least one name (prefix match). This avoids false
+    positives from shared kennel name suffixes like "from Malibo Land".
+    """
+    for r1 in regs1:
+        w1 = r1.split()
+        for r2 in regs2:
+            w2 = r2.split()
+            # Check prefix overlap: words matching from start of both names
+            prefix_match = 0
+            for a, b in zip(w1, w2):
+                if a == b:
+                    prefix_match += 1
+                else:
+                    break
+            if prefix_match >= 3:
+                return True
+
+            # Also check if one name starts from the beginning of the other
+            # at some offset (e.g., "A3Ch Finrod Frances..." vs "Finrod Frances...")
+            for offset in range(1, min(3, len(w1))):
+                match = 0
+                for a, b in zip(w1[offset:], w2):
+                    if a == b:
+                        match += 1
+                    else:
+                        break
+                if match >= 3:
+                    return True
+            for offset in range(1, min(3, len(w2))):
+                match = 0
+                for a, b in zip(w1, w2[offset:]):
+                    if a == b:
+                        match += 1
+                    else:
+                        break
+                if match >= 3:
+                    return True
+    return False
+
+
 # ---------------------------------------------------------------------------
 # Team profile aggregation
 # ---------------------------------------------------------------------------
@@ -289,8 +422,9 @@ def build_team_profiles(runs):
 
     Returns dict: team_id -> {
         handler_display: str,   # canonical "First Last"
-        dog_display: str,       # "Registered Name (CallName)" or just call name
-        call_name: str,
+        call_name: str,         # short call name (e.g. "Day")
+        registered_name: str,   # full registered name (e.g. "Daylight Neverending Force")
+        dog_display: str,       # combined for display
         country: str,
     }
     """
@@ -309,9 +443,13 @@ def build_team_profiles(runs):
 
     profiles = {}
     for tid, data in raw.items():
+        call_name, registered_name = _best_dog_names(data["dogs"])
+        dog_display = _format_dog_display(call_name, registered_name)
         profiles[tid] = {
             "handler_display": _best_handler_display(data["handlers"]),
-            "dog_display": _best_dog_display(data["dogs"], tid),
+            "call_name": call_name,
+            "registered_name": registered_name,
+            "dog_display": dog_display,
             "country": _best_country(data["countries"]),
         }
 
@@ -378,32 +516,91 @@ def _best_handler_display(handlers):
     return top_candidates[0]
 
 
-def _best_dog_display(dogs, team_id):
-    """Build dog display name: "Registered Name (CallName)" or just call name.
+def _best_dog_names(dogs):
+    """Extract the best call name and registered name from all dog string variants.
 
-    Collects the longest variant as registered name and the call name from team_id.
+    Returns (call_name, registered_name) — both in original case (best available).
     """
-    call_name = team_id.split("|||")[1] if "|||" in team_id else ""
+    call_names = defaultdict(int)   # normalized -> count
+    reg_names = defaultdict(int)    # normalized -> count
+    call_display = {}               # normalized -> best display form
+    reg_display = {}                # normalized -> best display form
 
-    # Collect non-empty dog strings
-    non_empty = [d.strip() for d in dogs if d.strip()]
-    if not non_empty:
-        return call_name.title() if call_name else ""
+    for raw in dogs:
+        raw = raw.strip()
+        if not raw:
+            continue
+        call, reg = parse_dog_name(raw)
+        if call:
+            call_names[call] += 1
+            # Keep the display form with most diacritics
+            existing = call_display.get(call, "")
+            raw_call = _extract_raw_call_name(raw)
+            if raw_call and (not existing or _diacritics_score(raw_call) > _diacritics_score(existing)):
+                call_display[call] = raw_call
+        if reg:
+            reg_names[reg] += 1
+            raw_reg = _extract_raw_registered_name(raw)
+            if raw_reg:
+                existing = reg_display.get(reg, "")
+                if not existing or _diacritics_score(raw_reg) > _diacritics_score(existing):
+                    reg_display[reg] = raw_reg
 
-    # Find longest dog name (likely the full registered name)
-    longest = max(non_empty, key=len)
-    # Normalize: strip parenthesized call name and quotes from the end
-    registered = re.sub(r'\s*\([^)]+\)\s*$', '', longest).strip()
-    registered = re.sub(r'\s*"[^"]+"\s*$', '', registered).strip()
+    # Pick the most common call name
+    best_call = ""
+    best_call_display = ""
+    if call_names:
+        best_call = max(call_names, key=call_names.get)
+        best_call_display = call_display.get(best_call, best_call.title())
 
-    # If registered name is just the call name, show only call name
-    if registered.lower() == call_name or len(registered.split()) <= 1:
-        return call_name.title() if call_name else registered
+    # Pick the longest registered name (most complete)
+    best_reg = ""
+    best_reg_display = ""
+    if reg_names:
+        best_reg = max(reg_names, key=lambda r: len(r))
+        best_reg_display = reg_display.get(best_reg, best_reg)
 
-    # Show "Registered Name (CallName)"
+    return best_call_display, best_reg_display
+
+
+def _extract_raw_call_name(dog_str):
+    """Extract call name in original case from a dog string."""
+    match = re.search(r"\(([^)]+)\)\s*$", dog_str)
+    if match:
+        return match.group(1).strip()
+    match = re.search(r'"([^"]+)"\s*$', dog_str)
+    if match:
+        return match.group(1).strip()
+    # If it's a short name (1-2 words), it is the call name
+    if len(dog_str.split()) <= 2:
+        return dog_str.strip()
+    return ""
+
+
+def _extract_raw_registered_name(dog_str):
+    """Extract registered name in original case from a dog string."""
+    # Strip call name suffix
+    reg = re.sub(r'\s*\([^)]+\)\s*$', '', dog_str).strip()
+    reg = re.sub(r'\s*"[^"]+"\s*$', '', reg).strip()
+    if len(reg.split()) > 2:
+        return reg
+    return ""
+
+
+def _diacritics_score(s):
+    """Count non-ASCII characters — prefer strings with original diacritics."""
+    return sum(1 for c in s if ord(c) > 127)
+
+
+def _format_dog_display(call_name, registered_name):
+    """Format dog display string from call name and registered name."""
+    if registered_name and call_name:
+        return f"{registered_name} ({call_name})"
+    if registered_name:
+        return registered_name
     if call_name:
-        return f"{registered} ({call_name.title()})"
-    return registered
+        return call_name
+    return ""
 
 
 def _best_country(countries):
@@ -545,6 +742,8 @@ def calculate_ratings(runs, profiles):
                 "deviation": round(displayed_deviation(rating.sigma), 1),
                 "handler": profile.get("handler_display", ""),
                 "dog": profile.get("dog_display", ""),
+                "call_name": profile.get("call_name", ""),
+                "registered_name": profile.get("registered_name", ""),
                 "country": profile.get("country", ""),
                 "num_runs": stats["num_runs"],
                 "last_comp": stats["last_comp"],
@@ -573,7 +772,7 @@ def write_csv(all_ratings):
     with open(outpath, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow([
-            "rank", "handler", "dog", "size", "country",
+            "rank", "handler", "call_name", "registered_name", "size", "country",
             "mu", "sigma", "displayed_rating", "deviation",
             "tier", "num_runs", "last_competition",
         ])
@@ -587,7 +786,8 @@ def write_csv(all_ratings):
                 writer.writerow([
                     i,
                     team["handler"],
-                    team["dog"],
+                    team["call_name"],
+                    team["registered_name"],
                     size,
                     team["country"],
                     round(team["mu"], 4),
@@ -623,11 +823,22 @@ def write_html(all_ratings):
         for i, team in enumerate(sorted_teams, 1):
             rating = team["displayed_rating"]
             tl = tier_label(rating)
+            # Dog cell: call name bold, registered name small
+            call = _esc(team.get("call_name", ""))
+            reg = _esc(team.get("registered_name", ""))
+            if reg and call:
+                dog_cell = f"<strong>{call}</strong><br><span class='reg-name'>{reg}</span>"
+            elif call:
+                dog_cell = f"<strong>{call}</strong>"
+            elif reg:
+                dog_cell = f"<span class='reg-name'>{reg}</span>"
+            else:
+                dog_cell = ""
             rows.append(
                 f"<tr class='tier-{tl.lower()}'>"
                 f"<td>{i}</td>"
                 f"<td>{_esc(team['handler'])}</td>"
-                f"<td>{_esc(team['dog'])}</td>"
+                f"<td>{dog_cell}</td>"
                 f"<td>{_esc(team['country'])}</td>"
                 f"<td class='num'>{rating:.0f}</td>"
                 f"<td class='num'>±{team['deviation']:.0f}</td>"
@@ -699,6 +910,7 @@ h1 {{ margin-bottom: 4px; }}
 .tier-competitor td:first-child {{ border-left: 3px solid #10b981; }}
 .tier-provisional td:first-child {{ border-left: 3px solid #d1d5db; }}
 .tier-provisional {{ color: #999; }}
+.reg-name {{ font-size: 11px; color: #888; }}
 .legend {{ display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; font-size: 13px; }}
 .legend-item {{ display: flex; align-items: center; gap: 4px; }}
 .legend-color {{ width: 12px; height: 12px; border-radius: 2px; }}
