@@ -281,10 +281,148 @@ def _merge_dog_variants(runs):
 
 
 # ---------------------------------------------------------------------------
+# Team profile aggregation
+# ---------------------------------------------------------------------------
+
+def build_team_profiles(runs):
+    """Aggregate best metadata for each team across all runs.
+
+    Returns dict: team_id -> {
+        handler_display: str,   # canonical "First Last"
+        dog_display: str,       # "Registered Name (CallName)" or just call name
+        call_name: str,
+        country: str,
+    }
+    """
+    # Collect raw data per team_id
+    raw = defaultdict(lambda: {
+        "handlers": [],       # all raw handler strings
+        "dogs": [],           # all raw dog strings
+        "countries": [],      # all raw country strings
+    })
+
+    for run in runs:
+        tid = run["team_id"]
+        raw[tid]["handlers"].append(run["handler"])
+        raw[tid]["dogs"].append(run["dog"])
+        raw[tid]["countries"].append(run["country"])
+
+    profiles = {}
+    for tid, data in raw.items():
+        profiles[tid] = {
+            "handler_display": _best_handler_display(data["handlers"]),
+            "dog_display": _best_dog_display(data["dogs"], tid),
+            "country": _best_country(data["countries"]),
+        }
+
+    # Country backfill: use normalized handler to share country across team_ids
+    # (same handler with different dogs should have same country)
+    handler_country = {}
+    for tid, profile in profiles.items():
+        h = tid.split("|||")[0]
+        if profile["country"]:
+            handler_country[h] = profile["country"]
+
+    backfilled = 0
+    for tid, profile in profiles.items():
+        if not profile["country"]:
+            h = tid.split("|||")[0]
+            if h in handler_country:
+                profile["country"] = handler_country[h]
+                backfilled += 1
+
+    stats_no_country = sum(1 for p in profiles.values() if not p["country"])
+    print(f"Team profiles: {len(profiles)} teams, "
+          f"backfilled {backfilled} countries, "
+          f"{stats_no_country} still missing country")
+
+    return profiles
+
+
+def _best_handler_display(handlers):
+    """Pick the best handler display name from all variants.
+
+    Priority:
+    1. "Last, First" format → convert to "First Last" (reliable first/last split)
+    2. Most frequent "First Last" string, preferring version with diacritics
+    """
+    # Try to find a comma-separated variant — prefer one with diacritics
+    comma_variants = []
+    for h in handlers:
+        h = h.strip()
+        if "," in h and h:
+            comma_variants.append(h)
+
+    if comma_variants:
+        # Prefer variant with diacritics (non-ASCII chars = more original)
+        comma_variants.sort(key=lambda h: sum(1 for c in h if ord(c) > 127), reverse=True)
+        parts = comma_variants[0].split(",", 1)
+        last = parts[0].strip()
+        first = parts[1].strip()
+        return f"{first} {last}"
+
+    # No comma variant — pick the most common non-empty name
+    counts = defaultdict(int)
+    for h in handlers:
+        h = h.strip()
+        if h:
+            counts[h] += 1
+
+    if not counts:
+        return ""
+
+    # Among top candidates, prefer the one with diacritics
+    max_count = max(counts.values())
+    top_candidates = [h for h, c in counts.items() if c == max_count]
+    top_candidates.sort(key=lambda h: sum(1 for c in h if ord(c) > 127), reverse=True)
+    return top_candidates[0]
+
+
+def _best_dog_display(dogs, team_id):
+    """Build dog display name: "Registered Name (CallName)" or just call name.
+
+    Collects the longest variant as registered name and the call name from team_id.
+    """
+    call_name = team_id.split("|||")[1] if "|||" in team_id else ""
+
+    # Collect non-empty dog strings
+    non_empty = [d.strip() for d in dogs if d.strip()]
+    if not non_empty:
+        return call_name.title() if call_name else ""
+
+    # Find longest dog name (likely the full registered name)
+    longest = max(non_empty, key=len)
+    # Normalize: strip parenthesized call name and quotes from the end
+    registered = re.sub(r'\s*\([^)]+\)\s*$', '', longest).strip()
+    registered = re.sub(r'\s*"[^"]+"\s*$', '', registered).strip()
+
+    # If registered name is just the call name, show only call name
+    if registered.lower() == call_name or len(registered.split()) <= 1:
+        return call_name.title() if call_name else registered
+
+    # Show "Registered Name (CallName)"
+    if call_name:
+        return f"{registered} ({call_name.title()})"
+    return registered
+
+
+def _best_country(countries):
+    """Pick the most common non-empty country."""
+    counts = defaultdict(int)
+    for c in countries:
+        c = c.strip()
+        if c:
+            counts[c] += 1
+    if not counts:
+        return ""
+    return max(counts, key=counts.get)
+
+
+# ---------------------------------------------------------------------------
 # Rating calculation
 # ---------------------------------------------------------------------------
 
-def calculate_ratings(runs):
+def calculate_ratings(runs, profiles):
     """
     Calculate OpenSkill ratings per size category.
 
@@ -305,8 +443,8 @@ def calculate_ratings(runs):
 
         # team_id -> PlackettLuceRating
         team_ratings = {}
-        # team_id -> metadata
-        team_meta = {}
+        # team_id -> {num_runs, last_comp, last_comp_date}
+        team_stats = {}
 
         # Group by competition (chronological)
         comp_runs = defaultdict(list)
@@ -370,10 +508,7 @@ def calculate_ratings(runs):
                     tid = entry["team_id"]
                     if tid not in team_ratings:
                         team_ratings[tid] = model.rating()
-                        team_meta[tid] = {
-                            "handler": entry["handler"],
-                            "dog": entry["dog"],
-                            "country": entry["country"],
+                        team_stats[tid] = {
                             "num_runs": 0,
                             "last_comp": "",
                             "last_comp_date": "",
@@ -382,18 +517,11 @@ def calculate_ratings(runs):
                     ranks.append(rank)
                     entry_order.append(tid)
 
-                    # Update metadata
-                    team_meta[tid]["num_runs"] += 1
-                    if entry["comp_date"] >= team_meta[tid]["last_comp_date"]:
-                        team_meta[tid]["last_comp"] = comp_name
-                        team_meta[tid]["last_comp_date"] = entry["comp_date"]
-                    # Prefer non-empty handler/dog
-                    if entry["handler"] and not team_meta[tid]["handler"]:
-                        team_meta[tid]["handler"] = entry["handler"]
-                    if entry["dog"] and not team_meta[tid]["dog"]:
-                        team_meta[tid]["dog"] = entry["dog"]
-                    if entry["country"] and not team_meta[tid]["country"]:
-                        team_meta[tid]["country"] = entry["country"]
+                    # Update stats
+                    team_stats[tid]["num_runs"] += 1
+                    if entry["comp_date"] >= team_stats[tid]["last_comp_date"]:
+                        team_stats[tid]["last_comp"] = comp_name
+                        team_stats[tid]["last_comp_date"] = entry["comp_date"]
 
                 # Rate!
                 result = model.rate(teams, ranks=ranks)
@@ -405,20 +533,21 @@ def calculate_ratings(runs):
             # end round loop
         # end competition loop
 
-        # Build final results for this size
+        # Build final results for this size, using profiles for display metadata
         size_results = {}
         for tid, rating in team_ratings.items():
-            meta = team_meta[tid]
+            stats = team_stats[tid]
+            profile = profiles.get(tid, {})
             size_results[tid] = {
                 "mu": rating.mu,
                 "sigma": rating.sigma,
                 "displayed_rating": round(displayed_rating(rating.mu, rating.sigma), 1),
                 "deviation": round(displayed_deviation(rating.sigma), 1),
-                "handler": meta["handler"],
-                "dog": meta["dog"],
-                "country": meta["country"],
-                "num_runs": meta["num_runs"],
-                "last_comp": meta["last_comp"],
+                "handler": profile.get("handler_display", ""),
+                "dog": profile.get("dog_display", ""),
+                "country": profile.get("country", ""),
+                "num_runs": stats["num_runs"],
+                "last_comp": stats["last_comp"],
             }
 
         # Sort by displayed rating descending
@@ -664,7 +793,8 @@ def _esc(s):
 
 if __name__ == "__main__":
     runs = load_all_runs()
-    all_ratings = calculate_ratings(runs)
+    profiles = build_team_profiles(runs)
+    all_ratings = calculate_ratings(runs, profiles)
 
     total_teams = sum(len(r) for r in all_ratings.values())
     print(f"\nTotal unique teams across all sizes: {total_teams}")
