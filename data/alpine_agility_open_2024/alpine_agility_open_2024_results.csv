@@ -1,0 +1,553 @@
+competition,round_key,size,discipline,is_team_round,rank,start_no,handler,dog,breed,country,faults,refusals,time_faults,total_faults,time,speed,eliminated,judge,sct,mct,course_length
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,1,75,SEBASTIEN ALLERME,SHY’M DREAM OF KINGS,Border collie,FRA,0,0,0.0,0.0,32.55,6.76,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,2,323,jose manuel Davila Rosales,TURI KITANE TO FALL IN LOVE,Border collie,ITA,0,0,0.0,0.0,37.36,5.89,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,3,279,Mégane RICHEZ,Fast Grin,Border collie,POL,0,0,0.0,0.0,37.53,5.86,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,4,268,Gianluca Schingaro,SUPERGIRL DEI MATIBLU,Border collie,ITA,0,0,0.0,0.0,38.12,5.77,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,5,240,Christine Chalancon,Booga'Loo,Mudi,CHE,0,0,0.0,0.0,41.45,5.31,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,6,233,Fabien  Perez,Raven,Cane da pastore australiano kelpie,FRA,0,0,0.0,0.0,45.49,4.84,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,7,379,Jan Fiala,Kirlie Mawlch,Border collie,HRV,1,0,0.0,5.0,39.7,5.54,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,8,43,soraya david,Purple Bloom,Australian shepherd,FRA,1,0,0.0,5.0,40.62,5.42,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,9,292,Giovanni Rigamonti,MASAAL NEVER GIVE UP-N,Schnauzer medio nero,ITA,1,0,0.7,5.7,58.59,3.75,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,10,59,Vittorio Felci,CHERYL COLE,Border collie,ITA,2,0,0.0,10.0,38.87,5.66,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,11,196,BARBARA ROSSO,DUFFY,Border collie,ITA,1,1,0.0,10.0,43.43,5.07,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,12,57,Davide De Lucia,THE STRONG LISBONA,Border collie,ITA,0,2,0.0,10.0,45.27,4.86,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,13,27,DANIELA BASILE,Pepper,Meticcio,ITA,0,1,6.11,11.11,64.0,3.44,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,100,Milena Fornalè,Tami,Meticcio,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,105,Corrado Bianchi,MONGIOIA DI PETRADEMONE,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,118,Rebecca Romani,ROXY,Border collie,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,128,Corinne Meynier,The Little Girl,Barboni grande mole albicocca,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,133,Signoret  Stéphanie,Pinkazura,Australian shepherd,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,144,Julien Petitjean,Skylee,Border collie,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,147,GIUSEPPE PUGLIA,MIND THE DOG GLITTER,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,156,Manuela Satta,THUNDER OF WILDRIVER,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,157,Sandrine Dalmonte,NOS NITRO,Cane da pastore australiano kelpie,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,162,Omar Babini,GOJI IN THE STAR,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,163,Ivana Sipalova,BLACK RIVER KENNEL ZODIAC,Cane da pastore australiano kelpie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,178,Biagio Raucci,ETERNAL SUNSHINE THOR CAN FLY,Cane da pastore dei pirenei,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,184,Céline LECA,PAIKA,Cane da pastore australiano kelpie,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,192,Nicolas HELLIET,Zip,Border collie,DEU,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,213,Marie Crespy,Jive,Border collie,,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,222,fabrizio franzoso,PANDORA DI SPIRIT'S DOG,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,246,Justine Guillemot,Never Never Land A’black Bird,Border collie,POL,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,253,Marije Doppenberg,Blondie Helder,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,263,Saverio Pellegrino,IRA,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,285,Valentina  Mugellini,DEVONGEM EVER ZET TO THE TOP,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,302,patrizia bollati,GINGERBELL VITA SPERICOLATA,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,312,Marie Crespy,Punch,Border collie,,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,314,Nadine Ferrier,Taora ringarooma,Cane da pastore australiano kelpie,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,315,Fabrizio Cantatore,EMMA OF CRAZY SISSY'S HOME,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,317,Matteo Savini,ON MY HEART IN THE STAR,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,340,Manuela Piccin,KITTY PRIDE,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,344,Francesca Paccagnella,LOVE ME LIKE THERE'S NO TOMORROW IN THE STAR,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,346,Serena Sarti,MIND THE DOG MASCOTTE,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,4,Naud Arthur,Pim's,Border collie,SVN,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,50,Elena Godio,Fanny,Meticcio,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,55,Leonardo Mazzantini,RMF ISTA WAMBLY,Australian shepherd,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,60,Omar Babini,REFLEX A STAR DES CROCS DE PROVENCE,Border collie,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,69,Fabio Ferri,RAVEN OF CRAZY SISSY'S HOME,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,74,Valentina  Mugellini,CINQUE DEI MATIBLU,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,76,Lorenzo Simi,SHE'S A RED DEVIL,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,77,Alexis BELLINI,ROXY,Border collie,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,80,Enzo Corvaglia,BLACK BRI AT PATAVIENTO,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,89,Jennifer  Conessa,N’joy your life,Miniature American Shepherd,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,9,Orsatti Leslie,Stormy Bluestone Sly,Border collie,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,90,moreno cavallin,SHEPWORLD LOVE OF MY LIFE,Border collie,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,1,254,Martina Magnoli Klimesova,U Are My Nemi Shadow of Aire,Border collie,SVN,0,0,0.0,0.0,37.41,5.75,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,2,46,Ilario Spinelli,DANGER BLACK KALI',Border collie,ITA,0,0,0.0,0.0,37.44,5.74,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,3,114,VALENTINA BUSTREO,SHADOW OF AIRE XCLUSIVE BELLE,Border collie,SVN,0,0,0.0,0.0,37.81,5.69,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,4,204,Camille Parenty,Soon to be a red star,Border collie,FRA,0,0,0.0,0.0,38.19,5.63,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,5,275,Elodie Bertholier,O'Snow Pixie Des Joyeux 4 Pattes,Border collie,FRA,0,0,0.0,0.0,38.35,5.61,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,6,349,Elisa Daphnis,GMORK NEVERENDING STORY IN THE STAR,Border collie,ITA,0,0,0.0,0.0,38.49,5.59,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,7,364,Caterina Rolli,GINGERBELL PURPLE RAIN,Border collie,ITA,0,0,0.0,0.0,38.6,5.57,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,8,250,Irene Unkauf,BACIRON NILANDHOO,Border collie,ITA,0,0,0.0,0.0,39.16,5.49,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,9,221,Laligant Fabrice,FireStorm Dei Matiblu,Border collie,ITA,0,0,0.0,0.0,41.35,5.2,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,10,331,Sarah Rollinet,Jiga,Border collie,FRA,0,0,0.0,0.0,41.73,5.15,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,11,85,Gilles BLANC,MIA,Border collie,FRA,0,0,0.0,0.0,43.33,4.96,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,12,155,Gabriella Ravelli,ATOMIC CAT DETTA APRIL,Border collie,ITA,0,0,0.0,0.0,46.61,4.61,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,13,377,Simona Grasso,Spritz,Meticcio,ITA,0,0,0.0,0.0,51.7,4.16,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,14,308,Silvia Bighignoli,Flyland New Italian Mambo,Border collie,AUS,1,0,0.0,5.0,37.41,5.75,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,15,372,Emanuele Mondati,YAMA THE BUTTERFLY EFFECT,Border collie,ITA,1,0,0.0,5.0,37.49,5.73,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,16,360,Daniele  Scarano,ROLLING STONE IN THE STAR,Border collie,ITA,1,0,0.0,5.0,38.64,5.56,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,17,211,Jan Fiala,Libby Granting Pleasure,Border collie,DEU,1,0,0.0,5.0,38.67,5.56,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,18,168,Nadine Ferrier,Nitro nazus,Cane da pastore australiano kelpie,FRA,1,0,0.0,5.0,39.32,5.47,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,19,337,Cristina Bizzi,MIND THE DOG RAGNAROK,Border collie,ITA,1,0,0.0,5.0,39.7,5.42,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,20,108,Jordan Challier,PIXL du prieuré de comberoumal,Border collie,FRA,1,0,0.0,5.0,40.43,5.32,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,21,342,Vittorio Felci,MYA,Border collie,ITA,1,0,0.0,5.0,40.53,5.3,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,22,64,Eleni Lazzari,TRUST AND FOLLOW POLAR EXPRESS,Border collie,,1,0,0.0,5.0,40.67,5.29,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,23,158,Muriel JOCHEM,RUN DES PRECIEUSES FEES,Border collie,FRA,1,0,0.0,5.0,42.29,5.08,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,24,310,Katka Tercova,Aiyta Sapanaska,Border collie,AUT,1,0,0.0,5.0,42.78,5.03,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,25,306,olivia FROMIAU,Sweety,Border collie,FRA,1,0,0.0,5.0,42.85,5.02,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,26,152,serena galleri,BUH-DINO OF CRAZY SISSY'S HOME,Border collie,ITA,1,0,0.0,5.0,43.56,4.94,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,27,88,Chiara  Pradella,DRAGON FLY,Border collie,ITA,1,0,0.0,5.0,43.81,4.91,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,28,7,Juliette  MARTIN CEREZA,Miss Sanka,Flat coated retriever,FRA,1,0,0.0,5.0,44.3,4.85,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,29,11,franco faccani,BADABOOM VON DAVID,Border collie,AUT,1,0,0.0,5.0,45.94,4.68,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,30,117,stefano franceschi,SOLO DEI MATIBLU,Border collie,ITA,2,0,0.0,10.0,36.97,5.82,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,31,52,Alain liochon,Nina,Border collie,FRA,2,0,0.0,10.0,37.8,5.69,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,32,153,Enzo Corvaglia,"""sir Liò"" Shepworld's First son for the wind paws",Border collie,ITA,2,0,0.0,10.0,40.75,5.28,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,33,277,BARBARA ROSSO,A SIMPLE TWIST OF FATE,Border collie,ITA,2,0,0.0,10.0,41.07,5.23,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,34,78,Jakub Štýbr,Apple Deabei,Cane da pastore belga tervueren,CZE,3,0,0.0,15.0,37.43,5.74,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,35,197,Daniela Corradi,GINGERBELL SAILA TRIBAL DANCE,Border collie,ITA,1,2,0.0,15.0,45.69,4.71,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,36,124,Signoret Roxane,LA KITTY,Australian shepherd,FRA,3,0,0.0,15.0,47.1,4.56,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,37,161,Silvio Sante Rizzetto,TIGRO OF CRAZY SISSY'S HOME,Border collie,ITA,2,1,0.0,15.0,47.57,4.52,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,38,350,BACHELIN Véronique,Nina,Australian shepherd,FRA,2,1,0.0,15.0,51.5,4.17,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,39,175,Iris Kurat,PRIMO,Border collie,ITA,1,1,5.13,15.13,61.71,3.48,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,40,143,Justine Baudhuin,ZEBRAHEAD TO SHARK ZANZIBAR,Border collie,ITA,2,2,0.0,20.0,46.54,4.62,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,41,205,Barbara Gaboli,GREYHEART NAOS ZETA PUPPIS,Weimaraner a pelo corto,ITA,2,2,1.95,21.95,58.53,3.67,False,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,112,Maillefert  Virginie,O Massilia in the name of love,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,123,stefania mingolla,WINALMIK'S LADY HAWK,Cane da pastore belga malinois,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,126,Dario Cucco,Lillà,Meticcio,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,127,Oana nadia  Angheluta,Minny,Meticcio,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,129,Manon Ferrer,Petit Prince Écho,Australian shepherd,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,132,Adoración Morales Moreno,Nut,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,134,mathilde Allerme Baradel,Rasteau,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,137,Corrado Bianchi,RHEA GALLFORCE TO SHARK ZANZIBAR,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,148,MONICA TASSO,CLOUDS IN MY COFFE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,15,Giada Ferrero,GINGERBELL GIUNONE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,171,Francisco Ruiz Martinez,Hecod,Border collie,AUS,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,172,Frédérique Degeaive,Petit cœur,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,173,Marion Perilleux,Toundra de la vallée des chenzs,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,174,Anais Colavolpe Lion,Wave,Border collie,,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,176,BARBARA ROSSO,OXYGEN,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,177,ilaria rizzo,ordinary love des plaines du minervois,Cane da pastore belga malinois,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,179,Oceane Tilmant,Pretty,Cane da pastore belga malinois,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,185,Mt Guegan,Nautik,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,188,Andrea Brocca,CURRY SUPUNNA,Cane da pastore croato,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,199,Véronique BLANC,Vick,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,210,VIRGINIE bruna,EVERY KINGDOM SPITFIRE,Border collie,GBR,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,224,Vittoria Ferrari,WYNWICH FIFTY SHADES OF BLAK,Border collie,,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,228,Lorenzo Simi,HARLEY QUINN  DEI GUARDIANI DELLA LUNA,Cane da pastore belga malinois,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,231,Joy Vanseer,Mick,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,237,ILARIA CARIMATI,ASHANTI,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,239,Manon Crouzet,Sprint,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,24,Véniccia Franchitto,PAX,Cane da pastore belga tervueren,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,241,Cassandra Thong,Rui,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,242,Faye SAVARY,LULLABY BUMBLEBEE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,245,Diana Barinkova,DANCING IN THE DARK DI PETRADEMONE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,25,Clara Bonnafous,Queeny,Cane corso,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,252,Carlo Magnoli,Onsight du Chateau Sainte Marie,Cane da pastore belga malinois,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,264,Riccardo Fischetti,GUHS-TAVO OF CRAZY SISSY'S HOME,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,266,Francisco Ruiz Martinez,Henna,Border collie,AUS,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,269,Geraldine Cosmao,Poupée de cire poupée de son de la terre des flandres,Cane da pastore olandese,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,272,Marika Di Ruggiero,BOOMERANG,Border collie,AUT,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,280,Noemi Girino,GINGERBELL WALT DISNEY,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,282,ILARIA CARIMATI,CHUMBAWAMBA,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,286,Stefano Cecchini,COLDSTREAM HARMONY,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,288,Diletta Margherita Giudici,ALI-MAKI-GAPE-DAVID,Cane da pastore belga malinois,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,293,Franca Comoglio,VAMPIRE WEEKEND TO SHARK ZANZIBAR,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,299,Monica Tosetti,GINGERBELL TIBIDABO,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,30,NICOLETTA COMUNE,KIRK DOUGLAS,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,301,Irène Mauroux,Extreme Folly de tizin Tychka,Cane da pastore belga groenendael,CHE,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,304,Loic Perilleux,Oasis,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,307,Marina Falcone,BLACK RIVER KENNEL JACKAL,Cane da pastore australiano kelpie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,311,Lamorlette  Isabelle,SUZETTE,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,318,Zaira Mor,BANSHEE DEI SOGNI DI MEZZA ESTATE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,325,antonio fortino,MIND THE DOG TOPOLINO,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,327,Orsini  Elodie,Yago,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,347,franco faccani,JACA IN THE STAR,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,35,Marie Mandrea,Pako,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,351,MIRELLA  FERRERO,ARCHIE DEI MATIBLU,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,353,Laura Luciani,Silver Blake,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,355,sara gazzetta,THE DARK STARS POWER DOGS,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,363,KATIA SANCHEZ,O'PANDORA,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,367,Dagnes Alexandre,R'mazikeen,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,371,Amina Bouheraoua,O'Bibouchka,Siberian husky,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,374,francesca gamba,BLADE RUNNER,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,376,Aldo Pannocchia,SHEPWORLD LATIN LOVER,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,378,Christophe CHAMPAGNE,Nassau,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,38,Valentina Bronzato,BABY K,Cane da pastore belga malinois,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,380,Marella Borsello,TIDUS OF CRAZY SISSY'S HOME,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,381,Giulia Giorgi,TU SEI BOO DEL NAKURU,Cane da pastore belga malinois,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,382,Sara Costabile,HOUSTON DELLA LINEA DEI PENSIERI,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,388,Emma Superti,JUST LIKE STARTING OVER DEI MATIBLU,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,391,Pascal Mauroux,Djinn'Tomic de tizin Tychka,Cane da pastore belga groenendael,CHE,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,394,valentina Francini,BLACKSHEEP'S LULLABY GINGERBREAD,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,395,Alicia Mauroux,Lycaon's Zesty Folly,Cane da pastore belga groenendael,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,41,Luca Ferraris,GINGERBELL SUDOKU,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,45,Rebizzi Erica,GINGERBELL WINTER NIGHT,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,49,Julie Speich,Boo,Border collie,,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,51,alisee Josuan,Tango,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,58,ILARIA CARIMATI,BECKY G,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,68,Luisa Valerio,SHINE ON YOU CRAZY DIAMOND,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,71,Maria COPIE,Nelly,Cane da pastore belga malinois,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,79,Adoración Morales Moreno,Surprise,Border collie,AUS,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,8,Sara Montani,PETER PAN TO SHARK ZANZIBAR,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,82,Claudio Antonaci,FAIRY DYNASTY INVICTUS  detto NOVECENTO,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,83,laurent lamorlette,Oguste,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,84,Enzo Corvaglia,BLACKSHEEP PRINCESS FLU AT PATAVIENTO,Border collie,CHE,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_large_1,Large,Agility,False,,99,Mauro DIOTALLEVI,MONTECRISTO DELLA LINEA DEI PENSIERI,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,56.58,84.87,215
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,1,209,Lison Medina,Milo,Parson  russell terrier,FRA,0,0,0.0,0.0,41.42,5.31,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,2,332,Tatiana Mattelich,HAPPY SHEPHERDS WOOF,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,47.0,4.68,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,3,230,Jutta Nedorn,Sunny,Pinscher austriaco a pelo corto,AUS,0,0,0.0,0.0,48.39,4.55,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,4,140,Martina Magnoli Klimesova,Naga Jolokia Bonita Malinka,Mudi,CHE,1,0,0.0,5.0,37.2,5.91,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,5,366,Aanor Astore,Stark,Cane da pastore scozzese shetland,FRA,1,0,0.0,5.0,42.39,5.19,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,6,398,SERGE VELOSO,Peguera De La Mesta Pastores,Cane da pastore dei pirenei,FRA,1,0,0.0,5.0,45.04,4.88,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,7,243,sara gazzetta,CAN'T TAKES MY EYES OFF YOU,Cane da pastore scozzese shetland,ITA,0,1,0.0,5.0,46.01,4.78,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,8,149,Claudine Larato,VERY IMPORTANT POODLE GALA-M,Barboni marrone,ITA,1,0,0.0,5.0,48.14,4.57,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,9,17,Nathalie ANSTETT,Rouanita Banana,Cane da pastore scozzese shetland,FRA,0,1,0.0,5.0,51.75,4.25,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,10,145,Rémi MIGUET,Namaste,Staffordshire bull terrier,FRA,0,1,0.0,5.0,51.81,4.25,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,11,120,Olga La Spesa Martinengo,WHISKY MAKES ME HAPPY,Cane da pastore scozzese shetland,ITA,0,2,0.0,10.0,45.16,4.87,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,12,107,Justine Baudhuin,Cavalriinas Tiara Tamaris,Kooikerhondje,ITA,0,0,15.54,15.54,73.43,3.0,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,13,104,Jacques DAYAN,OPRAH,Cane da pastore scozzese shetland,FRA,0,1,15.56,20.56,73.45,3.0,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,111,Imbert Lorys,Snatch queen’s whispers,Staffordshire bull terrier,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,119,Emma Persello,Samy Du Roc de la Bevera,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,122,Vito Porfido,FLYWITHMEPETERPAN,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,151,Elisa Richelmi,O’FIRE AND BLOOD LE NOIR DU GRAIN DE SOLEIL,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,16,Andrea Brocca,Jinsei de L’Almozara,Perro de agua espanol,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,19,jonathan righi,PIXIE DUST DU FIEF DES PETITS CRUNCHIS,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,198,Luigi Rossi,Savannah,Meticcio,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,214,Olivier LECLERC,NJ du CHAMP D'ONIX,Cane da pastore dei pirenei,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,217,Lison Medina,Samy,Cocker spaniel inglese,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,236,Hélène LAligant,Villam Star Lord,Mudi,,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,244,Olivier LECLERC,PITCH BLACK MISTER DES MAGIES DE L'ELISLYNE,Barboni nero,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,256,Juliette  MARTIN CEREZA,Sweet Molly of Glharama,Cocker spaniel inglese,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,26,GIOIA BACCEGA,VELOX CRUR TOSCANA,Lagotto romagnolo,SRB,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,278,Claudine Larato,R'de JAZZ,Parson  russell terrier,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,287,Virginie de Andrea,Winecup dance with me de bien-aimè detto Chibe,Cane da pastore dei pirenei,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,289,Viennalisa Di Tullio,WITCH,Parson  russell terrier,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,316,Matilda Verri preti,BRINA DI SAN MAURELIO,Cocker spaniel inglese altri colori,AUT,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,326,David  Martínez Nebot,Kivi,Parson  russell terrier,AUT,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,329,MONNIER Marie-Eve,Oliver,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,33,Else Wilhelmina Meerkerk,ROKKITASSUN ZIP CODE DOUBLE ZERO,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,339,Virginie de Andrea,Qilin,Cane da pastore dei pirenei a faccia rasa,CHE,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,396,Veronica Canella,Eva,Meticcio,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,62,Roberto Andalò,ARIELLE'S DEMON IL PICCOLO GIOTTO,Zwergpinscher,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,73,Valentina Mantovani,INEVITABLE MADNESS IN LYON,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,86,Christine Chalancon,Irhaberki Rhythm'n'Blues,Mudi,AUS,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,87,Corinne Meynier,TOMY-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_medium_1,Medium,Agility,False,,94,Andrea Roy,SOUM DE LA MESTA PASTORES,Cane da pastore dei pirenei,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,1,44,Andrea Di Clemente,WACKY RACES' GANG LEONE-M,Barboni marrone,ITA,0,0,0.0,0.0,41.74,5.27,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,2,336,Nathalie  Tallarico,BLACK SWAN,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,45.2,4.87,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,3,103,Penelope Verri Preti,CHAN CHAN,Parson  russell terrier,ITA,0,0,0.0,0.0,49.81,4.42,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,4,66,serena galleri,TRULY-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,1,0,0.0,5.0,47.18,4.66,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,5,328,Valentina Zanella,ROCKSTAR,Cane da pastore scozzese shetland,ITA,0,1,0.0,5.0,48.52,4.53,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,6,362,Silvia Frieri,EVYE-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,1,0,0.0,5.0,48.98,4.49,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,7,201,NATHALIE L'HUILLIER,Osanna Blue,Cane da pastore scozzese shetland,FRA,1,0,0.0,5.0,50.68,4.34,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,8,187,Soana Martinengo,ROSE MY LOVE,Cane da pastore scozzese shetland,ITA,0,1,0.0,5.0,52.12,4.22,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,9,206,Sabrina Liochon,Pin-up,Cane da pastore scozzese shetland,FRA,0,1,0.0,5.0,54.13,4.06,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,10,392,Giacomo  Lugli,Sky,Meticcio,ITA,0,1,0.0,5.0,54.24,4.06,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,11,335,Angelo Mainetti,TAJADELA FOR ARIELLE'S DEMON,Zwergpinscher,ITA,1,1,0.0,10.0,49.4,4.45,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,12,229,Dorjana Hasa,ROKKITASSUN TINA TURNER,Cane da pastore scozzese shetland,ITA,0,2,0.0,10.0,50.89,4.32,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,13,116,Susanna Negri,IEEVAN,Jack russell terrier,ITA,2,0,0.0,10.0,55.98,3.93,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,14,298,Vanessa Braiato,Leila,Jack russell terrier,ITA,1,2,0.0,15.0,56.25,3.91,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,15,226,Angela Pecini,NOEL,Cane da pastore scozzese shetland,ITA,1,2,0.94,15.94,58.83,3.74,False,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,109,Marije Doppenberg,Hazel,Chinese crested dog con pelo,NLD,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,110,Stefania Agostini,GIULFO UNPLAGGED-N,Barboni nano nero,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,12,Naima Verri,DEVONGEM STARLET,Cocker spaniel inglese nero,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,125,Estelle Cosson,TYRA LA NOIRE,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,165,mauro boga,ANIP SIMPLY UNIQUE GRANATA,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,189,MONNIER Marie-Eve,Quartz,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,194,GIUSEPPE PUGLIA,LIKING FOR CHOCOLATE DE LA LEGENDE DE MALIZIA,Barboni nano marrone,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,195,michela tironi,Joey,Meticcio,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,203,Belmiro  Sousa,Be,Cane da pastore scozzese shetland,AUT,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,212,Claudia Silvio,ULULALLALUNA NETEB DU NIL,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,215,Adriano Begalli,AMICO TERRIER'S SERENDIPITY HAPPENS,Parson  russell terrier,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,216,Donatella Albanesi,FRANCESCA'S WHITE KING VITA-B,Zwergschnauzer bianco,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,234,Annie Boyer,Just a Border Queen,Border terrier,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,258,DANIELA TUGNOLO,DHARMA-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,271,Chiara Olivetti,PRIMO CAVALIERE SPRING BLOOMING,Boston terrier,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,283,clementine perche,Pia Explosive Star,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,284,Emanuela Bordignon,BRICCIBA'S COCAINE,Schipperkee da 3 a 5 kg.,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,300,CRISTINA BORRA,HERMES,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,309,Christian Di Geronimo,PICCOLO BA DEL CURICCIO,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,31,monica colombo,GINGER ROGERS DELLA LINEA DEI PENSIERI,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,313,Petitjean Magali,Ohlins,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,320,Sara Berti,ROULETTE DELLA LINEA DEI PENSIERI,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,333,Tatiana Mattelich,JESSICA FLETCHER DELLA LINEA DEI PENSIERI,Cane da pastore scozzese shetland,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,338,Fabienne Rimann,Don't Mess With Fajita of Impressive Twilight,Cane da pastore scozzese shetland,CHE,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,34,SABINA BOTTARI,WACKY RACES' GANG CAMILLO-N (CM.33/N),Barboni nano nero,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,357,Dominique PERRIER,Pom d'Api,Yorkshire terrier,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,361,benoit benito,NEVER LOSE,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,40,Nicola Caldarisi,Mavie-F di Foscalberto,Barboni nano rosso fulvo,ITA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,42,Luca Notario,STEEP CLIFF DE L'ALLIANCE DE KERMA,"Spitz tedeschi piccolo arancio, grigio o altri colori",FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,5,David El ballouta,Shanelle,Cocker spaniel inglese,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,54,Zoé Helliet,Snappy,Cocker spaniel inglese,,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_agility_small_1,Small,Agility,False,,97,Goyet Julien,Pop rock,Cane da pastore scozzese shetland,FRA,,,,,,,True,BOIX BARO JORDI,57.89,86.84,220
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,1,141,SEBASTIEN ALLERME,SHY’M DREAM OF KINGS,Border collie,FRA,0,0,0.0,0.0,35.1,6.01,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,2,97,Jan Fiala,Kirlie Mawlch,Border collie,HRV,0,0,0.0,0.0,38.7,5.45,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,3,117,Fabrizio Cantatore,EMMA OF CRAZY SISSY'S HOME,Border collie,ITA,0,0,0.0,0.0,38.79,5.44,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,4,375,jose manuel Davila Rosales,TURI KITANE TO FALL IN LOVE,Border collie,ITA,1,0,0.0,5.0,37.06,5.69,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,5,143,Mégane RICHEZ,Fast Grin,Border collie,POL,0,1,0.0,5.0,39.12,5.39,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,6,276,Sandrine Dalmonte,NOS NITRO,Cane da pastore australiano kelpie,FRA,0,1,0.0,5.0,42.71,4.94,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,7,278,Matteo Savini,ON MY HEART IN THE STAR,Border collie,ITA,3,1,0.0,20.0,41.64,5.07,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,,153,Orsatti Leslie,Stormy Bluestone Sly,Border collie,FRA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,,245,Leonardo Casoni,BABY K,Border collie,ITA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,,250,Christine Chalancon,Booga'Loo,Mudi,CHE,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_intermediate_1,Intermediate,Final,False,,289,Lorenzo Simi,SHE'S A RED DEVIL,Border collie,ITA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,1,347,MONICA TASSO,CLOUDS IN MY COFFE,Border collie,ITA,0,0,0.0,0.0,36.82,5.73,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,2,28,Martina Magnoli Klimesova,U Are My Nemi Shadow of Aire,Border collie,SVN,0,0,0.0,0.0,36.9,5.72,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,3,118,Laligant Fabrice,FireStorm Dei Matiblu,Border collie,ITA,0,0,0.0,0.0,40.38,5.23,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,4,158,Frédérique Degeaive,Petit cœur,Border collie,FRA,0,0,0.0,0.0,41.54,5.08,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,5,205,Orsini  Elodie,Yago,Border collie,FRA,1,0,0.0,5.0,36.22,5.83,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,6,121,Elodie Bertholier,O'Snow Pixie Des Joyeux 4 Pattes,Border collie,FRA,1,0,0.0,5.0,36.9,5.72,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,7,165,Irene Unkauf,BACIRON NILANDHOO,Border collie,ITA,1,0,0.0,5.0,38.46,5.49,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,8,140,NICOLETTA COMUNE,KIRK DOUGLAS,Border collie,ITA,1,0,0.0,5.0,38.78,5.44,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,9,246,ilaria rizzo,ordinary love des plaines du minervois,Cane da pastore belga malinois,FRA,0,1,0.0,5.0,39.96,5.28,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,10,334,Flavio Luigi Brescianini,ETHAN DEI SHANIBLU,Border collie,ITA,0,1,0.0,5.0,41.89,5.04,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,11,370,Silvia Bighignoli,Flyland New Italian Mambo,Border collie,AUS,1,1,0.0,10.0,37.75,5.59,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,12,363,Nadine Ferrier,Nitro nazus,Cane da pastore australiano kelpie,FRA,2,0,0.0,10.0,38.42,5.49,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,13,190,Elisa Daphnis,GMORK NEVERENDING STORY IN THE STAR,Border collie,ITA,1,2,0.0,15.0,43.92,4.8,False,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,128,stefano franceschi,SOLO DEI MATIBLU,Border collie,ITA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,138,Marie Mandrea,Pako,Border collie,FRA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,164,Gabriella Ravelli,ATOMIC CAT DETTA APRIL,Border collie,ITA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,199,Sarah Rollinet,Jiga,Border collie,FRA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,342,Katka Tercova,Aiyta Sapanaska,Border collie,AUT,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,345,Simona Grasso,Spritz,Meticcio,ITA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,367,Gilles BLANC,MIA,Border collie,FRA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,369,VIRGINIE bruna,EVERY KINGDOM SPITFIRE,Border collie,GBR,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,376,Ilario Spinelli,DANGER BLACK KALI',Border collie,ITA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,389,Irène Mauroux,Extreme Folly de tizin Tychka,Cane da pastore belga groenendael,CHE,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,65,Caterina Rolli,GINGERBELL PURPLE RAIN,Border collie,ITA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_large_1,Large,Final,False,,99,Emanuele Mondati,YAMA THE BUTTERFLY EFFECT,Border collie,ITA,,,,,,,True,WEBB N,46.89,70.34,211
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,1,382,Lison Medina,Samy,Cocker spaniel inglese,FRA,0,0,0.0,0.0,40.79,4.95,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,2,19,Jutta Nedorn,Sunny,Pinscher austriaco a pelo corto,AUS,0,0,3.36,3.36,48.25,4.19,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,3,83,SERGE VELOSO,Peguera De La Mesta Pastores,Cane da pastore dei pirenei,FRA,1,0,0.0,5.0,43.28,4.67,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,,181,Tatiana Mattelich,HAPPY SHEPHERDS WOOF,Cane da pastore scozzese shetland,ITA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,,183,Aanor Astore,Stark,Cane da pastore scozzese shetland,FRA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,,280,Viennalisa Di Tullio,WITCH,Parson  russell terrier,ITA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,,309,Olga La Spesa Martinengo,WHISKY MAKES ME HAPPY,Cane da pastore scozzese shetland,ITA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,,348,sara gazzetta,CAN'T TAKES MY EYES OFF YOU,Cane da pastore scozzese shetland,ITA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,,351,Lison Medina,Milo,Parson  russell terrier,FRA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,,359,Martina Magnoli Klimesova,Naga Jolokia Bonita Malinka,Mudi,CHE,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_medium_1,Medium,Final,False,,7,Nathalie ANSTETT,Rouanita Banana,Cane da pastore scozzese shetland,FRA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,1,24,Naima Verri,DEVONGEM STARLET,Cocker spaniel inglese nero,ITA,0,0,0.0,0.0,40.09,5.04,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,2,279,Nathalie  Tallarico,BLACK SWAN,Cane da pastore scozzese shetland,ITA,0,1,0.0,5.0,41.09,4.92,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,3,105,NATHALIE L'HUILLIER,Osanna Blue,Cane da pastore scozzese shetland,FRA,1,0,1.64,6.64,43.72,4.62,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,4,346,michela tironi,Joey,Meticcio,ITA,0,1,2.33,7.33,47.22,4.28,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,5,4,Penelope Verri Preti,CHAN CHAN,Parson  russell terrier,ITA,0,0,8.16,8.16,53.05,3.81,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,6,135,GIUSEPPE PUGLIA,LIKING FOR CHOCOLATE DE LA LEGENDE DE MALIZIA,Barboni nano marrone,FRA,2,0,0.0,10.0,41.68,4.85,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,7,96,Andrea Di Clemente,WACKY RACES' GANG LEONE-M,Barboni marrone,ITA,1,1,0.0,10.0,41.98,4.81,False,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,,145,benoit benito,NEVER LOSE,Cane da pastore scozzese shetland,FRA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,,249,serena galleri,TRULY-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,,317,Valentina Zanella,ROCKSTAR,Cane da pastore scozzese shetland,ITA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,,352,SABINA BOTTARI,WACKY RACES' GANG CAMILLO-N (CM.33/N),Barboni nano nero,ITA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_final_small_1,Small,Final,False,,392,Silvia Frieri,EVYE-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,,,,,,,True,MUOTKA ESA,42.08,63.12,202
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,1,128,SEBASTIEN ALLERME,SHY’M DREAM OF KINGS,Border collie,FRA,0,0,0.0,0.0,31.19,6.28,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,2,342,Orsatti Leslie,Stormy Bluestone Sly,Border collie,FRA,0,0,0.0,0.0,31.78,6.17,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,3,331,Matteo Savini,ON MY HEART IN THE STAR,Border collie,ITA,0,0,0.0,0.0,33.29,5.89,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,4,23,Fabrizio Cantatore,EMMA OF CRAZY SISSY'S HOME,Border collie,ITA,0,0,0.0,0.0,33.41,5.87,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,5,270,Lorenzo Simi,SHE'S A RED DEVIL,Border collie,ITA,0,0,0.0,0.0,33.63,5.83,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,6,251,Jan Fiala,Kirlie Mawlch,Border collie,HRV,0,0,0.0,0.0,33.81,5.8,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,7,210,Sandrine Dalmonte,NOS NITRO,Cane da pastore australiano kelpie,FRA,0,0,0.0,0.0,34.3,5.71,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,8,53,Ivana Sipalova,BLACK RIVER KENNEL ZODIAC,Cane da pastore australiano kelpie,ITA,0,0,0.0,0.0,34.71,5.65,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,9,13,Manuela Piccin,KITTY PRIDE,Border collie,ITA,0,0,0.0,0.0,36.11,5.43,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,10,75,Signoret  Stéphanie,Pinkazura,Australian shepherd,FRA,0,0,0.0,0.0,36.27,5.4,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,11,88,Elena Godio,Fanny,Meticcio,ITA,0,0,0.0,0.0,37.06,5.29,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,12,355,soraya david,Purple Bloom,Australian shepherd,FRA,0,0,0.0,0.0,37.56,5.22,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,13,35,DANIELA BASILE,Pepper,Meticcio,ITA,0,0,0.0,0.0,38.37,5.11,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,14,330,fabrizio franzoso,PANDORA DI SPIRIT'S DOG,Border collie,ITA,0,0,0.0,0.0,39.77,4.93,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,15,125,Mégane RICHEZ,Fast Grin,Border collie,POL,1,0,0.0,5.0,32.2,6.09,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,16,104,Davide De Lucia,THE STRONG LISBONA,Border collie,ITA,1,0,0.0,5.0,33.05,5.93,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,17,99,moreno cavallin,SHEPWORLD LOVE OF MY LIFE,Border collie,ITA,1,0,0.0,5.0,33.19,5.91,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,18,363,Giovanni Rigamonti,MASAAL NEVER GIVE UP-N,Schnauzer medio nero,ITA,1,0,0.0,5.0,48.14,4.07,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,19,375,BARBARA ROSSO,DUFFY,Border collie,ITA,1,1,0.0,10.0,36.71,5.34,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,20,177,Marie Crespy,Jive,Border collie,,1,1,0.0,10.0,39.36,4.98,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,21,307,Nicolas HELLIET,Zip,Border collie,DEU,1,1,0.0,10.0,41.26,4.75,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,22,5,Francesca Paccagnella,LOVE ME LIKE THERE'S NO TOMORROW IN THE STAR,Border collie,ITA,1,2,0.0,15.0,42.39,4.62,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,23,274,Rebecca Romani,ROXY,Border collie,FRA,2,1,3.31,18.31,52.31,3.75,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,124,Corinne Meynier,The Little Girl,Barboni grande mole albicocca,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,151,Naud Arthur,Pim's,Border collie,SVN,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,156,Enzo Corvaglia,BLACK BRI AT PATAVIENTO,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,159,Vittorio Felci,CHERYL COLE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,162,Jennifer  Conessa,N’joy your life,Miniature American Shepherd,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,174,Denis Giovannelli,LATINBORDER REVERT,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,212,stephanie brun,PRIME TIME,Australian shepherd,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,234,Manuela Satta,THUNDER OF WILDRIVER,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,244,Nadine Ferrier,Taora ringarooma,Cane da pastore australiano kelpie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,261,Marie Crespy,Punch,Border collie,,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,267,Céline LECA,PAIKA,Cane da pastore australiano kelpie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,29,Justine Guillemot,Never Never Land A’black Bird,Border collie,POL,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,315,GIUSEPPE PUGLIA,MIND THE DOG GLITTER,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,319,Milena Fornalè,Tami,Meticcio,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,327,Marije Doppenberg,Blondie Helder,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,328,Valentina  Mugellini,CINQUE DEI MATIBLU,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,333,Alexis BELLINI,ROXY,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,334,Andrina Aymon,Haru,Cocker spaniel inglese,DNK,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,370,Omar Babini,GOJI IN THE STAR,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,381,Fabio Ferri,RAVEN OF CRAZY SISSY'S HOME,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,4,Leonardo Mazzantini,RMF ISTA WAMBLY,Australian shepherd,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,56,Serena Sarti,MIND THE DOG MASCOTTE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,60,Julien Petitjean,Skylee,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,67,Omar Babini,REFLEX A STAR DES CROCS DE PROVENCE,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,85,Alexa Rizzetto,Ariel,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,1,186,Daniele  Scarano,ROLLING STONE IN THE STAR,Border collie,ITA,0,0,0.0,0.0,36.98,5.3,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,2,115,stefano franceschi,SOLO DEI MATIBLU,Border collie,ITA,0,0,0.0,0.0,37.24,5.26,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,3,171,Irène Mauroux,Extreme Folly de tizin Tychka,Cane da pastore belga groenendael,CHE,0,0,0.0,0.0,37.95,5.16,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,4,148,Elodie Bertholier,O'Snow Pixie Des Joyeux 4 Pattes,Border collie,FRA,0,0,0.0,0.0,37.97,5.16,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,5,266,Alain liochon,Nina,Border collie,FRA,0,0,0.0,0.0,38.12,5.14,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,6,40,MONICA TASSO,CLOUDS IN MY COFFE,Border collie,ITA,0,0,0.0,0.0,38.82,5.05,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,7,219,Ilario Spinelli,DANGER BLACK KALI',Border collie,ITA,0,0,0.0,0.0,38.89,5.04,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,8,272,Nadine Ferrier,Nitro nazus,Cane da pastore australiano kelpie,FRA,0,0,0.0,0.0,39.29,4.99,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,9,22,VIRGINIE bruna,EVERY KINGDOM SPITFIRE,Border collie,GBR,0,0,0.0,0.0,39.55,4.96,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,10,137,ilaria rizzo,ordinary love des plaines du minervois,Cane da pastore belga malinois,FRA,0,0,0.0,0.0,39.69,4.94,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,11,172,Katka Tercova,Aiyta Sapanaska,Border collie,AUT,0,0,0.0,0.0,39.91,4.91,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,12,247,Flavio Luigi Brescianini,ETHAN DEI SHANIBLU,Border collie,ITA,0,0,0.0,0.0,40.08,4.89,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,13,131,Marie Mandrea,Pako,Border collie,FRA,0,0,0.0,0.0,40.28,4.87,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,14,41,NICOLETTA COMUNE,KIRK DOUGLAS,Border collie,ITA,0,0,0.0,0.0,41.51,4.72,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,15,24,Gilles BLANC,MIA,Border collie,FRA,0,0,0.0,0.0,41.87,4.68,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,16,17,Frédérique Degeaive,Petit cœur,Border collie,FRA,0,0,0.0,0.0,42.87,4.57,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,17,385,Vittorio Felci,MYA,Border collie,ITA,0,0,0.0,0.0,42.9,4.57,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,18,288,Orsini  Elodie,Yago,Border collie,FRA,0,0,0.0,0.0,43.2,4.54,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,19,182,Jakub Štýbr,Apple Deabei,Cane da pastore belga tervueren,CZE,1,0,0.0,5.0,38.37,5.11,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,20,26,Carlo Magnoli,Onsight du Chateau Sainte Marie,Cane da pastore belga malinois,FRA,1,0,0.0,5.0,39.08,5.02,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,21,339,Laura Luciani,Silver Blake,Border collie,FRA,1,0,0.0,5.0,41.34,4.74,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,22,121,ILARIA CARIMATI,ASHANTI,Border collie,ITA,1,0,0.0,5.0,43.38,4.52,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,23,134,Pascal Mauroux,Djinn'Tomic de tizin Tychka,Cane da pastore belga groenendael,CHE,0,1,0.0,5.0,44.57,4.4,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,24,74,Eleni Lazzari,TRUST AND FOLLOW POLAR EXPRESS,Border collie,,0,1,0.0,5.0,44.97,4.36,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,25,340,Cristina Bizzi,MIND THE DOG RAGNAROK,Border collie,ITA,1,0,0.0,5.0,45.18,4.34,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,26,336,Christophe CHAMPAGNE,Nassau,Border collie,FRA,1,0,0.0,5.0,45.23,4.33,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,27,302,laurent lamorlette,Oguste,Border collie,FRA,1,0,0.0,5.0,48.28,4.06,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,28,9,Emanuele Mondati,YAMA THE BUTTERFLY EFFECT,Border collie,ITA,2,0,0.0,10.0,36.77,5.33,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,29,2,Aldo Pannocchia,SHEPWORLD LATIN LOVER,Border collie,ITA,2,0,0.0,10.0,37.38,5.24,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,30,379,BARBARA ROSSO,A SIMPLE TWIST OF FATE,Border collie,ITA,1,1,0.0,10.0,42.7,4.59,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,31,258,Justine Baudhuin,ZEBRAHEAD TO SHARK ZANZIBAR,Border collie,ITA,0,2,0.0,10.0,44.49,4.41,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,32,155,Daniela Corradi,GINGERBELL SAILA TRIBAL DANCE,Border collie,ITA,0,2,0.0,10.0,46.24,4.24,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,33,153,marta porta,ALPHA PROTOCOL,Border collie,ITA,1,1,3.14,13.14,52.14,3.76,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,34,225,Maillefert  Virginie,O Massilia in the name of love,Border collie,FRA,1,1,3.99,13.99,52.99,3.7,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,35,3,Marta De Munari,Holly,Meticcio,ITA,2,1,0.0,15.0,41.26,4.75,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,36,31,Monica Tosetti,GINGERBELL TIBIDABO,Border collie,ITA,2,1,0.0,15.0,42.96,4.56,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,37,61,Massimo Tallarico,SHEPWORLD IT'S NEVER OVER,Border collie,ITA,1,2,0.0,15.0,46.59,4.21,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,38,383,Muriel JOCHEM,RUN DES PRECIEUSES FEES,Border collie,FRA,1,2,0.0,15.0,47.31,4.14,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,39,286,Manon Ferrer,Petit Prince Écho,Australian shepherd,FRA,1,2,2.28,17.28,51.28,3.82,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,10,Dagnes Alexandre,R'mazikeen,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,109,Stefano Cecchini,COLDSTREAM HARMONY,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,11,Silvio Sante Rizzetto,TIGRO OF CRAZY SISSY'S HOME,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,110,valentina Francini,BLACKSHEEP'S LULLABY GINGERBREAD,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,118,ILARIA CARIMATI,BECKY G,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,123,Geraldine Cosmao,Poupée de cire poupée de son de la terre des flandres,Cane da pastore olandese,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,138,Valentina Bronzato,BABY K,Cane da pastore belga malinois,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,139,Francisco Ruiz Martinez,Hecod,Border collie,AUS,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,14,Francisco Ruiz Martinez,Henna,Border collie,AUS,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,141,Maria COPIE,Nelly,Cane da pastore belga malinois,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,145,ILARIA CARIMATI,CHUMBAWAMBA,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,157,Chiara  Pradella,DRAGON FLY,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,163,Oceane Tilmant,Pretty,Cane da pastore belga malinois,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,176,Jordan Challier,PIXL du prieuré de comberoumal,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,178,Lamorlette  Isabelle,SUZETTE,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,179,Andrea Brocca,CURRY SUPUNNA,Cane da pastore croato,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,180,Cassandra Thong,Rui,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,185,Amina Bouheraoua,O'Bibouchka,Siberian husky,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,191,Faye SAVARY,LULLABY BUMBLEBEE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,197,Serena Sarti,JACA IN THE STAR,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,199,Perrine DEGL'INNOCENTI,Népal,Cane da pastore australiano kelpie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,202,Mt Guegan,Nautik,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,205,Barbara Gaboli,GREYHEART NAOS ZETA PUPPIS,Weimaraner a pelo corto,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,215,alisee Josuan,Tango,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,216,Mauro DIOTALLEVI,MONTECRISTO DELLA LINEA DEI PENSIERI,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,230,serena galleri,BUH-DINO OF CRAZY SISSY'S HOME,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,235,Clara Bonnafous,Queeny,Cane corso,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,238,BARBARA ROSSO,OXYGEN,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,239,BACHELIN Véronique,Nina,Australian shepherd,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,246,Alicia Mauroux,Lycaon's Zesty Folly,Cane da pastore belga groenendael,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,249,Véronique BLANC,Vick,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,250,Adoración Morales Moreno,Nut,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,257,Sara Montani,PETER PAN TO SHARK ZANZIBAR,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,262,mathilde Allerme Baradel,Rasteau,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,275,Sara Costabile,HOUSTON DELLA LINEA DEI PENSIERI,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,292,KATIA SANCHEZ,O'PANDORA,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,295,Zaira Mor,BANSHEE DEI SOGNI DI MEZZA ESTATE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,299,Marion Perilleux,Toundra de la vallée des chenzs,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,306,franco faccani,BADABOOM VON DAVID,Border collie,AUT,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,312,francesca gamba,BLADE RUNNER,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,316,Iris Kurat,PRIMO,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,332,Enzo Corvaglia,BLACKSHEEP PRINCESS FLU AT PATAVIENTO,Border collie,CHE,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,343,Riccardo Fischetti,GUHS-TAVO OF CRAZY SISSY'S HOME,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,345,Jan Fiala,Libby Granting Pleasure,Border collie,DEU,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,351,Loic Perilleux,Oasis,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,352,Joy Vanseer,Mick,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,358,Marika Di Ruggiero,BOOMERANG,Border collie,AUT,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,369,Signoret Roxane,LA KITTY,Australian shepherd,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,376,Oana nadia  Angheluta,Minny,Meticcio,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,39,Luca Ferraris,GINGERBELL SUDOKU,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,390,MIRELLA  FERRERO,ARCHIE DEI MATIBLU,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,392,Diana Barinkova,DANCING IN THE DARK DI PETRADEMONE,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,55,SIMONA PIRRITANO,NALA,Meticcio,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,57,Adoración Morales Moreno,Surprise,Border collie,AUS,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,58,Manon Crouzet,Sprint,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,6,Debora Magnani,TIA DEI MATIBLU,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,63,olivia FROMIAU,Sweety,Border collie,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,84,Claudio Antonaci,FAIRY DYNASTY INVICTUS  detto NOVECENTO,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,90,Diana Barinkova,JOKER,Border collie,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,95,Diletta Margherita Giudici,ALI-MAKI-GAPE-DAVID,Cane da pastore belga malinois,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_large_1,Large,Jumping,False,,96,stefania mingolla,WINALMIK'S LADY HAWK,Cane da pastore belga malinois,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,1,337,Martina Magnoli Klimesova,Naga Jolokia Bonita Malinka,Mudi,CHE,0,0,0.0,0.0,31.4,6.24,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,2,45,Olga La Spesa Martinengo,WHISKY MAKES ME HAPPY,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,33.17,5.91,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,3,293,Nathalie ANSTETT,Rouanita Banana,Cane da pastore scozzese shetland,FRA,0,0,0.0,0.0,33.5,5.85,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,4,78,sara gazzetta,CAN'T TAKES MY EYES OFF YOU,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,34.41,5.7,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,5,195,Carlo Zambotto,ZENITH OF SUMMERGARDEN,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,34.43,5.69,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,6,7,Lison Medina,Samy,Cocker spaniel inglese,FRA,0,0,0.0,0.0,34.88,5.62,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,7,112,Viennalisa Di Tullio,WITCH,Parson  russell terrier,ITA,0,0,0.0,0.0,35.75,5.48,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,8,317,Lison Medina,Milo,Parson  russell terrier,FRA,0,0,0.0,0.0,35.84,5.47,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,9,25,Luigi Rossi,Savannah,Meticcio,ITA,0,0,0.0,0.0,38.86,5.04,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,10,231,Rémi MIGUET,Namaste,Staffordshire bull terrier,FRA,0,0,0.0,0.0,41.79,4.69,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,11,366,Silvia Boccato,FRANCINI'S LUA,Cocker spaniel inglese altri colori,ITA,0,0,0.0,0.0,44.99,4.36,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,12,221,Jacques DAYAN,OPRAH,Cane da pastore scozzese shetland,FRA,0,0,3.53,3.53,52.53,3.73,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,13,269,Valentina Mantovani,INEVITABLE MADNESS IN LYON,Cane da pastore scozzese shetland,ITA,1,0,0.0,5.0,36.46,5.38,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,14,114,Vito Porfido,FLYWITHMEPETERPAN,Cane da pastore scozzese shetland,ITA,0,1,0.0,5.0,37.3,5.25,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,15,400,Jutta Nedorn,Sunny,Pinscher austriaco a pelo corto,AUS,0,2,0.0,10.0,45.28,4.33,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,103,Olivier LECLERC,PITCH BLACK MISTER DES MAGIES DE L'ELISLYNE,Barboni nero,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,113,Christine Chalancon,Irhaberki Rhythm'n'Blues,Mudi,AUS,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,122,Claudine Larato,VERY IMPORTANT POODLE GALA-M,Barboni marrone,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,152,Claudine Larato,R'de JAZZ,Parson  russell terrier,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,166,Andrea Roy,SOUM DE LA MESTA PASTORES,Cane da pastore dei pirenei,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,181,Emma Persello,Samy Du Roc de la Bevera,Cane da pastore scozzese shetland,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,213,Aanor Astore,Stark,Cane da pastore scozzese shetland,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,277,Elisa Richelmi,O’FIRE AND BLOOD LE NOIR DU GRAIN DE SOLEIL,Cane da pastore scozzese shetland,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,281,Virginie de Andrea,Winecup dance with me de bien-aimè detto Chibe,Cane da pastore dei pirenei,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,285,Matilda Verri preti,BRINA DI SAN MAURELIO,Cocker spaniel inglese altri colori,AUT,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,294,GIOIA BACCEGA,VELOX CRUR TOSCANA,Lagotto romagnolo,SRB,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,30,Else Wilhelmina Meerkerk,ROKKITASSUN ZIP CODE DOUBLE ZERO,Cane da pastore scozzese shetland,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,305,MONNIER Marie-Eve,Oliver,Cane da pastore scozzese shetland,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,32,Juliette  MARTIN CEREZA,Sweet Molly of Glharama,Cocker spaniel inglese,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,323,Andrea Brocca,Jinsei de L’Almozara,Perro de agua espanol,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,324,Tatiana Mattelich,HAPPY SHEPHERDS WOOF,Cane da pastore scozzese shetland,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,335,Veronica Canella,Eva,Meticcio,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,372,David  Martínez Nebot,Kivi,Parson  russell terrier,AUT,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,374,Olivier LECLERC,NJ du CHAMP D'ONIX,Cane da pastore dei pirenei,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,395,Imbert Lorys,Snatch queen’s whispers,Staffordshire bull terrier,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,42,Roberto Andalò,ARIELLE'S DEMON IL PICCOLO GIOTTO,Zwergpinscher,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,43,Hélène LAligant,Villam Star Lord,Mudi,,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,64,Justine Baudhuin,Cavalriinas Tiara Tamaris,Kooikerhondje,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,65,Corinne Meynier,TOMY-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_medium_1,Medium,Jumping,False,,70,Virginie de Andrea,Qilin,Cane da pastore dei pirenei a faccia rasa,CHE,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,1,203,SABINA BOTTARI,WACKY RACES' GANG CAMILLO-N (CM.33/N),Barboni nano nero,ITA,0,0,0.0,0.0,32.62,6.01,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,2,287,benoit benito,NEVER LOSE,Cane da pastore scozzese shetland,FRA,0,0,0.0,0.0,32.75,5.98,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,3,130,Naima Verri,DEVONGEM STARLET,Cocker spaniel inglese nero,ITA,0,0,0.0,0.0,32.95,5.95,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,4,271,GIUSEPPE PUGLIA,LIKING FOR CHOCOLATE DE LA LEGENDE DE MALIZIA,Barboni nano marrone,FRA,0,0,0.0,0.0,34.71,5.65,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,5,86,michela tironi,Joey,Meticcio,ITA,0,0,0.0,0.0,35.93,5.46,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,6,111,NATHALIE L'HUILLIER,Osanna Blue,Cane da pastore scozzese shetland,FRA,0,0,0.0,0.0,36.32,5.4,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,7,280,mauro boga,ANIP SIMPLY UNIQUE GRANATA,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,36.59,5.36,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,8,354,Dorjana Hasa,ROKKITASSUN TINA TURNER,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,37.67,5.2,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,9,116,Stefania Agostini,GIULFO UNPLAGGED-N,Barboni nano nero,ITA,0,0,0.0,0.0,38.74,5.06,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,10,311,Vanessa Braiato,Leila,Jack russell terrier,ITA,0,0,0.0,0.0,38.86,5.04,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,11,49,Susanna Negri,IEEVAN,Jack russell terrier,ITA,0,0,0.0,0.0,40.94,4.79,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,12,8,Claudia Silvio,ULULALLALUNA NETEB DU NIL,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,41.4,4.73,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,13,16,monica colombo,GINGER ROGERS DELLA LINEA DEI PENSIERI,Cane da pastore scozzese shetland,ITA,0,0,0.0,0.0,41.43,4.73,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,14,211,Donatella Albanesi,FRANCESCA'S WHITE KING VITA-B,Zwergschnauzer bianco,ITA,0,0,0.0,0.0,43.61,4.49,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,15,37,Dominique PERRIER,Pom d'Api,Yorkshire terrier,FRA,0,0,1.37,1.37,50.37,3.89,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,16,264,clementine perche,Pia Explosive Star,Cane da pastore scozzese shetland,FRA,0,1,0.0,5.0,36.24,5.41,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,17,77,David El ballouta,Shanelle,Cocker spaniel inglese,FRA,0,1,0.0,5.0,42.46,4.62,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,18,237,Nicola Caldarisi,Mavie-F di Foscalberto,Barboni nano rosso fulvo,ITA,0,1,0.0,5.0,42.68,4.59,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,19,105,Petitjean Magali,Ohlins,Cane da pastore scozzese shetland,FRA,0,1,0.0,5.0,43.32,4.52,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,20,126,Sara Berti,ROULETTE DELLA LINEA DEI PENSIERI,Cane da pastore scozzese shetland,ITA,0,1,0.0,5.0,43.8,4.47,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,21,326,Luca Notario,STEEP CLIFF DE L'ALLIANCE DE KERMA,"Spitz tedeschi piccolo arancio, grigio o altri colori",FRA,1,0,2.54,7.54,51.54,3.8,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,22,193,Angelo Mainetti,TAJADELA FOR ARIELLE'S DEMON,Zwergpinscher,ITA,1,1,0.0,10.0,42.7,4.59,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,23,338,Soana Martinengo,ROSE MY LOVE,Cane da pastore scozzese shetland,ITA,2,2,0.0,20.0,44.43,4.41,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,24,398,Marije Doppenberg,Hazel,Chinese crested dog con pelo,NLD,0,2,12.0,22.0,61.0,3.21,False,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,101,serena galleri,TRULY-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,107,Belmiro  Sousa,Be,Cane da pastore scozzese shetland,AUT,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,133,Chiara Olivetti,PRIMO CAVALIERE SPRING BLOOMING,Boston terrier,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,149,CRISTINA BORRA,HERMES,Cane da pastore scozzese shetland,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,160,Valentina Zanella,ROCKSTAR,Cane da pastore scozzese shetland,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,19,Adriano Begalli,AMICO TERRIER'S SERENDIPITY HAPPENS,Parson  russell terrier,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,209,Estelle Cosson,TYRA LA NOIRE,Cane da pastore scozzese shetland,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,226,Camilla  Zambotto,FACE OF GOLD OF SUMMERGARDEN,Cane da pastore scozzese shetland,,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,290,Sabrina Liochon,Pin-up,Cane da pastore scozzese shetland,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,296,Angela Pecini,NOEL,Cane da pastore scozzese shetland,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,301,Tatiana Mattelich,JESSICA FLETCHER DELLA LINEA DEI PENSIERI,Cane da pastore scozzese shetland,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,321,Goyet Julien,Pop rock,Cane da pastore scozzese shetland,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,341,Giorgio Massimiliano Grasso,SONNY-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,353,DANIELA TUGNOLO,DHARMA-B OF CRAZY SISSY'S HOME,Barboni bianco,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,359,MONNIER Marie-Eve,Quartz,Cane da pastore scozzese shetland,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,365,Emanuela Bordignon,BRICCIBA'S COCAINE,Schipperkee da 3 a 5 kg.,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,51,Annie Boyer,Just a Border Queen,Border terrier,FRA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196
+Alpine Agility Open 2024,ind_jumping_small_1,Small,Jumping,False,,98,Christian Di Geronimo,PICCOLO BA DEL CURICCIO,Cane da pastore scozzese shetland,ITA,,,,,,,True,BIRCOLOTTI FRANCESCO LUIGI,49,73.5,196

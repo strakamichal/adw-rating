@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Agility Plaza</title>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap-flex.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="/cardjs/card-js.min.css">
+  <link rel="stylesheet" href="/css/style_v1.61.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <style>
+    @media screen and (min-device-width: 420px) and (orientation: portrait), screen and (min-device-height: 420px) and (orientation: landscape) {
+        .underlay {
+            background: url(/img/back/back13a.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            opacity: .5;
+        }
+    }
+    
+  </style>
+</head>
+<html lang="en" style="font-size: 12pt">
+  <body>
+    <!-- Forms-->
+    <!-- Buttons & Links-->
+    <!-- Grids and Cards-->
+    <!-- Misc-->
+    <div class="underlay"></div>
+    <input type="hidden" id="refresh" value="no">
+    <!-- Navbar-->
+    <div class="top-bar"><a href="javascript:showLoading();location.reload()"><img class="sm-up navLogo" src="/img/logo.svg"><img class="xs-down navLogo" src="/img/logo_small.svg"></a>
+      <div class="md-up"></div><a class="btn-nav-top" href="/"><i class='fa fa-arrow-left'></i> Back</a>
+      <div class="nav-panel-toggle float-right"><a class="btn-nav-top float-right" href="javascript:toggleNavPanel()"><i class='fa fa-bars'></i> <span>Menu</span></a>
+      </div>
+    </div>
+    <div class="title-bar"><span>Agility Plaza</span>
+    </div>
+    <div class="nav-panel">
+      <div class="page-title">Agility Plaza</div>
+      <hr>
+      <div class="general"><a class="btn-panel" href="/live?root=true"><i class='fa fa-bolt'></i> Live & Imminent Shows</a><a class="btn-panel" href="/results?root=true"><i class='fa fa-trophy'></i> Results</a><a class="btn-panel" href="/competition/active?root=true"><i class='fa fa-calendar'></i> Show Diary</a><a class="btn-panel" href="/series_list?root=true"><i class='fa fa-award'></i> Leagues & Heats</a>
+      </div>
+      <!--+button("link", "Training Clubs", "graduation-cap", {href: "/training/active?root=true", panel: true})-->
+      <hr>
+      <div class="w-100">&nbsp;<a href="/"><i class='fa fa-home'></i> Home</a><a class=" float-right" href="/login"><i class='fa fa-sign-in'></i> Login</a><span class="float-right">/</span><a class=" float-right" href="/open/register"><i class='fa fa-sign-in'></i> Register</a>
+      </div>
+      <hr>
+      <div class="list font90">
+        <div class="list-item"><a href="/open/terms?root=true"><span>Terms & Conditions</span></a>
+        </div>
+        <div class="list-item"><a href="/open/privacy?root=true"><span>Privacy Policy</span></a>
+        </div>
+        <div class="list-item"><a href="/open/about?root=true"><span>About Us</span></a>
+        </div>
+        <div class="list-item"><a href="/open/contact?root=true"><span>Contact</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="home-panel">
+      <div class="container-fluid">
+        <div class="text-xs-center" id="loading"><img src="/img/wait.svg" width="120"></div>
+        <div class="max65">
+              <div class="card" id="card1">
+                <div class="card-header"><i class='fa fa-trophy')></i>&ensp;Intermediate Individual Final</div>
+                <div class="card-block">
+                  <table class="table table-sm table-striped">
+                    <thead>
+                      <td colspan="99">Course Time: 41 secs, 221m</td>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Award</th>
+                        <th>Name</th>
+                        <th class="text-sm-center">Country</th>
+                        <th class="text-sm-center">Run Data</th>
+                        <th class="text-sm-right">Faults</th>
+                        <th class="text-sm-center">Time</th>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">1 (T)</td>
+                        <td class="align-middle hidden-md-up">1 (T)</td>
+                        <td class="align-middle hidden-sm-down">Jesus Bautista Jaime &amp; Nissa ()</td>
+                        <td class="align-middle hidden-md-up">Jesus Bautista Jaime &amp; Nissa</td>
+                        <td class="align-middle text-sm-center">ES</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">35.646</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">2 (T)</td>
+                        <td class="align-middle hidden-md-up">2 (T)</td>
+                        <td class="align-middle hidden-sm-down">Christiane Fischbach &amp; Salt ()</td>
+                        <td class="align-middle hidden-md-up">Christiane Fischbach &amp; Salt</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">35.950</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">3 (T)</td>
+                        <td class="align-middle hidden-md-up">3 (T)</td>
+                        <td class="align-middle hidden-sm-down">Ariane Wieber &amp; Zola ()</td>
+                        <td class="align-middle hidden-md-up">Ariane Wieber &amp; Zola</td>
+                        <td class="align-middle text-sm-center">NO</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">35.998</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Magdalena Wasiukiewicz &amp; Dumka ()</td>
+                        <td class="align-middle hidden-md-up">Magdalena Wasiukiewicz &amp; Dumka</td>
+                        <td class="align-middle text-sm-center">PL</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">36.985</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Anne Lenz &amp; Itzi Bitzi ()</td>
+                        <td class="align-middle hidden-md-up">Anne Lenz &amp; Itzi Bitzi</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">36.997</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Euan Paterson &amp; Crazee (AG CH Devongem Quick Time)</td>
+                        <td class="align-middle hidden-md-up">Euan Paterson &amp; Crazee</td>
+                        <td class="align-middle text-sm-center">GB-S</td>
+                        <td class="align-middle text-sm-center">5</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">35.745</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Lee Gibson &amp; Star (Euro Star)</td>
+                        <td class="align-middle hidden-md-up">Lee Gibson &amp; Star</td>
+                        <td class="align-middle text-sm-center">GB-E</td>
+                        <td class="align-middle text-sm-center">R</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">39.381</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Anne Lenz &amp; Yippie ()</td>
+                        <td class="align-middle hidden-md-up">Anne Lenz &amp; Yippie</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center">R</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">40.290</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Monika Rylska &amp; Koza Nostra ()</td>
+                        <td class="align-middle hidden-md-up">Monika Rylska &amp; Koza Nostra</td>
+                        <td class="align-middle text-sm-center">PL</td>
+                        <td class="align-middle text-sm-center">5, 5</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">36.159</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Kine Eimhjellen &amp; Kos (Kos)</td>
+                        <td class="align-middle hidden-md-up">Kine Eimhjellen &amp; Kos</td>
+                        <td class="align-middle text-sm-center">NO</td>
+                        <td class="align-middle text-sm-center">5, 5</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">36.308</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Gerda Zemaityte &amp; Lee (Sabshai A'lee)</td>
+                        <td class="align-middle hidden-md-up">Gerda Zemaityte &amp; Lee</td>
+                        <td class="align-middle text-sm-center">LT</td>
+                        <td class="align-middle text-sm-center">5, 5</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">38.322</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Marita Ogilvie &amp; Cicada (AG CH Darleyfalls Cryptic Enigma)</td>
+                        <td class="align-middle hidden-md-up">Marita Ogilvie &amp; Cicada</td>
+                        <td class="align-middle text-sm-center">GB-E</td>
+                        <td class="align-middle text-sm-center">5, R, T0.221</td>
+                        <td class="align-middle text-sm-right">10.221</td>
+                        <td class="align-middle text-sm-center">41.221</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Barbora Novotná &amp; Bon Bibi Devetsil ()</td>
+                        <td class="align-middle hidden-md-up">Barbora Novotná &amp; Bon Bibi Devetsil</td>
+                        <td class="align-middle text-sm-center">CZ</td>
+                        <td class="align-middle text-sm-center">R, 5, T1.120</td>
+                        <td class="align-middle text-sm-right">11.120</td>
+                        <td class="align-middle text-sm-center">42.120</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Federica Grilli &amp; Gina (Nangamai Jelly Bean)</td>
+                        <td class="align-middle hidden-md-up">Federica Grilli &amp; Gina</td>
+                        <td class="align-middle text-sm-center">IT</td>
+                        <td class="align-middle text-sm-center">R, R, T3.285</td>
+                        <td class="align-middle text-sm-right">13.285</td>
+                        <td class="align-middle text-sm-center">44.285</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Lila Zachwatowicz &amp; Dashee (Dash Of Rainbowdale)</td>
+                        <td class="align-middle hidden-md-up">Lila Zachwatowicz &amp; Dashee</td>
+                        <td class="align-middle text-sm-center">GB-E</td>
+                        <td class="align-middle text-sm-center">R, R, T4.894</td>
+                        <td class="align-middle text-sm-right">14.894</td>
+                        <td class="align-middle text-sm-center">45.894</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Chris Tucci &amp; Serengeti ()</td>
+                        <td class="align-middle hidden-md-up">Chris Tucci &amp; Serengeti</td>
+                        <td class="align-middle text-sm-center">US</td>
+                        <td class="align-middle text-sm-center">5, R, R, T3.820</td>
+                        <td class="align-middle text-sm-right">18.820</td>
+                        <td class="align-middle text-sm-center">44.820</td>
+                      </tr>
+                    </tbody>
+                    <tr>
+                      <td colspan="99"><strong>Eliminated</strong>: Aline Tricot &amp; Vanina Of Speed Of Light, Michele Pauwels &amp; Nica, Steve Seale &amp; Flec, Kris Seiter &amp; Naavdanya, Ola Kordas &amp; Visa, Bob Daigle &amp; Blew Bayou (5, 5), Katerina Mrázková &amp; Gwaii, Paul Hinchley &amp; Zera (5), Ruben Jurado Marquez &amp; West Mist Night Fury, Iwona Golab &amp; Seeya (R), Pascale Kühn &amp; Merci Of Austrian Starlight, Dana Mixová &amp; Valerie (R), Jada Sawhney &amp; Zula, Euan Paterson &amp; Cuckoo (R), Tobias Wüst &amp; Eve With Eager To Work (R, R), Pau Serrano Ciratusa &amp; Break (5, 5, R, 5, R), Dalton Meredith &amp; Eclipse (5, 5), Stephanie Best &amp; Believe (5)</td>
+                    </tr>
+                  </table>
+                  <div class="mt-1"></div><a class="btn mr-1 btn-secondary btn-sm" href="https://api.agilityplaza.com/agilityClass/1446912462/results/pdf/results_1446912462.pdf"><i class='far fa-file-pdf'></i> Download PDF</a>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPTS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+    <script src="/api_v1.9e.js"></script>
+    <script>
+      $(document).ready(function (e) {
+          var $input = $('#refresh');
+          $input.val() == 'yes' ? location.reload(true) : $input.val('yes');
+      });
+      
+      jQuery("#screenWidth").text(screen.width)
+      jQuery("#screenHeight").text(screen.height)
+      jQuery("#windowWidth").text(window.innerWidth)
+      jQuery("#windowHeight").text(window.innerHeight)
+      
+      jQuery(window).resize(function () {
+          jQuery("#screenWidth").text(screen.width)
+          jQuery("#screenHeight").text(screen.height)
+          jQuery("#windowWidth").text(window.outerWidth)
+          jQuery("#windowHeight").text(window.outerHeight)
+      })
+    </script>
+    <script>
+      bindForm("spoofForm", "/api/spoof", {
+          spoof: {
+              idCompetitor: "",
+              token: ""
+          }
+      })
+      
+      var mimeCheck = function (type) {
+          return Array.prototype.reduce.call(navigator.plugins, function (supported, plugin) {
+              return supported || Array.prototype.reduce.call(plugin, function (supported, mime) {
+                  return supported || mime.type == type;
+              }, supported);
+          }, false);
+      };
+      
+      /*
+      window.addEventListener("beforeunload", function () {
+          console.info("when beforeunload")
+          showLoading();
+      });
+      
+      window.addEventListener("pageshow", function () {
+          console.info("when window pageshow")
+          hideLoading();
+      });
+      */
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,975 @@
+competition,round_key,size,discipline,is_team_round,rank,start_no,handler,dog,breed,country,faults,refusals,time_faults,total_faults,time,speed,eliminated,judge,sct,mct,course_length
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,1,412,"Rylska, Monika",Kozi,Border Collie,POL,0,0,0.00,0.00,35.38,6.13,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,2,400,"Gronek, Ola",Cosmo,Border Collie,POL,0,0,0.00,0.00,36.67,5.92,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,3,417,"Krejci, Lucie",Tori,Border Collie,CZE,0,0,0.00,0.00,37.19,5.83,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,4,429,"Diviš, Jakub",Cis,Border Collie,CZE,0,0,0.00,0.00,38.36,5.66,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,5,428,"Dambrauskaite, Rita",Moshke,Border Collie,LTU,0,0,0.00,0.00,39.08,5.55,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,6,434,"Neuwald, Małgorzata",Flik,Kelpie,POL,0,0,0.00,0.00,39.90,5.44,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,7,431,"Kłobukowska, Ola",Yuca,Border Collie,POL,1,0,0.00,5.00,35.42,6.13,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,8,430,"Gronek, Ola",Heya,Border Collie,POL,1,0,0.00,5.00,35.83,6.06,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,9,427,"Lopeta, Vytautas",Barbra,Border Collie,LTU,1,0,0.00,5.00,38.18,5.68,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,10,408,"Cisak, Krystyna",Iskra,Mudi,POL,1,0,0.00,5.00,38.88,5.58,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,11,406,"Szulczewska, Kinga",Up,Border Collie,POL,2,0,0.00,10.00,37.42,5.8,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,12,419,"Denysenko, Nataliia",Astrid,Border Collie,UKR,2,0,0.00,10.00,38.67,5.61,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,13,423,"Duda, Paulina",Free,Border Collie,POL,2,0,0.00,10.00,39.36,5.51,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,14,418,"Iversen, Monica",Abby,Border Collie,NOR,2,0,0.00,10.00,40.58,5.35,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,15,411,"Ujma, Michał",Raisa,Mudi,POL,2,0,1.30,11.30,42.30,5.13,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,16,402,"Michalak, Katarzyna",Mizu,Whippet,POL,2,0,3.79,13.79,44.79,4.84,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,17,438,"Kielecki, Andrzej",Blue,Border Collie,POL,1,1,5.41,15.41,46.41,4.68,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,18,404,"Schwarz, Małgorzata",Bibi,Border Collie,POL,1,0,14.40,19.40,55.40,3.92,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,19,437,"Schwarz, Małgorzata",Zuzia,Border Collie,POL,4,2,12.53,42.53,53.53,4.05,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,424,"Doppenberg, Marije",Helder,Border Collie,NLD,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,401,"Kielecki, Andrzej",Holly,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,420,"von Sachs, Melanie",Momo,Border Collie,DEU,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,405,"Nowińska, Oliwia",Om,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,426,"Dambrauskaite, Elena",Amie,Border Collie,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,410,"Szczepkowska, Katarzyna",Lato,Cocker Spaniel,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,407,"Zakotnik, Daša",Ki,Border Collie,SVN,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,425,"Lesniak, Agata",Skipper,Kooikerhondje,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,409,"Bawer, Beata",Asteri,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,421,"Maruszczak, Roman",Reksio,Pyrenean Shepherd,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,422,"Rachubińska, Joanna",Aria,Kelpie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,413,"Engelen, Claudia",Tex-Mex,Mudi,NLD,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,414,"Krejci, Jan",Airi,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,416,"Terčová, Katka",Knedlee Czech,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,415,"Mudrova, Apolenka",Foxie,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,403,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,433,"Višvaderová, Zuzana",Arrow,Kelpie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,435,"Kovalenko, Kateryna",Totori,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,436,"Cisak, Krystyna",Smok,MIX,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,432,"Zakotnik, Daša",Spin,Border Collie,SVN,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,1,432,"Zakotnik, Daša",Spin,Border Collie,SVN,0,0,0.00,0.00,36.43,5.68,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,2,407,"Zakotnik, Daša",Ki,Border Collie,SVN,0,0,0.00,0.00,36.88,5.61,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,3,412,"Rylska, Monika",Kozi,Border Collie,POL,0,0,0.00,0.00,37.49,5.52,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,4,431,"Kłobukowska, Ola",Yuca,Border Collie,POL,0,0,0.00,0.00,37.88,5.46,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,5,417,"Krejci, Lucie",Tori,Border Collie,CZE,0,0,0.00,0.00,38.16,5.42,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,6,429,"Diviš, Jakub",Cis,Border Collie,CZE,0,0,0.00,0.00,38.87,5.33,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,7,428,"Dambrauskaite, Rita",Moshke,Border Collie,LTU,0,0,0.00,0.00,39.58,5.23,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,8,434,"Neuwald, Małgorzata",Flik,Kelpie,POL,0,0,0.00,0.00,41.75,4.96,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,9,413,"Engelen, Claudia",Tex-Mex,Mudi,NLD,1,0,0.00,5.00,39.20,5.28,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,10,416,"Terčová, Katka",Knedlee Czech,Border Collie,CZE,1,0,0.00,5.00,39.83,5.2,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,11,402,"Michalak, Katarzyna",Mizu,Whippet,POL,1,0,2.71,7.71,44.71,4.63,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,12,411,"Ujma, Michał",Raisa,Mudi,POL,2,0,1.70,11.70,43.70,4.74,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,13,438,"Kielecki, Andrzej",Blue,Border Collie,POL,1,0,6.71,11.71,48.71,4.25,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,14,410,"Szczepkowska, Katarzyna",Lato,Cocker Spaniel,POL,1,1,5.18,15.18,47.18,4.39,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,15,437,"Schwarz, Małgorzata",Zuzia,Border Collie,POL,3,1,20.28,40.28,62.28,3.32,False,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,422,"Rachubińska, Joanna",Aria,Kelpie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,435,"Kovalenko, Kateryna",Totori,Border Collie,UKR,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,427,"Lopeta, Vytautas",Barbra,Border Collie,LTU,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,403,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,419,"Denysenko, Nataliia",Astrid,Border Collie,UKR,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,400,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,426,"Dambrauskaite, Elena",Amie,Border Collie,LTU,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,414,"Krejci, Jan",Airi,Border Collie,CZE,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,423,"Duda, Paulina",Free,Border Collie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,405,"Nowińska, Oliwia",Om,Border Collie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,406,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,401,"Kielecki, Andrzej",Holly,Border Collie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,418,"Iversen, Monica",Abby,Border Collie,NOR,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,421,"Maruszczak, Roman",Reksio,Pyrenean Shepherd,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,415,"Mudrova, Apolenka",Foxie,Border Collie,CZE,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,425,"Lesniak, Agata",Skipper,Kooikerhondje,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,436,"Cisak, Krystyna",Smok,MIX,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,409,"Bawer, Beata",Asteri,Border Collie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,424,"Doppenberg, Marije",Helder,Border Collie,NLD,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,433,"Višvaderová, Zuzana",Arrow,Kelpie,CZE,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,408,"Cisak, Krystyna",Iskra,Mudi,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,404,"Schwarz, Małgorzata",Bibi,Border Collie,POL,,,,,,,True,Blaž Oven,,,207.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,1,611,"Kivilo, Alar",Yoko,Border Collie,EST,0,0,0.00,0.00,34.50,6.29,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,2,535,"Rylska, Monika",Foka,Border Collie,POL,0,0,0.00,0.00,34.64,6.26,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,3,601,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,0,0,0.00,0.00,34.73,6.25,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,4,602,"Bieńczak, Kamila",Fun,Border Collie,POL,0,0,0.00,0.00,35.23,6.16,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,5,514,"Rybová, Anna",Goji,Border Collie,CZE,0,0,0.00,0.00,35.51,6.11,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,6,573,"Ludvíková, Eliška",Kiwi,Border Collie,CZE,0,0,0.00,0.00,35.65,6.09,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,7,635,"Oberleitnerová, Adéla",Pulzí,Border Collie,CZE,0,0,0.00,0.00,35.74,6.07,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,8,560,"Gajzlerowicz, Adam",Dibi,Border Collie,POL,0,0,0.00,0.00,35.87,6.05,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,9,553,"Dahlgren, Neky",Maui,Border Collie,ARG,0,0,0.00,0.00,35.88,6.05,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,10,599,"Felczak, Zuzanna",Hoshi,Border Collie,POL,0,0,0.00,0.00,36.12,6.01,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,11,585,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,0,0,0.00,0.00,36.24,5.99,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,12,612,"Annus, Rita",Zirka,Border Collie,EST,0,0,0.00,0.00,36.40,5.96,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,13,588,"Akimova, Jekaterina",Shori,Border Collie,LVA,0,0,0.00,0.00,36.42,5.96,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,14,566,"Osińska, Ada",Fila,Border Collie,POL,0,0,0.00,0.00,36.44,5.95,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,15,568,"Mielnicka, Patrycja",Wish,Border Collie,POL,0,0,0.00,0.00,36.95,5.87,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,16,557,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,0,0,0.00,0.00,37.02,5.86,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,17,529,"Jarczak, Aneta",Taco,Border Collie,POL,0,0,0.00,0.00,37.14,5.84,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,18,530,"Rybok, Urszula",Amira,Malinois,POL,0,0,0.00,0.00,37.19,5.83,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,19,633,"Nýdrlová, Nela",Deci,Border Collie,CZE,0,0,0.00,0.00,37.52,5.78,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,20,594,"Maj, Kamila",Zoja,Border Collie,POL,0,0,0.00,0.00,37.59,5.77,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,21,565,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,0,0,0.00,0.00,37.97,5.72,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,22,513,"Denysenko, Daria",Crowley,Border Collie,UKR,0,0,0.00,0.00,38.14,5.69,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,23,630,"Dančišák, Erik",Nessie,Border Collie,CZE,0,0,0.00,0.00,39.00,5.56,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,24,556,"Sapáková, Lucie",Alto,Malinois,CZE,0,0,0.00,0.00,39.85,5.45,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,25,503,"Janusauskiene, Jolanta",Brille,Groenendael,LTU,0,0,2.91,2.91,42.91,5.06,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,26,539,"Vesela, Veronika",Kaspian,Border Collie,CZE,0,0,4.99,4.99,44.99,4.82,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,27,536,"Karpińska, Natalia",Pamper,Border Collie,POL,1,0,0.00,5.00,34.66,6.26,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,28,524,"Litwin, Klaudia",Mer,Border Collie,POL,1,0,0.00,5.00,35.02,6.2,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,29,564,"Guobys, Vytautas",Ara,Border Collie,LTU,1,0,0.00,5.00,35.03,6.19,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,30,591,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,1,0,0.00,5.00,35.05,6.19,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,31,538,"Šišovská, Natálie",Banán,Border Collie,CZE,1,0,0.00,5.00,36.81,5.9,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,32,575,"Terčová, Katka",Pszenik,Border Collie,CZE,1,0,0.00,5.00,37.16,5.84,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,33,541,"Galitska, Stella",Baya,Border Collie,UKR,1,0,0.00,5.00,37.24,5.83,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,34,511,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,1,0,0.00,5.00,37.47,5.79,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,35,570,"Bednarek, Aleksandra",Mushu,Border Collie,POL,1,0,0.00,5.00,37.56,5.78,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,36,605,"Vitáková, Alena",Ben,Border Collie,CZE,1,0,0.00,5.00,37.81,5.74,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,37,554,"Sajek, Kaja",Misty,Border Collie,POL,1,0,0.00,5.00,38.07,5.7,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,38,572,"Karpińska, Natalia",Adam Malysz,Border Collie,POL,1,0,0.00,5.00,38.31,5.66,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,39,595,"Daszewska, Martyna",Rivia,Border Collie,POL,1,0,0.00,5.00,38.55,5.63,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,40,631,"Lichecka, Natalia",Rei,Border Collie,POL,1,0,0.00,5.00,39.00,5.56,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,41,589,"Šišovská, Natálie",Messi,Border Collie,CZE,1,0,0.00,5.00,39.33,5.52,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,42,528,"Totoń, Agata",Spy,Border Collie,POL,1,0,0.31,5.31,40.31,5.38,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,43,559,"Kemezyte, Giedre",Tundra,MIX,LTU,0,0,5.52,5.52,45.52,4.77,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,44,576,"Terčová, Katka",Too Czech,Border Collie,CZE,0,1,0.97,5.97,40.97,5.3,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,45,547,"Iversen, Monica",Giller,Border Collie,NOR,1,0,1.22,6.22,41.22,5.26,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,46,616,"Kalisz, Iwona",Synek,Malinois,POL,1,0,1.64,6.64,41.64,5.21,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,47,634,"Martinů, Adéla",Grejda,Border Collie,CZE,0,1,1.68,6.68,41.68,5.21,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,48,617,"Kowalczewska, Zofia",Kleks,Border Collie,POL,0,1,1.69,6.69,41.69,5.21,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,49,509,"Dudek, Natalia",Luna,MIX,POL,0,0,7.17,7.17,47.17,4.6,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,50,582,"Łohunko, Marzena",Veikko,Border Collie,POL,0,1,3.54,8.54,43.54,4.98,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,51,623,"Jedrzejewski, Grzegorz",Pirat,Border Collie,POL,1,0,4.08,9.08,44.08,4.92,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,52,610,"Raamat, Keida",Prim,Border Collie,EST,2,0,0.00,10.00,34.35,6.32,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,53,545,"Loginova, Natalija",Lexa,Malinois,LVA,2,0,0.00,10.00,36.04,6.02,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,54,620,"Musioł, Ewa",Wolta,Border Collie,POL,2,0,0.00,10.00,36.21,5.99,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,55,608,"Konečná, Lucie",Time,Border Collie,CZE,2,0,0.00,10.00,37.38,5.81,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,56,532,"Łada, Zuzanna",Malinka,Tervueren,POL,2,0,0.00,10.00,37.80,5.74,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,57,583,"Nadratowska, Natalia",Garda,Border Collie,POL,2,0,0.00,10.00,39.61,5.48,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,58,534,"Sadal, Ewa",Dashi,Border Collie,POL,1,1,0.39,10.39,40.39,5.37,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,59,526,"Starzyk, Ewa",Koka,Border Collie,POL,2,0,0.45,10.45,40.45,5.36,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,60,517,"Cichocki, Leszek",Wolf,Groenendael,POL,2,0,0.50,10.50,40.50,5.36,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,61,613,"Gorska, Gabriela",Aiua,Border Collie,POL,1,1,0.59,10.59,40.59,5.35,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,62,603,"Ujma, Alicja",Lance,Kelpie,POL,1,1,0.90,10.90,40.90,5.31,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,63,502,"Barceviciene, Agne",Bona,Groenendael,LTU,1,1,1.26,11.26,41.26,5.26,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,64,579,"Palová, Veronika",Ravy,Groenendael,CZE,0,2,4.03,14.03,44.03,4.93,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,65,606,"Jůdová, Klára",Ený,Border Collie,CZE,3,0,0.00,15.00,36.40,5.96,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,66,632,"Man, Alicja",Rosomak,Australian Shepherd,POL,3,0,0.82,15.82,40.82,5.32,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,67,516,"Bąk, Natalia",Figa,Tervueren,POL,1,0,10.85,15.85,50.85,4.27,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,68,550,"Gadomska, Magda",Bej,Border Collie,POL,2,1,1.01,16.01,41.01,5.29,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,69,551,"Warsińska, Krystyna",Mango,MIX,POL,1,1,6.01,16.01,46.01,4.72,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,70,640,"Uhrová, Eva",Pupu,Kelpie,CZE,1,1,7.17,17.17,47.17,4.6,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,71,552,"Munzar, Milan",Goku,Border Collie,ARG,2,0,7.92,17.92,47.92,4.53,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,72,619,"Sobiecka, Anna",Stefan,Border Collie,POL,2,1,3.74,18.74,43.74,4.96,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,73,558,"Namajūnienė, Edita",Lokis,Tervueren,LTU,1,1,9.29,19.29,49.29,4.4,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,74,531,"Suterska, Wioletta",Beria,Malinois,POL,2,1,4.34,19.34,44.34,4.89,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,75,604,"Śnieg, Milena",Spritz,Border Collie,POL,3,1,0.00,20.00,38.78,5.6,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,76,521,"Tautvaišaitė, Šarūnė",Gilė,Labrador Retriever,LTU,1,1,12.04,22.04,52.04,4.17,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,77,522,"Kemezyte, Giedre",Runa,MIX,LTU,0,1,18.14,23.14,58.14,3.73,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,78,515,"Warsińska, Krystyna",Diuna,BOS,POL,6,0,0.00,30.00,39.62,5.48,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,79,627,"Koubová, Isabela",Skic,Border Collie,CZE,7,1,12.96,52.96,52.96,4.1,False,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,506,"Terčová, Katka",Dave,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,507,"Nadratowska, Natalia",Logan,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,597,"Dabrowska, Jana",Chia,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,592,"Czekaj, Tomasz",Heaven,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,574,"Kubů, Nikola",Pippa,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,607,"Lustyková, Kateřina",Ravioli,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,510,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,533,"Pietrusińska, Magdalena",Rzutka,Groenendael,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,563,"Deresińska, Małgorzata",Hunter,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,505,"Nomeikienė, Violeta",Mo,Samoyed,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,598,"Gronek, Ola",Deal,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,543,"Kutsenko, Iryna",Chika,Malinois,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,615,"Klityńska, Marta",Peak,Kelpie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,641,"Kłobukowska, Ola",Rush,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,639,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,646,"Haspeklová , Petra",Bria,Malinois,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,537,"Lorenz, Daniela",Zazzle,Border Collie,DEU,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,578,"Pálová, Tereza",Poker,Malinois,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,501,"Babiarz, Oliwia",Jan,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,636,"Volfova, Klara",Yomi,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,508,"Kozłowska-Mrozowska, Anna",Max,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,555,"Hulsbeek - Uenk, Linda",Kate,Border Collie,NLD,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,586,"Denysenko, Daria",Night,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,577,"Čápková, Marcela",Ami,Malinois,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,590,"Kutsenko, Iryna",Ajrish,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,637,"Kransoe, Mia",Aqui,Border Collie,DNK,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,593,"Flak, Tomasz",Rita,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,581,"Gawińska, Dominika",Kimi,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,642,"Dąbrowska, Agata",Zazu,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,580,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,600,"Fischer, Joanna",Limit,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,542,"Kosenko, Kateryna",Bon,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,504,"Svinkunaite, Aiste",Jini,Groenendael,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,548,"SIMON, Stéphanie",GLEN,Border Collie,FRA,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,626,"Krejci, Michal",Keiko,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,544,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,625,"Sats, Ingrid",Debbie,Kelpie,EST,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,628,"Łabędzki, Łukasz",Tajfun,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,587,"Denysenko, Nataliia",Rin,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,621,"Hornikova, Klara",Arya,Australian Shepherd,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,584,"Kubecka, Kinga",Dobisia,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,525,"Spyra, Karolina",Mishka,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,527,"Chęciak, Marta",Shifu,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,609,"Praakli, Stefi",Le,Border Collie,EST,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,523,"Kubecka, Kinga",Harnaś,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,622,"Caffrey, Jana",Leia,Poodle,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,519,"Hulsbeek - Uenk, Linda",Djack,Border Collie,NLD,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,638,"Hańderek, Wiktoria",Hero,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,518,"Szpakowska, Monika",Yatka,Tervueren,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,645,"Dančišák, Erik",Loosí,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,596,"Walczuk, Agnieszka",Zonda,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,561,"Chęciak, Marta",Elo,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,540,"Čápková, Marcela",Kvido,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,546,"Akimova, Jekaterina",Nakama,Border Collie,LVA,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,644,"Dudek, Agnieszka",Odi,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,562,"Tusińska, Katarzyna",Hemp,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,520,"Wyszkowska, Maja",Frostel,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,624,"Koterba, Aneta",Zoey,Australian Shepherd,POL,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,549,"Nilsson, Ida",Ivy,Border Collie,SWE,,,,,,,True,Anne Linn Johannessen Moen,,,217.0
+Polish Open SOFT 2024 (IN & L),ind_agility_large_2,Large,Agility,False,1,501,"Babiarz, Oliwia",Jan,Border Collie,POL,0,0,0.00,0.00,12.14,0,False,Blaž Oven,,,
+Polish Open SOFT 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,502,"Barceviciene, Agne",Bona,Groenendael,LTU,,,,,,,True,Blaž Oven,,,
+Polish Open SOFT 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,503,"Janusauskiene, Jolanta",Brille,Groenendael,LTU,,,,,,,True,Blaž Oven,,,
+Polish Open SOFT 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,504,"Svinkunaite, Aiste",Jini,Groenendael,LTU,,,,,,,True,Blaž Oven,,,
+Polish Open SOFT 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,505,"Nomeikienė, Violeta",Mo,Samoyed,LTU,,,,,,,True,Blaž Oven,,,
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,1,432,"Zakotnik, Daša",Spin,Border Collie,SVN,0,0,0.00,0.00,36.09,5.85,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,2,435,"Kovalenko, Kateryna",Totori,Border Collie,UKR,0,0,0.00,0.00,37.91,5.57,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,3,417,"Krejci, Lucie",Tori,Border Collie,CZE,0,0,0.00,0.00,37.99,5.55,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,4,431,"Kłobukowska, Ola",Yuca,Border Collie,POL,0,0,0.00,0.00,38.81,5.44,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,5,429,"Diviš, Jakub",Cis,Border Collie,CZE,0,0,0.00,0.00,39.31,5.37,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,6,434,"Neuwald, Małgorzata",Flik,Kelpie,POL,0,0,0.00,0.00,39.51,5.34,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,7,421,"Maruszczak, Roman",Reksio,Pyrenean Shepherd,POL,0,0,0.10,0.10,42.10,5.01,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,8,407,"Zakotnik, Daša",Ki,Border Collie,SVN,1,0,0.00,5.00,36.55,5.77,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,9,412,"Rylska, Monika",Kozi,Border Collie,POL,1,0,0.00,5.00,37.29,5.66,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,400,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,428,"Dambrauskaite, Rita",Moshke,Border Collie,LTU,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,430,"Gronek, Ola",Heya,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,1,611,"Kivilo, Alar",Yoko,Border Collie,EST,0,0,0.00,0.00,37.37,5.65,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,2,524,"Litwin, Klaudia",Mer,Border Collie,POL,0,0,0.00,0.00,37.43,5.64,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,3,601,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,0,0,0.00,0.00,37.64,5.61,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,4,602,"Bieńczak, Kamila",Fun,Border Collie,POL,0,0,0.00,0.00,37.85,5.57,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,5,573,"Ludvíková, Eliška",Kiwi,Border Collie,CZE,0,0,0.00,0.00,38.12,5.54,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,6,535,"Rylska, Monika",Foka,Border Collie,POL,0,0,0.00,0.00,38.18,5.53,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,7,645,"Dančišák, Erik",Loosí,Border Collie,CZE,0,0,0.00,0.00,38.65,5.46,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,8,545,"Loginova, Natalija",Lexa,Malinois,LVA,0,0,0.00,0.00,39.01,5.41,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,8,566,"Osińska, Ada",Fila,Border Collie,POL,0,0,0.00,0.00,39.01,5.41,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,10,575,"Terčová, Katka",Pszenik,Border Collie,CZE,0,0,0.00,0.00,39.94,5.28,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,11,553,"Dahlgren, Neky",Maui,Border Collie,ARG,0,0,0.00,0.00,39.95,5.28,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,12,586,"Denysenko, Daria",Night,Border Collie,UKR,0,0,0.00,0.00,40.01,5.27,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,13,588,"Akimova, Jekaterina",Shori,Border Collie,LVA,0,0,0.00,0.00,40.06,5.27,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,14,544,"Zarzecka, Karina",Abel,Border Collie,LVA,0,0,0.00,0.00,40.38,5.23,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,15,643,"Leśniak, Anna",Riksza,Border Collie,POL,1,0,0.00,5.00,36.68,5.75,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,16,600,"Fischer, Joanna",Limit,Border Collie,POL,1,0,0.00,5.00,37.88,5.57,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,17,606,"Jůdová, Klára",Ený,Border Collie,CZE,1,0,0.00,5.00,38.03,5.55,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,18,591,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,1,0,0.00,5.00,38.16,5.53,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,19,536,"Karpińska, Natalia",Pamper,Border Collie,POL,1,0,0.00,5.00,38.53,5.48,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,20,564,"Guobys, Vytautas",Ara,Border Collie,LTU,1,0,0.00,5.00,39.09,5.4,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,21,529,"Jarczak, Aneta",Taco,Border Collie,POL,1,0,0.00,5.00,39.33,5.36,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,22,570,"Bednarek, Aleksandra",Mushu,Border Collie,POL,1,0,0.00,5.00,39.95,5.28,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,23,633,"Nýdrlová, Nela",Deci,Border Collie,CZE,1,0,0.00,5.00,40.00,5.28,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,24,616,"Kalisz, Iwona",Synek,Malinois,POL,1,0,0.00,5.00,40.67,5.19,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,25,530,"Rybok, Urszula",Amira,Malinois,POL,0,1,0.00,5.00,40.68,5.19,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,26,597,"Dabrowska, Jana",Chia,Border Collie,POL,1,0,0.00,5.00,40.72,5.18,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,27,574,"Kubů, Nikola",Pippa,Border Collie,CZE,2,0,0.00,10.00,38.51,5.48,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,28,560,"Gajzlerowicz, Adam",Dibi,Border Collie,POL,2,0,0.00,10.00,38.95,5.42,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,29,630,"Dančišák, Erik",Nessie,Border Collie,CZE,2,0,0.00,10.00,40.96,5.15,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,30,593,"Flak, Tomasz",Rita,Border Collie,POL,2,0,0.00,10.00,41.22,5.12,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,31,572,"Karpińska, Natalia",Adam Malysz,Border Collie,POL,2,0,0.00,10.00,42.85,4.92,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,32,585,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,1,1,1.42,11.42,44.42,4.75,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,33,513,"Denysenko, Daria",Crowley,Border Collie,UKR,2,1,0.00,15.00,42.80,4.93,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,34,635,"Oberleitnerová, Adéla",Pulzí,Border Collie,CZE,4,0,0.00,20.00,37.68,5.6,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,35,576,"Terčová, Katka",Too Czech,Border Collie,CZE,3,1,1.06,21.06,44.06,4.79,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,,557,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,,612,"Annus, Rita",Zirka,Border Collie,EST,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,,538,"Šišovská, Natálie",Banán,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,,514,"Rybová, Anna",Goji,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,,537,"Lorenz, Daniela",Zazzle,Border Collie,DEU,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_final_large,Large,Final,False,,599,"Felczak, Zuzanna",Hoshi,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,1,407,"Zakotnik, Daša",Ki,Border Collie,SVN,0,0,0.00,0.00,33.30,6.34,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,2,412,"Rylska, Monika",Kozi,Border Collie,POL,0,0,0.00,0.00,33.51,6.3,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,3,430,"Gronek, Ola",Heya,Border Collie,POL,0,0,0.00,0.00,33.85,6.23,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,4,429,"Diviš, Jakub",Cis,Border Collie,CZE,0,0,0.00,0.00,34.66,6.09,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,5,431,"Kłobukowska, Ola",Yuca,Border Collie,POL,0,0,0.00,0.00,35.02,6.03,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,6,417,"Krejci, Lucie",Tori,Border Collie,CZE,0,0,0.00,0.00,35.08,6.01,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,7,416,"Terčová, Katka",Knedlee Czech,Border Collie,CZE,0,0,0.00,0.00,35.73,5.91,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,8,427,"Lopeta, Vytautas",Barbra,Border Collie,LTU,0,0,0.00,0.00,36.54,5.77,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,9,418,"Iversen, Monica",Abby,Border Collie,NOR,0,0,0.00,0.00,38.13,5.53,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,10,423,"Duda, Paulina",Free,Border Collie,POL,0,0,0.00,0.00,38.63,5.46,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,11,403,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,1,0,0.00,5.00,35.19,6,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,12,434,"Neuwald, Małgorzata",Flik,Kelpie,POL,1,0,0.00,5.00,37.39,5.64,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,13,435,"Kovalenko, Kateryna",Totori,Border Collie,UKR,0,1,0.99,5.99,39.99,5.28,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,14,404,"Schwarz, Małgorzata",Bibi,Border Collie,POL,0,0,6.31,6.31,45.31,4.66,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,15,438,"Kielecki, Andrzej",Blue,Border Collie,POL,1,0,2.07,7.07,41.07,5.14,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,16,411,"Ujma, Michał",Raisa,Mudi,POL,0,1,2.87,7.87,41.87,5.04,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,17,421,"Maruszczak, Roman",Reksio,Pyrenean Shepherd,POL,0,1,3.02,8.02,42.02,5.02,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,18,402,"Michalak, Katarzyna",Mizu,Whippet,POL,0,0,9.51,9.51,48.51,4.35,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,19,419,"Denysenko, Nataliia",Astrid,Border Collie,UKR,1,1,0.00,10.00,38.03,5.55,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,20,422,"Rachubińska, Joanna",Aria,Kelpie,POL,0,1,5.72,10.72,44.72,4.72,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,21,414,"Krejci, Jan",Airi,Border Collie,CZE,0,2,3.35,13.35,42.35,4.98,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,22,426,"Dambrauskaite, Elena",Amie,Border Collie,LTU,3,1,6.00,26.00,45.00,4.69,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,428,"Dambrauskaite, Rita",Moshke,Border Collie,LTU,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,406,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,424,"Doppenberg, Marije",Helder,Border Collie,NLD,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,410,"Szczepkowska, Katarzyna",Lato,Cocker Spaniel,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,400,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,432,"Zakotnik, Daša",Spin,Border Collie,SVN,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,405,"Nowińska, Oliwia",Om,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,420,"von Sachs, Melanie",Momo,Border Collie,DEU,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,413,"Engelen, Claudia",Tex-Mex,Mudi,NLD,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,408,"Cisak, Krystyna",Iskra,Mudi,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,436,"Cisak, Krystyna",Smok,MIX,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,401,"Kielecki, Andrzej",Holly,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,425,"Lesniak, Agata",Skipper,Kooikerhondje,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,433,"Višvaderová, Zuzana",Arrow,Kelpie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,437,"Schwarz, Małgorzata",Zuzia,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,409,"Bawer, Beata",Asteri,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,415,"Mudrova, Apolenka",Foxie,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,1,407,"Zakotnik, Daša",Ki,Border Collie,SVN,0,0,0.00,0.00,31.74,6.58,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,2,435,"Kovalenko, Kateryna",Totori,Border Collie,UKR,0,0,0.00,0.00,32.74,6.38,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,3,429,"Diviš, Jakub",Cis,Border Collie,CZE,0,0,0.00,0.00,32.95,6.34,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,4,434,"Neuwald, Małgorzata",Flik,Kelpie,POL,0,0,0.00,0.00,36.14,5.78,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,5,421,"Maruszczak, Roman",Reksio,Pyrenean Shepherd,POL,0,0,0.13,0.13,37.13,5.63,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,6,410,"Szczepkowska, Katarzyna",Lato,Cocker Spaniel,POL,0,0,1.20,1.20,38.20,5.47,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,7,411,"Ujma, Michał",Raisa,Mudi,POL,0,0,2.05,2.05,39.05,5.35,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,8,425,"Lesniak, Agata",Skipper,Kooikerhondje,POL,0,0,3.60,3.60,40.60,5.15,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,9,432,"Zakotnik, Daša",Spin,Border Collie,SVN,1,0,0.00,5.00,31.22,6.69,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,10,433,"Višvaderová, Zuzana",Arrow,Kelpie,CZE,1,0,0.00,5.00,31.39,6.66,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,11,416,"Terčová, Katka",Knedlee Czech,Border Collie,CZE,1,0,0.00,5.00,33.51,6.24,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,12,403,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,0,1,0.00,5.00,33.78,6.19,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,13,427,"Lopeta, Vytautas",Barbra,Border Collie,LTU,1,0,0.00,5.00,33.81,6.18,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,14,419,"Denysenko, Nataliia",Astrid,Border Collie,UKR,1,0,0.00,5.00,34.31,6.09,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,15,423,"Duda, Paulina",Free,Border Collie,POL,1,0,0.00,5.00,36.27,5.76,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,16,402,"Michalak, Katarzyna",Mizu,Whippet,POL,1,0,0.20,5.20,37.20,5.62,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,17,406,"Szulczewska, Kinga",Up,Border Collie,POL,0,2,0.74,10.74,37.74,5.54,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,18,405,"Nowińska, Oliwia",Om,Border Collie,POL,2,1,0.80,15.80,37.80,5.53,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,19,418,"Iversen, Monica",Abby,Border Collie,NOR,0,2,7.79,17.79,44.79,4.67,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,20,437,"Schwarz, Małgorzata",Zuzia,Border Collie,POL,1,1,8.06,18.06,45.06,4.64,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,431,"Kłobukowska, Ola",Yuca,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,438,"Kielecki, Andrzej",Blue,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,401,"Kielecki, Andrzej",Holly,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,424,"Doppenberg, Marije",Helder,Border Collie,NLD,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,408,"Cisak, Krystyna",Iskra,Mudi,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,428,"Dambrauskaite, Rita",Moshke,Border Collie,LTU,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,413,"Engelen, Claudia",Tex-Mex,Mudi,NLD,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,400,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,417,"Krejci, Lucie",Tori,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,426,"Dambrauskaite, Elena",Amie,Border Collie,LTU,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,422,"Rachubińska, Joanna",Aria,Kelpie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,409,"Bawer, Beata",Asteri,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,404,"Schwarz, Małgorzata",Bibi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,415,"Mudrova, Apolenka",Foxie,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,414,"Krejci, Jan",Airi,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,436,"Cisak, Krystyna",Smok,MIX,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,1,601,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,0,0,0.00,0.00,33.30,6.34,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,2,591,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,0,0,0.00,0.00,33.75,6.25,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,3,566,"Osińska, Ada",Fila,Border Collie,POL,0,0,0.00,0.00,34.78,6.07,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,4,599,"Felczak, Zuzanna",Hoshi,Border Collie,POL,0,0,0.00,0.00,34.87,6.05,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,5,574,"Kubů, Nikola",Pippa,Border Collie,CZE,0,0,0.00,0.00,35.17,6,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,6,575,"Terčová, Katka",Pszenik,Border Collie,CZE,0,0,0.00,0.00,35.39,5.96,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,7,538,"Šišovská, Natálie",Banán,Border Collie,CZE,0,0,0.00,0.00,35.56,5.93,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,8,586,"Denysenko, Daria",Night,Border Collie,UKR,0,0,0.00,0.00,35.98,5.86,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,9,564,"Guobys, Vytautas",Ara,Border Collie,LTU,0,0,0.00,0.00,36.04,5.85,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,10,513,"Denysenko, Daria",Crowley,Border Collie,UKR,0,0,0.00,0.00,36.17,5.83,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,11,633,"Nýdrlová, Nela",Deci,Border Collie,CZE,0,0,0.00,0.00,36.20,5.83,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,12,553,"Dahlgren, Neky",Maui,Border Collie,ARG,0,0,0.00,0.00,36.24,5.82,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,13,570,"Bednarek, Aleksandra",Mushu,Border Collie,POL,0,0,0.00,0.00,36.27,5.82,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,14,593,"Flak, Tomasz",Rita,Border Collie,POL,0,0,0.00,0.00,36.59,5.77,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,15,556,"Sapáková, Lucie",Alto,Malinois,CZE,0,0,0.00,0.00,36.69,5.75,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,16,557,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,0,0,0.00,0.00,37.24,5.67,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,17,616,"Kalisz, Iwona",Synek,Malinois,POL,0,0,0.00,0.00,37.31,5.66,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,18,592,"Czekaj, Tomasz",Heaven,Border Collie,POL,0,0,0.00,0.00,37.51,5.63,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,19,623,"Jedrzejewski, Grzegorz",Pirat,Border Collie,POL,0,0,1.30,1.30,40.30,5.24,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,20,523,"Kubecka, Kinga",Harnaś,Border Collie,POL,0,0,2.22,2.22,41.22,5.12,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,21,503,"Janusauskiene, Jolanta",Brille,Groenendael,LTU,0,0,3.45,3.45,42.45,4.97,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,22,535,"Rylska, Monika",Foka,Border Collie,POL,1,0,0.00,5.00,32.84,6.43,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,23,645,"Dančišák, Erik",Loosí,Border Collie,CZE,1,0,0.00,5.00,34.56,6.11,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,24,576,"Terčová, Katka",Too Czech,Border Collie,CZE,1,0,0.00,5.00,35.65,5.92,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,25,554,"Sajek, Kaja",Misty,Border Collie,POL,1,0,0.00,5.00,35.74,5.9,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,26,641,"Kłobukowska, Ola",Rush,Border Collie,POL,1,0,0.00,5.00,36.08,5.85,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,27,610,"Raamat, Keida",Prim,Border Collie,EST,0,1,0.00,5.00,36.12,5.84,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,28,619,"Sobiecka, Anna",Stefan,Border Collie,POL,1,0,0.00,5.00,36.47,5.79,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,29,526,"Starzyk, Ewa",Koka,Border Collie,POL,1,0,0.00,5.00,37.00,5.7,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,30,527,"Chęciak, Marta",Shifu,Border Collie,POL,1,0,0.00,5.00,37.33,5.65,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,31,534,"Sadal, Ewa",Dashi,Border Collie,POL,0,1,0.00,5.00,37.48,5.63,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,32,502,"Barceviciene, Agne",Bona,Groenendael,LTU,1,0,0.00,5.00,37.89,5.57,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,33,555,"Hulsbeek - Uenk, Linda",Kate,Border Collie,NLD,1,0,0.00,5.00,38.45,5.49,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,34,550,"Gadomska, Magda",Bej,Border Collie,POL,1,0,0.00,5.00,38.55,5.47,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,35,638,"Hańderek, Wiktoria",Hero,Border Collie,POL,1,0,0.00,5.00,38.74,5.45,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,36,541,"Galitska, Stella",Baya,Border Collie,UKR,0,1,1.69,6.69,40.69,5.19,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,37,505,"Nomeikienė, Violeta",Mo,Samoyed,LTU,0,0,7.75,7.75,46.75,4.51,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,38,509,"Dudek, Natalia",Luna,MIX,POL,0,0,9.19,9.19,48.19,4.38,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,39,635,"Oberleitnerová, Adéla",Pulzí,Border Collie,CZE,2,0,0.00,10.00,34.50,6.12,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,40,600,"Fischer, Joanna",Limit,Border Collie,POL,2,0,0.00,10.00,34.87,6.05,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,41,565,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,2,0,0.00,10.00,35.11,6.01,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,42,587,"Denysenko, Nataliia",Rin,Border Collie,UKR,2,0,0.00,10.00,35.25,5.99,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,43,581,"Gawińska, Dominika",Kimi,Border Collie,POL,2,0,0.00,10.00,35.85,5.89,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,44,577,"Čápková, Marcela",Ami,Malinois,CZE,2,0,0.00,10.00,35.92,5.87,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,45,504,"Svinkunaite, Aiste",Jini,Groenendael,LTU,2,0,0.00,10.00,37.00,5.7,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,46,507,"Nadratowska, Natalia",Logan,Border Collie,POL,1,1,0.00,10.00,37.19,5.67,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,47,612,"Annus, Rita",Zirka,Border Collie,EST,1,1,0.06,10.06,39.06,5.4,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,48,558,"Namajūnienė, Edita",Lokis,Tervueren,LTU,0,1,5.36,10.36,44.36,4.76,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,49,624,"Koterba, Aneta",Zoey,Australian Shepherd,POL,0,0,10.87,10.87,49.87,4.23,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,50,539,"Vesela, Veronika",Kaspian,Border Collie,CZE,0,1,8.14,13.14,47.14,4.48,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,51,596,"Walczuk, Agnieszka",Zonda,Border Collie,POL,1,1,3.32,13.32,42.32,4.99,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,52,532,"Łada, Zuzanna",Malinka,Tervueren,POL,1,1,3.53,13.53,42.53,4.96,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,53,522,"Kemezyte, Giedre",Runa,MIX,LTU,1,0,9.91,14.91,48.91,4.31,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,54,631,"Lichecka, Natalia",Rei,Border Collie,POL,3,0,0.00,15.00,34.11,6.19,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,55,611,"Kivilo, Alar",Yoko,Border Collie,EST,2,1,0.00,15.00,38.28,5.51,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,56,518,"Szpakowska, Monika",Yatka,Tervueren,POL,3,0,0.00,15.00,38.53,5.48,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,57,516,"Bąk, Natalia",Figa,Tervueren,POL,1,1,6.23,16.23,45.23,4.67,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,58,533,"Pietrusińska, Magdalena",Rzutka,Groenendael,POL,0,2,7.59,17.59,46.59,4.53,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,59,606,"Jůdová, Klára",Ený,Border Collie,CZE,2,1,3.05,18.05,42.05,5.02,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,60,583,"Nadratowska, Natalia",Garda,Border Collie,POL,1,2,4.32,19.32,43.32,4.87,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,61,594,"Maj, Kamila",Zoja,Border Collie,POL,4,0,0.00,20.00,35.70,5.91,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,62,560,"Gajzlerowicz, Adam",Dibi,Border Collie,POL,3,1,0.00,20.00,36.54,5.77,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,63,609,"Praakli, Stefi",Le,Border Collie,EST,3,1,0.00,20.00,38.65,5.46,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,64,508,"Kozłowska-Mrozowska, Anna",Max,Border Collie,POL,2,1,5.01,20.01,44.01,4.79,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,65,540,"Čápková, Marcela",Kvido,Border Collie,CZE,3,1,1.03,21.03,40.03,5.27,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,66,590,"Kutsenko, Iryna",Ajrish,Border Collie,UKR,1,2,6.43,21.43,45.43,4.64,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,67,622,"Caffrey, Jana",Leia,Poodle,CZE,1,1,15.20,25.20,54.20,3.89,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,68,521,"Tautvaišaitė, Šarūnė",Gilė,Labrador Retriever,LTU,2,2,11.68,31.68,50.68,4.16,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,69,642,"Dąbrowska, Agata",Zazu,Border Collie,POL,3,2,7.61,32.61,46.61,4.53,False,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,501,"Babiarz, Oliwia",Jan,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,597,"Dabrowska, Jana",Chia,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,567,"Suralińska, Paulina",Py,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,598,"Gronek, Ola",Deal,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,561,"Chęciak, Marta",Elo,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,572,"Karpińska, Natalia",Raskun,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,524,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,605,"Vitáková, Alena",Ben,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,607,"Lustyková, Kateřina",Ravioli,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,637,"Kransoe, Mia",Aqui,Border Collie,DNK,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,617,"Kowalczewska, Zofia",Kleks,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,589,"Šišovská, Natálie",Messi,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,545,"Loginova, Natalija",Lexa,Malinois,LVA,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,552,"Munzar, Milan",Goku,Border Collie,ARG,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,604,"Śnieg, Milena",Spritz,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,588,"Akimova, Jekaterina",Shori,Border Collie,LVA,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,525,"Spyra, Karolina",Mishka,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,639,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,602,"Bieńczak, Kamila",Fun,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,620,"Musioł, Ewa",Wolta,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,536,"Karpińska, Natalia",Pamper,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,585,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,628,"Łabędzki, Łukasz",Tajfun,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,531,"Suterska, Wioletta",Beria,Malinois,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,511,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,529,"Jarczak, Aneta",Taco,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,547,"Iversen, Monica",Giller,Border Collie,NOR,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,544,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,579,"Palová, Veronika",Ravy,Groenendael,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,584,"Kubecka, Kinga",Dobisia,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,517,"Cichocki, Leszek",Wolf,Groenendael,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,615,"Klityńska, Marta",Peak,Kelpie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,634,"Martinů, Adéla",Grejda,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,563,"Deresińska, Małgorzata",Hunter,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,595,"Daszewska, Martyna",Rivia,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,528,"Totoń, Agata",Spy,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,608,"Konečná, Lucie",Time,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,530,"Rybok, Urszula",Amira,Malinois,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,626,"Krejci, Michal",Keiko,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,514,"Rybová, Anna",Goji,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,621,"Hornikova, Klara",Arya,Australian Shepherd,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,644,"Dudek, Agnieszka",Odi,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,559,"Kemezyte, Giedre",Tundra,MIX,LTU,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,582,"Łohunko, Marzena",Veikko,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,515,"Warsińska, Krystyna",Diuna,BOS,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,632,"Man, Alicja",Rosomak,Australian Shepherd,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,573,"Ludvíková, Eliška",Kiwi,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,568,"Mielnicka, Patrycja",Wish,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,546,"Akimova, Jekaterina",Nakama,Border Collie,LVA,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,506,"Terčová, Katka",Dave,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,519,"Hulsbeek - Uenk, Linda",Djack,Border Collie,NLD,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,542,"Kosenko, Kateryna",Bon,Border Collie,UKR,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,640,"Uhrová, Eva",Pupu,Kelpie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,630,"Dančišák, Erik",Nessie,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,549,"Nilsson, Ida",Ivy,Border Collie,SWE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,543,"Kutsenko, Iryna",Chika,Malinois,UKR,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,551,"Warsińska, Krystyna",Mango,MIX,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,603,"Ujma, Alicja",Lance,Kelpie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,627,"Koubová, Isabela",Skic,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,580,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,520,"Wyszkowska, Maja",Frostel,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,636,"Volfova, Klara",Yomi,Border Collie,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,625,"Sats, Ingrid",Debbie,Kelpie,DNK,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,562,"Tusińska, Katarzyna",Hemp,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,548,"SIMON, Stéphanie",GLEN,Border Collie,FRA,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,578,"Pálová, Tereza",Poker,Malinois,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,646,"Haspeklová , Petra",Bria,Malinois,CZE,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,510,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,613,"Gorska, Gabriela",Aiua,Border Collie,POL,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,537,"Lorenz, Daniela",Zazzle,Border Collie,DEU,,,,,,,True,Blaž Oven,,,211.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,1,600,"Fischer, Joanna",Limit,Border Collie,POL,0,0,0.00,0.00,31.94,6.54,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,2,537,"Lorenz, Daniela",Zazzle,Border Collie,DEU,0,0,0.00,0.00,32.55,6.42,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,3,545,"Loginova, Natalija",Lexa,Malinois,LVA,0,0,0.00,0.00,33.01,6.33,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,4,599,"Felczak, Zuzanna",Hoshi,Border Collie,POL,0,0,0.00,0.00,33.05,6.32,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,5,566,"Osińska, Ada",Fila,Border Collie,POL,0,0,0.00,0.00,33.29,6.28,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,6,524,"Litwin, Klaudia",Mer,Border Collie,POL,0,0,0.00,0.00,33.34,6.27,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,7,597,"Dabrowska, Jana",Chia,Border Collie,POL,0,0,0.00,0.00,33.35,6.27,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,8,645,"Dančišák, Erik",Loosí,Border Collie,CZE,0,0,0.00,0.00,33.36,6.26,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,9,570,"Bednarek, Aleksandra",Mushu,Border Collie,POL,0,0,0.00,0.00,33.70,6.2,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,10,575,"Terčová, Katka",Pszenik,Border Collie,CZE,0,0,0.00,0.00,34.22,6.11,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,11,588,"Akimova, Jekaterina",Shori,Border Collie,LVA,0,0,0.00,0.00,34.36,6.08,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,12,576,"Terčová, Katka",Too Czech,Border Collie,CZE,0,0,0.00,0.00,34.49,6.06,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,13,606,"Jůdová, Klára",Ený,Border Collie,CZE,0,0,0.00,0.00,34.58,6.04,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,13,630,"Dančišák, Erik",Nessie,Border Collie,CZE,0,0,0.00,0.00,34.58,6.04,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,15,557,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,0,0,0.00,0.00,34.63,6.04,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,16,526,"Starzyk, Ewa",Koka,Border Collie,POL,0,0,0.00,0.00,35.48,5.89,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,17,593,"Flak, Tomasz",Rita,Border Collie,POL,0,0,0.00,0.00,35.83,5.83,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,18,547,"Iversen, Monica",Giller,Border Collie,NOR,0,0,0.00,0.00,36.84,5.67,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,19,619,"Sobiecka, Anna",Stefan,Border Collie,POL,0,0,0.40,0.40,37.40,5.59,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,20,617,"Kowalczewska, Zofia",Kleks,Border Collie,POL,0,0,0.45,0.45,37.45,5.58,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,21,623,"Jedrzejewski, Grzegorz",Pirat,Border Collie,POL,0,0,2.82,2.82,39.82,5.25,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,22,539,"Vesela, Veronika",Kaspian,Border Collie,CZE,0,0,2.93,2.93,39.93,5.23,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,23,622,"Caffrey, Jana",Leia,Poodle,CZE,0,0,3.52,3.52,40.52,5.16,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,24,558,"Namajūnienė, Edita",Lokis,Tervueren,LTU,0,0,3.63,3.63,40.63,5.14,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,25,640,"Uhrová, Eva",Pupu,Kelpie,CZE,0,0,3.97,3.97,40.97,5.1,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,26,503,"Janusauskiene, Jolanta",Brille,Groenendael,LTU,0,0,4.40,4.40,41.40,5.05,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,27,598,"Gronek, Ola",Deal,Border Collie,POL,1,0,0.00,5.00,32.31,6.47,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,28,591,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,1,0,0.00,5.00,32.36,6.46,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,29,643,"Leśniak, Anna",Riksza,Border Collie,POL,1,0,0.00,5.00,32.50,6.43,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,30,571,"Kaplińska, Zuzanna",Panna Surprise,Border Collie,POL,1,0,0.00,5.00,33.19,6.3,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,31,510,"Shustova, Tamila",Atom,Border Collie,UKR,1,0,0.00,5.00,33.31,6.27,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,32,605,"Vitáková, Alena",Ben,Border Collie,CZE,1,0,0.00,5.00,33.46,6.25,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,33,565,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,1,0,0.00,5.00,33.70,6.2,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,34,508,"Kozłowska-Mrozowska, Anna",Max,Border Collie,POL,1,0,0.00,5.00,33.98,6.15,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,35,629,"Benešová, Adéla",Fresh,Border Collie,CZE,1,0,0.00,5.00,34.16,6.12,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,36,587,"Denysenko, Nataliia",Rin,Border Collie,UKR,1,0,0.00,5.00,34.41,6.07,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,37,564,"Guobys, Vytautas",Ara,Border Collie,LTU,1,0,0.00,5.00,34.49,6.06,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,38,529,"Jarczak, Aneta",Taco,Border Collie,POL,1,0,0.00,5.00,34.50,6.06,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,39,556,"Sapáková, Lucie",Alto,Malinois,CZE,1,0,0.00,5.00,34.83,6,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,40,572,"Karpińska, Natalia",Raskun,Border Collie,POL,1,0,0.00,5.00,35.95,5.81,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,41,603,"Ujma, Alicja",Lance,Kelpie,POL,1,0,0.00,5.00,36.08,5.79,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,42,585,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,1,0,0.20,5.20,37.20,5.62,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,43,559,"Kemezyte, Giedre",Tundra,MIX,LTU,0,0,5.34,5.34,42.34,4.94,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,44,583,"Nadratowska, Natalia",Garda,Border Collie,POL,0,1,0.99,5.99,37.99,5.5,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,45,637,"Kransoe, Mia",Aqui,Border Collie,DNK,1,0,1.34,6.34,38.34,5.45,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,46,625,"Sats, Ingrid",Debbie,Kelpie,DNK,1,0,1.43,6.43,38.43,5.44,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,47,505,"Nomeikienė, Violeta",Mo,Samoyed,LTU,0,0,7.61,7.61,44.61,4.69,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,48,541,"Galitska, Stella",Baya,Border Collie,UKR,0,1,3.21,8.21,40.21,5.2,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,49,611,"Kivilo, Alar",Yoko,Border Collie,EST,2,0,0.00,10.00,32.19,6.49,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,50,601,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,2,0,0.00,10.00,32.31,6.47,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,51,574,"Kubů, Nikola",Pippa,Border Collie,CZE,2,0,0.00,10.00,32.42,6.45,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,52,578,"Pálová, Tereza",Poker,Malinois,CZE,2,0,0.00,10.00,32.81,6.37,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,53,527,"Chęciak, Marta",Shifu,Border Collie,POL,2,0,0.00,10.00,33.72,6.2,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,54,635,"Oberleitnerová, Adéla",Pulzí,Border Collie,CZE,2,0,0.00,10.00,33.91,6.16,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,55,595,"Daszewska, Martyna",Rivia,Border Collie,POL,1,1,0.54,10.54,37.54,5.57,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,56,633,"Nýdrlová, Nela",Deci,Border Collie,CZE,1,1,2.00,12.00,39.00,5.36,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,57,582,"Łohunko, Marzena",Veikko,Border Collie,POL,1,1,2.46,12.46,39.46,5.3,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,58,609,"Praakli, Stefi",Le,Border Collie,EST,0,2,3.47,13.47,40.47,5.16,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,59,592,"Czekaj, Tomasz",Heaven,Border Collie,POL,0,2,3.64,13.64,40.64,5.14,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,60,613,"Gorska, Gabriela",Aiua,Border Collie,POL,0,2,4.32,14.32,41.32,5.06,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,61,579,"Palová, Veronika",Ravy,Groenendael,CZE,3,0,0.00,15.00,34.10,6.13,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,62,612,"Annus, Rita",Zirka,Border Collie,EST,3,0,0.00,15.00,35.87,5.83,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,63,525,"Spyra, Karolina",Mishka,Border Collie,POL,3,0,0.00,15.00,36.32,5.75,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,64,589,"Šišovská, Natálie",Messi,Border Collie,CZE,2,1,0.00,15.00,36.45,5.73,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,65,639,"Mercebach, Heidi",Mali,Border Collie,DNK,0,2,5.56,15.56,42.56,4.91,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,66,521,"Tautvaišaitė, Šarūnė",Gilė,Labrador Retriever,LTU,2,0,10.76,20.76,47.76,4.38,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,67,581,"Gawińska, Dominika",Kimi,Border Collie,POL,4,1,0.76,25.76,37.76,5.53,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,68,607,"Lustyková, Kateřina",Ravioli,Border Collie,CZE,4,1,2.80,27.80,39.80,5.25,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,69,561,"Chęciak, Marta",Elo,Border Collie,POL,5,2,2.40,37.40,39.40,5.3,False,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,507,"Nadratowska, Natalia",Logan,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,528,"Totoń, Agata",Spy,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,584,"Kubecka, Kinga",Dobisia,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,536,"Karpińska, Natalia",Pamper,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,616,"Kalisz, Iwona",Synek,Malinois,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,642,"Dąbrowska, Agata",Zazu,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,615,"Klityńska, Marta",Peak,Kelpie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,608,"Konečná, Lucie",Time,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,514,"Rybová, Anna",Goji,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,646,"Haspeklová , Petra",Bria,Malinois,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,501,"Babiarz, Oliwia",Jan,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,532,"Łada, Zuzanna",Malinka,Tervueren,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,560,"Gajzlerowicz, Adam",Dibi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,502,"Barceviciene, Agne",Bona,Groenendael,LTU,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,634,"Martinů, Adéla",Grejda,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,618,"Szynczewska, Lena",Reo,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,520,"Wyszkowska, Maja",Frostel,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,644,"Dudek, Agnieszka",Odi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,550,"Gadomska, Magda",Bej,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,626,"Krejci, Michal",Keiko,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,624,"Koterba, Aneta",Zoey,Australian Shepherd,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,548,"SIMON, Stéphanie",GLEN,Border Collie,FRA,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,636,"Volfova, Klara",Yomi,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,534,"Sadal, Ewa",Dashi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,543,"Kutsenko, Iryna",Chika,Malinois,UKR,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,538,"Šišovská, Natálie",Banán,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,602,"Bieńczak, Kamila",Fun,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,540,"Čápková, Marcela",Kvido,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,632,"Man, Alicja",Rosomak,Australian Shepherd,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,504,"Svinkunaite, Aiste",Jini,Groenendael,LTU,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,641,"Kłobukowska, Ola",Rush,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,610,"Raamat, Keida",Prim,Border Collie,EST,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,638,"Hańderek, Wiktoria",Hero,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,628,"Łabędzki, Łukasz",Tajfun,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,506,"Terčová, Katka",Dave,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,516,"Bąk, Natalia",Figa,Tervueren,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,552,"Munzar, Milan",Goku,Border Collie,ARG,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,554,"Sajek, Kaja",Misty,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,542,"Kosenko, Kateryna",Bon,Border Collie,UKR,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,594,"Maj, Kamila",Zoja,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,533,"Pietrusińska, Magdalena",Rzutka,Groenendael,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,544,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,568,"Mielnicka, Patrycja",Wish,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,596,"Walczuk, Agnieszka",Zonda,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,511,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,620,"Musioł, Ewa",Wolta,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,531,"Suterska, Wioletta",Beria,Malinois,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,590,"Kutsenko, Iryna",Ajrish,Border Collie,UKR,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,517,"Cichocki, Leszek",Wolf,Groenendael,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,604,"Śnieg, Milena",Spritz,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,518,"Szpakowska, Monika",Yatka,Tervueren,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,577,"Čápková, Marcela",Ami,Malinois,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,509,"Dudek, Natalia",Luna,MIX,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,519,"Hulsbeek - Uenk, Linda",Djack,Border Collie,NLD,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,621,"Hornikova, Klara",Arya,Australian Shepherd,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,523,"Kubecka, Kinga",Harnaś,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,562,"Tusińska, Katarzyna",Hemp,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,627,"Koubová, Isabela",Skic,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,553,"Dahlgren, Neky",Maui,Border Collie,ARG,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,580,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,563,"Deresińska, Małgorzata",Hunter,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,546,"Akimova, Jekaterina",Nakama,Border Collie,LVA,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,551,"Warsińska, Krystyna",Mango,MIX,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,515,"Warsińska, Krystyna",Diuna,BOS,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,631,"Lichecka, Natalia",Rei,Border Collie,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,530,"Rybok, Urszula",Amira,Malinois,POL,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,549,"Nilsson, Ida",Ivy,Border Collie,SWE,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,555,"Hulsbeek - Uenk, Linda",Kate,Border Collie,NLD,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,522,"Kemezyte, Giedre",Runa,MIX,LTU,,,,,,,True,Tom Mercebach,,,209.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,1,400,"Gronek, Ola",Cosmo,Border Collie,POL,0,0,0.00,0.00,37.27,5.9,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,2,431,"Kłobukowska, Ola",Yuca,Border Collie,POL,0,0,0.00,0.00,38.00,5.79,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,3,430,"Gronek, Ola",Heya,Border Collie,POL,0,0,0.00,0.00,38.90,5.66,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,4,411,"Ujma, Michał",Raisa,Mudi,POL,0,0,2.91,2.91,45.91,4.79,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,5,433,"Višvaderová, Zuzana",Arrow,Kelpie,CZE,1,0,0.00,5.00,37.46,5.87,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,6,432,"Zakotnik, Daša",Spin,Border Collie,SVN,1,0,0.00,5.00,41.05,5.36,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,7,408,"Cisak, Krystyna",Iskra,Mudi,POL,0,1,0.00,5.00,41.29,5.33,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,8,401,"Kielecki, Andrzej",Holly,Border Collie,POL,0,1,2.24,7.24,45.24,4.86,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,9,403,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,2,0,0.00,10.00,38.45,5.72,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,10,429,"Diviš, Jakub",Cis,Border Collie,CZE,1,1,0.00,10.00,40.36,5.45,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,11,423,"Duda, Paulina",Free,Border Collie,POL,2,0,0.00,10.00,41.88,5.25,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,12,416,"Terčová, Katka",Knedlee Czech,Border Collie,CZE,2,1,0.32,15.32,43.32,5.08,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,13,426,"Dambrauskaite, Elena",Amie,Border Collie,LTU,1,2,1.34,16.34,44.34,4.96,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,14,410,"Szczepkowska, Katarzyna",Lato,Cocker Spaniel,POL,3,0,1.54,16.54,44.54,4.94,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,15,425,"Lesniak, Agata",Skipper,Kooikerhondje,POL,2,0,9.72,19.72,52.72,4.17,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,16,402,"Michalak, Katarzyna",Mizu,Whippet,POL,3,1,3.63,23.63,46.63,4.72,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,17,436,"Cisak, Krystyna",Smok,MIX,POL,2,2,5.48,25.48,48.48,4.54,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,424,"Doppenberg, Marije",Helder,Border Collie,NLD,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,418,"Iversen, Monica",Abby,Border Collie,NOR,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,412,"Rylska, Monika",Kozi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,427,"Lopeta, Vytautas",Barbra,Border Collie,LTU,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,421,"Maruszczak, Roman",Reksio,Pyrenean Shepherd,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,435,"Kovalenko, Kateryna",Totori,Border Collie,UKR,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,406,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,417,"Krejci, Lucie",Tori,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,428,"Dambrauskaite, Rita",Moshke,Border Collie,LTU,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,434,"Neuwald, Małgorzata",Flik,Kelpie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,414,"Krejci, Jan",Airi,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,404,"Schwarz, Małgorzata",Bibi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,419,"Denysenko, Nataliia",Astrid,Border Collie,UKR,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,413,"Engelen, Claudia",Tex-Mex,Mudi,NLD,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,422,"Rachubińska, Joanna",Aria,Kelpie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,438,"Kielecki, Andrzej",Blue,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,405,"Nowińska, Oliwia",Om,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,415,"Mudrova, Apolenka",Foxie,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,437,"Schwarz, Małgorzata",Zuzia,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,409,"Bawer, Beata",Asteri,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,1,641,"Kłobukowska, Ola",Rush,Border Collie,POL,0,0,0.00,0.00,37.25,5.91,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,2,600,"Fischer, Joanna",Limit,Border Collie,POL,0,0,0.00,0.00,37.27,5.9,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,3,535,"Rylska, Monika",Foka,Border Collie,POL,0,0,0.00,0.00,37.43,5.88,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,4,597,"Dabrowska, Jana",Chia,Border Collie,POL,0,0,0.00,0.00,37.46,5.87,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,5,620,"Musioł, Ewa",Wolta,Border Collie,POL,0,0,0.00,0.00,38.07,5.78,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,6,566,"Osińska, Ada",Fila,Border Collie,POL,0,0,0.00,0.00,39.26,5.6,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,7,545,"Loginova, Natalija",Lexa,Malinois,LVA,0,0,0.00,0.00,39.48,5.57,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,8,588,"Akimova, Jekaterina",Shori,Border Collie,LVA,0,0,0.00,0.00,39.54,5.56,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,9,513,"Denysenko, Daria",Crowley,Border Collie,UKR,0,0,0.00,0.00,40.11,5.48,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,10,557,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,0,0,0.00,0.00,41.11,5.35,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,11,603,"Ujma, Alicja",Lance,Kelpie,POL,0,0,0.00,0.00,42.05,5.23,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,12,637,"Kransoe, Mia",Aqui,Border Collie,DNK,0,0,0.00,0.00,42.26,5.21,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,13,531,"Suterska, Wioletta",Beria,Malinois,POL,0,0,0.00,0.00,42.48,5.18,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,14,568,"Mielnicka, Patrycja",Wish,Border Collie,POL,0,0,0.00,0.00,42.85,5.13,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,15,625,"Sats, Ingrid",Debbie,Kelpie,EST,0,0,2.62,2.62,45.62,4.82,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,16,503,"Janusauskiene, Jolanta",Brille,Groenendael,LTU,0,0,3.09,3.09,46.09,4.77,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,17,539,"Vesela, Veronika",Kaspian,Border Collie,CZE,0,0,3.36,3.36,46.36,4.75,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,18,598,"Gronek, Ola",Deal,Border Collie,POL,1,0,0.00,5.00,37.19,5.92,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,19,643,"Leśniak, Anna",Riksza,Border Collie,POL,1,0,0.00,5.00,37.45,5.87,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,20,537,"Lorenz, Daniela",Zazzle,Border Collie,DEU,1,0,0.00,5.00,37.58,5.85,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,21,636,"Volfova, Klara",Yomi,Border Collie,CZE,1,0,0.00,5.00,38.71,5.68,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,22,573,"Ludvíková, Eliška",Kiwi,Border Collie,CZE,1,0,0.00,5.00,38.90,5.66,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,23,565,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,1,0,0.00,5.00,39.40,5.58,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,24,564,"Guobys, Vytautas",Ara,Border Collie,LTU,1,0,0.00,5.00,39.48,5.57,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,25,575,"Terčová, Katka",Pszenik,Border Collie,CZE,1,0,0.00,5.00,39.59,5.56,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,26,586,"Denysenko, Daria",Night,Border Collie,UKR,1,0,0.00,5.00,39.64,5.55,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,27,605,"Vitáková, Alena",Ben,Border Collie,CZE,1,0,0.00,5.00,40.71,5.4,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,28,593,"Flak, Tomasz",Rita,Border Collie,POL,1,0,0.00,5.00,40.77,5.4,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,29,583,"Nadratowska, Natalia",Garda,Border Collie,POL,1,0,0.00,5.00,41.53,5.3,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,30,576,"Terčová, Katka",Too Czech,Border Collie,CZE,1,0,0.00,5.00,41.79,5.26,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,31,606,"Jůdová, Klára",Ený,Border Collie,CZE,1,0,0.00,5.00,41.88,5.25,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,32,589,"Šišovská, Natálie",Messi,Border Collie,CZE,1,0,0.17,5.17,43.17,5.1,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,33,622,"Caffrey, Jana",Leia,Poodle,CZE,0,0,5.46,5.46,48.46,4.54,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,34,505,"Nomeikienė, Violeta",Mo,Samoyed,LTU,0,0,6.32,6.32,49.32,4.46,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,35,578,"Pálová, Tereza",Poker,Malinois,CZE,2,0,0.00,10.00,37.68,5.84,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,36,570,"Bednarek, Aleksandra",Mushu,Border Collie,POL,2,0,0.00,10.00,39.61,5.55,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,37,538,"Šišovská, Natálie",Banán,Border Collie,CZE,2,0,0.00,10.00,39.75,5.53,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,38,572,"Karpińska, Natalia",Adam Malysz,Border Collie,POL,2,0,0.00,10.00,41.33,5.32,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,39,609,"Praakli, Stefi",Le,Border Collie,EST,1,1,0.00,10.00,42.72,5.15,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,40,587,"Denysenko, Nataliia",Rin,Border Collie,UKR,1,1,1.57,11.57,44.57,4.94,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,41,522,"Kemezyte, Giedre",Runa,MIX,LTU,0,0,13.39,13.39,56.39,3.9,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,42,574,"Kubů, Nikola",Pippa,Border Collie,CZE,3,0,0.00,15.00,38.47,5.72,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,43,585,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,3,0,0.00,15.00,39.45,5.58,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,44,592,"Czekaj, Tomasz",Heaven,Border Collie,POL,3,0,0.00,15.00,40.85,5.39,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,45,579,"Palová, Veronika",Ravy,Groenendael,CZE,3,0,0.00,15.00,42.16,5.22,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,46,510,"Shustova, Tamila",Atom,Border Collie,UKR,2,1,0.88,15.88,43.88,5.01,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,47,502,"Barceviciene, Agne",Bona,Groenendael,LTU,2,1,1.20,16.20,44.20,4.98,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,48,617,"Kowalczewska, Zofia",Kleks,Border Collie,POL,2,0,6.41,16.41,49.41,4.45,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,49,581,"Gawińska, Dominika",Kimi,Border Collie,POL,2,1,1.65,16.65,44.65,4.93,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,50,547,"Iversen, Monica",Giller,Border Collie,NOR,2,1,3.43,18.43,46.43,4.74,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,51,623,"Jedrzejewski, Grzegorz",Pirat,Border Collie,POL,1,1,9.42,19.42,52.42,4.2,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,52,519,"Hulsbeek - Uenk, Linda",Djack,Border Collie,NLD,2,1,4.75,19.75,47.75,4.61,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,53,511,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,4,0,0.00,20.00,38.76,5.68,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,54,516,"Bąk, Natalia",Figa,Tervueren,POL,0,1,15.01,20.01,58.01,3.79,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,55,624,"Koterba, Aneta",Zoey,Australian Shepherd,POL,1,0,16.46,21.46,59.46,3.7,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,56,640,"Uhrová, Eva",Pupu,Kelpie,CZE,1,0,16.61,21.61,59.61,3.69,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,57,602,"Bieńczak, Kamila",Fun,Border Collie,POL,3,1,1.89,21.89,44.89,4.9,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,58,549,"Nilsson, Ida",Ivy,Border Collie,SWE,4,1,0.00,25.00,42.23,5.21,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,59,632,"Man, Alicja",Rosomak,Australian Shepherd,POL,5,0,0.00,25.00,42.28,5.2,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,60,631,"Lichecka, Natalia",Rei,Border Collie,POL,5,0,1.81,26.81,44.81,4.91,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,61,551,"Warsińska, Krystyna",Mango,MIX,POL,3,1,14.32,34.32,57.32,3.84,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,62,619,"Sobiecka, Anna",Stefan,Border Collie,POL,3,1,16.61,36.61,59.61,3.69,False,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,514,"Rybová, Anna",Goji,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,523,"Kubecka, Kinga",Harnaś,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,541,"Galitska, Stella",Baya,Border Collie,UKR,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,634,"Martinů, Adéla",Grejda,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,515,"Warsińska, Krystyna",Diuna,BOS,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,555,"Hulsbeek - Uenk, Linda",Kate,Border Collie,NLD,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,646,"Haspeklová , Petra",Bria,Malinois,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,501,"Babiarz, Oliwia",Jan,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,612,"Annus, Rita",Zirka,Border Collie,EST,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,599,"Felczak, Zuzanna",Hoshi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,577,"Čápková, Marcela",Ami,Malinois,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,630,"Dančišák, Erik",Nessie,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,526,"Starzyk, Ewa",Koka,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,548,"SIMON, Stéphanie",GLEN,Border Collie,FRA,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,601,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,504,"Svinkunaite, Aiste",Jini,Groenendael,LTU,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,544,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,604,"Śnieg, Milena",Spritz,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,571,"Kaplińska, Zuzanna",Panna Surprise,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,594,"Maj, Kamila",Zoja,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,524,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,554,"Sajek, Kaja",Misty,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,629,"Benešová, Adéla",Fresh,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,543,"Kutsenko, Iryna",Chika,Malinois,UKR,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,530,"Rybok, Urszula",Amira,Malinois,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,613,"Gorska, Gabriela",Aiua,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,610,"Raamat, Keida",Prim,Border Collie,EST,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,635,"Oberleitnerová, Adéla",Pulzí,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,550,"Gadomska, Magda",Bej,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,611,"Kivilo, Alar",Yoko,Border Collie,EST,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,536,"Karpińska, Natalia",Pamper,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,552,"Munzar, Milan",Goku,Border Collie,ARG,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,607,"Lustyková, Kateřina",Ravioli,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,616,"Kalisz, Iwona",Synek,Malinois,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,595,"Daszewska, Martyna",Rivia,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,591,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,618,"Szynczewska, Lena",Reo,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,608,"Konečná, Lucie",Time,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,638,"Hańderek, Wiktoria",Hero,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,558,"Namajūnienė, Edita",Lokis,Tervueren,LTU,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,528,"Totoń, Agata",Spy,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,506,"Terčová, Katka",Dave,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,628,"Łabędzki, Łukasz",Tajfun,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,590,"Kutsenko, Iryna",Ajrish,Border Collie,UKR,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,540,"Čápková, Marcela",Kvido,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,553,"Dahlgren, Neky",Maui,Border Collie,ARG,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,518,"Szpakowska, Monika",Yatka,Tervueren,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,562,"Tusińska, Katarzyna",Hemp,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,621,"Hornikova, Klara",Arya,Australian Shepherd,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,633,"Nýdrlová, Nela",Deci,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,542,"Kosenko, Kateryna",Bon,Border Collie,UKR,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,596,"Walczuk, Agnieszka",Zonda,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,527,"Chęciak, Marta",Shifu,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,556,"Sapáková, Lucie",Alto,Malinois,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,532,"Łada, Zuzanna",Malinka,Tervueren,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,533,"Pietrusińska, Magdalena",Rzutka,Groenendael,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,561,"Chęciak, Marta",Elo,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,529,"Jarczak, Aneta",Taco,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,534,"Sadal, Ewa",Dashi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,645,"Dančišák, Erik",Loosí,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,508,"Kozłowska-Mrozowska, Anna",Max,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,584,"Kubecka, Kinga",Dobisia,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,525,"Spyra, Karolina",Mishka,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,626,"Krejci, Michal",Keiko,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,521,"Tautvaišaitė, Šarūnė",Gilė,Labrador Retriever,LTU,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,582,"Łohunko, Marzena",Veikko,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,615,"Klityńska, Marta",Peak,Kelpie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,563,"Deresińska, Małgorzata",Hunter,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,509,"Dudek, Natalia",Luna,MIX,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,546,"Akimova, Jekaterina",Nakama,Border Collie,LVA,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,520,"Wyszkowska, Maja",Frostel,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,580,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,639,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,559,"Kemezyte, Giedre",Tundra,MIX,LTU,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,507,"Nadratowska, Natalia",Logan,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,517,"Cichocki, Leszek",Wolf,Groenendael,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,644,"Dudek, Agnieszka",Odi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,560,"Gajzlerowicz, Adam",Dibi,Border Collie,POL,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_agility_large,Large,Agility,True,,627,"Koubová, Isabela",Skic,Border Collie,CZE,,,,,,,True,Tom Mercebach,,,220.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,1,412,"Rylska, Monika",Kozi,Border Collie,POL,0,0,0.00,0.00,32.30,6.19,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,2,435,"Kovalenko, Kateryna",Totori,Border Collie,UKR,0,0,0.00,0.00,33.11,6.04,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,3,417,"Krejci, Lucie",Tori,Border Collie,CZE,0,0,0.00,0.00,33.28,6.01,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,4,416,"Terčová, Katka",Knedlee Czech,Border Collie,CZE,0,0,0.00,0.00,34.41,5.81,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,5,418,"Iversen, Monica",Abby,Border Collie,NOR,0,0,0.00,0.00,35.17,5.69,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,6,400,"Gronek, Ola",Cosmo,Border Collie,POL,0,0,0.00,0.00,35.49,5.64,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,7,408,"Cisak, Krystyna",Iskra,Mudi,POL,0,0,0.00,0.00,35.89,5.57,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,8,411,"Ujma, Michał",Raisa,Mudi,POL,0,0,0.00,0.00,37.45,5.34,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,9,406,"Szulczewska, Kinga",Up,Border Collie,POL,0,1,0.28,5.28,38.28,5.22,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,10,427,"Lopeta, Vytautas",Barbra,Border Collie,LTU,1,0,2.77,7.77,40.77,4.91,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,11,419,"Denysenko, Nataliia",Astrid,Border Collie,UKR,1,1,0.00,10.00,35.95,5.56,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,12,429,"Diviš, Jakub",Cis,Border Collie,CZE,1,1,0.00,10.00,37.31,5.36,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,13,405,"Nowińska, Oliwia",Om,Border Collie,POL,2,2,3.15,23.15,41.15,4.86,False,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,436,"Cisak, Krystyna",Smok,MIX,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,415,"Mudrova, Apolenka",Foxie,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,434,"Neuwald, Małgorzata",Flik,Kelpie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,428,"Dambrauskaite, Rita",Moshke,Border Collie,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,424,"Doppenberg, Marije",Helder,Border Collie,NLD,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,431,"Kłobukowska, Ola",Yuca,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,438,"Kielecki, Andrzej",Blue,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,425,"Lesniak, Agata",Skipper,Kooikerhondje,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,423,"Duda, Paulina",Free,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,430,"Gronek, Ola",Heya,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,422,"Rachubińska, Joanna",Aria,Kelpie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,403,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,414,"Krejci, Jan",Airi,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,421,"Maruszczak, Roman",Reksio,Pyrenean Shepherd,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,432,"Zakotnik, Daša",Spin,Border Collie,SVN,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,409,"Bawer, Beata",Asteri,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,413,"Engelen, Claudia",Tex-Mex,Mudi,NLD,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,404,"Schwarz, Małgorzata",Bibi,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,433,"Višvaderová, Zuzana",Arrow,Kelpie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,402,"Michalak, Katarzyna",Mizu,Whippet,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,401,"Kielecki, Andrzej",Holly,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,410,"Szczepkowska, Katarzyna",Lato,Cocker Spaniel,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,437,"Schwarz, Małgorzata",Zuzia,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,426,"Dambrauskaite, Elena",Amie,Border Collie,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,200.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,1,534,"Sadal, Ewa",Dashi,Border Collie,POL,0,0,0.00,0.00,31.70,6.56,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,1,601,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,0,0,0.00,0.00,31.70,6.56,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,3,600,"Fischer, Joanna",Limit,Border Collie,POL,0,0,0.00,0.00,31.71,6.56,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,4,537,"Lorenz, Daniela",Zazzle,Border Collie,DEU,0,0,0.00,0.00,32.16,6.47,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,5,602,"Bieńczak, Kamila",Fun,Border Collie,POL,0,0,0.00,0.00,32.36,6.43,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,6,536,"Karpińska, Natalia",Pamper,Border Collie,POL,0,0,0.00,0.00,32.49,6.4,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,7,597,"Dabrowska, Jana",Chia,Border Collie,POL,0,0,0.00,0.00,32.80,6.34,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,8,545,"Loginova, Natalija",Lexa,Malinois,LVA,0,0,0.00,0.00,32.99,6.3,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,9,605,"Vitáková, Alena",Ben,Border Collie,CZE,0,0,0.00,0.00,33.13,6.28,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,10,587,"Denysenko, Nataliia",Rin,Border Collie,UKR,0,0,0.00,0.00,33.17,6.27,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,11,607,"Lustyková, Kateřina",Ravioli,Border Collie,CZE,0,0,0.00,0.00,33.29,6.25,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,12,629,"Benešová, Adéla",Fresh,Border Collie,CZE,0,0,0.00,0.00,33.32,6.24,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,13,636,"Volfova, Klara",Yomi,Border Collie,CZE,0,0,0.00,0.00,33.54,6.2,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,14,612,"Annus, Rita",Zirka,Border Collie,EST,0,0,0.00,0.00,34.00,6.12,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,15,527,"Chęciak, Marta",Shifu,Border Collie,POL,0,0,0.00,0.00,34.03,6.11,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,16,576,"Terčová, Katka",Too Czech,Border Collie,CZE,0,0,0.00,0.00,34.16,6.09,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,17,575,"Terčová, Katka",Pszenik,Border Collie,CZE,0,0,0.00,0.00,34.23,6.08,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,18,630,"Dančišák, Erik",Nessie,Border Collie,CZE,0,0,0.00,0.00,34.28,6.07,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,19,613,"Gorska, Gabriela",Aiua,Border Collie,POL,0,0,0.00,0.00,34.94,5.95,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,20,502,"Barceviciene, Agne",Bona,Groenendael,LTU,0,0,0.00,0.00,34.98,5.95,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,21,566,"Osińska, Ada",Fila,Border Collie,POL,0,0,0.00,0.00,35.50,5.86,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,22,570,"Bednarek, Aleksandra",Mushu,Border Collie,POL,0,0,0.00,0.00,35.52,5.86,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,23,573,"Ludvíková, Eliška",Kiwi,Border Collie,CZE,0,0,0.00,0.00,35.73,5.82,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,24,526,"Starzyk, Ewa",Koka,Border Collie,POL,0,0,0.00,0.00,35.89,5.8,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,25,548,"SIMON, Stéphanie",GLEN,Border Collie,FRA,0,0,0.00,0.00,36.33,5.73,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,26,532,"Łada, Zuzanna",Malinka,Tervueren,POL,0,0,0.00,0.00,36.82,5.65,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,27,583,"Nadratowska, Natalia",Garda,Border Collie,POL,0,0,0.94,0.94,37.94,5.48,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,28,539,"Vesela, Veronika",Kaspian,Border Collie,CZE,0,0,1.76,1.76,38.76,5.37,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,29,503,"Janusauskiene, Jolanta",Brille,Groenendael,LTU,0,0,3.12,3.12,40.12,5.18,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,30,640,"Uhrová, Eva",Pupu,Kelpie,CZE,0,0,3.59,3.59,40.59,5.12,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,31,622,"Caffrey, Jana",Leia,Poodle,CZE,0,0,3.97,3.97,40.97,5.08,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,32,535,"Rylska, Monika",Foka,Border Collie,POL,1,0,0.00,5.00,31.07,6.69,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,33,504,"Svinkunaite, Aiste",Jini,Groenendael,LTU,1,0,0.00,5.00,32.99,6.3,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,34,577,"Čápková, Marcela",Ami,Malinois,CZE,1,0,0.00,5.00,33.06,6.29,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,35,553,"Dahlgren, Neky",Maui,Border Collie,ARG,1,0,0.00,5.00,33.53,6.2,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,36,599,"Felczak, Zuzanna",Hoshi,Border Collie,POL,1,0,0.00,5.00,33.68,6.18,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,37,554,"Sajek, Kaja",Misty,Border Collie,POL,1,0,0.00,5.00,34.30,6.06,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,38,603,"Ujma, Alicja",Lance,Kelpie,POL,1,0,0.00,5.00,34.85,5.97,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,39,568,"Mielnicka, Patrycja",Wish,Border Collie,POL,1,0,0.00,5.00,35.25,5.9,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,40,618,"Szynczewska, Lena",Reo,Border Collie,POL,1,0,0.00,5.00,35.58,5.85,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,41,572,"Karpińska, Natalia",Adam Malysz,Border Collie,POL,1,0,0.00,5.00,35.83,5.81,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,41,620,"Musioł, Ewa",Wolta,Border Collie,POL,1,0,0.00,5.00,35.83,5.81,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,43,547,"Iversen, Monica",Giller,Border Collie,NOR,1,0,0.00,5.00,35.85,5.8,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,44,561,"Chęciak, Marta",Elo,Border Collie,POL,0,1,0.00,5.00,36.19,5.75,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,45,635,"Oberleitnerová, Adéla",Pulzí,Border Collie,CZE,1,0,0.00,5.00,36.27,5.73,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,46,538,"Šišovská, Natálie",Banán,Border Collie,CZE,0,1,0.00,5.00,36.66,5.67,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,47,645,"Dančišák, Erik",Loosí,Border Collie,CZE,0,1,0.38,5.38,37.38,5.56,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,48,633,"Nýdrlová, Nela",Deci,Border Collie,CZE,1,0,0.57,5.57,37.57,5.54,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,49,559,"Kemezyte, Giedre",Tundra,MIX,LTU,0,0,5.74,5.74,42.74,4.87,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,50,523,"Kubecka, Kinga",Harnaś,Border Collie,POL,1,0,0.75,5.75,37.75,5.51,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,51,619,"Sobiecka, Anna",Stefan,Border Collie,POL,1,0,1.03,6.03,38.03,5.47,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,52,592,"Czekaj, Tomasz",Heaven,Border Collie,POL,0,1,2.58,7.58,39.58,5.26,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,53,550,"Gadomska, Magda",Bej,Border Collie,POL,0,1,3.58,8.58,40.58,5.13,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,54,637,"Kransoe, Mia",Aqui,Border Collie,DNK,0,1,4.62,9.62,41.62,5,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,55,611,"Kivilo, Alar",Yoko,Border Collie,EST,2,0,0.00,10.00,32.95,6.31,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,56,604,"Śnieg, Milena",Spritz,Border Collie,POL,2,0,0.00,10.00,33.71,6.17,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,57,591,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,1,1,0.00,10.00,34.25,6.07,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,58,589,"Šišovská, Natálie",Messi,Border Collie,CZE,2,0,0.00,10.00,35.73,5.82,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,59,528,"Totoń, Agata",Spy,Border Collie,POL,2,0,0.00,10.00,36.84,5.65,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,60,593,"Flak, Tomasz",Rita,Border Collie,POL,2,0,1.08,11.08,38.08,5.46,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,61,623,"Jedrzejewski, Grzegorz",Pirat,Border Collie,POL,0,1,6.47,11.47,43.47,4.78,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,62,551,"Warsińska, Krystyna",Mango,MIX,POL,0,1,7.62,12.62,44.62,4.66,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,63,596,"Walczuk, Agnieszka",Zonda,Border Collie,POL,0,1,8.87,13.87,45.87,4.53,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,64,517,"Cichocki, Leszek",Wolf,Groenendael,POL,1,1,4.35,14.35,41.35,5.03,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,65,610,"Raamat, Keida",Prim,Border Collie,EST,3,0,0.00,15.00,31.48,6.61,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,66,522,"Kemezyte, Giedre",Runa,MIX,LTU,0,0,15.58,15.58,52.58,3.96,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,67,511,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,2,0,5.73,15.73,42.73,4.87,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,68,505,"Nomeikienė, Violeta",Mo,Samoyed,LTU,0,1,11.36,16.36,48.36,4.3,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,69,624,"Koterba, Aneta",Zoey,Australian Shepherd,POL,0,0,16.97,16.97,53.97,3.85,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,70,581,"Gawińska, Dominika",Kimi,Border Collie,POL,3,0,2.17,17.17,39.17,5.31,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,71,638,"Hańderek, Wiktoria",Hero,Border Collie,POL,1,1,8.67,18.67,45.67,4.55,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,72,509,"Dudek, Natalia",Luna,MIX,POL,0,1,14.11,19.11,51.11,4.07,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,73,543,"Kutsenko, Iryna",Chika,Malinois,UKR,4,0,0.00,20.00,36.73,5.66,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,74,549,"Nilsson, Ida",Ivy,Border Collie,SWE,3,2,2.27,27.27,39.27,5.3,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,75,627,"Koubová, Isabela",Skic,Border Collie,CZE,3,1,14.69,34.69,51.69,4.02,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,76,580,"Babiarz, Oliwia",Iwo,Border Collie,POL,4,2,16.37,46.37,53.37,3.9,False,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,508,"Kozłowska-Mrozowska, Anna",Max,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,518,"Szpakowska, Monika",Yatka,Tervueren,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,542,"Kosenko, Kateryna",Bon,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,644,"Dudek, Agnieszka",Odi,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,584,"Kubecka, Kinga",Dobisia,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,544,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,564,"Guobys, Vytautas",Ara,Border Collie,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,541,"Galitska, Stella",Baya,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,515,"Warsińska, Krystyna",Diuna,BOS,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,556,"Sapáková, Lucie",Alto,Malinois,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,529,"Jarczak, Aneta",Taco,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,586,"Denysenko, Daria",Night,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,557,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,594,"Maj, Kamila",Zoja,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,632,"Man, Alicja",Rosomak,Australian Shepherd,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,552,"Munzar, Milan",Goku,Border Collie,ARG,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,546,"Akimova, Jekaterina",Nakama,Border Collie,LVA,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,521,"Tautvaišaitė, Šarūnė",Gilė,Labrador Retriever,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,641,"Kłobukowska, Ola",Rush,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,540,"Čápková, Marcela",Kvido,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,506,"Terčová, Katka",Dave,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,643,"Leśniak, Anna",Riksza,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,530,"Rybok, Urszula",Amira,Malinois,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,574,"Kubů, Nikola",Pippa,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,507,"Nadratowska, Natalia",Logan,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,524,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,571,"Kaplińska, Zuzanna",Panna Surprise,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,606,"Jůdová, Klára",Ený,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,513,"Denysenko, Daria",Crowley,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,514,"Rybová, Anna",Goji,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,598,"Gronek, Ola",Deal,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,639,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,588,"Akimova, Jekaterina",Shori,Border Collie,LVA,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,625,"Sats, Ingrid",Debbie,Kelpie,EST,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,621,"Hornikova, Klara",Arya,Australian Shepherd,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,562,"Tusińska, Katarzyna",Hemp,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,533,"Pietrusińska, Magdalena",Rzutka,Groenendael,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,585,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,582,"Łohunko, Marzena",Veikko,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,558,"Namajūnienė, Edita",Lokis,Tervueren,LTU,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,646,"Haspeklová , Petra",Bria,Malinois,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,563,"Deresińska, Małgorzata",Hunter,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,565,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,510,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,525,"Spyra, Karolina",Mishka,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,531,"Suterska, Wioletta",Beria,Malinois,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,555,"Hulsbeek - Uenk, Linda",Kate,Border Collie,NLD,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,609,"Praakli, Stefi",Le,Border Collie,EST,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,595,"Daszewska, Martyna",Rivia,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,615,"Klityńska, Marta",Peak,Kelpie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,579,"Palová, Veronika",Ravy,Groenendael,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,516,"Bąk, Natalia",Figa,Tervueren,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,590,"Kutsenko, Iryna",Ajrish,Border Collie,UKR,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,519,"Hulsbeek - Uenk, Linda",Djack,Border Collie,NLD,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,634,"Martinů, Adéla",Grejda,Border Collie,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,628,"Łabędzki, Łukasz",Tajfun,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,520,"Wyszkowska, Maja",Frostel,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,560,"Gajzlerowicz, Adam",Dibi,Border Collie,POL,,,,,,,True,Anne Linn Johannessen Moen,,,208.0
+Polish Open SOFT 2024 (IN & L),team_jumping_large,Large,Jumping,True,,578,"Pálová, Tereza",Poker,Malinois,CZE,,,,,,,True,Anne Linn Johannessen Moen,,,208.0

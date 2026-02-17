@@ -1,0 +1,666 @@
+competition,round_key,size,discipline,is_team_round,rank,start_no,handler,dog,breed,country,faults,refusals,time_faults,total_faults,time,speed,eliminated,judge,sct,mct,course_length
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,1,103,"Chytilová, Martina",Kiri,Poodle,CZE,0,0,0.00,0.00,42.67,5.16,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,2,111,"Schneider, Viviane",Lou,MIX,DEU,0,0,0.00,0.00,47.56,4.63,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,3,106,"Holubová, Lenka",Bungee,Papillon,CZE,0,1,0.00,5.00,44.73,4.92,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,4,107,"Tamulioniene, Egle",Sakura,Papillon,LTU,0,1,0.00,5.00,48.25,4.56,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,5,112,"Kalinina, Anna",Chaos,Papillon,UKR,0,1,2.93,7.93,52.93,4.16,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,6,116,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,2,0,0.56,10.56,50.56,4.35,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,7,129,"Grochowski, Szymon",Furia,MIX,POL,0,1,6.58,11.58,56.58,3.89,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,8,101,"Bálintová, Kamila",Henry,Poodle,CZE,1,2,0.80,15.80,50.80,4.33,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,9,130,"Oględzki, Zbigniew",Pepe,Chihuahua,POL,0,2,18.42,28.42,68.42,3.22,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,10,108,"Sabiun, Tatjana",Daiki,Yorkshire Terrier,LTU,1,1,18.80,28.80,68.80,3.2,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,11,104,"Happonen, Natali",Astra,JRT,EST,6,1,9.35,44.35,59.35,3.71,False,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,105,"Ovcharkina, Tetiana",TESLA,Sheltie,UKR,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,115,"Sobotková, Tereza",A3Ch Juliette,Papillon,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,121,"Kretková, Jenifer",Bonnie,Cavalier,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,126,"Gasparavičiūtė, Deimilė",Leila,MIX,LTU,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,120,"Kartashova, Anastasiia",JJ,Cavalier,UKR,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,113,"Serhiienko, Nadiia",Fly,Papillon,UKR,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,117,"Drobečková, Jitka",Archie,Papillon,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,127,"Nejedlá, Alena",Rozarka,Biewer,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,134,"Mund, Svenja",Crowley,Spitz,DEU,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,102,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,124,"Pflüger, Lena",Hummel,Spitz,DEU,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,119,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,131,"Szymański, Marcin",Monti,MIX,POL,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,122,"Remačová, Vanessa",Rocky,JRT,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,118,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,133,"Fuxová, Laura",Rayen,Papillon,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,109,"Fuxová, Laura",Monty (Sidney),Papillon,CZE,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,132,"Sabiun, Tatjana",Ebi,Yorkshire Terrier,LTU,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,128,"Grochowska, Dorota",Moira,JRT,POL,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,125,"Mund, Svenja",Pickett,Spitz,DEU,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,110,"Guobiene, Rasa",Manga,Sheltie,LTU,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,123,"Stawarska, Dorota",Tycia,Cavalier,POL,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_agility_small,Small,Agility,False,,114,"Fonkowicz, Ewa",Tula,Papillon,POL,,,,,,,True,Cecilia Klingberg,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,1,316,"Vozdrohanova, Natalia",Ready,Sheltie,UKR,0,0,0.00,0.00,43.10,5.1,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,2,362,"Steinmetz, Carina",Amy,Sheltie,DEU,0,0,0.00,0.00,47.50,4.63,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,3,382,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,0,0,0.12,0.12,50.12,4.39,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,4,325,"Blažinauskaitė, Dovilė",Minsoo,Sheltie,LTU,0,1,0.00,5.00,48.38,4.55,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,5,374,"Klimkowska, Dominika",Tari,Poodle,POL,0,1,0.00,5.00,49.32,4.46,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,6,369,"Elschner, Sarah",Now,Cocker,DEU,0,1,0.00,5.00,49.45,4.45,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,7,341,"Hruza, Kristyna",Dyz,Mudi,CZE,0,1,0.79,5.79,50.79,4.33,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,8,380,"Paulik, Helmut",Kiwi,Sheltie,AUT,0,1,2.29,7.29,52.29,4.21,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,306,"Driessen, Patrick",Eep,Australian Kelpie,NLD,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,312,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,329,"Maj, Kamila",Merci,MIX,POL,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,336,"Kivi, Elen",Ronja,Mudi,EST,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,333,"Seyfriedová, Pavlína",Furi,Mudi,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,330,"Obrusníková, Aneta",Arrya,Mudi,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,345,"Schreierová, Kristýna",Karel,Cocker,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,378,"Macura, Vladimír",Ari,Australian Kelpie,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,387,"Członkowska, Barbara",Molka,Pyrshep,POL,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,352,"Ringmets, Inge",Reti,Croatian Sheepdog,EST,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,381,"Maršálková, Adéla",Víno,Manchester Terrier,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,385,"Válková, Klára",Maisie,MAS,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,361,"Obrusníková, Aneta",Chilli,Mudi,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,334,"Pent, Toomas",Mürru,Mudi,EST,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,307,"Happonen, Natali",Essie,PRT,EST,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_medium,Medium,Final,False,,320,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,1,209,"Kwiecień, Olga",Mojo,Cocker,POL,0,0,0.00,0.00,44.59,4.93,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,2,201,"Lajmarová, Denisa",Gay,PRT,CZE,0,0,0.00,0.00,46.23,4.76,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,3,228,"Piirsalu, Triine",Roxy,Miniature Pinscher,EST,0,0,0.00,0.00,48.77,4.51,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,4,240,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,1,0.00,5.00,50.03,4.4,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,5,204,"Langer, Sandra",iowa,PRT,AUT,0,1,0.00,5.00,50.93,4.32,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,6,210,"Riot, Christelle",OVNI,Sheltie,FRA,0,2,0.66,10.66,52.66,4.18,False,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,251,"Boogk, Marlon",Bee,Cocker,FRA,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,203,"Krátká, Julie",Joya,Sheltie,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,248,"Benešová, Jiřina",Ozy,PRT,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,250,"Blaško, Monika",Ruby,Sheltie,SVK,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,249,"Frimmelová, Hana",Bio,PRT,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,241,"Duda, Paulina Pamela",Huzi,PRT,POL,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,206,"Válková, Klára",Grace,Sheltie,CZE,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,264,"Riezanova, Valentyna",High,Sheltie,UKR,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,205,"Rosenberger, Sophie",Light,Sheltie,AUT,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,235,"Sedlmaier, Tamara",Bonny,Sheltie,AUT,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_final_small,Small,Final,False,,268,"Sedlmaier, Tamara",Sam,Sheltie,AUT,,,,,,,True,Ana Beltrán Bustamante,,,220.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,1,361,"Obrusníková, Aneta",Chilli,Mudi,CZE,0,0,0.00,0.00,31.89,6.43,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,2,330,"Obrusníková, Aneta",Arrya,Mudi,CZE,0,0,0.00,0.00,33.64,6.09,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,3,325,"Blažinauskaitė, Dovilė",Minsoo,Sheltie,LTU,0,0,0.00,0.00,35.10,5.84,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,4,307,"Happonen, Natali",Essie,PRT,EST,0,0,0.00,0.00,36.79,5.57,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,5,362,"Steinmetz, Carina",Amy,Sheltie,DEU,0,0,0.71,0.71,37.71,5.44,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,6,380,"Paulik, Helmut",Kiwi,Sheltie,AUT,0,0,1.81,1.81,38.81,5.28,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,7,341,"Hruza, Kristyna",Dyz,Mudi,CZE,0,0,2.03,2.03,39.03,5.25,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,8,312,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,0,0,2.07,2.07,39.07,5.25,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,9,391,"Sigmundová, Martina",Rašík,Sheltie,CZE,0,0,2.55,2.55,39.55,5.18,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,10,313,"Reincke, Alina",Franzl,PRT,DEU,0,0,3.25,3.25,40.25,5.09,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,11,382,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,0,0,5.04,5.04,42.04,4.88,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,12,315,"Konstantynov, Serhii",Nash,Cocker,UKR,1,0,1.31,6.31,38.31,5.35,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,13,352,"Ringmets, Inge",Reti,Croatian Sheepdog,EST,0,1,2.09,7.09,39.09,5.24,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,14,353,"Santorek, Natalia",Berunio,Poodle,POL,0,1,2.75,7.75,39.75,5.16,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,15,368,"Jugulyte, Kristina",Nuca,Poodle,LTU,0,1,3.64,8.64,40.64,5.04,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,16,329,"Maj, Kamila",Merci,MIX,POL,0,1,3.91,8.91,40.91,5.01,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,17,311,"Polechońska, Maja",Vesna,Sheltie,POL,0,2,5.17,15.17,42.17,4.86,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,18,348,"Krisztina, Holti",Forrest Gump,Beagle,HUN,1,0,14.52,19.52,51.52,3.98,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,19,328,"Totoń, Agata",Leah,MIX,POL,0,2,13.51,23.51,50.51,4.06,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,322,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,395,"Marion, Svedsen",Neida,Sheltie,NOR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,388,"Oględzki, Zbigniew",Pucuś,Pyrshep,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,343,"Dytrychova, Darie",Dydy,Mudi,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,387,"Członkowska, Barbara",Molka,Pyrshep,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,347,"Paluch, Agata",Boom,NSDTR,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,316,"Vozdrohanova, Natalia",Ready,Sheltie,UKR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,370,"Dytrychova, Darie",Ruda,Cocker,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,351,"Burak, Jarosław",Perła,Mudi,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,393,"Zavizion, Katsiaryna",Darth Vader,Zwergschnauzer,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,321,"Vykydalová, Radana",Lety,Pyrshep,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,334,"Pent, Toomas",Mürru,Mudi,EST,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,340,"Elschner, Sarah",Drew,Kooikerhondje,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,390,"Marešová, Kateřina",Coudík,Sheltie,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,327,"Nieżurawska, Anna",Cheetah,MIX,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,360,"Marešová, Klára",Atyr,Sheltie,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,345,"Schreierová, Kristýna",Karel,Cocker,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,374,"Klimkowska, Dominika",Tari,Poodle,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,331,"Broulík, Rudolf",Bára,Sheltie,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,358,"Reincke, Alina",Zissi,Mudi,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,364,"Broulík, Rudolf",Sisi,Sheltie,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,349,"Bertalan, Dora",Csipke,Mudi,HUN,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,303,"Cisak, Krystyna",Lizia,Mudi,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,306,"Driessen, Patrick",Eep,Australian Kelpie,NLD,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,365,"Gasparavičiūtė, Deimilė",Ajus,Poodle,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,367,"Liškauskaitė, Indrė",Delta,Poodle,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,386,"Kwiecień, Olga",Maupka,Pyrshep,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,319,"Orbanová, Lucie",Danny,Pyrshep,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,383,"Konečná, Martina",Kao,Sheltie,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,375,"Kivi, Elen",Corni,Mudi,EST,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,335,"Piirsalu, Triine",Nomy,Cocker,EST,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,314,"Budantseva, Viktoriia",BOLIVER,Sheltie,UKR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,337,"Padari-Kallit, Maarja",Smuuti,Cocker,EST,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,346,"Klimkowska, Dominika",Din,NSDTR,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,326,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,310,"Kruspe, Oleksandra",Taker,Sheltie,UKR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,381,"Maršálková, Adéla",Víno,Manchester Terrier,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,318,"Vaščilienė, Rasa",Blanka,Pyrshep,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,338,"Peterson, Hedi",Bosu,Entlebucher,EST,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,302,"Novotná, Kateřina",Letty,Pyrshep,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,309,"Huchok, Anna",Lucas,Sheltie,UKR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,323,"Domańska, Magdalena",Gavu,Pyrshep,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,366,"Volosenkiniene, Ausra",Andora,Poodle,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,369,"Elschner, Sarah",Now,Cocker,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,333,"Seyfriedová, Pavlína",Furi,Mudi,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,356,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,355,"Werra, Wiktoria",Frania,Poodle,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,317,"Usachova, Yuliia",Terry,Sheltie,UKR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,304,"Heyne, Laura",Peka,Australian Kelpie,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,357,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,379,"Tymlová, Marcela",Baryk,Sheltie,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,324,"Pasukonyte, Ruta",Keja,Sheltie,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,342,"Weynand, Annabelle",Friday,Sheltie,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,336,"Kivi, Elen",Ronja,Mudi,EST,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,354,"Rokicki, Krzysztof",Deyna,Sheltie,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,339,"Shklouskaya, Maryia",Buddy,Poodle,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,332,"Brizova, Katerina",Fun,Poodle,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,301,"Simkoniene, Asta",Fibi,Sheltie,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,376,"Küppers, Barbara",Ginny,MIX,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,371,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,385,"Válková, Klára",Maisie,MAS,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,392,"Kubíková, Lucie",Shani,Sheltie,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,377,"Weynand, Annabelle",Occamy,Sheltie,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,372,"Simonsen, Heidi Koch",Cap,MAS,DNK,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,363,"Rosenberger, Sophie",Pina,Sheltie,AUT,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,389,"Maruszczak, Roman",Zelda,Pyrshep,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,378,"Macura, Vladimír",Ari,Australian Kelpie,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,308,"Burak, Jarosław",Elmo,Sheltie,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,384,"Nowakowska, Barbara",Lilo,Sheltie,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,373,"Nielsen, Line",Vera,Cocker,DNK,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,305,"Pontoppidan, Sara",Agon,Cocker,DNK,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,320,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_medium,Medium,Jumping,False,,394,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,1,117,"Drobečková, Jitka",Archie,Papillon,CZE,0,0,0.00,0.00,38.97,5.26,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,2,124,"Pflüger, Lena",Hummel,Spitz,DEU,0,0,0.00,0.00,40.97,5,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,3,116,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,0,0,0.00,0.00,41.21,4.97,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,4,120,"Kartashova, Anastasiia",JJ,Cavalier,UKR,0,0,0.00,0.00,42.55,4.82,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,5,110,"Guobiene, Rasa",Manga,Sheltie,LTU,0,1,0.00,5.00,40.28,5.09,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,6,123,"Stawarska, Dorota",Tycia,Cavalier,POL,0,1,0.00,5.00,42.14,4.86,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,7,112,"Kalinina, Anna",Chaos,Papillon,UKR,0,1,0.00,5.00,43.36,4.73,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,8,108,"Sabiun, Tatjana",Daiki,Yorkshire Terrier,LTU,0,0,12.57,12.57,57.57,3.56,False,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,101,"Bálintová, Kamila",Henry,Poodle,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,103,"Chytilová, Martina",Kiri,Poodle,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,102,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,105,"Ovcharkina, Tetiana",TESLA,Sheltie,UKR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,107,"Tamulioniene, Egle",Sakura,Papillon,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,111,"Schneider, Viviane",Lou,MIX,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,109,"Fuxová, Laura",Monty (Sidney),Papillon,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,127,"Nejedlá, Alena",Rozarka,Biewer,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,118,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,134,"Mund, Svenja",Crowley,Spitz,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,113,"Serhiienko, Nadiia",Fly,Papillon,UKR,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,119,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,122,"Remačová, Vanessa",Rocky,JRT,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,132,"Sabiun, Tatjana",Ebi,Yorkshire Terrier,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,126,"Gasparavičiūtė, Deimilė",Leila,MIX,LTU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,106,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,133,"Fuxová, Laura",Rayen,Papillon,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,121,"Kretková, Jenifer",Bonnie,Cavalier,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,125,"Mund, Svenja",Pickett,Spitz,DEU,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,131,"Szymański, Marcin",Monti,MIX,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,104,"Happonen, Natali",Astra,JRT,EST,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,128,"Grochowska, Dorota",Moira,JRT,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,114,"Fonkowicz, Ewa",Tula,Papillon,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,130,"Oględzki, Zbigniew",Pepe,Chihuahua,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,115,"Sobotková, Tereza",A3Ch Juliette,Papillon,CZE,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,129,"Grochowski, Szymon",Furia,MIX,POL,,,,,,,True,Reetta Pirttikoski,,,205.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,1,241,"Duda, Paulina Pamela",Huzi,PRT,POL,0,0,0.00,0.00,37.58,5.72,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,1,115,"Sobotková, Tereza",A3Ch Juliette,Papillon,CZE,0,0,0.00,0.00,39.79,5.4,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,2,251,"Boogk, Marlon",Bee,Cocker,FRA,0,0,0.00,0.00,37.80,5.69,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,2,111,"Schneider, Viviane",Lou,MIX,DEU,0,0,0.00,0.00,42.49,5.06,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,3,264,"Riezanova, Valentyna",High,Sheltie,UKR,0,0,0.00,0.00,38.16,5.63,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,3,119,"Senčuchová, Iva",Racochejl,Papillon,CZE,0,0,0.00,0.00,43.03,5,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,4,210,"Riot, Christelle",OVNI,Sheltie,FRA,0,0,0.00,0.00,38.40,5.6,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,4,134,"Mund, Svenja",Crowley,Spitz,DEU,0,0,0.00,0.00,43.05,4.99,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,5,204,"Langer, Sandra",iowa,PRT,AUT,0,0,0.00,0.00,38.65,5.56,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,5,126,"Gasparavičiūtė, Deimilė",Leila,MIX,LTU,0,0,0.00,0.00,43.28,4.97,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,6,250,"Blaško, Monika",Ruby,Sheltie,SVK,0,0,0.00,0.00,38.67,5.56,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,6,110,"Guobiene, Rasa",Manga,Sheltie,LTU,0,0,0.00,0.00,43.49,4.94,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,7,249,"Frimmelová, Hana",Bio,PRT,CZE,0,0,0.00,0.00,38.94,5.52,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,7,122,"Remačová, Vanessa",Rocky,JRT,CZE,0,0,0.00,0.00,44.02,4.88,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,8,240,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,0,0.00,0.00,39.05,5.51,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,8,116,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,0,0,0.00,0.00,45.59,4.72,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,9,262,"Ivaschenko, Oleksandra",Shanty,Sheltie,UKR,0,0,0.00,0.00,39.30,5.47,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,9,132,"Sabiun, Tatjana",Ebi,Yorkshire Terrier,LTU,0,0,2.66,2.66,48.66,4.42,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,10,236,"Łabieniec, Magdalena",Elfie,Poodle,POL,0,0,0.00,0.00,40.10,5.36,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,10,121,"Kretková, Jenifer",Bonnie,Cavalier,CZE,1,0,0.00,5.00,42.33,5.08,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,11,268,"Sedlmaier, Tamara",Sam,Sheltie,AUT,0,0,0.00,0.00,40.13,5.36,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,11,113,"Serhiienko, Nadiia",Fly,Papillon,UKR,1,0,4.38,9.38,50.38,4.27,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,12,201,"Lajmarová, Denisa",Gay,PRT,CZE,0,0,0.00,0.00,41.19,5.22,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,12,108,"Sabiun, Tatjana",Daiki,Yorkshire Terrier,LTU,0,0,11.20,11.20,57.20,3.76,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,13,223,"Tamulioniene, Egle",New York,Papillon,LTU,0,0,0.00,0.00,42.99,5,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,13,133,"Fuxová, Laura",Rayen,Papillon,CZE,0,1,7.24,12.24,53.24,4.04,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,14,215,"Vocelková, Alena",Niké,Sheltie,CZE,0,0,0.00,0.00,43.96,4.89,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,14,130,"Oględzki, Zbigniew",Pepe,Chihuahua,POL,0,0,12.61,12.61,58.61,3.67,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,15,224,"Volosenkiniene, Ausra",Terakota,Poodle,LTU,0,0,0.33,0.33,44.33,4.85,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,16,253,"Steinmetz, Carina",Chip,Sheltie,DEU,1,0,0.00,5.00,40.44,5.32,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,17,233,"Lajmarová, Denisa",Rally,PRT,CZE,1,0,0.00,5.00,40.69,5.28,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,18,248,"Benešová, Jiřina",Ozy,PRT,CZE,1,0,0.00,5.00,40.83,5.27,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,19,265,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,1,0,0.00,5.00,42.35,5.08,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,20,216,"Muszyńska, Anna",Pepe,Poodle,POL,0,1,0.00,5.00,42.50,5.06,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,21,239,"Sigmundová, Martina",Iška,Sheltie,CZE,0,1,0.88,5.88,44.88,4.79,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,22,205,"Rosenberger, Sophie",Light,Sheltie,AUT,0,1,1.21,6.21,45.21,4.76,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,23,257,"Klünder, Samantha",Safiro,Miniature Pinscher,DEU,0,0,7.07,7.07,51.07,4.21,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,24,263,"Petrenko, Varvara",Lutra,Border Terrier,UKR,1,0,3.00,8.00,47.00,4.57,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,25,256,"Dudych, Kseniia",Barney,Welsh Corgi Pembroke,UKR,1,0,4.70,9.70,48.70,4.41,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,26,209,"Kwiecień, Olga",Mojo,Cocker,POL,2,0,0.00,10.00,38.12,5.64,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,27,238,"Barauskiene, Neringa",Ramzis,Zwergschnauzer,LTU,2,0,0.00,10.00,42.66,5.04,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,28,261,"Švaikovska, Aleksandra",Skilla,Sheltie,LVA,0,2,0.00,10.00,43.36,4.96,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,29,227,"Pärl, Piret",Jackie,MIX,EST,0,2,3.71,13.71,47.71,4.51,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,30,231,"Adamson, Monika",Lili,Pumi,EST,0,2,6.79,16.79,50.79,4.23,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,31,226,"Brand, Ede",Jete,Sheltie,EST,0,2,7.99,17.99,51.99,4.14,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,32,221,"LYSYTSKA, NATALIIA",ORLI DA SERBI ORLLENA,Zwergschnauzer,UKR,0,2,17.26,27.26,61.26,3.51,False,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,218,"Takel, Helena",Mio,Poodle,EST,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,254,"Pflüger, Lena",Moritz,Spitz,DEU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,266,"Götzendorfer, Franz-Josef",Riddle,Sheltie,AUT,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,237,"Valentová, Andrea",Freya,PRT,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,213,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,222,"Švaikovska, Aleksandra",Kayo,Sheltie,LVA,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,252,"Pospisilova, Anna",Mave,Sheltie,SVK,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,232,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,217,"Plichtová, Kateřina",Gigolo,Poodle,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,260,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,225,"Frimmelová, Alena",Fany,PRT,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,246,"Proshina, Jelena",Odri,Japanese Spitz,LVA,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,206,"Válková, Klára",Grace,Sheltie,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,212,"Brzobohatá, Pavla",Waly,Spitz,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,243,"Guobys, Darius",Lulu,Poodle,LTU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,235,"Sedlmaier, Tamara",Bonny,Sheltie,AUT,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,259,"Tümpfel, Daria Amélie",Willy,Sheltie,DEU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,247,"Nowakowska, Barbara",Nebula,Sheltie,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,229,"Raamat, Keida",Drifty,Sheltie,EST,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,244,"Himle, Ina",Jet,Sheltie,NOR,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,234,"Launagaite, Aiste",Spookiss,Poodle,LTU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,207,"Kretková, Lenka",Ray,Sheltie,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,267,"Hoferková, Eliška",Dory,Sheltie,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,242,"Grzegorczyk, Zuzanna",Pixie,Poodle,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,214,"Marková, Pavla",Dee,Zwergschnauzer,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,202,"Happonen, Natali",Tami,PRT,EST,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,208,"Bielakowska, Julia",Jessi,Sheltie,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,219,"Batiuk, Denys",Briulia,Border Terrier,UKR,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,258,"Marková, Pavla",Minnie,Zwergschnauzer,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,220,"Kavaliauskaitė, Meda",Ela,MIX,LTU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,230,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,245,"Narewska, Paulina",Lilo,Beagle,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,112,"Kalinina, Anna",Chaos,Papillon,UKR,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,127,"Nejedlá, Alena",Rozarka,Biewer,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,106,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,103,"Chytilová, Martina",Kiri,Poodle,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,101,"Bálintová, Kamila",Henry,Poodle,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,118,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,107,"Tamulioniene, Egle",Sakura,Papillon,LTU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,124,"Pflüger, Lena",Hummel,Spitz,DEU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,109,"Fuxová, Laura",Monty (Sidney),Papillon,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,120,"Kartashova, Anastasiia",JJ,Cavalier,UKR,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,117,"Drobečková, Jitka",Archie,Papillon,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,123,"Stawarska, Dorota",Tycia,Cavalier,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,128,"Grochowska, Dorota",Moira,JRT,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,104,"Happonen, Natali",Astra,JRT,EST,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,131,"Szymański, Marcin",Monti,MIX,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,102,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,105,"Ovcharkina, Tetiana",TESLA,Sheltie,UKR,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,125,"Mund, Svenja",Pickett,Spitz,DEU,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,129,"Grochowski, Szymon",Furia,MIX,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,114,"Fonkowicz, Ewa",Tula,Papillon,POL,,,,,,,True,Ana Beltrán Bustamante,,,215.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,1,361,"Obrusníková, Aneta",Chilli,Mudi,CZE,0,0,0.00,0.00,38.70,5.68,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,2,333,"Seyfriedová, Pavlína",Furi,Mudi,CZE,0,0,0.00,0.00,39.65,5.55,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,3,330,"Obrusníková, Aneta",Arrya,Mudi,CZE,0,0,0.00,0.00,40.04,5.49,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,4,325,"Blažinauskaitė, Dovilė",Minsoo,Sheltie,LTU,0,0,0.00,0.00,40.93,5.38,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,5,329,"Maj, Kamila",Merci,MIX,POL,0,0,0.00,0.00,43.07,5.11,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,6,362,"Steinmetz, Carina",Amy,Sheltie,DEU,0,0,0.00,0.00,43.32,5.08,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,7,369,"Elschner, Sarah",Now,Cocker,DEU,0,0,0.00,0.00,43.33,5.08,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,8,376,"Küppers, Barbara",Ginny,MIX,DEU,0,0,0.00,0.00,43.40,5.07,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,9,301,"Simkoniene, Asta",Fibi,Sheltie,LTU,0,0,0.00,0.00,44.45,4.95,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,10,390,"Marešová, Kateřina",Coudík,Sheltie,CZE,0,0,0.00,0.00,44.46,4.95,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,11,341,"Hruza, Kristyna",Dyz,Mudi,CZE,0,0,0.00,0.00,44.71,4.92,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,12,319,"Orbanová, Lucie",Danny,Pyrshep,CZE,0,0,0.00,0.00,44.82,4.91,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,13,353,"Santorek, Natalia",Berunio,Poodle,POL,0,0,1.98,1.98,46.98,4.68,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,14,348,"Krisztina, Holti",Forrest Gump,Beagle,HUN,0,0,2.00,2.00,47.00,4.68,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,15,321,"Vykydalová, Radana",Lety,Pyrshep,CZE,0,0,2.02,2.02,47.02,4.68,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,16,392,"Kubíková, Lucie",Shani,Sheltie,CZE,0,0,2.48,2.48,47.48,4.63,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,17,342,"Weynand, Annabelle",Friday,Sheltie,DEU,0,0,3.70,3.70,48.70,4.52,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,18,334,"Pent, Toomas",Mürru,Mudi,EST,1,0,0.00,5.00,39.85,5.52,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,19,351,"Burak, Jarosław",Perła,Mudi,POL,1,0,0.00,5.00,42.53,5.17,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,20,346,"Klimkowska, Dominika",Din,NSDTR,POL,0,1,0.00,5.00,42.70,5.15,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,21,302,"Novotná, Kateřina",Letty,Pyrshep,CZE,0,1,0.00,5.00,42.92,5.13,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,22,385,"Válková, Klára",Maisie,MAS,CZE,0,1,0.00,5.00,43.02,5.11,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,23,380,"Paulik, Helmut",Kiwi,Sheltie,AUT,1,0,0.00,5.00,43.21,5.09,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,24,313,"Reincke, Alina",Franzl,PRT,DEU,1,0,0.00,5.00,44.49,4.94,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,25,356,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,0,1,0.00,5.00,44.72,4.92,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,26,367,"Liškauskaitė, Indrė",Delta,Poodle,LTU,1,0,0.86,5.86,45.86,4.8,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,27,365,"Gasparavičiūtė, Deimilė",Ajus,Poodle,LTU,1,0,1.04,6.04,46.04,4.78,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,28,355,"Werra, Wiktoria",Frania,Poodle,POL,1,0,1.35,6.35,46.35,4.75,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,29,326,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,0,0,7.14,7.14,52.14,4.22,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,30,387,"Członkowska, Barbara",Molka,Pyrshep,POL,0,1,2.22,7.22,47.22,4.66,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,31,335,"Piirsalu, Triine",Nomy,Cocker,EST,2,0,0.00,10.00,39.53,5.57,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,32,357,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,2,0,0.00,10.00,42.78,5.14,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,33,364,"Broulík, Rudolf",Sisi,Sheltie,CZE,2,0,0.00,10.00,43.94,5.01,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,34,375,"Kivi, Elen",Corni,Mudi,EST,0,1,6.19,11.19,51.19,4.3,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,35,309,"Huchok, Anna",Lucas,Sheltie,UKR,1,1,1.82,11.82,46.82,4.7,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,36,315,"Konstantynov, Serhii",Nash,Cocker,UKR,2,0,4.02,14.02,49.02,4.49,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,37,331,"Broulík, Rudolf",Bára,Sheltie,CZE,2,1,9.12,24.12,54.12,4.07,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,38,307,"Happonen, Natali",Essie,PRT,EST,2,2,4.27,24.27,49.27,4.47,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,336,"Kivi, Elen",Ronja,Mudi,EST,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,363,"Rosenberger, Sophie",Pina,Sheltie,AUT,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,394,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,388,"Oględzki, Zbigniew",Pucuś,Pyrshep,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,372,"Simonsen, Heidi Koch",Cap,MAS,DNK,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,370,"Dytrychova, Darie",Ruda,Cocker,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,389,"Maruszczak, Roman",Zelda,Pyrshep,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,343,"Dytrychova, Darie",Dydy,Mudi,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,360,"Marešová, Klára",Atyr,Sheltie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,381,"Maršálková, Adéla",Víno,Manchester Terrier,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,322,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,386,"Kwiecień, Olga",Maupka,Pyrshep,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,395,"Marion, Svedsen",Neida,Sheltie,NOR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,347,"Paluch, Agata",Boom,NSDTR,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,303,"Cisak, Krystyna",Lizia,Mudi,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,323,"Domańska, Magdalena",Gavu,Pyrshep,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,320,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,312,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,345,"Schreierová, Kristýna",Karel,Cocker,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,332,"Brizova, Katerina",Fun,Poodle,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,374,"Klimkowska, Dominika",Tari,Poodle,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,340,"Elschner, Sarah",Drew,Kooikerhondje,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,337,"Padari-Kallit, Maarja",Smuuti,Cocker,EST,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,378,"Macura, Vladimír",Ari,Australian Kelpie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,358,"Reincke, Alina",Zissi,Mudi,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,371,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,306,"Driessen, Patrick",Eep,Australian Kelpie,NLD,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,382,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,338,"Peterson, Hedi",Bosu,Entlebucher,EST,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,304,"Heyne, Laura",Peka,Australian Kelpie,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,354,"Rokicki, Krzysztof",Deyna,Sheltie,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,316,"Vozdrohanova, Natalia",Ready,Sheltie,UKR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,377,"Weynand, Annabelle",Occamy,Sheltie,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,366,"Volosenkiniene, Ausra",Andora,Poodle,LTU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,339,"Shklouskaya, Maryia",Buddy,Poodle,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,373,"Nielsen, Line",Vera,Cocker,DNK,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,391,"Sigmundová, Martina",Rašík,Sheltie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,305,"Pontoppidan, Sara",Agon,Cocker,DNK,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,308,"Burak, Jarosław",Elmo,Sheltie,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,327,"Nieżurawska, Anna",Cheetah,MIX,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,318,"Vaščilienė, Rasa",Blanka,Pyrshep,LTU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,314,"Budantseva, Viktoriia",BOLIVER,Sheltie,UKR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,383,"Konečná, Martina",Kao,Sheltie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,324,"Pasukonyte, Ruta",Keja,Sheltie,LTU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,368,"Jugulyte, Kristina",Nuca,Poodle,LTU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,379,"Tymlová, Marcela",Baryk,Sheltie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,384,"Nowakowska, Barbara",Lilo,Sheltie,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,310,"Kruspe, Oleksandra",Taker,Sheltie,UKR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,317,"Usachova, Yuliia",Terry,Sheltie,UKR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,311,"Polechońska, Maja",Vesna,Sheltie,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_medium,Medium,Agility,True,,328,"Totoń, Agata",Leah,MIX,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,1,262,"Ivaschenko, Oleksandra",Shanty,Sheltie,UKR,0,0,0.00,0.00,39.42,5.58,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,2,206,"Válková, Klára",Grace,Sheltie,CZE,0,0,0.00,0.00,41.35,5.32,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,3,244,"Himle, Ina",Jet,Sheltie,NOR,0,0,0.00,0.00,41.39,5.32,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,4,240,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,0,0.00,0.00,42.40,5.19,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,5,233,"Lajmarová, Denisa",Rally,PRT,CZE,0,0,0.00,0.00,42.70,5.15,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,6,261,"Švaikovska, Aleksandra",Skilla,Sheltie,LVA,0,0,0.00,0.00,42.94,5.12,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,7,228,"Piirsalu, Triine",Roxy,Miniature Pinscher,EST,0,0,0.00,0.00,44.28,4.97,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,8,201,"Lajmarová, Denisa",Gay,PRT,CZE,0,0,0.00,0.00,44.61,4.93,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,9,223,"Tamulioniene, Egle",New York,Papillon,LTU,0,0,0.00,0.00,45.24,4.86,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,10,215,"Vocelková, Alena",Niké,Sheltie,CZE,0,0,0.00,0.00,45.91,4.79,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,11,225,"Frimmelová, Alena",Fany,PRT,CZE,0,0,0.00,0.00,45.97,4.79,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,12,107,"Tamulioniene, Egle",Sakura,Papillon,LTU,0,0,0.24,0.24,46.24,4.76,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,13,113,"Serhiienko, Nadiia",Fly,Papillon,UKR,0,0,1.72,1.72,47.72,4.61,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,14,112,"Kalinina, Anna",Chaos,Papillon,UKR,0,0,2.76,2.76,48.76,4.51,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,15,229,"Raamat, Keida",Drifty,Sheltie,EST,0,0,4.60,4.60,50.60,4.35,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,16,207,"Kretková, Lenka",Ray,Sheltie,CZE,0,0,4.95,4.95,50.95,4.32,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,17,265,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,1,0,0.00,5.00,42.63,5.16,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,18,208,"Bielakowska, Julia",Jessi,Sheltie,POL,1,0,0.00,5.00,43.50,5.06,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,19,205,"Rosenberger, Sophie",Light,Sheltie,AUT,1,0,0.00,5.00,43.51,5.06,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,20,241,"Duda, Paulina Pamela",Huzi,PRT,POL,0,1,0.00,5.00,45.24,4.86,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,21,246,"Proshina, Jelena",Odri,Japanese Spitz,LVA,1,0,0.00,5.00,45.76,4.81,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,22,115,"Sobotková, Tereza",A3Ch Juliette,Papillon,CZE,1,0,0.22,5.22,46.22,4.76,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,23,243,"Guobys, Darius",Lulu,Poodle,LTU,0,1,1.07,6.07,47.07,4.67,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,24,266,"Götzendorfer, Franz-Josef",Riddle,Sheltie,AUT,1,0,1.32,6.32,47.32,4.65,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,25,231,"Adamson, Monika",Lili,Pumi,EST,0,1,2.84,7.84,48.84,4.5,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,26,126,"Gasparavičiūtė, Deimilė",Leila,MIX,LTU,0,1,3.36,8.36,49.36,4.46,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,27,101,"Bálintová, Kamila",Henry,Poodle,CZE,0,0,8.63,8.63,54.63,4.03,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,28,263,"Petrenko, Varvara",Lutra,Border Terrier,UKR,1,0,4.03,9.03,50.03,4.4,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,29,122,"Remačová, Vanessa",Rocky,JRT,CZE,1,0,4.11,9.11,50.11,4.39,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,30,116,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,1,0,4.18,9.18,50.18,4.38,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,31,129,"Grochowski, Szymon",Furia,MIX,POL,0,0,9.93,9.93,55.93,3.93,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,32,131,"Szymański, Marcin",Monti,MIX,POL,2,0,2.57,12.57,48.57,4.53,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,33,245,"Narewska, Paulina",Lilo,Beagle,POL,0,1,7.65,12.65,53.65,4.1,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,34,103,"Chytilová, Martina",Kiri,Poodle,CZE,0,2,3.13,13.13,49.13,4.48,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,35,238,"Barauskiene, Neringa",Ramzis,Zwergschnauzer,LTU,2,1,0.00,15.00,45.43,4.84,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,36,258,"Marková, Pavla",Minnie,Zwergschnauzer,CZE,1,0,11.53,16.53,57.53,3.82,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,37,256,"Dudych, Kseniia",Barney,Welsh Corgi Pembroke,UKR,1,1,6.83,16.83,52.83,4.16,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,38,134,"Mund, Svenja",Crowley,Spitz,DEU,1,1,7.53,17.53,53.53,4.11,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,39,224,"Volosenkiniene, Ausra",Terakota,Poodle,LTU,0,2,7.87,17.87,53.87,4.08,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,40,221,"LYSYTSKA, NATALIIA",ORLI DA SERBI ORLLENA,Zwergschnauzer,UKR,0,1,13.72,18.72,59.72,3.68,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,41,130,"Oględzki, Zbigniew",Pepe,Chihuahua,POL,0,0,20.36,20.36,66.36,3.32,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,42,108,"Sabiun, Tatjana",Daiki,Yorkshire Terrier,LTU,0,0,21.81,21.81,67.81,3.24,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,43,217,"Plichtová, Kateřina",Gigolo,Poodle,CZE,1,2,6.90,21.90,52.90,4.16,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,44,260,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,3,1,2.00,22.00,48.00,4.58,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,45,104,"Happonen, Natali",Astra,JRT,EST,5,0,0.48,25.48,46.48,4.73,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,46,110,"Guobiene, Rasa",Manga,Sheltie,LTU,0,1,20.71,25.71,66.71,3.3,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,47,254,"Pflüger, Lena",Moritz,Spitz,DEU,0,1,22.27,27.27,68.27,3.22,False,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,230,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,247,"Nowakowska, Barbara",Nebula,Sheltie,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,119,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,212,"Brzobohatá, Pavla",Waly,Spitz,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,125,"Mund, Svenja",Pickett,Spitz,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,234,"Launagaite, Aiste",Spookiss,Poodle,LTU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,203,"Krátká, Julie",Joya,Sheltie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,252,"Pospisilova, Anna",Mave,Sheltie,SVK,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,237,"Valentová, Andrea",Freya,PRT,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,232,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,248,"Benešová, Jiřina",Ozy,PRT,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,216,"Muszyńska, Anna",Pepe,Poodle,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,227,"Pärl, Piret",Jackie,MIX,EST,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,236,"Łabieniec, Magdalena",Elfie,Poodle,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,111,"Schneider, Viviane",Lou,MIX,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,204,"Langer, Sandra",iowa,PRT,AUT,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,249,"Frimmelová, Hana",Bio,PRT,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,209,"Kwiecień, Olga",Mojo,Cocker,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,210,"Riot, Christelle",OVNI,Sheltie,FRA,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,218,"Takel, Helena",Mio,Poodle,EST,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,127,"Nejedlá, Alena",Rozarka,Biewer,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,253,"Steinmetz, Carina",Chip,Sheltie,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,118,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,105,"Ovcharkina, Tetiana",TESLA,Sheltie,UKR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,259,"Tümpfel, Daria Amélie",Willy,Sheltie,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,264,"Riezanova, Valentyna",High,Sheltie,UKR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,239,"Sigmundová, Martina",Iška,Sheltie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,219,"Batiuk, Denys",Briulia,Border Terrier,UKR,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,106,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,251,"Boogk, Marlon",Bee,Cocker,FRA,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,214,"Marková, Pavla",Dee,Zwergschnauzer,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,250,"Blaško, Monika",Ruby,Sheltie,SVK,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,102,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,267,"Hoferková, Eliška",Dory,Sheltie,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,124,"Pflüger, Lena",Hummel,Spitz,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,220,"Kavaliauskaitė, Meda",Ela,MIX,LTU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,109,"Fuxová, Laura",Monty (Sidney),Papillon,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,133,"Fuxová, Laura",Rayen,Papillon,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,222,"Švaikovska, Aleksandra",Kayo,Sheltie,LVA,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,242,"Grzegorczyk, Zuzanna",Pixie,Poodle,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,226,"Brand, Ede",Jete,Sheltie,EST,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,202,"Happonen, Natali",Tami,PRT,EST,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,132,"Sabiun, Tatjana",Ebi,Yorkshire Terrier,LTU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,117,"Drobečková, Jitka",Archie,Papillon,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,257,"Klünder, Samantha",Safiro,Miniature Pinscher,DEU,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,121,"Kretková, Jenifer",Bonnie,Cavalier,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,213,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,235,"Sedlmaier, Tamara",Bonny,Sheltie,AUT,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,268,"Sedlmaier, Tamara",Sam,Sheltie,AUT,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_agility_small,Small,Agility,True,,128,"Grochowska, Dorota",Moira,JRT,POL,,,,,,,True,Thora Van Der Stock,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,1,335,"Piirsalu, Triine",Nomy,Cocker,EST,0,0,0.00,0.00,37.06,5.94,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,2,381,"Maršálková, Adéla",Víno,Manchester Terrier,CZE,0,0,0.00,0.00,38.45,5.72,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,3,330,"Obrusníková, Aneta",Arrya,Mudi,CZE,0,0,0.00,0.00,38.90,5.66,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,4,334,"Pent, Toomas",Mürru,Mudi,EST,0,0,0.00,0.00,39.23,5.61,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,5,363,"Rosenberger, Sophie",Pina,Sheltie,AUT,0,0,0.00,0.00,39.28,5.6,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,6,325,"Blažinauskaitė, Dovilė",Minsoo,Sheltie,LTU,0,0,0.00,0.00,39.72,5.54,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,7,306,"Driessen, Patrick",Eep,Australian Kelpie,NLD,0,0,0.00,0.00,40.00,5.5,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,8,383,"Konečná, Martina",Kao,Sheltie,CZE,0,0,0.00,0.00,40.10,5.49,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,9,336,"Kivi, Elen",Ronja,Mudi,EST,0,0,0.00,0.00,40.35,5.45,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,10,345,"Schreierová, Kristýna",Karel,Cocker,CZE,0,0,0.00,0.00,40.49,5.43,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,11,332,"Brizova, Katerina",Fun,Poodle,CZE,0,0,0.00,0.00,41.84,5.26,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,12,307,"Happonen, Natali",Essie,PRT,EST,0,0,0.00,0.00,41.96,5.24,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,13,364,"Broulík, Rudolf",Sisi,Sheltie,CZE,0,0,0.00,0.00,42.00,5.24,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,14,362,"Steinmetz, Carina",Amy,Sheltie,DEU,0,0,0.00,0.00,42.45,5.18,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,15,321,"Vykydalová, Radana",Lety,Pyrshep,CZE,0,0,0.00,0.00,42.92,5.13,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,16,340,"Elschner, Sarah",Drew,Kooikerhondje,DEU,0,0,0.38,0.38,43.38,5.07,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,17,312,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,0,0,0.41,0.41,43.41,5.07,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,18,341,"Hruza, Kristyna",Dyz,Mudi,CZE,0,0,0.90,0.90,43.90,5.01,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,18,390,"Marešová, Kateřina",Coudík,Sheltie,CZE,0,0,0.90,0.90,43.90,5.01,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,20,366,"Volosenkiniene, Ausra",Andora,Poodle,LTU,0,0,1.36,1.36,44.36,4.96,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,21,319,"Orbanová, Lucie",Danny,Pyrshep,CZE,0,0,1.50,1.50,44.50,4.94,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,22,382,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,0,0,1.85,1.85,44.85,4.91,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,23,353,"Santorek, Natalia",Berunio,Poodle,POL,0,0,1.87,1.87,44.87,4.9,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,24,331,"Broulík, Rudolf",Bára,Sheltie,CZE,0,0,3.41,3.41,46.41,4.74,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,25,367,"Liškauskaitė, Indrė",Delta,Poodle,LTU,0,0,3.45,3.45,46.45,4.74,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,26,359,"Pontoppidan, Sara",Gaia,Cocker,DNK,0,0,4.26,4.26,47.26,4.66,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,27,333,"Seyfriedová, Pavlína",Furi,Mudi,CZE,0,1,0.00,5.00,41.24,5.33,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,28,323,"Domańska, Magdalena",Gavu,Pyrshep,POL,1,0,0.00,5.00,41.29,5.33,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,29,374,"Klimkowska, Dominika",Tari,Poodle,POL,1,0,5.57,10.57,48.57,4.53,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,30,354,"Rokicki, Krzysztof",Deyna,Sheltie,POL,0,1,6.50,11.50,49.50,4.44,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,31,375,"Kivi, Elen",Corni,Mudi,EST,0,1,8.66,13.66,51.66,4.26,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,32,337,"Padari-Kallit, Maarja",Smuuti,Cocker,EST,1,1,9.30,19.30,52.30,4.21,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,33,342,"Weynand, Annabelle",Friday,Sheltie,DEU,0,2,11.52,21.52,54.52,4.04,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,346,"Klimkowska, Dominika",Din,NSDTR,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,320,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,305,"Pontoppidan, Sara",Agon,Cocker,DNK,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,391,"Sigmundová, Martina",Rašík,Sheltie,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,315,"Konstantynov, Serhii",Nash,Cocker,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,373,"Nielsen, Line",Vera,Cocker,DNK,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,316,"Vozdrohanova, Natalia",Ready,Sheltie,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,343,"Dytrychova, Darie",Dydy,Mudi,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,389,"Maruszczak, Roman",Zelda,Pyrshep,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,322,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,313,"Reincke, Alina",Franzl,PRT,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,303,"Cisak, Krystyna",Lizia,Mudi,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,357,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,372,"Simonsen, Heidi Koch",Cap,MAS,DNK,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,369,"Elschner, Sarah",Now,Cocker,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,380,"Paulik, Helmut",Kiwi,Sheltie,AUT,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,386,"Kwiecień, Olga",Maupka,Pyrshep,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,351,"Burak, Jarosław",Perła,Mudi,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,338,"Peterson, Hedi",Bosu,Entlebucher,EST,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,318,"Vaščilienė, Rasa",Blanka,Pyrshep,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,310,"Kruspe, Oleksandra",Taker,Sheltie,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,301,"Simkoniene, Asta",Fibi,Sheltie,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,327,"Nieżurawska, Anna",Cheetah,MIX,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,365,"Gasparavičiūtė, Deimilė",Ajus,Poodle,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,347,"Paluch, Agata",Boom,NSDTR,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,314,"Budantseva, Viktoriia",BOLIVER,Sheltie,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,377,"Weynand, Annabelle",Occamy,Sheltie,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,371,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,388,"Oględzki, Zbigniew",Pucuś,Pyrshep,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,376,"Küppers, Barbara",Ginny,MIX,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,387,"Członkowska, Barbara",Molka,Pyrshep,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,395,"Marion, Svedsen",Neida,Sheltie,NOR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,355,"Werra, Wiktoria",Frania,Poodle,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,361,"Obrusníková, Aneta",Chilli,Mudi,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,379,"Tymlová, Marcela",Baryk,Sheltie,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,370,"Dytrychova, Darie",Ruda,Cocker,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,308,"Burak, Jarosław",Elmo,Sheltie,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,358,"Reincke, Alina",Zissi,Mudi,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,392,"Kubíková, Lucie",Shani,Sheltie,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,378,"Macura, Vladimír",Ari,Australian Kelpie,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,356,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,368,"Jugulyte, Kristina",Nuca,Poodle,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,304,"Heyne, Laura",Peka,Australian Kelpie,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,302,"Novotná, Kateřina",Letty,Pyrshep,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,317,"Usachova, Yuliia",Terry,Sheltie,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,329,"Maj, Kamila",Merci,MIX,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,324,"Pasukonyte, Ruta",Keja,Sheltie,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,385,"Válková, Klára",Maisie,MAS,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,348,"Krisztina, Holti",Forrest Gump,Beagle,HUN,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,328,"Totoń, Agata",Leah,MIX,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,360,"Marešová, Klára",Atyr,Sheltie,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,394,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,326,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,1,249,"Frimmelová, Hana",Bio,PRT,CZE,0,0,0.00,0.00,37.49,5.87,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,2,241,"Duda, Paulina Pamela",Huzi,PRT,POL,0,0,0.00,0.00,37.50,5.87,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,3,248,"Benešová, Jiřina",Ozy,PRT,CZE,0,0,0.00,0.00,37.56,5.86,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,4,262,"Ivaschenko, Oleksandra",Shanty,Sheltie,UKR,0,0,0.00,0.00,37.72,5.83,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,5,209,"Kwiecień, Olga",Mojo,Cocker,POL,0,0,0.00,0.00,37.83,5.82,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,6,253,"Steinmetz, Carina",Chip,Sheltie,DEU,0,0,0.00,0.00,39.15,5.62,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,7,204,"Langer, Sandra",iowa,PRT,AUT,0,0,0.00,0.00,39.69,5.54,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,8,232,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,0,0,0.00,0.00,39.72,5.54,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,9,259,"Tümpfel, Daria Amélie",Willy,Sheltie,DEU,0,0,0.00,0.00,40.01,5.5,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,10,261,"Švaikovska, Aleksandra",Skilla,Sheltie,LVA,0,0,0.00,0.00,40.27,5.46,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,11,205,"Rosenberger, Sophie",Light,Sheltie,AUT,0,0,0.00,0.00,40.98,5.37,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,12,228,"Piirsalu, Triine",Roxy,Miniature Pinscher,EST,0,0,0.00,0.00,41.06,5.36,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,13,216,"Muszyńska, Anna",Pepe,Poodle,POL,0,0,0.00,0.00,41.09,5.35,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,14,233,"Lajmarová, Denisa",Rally,PRT,CZE,0,0,0.00,0.00,41.23,5.34,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,15,115,"Sobotková, Tereza",A3Ch Juliette,Papillon,CZE,0,0,0.00,0.00,41.76,5.27,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,16,201,"Lajmarová, Denisa",Gay,PRT,CZE,0,0,0.00,0.00,42.12,5.22,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,17,266,"Götzendorfer, Franz-Josef",Riddle,Sheltie,AUT,0,0,0.00,0.00,43.90,5.01,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,18,113,"Serhiienko, Nadiia",Fly,Papillon,UKR,0,0,0.00,0.00,43.92,5.01,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,19,121,"Kretková, Jenifer",Bonnie,Cavalier,CZE,0,0,0.00,0.00,43.98,5,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,20,126,"Gasparavičiūtė, Deimilė",Leila,MIX,LTU,0,0,0.05,0.05,44.05,4.99,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,21,112,"Kalinina, Anna",Chaos,Papillon,UKR,0,0,0.26,0.26,44.26,4.97,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,22,215,"Vocelková, Alena",Niké,Sheltie,CZE,0,0,0.49,0.49,44.49,4.94,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,23,111,"Schneider, Viviane",Lou,MIX,DEU,0,0,0.64,0.64,44.64,4.93,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,24,116,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,0,0,1.14,1.14,45.14,4.87,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,25,224,"Volosenkiniene, Ausra",Terakota,Poodle,LTU,0,0,2.70,2.70,46.70,4.71,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,26,131,"Szymański, Marcin",Monti,MIX,POL,0,0,2.75,2.75,46.75,4.71,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,27,267,"Hoferková, Eliška",Dory,Sheltie,CZE,0,0,3.18,3.18,47.18,4.66,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,28,263,"Petrenko, Varvara",Lutra,Border Terrier,UKR,0,0,4.98,4.98,48.98,4.49,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,29,222,"Švaikovska, Aleksandra",Kayo,Sheltie,LVA,1,0,0.00,5.00,39.65,5.55,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,30,240,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,1,0.00,5.00,42.99,5.12,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,31,244,"Himle, Ina",Jet,Sheltie,NOR,0,1,0.00,5.00,43.26,5.09,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,32,117,"Drobečková, Jitka",Archie,Papillon,CZE,0,1,0.00,5.00,43.94,5.01,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,33,223,"Tamulioniene, Egle",New York,Papillon,LTU,0,1,2.70,7.70,46.70,4.71,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,34,107,"Tamulioniene, Egle",Sakura,Papillon,LTU,1,0,3.13,8.13,47.13,4.67,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,35,133,"Fuxová, Laura",Rayen,Papillon,CZE,0,0,12.01,12.01,56.01,3.93,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,36,132,"Sabiun, Tatjana",Ebi,Yorkshire Terrier,LTU,0,1,8.06,13.06,52.06,4.23,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,37,110,"Guobiene, Rasa",Manga,Sheltie,LTU,0,0,13.30,13.30,57.30,3.84,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,38,245,"Narewska, Paulina",Lilo,Beagle,POL,1,0,9.28,14.28,53.28,4.13,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,39,130,"Oględzki, Zbigniew",Pepe,Chihuahua,POL,0,0,14.37,14.37,58.37,3.77,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,40,226,"Brand, Ede",Jete,Sheltie,EST,0,2,6.00,16.00,50.00,4.4,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,41,234,"Launagaite, Aiste",Spookiss,Poodle,LTU,1,1,6.47,16.47,50.47,4.36,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,42,243,"Guobys, Darius",Lulu,Poodle,LTU,1,1,6.56,16.56,50.56,4.35,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,43,257,"Klünder, Samantha",Safiro,Miniature Pinscher,DEU,0,1,12.36,17.36,56.36,3.9,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,44,207,"Kretková, Lenka",Ray,Sheltie,CZE,0,2,8.82,18.82,52.82,4.17,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,45,221,"LYSYTSKA, NATALIIA",ORLI DA SERBI ORLLENA,Zwergschnauzer,UKR,1,1,9.08,19.08,53.08,4.14,False,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,212,"Brzobohatá, Pavla",Waly,Spitz,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,239,"Sigmundová, Martina",Iška,Sheltie,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,225,"Frimmelová, Alena",Fany,PRT,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,214,"Marková, Pavla",Dee,Zwergschnauzer,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,109,"Fuxová, Laura",Monty (Sidney),Papillon,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,268,"Sedlmaier, Tamara",Sam,Sheltie,AUT,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,254,"Pflüger, Lena",Moritz,Spitz,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,122,"Remačová, Vanessa",Rocky,JRT,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,102,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,246,"Proshina, Jelena",Odri,Japanese Spitz,LVA,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,227,"Pärl, Piret",Jackie,MIX,EST,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,119,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,103,"Chytilová, Martina",Kiri,Poodle,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,210,"Riot, Christelle",OVNI,Sheltie,FRA,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,101,"Bálintová, Kamila",Henry,Poodle,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,260,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,106,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,203,"Krátká, Julie",Joya,Sheltie,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,105,"Ovcharkina, Tetiana",TESLA,Sheltie,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,251,"Boogk, Marlon",Bee,Cocker,FRA,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,264,"Riezanova, Valentyna",High,Sheltie,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,217,"Plichtová, Kateřina",Gigolo,Poodle,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,265,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,213,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,124,"Pflüger, Lena",Hummel,Spitz,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,127,"Nejedlá, Alena",Rozarka,Biewer,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,206,"Válková, Klára",Grace,Sheltie,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,202,"Happonen, Natali",Tami,PRT,EST,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,134,"Mund, Svenja",Crowley,Spitz,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,236,"Łabieniec, Magdalena",Elfie,Poodle,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,219,"Batiuk, Denys",Briulia,Border Terrier,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,231,"Adamson, Monika",Lili,Pumi,EST,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,208,"Bielakowska, Julia",Jessi,Sheltie,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,229,"Raamat, Keida",Drifty,Sheltie,EST,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,242,"Grzegorczyk, Zuzanna",Pixie,Poodle,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,218,"Takel, Helena",Mio,Poodle,EST,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,247,"Nowakowska, Barbara",Nebula,Sheltie,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,256,"Dudych, Kseniia",Barney,Welsh Corgi Pembroke,UKR,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,125,"Mund, Svenja",Pickett,Spitz,DEU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,104,"Happonen, Natali",Astra,JRT,EST,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,118,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,230,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,238,"Barauskiene, Neringa",Ramzis,Zwergschnauzer,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,258,"Marková, Pavla",Minnie,Zwergschnauzer,CZE,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,128,"Grochowska, Dorota",Moira,JRT,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,220,"Kavaliauskaitė, Meda",Ela,MIX,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,235,"Sedlmaier, Tamara",Bonny,Sheltie,AUT,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,129,"Grochowski, Szymon",Furia,MIX,POL,,,,,,,True,Esther Falck Jakobsen,,,220.0
+"Polish Open 2025 (XS, S & M)",team_jumping_small,Small,Jumping,True,,108,"Sabiun, Tatjana",Daiki,Yorkshire Terrier,LTU,,,,,,,True,Esther Falck Jakobsen,,,220.0

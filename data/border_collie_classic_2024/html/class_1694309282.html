@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Agility Plaza</title>
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap-flex.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="/cardjs/card-js.min.css">
+  <link rel="stylesheet" href="/css/style_v1.61.css">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <style>
+    @media screen and (min-device-width: 420px) and (orientation: portrait), screen and (min-device-height: 420px) and (orientation: landscape) {
+        .underlay {
+            background: url(/img/back/back11a.jpg) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            opacity: .5;
+        }
+    }
+    
+  </style>
+</head>
+<html lang="en" style="font-size: 12pt">
+  <body>
+    <!-- Forms-->
+    <!-- Buttons & Links-->
+    <!-- Grids and Cards-->
+    <!-- Misc-->
+    <div class="underlay"></div>
+    <input type="hidden" id="refresh" value="no">
+    <!-- Navbar-->
+    <div class="top-bar"><a href="javascript:showLoading();location.reload()"><img class="sm-up navLogo" src="/img/logo.svg"><img class="xs-down navLogo" src="/img/logo_small.svg"></a>
+      <div class="md-up"></div><a class="btn-nav-top" href="/"><i class='fa fa-arrow-left'></i> Back</a>
+      <div class="nav-panel-toggle float-right"><a class="btn-nav-top float-right" href="javascript:toggleNavPanel()"><i class='fa fa-bars'></i> <span>Menu</span></a>
+      </div>
+    </div>
+    <div class="title-bar"><span>Agility Plaza</span>
+    </div>
+    <div class="nav-panel">
+      <div class="page-title">Agility Plaza</div>
+      <hr>
+      <div class="general"><a class="btn-panel" href="/live?root=true"><i class='fa fa-bolt'></i> Live & Imminent Shows</a><a class="btn-panel" href="/results?root=true"><i class='fa fa-trophy'></i> Results</a><a class="btn-panel" href="/competition/active?root=true"><i class='fa fa-calendar'></i> Show Diary</a><a class="btn-panel" href="/series_list?root=true"><i class='fa fa-award'></i> Leagues & Heats</a>
+      </div>
+      <!--+button("link", "Training Clubs", "graduation-cap", {href: "/training/active?root=true", panel: true})-->
+      <hr>
+      <div class="w-100">&nbsp;<a href="/"><i class='fa fa-home'></i> Home</a><a class=" float-right" href="/login"><i class='fa fa-sign-in'></i> Login</a><span class="float-right">/</span><a class=" float-right" href="/open/register"><i class='fa fa-sign-in'></i> Register</a>
+      </div>
+      <hr>
+      <div class="list font90">
+        <div class="list-item"><a href="/open/terms?root=true"><span>Terms & Conditions</span></a>
+        </div>
+        <div class="list-item"><a href="/open/privacy?root=true"><span>Privacy Policy</span></a>
+        </div>
+        <div class="list-item"><a href="/open/about?root=true"><span>About Us</span></a>
+        </div>
+        <div class="list-item"><a href="/open/contact?root=true"><span>Contact</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="home-panel">
+      <div class="container-fluid">
+        <div class="text-xs-center" id="loading"><img src="/img/wait.svg" width="120"></div>
+        <div class="max65">
+              <div class="card" id="card1">
+                <div class="card-header"><i class='fa fa-trophy')></i>&ensp;Large Individual Final</div>
+                <div class="card-block">
+                  <table class="table table-sm table-striped">
+                    <thead>
+                      <td colspan="99">Course Time: 42 secs, 228m</td>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Award</th>
+                        <th>Name</th>
+                        <th class="text-sm-center">Country</th>
+                        <th class="text-sm-center">Run Data</th>
+                        <th class="text-sm-right">Faults</th>
+                        <th class="text-sm-center">Time</th>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">1 (T)</td>
+                        <td class="align-middle hidden-md-up">1 (T)</td>
+                        <td class="align-middle hidden-sm-down">Max Sprinz &amp; Remix (Redefined Ascending Remix)</td>
+                        <td class="align-middle hidden-md-up">Max Sprinz &amp; Remix</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">35.941</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">2 (T)</td>
+                        <td class="align-middle hidden-md-up">2 (T)</td>
+                        <td class="align-middle hidden-sm-down">Zeljko Gora &amp; Runbye Smoking Hash (Runbye Smoking Hash)</td>
+                        <td class="align-middle hidden-md-up">Zeljko Gora &amp; Runbye Smoking Hash</td>
+                        <td class="align-middle text-sm-center">HR</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">36.162</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">3 (T)</td>
+                        <td class="align-middle hidden-md-up">3 (T)</td>
+                        <td class="align-middle hidden-sm-down">Max Sprinz &amp; Style (Feel The Difference Born With Style Cash)</td>
+                        <td class="align-middle hidden-md-up">Max Sprinz &amp; Style</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">36.557</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Alice Laforge &amp; Kya ()</td>
+                        <td class="align-middle hidden-md-up">Alice Laforge &amp; Kya</td>
+                        <td class="align-middle text-sm-center">CH</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">36.817</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Lara Heinzel &amp; Devlynn Z Dedicated To My Friend Miyu ()</td>
+                        <td class="align-middle hidden-md-up">Lara Heinzel &amp; Devlynn Z Dedicated To My Friend Miyu</td>
+                        <td class="align-middle text-sm-center">AT</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">36.961</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Sophie Rosenberger &amp; Livi (Von Bocorom Destination Of Life)</td>
+                        <td class="align-middle hidden-md-up">Sophie Rosenberger &amp; Livi</td>
+                        <td class="align-middle text-sm-center">GB-E</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">37.088</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Andrea Hanouskova &amp; Conroy Unique Forever ()</td>
+                        <td class="align-middle hidden-md-up">Andrea Hanouskova &amp; Conroy Unique Forever</td>
+                        <td class="align-middle text-sm-center">CZ</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">37.200</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Lucie Glejdurova &amp; Day ()</td>
+                        <td class="align-middle hidden-md-up">Lucie Glejdurova &amp; Day</td>
+                        <td class="align-middle text-sm-center">CZ</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">37.314</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Nicola Giraudi &amp; Katniss (Shepworld I Want It All)</td>
+                        <td class="align-middle hidden-md-up">Nicola Giraudi &amp; Katniss</td>
+                        <td class="align-middle text-sm-center">IT</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">37.461</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Elpida Ismael &amp; Astra ()</td>
+                        <td class="align-middle hidden-md-up">Elpida Ismael &amp; Astra</td>
+                        <td class="align-middle text-sm-center">GR</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">37.552</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Zeljko Gora &amp; Shadow Of Aire Speed (Shadow Of Aire Speed)</td>
+                        <td class="align-middle hidden-md-up">Zeljko Gora &amp; Shadow Of Aire Speed</td>
+                        <td class="align-middle text-sm-center">HR</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">37.771</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Perry Dewitt &amp; Wit ()</td>
+                        <td class="align-middle hidden-md-up">Perry Dewitt &amp; Wit</td>
+                        <td class="align-middle text-sm-center">US</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">38.344</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Alice Laforge &amp; Tesla ()</td>
+                        <td class="align-middle hidden-md-up">Alice Laforge &amp; Tesla</td>
+                        <td class="align-middle text-sm-center">CH</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">38.606</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Ina Spaetgens &amp; Tak ()</td>
+                        <td class="align-middle hidden-md-up">Ina Spaetgens &amp; Tak</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">38.610</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Jessica Ajoux &amp; Hallelujah ()</td>
+                        <td class="align-middle hidden-md-up">Jessica Ajoux &amp; Hallelujah</td>
+                        <td class="align-middle text-sm-center">US</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">38.689</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Philippa Bradley &amp; Savannah (Devongem Be Brilliant)</td>
+                        <td class="align-middle hidden-md-up">Philippa Bradley &amp; Savannah</td>
+                        <td class="align-middle text-sm-center">GB-E</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">38.897</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Lara Heinzel &amp; Runkeeper My Little Friend Pino ()</td>
+                        <td class="align-middle hidden-md-up">Lara Heinzel &amp; Runkeeper My Little Friend Pino</td>
+                        <td class="align-middle text-sm-center">AT</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">39.113</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Mathilde Combe &amp; Fire Inspired Elastic Heart (Jay) ()</td>
+                        <td class="align-middle hidden-md-up">Mathilde Combe &amp; Fire Inspired Elastic Heart (Jay)</td>
+                        <td class="align-middle text-sm-center">FR</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">39.409</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">Rebecca Kowalski &amp; Taki (Gonnahave Taki Taki My Queen)</td>
+                        <td class="align-middle hidden-md-up">Rebecca Kowalski &amp; Taki</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">41.170</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down">CR</td>
+                        <td class="align-middle hidden-md-up">CR</td>
+                        <td class="align-middle hidden-sm-down">McKenzie Minto &amp; Safari (Ec's Safari)</td>
+                        <td class="align-middle hidden-md-up">McKenzie Minto &amp; Safari</td>
+                        <td class="align-middle text-sm-center">US</td>
+                        <td class="align-middle text-sm-center"></td>
+                        <td class="align-middle text-sm-right">0</td>
+                        <td class="align-middle text-sm-center">41.456</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Lea Kasper &amp; Sia ()</td>
+                        <td class="align-middle hidden-md-up">Lea Kasper &amp; Sia</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center">5</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">37.050</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Ola Kordas &amp; Seta (The Set Of Stars Power Dogs)</td>
+                        <td class="align-middle hidden-md-up">Ola Kordas &amp; Seta</td>
+                        <td class="align-middle text-sm-center">PL</td>
+                        <td class="align-middle text-sm-center">5</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">37.216</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Rita Papp &amp; Wondersoul Always Be My Elastic ()</td>
+                        <td class="align-middle hidden-md-up">Rita Papp &amp; Wondersoul Always Be My Elastic</td>
+                        <td class="align-middle text-sm-center">HU</td>
+                        <td class="align-middle text-sm-center">5</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">37.384</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Stefanie Groitl &amp; Deep Hit With Eager To Work ()</td>
+                        <td class="align-middle hidden-md-up">Stefanie Groitl &amp; Deep Hit With Eager To Work</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center">5</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">37.402</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Miriam Schopen &amp; Mii (All Zet Do Mii A Favour)</td>
+                        <td class="align-middle hidden-md-up">Miriam Schopen &amp; Mii</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center">5</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">37.470</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Elodie Bertholier &amp; O'Snow Pixie (O'Snow Pixie)</td>
+                        <td class="align-middle hidden-md-up">Elodie Bertholier &amp; O'Snow Pixie</td>
+                        <td class="align-middle text-sm-center">FR</td>
+                        <td class="align-middle text-sm-center">5</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">37.965</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Tobias Wüst &amp; Bääm Thatu2019s Life With Eager To Work ()</td>
+                        <td class="align-middle hidden-md-up">Tobias Wüst &amp; Bääm Thatu2019s Life With Eager To Work</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center">5</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">38.151</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Pau Serrano Ciratusa &amp; Diablo ()</td>
+                        <td class="align-middle hidden-md-up">Pau Serrano Ciratusa &amp; Diablo</td>
+                        <td class="align-middle text-sm-center">ES</td>
+                        <td class="align-middle text-sm-center">R</td>
+                        <td class="align-middle text-sm-right">5</td>
+                        <td class="align-middle text-sm-center">38.234</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Maria Nogueira &amp; Razo (Darleyfalls Razo Beach)</td>
+                        <td class="align-middle hidden-md-up">Maria Nogueira &amp; Razo</td>
+                        <td class="align-middle text-sm-center">ES</td>
+                        <td class="align-middle text-sm-center">5, 5</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">36.493</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Cathrin Steck &amp; Type (Redefined Atypical)</td>
+                        <td class="align-middle hidden-md-up">Cathrin Steck &amp; Type</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center">5, 5</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">36.769</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Shannon Springford &amp; Ferny No Name (Castomya Love Is Gifted At Shansdream)</td>
+                        <td class="align-middle hidden-md-up">Shannon Springford &amp; Ferny No Name</td>
+                        <td class="align-middle text-sm-center">GB-E</td>
+                        <td class="align-middle text-sm-center">5, 5</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">36.854</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Victoria Kowalski &amp; Jasper (Seven Seas I.-C. Raven Jasper)</td>
+                        <td class="align-middle hidden-md-up">Victoria Kowalski &amp; Jasper</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center">5, 5</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">37.276</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Christian Wöss &amp; A Lego Brick With Infinitiv Power ()</td>
+                        <td class="align-middle hidden-md-up">Christian Wöss &amp; A Lego Brick With Infinitiv Power</td>
+                        <td class="align-middle text-sm-center">AT</td>
+                        <td class="align-middle text-sm-center">5, 5</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">37.816</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Daniel Schröder &amp; Cannabis Drive With Eager To Work ()</td>
+                        <td class="align-middle hidden-md-up">Daniel Schröder &amp; Cannabis Drive With Eager To Work</td>
+                        <td class="align-middle text-sm-center">DE</td>
+                        <td class="align-middle text-sm-center">5, R</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">39.535</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Mette Björne &amp; Bug ()</td>
+                        <td class="align-middle hidden-md-up">Mette Björne &amp; Bug</td>
+                        <td class="align-middle text-sm-center">SE</td>
+                        <td class="align-middle text-sm-center">R, R</td>
+                        <td class="align-middle text-sm-right">10</td>
+                        <td class="align-middle text-sm-center">41.727</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Sérgio Sousa &amp; Coley Moley (Darleyfalls Lightning Bolt)</td>
+                        <td class="align-middle hidden-md-up">Sérgio Sousa &amp; Coley Moley</td>
+                        <td class="align-middle text-sm-center">PT</td>
+                        <td class="align-middle text-sm-center">5, 5, 5</td>
+                        <td class="align-middle text-sm-right">15</td>
+                        <td class="align-middle text-sm-center">36.722</td>
+                      </tr>
+                      <tr>
+                        <td class="align-middle hidden-sm-down"></td>
+                        <td class="align-middle hidden-md-up"></td>
+                        <td class="align-middle hidden-sm-down">Simon Brenca &amp; Sign ()</td>
+                        <td class="align-middle hidden-md-up">Simon Brenca &amp; Sign</td>
+                        <td class="align-middle text-sm-center">CH</td>
+                        <td class="align-middle text-sm-center">5, 5, 5</td>
+                        <td class="align-middle text-sm-right">15</td>
+                        <td class="align-middle text-sm-center">37.081</td>
+                      </tr>
+                    </tbody>
+                    <tr>
+                      <td colspan="99"><strong>Eliminated</strong>: Miriam Schopen &amp; Maze (5, 5), Sara Bacon &amp; Trend, Perry Dewitt &amp; Genuine (5, R), Sabine Kreutz &amp; Foo Upcoming Star Of Noble County (R), Monika Rylska &amp; Focaccia (5), Shannon Springford &amp; Banter, Jeremy Chomienne &amp; Ryz (R), Pierre Le Net &amp; Mango (R, R, 5, R), Ewa Sadal &amp; Dashi (R, R), Sara Bacon &amp; Bliss (5), Anne Lenz &amp; Vis (5, R), Heidi Wain &amp; Sharkie (R, R), Jessica Ajoux &amp; Empowered (R), Iban Cubedo &amp; You Know &quot;dash&quot; Best My Dream (5, 5, R), Nicola Giraudi &amp; Brant, Zsuzsanna Tóth &amp; Corrieloch Jet &quot;jet&quot; (5), Jeremy Chomienne &amp; Rafale, Steve Seale &amp; Be B (R, 5, 5, R), Mark Douglas &amp; Sheriff (R, 5), Tobias Wüst &amp; Ceed With Eager To Work (R), Debby Simons &amp; Swipe, Kayleigh Hewitt &amp; Cosmo (5), Janet Terry &amp; Scenic, Naarah Cuddy &amp; Banana (R), Enrico Coscarelli &amp; Dream With Me T (5, R), César Martínez Bouzón &amp; Huracán Lilly (5, 5)</td>
+                    </tr>
+                  </table>
+                  <div class="mt-1"></div><a class="btn mr-1 btn-secondary btn-sm" href="https://api.agilityplaza.com/agilityClass/1694309282/results/pdf/results_1694309282.pdf"><i class='far fa-file-pdf'></i> Download PDF</a>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPTS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
+    <script src="/api_v1.9e.js"></script>
+    <script>
+      $(document).ready(function (e) {
+          var $input = $('#refresh');
+          $input.val() == 'yes' ? location.reload(true) : $input.val('yes');
+      });
+      
+      jQuery("#screenWidth").text(screen.width)
+      jQuery("#screenHeight").text(screen.height)
+      jQuery("#windowWidth").text(window.innerWidth)
+      jQuery("#windowHeight").text(window.innerHeight)
+      
+      jQuery(window).resize(function () {
+          jQuery("#screenWidth").text(screen.width)
+          jQuery("#screenHeight").text(screen.height)
+          jQuery("#windowWidth").text(window.outerWidth)
+          jQuery("#windowHeight").text(window.outerHeight)
+      })
+    </script>
+    <script>
+      bindForm("spoofForm", "/api/spoof", {
+          spoof: {
+              idCompetitor: "",
+              token: ""
+          }
+      })
+      
+      var mimeCheck = function (type) {
+          return Array.prototype.reduce.call(navigator.plugins, function (supported, plugin) {
+              return supported || Array.prototype.reduce.call(plugin, function (supported, mime) {
+                  return supported || mime.type == type;
+              }, supported);
+          }, false);
+      };
+      
+      /*
+      window.addEventListener("beforeunload", function () {
+          console.info("when beforeunload")
+          showLoading();
+      });
+      
+      window.addEventListener("pageshow", function () {
+          console.info("when window pageshow")
+          hideLoading();
+      });
+      */
+      
+    </script>
+  </body>
+</html>

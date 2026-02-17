@@ -1,0 +1,1284 @@
+competition,round_key,size,discipline,is_team_round,rank,start_no,handler,dog,breed,country,faults,refusals,time_faults,total_faults,time,speed,eliminated,judge,sct,mct,course_length
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,1,443,"Gronek, Ola",Heya,Border Collie,POL,0,0,0.00,0.00,40.34,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,2,429,"Fiala, Jan",Knedlee Czech,Border Collie,CZE,0,0,0.00,0.00,40.38,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,3,409,"Golab, Iwona",SeeYa,Border Collie,POL,0,0,0.00,0.00,40.47,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,4,422,"Kłobukowska, Ola",Yuca,Border Collie,POL,0,0,0.00,0.00,40.62,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,5,405,"Kellman, Riina",Kiksi,Border Collie,FIN,0,0,0.00,0.00,41.19,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,6,435,"Diviš, Jakub",Cis,Border Collie,CZE,0,0,0.00,0.00,45.05,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,7,445,"Ringmets, Inge",Tarmi,Croatian Sheepdog,EST,1,0,0.00,5.00,39.82,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,8,440,"Vansteelant, Saskia",Tori,Border Collie,BEL,1,0,0.00,5.00,40.42,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,9,407,"Mixova, Dana",Valerie,Border Collie,CZE,1,0,0.00,5.00,44.64,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,10,427,"Paulik, Helmut",Nana,Border Collie,AUT,0,1,0.00,5.00,45.18,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,11,419,"Duda, Paulina",Free,Border Collie,POL,1,0,2.26,7.26,49.26,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,12,403,"Simkoniene, Asta",Zika,Aussie,LTU,1,0,8.60,13.60,55.60,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,13,408,"Langer, Sandra",Vegas,Border Collie,AUT,1,2,2.96,17.96,49.96,0,False,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,417,"Krejčí, Lucie",Tori,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,449,"Neuwald, Małgorzata",Flik,Mix,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,442,"Michalik, Aleksandra",Phoebe,Border Collie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,448,"Jenny, Holler",Diego,MAS,DEU,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,430,"Berthelsen, Bonnik",Lua,Border Collie,DNK,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,453,"Krejčí, Tereza",Hotty,Poodle,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,432,"Novotna, Barbora",Bibi,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,428,"Ziolkowska, Magdalena",Muku,Border Collie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,421,"Denysenko, Nataliia",Astrid,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,404,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,437,"Kubánková, Zuzana",Tajenka,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,450,"Havasi, Zsolt",Bodza,Mix,HUN,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,406,"Vähätalo, Raisa",Minkki,Border Collie,FIN,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,438,"Milikauskaitė, Agneta",Hulu,Border Collie,LTU,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,431,"Wasiukiewicz, Magdalena",Dumka,Border Collie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,426,"Kohl, Nadine",Quinn,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,444,"Kellman, Riina",Kreisi,Border Collie,FIN,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,418,"Scannella, Jacqueline",Quick,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,451,"Sack, Lenka",Theika,Mudi,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,447,"Lorenz, Daniela",Kuba,Kelpie,DEU,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,434,"Grygarova, Aneta",Disney,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,420,"Bartelova, Lucie",Cheeky,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,433,"Vyplelova, Petra",Brilley,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,455,"Maruszczak, Roman",T-REX,Pyrshep,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,410,"Vaclavíkova, Gabriela",Windy,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,413,"Riezanova, Valentyna",Jera,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,441,"Pruska, Agata",Pai,Border Collie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,411,"Havlíčkova, Adéla",Nisa,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,439,"Dostalova, Veronika",Dobby,Border Collie,FRA,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,416,"Paulik, Christina",Happy,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,436,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,412,"Kovalenko, Kateryna",Totori,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,415,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,454,"Ficzere, Csenge",Zuki,Pyrshep,HUN,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,452,"Ujma, Michał",Raisa,Mudi,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,456,"Michalak, Katarzyna",Mizu,Whippet,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,401,"Maciejewska, Weronika",Zjava,Aussie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_1,Intermediate,Agility,False,,424,"bawer, beata",asteri,Border Collie,POL,,,,,,,True,Tamás Tráj,,,
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,1,407,"Mixova, Dana",Valerie,Border Collie,CZE,0,0,0.00,0.00,40.11,5.48,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,2,429,"Fiala, Jan",Knedlee Czech,Border Collie,CZE,0,0,0.00,0.00,41.66,5.28,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,3,403,"Simkoniene, Asta",Zika,Aussie,LTU,0,0,4.79,4.79,51.79,4.25,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,4,438,"Milikauskaitė, Agneta",Hulu,Border Collie,LTU,1,0,0.00,5.00,42.13,5.22,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,5,439,"Dostalova, Veronika",Dobby,Border Collie,FRA,0,1,0.51,5.51,47.51,4.63,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,6,418,"Scannella, Jacqueline",Quick,Border Collie,DEU,0,1,3.84,8.84,50.84,4.33,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,7,410,"Vaclavíkova, Gabriela",Windy,Border Collie,CZE,2,0,0.00,10.00,43.86,5.02,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,8,448,"Jenny, Holler",Diego,MAS,DEU,0,2,1.27,11.27,48.27,4.56,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,9,456,"Michalak, Katarzyna",Mizu,Whippet,POL,3,0,1.70,16.70,48.70,4.52,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,10,421,"Denysenko, Nataliia",Astrid,Border Collie,UKR,1,1,7.45,17.45,54.45,4.04,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,11,426,"Kohl, Nadine",Quinn,Border Collie,AUT,3,1,0.00,20.00,43.42,5.07,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,12,445,"Ringmets, Inge",Tarmi,Croatian Sheepdog,EST,3,1,0.67,20.67,47.67,4.62,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,13,444,"Kellman, Riina",Kreisi,Border Collie,FIN,3,0,20.41,35.41,67.41,3.26,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,404,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,405,"Kellman, Riina",Kiksi,Border Collie,FIN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,450,"Havasi, Zsolt",Bodza,Mix,HUN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,413,"Riezanova, Valentyna",Jera,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,431,"Wasiukiewicz, Magdalena",Dumka,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,406,"Vähätalo, Raisa",Minkki,Border Collie,FIN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,437,"Kubánková, Zuzana",Tajenka,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,419,"Duda, Paulina",Free,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,454,"Ficzere, Csenge",Zuki,Pyrshep,HUN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,435,"Diviš, Jakub",Cis,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,433,"Vyplelova, Petra",Brilley,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,441,"Pruska, Agata",Pai,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,449,"Neuwald, Małgorzata",Flik,Mix,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,416,"Paulik, Christina",Happy,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,436,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,420,"Bartelova, Lucie",Cheeky,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,408,"Langer, Sandra",Vegas,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,411,"Havlíčkova, Adéla",Nisa,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,440,"Vansteelant, Saskia",Tori,Border Collie,BEL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,447,"Lorenz, Daniela",Kuba,Kelpie,DEU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,451,"Sack, Lenka",Theika,Mudi,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,417,"Krejčí, Lucie",Tori,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,432,"Novotna, Barbora",Bibi,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,415,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,428,"Ziolkowska, Magdalena",Muku,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,424,"bawer, beata",asteri,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,453,"Krejčí, Tereza",Hotty,Poodle,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,412,"Kovalenko, Kateryna",Totori,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,430,"Berthelsen, Bonnik",Lua,Border Collie,DNK,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,442,"Michalik, Aleksandra",Phoebe,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,401,"Maciejewska, Weronika",Zjava,Aussie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_intermediate_2,Intermediate,Agility,False,,452,"Ujma, Michał",Raisa,Mudi,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,1,561,"Anja, Kunz",Wubke,Border Collie,DEU,0,0,0.00,0.00,39.28,5.6,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,2,627,"Banotova, Nikola",Tuli,Border Collie,CZE,0,0,0.00,0.00,40.72,5.4,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,3,525,"Zika, Daniela",Raccoon,Border Collie,AUT,0,0,0.00,0.00,41.87,5.25,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,4,645,"Terčova, Katka",Too Czech,Border Collie,CZE,0,0,0.00,0.00,44.18,4.98,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,5,598,"Fischer, Joanna",Limit,Border Collie,POL,1,0,0.00,5.00,38.99,5.64,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,6,553,"Litwin, Klaudia",Mer,Border Collie,POL,1,0,0.00,5.00,39.17,5.62,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,7,660,"Bauer, Anke",Sun,Kelpie,AUT,1,0,0.00,5.00,40.84,5.39,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,8,658,"Barceviciene, Agne",Bona,Groenendael,LTU,1,0,0.00,5.00,41.97,5.24,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,9,622,"Vähätalo, Raisa",Peppi,Border Collie,FIN,0,1,0.00,5.00,43.48,5.06,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,10,577,"Edrova, Olga",Reed,Border Collie,CZE,0,1,0.00,5.00,43.94,5.01,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,11,671,"Kajpušova, Nikola",Tori,Tervueren,CZE,1,0,0.63,5.63,46.63,4.72,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,12,554,"Kratka, Julie",Bali,Border Collie,CZE,0,1,1.39,6.39,47.39,4.64,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,13,647,"Denysenko, Nataliia",Roy,Border Collie,UKR,0,1,2.93,7.93,48.93,4.5,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,14,512,"Papp, Rita",Stic,Border Collie,HUN,1,1,0.00,10.00,41.24,5.33,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,15,566,"Karpinska, Natalia",Pamper,Border Collie,POL,1,1,0.00,10.00,44.75,4.92,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,16,665,"Kalisz, Iwona",Synek,Kelpie,POL,1,1,0.00,10.00,44.93,4.9,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,17,544,"Jurthe, Jasmin",Kiany,Border Collie,DEU,1,1,0.00,10.00,45.55,4.83,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,18,669,"Nomeikaite, Ieva",Ice cream,Samoyed,LTU,1,0,10.19,15.19,56.19,3.92,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,19,590,"Jurthe, Jasmin",Tay,Border Collie,DEU,1,2,1.39,16.39,47.39,4.64,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,20,646,"Denysenko, Daria",Crowley,Border Collie,UKR,1,2,3.11,18.11,49.11,4.48,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,21,505,"Starzyk, Ewa",Koka,Border Collie,POL,1,1,11.01,21.01,57.01,3.86,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,22,655,"Blachova, Lenka",Jasněnka,Dutch Shepherd,CZE,2,2,7.20,27.20,53.20,4.14,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,23,668,"Nomeikienė, Violeta",Mo,Samoyed,LTU,3,1,13.15,33.15,59.15,3.72,False,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,639,"Skrypytsia, Daria",Brie,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,543,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,535,"Wachter, Alfons",Karma,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,587,"Berndt, Teresa",Keep,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,602,"Janusauskiene, Jolanta",Desna,Groenendael,LTU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,578,"Hoftych, Kristýna",Toxic,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,670,"Curin, Manuela",Atomic,Tervueren,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,542,"Olah, Eszter",Tesla,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,550,"Suralińska, Paulina",Py,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,506,"Osińska, Ada",Fila,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,638,"Sushko, Inna",Dodge,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,519,"Zampieri, Marina",Deep,Border Collie,ITA,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,619,"Lukac, Roman",Metaxa,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,662,"Novotna, Kateřina",Belle,Kelpie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,547,"Fiala, Jan",Pszenik,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,617,"Matusikova, Petra",Rajda,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,532,"Sobiecka, Anna",Stefan,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,609,"Hering, Stephanie",Solo,Malinois,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,601,"Banotova, Nikola",Cody,Malinois,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,674,"Banotova, Nikola",Topinka,Tervueren,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,572,"Dabrowska, Janina",Chia,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,618,"Kelkka, Anni",Lin,Border Collie,FIN,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,654,"Braumandl, Benjamin",Fossa,Cattle Dog,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,576,"Lorenz, Daniela",Zazzle,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,560,"Tejčkova, Michaela",Angel,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,513,"Maj, Kamila",Easy Rider,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,595,"Mielnicka, Patrycja",Nano,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,515,"Anja, Kunz",Luuz,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,540,"Kolaříkova, Lucie",Arty,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,573,"Šťastná, Sabina",Muki,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,582,"Scannella, Jacqueline",Tavi,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,585,"Nikou, Lena",Sorella,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,563,"Göbel, Bianka",Wia,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,629,"Raamat, Keida",Prim,Border Collie,EST,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,516,"Czekaj, Tomasz",Heaven,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,507,"Unger, Jan",Fanta,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,555,"Ziolkowska, Magdalena",MaiGi,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,624,"Podobna, Beata",Nairobi,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,651,"Banotova, Nikola",Limi,Tervueren,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,605,"Andersen, Johanna",Ejsi,Malinois,DNK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,636,"Simonsen, Heidi",Ghost,Border Collie,DNK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,536,"Berndt, Teresa",Koda,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,551,"Smrcek, Zdenek",Sia,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,568,"Papp, Rita",Tengo,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,579,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,508,"Endlerova, Martina",Arís,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,545,"Schreierová, Kristýna",Temi,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,518,"Nadratowska, Natalia",Garda,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,584,"Sadal, Ewa",Tike,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,510,"Kaplińska, Zuzanna",Surprise,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,596,"Vesela, Veronika",Kaspian,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,632,"Illényiova, Hella",Brill,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,661,"Blazevic, Anja",Jean,Kelpie,HRV,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,591,"Anja, Blazevic",Simba,Border Collie,HRV,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,564,"Tönse, Nina",ZapZarap,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,615,"Denysenko, Daria",Night,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,541,"Brych, Michal",Müsli,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,527,"Stadler, Elke",Hina,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,623,"Lorentzen, Sarah",Jinx,Border Collie,DNK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,514,"Hańderek, Wiktoria",Hero,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,557,"Bednarek, Aleksandra",Mushu,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,592,"Dančišak, Erik",Loosí,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,530,"Brabcova, Eliška",Taigi,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,604,"Čekajle, Vilém",Navy,Malinois,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,597,"Vansteelant, Saskia",Qeep,Border Collie,BEL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,517,"Szamfira, Eszter",Tessa,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,522,"Mrazkova, Kateřina",Lawli,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,663,"Ujma, Alicja",Lance,Kelpie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,569,"Šubrtová, Michaela",Bixby,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,641,"Dyksa, Anna",Apple,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,574,"Menger, Vivien",Legend,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,520,"Lisa, Brudermiller",Fun,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,529,"Christian, Wöss",Lego,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,570,"Mildorfova, Kristýna",Murphy,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,537,"Obłój, Martyna",Marvel,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,599,"Sack, Lenka",Stazka,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,666,"Macura, Vladimír",Meggie,Mix,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,509,"Nikou, Lena",Anima,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,562,"Michalska, Joanna",Mossy,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,634,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,616,"Denysenko, Nataliia",Rin,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,583,"Leśniak, Anna",Riksza,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,610,"Dziwińska, Judyta",Nani,Malinois,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,534,"Straka, Zdenek",Case,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,659,"Šilvienė, Vaida",Shango,Groenendael,LTU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,549,"Hering, Stephanie",Nip it,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,559,"Grygarova, Aneta",Trippy,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,642,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,581,"Glejdurova, Lucie",Day,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,503,"Šťastná, Sabina",Taiva,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,586,"Tóth, Zsuzsanna",Jet,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,580,"Šulcová, Kateřina",Waze,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,648,"Matusikova, Petra",Lujča,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,650,"Lukac, Roman",Teqi,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,653,"Dogan, Taner",ICE,Border Collie,USA,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,528,"Pyšková, Barbora",Toffee,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,523,"Kłobukowska, Ola",Rush,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,594,"Maj, Kamila",Zoja,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,611,"Suterska, Wioletta",Beria,Malinois,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,630,"Kransoe, Mia",Aqui,Border Collie,DNK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,533,"Leśniak, Anna",Shimmy,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,511,"Sadal, Ewa",Dashi,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,667,"Kowalczewska, Zofia",Kleks,Mix,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,657,"Volosenkinaite, Paula",Havana,Groenendael,LTU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,631,"Kralikova, Veronika",Naya,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,621,"Tykhonenko, Svitlana",Teni,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,524,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,652,"Sudakova, Daria",Kira,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,620,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,552,"Rozenberg, Nadya",Saga,Border Collie,ISR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,672,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,625,"Visse, Marko",Fram,Border Collie,EST,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,644,"Kivilo, Alar",Yoko,Border Collie,EST,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,546,"Mielnicka, Patrycja",Wish,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,643,"Dostalova, Veronika",Killi,Border Collie,FRA,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,593,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,633,"Solodkina, Katerina",Festival,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,656,"Theocharopoulou, Ersie",Pikla,Golden Retriever,GRC,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,571,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,521,"Tóth, Zsuzsanna",Izzie,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,608,"Terčova, Katka",Shagy,Afghan Hound,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,607,"Lillenberg, Jaanika",Glämm,Malinois,EST,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,614,"Blachova, Lenka",Talonka,Dutch Shepherd,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,565,"Kanda, Maja",Raven,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,606,"Peterson, Hedi",Tachyon,Malinois,EST,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,588,"Pruska, Agata",Zakk,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,612,"Hrůzova, Eliška",Doyle,Aussie,CZE,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,575,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,567,"Orley, Grete",Flow,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,539,"Gawińska, Dominika",Kimi,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_1,Large,Agility,False,,526,"Muszyńska, Anna",Ice,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,1,651,"Banotova, Nikola",Limi,Tervueren,CZE,0,0,0.00,0.00,39.27,5.6,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,2,587,"Berndt, Teresa",Keep,Border Collie,DEU,0,0,0.00,0.00,39.51,5.57,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,3,541,"Brych, Michal",Müsli,Border Collie,CZE,0,0,0.00,0.00,39.75,5.53,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,4,661,"Blazevic, Anja",Jean,Kelpie,HRV,0,0,0.00,0.00,39.78,5.53,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,5,551,"Smrcek, Zdenek",Sia,Border Collie,CZE,1,0,0.00,5.00,37.67,5.84,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,6,601,"Banotova, Nikola",Cody,Malinois,CZE,1,0,0.00,5.00,39.66,5.55,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,7,639,"Skrypytsia, Daria",Brie,Border Collie,UKR,1,0,0.00,5.00,39.70,5.54,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,8,659,"Šilvienė, Vaida",Shango,Groenendael,LTU,1,0,0.00,5.00,40.03,5.5,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,9,509,"Nikou, Lena",Anima,Border Collie,AUT,1,0,0.00,5.00,40.44,5.44,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,10,586,"Tóth, Zsuzsanna",Jet,Border Collie,HUN,1,0,0.00,5.00,42.68,5.15,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,11,665,"Kalisz, Iwona",Synek,Kelpie,POL,0,1,0.00,5.00,44.08,4.99,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,12,543,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,1,1,0.00,10.00,41.30,5.33,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,13,590,"Jurthe, Jasmin",Tay,Border Collie,DEU,1,1,0.00,10.00,45.28,4.86,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,14,555,"Ziolkowska, Magdalena",MaiGi,Border Collie,POL,1,1,0.00,10.00,45.31,4.86,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,15,513,"Maj, Kamila",Easy Rider,Border Collie,POL,2,0,1.20,11.20,47.20,4.66,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,16,668,"Nomeikienė, Violeta",Mo,Samoyed,LTU,0,1,8.21,13.21,54.21,4.06,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,17,594,"Maj, Kamila",Zoja,Border Collie,POL,3,0,0.00,15.00,42.12,5.22,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,18,578,"Hoftych, Kristýna",Toxic,Border Collie,CZE,3,0,0.00,15.00,42.25,5.21,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,19,657,"Volosenkinaite, Paula",Havana,Groenendael,LTU,2,0,10.18,20.18,56.18,3.92,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,20,596,"Vesela, Veronika",Kaspian,Border Collie,CZE,0,2,15.36,25.36,61.36,3.59,False,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,566,"Karpinska, Natalia",Pamper,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,599,"Sack, Lenka",Stazka,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,550,"Suralińska, Paulina",Py,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,536,"Berndt, Teresa",Koda,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,638,"Sushko, Inna",Dodge,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,523,"Kłobukowska, Ola",Rush,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,502,"Stefl, Isabella",Syclone,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,517,"Szamfira, Eszter",Tessa,Border Collie,HUN,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,520,"Lisa, Brudermiller",Fun,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,662,"Novotna, Kateřina",Belle,Kelpie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,540,"Kolaříkova, Lucie",Arty,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,545,"Schreierová, Kristýna",Temi,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,647,"Denysenko, Nataliia",Roy,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,593,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,511,"Sadal, Ewa",Dashi,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,512,"Papp, Rita",Stic,Border Collie,HUN,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,542,"Olah, Eszter",Tesla,Border Collie,HUN,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,516,"Czekaj, Tomasz",Heaven,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,615,"Denysenko, Daria",Night,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,572,"Dabrowska, Janina",Chia,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,642,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,674,"Banotova, Nikola",Topinka,Tervueren,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,645,"Terčova, Katka",Too Czech,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,672,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,597,"Vansteelant, Saskia",Qeep,Border Collie,BEL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,534,"Straka, Zdenek",Case,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,549,"Hering, Stephanie",Nip it,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,510,"Kaplińska, Zuzanna",Surprise,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,617,"Matusikova, Petra",Rajda,Border Collie,SVK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,624,"Podobna, Beata",Nairobi,Border Collie,SVK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,646,"Denysenko, Daria",Crowley,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,648,"Matusikova, Petra",Lujča,Border Collie,SVK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,560,"Tejčkova, Michaela",Angel,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,604,"Čekajle, Vilém",Navy,Malinois,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,579,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,561,"Anja, Kunz",Wubke,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,609,"Hering, Stephanie",Solo,Malinois,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,583,"Leśniak, Anna",Riksza,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,506,"Osińska, Ada",Fila,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,570,"Mildorfova, Kristýna",Murphy,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,522,"Mrazkova, Kateřina",Lawli,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,574,"Menger, Vivien",Legend,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,627,"Banotova, Nikola",Tuli,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,625,"Visse, Marko",Fram,Border Collie,EST,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,564,"Tönse, Nina",ZapZarap,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,670,"Curin, Manuela",Atomic,Tervueren,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,656,"Theocharopoulou, Ersie",Pikla,Golden Retriever,GRC,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,546,"Mielnicka, Patrycja",Wish,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,588,"Pruska, Agata",Zakk,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,563,"Göbel, Bianka",Wia,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,591,"Anja, Blazevic",Simba,Border Collie,HRV,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,508,"Endlerova, Martina",Arís,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,519,"Zampieri, Marina",Deep,Border Collie,ITA,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,654,"Braumandl, Benjamin",Fossa,Cattle Dog,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,544,"Jurthe, Jasmin",Kiany,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,644,"Kivilo, Alar",Yoko,Border Collie,EST,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,582,"Scannella, Jacqueline",Tavi,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,655,"Blachova, Lenka",Jasněnka,Dutch Shepherd,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,552,"Rozenberg, Nadya",Saga,Border Collie,ISR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,630,"Kransoe, Mia",Aqui,Border Collie,DNK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,598,"Fischer, Joanna",Limit,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,562,"Michalska, Joanna",Mossy,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,629,"Raamat, Keida",Prim,Border Collie,EST,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,531,"Adam, Marketa",Tray,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,505,"Starzyk, Ewa",Koka,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,530,"Brabcova, Eliška",Taigi,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,569,"Šubrtová, Michaela",Bixby,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,602,"Janusauskiene, Jolanta",Desna,Groenendael,LTU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,622,"Vähätalo, Raisa",Peppi,Border Collie,FIN,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,580,"Šulcová, Kateřina",Waze,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,553,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,507,"Unger, Jan",Fanta,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,616,"Denysenko, Nataliia",Rin,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,658,"Barceviciene, Agne",Bona,Groenendael,LTU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,618,"Kelkka, Anni",Lin,Border Collie,FIN,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,526,"Muszyńska, Anna",Ice,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,631,"Kralikova, Veronika",Naya,Border Collie,SVK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,554,"Kratka, Julie",Bali,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,558,"Szynczewska, Lena",Reo,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,606,"Peterson, Hedi",Tachyon,Malinois,EST,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,632,"Illényiova, Hella",Brill,Border Collie,SVK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,610,"Dziwińska, Judyta",Nani,Malinois,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,581,"Glejdurova, Lucie",Day,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,576,"Lorenz, Daniela",Zazzle,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,605,"Andersen, Johanna",Ejsi,Malinois,DNK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,614,"Blachova, Lenka",Talonka,Dutch Shepherd,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,592,"Dančišak, Erik",Loosí,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,547,"Fiala, Jan",Pszenik,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,573,"Šťastná, Sabina",Muki,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,532,"Sobiecka, Anna",Stefan,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,514,"Hańderek, Wiktoria",Hero,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,524,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,515,"Anja, Kunz",Luuz,Border Collie,DEU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,667,"Kowalczewska, Zofia",Kleks,Mix,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,518,"Nadratowska, Natalia",Garda,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,595,"Mielnicka, Patrycja",Nano,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,643,"Dostalova, Veronika",Killi,Border Collie,FRA,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,663,"Ujma, Alicja",Lance,Kelpie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,529,"Christian, Wöss",Lego,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,503,"Šťastná, Sabina",Taiva,Border Collie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,504,"Szulczewska, Kinga",Isto,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,637,"Alajääski, Mari",Väiski,Border Collie,FIN,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,636,"Simonsen, Heidi",Ghost,Border Collie,DNK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,653,"Dogan, Taner",ICE,Border Collie,USA,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,527,"Stadler, Elke",Hina,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,666,"Macura, Vladimír",Meggie,Mix,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,557,"Bednarek, Aleksandra",Mushu,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,623,"Lorentzen, Sarah",Jinx,Border Collie,DNK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,669,"Nomeikaite, Ieva",Ice cream,Samoyed,LTU,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,633,"Solodkina, Katerina",Festival,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,521,"Tóth, Zsuzsanna",Izzie,Border Collie,HUN,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,652,"Sudakova, Daria",Kira,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,607,"Lillenberg, Jaanika",Glämm,Malinois,EST,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,567,"Orley, Grete",Flow,Border Collie,HUN,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,641,"Dyksa, Anna",Apple,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,613,"Hendra, Anita",Freya,Aussie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,671,"Kajpušova, Nikola",Tori,Tervueren,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,537,"Obłój, Martyna",Marvel,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,634,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,533,"Leśniak, Anna",Shimmy,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,565,"Kanda, Maja",Raven,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,584,"Sadal, Ewa",Tike,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,571,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,535,"Wachter, Alfons",Karma,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,650,"Lukac, Roman",Teqi,Border Collie,SVK,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,575,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,608,"Terčova, Katka",Shagy,Afghan Hound,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,612,"Hrůzova, Eliška",Doyle,Aussie,CZE,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,539,"Gawińska, Dominika",Kimi,Border Collie,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,620,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,611,"Suterska, Wioletta",Beria,Malinois,POL,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,621,"Tykhonenko, Svitlana",Teni,Border Collie,UKR,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_agility_large_2,Large,Agility,False,,585,"Nikou, Lena",Sorella,Border Collie,AUT,,,,,,,True,Tamás Tráj,,,220.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,1,422,"Kłobukowska, Ola",Yuca,Border Collie,POL,0,0,0.00,0.00,35.47,6.09,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,2,409,"Golab, Iwona",SeeYa,Border Collie,POL,0,0,0.00,0.00,35.94,6.01,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,3,443,"Gronek, Ola",Heya,Border Collie,POL,0,0,0.00,0.00,36.28,5.95,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,4,451,"Sack, Lenka",Theika,Mudi,CZE,1,0,0.00,5.00,36.31,5.95,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,5,444,"Kellman, Riina",Kreisi,Border Collie,FIN,1,0,0.00,5.00,37.55,5.75,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,6,438,"Milikauskaitė, Agneta",Hulu,Border Collie,LTU,1,1,0.00,10.00,39.13,5.52,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,427,"Paulik, Helmut",Nana,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,408,"Langer, Sandra",Vegas,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,418,"Scannella, Jacqueline",Quick,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,429,"Fiala, Jan",Knedlee Czech,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,407,"Mixova, Dana",Valerie,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,403,"Simkoniene, Asta",Zika,Aussie,LTU,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_intermediate,Intermediate,Final,False,,431,"Wasiukiewicz, Magdalena",Dumka,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,1,619,"Lukac, Roman",Metaxa,Border Collie,SVK,0,0,0.00,0.00,36.82,5.87,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,2,585,"Nikou, Lena",Sorella,Border Collie,AUT,0,0,0.00,0.00,37.11,5.82,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,3,587,"Berndt, Teresa",Keep,Border Collie,DEU,0,0,0.00,0.00,38.16,5.66,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,4,547,"Fiala, Jan",Pszenik,Border Collie,CZE,0,0,0.00,0.00,40.27,5.36,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,5,671,"Kajpušova, Nikola",Tori,Tervueren,CZE,0,0,0.60,0.60,43.60,4.95,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,6,598,"Fischer, Joanna",Limit,Border Collie,POL,1,0,0.00,5.00,34.75,6.22,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,7,631,"Kralikova, Veronika",Naya,Border Collie,SVK,1,0,0.00,5.00,35.73,6.05,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,8,632,"Illényiova, Hella",Brill,Border Collie,SVK,1,0,0.00,5.00,36.85,5.86,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,9,561,"Anja, Kunz",Wubke,Border Collie,DEU,1,0,0.00,5.00,37.48,5.76,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,10,580,"Šulcová, Kateřina",Waze,Border Collie,CZE,1,0,0.00,5.00,37.72,5.73,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,11,578,"Hoftych, Kristýna",Toxic,Border Collie,CZE,1,0,0.00,5.00,39.75,5.43,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,12,645,"Terčova, Katka",Too Czech,Border Collie,CZE,1,0,0.00,5.00,41.40,5.22,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,13,659,"Šilvienė, Vaida",Shango,Groenendael,LTU,0,1,0.00,5.00,42.81,5.05,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,14,554,"Kratka, Julie",Bali,Border Collie,CZE,0,1,0.00,5.00,42.94,5.03,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,15,568,"Papp, Rita",Tengo,Border Collie,HUN,2,0,0.00,10.00,37.07,5.83,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,16,525,"Zika, Daniela",Raccoon,Border Collie,AUT,1,2,2.60,17.60,45.60,4.74,False,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,634,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,574,"Menger, Vivien",Legend,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,627,"Banotova, Nikola",Tuli,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,566,"Karpinska, Natalia",Pamper,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,661,"Blazevic, Anja",Jean,Kelpie,HRV,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,528,"Pyšková, Barbora",Toffee,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,577,"Edrova, Olga",Reed,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,622,"Vähätalo, Raisa",Peppi,Border Collie,FIN,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,551,"Smrcek, Zdenek",Sia,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,648,"Matusikova, Petra",Lujča,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,541,"Brych, Michal",Müsli,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,572,"Dabrowska, Janina",Chia,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,586,"Tóth, Zsuzsanna",Jet,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,660,"Bauer, Anke",Sun,Kelpie,AUT,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,639,"Skrypytsia, Daria",Brie,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,674,"Banotova, Nikola",Topinka,Tervueren,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,658,"Barceviciene, Agne",Bona,Groenendael,LTU,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,665,"Kalisz, Iwona",Synek,Kelpie,POL,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,564,"Tönse, Nina",ZapZarap,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,601,"Banotova, Nikola",Cody,Malinois,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,543,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,590,"Jurthe, Jasmin",Tay,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,503,"Šťastná, Sabina",Taiva,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,617,"Matusikova, Petra",Rajda,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,651,"Banotova, Nikola",Limi,Tervueren,CZE,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,553,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,509,"Nikou, Lena",Anima,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_final_large,Large,Final,False,,647,"Denysenko, Nataliia",Roy,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,216.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,1,451,"Sack, Lenka",Theika,Mudi,CZE,0,0,0.00,0.00,40.35,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,2,409,"Golab, Iwona",SeeYa,Border Collie,POL,0,0,0.00,0.00,41.15,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,3,444,"Kellman, Riina",Kreisi,Border Collie,FIN,0,0,0.00,0.00,41.25,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,4,427,"Paulik, Helmut",Nana,Border Collie,AUT,0,0,0.00,0.00,41.49,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,5,410,"Vaclavíkova, Gabriela",Windy,Border Collie,CZE,0,0,0.00,0.00,41.79,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,6,416,"Paulik, Christina",Happy,Border Collie,AUT,0,0,0.00,0.00,42.46,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,7,420,"Bartelova, Lucie",Cheeky,Border Collie,CZE,0,0,0.00,0.00,43.88,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,8,405,"Kellman, Riina",Kiksi,Border Collie,FIN,1,0,0.00,5.00,38.84,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,9,408,"Langer, Sandra",Vegas,Border Collie,AUT,1,0,0.00,5.00,40.52,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,10,445,"Ringmets, Inge",Tarmi,Croatian Sheepdog,EST,0,1,0.00,5.00,41.59,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,11,450,"Havasi, Zsolt",Bodza,Mix,HUN,0,1,0.00,5.00,43.95,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,12,443,"Gronek, Ola",Heya,Border Collie,POL,0,1,0.00,5.00,44.02,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,13,418,"Scannella, Jacqueline",Quick,Border Collie,DEU,0,1,0.00,5.00,45.37,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,14,447,"Lorenz, Daniela",Kuba,Kelpie,DEU,0,1,1.69,6.69,48.69,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,15,448,"Jenny, Holler",Diego,MAS,DEU,1,1,0.73,10.73,47.73,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,16,421,"Denysenko, Nataliia",Astrid,Border Collie,UKR,3,0,0.00,15.00,42.44,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,17,439,"Dostalova, Veronika",Dobby,Border Collie,FRA,1,2,1.97,16.97,48.97,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,18,454,"Ficzere, Csenge",Zuki,Pyrshep,HUN,3,1,0.00,20.00,44.88,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,449,"Neuwald, Małgorzata",Flik,Mix,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,453,"Krejčí, Tereza",Hotty,Poodle,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,424,"bawer, beata",asteri,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,422,"Kłobukowska, Ola",Yuca,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,432,"Novotna, Barbora",Bibi,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,426,"Kohl, Nadine",Quinn,Border Collie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,434,"Grygarova, Aneta",Disney,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,440,"Vansteelant, Saskia",Tori,Border Collie,BEL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,441,"Pruska, Agata",Pai,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,428,"Ziolkowska, Magdalena",Muku,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,406,"Vähätalo, Raisa",Minkki,Border Collie,FIN,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,407,"Mixova, Dana",Valerie,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,401,"Maciejewska, Weronika",Zjava,Aussie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,413,"Riezanova, Valentyna",Jera,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,431,"Wasiukiewicz, Magdalena",Dumka,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,412,"Kovalenko, Kateryna",Totori,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,411,"Havlíčkova, Adéla",Nisa,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,438,"Milikauskaitė, Agneta",Hulu,Border Collie,LTU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,403,"Simkoniene, Asta",Zika,Aussie,LTU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,435,"Diviš, Jakub",Cis,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,456,"Michalak, Katarzyna",Mizu,Whippet,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,455,"Maruszczak, Roman",T-REX,Pyrshep,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,433,"Vyplelova, Petra",Brilley,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,436,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,415,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,429,"Fiala, Jan",Knedlee Czech,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,417,"Krejčí, Lucie",Tori,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,419,"Duda, Paulina",Free,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,437,"Kubánková, Zuzana",Tajenka,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,404,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,430,"Berthelsen, Bonnik",Lua,Border Collie,DNK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,442,"Michalik, Aleksandra",Phoebe,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_1,Intermediate,Jumping,False,,452,"Ujma, Michał",Raisa,Mudi,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,1,431,"Wasiukiewicz, Magdalena",Dumka,Border Collie,POL,0,0,0.00,0.00,33.30,6.37,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,2,438,"Milikauskaitė, Agneta",Hulu,Border Collie,LTU,0,0,0.00,0.00,34.16,6.21,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,3,408,"Langer, Sandra",Vegas,Border Collie,AUT,0,0,0.00,0.00,34.40,6.16,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,4,418,"Scannella, Jacqueline",Quick,Border Collie,DEU,0,0,0.00,0.00,34.48,6.15,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,5,451,"Sack, Lenka",Theika,Mudi,CZE,0,0,0.00,0.00,34.49,6.15,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,6,444,"Kellman, Riina",Kreisi,Border Collie,FIN,0,0,0.00,0.00,34.93,6.07,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,7,416,"Paulik, Christina",Happy,Border Collie,AUT,0,0,0.00,0.00,35.93,5.9,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,8,419,"Duda, Paulina",Free,Border Collie,POL,0,0,0.00,0.00,36.88,5.75,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,9,417,"Krejčí, Lucie",Tori,Border Collie,CZE,0,0,0.00,0.00,37.08,5.72,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,10,410,"Vaclavíkova, Gabriela",Windy,Border Collie,CZE,0,0,0.00,0.00,37.29,5.69,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,11,429,"Fiala, Jan",Knedlee Czech,Border Collie,CZE,1,0,0.00,5.00,34.11,6.22,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,12,407,"Mixova, Dana",Valerie,Border Collie,CZE,0,1,0.00,5.00,37.26,5.69,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,13,436,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,0,1,1.06,6.06,40.06,5.29,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,14,448,"Jenny, Holler",Diego,MAS,DEU,1,1,0.00,10.00,37.97,5.58,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,15,428,"Ziolkowska, Magdalena",Muku,Border Collie,POL,1,1,4.34,14.34,43.34,4.89,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,16,453,"Krejčí, Tereza",Hotty,Poodle,CZE,1,1,4.41,14.41,43.41,4.88,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,17,435,"Diviš, Jakub",Cis,Border Collie,CZE,1,2,1.95,16.95,40.95,5.18,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,18,421,"Denysenko, Nataliia",Astrid,Border Collie,UKR,2,1,3.44,18.44,42.44,5,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,19,412,"Kovalenko, Kateryna",Totori,Border Collie,UKR,1,2,3.56,18.56,42.56,4.98,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,20,445,"Ringmets, Inge",Tarmi,Croatian Sheepdog,EST,4,0,0.00,20.00,33.10,6.4,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,21,452,"Ujma, Michał",Raisa,Mudi,POL,1,2,6.51,21.51,45.51,4.66,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,409,"Golab, Iwona",SeeYa,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,439,"Dostalova, Veronika",Dobby,Border Collie,FRA,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,454,"Ficzere, Csenge",Zuki,Pyrshep,HUN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,442,"Michalik, Aleksandra",Phoebe,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,411,"Havlíčkova, Adéla",Nisa,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,434,"Grygarova, Aneta",Disney,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,401,"Maciejewska, Weronika",Zjava,Aussie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,430,"Berthelsen, Bonnik",Lua,Border Collie,DNK,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,441,"Pruska, Agata",Pai,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,413,"Riezanova, Valentyna",Jera,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,420,"Bartelova, Lucie",Cheeky,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,437,"Kubánková, Zuzana",Tajenka,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,449,"Neuwald, Małgorzata",Flik,Mix,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,433,"Vyplelova, Petra",Brilley,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,440,"Vansteelant, Saskia",Tori,Border Collie,BEL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,426,"Kohl, Nadine",Quinn,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,432,"Novotna, Barbora",Bibi,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,450,"Havasi, Zsolt",Bodza,Mix,HUN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,406,"Vähätalo, Raisa",Minkki,Border Collie,FIN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,447,"Lorenz, Daniela",Kuba,Kelpie,DEU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,455,"Maruszczak, Roman",T-REX,Pyrshep,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,403,"Simkoniene, Asta",Zika,Aussie,LTU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,404,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,405,"Kellman, Riina",Kiksi,Border Collie,FIN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,456,"Michalak, Katarzyna",Mizu,Whippet,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,424,"bawer, beata",asteri,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_intermediate_2,Intermediate,Jumping,False,,415,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,1,551,"Smrcek, Zdenek",Sia,Border Collie,CZE,0,0,0.00,0.00,39.58,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,2,585,"Nikou, Lena",Sorella,Border Collie,AUT,0,0,0.00,0.00,39.69,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,3,503,"Šťastná, Sabina",Taiva,Border Collie,CZE,0,0,0.00,0.00,40.79,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,4,645,"Terčova, Katka",Too Czech,Border Collie,CZE,0,0,0.00,0.00,40.93,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,5,566,"Karpinska, Natalia",Pamper,Border Collie,POL,0,0,0.00,0.00,40.99,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,6,648,"Matusikova, Petra",Lujča,Border Collie,SVK,0,0,0.00,0.00,41.06,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,7,541,"Brych, Michal",Müsli,Border Collie,CZE,0,0,0.00,0.00,41.50,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,8,528,"Pyšková, Barbora",Toffee,Border Collie,CZE,0,0,0.00,0.00,41.52,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,9,568,"Papp, Rita",Tengo,Border Collie,HUN,0,0,0.00,0.00,41.73,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,10,580,"Šulcová, Kateřina",Waze,Border Collie,CZE,0,0,0.00,0.00,41.74,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,11,674,"Banotova, Nikola",Topinka,Tervueren,CZE,0,0,0.00,0.00,41.87,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,12,561,"Anja, Kunz",Wubke,Border Collie,DEU,0,0,0.00,0.00,41.95,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,13,577,"Edrova, Olga",Reed,Border Collie,CZE,0,0,0.00,0.00,42.04,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,14,582,"Scannella, Jacqueline",Tavi,Border Collie,DEU,0,0,0.00,0.00,42.31,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,15,601,"Banotova, Nikola",Cody,Malinois,CZE,0,0,0.00,0.00,42.38,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,16,505,"Starzyk, Ewa",Koka,Border Collie,POL,0,0,0.00,0.00,42.40,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,17,547,"Fiala, Jan",Pszenik,Border Collie,CZE,0,0,0.00,0.00,42.42,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,18,531,"Adam, Marketa",Tray,Border Collie,CZE,0,0,0.00,0.00,42.76,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,19,614,"Blachova, Lenka",Talonka,Dutch Shepherd,CZE,0,0,0.00,0.00,43.18,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,20,506,"Osińska, Ada",Fila,Border Collie,POL,0,0,0.00,0.00,43.82,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,21,596,"Vesela, Veronika",Kaspian,Border Collie,CZE,0,0,0.20,0.20,46.20,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,22,667,"Kowalczewska, Zofia",Kleks,Mix,POL,0,0,0.86,0.86,46.86,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,23,502,"Stefl, Isabella",Syclone,Border Collie,AUT,1,0,0.00,5.00,38.27,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,24,515,"Anja, Kunz",Luuz,Border Collie,DEU,1,0,0.00,5.00,39.76,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,25,534,"Straka, Zdenek",Case,Border Collie,CZE,1,0,0.00,5.00,40.17,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,26,542,"Olah, Eszter",Tesla,Border Collie,HUN,1,0,0.00,5.00,40.42,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,27,653,"Dogan, Taner",ICE,Border Collie,USA,1,0,0.00,5.00,41.57,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,28,616,"Denysenko, Nataliia",Rin,Border Collie,UKR,1,0,0.00,5.00,42.01,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,29,659,"Šilvienė, Vaida",Shango,Groenendael,LTU,1,0,0.00,5.00,42.19,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,30,647,"Denysenko, Nataliia",Roy,Border Collie,UKR,1,0,0.00,5.00,43.10,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,31,643,"Dostalova, Veronika",Killi,Border Collie,FRA,1,0,0.00,5.00,43.15,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,32,544,"Jurthe, Jasmin",Kiany,Border Collie,DEU,0,1,0.00,5.00,43.91,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,33,615,"Denysenko, Daria",Night,Border Collie,UKR,1,0,0.00,5.00,43.95,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,34,533,"Leśniak, Anna",Shimmy,Border Collie,POL,0,1,0.00,5.00,44.15,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,35,584,"Sadal, Ewa",Tike,Border Collie,POL,1,0,0.59,5.59,46.59,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,36,618,"Kelkka, Anni",Lin,Border Collie,FIN,0,1,1.90,6.90,47.90,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,37,617,"Matusikova, Petra",Rajda,Border Collie,SVK,1,1,0.00,10.00,40.77,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,38,655,"Blachova, Lenka",Jasněnka,Dutch Shepherd,CZE,2,0,0.00,10.00,41.81,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,39,512,"Papp, Rita",Stic,Border Collie,HUN,1,1,0.00,10.00,42.74,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,40,654,"Braumandl, Benjamin",Fossa,Cattle Dog,AUT,1,1,0.00,10.00,44.76,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,41,555,"Ziolkowska, Magdalena",MaiGi,Border Collie,POL,0,1,7.48,12.48,53.48,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,42,586,"Tóth, Zsuzsanna",Jet,Border Collie,HUN,3,0,0.00,15.00,43.06,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,43,554,"Kratka, Julie",Bali,Border Collie,CZE,2,1,0.00,15.00,44.80,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,44,526,"Muszyńska, Anna",Ice,Border Collie,POL,1,2,1.72,16.72,47.72,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,45,657,"Volosenkinaite, Paula",Havana,Groenendael,LTU,0,2,9.55,19.55,55.55,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,46,610,"Dziwińska, Judyta",Nani,Malinois,POL,4,0,3.85,23.85,49.85,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,47,546,"Mielnicka, Patrycja",Wish,Border Collie,POL,1,2,9.00,24.00,55.00,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,48,532,"Sobiecka, Anna",Stefan,Border Collie,POL,2,2,4.81,24.81,50.81,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,49,650,"Lukac, Roman",Teqi,Border Collie,SVK,5,0,0.00,25.00,43.76,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,50,625,"Visse, Marko",Fram,Border Collie,EST,3,2,0.00,25.00,44.71,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,51,607,"Lillenberg, Jaanika",Glämm,Malinois,EST,7,1,1.82,41.82,47.82,0,False,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,549,"Hering, Stephanie",Nip it,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,511,"Sadal, Ewa",Dashi,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,646,"Denysenko, Daria",Crowley,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,631,"Kralikova, Veronika",Naya,Border Collie,SVK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,656,"Theocharopoulou, Ersie",Pikla,Golden Retriever,GRC,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,665,"Kalisz, Iwona",Synek,Kelpie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,563,"Göbel, Bianka",Wia,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,664,"Klityńska, Marta",Peak,Kelpie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,575,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,552,"Rozenberg, Nadya",Saga,Border Collie,ISR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,560,"Tejčkova, Michaela",Angel,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,562,"Michalska, Joanna",Mossy,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,663,"Ujma, Alicja",Lance,Kelpie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,529,"Christian, Wöss",Lego,Border Collie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,602,"Janusauskiene, Jolanta",Desna,Groenendael,LTU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,578,"Hoftych, Kristýna",Toxic,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,536,"Berndt, Teresa",Koda,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,638,"Sushko, Inna",Dodge,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,514,"Hańderek, Wiktoria",Hero,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,564,"Tönse, Nina",ZapZarap,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,572,"Dabrowska, Janina",Chia,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,604,"Čekajle, Vilém",Navy,Malinois,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,611,"Suterska, Wioletta",Beria,Malinois,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,629,"Raamat, Keida",Prim,Border Collie,EST,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,666,"Macura, Vladimír",Meggie,Mix,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,519,"Zampieri, Marina",Deep,Border Collie,ITA,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,553,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,622,"Vähätalo, Raisa",Peppi,Border Collie,FIN,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,579,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,592,"Dančišak, Erik",Loosí,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,644,"Kivilo, Alar",Yoko,Border Collie,EST,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,557,"Bednarek, Aleksandra",Mushu,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,569,"Šubrtová, Michaela",Bixby,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,573,"Šťastná, Sabina",Muki,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,624,"Podobna, Beata",Nairobi,Border Collie,SVK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,639,"Skrypytsia, Daria",Brie,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,627,"Banotova, Nikola",Tuli,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,507,"Unger, Jan",Fanta,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,660,"Bauer, Anke",Sun,Kelpie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,671,"Kajpušova, Nikola",Tori,Tervueren,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,637,"Alajääski, Mari",Väiski,Border Collie,FIN,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,525,"Zika, Daniela",Raccoon,Border Collie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,545,"Schreierová, Kristýna",Temi,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,594,"Maj, Kamila",Zoja,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,595,"Mielnicka, Patrycja",Nano,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,609,"Hering, Stephanie",Solo,Malinois,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,658,"Barceviciene, Agne",Bona,Groenendael,LTU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,662,"Novotna, Kateřina",Belle,Kelpie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,516,"Czekaj, Tomasz",Heaven,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,619,"Lukac, Roman",Metaxa,Border Collie,SVK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,543,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,597,"Vansteelant, Saskia",Qeep,Border Collie,BEL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,630,"Kransoe, Mia",Aqui,Border Collie,DNK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,574,"Menger, Vivien",Legend,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,588,"Pruska, Agata",Zakk,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,634,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,598,"Fischer, Joanna",Limit,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,587,"Berndt, Teresa",Keep,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,661,"Blazevic, Anja",Jean,Kelpie,HRV,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,605,"Andersen, Johanna",Ejsi,Malinois,DNK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,583,"Leśniak, Anna",Riksza,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,504,"Szulczewska, Kinga",Isto,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,590,"Jurthe, Jasmin",Tay,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,670,"Curin, Manuela",Atomic,Tervueren,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,626,"Matei, Iryna",Twix,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,559,"Grygarova, Aneta",Trippy,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,521,"Tóth, Zsuzsanna",Izzie,Border Collie,HUN,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,517,"Szamfira, Eszter",Tessa,Border Collie,HUN,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,567,"Orley, Grete",Flow,Border Collie,HUN,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,591,"Anja, Blazevic",Simba,Border Collie,HRV,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,550,"Suralińska, Paulina",Py,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,518,"Nadratowska, Natalia",Garda,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,508,"Endlerova, Martina",Arís,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,523,"Kłobukowska, Ola",Rush,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,593,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,530,"Brabcova, Eliška",Taigi,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,509,"Nikou, Lena",Anima,Border Collie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,636,"Simonsen, Heidi",Ghost,Border Collie,DNK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,510,"Kaplińska, Zuzanna",Surprise,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,576,"Lorenz, Daniela",Zazzle,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,520,"Lisa, Brudermiller",Fun,Border Collie,DEU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,651,"Banotova, Nikola",Limi,Tervueren,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,623,"Lorentzen, Sarah",Jinx,Border Collie,DNK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,641,"Dyksa, Anna",Apple,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,565,"Kanda, Maja",Raven,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,633,"Solodkina, Katerina",Festival,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,513,"Maj, Kamila",Easy Rider,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,581,"Glejdurova, Lucie",Day,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,672,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,535,"Wachter, Alfons",Karma,Border Collie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,540,"Kolaříkova, Lucie",Arty,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,632,"Illényiova, Hella",Brill,Border Collie,SVK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,621,"Tykhonenko, Svitlana",Teni,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,527,"Stadler, Elke",Hina,Border Collie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,620,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,571,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,652,"Sudakova, Daria",Kira,Border Collie,UKR,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,524,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,539,"Gawińska, Dominika",Kimi,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,642,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,522,"Mrazkova, Kateřina",Lawli,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,608,"Terčova, Katka",Shagy,Afghan Hound,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,669,"Nomeikaite, Ieva",Ice cream,Samoyed,LTU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,537,"Obłój, Martyna",Marvel,Border Collie,POL,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,570,"Mildorfova, Kristýna",Murphy,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,599,"Sack, Lenka",Stazka,Border Collie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,612,"Hrůzova, Eliška",Doyle,Aussie,CZE,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,668,"Nomeikienė, Violeta",Mo,Samoyed,LTU,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_1,Large,Jumping,False,,606,"Peterson, Hedi",Tachyon,Malinois,EST,,,,,,,True,Hugo Santos,,,
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,1,551,"Smrcek, Zdenek",Sia,Border Collie,CZE,0,0,0.00,0.00,33.35,6.36,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,2,564,"Tönse, Nina",ZapZarap,Border Collie,DEU,0,0,0.00,0.00,33.82,6.27,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,3,574,"Menger, Vivien",Legend,Border Collie,DEU,0,0,0.00,0.00,33.84,6.26,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,4,631,"Kralikova, Veronika",Naya,Border Collie,SVK,0,0,0.00,0.00,33.85,6.26,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,4,634,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,0,0,0.00,0.00,33.85,6.26,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,6,617,"Matusikova, Petra",Rajda,Border Collie,SVK,0,0,0.00,0.00,33.99,6.24,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,7,525,"Zika, Daniela",Raccoon,Border Collie,AUT,0,0,0.00,0.00,34.58,6.13,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,8,572,"Dabrowska, Janina",Chia,Border Collie,POL,0,0,0.00,0.00,34.85,6.08,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,9,547,"Fiala, Jan",Pszenik,Border Collie,CZE,0,0,0.00,0.00,34.91,6.07,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,10,619,"Lukac, Roman",Metaxa,Border Collie,SVK,0,0,0.00,0.00,34.96,6.06,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,11,632,"Illényiova, Hella",Brill,Border Collie,SVK,0,0,0.00,0.00,35.11,6.04,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,12,578,"Hoftych, Kristýna",Toxic,Border Collie,CZE,0,0,0.00,0.00,35.53,5.97,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,13,645,"Terčova, Katka",Too Czech,Border Collie,CZE,0,0,0.00,0.00,35.54,5.97,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,14,587,"Berndt, Teresa",Keep,Border Collie,DEU,0,0,0.00,0.00,35.67,5.94,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,15,544,"Jurthe, Jasmin",Kiany,Border Collie,DEU,0,0,0.00,0.00,35.93,5.9,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,16,661,"Blazevic, Anja",Jean,Kelpie,HRV,0,0,0.00,0.00,36.56,5.8,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,17,627,"Banotova, Nikola",Tuli,Border Collie,CZE,0,0,0.00,0.00,36.60,5.79,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,18,519,"Zampieri, Marina",Deep,Border Collie,ITA,0,0,0.00,0.00,36.80,5.76,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,19,561,"Anja, Kunz",Wubke,Border Collie,DEU,0,0,0.00,0.00,37.04,5.72,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,20,667,"Kowalczewska, Zofia",Kleks,Mix,POL,0,0,1.09,1.09,40.09,5.29,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,21,663,"Ujma, Alicja",Lance,Kelpie,POL,0,0,1.44,1.44,40.44,5.24,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,22,513,"Maj, Kamila",Easy Rider,Border Collie,POL,0,0,1.70,1.70,40.70,5.21,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,23,583,"Leśniak, Anna",Riksza,Border Collie,POL,1,0,0.00,5.00,33.43,6.34,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,24,581,"Glejdurova, Lucie",Day,Border Collie,CZE,1,0,0.00,5.00,33.50,6.33,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,25,639,"Skrypytsia, Daria",Brie,Border Collie,UKR,1,0,0.00,5.00,33.89,6.26,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,26,576,"Lorenz, Daniela",Zazzle,Border Collie,DEU,1,0,0.00,5.00,34.41,6.16,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,27,523,"Kłobukowska, Ola",Rush,Border Collie,POL,1,0,0.00,5.00,34.45,6.15,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,28,512,"Papp, Rita",Stic,Border Collie,HUN,0,1,0.00,5.00,34.70,6.11,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,29,651,"Banotova, Nikola",Limi,Tervueren,CZE,1,0,0.00,5.00,34.94,6.07,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,30,560,"Tejčkova, Michaela",Angel,Border Collie,CZE,1,0,0.00,5.00,35.27,6.01,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,31,604,"Čekajle, Vilém",Navy,Malinois,CZE,1,0,0.00,5.00,35.33,6,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,32,662,"Novotna, Kateřina",Belle,Kelpie,CZE,1,0,0.00,5.00,36.11,5.87,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,33,563,"Göbel, Bianka",Wia,Border Collie,DEU,1,0,0.00,5.00,36.44,5.82,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,34,655,"Blachova, Lenka",Jasněnka,Dutch Shepherd,CZE,1,0,0.00,5.00,36.63,5.79,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,35,614,"Blachova, Lenka",Talonka,Dutch Shepherd,CZE,1,0,0.00,5.00,36.82,5.76,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,36,665,"Kalisz, Iwona",Synek,Kelpie,POL,1,0,0.00,5.00,37.41,5.67,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,37,602,"Janusauskiene, Jolanta",Desna,Groenendael,LTU,0,0,5.03,5.03,44.03,4.81,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,38,666,"Macura, Vladimír",Meggie,Mix,CZE,0,1,0.50,5.50,39.50,5.37,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,39,669,"Nomeikaite, Ieva",Ice cream,Samoyed,LTU,1,0,4.98,9.98,43.98,4.82,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,40,588,"Pruska, Agata",Zakk,Border Collie,POL,2,0,0.00,10.00,35.61,5.95,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,41,530,"Brabcova, Eliška",Taigi,Border Collie,CZE,1,1,0.00,10.00,36.40,5.82,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,42,540,"Kolaříkova, Lucie",Arty,Border Collie,CZE,2,0,0.00,10.00,37.98,5.58,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,43,508,"Endlerova, Martina",Arís,Border Collie,CZE,1,1,0.26,10.26,39.26,5.4,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,44,526,"Muszyńska, Anna",Ice,Border Collie,POL,0,2,1.95,11.95,40.95,5.18,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,45,668,"Nomeikienė, Violeta",Mo,Samoyed,LTU,1,0,8.16,13.16,47.16,4.5,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,46,573,"Šťastná, Sabina",Muki,Border Collie,CZE,2,1,0.00,15.00,36.88,5.75,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,47,643,"Dostalova, Veronika",Killi,Border Collie,FRA,0,2,5.34,15.34,44.34,4.78,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,48,605,"Andersen, Johanna",Ejsi,Malinois,DNK,2,1,2.42,17.42,41.42,5.12,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,49,571,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,1,2,4.05,19.05,43.05,4.92,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,50,625,"Visse, Marko",Fram,Border Collie,EST,5,0,0.00,25.00,36.62,5.79,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,51,610,"Dziwińska, Judyta",Nani,Malinois,POL,5,0,7.90,32.90,46.90,4.52,False,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,622,"Vähätalo, Raisa",Peppi,Border Collie,FIN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,629,"Raamat, Keida",Prim,Border Collie,EST,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,568,"Papp, Rita",Tengo,Border Collie,HUN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,618,"Kelkka, Anni",Lin,Border Collie,FIN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,554,"Kratka, Julie",Bali,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,674,"Banotova, Nikola",Topinka,Tervueren,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,593,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,545,"Schreierová, Kristýna",Temi,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,565,"Kanda, Maja",Raven,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,638,"Sushko, Inna",Dodge,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,516,"Czekaj, Tomasz",Heaven,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,553,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,557,"Bednarek, Aleksandra",Mushu,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,514,"Hańderek, Wiktoria",Hero,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,534,"Straka, Zdenek",Case,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,613,"Hendra, Anita",Freya,Aussie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,559,"Grygarova, Aneta",Trippy,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,577,"Edrova, Olga",Reed,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,567,"Orley, Grete",Flow,Border Collie,HUN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,558,"Szynczewska, Lena",Reo,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,598,"Fischer, Joanna",Limit,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,537,"Obłój, Martyna",Marvel,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,509,"Nikou, Lena",Anima,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,620,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,608,"Terčova, Katka",Shagy,Afghan Hound,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,641,"Dyksa, Anna",Apple,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,532,"Sobiecka, Anna",Stefan,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,505,"Starzyk, Ewa",Koka,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,621,"Tykhonenko, Svitlana",Teni,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,597,"Vansteelant, Saskia",Qeep,Border Collie,BEL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,549,"Hering, Stephanie",Nip it,Border Collie,DEU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,615,"Denysenko, Daria",Night,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,543,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,637,"Alajääski, Mari",Väiski,Border Collie,FIN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,555,"Ziolkowska, Magdalena",MaiGi,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,609,"Hering, Stephanie",Solo,Malinois,DEU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,552,"Rozenberg, Nadya",Saga,Border Collie,ISR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,542,"Olah, Eszter",Tesla,Border Collie,HUN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,590,"Jurthe, Jasmin",Tay,Border Collie,DEU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,671,"Kajpušova, Nikola",Tori,Tervueren,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,517,"Szamfira, Eszter",Tessa,Border Collie,HUN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,642,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,648,"Matusikova, Petra",Lujča,Border Collie,SVK,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,529,"Christian, Wöss",Lego,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,596,"Vesela, Veronika",Kaspian,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,623,"Lorentzen, Sarah",Jinx,Border Collie,DNK,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,599,"Sack, Lenka",Stazka,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,502,"Stefl, Isabella",Syclone,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,579,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,658,"Barceviciene, Agne",Bona,Groenendael,LTU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,536,"Berndt, Teresa",Koda,Border Collie,DEU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,644,"Kivilo, Alar",Yoko,Border Collie,EST,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,515,"Anja, Kunz",Luuz,Border Collie,DEU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,592,"Dančišak, Erik",Loosí,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,654,"Braumandl, Benjamin",Fossa,Cattle Dog,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,594,"Maj, Kamila",Zoja,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,653,"Dogan, Taner",ICE,Border Collie,USA,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,506,"Osińska, Ada",Fila,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,611,"Suterska, Wioletta",Beria,Malinois,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,616,"Denysenko, Nataliia",Rin,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,591,"Anja, Blazevic",Simba,Border Collie,HRV,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,607,"Lillenberg, Jaanika",Glämm,Malinois,EST,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,507,"Unger, Jan",Fanta,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,650,"Lukac, Roman",Teqi,Border Collie,SVK,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,585,"Nikou, Lena",Sorella,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,546,"Mielnicka, Patrycja",Wish,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,569,"Šubrtová, Michaela",Bixby,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,582,"Scannella, Jacqueline",Tavi,Border Collie,DEU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,521,"Tóth, Zsuzsanna",Izzie,Border Collie,HUN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,660,"Bauer, Anke",Sun,Kelpie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,612,"Hrůzova, Eliška",Doyle,Aussie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,656,"Theocharopoulou, Ersie",Pikla,Golden Retriever,GRC,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,657,"Volosenkinaite, Paula",Havana,Groenendael,LTU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,601,"Banotova, Nikola",Cody,Malinois,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,670,"Curin, Manuela",Atomic,Tervueren,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,672,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,535,"Wachter, Alfons",Karma,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,533,"Leśniak, Anna",Shimmy,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,539,"Gawińska, Dominika",Kimi,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,652,"Sudakova, Daria",Kira,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,550,"Suralińska, Paulina",Py,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,566,"Karpinska, Natalia",Pamper,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,531,"Adam, Marketa",Tray,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,636,"Simonsen, Heidi",Ghost,Border Collie,DNK,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,630,"Kransoe, Mia",Aqui,Border Collie,DNK,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,649,"Kelkka, Anni",Kaneli,Border Collie,FIN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,595,"Mielnicka, Patrycja",Nano,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,528,"Pyšková, Barbora",Toffee,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,584,"Sadal, Ewa",Tike,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,606,"Peterson, Hedi",Tachyon,Malinois,EST,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,562,"Michalska, Joanna",Mossy,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,541,"Brych, Michal",Müsli,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,580,"Šulcová, Kateřina",Waze,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,659,"Šilvienė, Vaida",Shango,Groenendael,LTU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,527,"Stadler, Elke",Hina,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,504,"Szulczewska, Kinga",Isto,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,520,"Lisa, Brudermiller",Fun,Border Collie,DEU,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,503,"Šťastná, Sabina",Taiva,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,510,"Kaplińska, Zuzanna",Surprise,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,633,"Solodkina, Katerina",Festival,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,511,"Sadal, Ewa",Dashi,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,522,"Mrazkova, Kateřina",Lawli,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,624,"Podobna, Beata",Nairobi,Border Collie,SVK,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,586,"Tóth, Zsuzsanna",Jet,Border Collie,HUN,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,646,"Denysenko, Daria",Crowley,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,524,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,575,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,518,"Nadratowska, Natalia",Garda,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),ind_jumping_large_2,Large,Jumping,False,,570,"Mildorfova, Kristýna",Murphy,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,212.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,1,408,"Langer, Sandra",Vegas,Border Collie,AUT,0,0,0.00,0.00,32.47,6.44,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,2,409,"Golab, Iwona",SeeYa,Border Collie,POL,0,0,0.00,0.00,33.00,6.33,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,3,422,"Kłobukowska, Ola",Yuca,Border Collie,POL,0,0,0.00,0.00,33.26,6.28,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,4,431,"Wasiukiewicz, Magdalena",Dumka,Border Collie,POL,0,0,0.00,0.00,33.41,6.26,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,5,432,"Novotna, Barbora",Bibi,Border Collie,CZE,0,0,0.00,0.00,33.46,6.25,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,6,440,"Vansteelant, Saskia",Tori,Border Collie,BEL,0,0,0.00,0.00,33.58,6.22,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,7,407,"Mixova, Dana",Valerie,Border Collie,CZE,0,0,0.00,0.00,33.64,6.21,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,8,437,"Kubánková, Zuzana",Tajenka,Border Collie,CZE,0,0,0.00,0.00,34.13,6.12,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,9,449,"Neuwald, Małgorzata",Flik,Mix,POL,0,0,0.00,0.00,36.21,5.77,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,10,447,"Lorenz, Daniela",Kuba,Kelpie,DEU,0,0,0.00,0.00,36.40,5.74,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,11,419,"Duda, Paulina",Free,Border Collie,POL,0,0,0.00,0.00,37.05,5.64,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,12,436,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,0,0,0.01,0.01,38.01,5.5,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,13,453,"Krejčí, Tereza",Hotty,Poodle,CZE,0,0,1.16,1.16,39.16,5.34,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,14,441,"Pruska, Agata",Pai,Border Collie,POL,1,0,0.00,5.00,33.76,6.19,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,15,418,"Scannella, Jacqueline",Quick,Border Collie,DEU,1,0,0.00,5.00,35.81,5.84,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,16,410,"Vaclavíkova, Gabriela",Windy,Border Collie,CZE,1,0,0.00,5.00,37.52,5.57,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,17,412,"Kovalenko, Kateryna",Totori,Border Collie,UKR,0,1,0.73,5.73,38.73,5.4,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,18,417,"Krejčí, Lucie",Tori,Border Collie,CZE,0,1,1.34,6.34,39.34,5.31,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,19,455,"Maruszczak, Roman",T-REX,Pyrshep,POL,1,0,2.43,7.43,40.43,5.17,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,20,448,"Jenny, Holler",Diego,MAS,DEU,1,1,0.00,10.00,35.52,5.88,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,21,439,"Dostalova, Veronika",Dobby,Border Collie,FRA,2,0,0.00,10.00,35.53,5.88,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,22,420,"Bartelova, Lucie",Cheeky,Border Collie,CZE,1,1,0.00,10.00,37.04,5.64,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,23,403,"Simkoniene, Asta",Zika,Aussie,LTU,0,0,10.66,10.66,48.66,4.3,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,24,450,"Havasi, Zsolt",Bodza,Mix,HUN,1,1,0.74,10.74,38.74,5.39,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,25,444,"Kellman, Riina",Kreisi,Border Collie,FIN,1,1,11.30,21.30,49.30,4.24,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,26,442,"Michalik, Aleksandra",Phoebe,Border Collie,POL,3,1,3.89,23.89,41.89,4.99,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,27,429,"Fiala, Jan",Knedlee Czech,Border Collie,CZE,3,1,4.51,24.51,42.51,4.92,False,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,438,"Milikauskaitė, Agneta",Hulu,Border Collie,LTU,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,430,"Berthelsen, Bonnik",Lua,Border Collie,DNK,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,443,"Gronek, Ola",Heya,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,404,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,406,"Vähätalo, Raisa",Minkki,Border Collie,FIN,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,427,"Paulik, Helmut",Nana,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,421,"Denysenko, Nataliia",Astrid,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,433,"Vyplelova, Petra",Brilley,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,435,"Diviš, Jakub",Cis,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,401,"Maciejewska, Weronika",Zjava,Aussie,POL,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,415,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,445,"Ringmets, Inge",Tarmi,Croatian Sheepdog,EST,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,426,"Kohl, Nadine",Quinn,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,451,"Sack, Lenka",Theika,Mudi,CZE,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,454,"Ficzere, Csenge",Zuki,Pyrshep,HUN,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,413,"Riezanova, Valentyna",Jera,Border Collie,UKR,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,428,"Ziolkowska, Magdalena",Muku,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,452,"Ujma, Michał",Raisa,Mudi,POL,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,416,"Paulik, Christina",Happy,Border Collie,AUT,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,411,"Havlíčkova, Adéla",Nisa,Border Collie,CZE,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,456,"Michalak, Katarzyna",Mizu,Whippet,POL,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_intermediate,Intermediate,Agility,True,,424,"bawer, beata",asteri,Border Collie,POL,,,,,,,True,Kine Eimhjellen,,,209.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,1,511,"Sadal, Ewa",Dashi,Border Collie,POL,0,0,0.00,0.00,40.65,5.41,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,2,597,"Vansteelant, Saskia",Qeep,Border Collie,BEL,0,0,0.00,0.00,40.80,5.39,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,3,583,"Leśniak, Anna",Riksza,Border Collie,POL,0,0,0.00,0.00,41.07,5.36,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,4,560,"Tejčkova, Michaela",Angel,Border Collie,CZE,0,0,0.00,0.00,41.90,5.25,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,4,561,"Anja, Kunz",Wubke,Border Collie,DEU,0,0,0.00,0.00,41.90,5.25,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,6,544,"Jurthe, Jasmin",Kiany,Border Collie,DEU,0,0,0.00,0.00,42.15,5.22,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,7,574,"Menger, Vivien",Legend,Border Collie,DEU,0,0,0.00,0.00,42.35,5.19,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,8,581,"Glejdurova, Lucie",Day,Border Collie,CZE,0,0,0.00,0.00,42.45,5.18,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,9,533,"Leśniak, Anna",Shimmy,Border Collie,POL,0,0,0.00,0.00,42.56,5.17,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,10,510,"Kaplińska, Zuzanna",Surprise,Border Collie,POL,0,0,0.00,0.00,42.76,5.14,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,11,651,"Banotova, Nikola",Limi,Tervueren,CZE,0,0,0.00,0.00,42.89,5.13,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,12,568,"Papp, Rita",Tengo,Border Collie,HUN,0,0,0.00,0.00,42.97,5.12,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,13,623,"Lorentzen, Sarah",Jinx,Border Collie,DNK,0,0,0.00,0.00,43.05,5.11,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,14,622,"Vähätalo, Raisa",Peppi,Border Collie,FIN,0,0,0.00,0.00,43.12,5.1,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,15,627,"Banotova, Nikola",Tuli,Border Collie,CZE,0,0,0.00,0.00,44.27,4.97,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,16,587,"Berndt, Teresa",Keep,Border Collie,DEU,0,0,0.00,0.00,45.14,4.87,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,17,674,"Banotova, Nikola",Topinka,Tervueren,CZE,0,0,0.00,0.00,45.82,4.8,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,18,646,"Denysenko, Daria",Crowley,Border Collie,UKR,0,0,0.04,0.04,47.04,4.68,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,19,541,"Brych, Michal",Müsli,Border Collie,CZE,0,0,0.06,0.06,47.06,4.67,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,20,671,"Kajpušova, Nikola",Tori,Tervueren,CZE,0,0,0.26,0.26,47.26,4.66,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,21,512,"Papp, Rita",Stic,Border Collie,HUN,1,0,0.00,5.00,41.20,5.34,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,22,632,"Illényiova, Hella",Brill,Border Collie,SVK,1,0,0.00,5.00,42.68,5.15,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,23,580,"Šulcová, Kateřina",Waze,Border Collie,CZE,1,0,0.00,5.00,42.69,5.15,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,24,588,"Pruska, Agata",Zakk,Border Collie,POL,1,0,0.00,5.00,43.06,5.11,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,25,616,"Denysenko, Nataliia",Rin,Border Collie,UKR,1,0,0.00,5.00,43.14,5.1,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,26,659,"Šilvienė, Vaida",Shango,Groenendael,LTU,1,0,0.00,5.00,43.19,5.09,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,27,547,"Fiala, Jan",Pszenik,Border Collie,CZE,1,0,0.00,5.00,43.74,5.03,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,28,530,"Brabcova, Eliška",Taigi,Border Collie,CZE,0,1,0.00,5.00,44.03,5,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,29,641,"Dyksa, Anna",Apple,Border Collie,UKR,0,1,0.00,5.00,44.13,4.99,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,30,506,"Osińska, Ada",Fila,Border Collie,POL,1,0,0.00,5.00,44.37,4.96,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,31,542,"Olah, Eszter",Tesla,Border Collie,HUN,0,1,0.00,5.00,44.75,4.92,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,32,613,"Hendra, Anita",Freya,Aussie,POL,0,1,0.00,5.00,46.19,4.76,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,33,663,"Ujma, Alicja",Lance,Kelpie,POL,1,0,0.00,5.00,46.31,4.75,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,34,557,"Bednarek, Aleksandra",Mushu,Border Collie,POL,0,1,0.00,5.00,46.32,4.75,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,35,518,"Nadratowska, Natalia",Garda,Border Collie,POL,1,0,0.82,5.82,47.82,4.6,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,36,661,"Blazevic, Anja",Jean,Kelpie,HRV,1,0,1.39,6.39,48.39,4.55,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,37,667,"Kowalczewska, Zofia",Kleks,Mix,POL,0,1,4.01,9.01,51.01,4.31,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,38,643,"Dostalova, Veronika",Killi,Border Collie,FRA,1,0,4.60,9.60,51.60,4.26,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,39,543,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,2,0,0.00,10.00,41.84,5.26,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,40,660,"Bauer, Anke",Sun,Kelpie,AUT,2,0,0.00,10.00,43.34,5.08,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,41,590,"Jurthe, Jasmin",Tay,Border Collie,DEU,1,1,0.00,10.00,43.45,5.06,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,42,563,"Göbel, Bianka",Wia,Border Collie,DEU,2,0,0.00,10.00,44.75,4.92,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,43,562,"Michalska, Joanna",Mossy,Border Collie,POL,1,1,0.00,10.00,44.83,4.91,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,44,528,"Pyšková, Barbora",Toffee,Border Collie,CZE,1,1,1.54,11.54,48.54,4.53,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,45,650,"Lukac, Roman",Teqi,Border Collie,SVK,3,0,0.00,15.00,40.22,5.47,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,46,617,"Matusikova, Petra",Rajda,Border Collie,SVK,3,0,0.00,15.00,40.68,5.41,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,47,534,"Straka, Zdenek",Case,Border Collie,CZE,3,0,0.00,15.00,43.17,5.1,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,48,611,"Suterska, Wioletta",Beria,Malinois,POL,3,0,0.00,15.00,45.56,4.83,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,49,513,"Maj, Kamila",Easy Rider,Border Collie,POL,2,0,7.69,17.69,54.69,4.02,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,50,532,"Sobiecka, Anna",Stefan,Border Collie,POL,0,2,8.84,18.84,55.84,3.94,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,51,551,"Smrcek, Zdenek",Sia,Border Collie,CZE,3,1,0.97,20.97,47.97,4.59,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,52,652,"Sudakova, Daria",Kira,Border Collie,UKR,2,2,3.18,23.18,50.18,4.38,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,53,537,"Obłój, Martyna",Marvel,Border Collie,POL,4,0,4.42,24.42,51.42,4.28,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,54,610,"Dziwińska, Judyta",Nani,Malinois,POL,3,1,5.48,25.48,52.48,4.19,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,55,657,"Volosenkinaite, Paula",Havana,Groenendael,LTU,3,1,7.03,27.03,54.03,4.07,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,56,514,"Hańderek, Wiktoria",Hero,Border Collie,POL,3,2,9.79,34.79,56.79,3.87,False,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,634,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,662,"Novotna, Kateřina",Belle,Kelpie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,670,"Curin, Manuela",Atomic,Tervueren,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,629,"Raamat, Keida",Prim,Border Collie,EST,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,555,"Ziolkowska, Magdalena",MaiGi,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,618,"Kelkka, Anni",Lin,Border Collie,FIN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,614,"Blachova, Lenka",Talonka,Dutch Shepherd,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,655,"Blachova, Lenka",Jasněnka,Dutch Shepherd,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,572,"Dabrowska, Janina",Chia,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,582,"Scannella, Jacqueline",Tavi,Border Collie,DEU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,570,"Mildorfova, Kristýna",Murphy,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,526,"Muszyńska, Anna",Ice,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,515,"Anja, Kunz",Luuz,Border Collie,DEU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,625,"Visse, Marko",Fram,Border Collie,EST,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,529,"Christian, Wöss",Lego,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,571,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,658,"Barceviciene, Agne",Bona,Groenendael,LTU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,609,"Hering, Stephanie",Solo,Malinois,DEU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,549,"Hering, Stephanie",Nip it,Border Collie,DEU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,502,"Stefl, Isabella",Syclone,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,624,"Podobna, Beata",Nairobi,Border Collie,SVK,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,598,"Fischer, Joanna",Limit,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,504,"Szulczewska, Kinga",Isto,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,553,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,608,"Terčova, Katka",Shagy,Afghan Hound,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,591,"Anja, Blazevic",Simba,Border Collie,HRV,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,592,"Dančišak, Erik",Loosí,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,612,"Hrůzova, Eliška",Doyle,Aussie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,519,"Zampieri, Marina",Deep,Border Collie,ITA,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,645,"Terčova, Katka",Too Czech,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,552,"Rozenberg, Nadya",Saga,Border Collie,ISR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,523,"Kłobukowska, Ola",Rush,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,564,"Tönse, Nina",ZapZarap,Border Collie,DEU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,524,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,606,"Peterson, Hedi",Tachyon,Malinois,EST,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,619,"Lukac, Roman",Metaxa,Border Collie,SVK,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,621,"Tykhonenko, Svitlana",Teni,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,666,"Macura, Vladimír",Meggie,Mix,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,566,"Karpinska, Natalia",Pamper,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,505,"Starzyk, Ewa",Koka,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,604,"Čekajle, Vilém",Navy,Malinois,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,521,"Tóth, Zsuzsanna",Izzie,Border Collie,HUN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,573,"Šťastná, Sabina",Muki,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,576,"Lorenz, Daniela",Zazzle,Border Collie,DEU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,509,"Nikou, Lena",Anima,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,656,"Theocharopoulou, Ersie",Pikla,Golden Retriever,GRC,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,665,"Kalisz, Iwona",Synek,Kelpie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,585,"Nikou, Lena",Sorella,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,601,"Banotova, Nikola",Cody,Malinois,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,648,"Matusikova, Petra",Lujča,Border Collie,SVK,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,596,"Vesela, Veronika",Kaspian,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,599,"Sack, Lenka",Stazka,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,507,"Unger, Jan",Fanta,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,545,"Schreierová, Kristýna",Temi,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,653,"Dogan, Taner",ICE,Border Collie,USA,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,558,"Szynczewska, Lena",Reo,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,654,"Braumandl, Benjamin",Fossa,Cattle Dog,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,639,"Skrypytsia, Daria",Brie,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,672,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,525,"Zika, Daniela",Raccoon,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,594,"Maj, Kamila",Zoja,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,647,"Denysenko, Nataliia",Roy,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,535,"Wachter, Alfons",Karma,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,516,"Czekaj, Tomasz",Heaven,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,554,"Kratka, Julie",Bali,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,595,"Mielnicka, Patrycja",Nano,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,602,"Janusauskiene, Jolanta",Desna,Groenendael,LTU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,579,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,569,"Šubrtová, Michaela",Bixby,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,636,"Simonsen, Heidi",Ghost,Border Collie,DNK,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,644,"Kivilo, Alar",Yoko,Border Collie,EST,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,593,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,546,"Mielnicka, Patrycja",Wish,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,586,"Tóth, Zsuzsanna",Jet,Border Collie,HUN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,540,"Kolaříkova, Lucie",Arty,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,527,"Stadler, Elke",Hina,Border Collie,AUT,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,517,"Szamfira, Eszter",Tessa,Border Collie,HUN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,578,"Hoftych, Kristýna",Toxic,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,669,"Nomeikaite, Ieva",Ice cream,Samoyed,LTU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,565,"Kanda, Maja",Raven,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,630,"Kransoe, Mia",Aqui,Border Collie,DNK,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,615,"Denysenko, Daria",Night,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,503,"Šťastná, Sabina",Taiva,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,668,"Nomeikienė, Violeta",Mo,Samoyed,LTU,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,539,"Gawińska, Dominika",Kimi,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,522,"Mrazkova, Kateřina",Lawli,Border Collie,CZE,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,605,"Andersen, Johanna",Ejsi,Malinois,DNK,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,567,"Orley, Grete",Flow,Border Collie,HUN,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,575,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,633,"Solodkina, Katerina",Festival,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,631,"Kralikova, Veronika",Naya,Border Collie,SVK,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,584,"Sadal, Ewa",Tike,Border Collie,POL,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_agility_large,Large,Agility,True,,620,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Isabella Stefl,,,220.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,1,409,"Golab, Iwona",SeeYa,Border Collie,POL,0,0,0.00,0.00,33.20,6.45,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,2,431,"Wasiukiewicz, Magdalena",Dumka,Border Collie,POL,0,0,0.00,0.00,33.34,6.42,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,3,408,"Langer, Sandra",Vegas,Border Collie,AUT,0,0,0.00,0.00,33.58,6.37,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,4,438,"Milikauskaitė, Agneta",Hulu,Border Collie,LTU,0,0,0.00,0.00,33.59,6.37,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,5,407,"Mixova, Dana",Valerie,Border Collie,CZE,0,0,0.00,0.00,33.67,6.36,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,6,418,"Scannella, Jacqueline",Quick,Border Collie,DEU,0,0,0.00,0.00,34.21,6.26,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,7,443,"Gronek, Ola",Heya,Border Collie,POL,0,0,0.00,0.00,34.27,6.24,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,8,429,"Fiala, Jan",Knedlee Czech,Border Collie,CZE,0,0,0.00,0.00,34.39,6.22,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,9,416,"Paulik, Christina",Happy,Border Collie,AUT,0,0,0.00,0.00,34.76,6.16,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,10,444,"Kellman, Riina",Kreisi,Border Collie,FIN,0,0,0.00,0.00,35.29,6.06,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,11,448,"Jenny, Holler",Diego,MAS,DEU,0,0,0.00,0.00,35.45,6.04,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,12,435,"Diviš, Jakub",Cis,Border Collie,CZE,0,0,0.00,0.00,35.47,6.03,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,13,417,"Krejčí, Lucie",Tori,Border Collie,CZE,0,0,0.00,0.00,36.36,5.89,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,14,421,"Denysenko, Nataliia",Astrid,Border Collie,UKR,0,0,0.00,0.00,37.46,5.71,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,15,456,"Michalak, Katarzyna",Mizu,Whippet,POL,0,0,3.31,3.31,42.31,5.06,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,16,437,"Kubánková, Zuzana",Tajenka,Border Collie,CZE,1,0,0.00,5.00,35.04,6.11,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,17,432,"Novotna, Barbora",Bibi,Border Collie,CZE,1,0,0.00,5.00,35.15,6.09,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,18,412,"Kovalenko, Kateryna",Totori,Border Collie,UKR,0,1,0.00,5.00,38.26,5.59,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,19,406,"Vähätalo, Raisa",Minkki,Border Collie,FIN,0,1,0.00,5.00,38.59,5.55,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,20,455,"Maruszczak, Roman",T-REX,Pyrshep,POL,0,1,1.48,6.48,40.48,5.29,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,21,453,"Krejčí, Tereza",Hotty,Poodle,CZE,1,0,1.80,6.80,40.80,5.25,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,22,403,"Simkoniene, Asta",Zika,Aussie,LTU,0,0,8.07,8.07,47.07,4.55,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,23,449,"Neuwald, Małgorzata",Flik,Mix,POL,2,0,0.00,10.00,33.75,6.34,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,24,401,"Maciejewska, Weronika",Zjava,Aussie,POL,2,0,0.00,10.00,37.97,5.64,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,25,445,"Ringmets, Inge",Tarmi,Croatian Sheepdog,EST,2,1,0.00,15.00,38.61,5.54,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,26,410,"Vaclavíkova, Gabriela",Windy,Border Collie,CZE,1,0,12.23,17.23,51.23,4.18,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,27,430,"Berthelsen, Bonnik",Lua,Border Collie,DNK,2,1,2.88,17.88,41.88,5.11,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,413,"Riezanova, Valentyna",Jera,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,422,"Kłobukowska, Ola",Yuca,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,440,"Vansteelant, Saskia",Tori,Border Collie,BEL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,451,"Sack, Lenka",Theika,Mudi,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,427,"Paulik, Helmut",Nana,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,441,"Pruska, Agata",Pai,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,454,"Ficzere, Csenge",Zuki,Pyrshep,HUN,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,439,"Dostalova, Veronika",Dobby,Border Collie,FRA,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,436,"Marciniak, Krzysztof",Sza-Luna,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,447,"Lorenz, Daniela",Kuba,Kelpie,DEU,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,411,"Havlíčkova, Adéla",Nisa,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,426,"Kohl, Nadine",Quinn,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,450,"Havasi, Zsolt",Bodza,Mix,HUN,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,415,"Szulczewska, Kinga",Up,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,442,"Michalik, Aleksandra",Phoebe,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,433,"Vyplelova, Petra",Brilley,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,420,"Bartelova, Lucie",Cheeky,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,428,"Ziolkowska, Magdalena",Muku,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,419,"Duda, Paulina",Free,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,404,"Gronek, Ola",Cosmo,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,452,"Ujma, Michał",Raisa,Mudi,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_intermediate,Intermediate,Jumping,True,,424,"bawer, beata",asteri,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,1,629,"Raamat, Keida",Prim,Border Collie,EST,0,0,0.00,0.00,32.08,6.67,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,2,511,"Sadal, Ewa",Dashi,Border Collie,POL,0,0,0.00,0.00,32.69,6.55,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,3,599,"Sack, Lenka",Stazka,Border Collie,CZE,0,0,0.00,0.00,32.76,6.53,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,4,634,"Kartashova, Anastasiia",Corusia,Border Collie,UKR,0,0,0.00,0.00,32.90,6.5,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,5,581,"Glejdurova, Lucie",Day,Border Collie,CZE,0,0,0.00,0.00,32.95,6.49,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,6,597,"Vansteelant, Saskia",Qeep,Border Collie,BEL,0,0,0.00,0.00,33.17,6.45,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,7,641,"Dyksa, Anna",Apple,Border Collie,UKR,0,0,0.00,0.00,33.24,6.44,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,8,560,"Tejčkova, Michaela",Angel,Border Collie,CZE,0,0,0.00,0.00,33.56,6.38,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,9,523,"Kłobukowska, Ola",Rush,Border Collie,POL,0,0,0.00,0.00,33.79,6.33,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,10,566,"Karpinska, Natalia",Pamper,Border Collie,POL,0,0,0.00,0.00,34.07,6.28,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,11,574,"Menger, Vivien",Legend,Border Collie,DEU,0,0,0.00,0.00,34.24,6.25,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,12,576,"Lorenz, Daniela",Zazzle,Border Collie,DEU,0,0,0.00,0.00,34.34,6.23,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,13,542,"Olah, Eszter",Tesla,Border Collie,HUN,0,0,0.00,0.00,34.35,6.23,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,14,564,"Tönse, Nina",ZapZarap,Border Collie,DEU,0,0,0.00,0.00,34.48,6.21,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,15,652,"Sudakova, Daria",Kira,Border Collie,UKR,0,0,0.00,0.00,34.52,6.2,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,16,585,"Nikou, Lena",Sorella,Border Collie,AUT,0,0,0.00,0.00,34.66,6.17,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,17,533,"Leśniak, Anna",Shimmy,Border Collie,POL,0,0,0.00,0.00,34.69,6.17,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,18,536,"Berndt, Teresa",Koda,Border Collie,DEU,0,0,0.00,0.00,34.74,6.16,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,19,580,"Šulcová, Kateřina",Waze,Border Collie,CZE,0,0,0.00,0.00,34.84,6.14,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,20,544,"Jurthe, Jasmin",Kiany,Border Collie,DEU,0,0,0.00,0.00,34.99,6.12,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,21,651,"Banotova, Nikola",Limi,Tervueren,CZE,0,0,0.00,0.00,35.01,6.11,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,22,590,"Jurthe, Jasmin",Tay,Border Collie,DEU,0,0,0.00,0.00,35.14,6.09,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,23,503,"Šťastná, Sabina",Taiva,Border Collie,CZE,0,0,0.00,0.00,35.27,6.07,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,23,534,"Straka, Zdenek",Case,Border Collie,CZE,0,0,0.00,0.00,35.27,6.07,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,25,547,"Fiala, Jan",Pszenik,Border Collie,CZE,0,0,0.00,0.00,35.30,6.06,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,26,529,"Christian, Wöss",Lego,Border Collie,AUT,0,0,0.00,0.00,35.33,6.06,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,27,561,"Anja, Kunz",Wubke,Border Collie,DEU,0,0,0.00,0.00,35.38,6.05,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,28,535,"Wachter, Alfons",Karma,Border Collie,AUT,0,0,0.00,0.00,35.42,6.04,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,29,572,"Dabrowska, Janina",Chia,Border Collie,POL,0,0,0.00,0.00,35.68,6,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,30,541,"Brych, Michal",Müsli,Border Collie,CZE,0,0,0.00,0.00,35.73,5.99,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,30,587,"Berndt, Teresa",Keep,Border Collie,DEU,0,0,0.00,0.00,35.73,5.99,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,32,545,"Schreierová, Kristýna",Temi,Border Collie,CZE,0,0,0.00,0.00,36.05,5.94,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,33,653,"Dogan, Taner",ICE,Border Collie,USA,0,0,0.00,0.00,36.67,5.84,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,34,660,"Bauer, Anke",Sun,Kelpie,AUT,0,0,0.40,0.40,37.40,5.72,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,35,674,"Banotova, Nikola",Topinka,Tervueren,CZE,0,0,0.49,0.49,37.49,5.71,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,36,658,"Barceviciene, Agne",Bona,Groenendael,LTU,0,0,0.69,0.69,37.69,5.68,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,37,563,"Göbel, Bianka",Wia,Border Collie,DEU,0,0,2.11,2.11,39.11,5.47,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,38,662,"Novotna, Kateřina",Belle,Kelpie,CZE,0,0,2.26,2.26,39.26,5.45,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,39,571,"Kozłowska-Mrozowska, Anna",Eskel,Border Collie,POL,0,0,3.38,3.38,40.38,5.3,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,40,502,"Stefl, Isabella",Syclone,Border Collie,AUT,1,0,0.00,5.00,32.70,6.54,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,41,549,"Hering, Stephanie",Nip it,Border Collie,DEU,1,0,0.00,5.00,32.73,6.54,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,42,598,"Fischer, Joanna",Limit,Border Collie,POL,1,0,0.00,5.00,33.08,6.47,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,43,543,"Bronaszewska, Agnieszka",Ki,Border Collie,POL,1,0,0.00,5.00,33.67,6.36,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,44,639,"Skrypytsia, Daria",Brie,Border Collie,UKR,1,0,0.00,5.00,34.19,6.26,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,45,512,"Papp, Rita",Stic,Border Collie,HUN,1,0,0.00,5.00,34.34,6.23,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,46,554,"Kratka, Julie",Bali,Border Collie,CZE,1,0,0.00,5.00,34.82,6.15,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,47,627,"Banotova, Nikola",Tuli,Border Collie,CZE,1,0,0.00,5.00,34.87,6.14,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,48,623,"Lorentzen, Sarah",Jinx,Border Collie,DNK,1,0,0.00,5.00,35.07,6.1,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,49,661,"Blazevic, Anja",Jean,Kelpie,HRV,1,0,0.00,5.00,35.93,5.96,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,50,622,"Vähätalo, Raisa",Peppi,Border Collie,FIN,1,0,0.00,5.00,36.00,5.94,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,51,521,"Tóth, Zsuzsanna",Izzie,Border Collie,HUN,1,0,0.00,5.00,36.19,5.91,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,52,519,"Zampieri, Marina",Deep,Border Collie,ITA,0,1,0.00,5.00,36.42,5.88,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,53,613,"Hendra, Anita",Freya,Aussie,POL,1,0,0.00,5.00,36.46,5.87,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,54,666,"Macura, Vladimír",Meggie,Mix,CZE,1,0,0.00,5.00,36.83,5.81,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,55,525,"Zika, Daniela",Raccoon,Border Collie,AUT,0,1,0.00,5.00,36.85,5.81,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,56,505,"Starzyk, Ewa",Koka,Border Collie,POL,1,0,0.12,5.12,37.12,5.77,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,57,602,"Janusauskiene, Jolanta",Desna,Groenendael,LTU,0,0,5.50,5.50,42.50,5.04,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,58,586,"Tóth, Zsuzsanna",Jet,Border Collie,HUN,0,1,0.96,5.96,37.96,5.64,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,59,540,"Kolaříkova, Lucie",Arty,Border Collie,CZE,1,0,1.13,6.13,38.13,5.61,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,60,546,"Mielnicka, Patrycja",Wish,Border Collie,POL,1,0,1.47,6.47,38.47,5.56,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,61,656,"Theocharopoulou, Ersie",Pikla,Golden Retriever,GRC,0,1,1.79,6.79,38.79,5.52,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,62,582,"Scannella, Jacqueline",Tavi,Border Collie,DEU,0,1,2.31,7.31,39.31,5.44,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,63,526,"Muszyńska, Anna",Ice,Border Collie,POL,0,1,2.45,7.45,39.45,5.42,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,64,663,"Ujma, Alicja",Lance,Kelpie,POL,1,0,2.48,7.48,39.48,5.42,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,65,591,"Anja, Blazevic",Simba,Border Collie,HRV,1,0,3.01,8.01,40.01,5.35,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,66,506,"Osińska, Ada",Fila,Border Collie,POL,0,1,3.85,8.85,40.85,5.24,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,67,614,"Blachova, Lenka",Talonka,Dutch Shepherd,CZE,1,0,4.03,9.03,41.03,5.22,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,68,617,"Matusikova, Petra",Rajda,Border Collie,SVK,2,0,0.00,10.00,33.06,6.47,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,69,632,"Illényiova, Hella",Brill,Border Collie,SVK,2,0,0.00,10.00,34.99,6.12,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,70,508,"Endlerova, Martina",Arís,Border Collie,CZE,2,0,0.00,10.00,35.19,6.08,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,71,539,"Gawińska, Dominika",Kimi,Border Collie,POL,2,0,0.00,10.00,35.44,6.04,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,72,672,"Janusauskiene, Jolanta",Bartukas,Tervueren,LTU,1,0,5.22,10.22,42.22,5.07,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,73,612,"Hrůzova, Eliška",Doyle,Aussie,CZE,1,1,0.41,10.41,37.41,5.72,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,74,601,"Banotova, Nikola",Cody,Malinois,CZE,2,0,0.73,10.73,37.73,5.67,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,75,631,"Kralikova, Veronika",Naya,Border Collie,SVK,2,0,1.29,11.29,38.29,5.59,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,76,637,"Alajääski, Mari",Väiski,Border Collie,FIN,2,0,2.07,12.07,39.07,5.48,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,77,557,"Bednarek, Aleksandra",Mushu,Border Collie,POL,3,0,0.00,15.00,35.94,5.95,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,78,504,"Szulczewska, Kinga",Isto,Border Collie,POL,1,1,5.48,15.48,42.48,5.04,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,79,667,"Kowalczewska, Zofia",Kleks,Mix,POL,1,0,11.04,16.04,48.04,4.45,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,80,615,"Denysenko, Daria",Night,Border Collie,UKR,2,1,1.26,16.26,38.26,5.59,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,81,515,"Anja, Kunz",Luuz,Border Collie,DEU,0,2,6.38,16.38,43.38,4.93,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,82,578,"Hoftych, Kristýna",Toxic,Border Collie,CZE,1,1,6.74,16.74,43.74,4.89,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,83,516,"Czekaj, Tomasz",Heaven,Border Collie,POL,1,1,8.14,18.14,45.14,4.74,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,84,654,"Braumandl, Benjamin",Fossa,Cattle Dog,AUT,1,2,3.62,18.62,40.62,5.27,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,85,668,"Nomeikienė, Violeta",Mo,Samoyed,LTU,0,1,14.61,19.61,51.61,4.15,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,86,604,"Čekajle, Vilém",Navy,Malinois,CZE,4,0,0.00,20.00,34.35,6.23,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,87,669,"Nomeikaite, Ieva",Ice cream,Samoyed,LTU,2,0,10.11,20.11,47.11,4.54,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,88,657,"Volosenkinaite, Paula",Havana,Groenendael,LTU,1,1,11.16,21.16,48.16,4.44,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,89,588,"Pruska, Agata",Zakk,Border Collie,POL,0,2,12.14,22.14,49.14,4.35,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,90,550,"Suralińska, Paulina",Py,Border Collie,POL,1,2,9.30,24.30,46.30,4.62,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,91,514,"Hańderek, Wiktoria",Hero,Border Collie,POL,1,2,9.79,24.79,46.79,4.57,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,92,610,"Dziwińska, Judyta",Nani,Malinois,POL,1,2,9.80,24.80,46.80,4.57,False,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,592,"Dančišak, Erik",Loosí,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,650,"Lukac, Roman",Teqi,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,645,"Terčova, Katka",Too Czech,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,625,"Visse, Marko",Fram,Border Collie,EST,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,636,"Simonsen, Heidi",Ghost,Border Collie,DNK,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,609,"Hering, Stephanie",Solo,Malinois,DEU,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,655,"Blachova, Lenka",Jasněnka,Dutch Shepherd,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,644,"Kivilo, Alar",Yoko,Border Collie,EST,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,593,"Zarzecka, Karina",Abel,Border Collie,LVA,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,568,"Papp, Rita",Tengo,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,520,"Lisa, Brudermiller",Fun,Border Collie,DEU,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,619,"Lukac, Roman",Metaxa,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,579,"Götzendorfer, Cornelia",Cymtyk,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,649,"Kelkka, Anni",Kaneli,Border Collie,FIN,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,530,"Brabcova, Eliška",Taigi,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,507,"Unger, Jan",Fanta,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,594,"Maj, Kamila",Zoja,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,638,"Sushko, Inna",Dodge,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,555,"Ziolkowska, Magdalena",MaiGi,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,583,"Leśniak, Anna",Riksza,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,643,"Dostalova, Veronika",Killi,Border Collie,FRA,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,647,"Denysenko, Nataliia",Roy,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,528,"Pyšková, Barbora",Toffee,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,551,"Smrcek, Zdenek",Sia,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,584,"Sadal, Ewa",Tike,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,616,"Denysenko, Nataliia",Rin,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,648,"Matusikova, Petra",Lujča,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,517,"Szamfira, Eszter",Tessa,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,620,"Shustova, Tamila",Atom,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,624,"Podobna, Beata",Nairobi,Border Collie,SVK,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,670,"Curin, Manuela",Atomic,Tervueren,AUT,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,553,"Litwin, Klaudia",Mer,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,558,"Szynczewska, Lena",Reo,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,569,"Šubrtová, Michaela",Bixby,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,595,"Mielnicka, Patrycja",Nano,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,606,"Peterson, Hedi",Tachyon,Malinois,EST,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,671,"Kajpušova, Nikola",Tori,Tervueren,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,552,"Rozenberg, Nadya",Saga,Border Collie,ISR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,611,"Suterska, Wioletta",Beria,Malinois,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,513,"Maj, Kamila",Easy Rider,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,642,"Mercebach, Heidi",Mali,Border Collie,DNK,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,527,"Stadler, Elke",Hina,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,618,"Kelkka, Anni",Lin,Border Collie,FIN,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,509,"Nikou, Lena",Anima,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,532,"Sobiecka, Anna",Stefan,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,646,"Denysenko, Daria",Crowley,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,665,"Kalisz, Iwona",Synek,Kelpie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,562,"Michalska, Joanna",Mossy,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,659,"Šilvienė, Vaida",Shango,Groenendael,LTU,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,518,"Nadratowska, Natalia",Garda,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,567,"Orley, Grete",Flow,Border Collie,HUN,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,565,"Kanda, Maja",Raven,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,596,"Vesela, Veronika",Kaspian,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,570,"Mildorfova, Kristýna",Murphy,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,633,"Solodkina, Katerina",Festival,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,575,"Babiarz, Oliwia",Iwo,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,630,"Kransoe, Mia",Aqui,Border Collie,DNK,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,524,"Götzendorfer, Cornelia",Cmyk,Border Collie,AUT,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,510,"Kaplińska, Zuzanna",Surprise,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,608,"Terčova, Katka",Shagy,Afghan Hound,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,605,"Andersen, Johanna",Ejsi,Malinois,DNK,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,522,"Mrazkova, Kateřina",Lawli,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,621,"Tykhonenko, Svitlana",Teni,Border Collie,UKR,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,537,"Obłój, Martyna",Marvel,Border Collie,POL,,,,,,,True,Jordi Boix Baró,,,214.0
+Polish Open 2024 (IN & L),team_jumping_large,Large,Jumping,True,,573,"Šťastná, Sabina",Muki,Border Collie,CZE,,,,,,,True,Jordi Boix Baró,,,214.0

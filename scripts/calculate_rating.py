@@ -14,7 +14,6 @@ import os
 import re
 import unicodedata
 from collections import defaultdict
-from math import sqrt
 
 from openskill.models import PlackettLuce
 
@@ -44,6 +43,26 @@ COMPETITIONS = {
     "polish_open_2025_xsm":       {"date": "2025-02-07", "tier": 2, "name": "Polish Open 2025 (XS, S & M)"},
     "polish_open_2026_inl":        {"date": "2026-02-06", "tier": 2, "name": "Polish Open 2026 (IN & L)"},
     "polish_open_2026_xsm":       {"date": "2026-02-06", "tier": 2, "name": "Polish Open 2026 (XS, S & M)"},
+    "joawc_soawc_2025":            {"date": "2025-07-09", "tier": 1, "name": "JOAWC/SOAWC 2025"},
+    "proseccup_2024":              {"date": "2024-01-19", "tier": 2, "name": "ProsecCup 2024"},
+    "proseccup_2025":              {"date": "2025-01-17", "tier": 2, "name": "ProsecCup 2025"},
+    "alpine_agility_open_2024":    {"date": "2024-06-07", "tier": 2, "name": "Alpine Agility Open 2024"},
+    "alpine_agility_open_2025":    {"date": "2025-06-06", "tier": 2, "name": "Alpine Agility Open 2025"},
+    "austrian_agility_open_2025":  {"date": "2025-06-13", "tier": 2, "name": "Austrian Agility Open 2025"},
+    "border_collie_classic_2024":  {"date": "2024-07-26", "tier": 2, "name": "Border Collie Classic 2024"},
+    "dutch_open_2025":             {"date": "2025-07-03", "tier": 2, "name": "Dutch Open 2025"},
+    "fmbb_2024":                   {"date": "2024-04-25", "tier": 2, "name": "FMBB World Championship 2024"},
+    "fmbb_2025":                   {"date": "2025-05-06", "tier": 2, "name": "FMBB World Championship 2025"},
+    "helvetic_agility_masters_2025": {"date": "2025-08-15", "tier": 2, "name": "Helvetic Agility Masters 2025"},
+    "hungarian_open_2024":         {"date": "2024-02-23", "tier": 2, "name": "Hungarian Open 2024"},
+    "hungarian_open_2025":         {"date": "2025-02-21", "tier": 2, "name": "Hungarian Open 2025"},
+    "midsummer_dog_sports_festival_2024": {"date": "2024-06-19", "tier": 2, "name": "Midsummer Dog Sports Festival 2024"},
+    "midsummer_dog_sports_festival_2025": {"date": "2025-06-19", "tier": 2, "name": "Midsummer Dog Sports Festival 2025"},
+    "nordic_agility_championship_2024": {"date": "2024-08-17", "tier": 2, "name": "Nordic Agility Championship 2024"},
+    "nordic_agility_championship_2025": {"date": "2025-08-22", "tier": 2, "name": "Nordic Agility Championship 2025"},
+    "norwegian_open_2024":         {"date": "2024-10-11", "tier": 2, "name": "Norwegian Open 2024"},
+    "norwegian_open_2025":         {"date": "2025-10-10", "tier": 2, "name": "Norwegian Open 2025"},
+    "slovenian_open_2025":         {"date": "2025-06-27", "tier": 2, "name": "Slovenian Open 2025"},
 }
 
 # ---------------------------------------------------------------------------
@@ -55,38 +74,102 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 
 MIN_FIELD_SIZE = 6
+MIN_RUNS_FOR_RANKING = 5  # teams with fewer runs are excluded from output
+# Include team rounds only when they represent an individual run
+# (team ranking is derived from summed individual performances).
+TEAM_DISCIPLINES_INCLUDED = {"Agility", "Jumping", "Final"}
 
-# Tier weights: multiplier applied to mu delta after each rate() call.
-# Higher tier = results count more. 1.0 = baseline (no boost).
+# Tier weights: optional event importance boost passed into OpenSkill's
+# weights parameter. Disabled by default to keep MVP logic simple.
+ENABLE_TIER_WEIGHTING = False
 TIER_WEIGHTS = {1: 2.0, 2: 1.5, 3: 1.0, 4: 0.7}
 
-# Display formula: displayed_rating = 1000 + DISPLAY_SCALE * (mu - 3 * sigma)
-# NOTE: PlackettLuce sigma barely converges in large fields (50+ competitors),
-# so displayed_rating is effectively 1000 + DISPLAY_SCALE * (mu - 25).
-# Using scale=100 to get a useful spread for the dry run.
-# This is a known issue — sigma convergence needs investigation for production.
+# Sigma decay: force sigma convergence after each run.
+# PlackettLuce sigma barely decreases in large fields, so we manually
+# decay it to simulate Glicko-2-like convergence.
+SIGMA_DECAY = 0.95      # multiply sigma by this after each run
+SIGMA_MIN = 1.5          # floor — sigma never goes below this
+
+# Provisional status: uncertainty-driven, not score-driven.
+PROVISIONAL_SIGMA_THRESHOLD = 4.0
+
+# Skill tier distribution (per size, among teams shown in rankings).
+ELITE_TOP_PERCENT = 0.02
+CHAMPION_TOP_PERCENT = 0.10  # Elite + Champion
+EXPERT_TOP_PERCENT = 0.30    # Elite + Champion + Expert
+
+# Preferred size tab order in the UI.
+SIZE_TAB_ORDER = ["Large", "Intermediate", "Medium", "Small"]
+
+# Display formula: displayed_rating = BASE + SCALE * (mu - 3*sigma)
+# This preserves OpenSkill's ordinal semantics while mapping to a user-friendly scale.
 DISPLAY_BASE = 1000
-DISPLAY_SCALE = 100
+DISPLAY_SCALE = 40
 
 
 def displayed_rating(mu, sigma):
-    return DISPLAY_BASE + DISPLAY_SCALE * (mu - 3 * sigma)
+    return DISPLAY_BASE + DISPLAY_SCALE * (mu - 3.0 * sigma)
 
 
-def displayed_deviation(sigma):
-    return DISPLAY_SCALE * 3 * sigma
+def is_provisional(sigma):
+    return sigma >= PROVISIONAL_SIGMA_THRESHOLD
 
 
-def tier_label(rating):
-    if rating >= 2500:
+def _percentile_threshold(values, percentile):
+    """Return value at percentile p (0..1) using deterministic nearest-rank index."""
+    if not values:
+        return float("inf")
+    sorted_values = sorted(values)
+    idx = int((len(sorted_values) - 1) * percentile)
+    return sorted_values[idx]
+
+
+def compute_tier_thresholds(all_ratings):
+    """Compute per-size skill tier cutoffs from displayed rating percentiles."""
+    thresholds_by_size = {}
+
+    for size in sorted(all_ratings.keys()):
+        ranked = [
+            t for t in all_ratings[size].values()
+            if t["num_runs"] >= MIN_RUNS_FOR_RANKING
+        ]
+        scores = [t["displayed_rating"] for t in ranked]
+
+        thresholds_by_size[size] = {
+            "elite_min": _percentile_threshold(scores, 1.0 - ELITE_TOP_PERCENT),
+            "champion_min": _percentile_threshold(scores, 1.0 - CHAMPION_TOP_PERCENT),
+            "expert_min": _percentile_threshold(scores, 1.0 - EXPERT_TOP_PERCENT),
+        }
+
+    return thresholds_by_size
+
+
+def skill_tier_label(rating, thresholds):
+    if rating >= thresholds["elite_min"]:
         return "Elite"
-    if rating >= 2200:
+    if rating >= thresholds["champion_min"]:
         return "Champion"
-    if rating >= 1900:
+    if rating >= thresholds["expert_min"]:
         return "Expert"
-    if rating >= 1600:
-        return "Competitor"
-    return "Provisional"
+    return "Competitor"
+
+
+def natural_sort_key(value):
+    """Sort strings in human order: ..._2 before ..._10."""
+    parts = re.split(r"(\d+)", value or "")
+    key = []
+    for part in parts:
+        if part.isdigit():
+            key.append(int(part))
+        else:
+            key.append(part)
+    return key
+
+
+def ordered_sizes(size_keys):
+    """Sort size labels by preferred UI order, then alphabetically for unknown labels."""
+    idx = {size: i for i, size in enumerate(SIZE_TAB_ORDER)}
+    return sorted(size_keys, key=lambda s: (idx.get(s, len(idx)), s))
 
 
 # ---------------------------------------------------------------------------
@@ -96,12 +179,52 @@ def tier_label(rating):
 # Manual dog name aliases: normalized_call_name -> canonical_call_name
 DOG_ALIASES = {
     "sayonara": "seeya",
+    "finrod frances": "cis",
+    "pszenik": "psenik",
+}
+
+# Tokens frequently found in exports as technical suffixes, not real call names.
+# Example: "SHEPWORLD I WANT IT ALL (cp)" where "(cp)" is metadata noise.
+NON_CALL_SUFFIXES = {
+    "cp",
 }
 
 # Manual registered name -> call name mapping (when data never provides
 # the call name in parentheses/quotes for a given registered name)
 REGISTERED_TO_CALL = {
     "night magic alfa fortuna": "beat",
+    "olympia misty highland": "olinka",
+    "frisky fantine z certovy kazatelny": "fanta",
+    "shepworld i want it all": "katniss",
+    "shepworld i'm on fire": "brant",
+    "finrod frances wonderfull dream": "cis",
+    "a3ch finrod frances wonderfull dream": "cis",
+    "finrod frances wonderfull dream cis": "cis",
+    "a3ch libby granting pleasure": "psenik",
+    "libby granting pleasure": "psenik",
+    "clever and fast of youwentis": "carrie",
+    "clever and fastvof youwentis": "carrie",
+}
+
+# Manual registered-name typo fixes: normalized_variant -> canonical_registered_name
+REGISTERED_NAME_ALIASES = {
+    "clever and fastvof youwentis": "clever and fast of youwentis",
+}
+
+# Manual display form overrides for normalized call names.
+CALL_NAME_DISPLAY = {
+    "cis": "Cis",
+    "psenik": "Pšeník",
+}
+
+# Manual handler aliases: normalized_handler -> canonical_normalized_handler
+HANDLER_ALIASES = {
+    "katka tercova": "katerina tercova",
+}
+
+# Manual handler display overrides: canonical_normalized_handler -> display name
+HANDLER_DISPLAY_OVERRIDES = {
+    "katerina tercova": "Kateřina Terčová",
 }
 
 
@@ -109,6 +232,12 @@ def strip_diacritics(s):
     """Remove diacritics: 'Diviš' -> 'Divis', 'Glejdurová' -> 'Glejdurova'."""
     nfkd = unicodedata.normalize("NFKD", s)
     return "".join(c for c in nfkd if not unicodedata.combining(c))
+
+
+def normalize_registered_name(name):
+    """Normalize registered name and fix known source typos."""
+    normalized = re.sub(r"\s+", " ", name.strip().lower())
+    return REGISTERED_NAME_ALIASES.get(normalized, normalized)
 
 
 def normalize_handler(name):
@@ -128,7 +257,8 @@ def normalize_handler(name):
     name = re.sub(r"\s+", " ", name)
     # Sort name parts so "jakub divis" == "divis jakub"
     parts = name.split()
-    return " ".join(sorted(parts))
+    normalized = " ".join(sorted(parts))
+    return HANDLER_ALIASES.get(normalized, normalized)
 
 
 def parse_dog_name(dog_name):
@@ -151,25 +281,32 @@ def parse_dog_name(dog_name):
     match = re.search(r"\(([^)]+)\)\s*$", dog_name)
     if match:
         call = match.group(1).strip().lower()
-        call = DOG_ALIASES.get(call, call)
-        reg = dog_name[:match.start()].strip().lower()
-        # Only keep registered name if it's longer than the call name
-        if len(reg.split()) <= 2:
-            reg = ""
-        return call, reg
+        if call in NON_CALL_SUFFIXES:
+            # Ignore technical suffixes and parse the base dog string.
+            dog_name = dog_name[:match.start()].strip()
+        else:
+            call = DOG_ALIASES.get(call, call)
+            reg = normalize_registered_name(dog_name[:match.start()])
+            # Only keep registered name if it's longer than the call name
+            if len(reg.split()) <= 2:
+                reg = ""
+            return call, reg
 
     # Try to extract from quotes: '... "CallName"'
     match = re.search(r'"([^"]+)"\s*$', dog_name)
     if match:
         call = match.group(1).strip().lower()
-        call = DOG_ALIASES.get(call, call)
-        reg = dog_name[:match.start()].strip().lower()
-        if len(reg.split()) <= 2:
-            reg = ""
-        return call, reg
+        if call in NON_CALL_SUFFIXES:
+            dog_name = dog_name[:match.start()].strip()
+        else:
+            call = DOG_ALIASES.get(call, call)
+            reg = normalize_registered_name(dog_name[:match.start()])
+            if len(reg.split()) <= 2:
+                reg = ""
+            return call, reg
 
     # No explicit call name marker
-    normalized = dog_name.lower()
+    normalized = normalize_registered_name(dog_name)
     normalized = DOG_ALIASES.get(normalized, normalized)
     # Short name (1-2 words) → treat as call name, no registered name
     if len(normalized.split()) <= 2:
@@ -194,15 +331,52 @@ def make_team_id(handler, dog):
     return f"{h}|||{d}"
 
 
+def _extract_call_name_from_handler_blob(handler_blob):
+    """Extract call name from a combined handler+dog string.
+
+    Supports both well-formed "... (Call)" and damaged "... (Call" tails.
+    Returns empty string when extraction is not reliable.
+    """
+    if not handler_blob:
+        return ""
+
+    # Prefer the last complete "(...)" group anywhere in the string.
+    all_parens = re.findall(r"\(([^)]+)\)", handler_blob)
+    if all_parens:
+        candidate = all_parens[-1]
+    else:
+        # Fallback for malformed inputs missing trailing ")".
+        tail = re.search(r"\(([^()]*)\s*$", handler_blob)
+        if not tail:
+            return ""
+        candidate = tail.group(1)
+
+    candidate = re.sub(r"[^\w\s'\-’]", "", candidate, flags=re.UNICODE)
+    candidate = re.sub(r"\s+", " ", candidate).strip()
+    if not candidate:
+        return ""
+    # Call names are typically short; longer tails are likely parsing noise.
+    if len(candidate.split()) > 3:
+        return ""
+    return candidate
+
+
 # ---------------------------------------------------------------------------
 # Data loading
 # ---------------------------------------------------------------------------
 
 def load_all_runs():
-    """Load all CSV files, skip team rounds, attach competition metadata."""
+    """Load all CSV files and attach competition metadata.
+
+    Team rounds are included only for individual-run disciplines
+    (Agility/Jumping/Final). Aggregate team-only rows (e.g. Unknown) are skipped.
+    """
     runs = []
     csv_files = sorted(glob.glob(os.path.join(DATA_DIR, "*", "*_results.csv")))
     skipped_no_identity = 0
+    skipped_team_rounds = 0
+    recovered_handler_from_id = 0
+    recovered_identity_from_start_no = 0
 
     for filepath in csv_files:
         comp_dir = os.path.basename(os.path.dirname(filepath))
@@ -215,55 +389,113 @@ def load_all_runs():
         comp_meta = COMPETITIONS[comp_dir]
 
         with open(filepath, newline="", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                if row.get("is_team_round", "") == "True":
-                    continue
+            rows = list(csv.DictReader(f))
 
-                handler = row.get("handler", "").strip()
-                dog = row.get("dog", "").strip()
+        # File-local recovery map: handler_id -> best known handler text.
+        # We only trust rows that already have a dog in a dedicated dog column.
+        handler_by_id = {}
+        identity_by_start_no = {}
+        ambiguous_start_no = set()
+        for row in rows:
+            hid = row.get("handler_id", "").strip()
+            h = row.get("handler", "").strip()
+            d = row.get("dog", "").strip()
+            if not hid or not h or not d:
+                continue
+            current = handler_by_id.get(hid)
+            if current is None or len(h.split()) < len(current.split()):
+                handler_by_id[hid] = h
 
-                # AWC data sometimes has handler+dog concatenated in handler field
-                # with empty dog. Try to split "Handler DogRegisteredName (CallName)"
-                if not dog and handler:
-                    # Try to extract call name from parentheses in handler field
-                    paren_match = re.search(r"\(([^)]+)\)\s*$", handler)
-                    if paren_match:
-                        call_name = paren_match.group(1).strip()
-                        # Use call name as dog, but handler stays as-is for display
-                        team_id = make_team_id(handler, call_name)
-                    else:
-                        # No way to split — use full handler as team_id
-                        skipped_no_identity += 1
-                        continue
+            start_no = row.get("start_no", "").strip()
+            if start_no:
+                tid = make_team_id(h, d)
+                existing = identity_by_start_no.get(start_no)
+                if existing and existing["team_id"] != tid:
+                    ambiguous_start_no.add(start_no)
                 else:
-                    team_id = make_team_id(handler, dog)
+                    identity_by_start_no[start_no] = {"handler": h, "dog": d, "team_id": tid}
+
+        for start_no in ambiguous_start_no:
+            identity_by_start_no.pop(start_no, None)
+
+        for row in rows:
+            is_team_round = row.get("is_team_round", "").strip().lower() == "true"
+            discipline = row.get("discipline", "").strip()
+            if is_team_round and discipline not in TEAM_DISCIPLINES_INCLUDED:
+                skipped_team_rounds += 1
+                continue
+
+            raw_handler = row.get("handler", "").strip()
+            handler = raw_handler
+            dog = row.get("dog", "").strip()
+            handler_id = row.get("handler_id", "").strip()
+            start_no = row.get("start_no", "").strip()
+
+            # Recover handler if source row has broken "handler+dog" blob.
+            mapped_handler = handler_by_id.get(handler_id, "")
+            if mapped_handler and handler != mapped_handler:
+                handler = mapped_handler
+                recovered_handler_from_id += 1
+
+            # Strong recovery path: copy full identity from the same start number
+            # in the same file when available (AWC exports often have this issue).
+            start_identity = identity_by_start_no.get(start_no)
+            if start_identity and (not handler or not dog):
+                if handler != start_identity["handler"] or dog != start_identity["dog"]:
+                    handler = start_identity["handler"]
+                    dog = start_identity["dog"]
+                    recovered_identity_from_start_no += 1
+
+            # If dog is missing, try extracting call name from the handler blob.
+            if not dog and raw_handler:
+                call_name = _extract_call_name_from_handler_blob(raw_handler)
+                if call_name:
+                    # Accept fallback only when handler came from trusted map,
+                    # or when raw handler looks like a plain personal name.
+                    if mapped_handler or len(raw_handler.split()) <= 4:
+                        dog = call_name
+
+            if not handler or not dog:
+                skipped_no_identity += 1
+                continue
+
+            team_id = make_team_id(handler, dog)
 
                 # Parse rank
-                try:
-                    rank = int(row["rank"])
-                except (ValueError, KeyError):
-                    rank = None
+            rank_str = row.get("rank", "").strip()
+            try:
+                rank = int(rank_str)
+            except (ValueError, KeyError):
+                rank = None
 
-                eliminated = row.get("eliminated", "") == "True"
+            eliminated = row.get("eliminated", "") == "True"
+            # Treat DIS/DSQ rank as eliminated even if eliminated flag is False
+            if rank is None and rank_str.upper() in ("DIS", "DSQ", "NFC", "RET", "WD"):
+                eliminated = True
 
-                runs.append({
-                    "comp_dir": comp_dir,
-                    "comp_name": comp_meta["name"],
-                    "comp_date": comp_meta["date"],
-                    "comp_tier": comp_meta["tier"],
-                    "round_key": row.get("round_key", ""),
-                    "size": row.get("size", ""),
-                    "team_id": team_id,
-                    "handler": handler,
-                    "dog": dog,
-                    "country": row.get("country", ""),
-                    "rank": rank,
-                    "eliminated": eliminated,
-                })
+            runs.append({
+                "comp_dir": comp_dir,
+                "comp_name": comp_meta["name"],
+                "comp_date": comp_meta["date"],
+                "comp_tier": comp_meta["tier"],
+                "round_key": row.get("round_key", ""),
+                "size": row.get("size", ""),
+                "team_id": team_id,
+                "handler": handler,
+                "dog": dog,
+                "country": row.get("country", ""),
+                "rank": rank,
+                "eliminated": eliminated,
+            })
 
     if skipped_no_identity:
         print(f"Skipped {skipped_no_identity} runs with no parseable team identity")
+    if skipped_team_rounds:
+        print(f"Skipped {skipped_team_rounds} non-individual team-round runs")
+    if recovered_handler_from_id:
+        print(f"Recovered {recovered_handler_from_id} handler names via handler_id map")
+    if recovered_identity_from_start_no:
+        print(f"Recovered {recovered_identity_from_start_no} identities via start_no map")
     print(f"Loaded {len(runs)} individual runs from {len(csv_files)} files")
 
     # --- Fuzzy dog name merging ---
@@ -303,13 +535,12 @@ def _merge_dog_variants(runs):
 
     merge_map = {}
 
-    for handler, dogs in handler_dogs.items():
-        dogs = list(dogs)
+    for handler in sorted(handler_dogs.keys()):
+        dogs = sorted(handler_dogs[handler], key=lambda d: (len(d.split()), d))
         if len(dogs) < 2:
             continue
 
         # Strategy 1: call name prefix match
-        dogs.sort(key=lambda d: len(d.split()))
         for i, short in enumerate(dogs):
             short_words = short.split()
             if len(short_words) > 2 or not short:
@@ -511,7 +742,8 @@ def _best_handler_display(handlers):
         parts = comma_variants[0].split(",", 1)
         last = parts[0].strip()
         first = parts[1].strip()
-        return f"{first} {last}"
+        chosen = f"{first} {last}"
+        return HANDLER_DISPLAY_OVERRIDES.get(normalize_handler(chosen), chosen)
 
     # No comma variant — pick the most common non-empty name
     counts = defaultdict(int)
@@ -527,7 +759,8 @@ def _best_handler_display(handlers):
     max_count = max(counts.values())
     top_candidates = [h for h, c in counts.items() if c == max_count]
     top_candidates.sort(key=lambda h: sum(1 for c in h if ord(c) > 127), reverse=True)
-    return top_candidates[0]
+    chosen = top_candidates[0]
+    return HANDLER_DISPLAY_OVERRIDES.get(normalize_handler(chosen), chosen)
 
 
 def _best_dog_names(dogs):
@@ -565,7 +798,10 @@ def _best_dog_names(dogs):
     best_call_display = ""
     if call_names:
         best_call = max(call_names, key=call_names.get)
-        best_call_display = call_display.get(best_call, best_call.title())
+        best_call_display = CALL_NAME_DISPLAY.get(
+            best_call,
+            call_display.get(best_call, best_call.title()),
+        )
 
     # Pick the longest registered name (most complete)
     best_reg = ""
@@ -673,7 +909,7 @@ def calculate_ratings(runs, profiles):
             for run in comp_runs[comp_dir]:
                 round_runs[run["round_key"]].append(run)
 
-            for round_key in sorted(round_runs.keys()):
+            for round_key in sorted(round_runs.keys(), key=natural_sort_key):
                 entries = round_runs[round_key]
 
                 # Deduplicate by team_id (keep first occurrence)
@@ -734,21 +970,21 @@ def calculate_ratings(runs, profiles):
                         team_stats[tid]["last_comp"] = comp_name
                         team_stats[tid]["last_comp_date"] = entry["comp_date"]
 
-                # Rate with tier weighting
+                # Optional tier weighting via OpenSkill's native "weights" parameter.
                 tier = entries[0]["comp_tier"]
                 tier_weight = TIER_WEIGHTS.get(tier, 1.0)
+                weights = None
+                if ENABLE_TIER_WEIGHTING and tier_weight != 1.0:
+                    weights = [[tier_weight] for _ in entry_order]
 
-                # Save old mu values
-                old_mu = {tid: team_ratings[tid].mu for tid in entry_order}
+                result = model.rate(teams, ranks=ranks, weights=weights)
 
-                result = model.rate(teams, ranks=ranks)
-
-                # Apply tier weight: scale the mu delta
+                # Apply sigma decay
                 for i, tid in enumerate(entry_order):
                     new_rating = result[i][0]
-                    if tier_weight != 1.0:
-                        delta = new_rating.mu - old_mu[tid]
-                        new_rating.mu = old_mu[tid] + delta * tier_weight
+
+                    # Force sigma convergence
+                    new_rating.sigma = max(SIGMA_MIN, new_rating.sigma * SIGMA_DECAY)
                     team_ratings[tid] = new_rating
 
             # end round loop
@@ -781,6 +1017,14 @@ def calculate_ratings(runs, profiles):
 
         all_ratings[size] = size_results
 
+    # Add per-size percentile skill tiers + provisional badge flag.
+    tier_thresholds = compute_tier_thresholds(all_ratings)
+    for size in sorted(all_ratings.keys()):
+        thresholds = tier_thresholds[size]
+        for team in all_ratings[size].values():
+            team["skill_tier"] = skill_tier_label(team["displayed_rating"], thresholds)
+            team["provisional"] = is_provisional(team["sigma"])
+
     return all_ratings
 
 
@@ -797,12 +1041,12 @@ def write_csv(all_ratings):
         writer.writerow([
             "rank", "handler", "call_name", "registered_name", "size", "country",
             "mu", "sigma", "displayed_rating",
-            "tier", "num_runs", "last_competition",
+            "tier", "provisional", "num_runs", "last_competition",
         ])
 
         for size in sorted(all_ratings.keys()):
             sorted_teams = sorted(
-                all_ratings[size].values(),
+                (t for t in all_ratings[size].values() if t["num_runs"] >= MIN_RUNS_FOR_RANKING),
                 key=lambda x: -x["displayed_rating"],
             )
             for i, team in enumerate(sorted_teams, 1):
@@ -816,7 +1060,8 @@ def write_csv(all_ratings):
                     round(team["mu"], 4),
                     round(team["sigma"], 4),
                     team["displayed_rating"],
-                    tier_label(team["displayed_rating"]),
+                    team.get("skill_tier", "Competitor"),
+                    str(team.get("provisional", False)).lower(),
                     team["num_runs"],
                     team["last_comp"],
                 ])
@@ -832,19 +1077,25 @@ def write_html(all_ratings):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     outpath = os.path.join(OUTPUT_DIR, "ratings.html")
 
-    sizes = sorted(all_ratings.keys())
+    sizes = ordered_sizes(all_ratings.keys())
 
     # Build table rows per size
     tables = {}
+    countries_by_size = {}
     for size in sizes:
         sorted_teams = sorted(
-            all_ratings[size].values(),
+            (t for t in all_ratings[size].values() if t["num_runs"] >= MIN_RUNS_FOR_RANKING),
             key=lambda x: -x["displayed_rating"],
         )
+        countries_by_size[size] = sorted({t["country"] for t in sorted_teams if t["country"]})
         rows = []
         for i, team in enumerate(sorted_teams, 1):
             rating = team["displayed_rating"]
-            tl = tier_label(rating)
+            tl = team.get("skill_tier", "Competitor")
+            provisional_badge = ""
+            if team.get("provisional", False):
+                provisional_badge = " <span class='prov-badge'>PROV</span>"
+            handler_cell = f"{_esc(team['handler'])}{provisional_badge}"
             # Dog cell: call name bold, registered name small
             call = _esc(team.get("call_name", ""))
             reg = _esc(team.get("registered_name", ""))
@@ -859,7 +1110,7 @@ def write_html(all_ratings):
             rows.append(
                 f"<tr class='tier-{tl.lower()}'>"
                 f"<td>{i}</td>"
-                f"<td>{_esc(team['handler'])}</td>"
+                f"<td>{handler_cell}</td>"
                 f"<td>{dog_cell}</td>"
                 f"<td>{_esc(team['country'])}</td>"
                 f"<td class='num'>{rating:.0f}</td>"
@@ -872,7 +1123,7 @@ def write_html(all_ratings):
     # Tab buttons
     tab_buttons = []
     for i, size in enumerate(sizes):
-        count = len(all_ratings[size])
+        count = sum(1 for t in all_ratings[size].values() if t["num_runs"] >= MIN_RUNS_FOR_RANKING)
         active = " active" if i == 0 else ""
         tab_buttons.append(
             f'<button class="tab-btn{active}" onclick="showTab(\'{size}\')">'
@@ -928,30 +1179,36 @@ h1 {{ margin-bottom: 4px; }}
 .tier-champion td:first-child {{ border-left: 3px solid #8b5cf6; }}
 .tier-expert td:first-child {{ border-left: 3px solid #3b82f6; }}
 .tier-competitor td:first-child {{ border-left: 3px solid #10b981; }}
-.tier-provisional td:first-child {{ border-left: 3px solid #d1d5db; }}
-.tier-provisional {{ color: #999; }}
 .reg-name {{ font-size: 11px; color: #888; }}
+.prov-badge {{ display: inline-block; margin-left: 6px; padding: 1px 4px; border-radius: 4px; background: #eef2ff; color: #334155; font-size: 10px; font-weight: 700; letter-spacing: 0.2px; vertical-align: middle; }}
 .legend {{ display: flex; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; font-size: 13px; }}
 .legend-item {{ display: flex; align-items: center; gap: 4px; }}
 .legend-color {{ width: 12px; height: 12px; border-radius: 2px; }}
-.search-box {{ margin-bottom: 16px; }}
+.filters {{ display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }}
+.search-box {{ margin-bottom: 0; }}
 .search-box input {{ padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; width: 300px; max-width: 100%; }}
+.country-box select {{ padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; background: #fff; min-width: 180px; }}
 </style>
 </head>
 <body>
 <h1>ADW Rating — Dry Run</h1>
-<p class="subtitle">OpenSkill (Plackett-Luce) · {len(sizes)} size categories · No tier weighting</p>
+<p class="subtitle">OpenSkill (Plackett-Luce) · {len(sizes)} size categories · percentile skill tiers per size</p>
 
 <div class="legend">
-    <div class="legend-item"><div class="legend-color" style="background:#f59e0b"></div> Elite (2500+)</div>
-    <div class="legend-item"><div class="legend-color" style="background:#8b5cf6"></div> Champion (2200–2499)</div>
-    <div class="legend-item"><div class="legend-color" style="background:#3b82f6"></div> Expert (1900–2199)</div>
-    <div class="legend-item"><div class="legend-color" style="background:#10b981"></div> Competitor (1600–1899)</div>
-    <div class="legend-item"><div class="legend-color" style="background:#d1d5db"></div> Provisional (&lt;1600)</div>
+    <div class="legend-item"><div class="legend-color" style="background:#f59e0b"></div> Elite (top 2% per size)</div>
+    <div class="legend-item"><div class="legend-color" style="background:#8b5cf6"></div> Champion (next 8%)</div>
+    <div class="legend-item"><div class="legend-color" style="background:#3b82f6"></div> Expert (next 20%)</div>
+    <div class="legend-item"><div class="legend-color" style="background:#10b981"></div> Competitor (remaining)</div>
+    <div class="legend-item"><span class="prov-badge">PROV</span> Provisional (sigma ≥ {PROVISIONAL_SIGMA_THRESHOLD})</div>
 </div>
 
+<div class="filters">
 <div class="search-box">
-    <input type="text" id="search" placeholder="Search handler, dog, or country..." oninput="filterRows()">
+    <input type="text" id="search" placeholder="Search handler or dog..." oninput="filterRows()">
+</div>
+<div class="country-box">
+    <select id="country-filter" onchange="filterRows()"></select>
+</div>
 </div>
 
 <div class="tabs">
@@ -962,6 +1219,7 @@ h1 {{ margin-bottom: 4px; }}
 
 <script>
 let currentTab = '{sizes[0]}';
+const countryOptionsBySize = {countries_by_size};
 
 function showTab(size) {{
     document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
@@ -969,7 +1227,35 @@ function showTab(size) {{
     document.getElementById('tab-' + size).style.display = 'block';
     event.target.closest('.tab-btn').classList.add('active');
     currentTab = size;
+    updateCountryFilterOptions();
     filterRows();
+}}
+
+function updateCountryFilterOptions() {{
+    const select = document.getElementById('country-filter');
+    if (!select) return;
+
+    const previous = select.value || '';
+    const options = countryOptionsBySize[currentTab] || [];
+
+    select.innerHTML = '';
+    const allOption = document.createElement('option');
+    allOption.value = '';
+    allOption.textContent = 'All countries';
+    select.appendChild(allOption);
+
+    options.forEach(country => {{
+        const option = document.createElement('option');
+        option.value = country;
+        option.textContent = country;
+        select.appendChild(option);
+    }});
+
+    if (previous && options.includes(previous)) {{
+        select.value = previous;
+    }} else {{
+        select.value = '';
+    }}
 }}
 
 function sortTable(tableId, colIdx, type) {{
@@ -996,14 +1282,20 @@ function sortTable(tableId, colIdx, type) {{
 
 function filterRows() {{
     const q = document.getElementById('search').value.toLowerCase();
+    const country = document.getElementById('country-filter').value;
     const table = document.getElementById('table-' + currentTab);
     if (!table) return;
     const rows = table.querySelectorAll('tbody tr');
     rows.forEach(row => {{
         const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(q) ? '' : 'none';
+        const rowCountry = row.cells[3] ? row.cells[3].textContent.trim() : '';
+        const matchesText = text.includes(q);
+        const matchesCountry = !country || rowCountry === country;
+        row.style.display = (matchesText && matchesCountry) ? '' : 'none';
     }});
 }}
+
+updateCountryFilterOptions();
 </script>
 </body>
 </html>"""

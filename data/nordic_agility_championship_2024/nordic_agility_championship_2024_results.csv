@@ -1,0 +1,367 @@
+competition,round_key,size,discipline,is_team_round,rank,start_no,handler,dog,breed,country,faults,refusals,time_faults,total_faults,time,speed,eliminated,judge,sct,mct,course_length
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,1,31,Channie Elmestedt,Fame,Border Collie,DNK,0.0,0.0,,0.0,38.64,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,2,5,Ammy Sten,Sota,Border Collie,SWE,0.0,0.0,,0.0,40.17,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,3,24,Katariina Kuiro,Wendi,Border Collie,FIN,0.0,0.0,,0.0,40.42,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,4,14,Joni Laakso,WENDY,Australian Shepherd,FIN,0.0,0.0,,0.0,41.06,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,5,29,Sandra Sjöberg,Hennie,Border Collie,SWE,0.0,0.0,,0.0,41.52,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,6,10,Juha Orenius,Hera,Border Collie,FIN,0.0,0.0,,0.0,41.63,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,7,16,Tanja Kurikka,Pupu,border collie,FIN,0.0,0.0,,0.0,42.14,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,8,13,Channie Elmestedt,Mayday,Border Collie,DNK,0.0,0.0,,0.0,46.28,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,9,27,Camilla Jakobsson,Bam,border collie,SWE,5.0,0.0,,5.0,38.96,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,10,2,Jenny Damm,Azta,,SWE,5.0,0.0,,5.0,40.15,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,11,11,Malena  Johansson,Tona,Border Collie,SWE,0.0,5.0,,5.0,44.67,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,12,22,Jenny Damm,Zonia,Border Collie,SWE,5.0,0.0,,5.0,45.09,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,13,1,Tanja Kurikka,Lilo,Border Collie,FIN,0.0,5.0,,5.77,47.77,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,14,26,Trine Margrethe Thorkildsen,Shady,border collie,NOR,10.0,0.0,,10.0,40.25,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,15,9,Gigi Danica,Flicka,Border Collie,DNK,10.0,0.0,,10.0,41.31,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,16,15,Lene Simonsen,PIKA,Border Collie,DNK,5.0,5.0,,10.0,42.97,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,17,3,Linda Enberg,Ciara,Border Collie,SWE,5.0,5.0,,10.0,44.83,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,18,33,Gigi Danica,Pyrus,Nova Scotia duck tolling retriever,DNK,5.0,5.0,,11.28,48.28,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,19,21,Anne Linn Johannessen Moen,Tara,Border Collie,NOR,5.0,5.0,,13.27,50.27,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,20,30,Anna Orenius,Kaja,border collie,FIN,10.0,5.0,,15.0,43.73,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,21,8,Christa  Saksa,Pipa,border collie,FIN,10.0,10.0,,20.0,41.26,4.68,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,12,Lise-Irene Hansen,Say,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,17,Jenny Naumanen,Armi,Border Collie,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,18,Naya Lindevang-Hilstrøm,Lexi,Border Collie,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,19,Sanna Harjunpää,Kilo,Border Collie,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,20,Tina B. Tøndering,Ixi,Border Collie,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,23,Hans Strømsøyen,Bess,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,25,Annie Tellnes,Olympia,Miniature American Shepherd,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,28,Lise-Irene Hansen,Babe,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,32,Vilde Monteiro,Aya,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,4,Sabine Serwin,Lille My,Border Collie,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,6,Hanna  Persson,Xena,Australian Shepherd,SWE,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_intermediate_1,Intermediate,Agility,False,,7,Viktoria Moen-Bardølsgård,IPA,Australsk Kelpie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,1,29,Gustaf Elgh,Pixi,Border Collie,SWE,0.0,0.0,,0.0,39.67,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,2,34,Sarah Lorentzen,Jinx,Border Collie,DNK,0.0,0.0,,0.0,41.69,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,3,26,Sabina Håkansson,Ibra,Border Collie,SWE,0.0,0.0,,0.0,42.38,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,4,12,Sari Vähäniitty,Ykä,Border collie,FIN,0.0,0.0,,0.0,43.09,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,5,16,Tonje Skistad,Huffy,Border Collie,NOR,0.0,0.0,,0.0,43.78,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,6,15,Malin Simson Cloud,Beyla,Border Collie,SWE,5.0,0.0,,5.0,39.54,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,7,1,Mia Overgaard,Flair,Border Collie,DNK,5.0,0.0,,5.0,40.39,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,8,6,Mette Björne,Bug,Border Collie,SWE,5.0,0.0,,5.0,40.7,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,9,19,Vivian Nielsen,Wake,Border Collie,DNK,5.0,0.0,,5.0,40.8,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,10,10,Jaakko Suoknuuti,Wow,Border Collie,FIN,5.0,0.0,,5.0,41.2,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,11,25,Annika af Klercker,Vita,Border Collie,SWE,0.0,5.0,,5.0,43.4,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,12,3,Raisa Vähätalo,Peppi,Border Collie,FIN,0.0,5.0,,5.0,43.75,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,13,7,Julie Nilsen,Sansa,Chodsky Pes,NOR,5.0,0.0,,5.0,45.65,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,14,30,Tina B. Tøndering,Zack,Border Collie,DNK,0.0,5.0,,5.04,48.04,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,15,9,Emma  Eriksson,Essie,Border Collie,SWE,10.0,0.0,,10.0,39.9,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,16,2,Enya Habel,ZANE,border collie,SWE,10.0,0.0,,10.0,40.08,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,17,17,Monica Iversen,Giller,Border Collie,NOR,10.0,0.0,,10.0,45.5,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,18,14,Jane Elene Christensen,Flip,Border Collie,DNK,10.0,5.0,,15.0,45.71,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,19,31,Mikko Aaltonen,Kesy,Border Collie,FIN,0.0,10.0,,15.19,53.19,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,20,22,Lotta Franck,Vimma,Australian Shepherd,FIN,5.0,10.0,,17.45,50.45,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,11,Janina Kantola,Avatar,Border collie,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,13,Merethe Stenberg Mølholm,Era,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,18,Esther Falck  Jakobsen,Dixie,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,20,Rebecca Sundqvist,Rex,Border Collie,SWE,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,21,Maija Anttolainen,Maj-Lis,border collie,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,23,Mila Oravecz,Singha,Border Collie,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,24,Mia Kransø,Aqui,Border Collie,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,27,Victoria  Enerud,Nix,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,28,Heidi Simonsen,Ghost,Border Collie,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,32,Jolanda Haas,Misty,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,33,Jennifer Persson,Conn,Border Collie,SWE,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,4,Robert  Bratt,Søs,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,5,Tarjei  Bratt,Posh,Border Collie,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_large_1,Large,Agility,False,,8,Lene Poulsen,Zorro,Border Collie,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,1,14,Marion Svendsen,Ille,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,39.49,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,2,25,Olli Fredrikson,Cromi,Shetland Sheepdog,FIN,0.0,0.0,,0.0,40.93,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,3,4,Linnea Persson,Dio,Berger des Pyrénées (Poil Long),SWE,0.0,0.0,,0.0,42.04,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,4,3,Anne Karlsson,Signe,Mudi,SWE,0.0,0.0,,0.0,42.08,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,5,22,Annelie Hermansson,Dante,Shetland Sheepdog,SWE,0.0,0.0,,0.0,42.93,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,6,12,Jannie Nielsen,Wish,Shetland Sheepdog,DNK,0.0,0.0,,0.0,43.33,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,7,1,Jesper Vind Jensen,Luzon,Berger des Pyrénées (Poil Long),DNK,0.0,0.0,,0.0,43.35,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,8,18,Vilde Lyngås,Ekko,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,46.75,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,9,9,Anette Skar Binfield,Millie,"Pudel, mellem",NOR,0.0,0.0,,0.4799999,48.48,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,10,32,Maria Ljungdahl,Limpan,Field Trial Cocker Spaniel,SWE,5.0,0.0,,5.0,40.15,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,11,31,Vilde Lyngås,Pan,Sheltland Sheepdog,NOR,5.0,0.0,,5.0,43.08,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,12,23,Fiona Wennberg,Saimi,Shetland Sheepdog,DNK,0.0,5.0,,5.0,45.59,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,13,8,Beate Ersvik,Cool,Sheltland Sheepdog,NOR,5.0,0.0,,8.55,51.55,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,14,19,Maria Ljungdahl,Bojan,Field Trial Cocker Spaniel,SWE,10.0,0.0,,10.0,40.75,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,15,5,Sarah Lorentzen,Navy,Miniature American Shepherd,DNK,10.0,0.0,,10.0,44.6,4.58,False,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,10,Thorleif Juul,HopLa,Mudi,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,11,Maria Sori,Daim,Cocker spaniel,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,13,Ida Marie Halvorsen,Jum-Jum,Berger des Pyrénées (Poil Long),NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,15,Jarkko Hietasara,Arvo,"Pudel, mellem",FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,16,Jesper Vind Jensen,Styx,Berger des Pyrénées (Face Rase),DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,17,Teemu Kollanen,Flaksi,Kromfohrländer,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,2,Susanne Rødtness,One Way,Kromfohrländer,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,20,Sofia Petersson,Smilla,Cocker Spaniel,SWE,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,21,Emilia  Lindström,Lix,Border Collie,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,24,Lovisa Hillbom,Loo,Berger des Pyrénées (Poil Long),SWE,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,26,Suvi Antonen,Ruben,"Pudel, mellem",FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,27,Susanne Rødtness,Gabi,Kromfohrländer,DNK,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,28,Kirsi Smeds,Tepsi,Spanish water dog,FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,29,Sanna Helenius,Fei,"Pudel, mellem",FIN,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,30,Bodil  Fischer Breidablik,Iii,Engelsk Springer Spaniel FT,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,6,Mette Elin Sandbakken,Beat,Sheltland Sheepdog,NOR,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_medium_1,Medium,Agility,False,,7,Dorota Anglart,Kott,Mudi,SWE,,,,,,,True,,63.0,95.0,220.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,1,27,Iida Vakkuri,Helka,Shetland sheepdog,FIN,0.0,0.0,,0.0,39.04,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,2,7,Signe Gundersen,Mick,Papillon,NOR,0.0,0.0,,0.0,39.98,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,3,31,Assi Rapeli,Ninni,Sheltland Sheepdog,FIN,0.0,0.0,,0.0,40.3,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,4,24,Aurora Hultqvist,Bixi,Sheltland Sheepdog,SWE,0.0,0.0,,0.0,40.41,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,5,30,Ina Himle,Jet,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,40.58,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,6,21,Eli Beate Sæther,Xera,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,40.82,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,7,11,Markus Lindgren,SUSHI,Sheltland Sheepdog,SWE,0.0,0.0,,0.0,40.87,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,8,2,Janika Majasaari,Nacho,Dværgpudel,FIN,0.0,0.0,,0.0,41.76,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,9,19,Maria Sori,Malla,Sheltland Sheepdog,FIN,0.0,0.0,,0.0,42.27,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,9,23,Ami Koidl,Kairi,Shetland Sheepdog,NOR,0.0,0.0,,0.0,42.27,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,10,25,Gintare Giliute Sinke,Tristan,Papillon,DNK,0.0,0.0,,0.0,45.93,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,11,20,Julie Ellegaard Brodersen,Felix,Shetland Sheepdog,DNK,0.0,0.0,,2.06,49.06,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,12,28,Kjersti Jørgensen,Agi,Sheltland Sheepdog,NOR,5.0,0.0,,5.0,38.73,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,13,6,Richard Scholvin,Duva,Shetland Sheepdog,SWE,5.0,0.0,,5.0,39.44,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,14,15,Sofie Lourie,Bagge,Dansk-Svensk Gårdhund,SWE,0.0,5.0,,5.0,42.74,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,15,4,Camilla Sandbakk,Izzy,Dværgpudel,NOR,0.0,5.0,,5.0,46.9,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,16,33,Line Hvass Nielsen,Amy,Mittelspitz,DNK,5.0,0.0,,5.79,47.79,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,17,1,Janne Grönroos,Sim,Sheltland Sheepdog,FIN,10.0,0.0,,10.0,40.54,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,17,8,Enya Habel,PARTY,Shetland Sheepdog,SWE,10.0,0.0,,10.0,40.54,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,18,3,Jessica Kock,Allis,"Pudel, mellem",FIN,5.0,5.0,,10.0,40.97,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,19,14,Claus Andersen,Dea,Shetland Sheepdog,DNK,5.0,5.0,,10.0,46.74,4.66,False,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,10,Annelie Hermansson,Emmi,Shetland Sheepdog,SWE,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,12,Semir Ajanic,Ruth,Dværgpudel,SWE,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,13,Elin Bergendahl Grønås,Clay,Shetland Sheepdog,NOR,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,16,Marie Orloff Karlsen,Chelsea,Shetland Sheepdog,DNK,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,17,annina myllyaho,Puhti,Parson Russell Terrier,FIN,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,18,Irene Yrstad,Zalto,Shetland Sheepdog,NOR,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,22,Vilde Monteiro,Karri,Sheltland Sheepdog,NOR,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,26,Sanni Kariniemi,Megs,Sheltland Sheepdog,FIN,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,29,Sanna  Rosengren,Fideli-Filou,Shetland Sheepdog,SWE,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,32,Mathilde Granberg,Joy,Parson Russell Terrier,DNK,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,5,Pernille Anna,Peter,Dansk-Svensk Gårdhund,DNK,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_agility_small_1,Small,Agility,False,,9,Line Hvass Nielsen,Chloe,Mittelspitz,DNK,,,,,,,True,,63.0,95.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,1,5,Jenny Damm,Zonia,Border Collie,SWE,0.0,0.0,,0.0,39.7,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,2,17,Malena  Johansson,Tona,Border Collie,SWE,0.0,0.0,,0.0,40.71,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,3,20,Sandra Sjöberg,Hennie,Border Collie,SWE,0.0,0.0,,0.0,42.11,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,4,16,Linda Enberg,Ciara,Border Collie,SWE,0.0,0.0,,0.0,42.98,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,5,7,Channie Elmestedt,Mayday,Border Collie,DNK,0.0,0.0,,0.0,46.6,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,6,1,Anne Linn Johannessen Moen,Tara,Border Collie,NOR,5.0,0.0,,5.0,44.91,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,7,4,Trine Margrethe Thorkildsen,Shady,border collie,NOR,0.0,5.0,,5.0,45.38,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,8,21,Katariina Kuiro,Wendi,Border Collie,FIN,5.0,5.0,,10.0,41.0,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,9,11,Ammy Sten,Sota,Border Collie,SWE,5.0,5.0,,10.0,43.56,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,10,13,Christa  Saksa,Pipa,border collie,FIN,5.0,5.0,,10.0,44.03,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,11,6,Camilla Jakobsson,Bam,border collie,SWE,5.0,5.0,,10.0,44.87,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,12,3,Gigi Danica,Flicka,Border Collie,DNK,5.0,5.0,,10.0,45.06,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,13,18,Tanja Kurikka,Lilo,Border Collie,FIN,5.0,5.0,,10.0,47.31,4.56,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,,10,Joni Laakso,WENDY,Australian Shepherd,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,,12,Channie Elmestedt,Fame,Border Collie,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,,14,Anna Orenius,Kaja,border collie,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,,15,Gigi Danica,Pyrus,Nova Scotia duck tolling retriever,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,,19,Jenny Damm,Azta,,SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,,2,Lene Simonsen,PIKA,Border Collie,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,,8,Tanja Kurikka,Pupu,border collie,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_intermediate_1,Intermediate,Final,False,,9,Juha Orenius,Hera,Border Collie,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,1,6,Jennifer Persson,Conn,Border Collie,SWE,0.0,0.0,,0.0,40.81,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,2,19,Jaakko Suoknuuti,Wow,Border Collie,FIN,0.0,0.0,,0.0,42.03,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,3,13,Annika af Klercker,Vita,Border Collie,SWE,0.0,0.0,,0.0,43.02,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,4,28,Gustaf Elgh,Pixi,Border Collie,SWE,5.0,0.0,,5.0,40.36,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,5,10,Robert  Bratt,Søs,Border Collie,NOR,5.0,0.0,,5.0,43.11,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,6,27,Sari Vähäniitty,Ykä,Border collie,FIN,5.0,0.0,,5.0,43.7,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,7,12,Tina B. Tøndering,Zack,Border Collie,DNK,5.0,0.0,,5.0,48.58,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,8,23,Sabina Håkansson,Ibra,Border Collie,SWE,10.0,0.0,,10.0,39.91,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,9,16,Sarah Lorentzen,Jinx,Border Collie,DNK,10.0,0.0,,10.0,42.54,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,10,4,Rebecca Sundqvist,Rex,Border Collie,SWE,5.0,5.0,,10.0,44.33,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,11,1,Maija Anttolainen,Maj-Lis,border collie,FIN,5.0,5.0,,10.0,46.14,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,12,7,Jane Elene Christensen,Flip,Border Collie,DNK,5.0,5.0,,10.67,49.67,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,13,11,Emma  Eriksson,Essie,Border Collie,SWE,5.0,10.0,,15.0,48.32,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,14,18,Monica Iversen,Giller,Border Collie,NOR,15.0,10.0,,31.74,55.74,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,14,Vivian Nielsen,Wake,Border Collie,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,15,Mia Overgaard,Flair,Border Collie,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,17,Mikko Aaltonen,Kesy,Border Collie,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,2,Janina Kantola,Avatar,Border collie,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,20,Mette Björne,Bug,Border Collie,SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,21,Enya Habel,ZANE,border collie,SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,22,Julie Nilsen,Sansa,Chodsky Pes,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,24,Raisa Vähätalo,Peppi,Border Collie,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,25,Malin Simson Cloud,Beyla,Border Collie,SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,26,Tonje Skistad,Huffy,Border Collie,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,3,Lotta Franck,Vimma,Australian Shepherd,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,5,Mila Oravecz,Singha,Border Collie,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,8,Victoria  Enerud,Nix,Border Collie,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_large_1,Large,Final,False,,9,Jolanda Haas,Misty,Border Collie,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,1,8,Maria Sori,Daim,Cocker spaniel,FIN,0.0,0.0,,0.0,41.01,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,2,19,Olli Fredrikson,Cromi,Shetland Sheepdog,FIN,0.0,0.0,,0.0,41.35,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,3,11,Maria Ljungdahl,Limpan,Field Trial Cocker Spaniel,SWE,0.0,0.0,,0.0,41.91,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,4,9,Dorota Anglart,Kott,Mudi,SWE,0.0,0.0,,0.0,42.44,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,5,15,Maria Ljungdahl,Bojan,Field Trial Cocker Spaniel,SWE,0.0,0.0,,0.0,44.09,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,6,24,Marion Svendsen,Ille,Sheltland Sheepdog,NOR,5.0,0.0,,5.0,41.67,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,7,7,Sanna Helenius,Fei,"Pudel, mellem",FIN,5.0,0.0,,5.0,44.81,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,8,16,Vilde Lyngås,Pan,Sheltland Sheepdog,NOR,5.0,0.0,,5.0,45.22,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,9,5,Teemu Kollanen,Flaksi,Kromfohrländer,FIN,5.0,5.0,,10.0,46.43,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,10,18,Annelie Hermansson,Dante,Shetland Sheepdog,SWE,5.0,5.0,,10.0,47.26,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,11,14,Fiona Wennberg,Saimi,Shetland Sheepdog,DNK,10.0,5.0,,15.0,46.37,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,12,22,Anne Karlsson,Signe,Mudi,SWE,10.0,5.0,,15.0,49.79,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,13,20,Vilde Lyngås,Ekko,Sheltland Sheepdog,NOR,10.0,10.0,,23.37,53.37,4.38,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,1,Jesper Vind Jensen,Styx,Berger des Pyrénées (Face Rase),DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,10,Sarah Lorentzen,Navy,Miniature American Shepherd,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,12,Anette Skar Binfield,Millie,"Pudel, mellem",NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,13,Jannie Nielsen,Wish,Shetland Sheepdog,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,17,Beate Ersvik,Cool,Sheltland Sheepdog,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,2,Thorleif Juul,HopLa,Mudi,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,21,Jesper Vind Jensen,Luzon,Berger des Pyrénées (Poil Long),DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,23,Linnea Persson,Dio,Berger des Pyrénées (Poil Long),SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,3,Susanne Rødtness,Gabi,Kromfohrländer,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,4,Lovisa Hillbom,Loo,Berger des Pyrénées (Poil Long),SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_medium_1,Medium,Final,False,,6,Mette Elin Sandbakken,Beat,Sheltland Sheepdog,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,1,24,Kjersti Jørgensen,Agi,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,40.52,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,2,8,Annelie Hermansson,Emmi,Shetland Sheepdog,SWE,0.0,0.0,,0.0,40.92,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,3,2,Elin Bergendahl Grønås,Clay,Shetland Sheepdog,NOR,0.0,0.0,,0.0,41.45,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,4,28,Aurora Hultqvist,Bixi,Sheltland Sheepdog,SWE,0.0,0.0,,0.0,41.96,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,5,19,Enya Habel,PARTY,Shetland Sheepdog,SWE,0.0,0.0,,0.0,42.04,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,6,16,Assi Rapeli,Ninni,Sheltland Sheepdog,FIN,0.0,0.0,,0.0,42.24,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,7,14,Janika Majasaari,Nacho,Dværgpudel,FIN,0.0,0.0,,0.0,44.37,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,8,21,Maria Sori,Malla,Sheltland Sheepdog,FIN,0.0,0.0,,0.0,45.2,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,9,25,Gintare Giliute Sinke,Tristan,Papillon,DNK,0.0,0.0,,0.0,48.88,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,10,29,Iida Vakkuri,Helka,Shetland sheepdog,FIN,5.0,0.0,,5.0,40.55,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,11,6,Line Hvass Nielsen,Chloe,Mittelspitz,DNK,5.0,0.0,,5.0,42.16,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,12,23,Eli Beate Sæther,Xera,Sheltland Sheepdog,NOR,5.0,0.0,,5.0,42.18,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,13,5,Semir Ajanic,Ruth,Dværgpudel,SWE,5.0,0.0,,5.0,42.49,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,14,26,Ami Koidl,Kairi,Shetland Sheepdog,NOR,5.0,0.0,,5.0,45.69,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,15,9,Claus Andersen,Dea,Shetland Sheepdog,DNK,5.0,0.0,,5.0,46.46,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,16,20,Julie Ellegaard Brodersen,Felix,Shetland Sheepdog,DNK,5.0,0.0,,6.67,50.67,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,17,18,Janne Grönroos,Sim,Sheltland Sheepdog,FIN,10.0,0.0,,10.0,41.48,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,18,4,Mathilde Granberg,Joy,Parson Russell Terrier,DNK,10.0,0.0,,10.0,46.67,4.47,False,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,1,Vilde Monteiro,Karri,Sheltland Sheepdog,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,10,Jessica Kock,Allis,"Pudel, mellem",FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,11,Line Hvass Nielsen,Amy,Mittelspitz,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,12,Camilla Sandbakk,Izzy,Dværgpudel,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,13,Richard Scholvin,Duva,Shetland Sheepdog,SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,15,Markus Lindgren,SUSHI,Sheltland Sheepdog,SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,17,Signe Gundersen,Mick,Papillon,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,22,Sofie Lourie,Bagge,Dansk-Svensk Gårdhund,SWE,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,27,Ina Himle,Jet,Sheltland Sheepdog,NOR,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,3,Pernille Anna,Peter,Dansk-Svensk Gårdhund,DNK,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_final_small_1,Small,Final,False,,7,Sanni Kariniemi,Megs,Sheltland Sheepdog,FIN,,,,,,,True,,53.0,80.0,219.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,1,28,Christa  Saksa,Pipa,border collie,FIN,0.0,0.0,,0.0,37.52,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,2,14,Jenny Damm,Azta,,SWE,0.0,0.0,,0.0,37.83,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,3,15,Anna Orenius,Kaja,border collie,FIN,0.0,0.0,,0.0,37.94,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,4,19,Katariina Kuiro,Wendi,Border Collie,FIN,0.0,0.0,,0.0,37.99,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,5,24,Linda Enberg,Ciara,Border Collie,SWE,0.0,0.0,,0.0,39.89,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,6,21,Sandra Sjöberg,Hennie,Border Collie,SWE,0.0,0.0,,0.0,39.94,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,7,25,Tanja Kurikka,Lilo,Border Collie,FIN,0.0,0.0,,0.0,40.88,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,8,27,Gigi Danica,Pyrus,Nova Scotia duck tolling retriever,DNK,0.0,0.0,,0.0,42.24,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,9,31,Malena  Johansson,Tona,Border Collie,SWE,5.0,0.0,,5.0,36.11,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,1,Lene Simonsen,PIKA,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,10,Sabine Serwin,Lille My,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,11,Ammy Sten,Sota,Border Collie,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,12,Joni Laakso,WENDY,Australian Shepherd,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,13,Gigi Danica,Flicka,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,16,Annie Tellnes,Olympia,Miniature American Shepherd,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,17,Channie Elmestedt,Mayday,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,18,Hans Strømsøyen,Bess,Border Collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,2,Sanna Harjunpää,Kilo,Border Collie,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,20,Camilla Jakobsson,Bam,border collie,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,22,Lise-Irene Hansen,Say,Border Collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,23,Naya Lindevang-Hilstrøm,Lexi,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,26,Juha Orenius,Hera,Border Collie,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,29,Jenny Naumanen,Armi,Border Collie,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,3,Anne Linn Johannessen Moen,Tara,Border Collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,30,Hanna  Persson,Xena,Australian Shepherd,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,32,Jenny Damm,Zonia,Border Collie,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,33,Channie Elmestedt,Fame,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,4,Viktoria Moen-Bardølsgård,IPA,Australsk Kelpie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,5,Tanja Kurikka,Pupu,border collie,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,6,Trine Margrethe Thorkildsen,Shady,border collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,7,Lise-Irene Hansen,Babe,Border Collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,8,Tina B. Tøndering,Ixi,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_intermediate_1,Intermediate,Jumping,False,,9,Vilde Monteiro,Aya,Border Collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,1,19,Enya Habel,ZANE,border collie,SWE,0.0,0.0,,0.0,37.76,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,2,24,Raisa Vähätalo,Peppi,Border Collie,FIN,0.0,0.0,,0.0,38.88,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,3,13,Gustaf Elgh,Pixi,Border Collie,SWE,0.0,0.0,,0.0,39.3,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,4,5,Malin Simson Cloud,Beyla,Border Collie,SWE,0.0,0.0,,0.0,40.09,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,5,25,Robert  Bratt,Søs,Border Collie,NOR,0.0,0.0,,0.0,40.7,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,6,31,Jolanda Haas,Misty,Border Collie,NOR,0.0,0.0,,0.0,40.99,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,7,18,Victoria  Enerud,Nix,Border Collie,NOR,0.0,0.0,,0.0,42.05,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,8,11,Julie Nilsen,Sansa,Chodsky Pes,NOR,0.0,0.0,,0.0,42.28,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,9,30,Mikko Aaltonen,Kesy,Border Collie,FIN,0.0,0.0,,0.0,42.89,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,10,33,Sari Vähäniitty,Ykä,Border collie,FIN,0.0,0.0,,0.0,42.94,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,11,14,Tonje Skistad,Huffy,Border Collie,NOR,0.0,0.0,,0.0,43.17,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,12,15,Jennifer Persson,Conn,Border Collie,SWE,0.0,5.0,,5.0,38.61,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,13,8,Mila Oravecz,Singha,Border Collie,FIN,5.0,0.0,,5.0,39.92,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,14,32,Rebecca Sundqvist,Rex,Border Collie,SWE,0.0,5.0,,5.0,39.95,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,15,27,Mette Björne,Bug,Border Collie,SWE,5.0,0.0,,5.0,42.39,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,16,9,Monica Iversen,Giller,Border Collie,NOR,0.0,5.0,,5.0,44.27,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,17,28,Sabina Håkansson,Ibra,Border Collie,SWE,0.0,5.0,,5.0,44.57,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,18,26,Janina Kantola,Avatar,Border collie,FIN,5.0,5.0,,10.0,40.04,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,19,3,Jaakko Suoknuuti,Wow,Border Collie,FIN,5.0,5.0,,10.0,41.55,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,20,10,Maija Anttolainen,Maj-Lis,border collie,FIN,5.0,5.0,,10.0,44.73,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,1,Emma  Eriksson,Essie,Border Collie,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,12,Esther Falck  Jakobsen,Dixie,Border Collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,16,Merethe Stenberg Mølholm,Era,Border Collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,17,Heidi Simonsen,Ghost,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,2,Lene Poulsen,Zorro,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,20,Vivian Nielsen,Wake,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,21,Tina B. Tøndering,Zack,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,22,Lotta Franck,Vimma,Australian Shepherd,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,23,Jane Elene Christensen,Flip,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,29,Mia Overgaard,Flair,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,34,Sarah Lorentzen,Jinx,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,4,Mia Kransø,Aqui,Border Collie,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,6,Annika af Klercker,Vita,Border Collie,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_large_1,Large,Jumping,False,,7,Tarjei  Bratt,Posh,Border Collie,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,1,30,Dorota Anglart,Kott,Mudi,SWE,0.0,0.0,,0.0,37.84,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,2,9,Maria Sori,Daim,Cocker spaniel,FIN,0.0,0.0,,0.0,37.86,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,3,29,Marion Svendsen,Ille,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,37.96,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,4,18,Sanna Helenius,Fei,"Pudel, mellem",FIN,0.0,0.0,,0.0,38.2,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,5,13,Linnea Persson,Dio,Berger des Pyrénées (Poil Long),SWE,0.0,0.0,,0.0,39.29,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,6,12,Mette Elin Sandbakken,Beat,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,39.39,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,7,7,Teemu Kollanen,Flaksi,Kromfohrländer,FIN,0.0,0.0,,0.0,39.52,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,8,8,Lovisa Hillbom,Loo,Berger des Pyrénées (Poil Long),SWE,0.0,0.0,,0.0,39.63,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,9,20,Anne Karlsson,Signe,Mudi,SWE,0.0,0.0,,0.0,39.69,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,10,6,Susanne Rødtness,Gabi,Kromfohrländer,DNK,0.0,0.0,,0.0,39.75,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,11,5,Jesper Vind Jensen,Luzon,Berger des Pyrénées (Poil Long),DNK,0.0,0.0,,0.0,40.58,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,12,28,Thorleif Juul,HopLa,Mudi,DNK,0.0,0.0,,0.0,42.24,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,13,15,Vilde Lyngås,Ekko,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,43.7,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,14,21,Beate Ersvik,Cool,Sheltland Sheepdog,NOR,0.0,0.0,,0.51,46.51,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,15,26,Olli Fredrikson,Cromi,Shetland Sheepdog,FIN,0.0,5.0,,5.0,38.61,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,16,16,Maria Ljungdahl,Bojan,Field Trial Cocker Spaniel,SWE,5.0,0.0,,5.0,39.27,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,17,19,Jesper Vind Jensen,Styx,Berger des Pyrénées (Face Rase),DNK,5.0,0.0,,5.0,39.78,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,18,31,Annelie Hermansson,Dante,Shetland Sheepdog,SWE,5.0,0.0,,5.0,39.98,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,19,1,Vilde Lyngås,Pan,Sheltland Sheepdog,NOR,5.0,0.0,,5.0,40.05,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,20,4,Fiona Wennberg,Saimi,Shetland Sheepdog,DNK,5.0,5.0,,10.0,41.09,4.78,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,10,Emilia  Lindström,Lix,Border Collie,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,11,Sarah Lorentzen,Navy,Miniature American Shepherd,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,14,Anette Skar Binfield,Millie,"Pudel, mellem",NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,17,Jannie Nielsen,Wish,Shetland Sheepdog,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,2,Maria Ljungdahl,Limpan,Field Trial Cocker Spaniel,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,22,Suvi Antonen,Ruben,"Pudel, mellem",FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,23,Jarkko Hietasara,Arvo,"Pudel, mellem",FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,24,Sofia Petersson,Smilla,Cocker Spaniel,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,25,Bodil  Fischer Breidablik,Iii,Engelsk Springer Spaniel FT,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,27,Ida Marie Halvorsen,Jum-Jum,Berger des Pyrénées (Poil Long),NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,3,Kirsi Smeds,Tepsi,Spanish water dog,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_medium_1,Medium,Jumping,False,,32,Susanne Rødtness,One Way,Kromfohrländer,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,1,26,Kjersti Jørgensen,Agi,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,35.87,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,2,20,Annelie Hermansson,Emmi,Shetland Sheepdog,SWE,0.0,0.0,,0.0,36.86,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,3,17,Iida Vakkuri,Helka,Shetland sheepdog,FIN,0.0,0.0,,0.0,36.9,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,4,27,Aurora Hultqvist,Bixi,Sheltland Sheepdog,SWE,0.0,0.0,,0.0,37.08,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,5,18,Sanni Kariniemi,Megs,Sheltland Sheepdog,FIN,0.0,0.0,,0.0,37.7,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,6,3,Ina Himle,Jet,Sheltland Sheepdog,NOR,0.0,0.0,,0.0,37.9,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,7,10,Enya Habel,PARTY,Shetland Sheepdog,SWE,0.0,0.0,,0.0,38.48,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,8,8,Line Hvass Nielsen,Chloe,Mittelspitz,DNK,0.0,0.0,,0.0,39.0,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,9,29,Semir Ajanic,Ruth,Dværgpudel,SWE,0.0,0.0,,0.0,39.11,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,10,33,Sofie Lourie,Bagge,Dansk-Svensk Gårdhund,SWE,0.0,0.0,,0.0,39.45,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,11,4,Ami Koidl,Kairi,Shetland Sheepdog,NOR,0.0,0.0,,0.0,39.68,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,12,9,Mathilde Granberg,Joy,Parson Russell Terrier,DNK,0.0,0.0,,0.0,42.53,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,13,19,Pernille Anna,Peter,Dansk-Svensk Gårdhund,DNK,0.0,0.0,,0.0,43.56,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,14,15,Gintare Giliute Sinke,Tristan,Papillon,DNK,0.0,0.0,,0.12,44.12,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,15,14,Elin Bergendahl Grønås,Clay,Shetland Sheepdog,NOR,0.0,5.0,,5.0,39.33,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,16,11,Eli Beate Sæther,Xera,Sheltland Sheepdog,NOR,0.0,5.0,,5.0,39.55,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,17,22,Vilde Monteiro,Karri,Sheltland Sheepdog,NOR,0.0,5.0,,5.0,42.45,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,18,31,Maria Sori,Malla,Sheltland Sheepdog,FIN,0.0,5.0,,5.0,43.04,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,19,16,Julie Ellegaard Brodersen,Felix,Shetland Sheepdog,DNK,5.0,0.0,,5.92,44.92,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,20,6,Janne Grönroos,Sim,Sheltland Sheepdog,FIN,5.0,5.0,,10.0,41.38,5.0,False,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,1,Richard Scholvin,Duva,Shetland Sheepdog,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,12,annina myllyaho,Puhti,Parson Russell Terrier,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,13,Markus Lindgren,SUSHI,Sheltland Sheepdog,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,2,Janika Majasaari,Nacho,Dværgpudel,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,21,Marie Orloff Karlsen,Chelsea,Shetland Sheepdog,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,23,Line Hvass Nielsen,Amy,Mittelspitz,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,24,Sanna  Rosengren,Fideli-Filou,Shetland Sheepdog,SWE,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,25,Jessica Kock,Allis,"Pudel, mellem",FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,28,Signe Gundersen,Mick,Papillon,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,30,Irene Yrstad,Zalto,Shetland Sheepdog,NOR,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,32,Claus Andersen,Dea,Shetland Sheepdog,DNK,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,5,Assi Rapeli,Ninni,Sheltland Sheepdog,FIN,,,,,,,True,,53.0,80.0,220.0
+Nordic Agility Championship 2024,ind_jumping_small_1,Small,Jumping,False,,7,Camilla Sandbakk,Izzy,Dværgpudel,NOR,,,,,,,True,,53.0,80.0,220.0

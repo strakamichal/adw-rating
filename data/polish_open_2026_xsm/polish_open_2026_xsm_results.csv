@@ -1,0 +1,1085 @@
+competition,round_key,size,discipline,is_team_round,rank,start_no,handler,dog,breed,country,faults,refusals,time_faults,total_faults,time,speed,eliminated,judge,sct,mct,course_length
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,1,317,"Domańska, Magdalena",Gavu,Pyrshep,POL,0,0,0.00,0.00,39.38,5.59,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,2,334,"Maršálková, Adéla",Víno,Manchester Terier,CZE,0,0,0.00,0.00,39.42,5.58,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,3,329,"Pent, Toomas",Mürru,Mudi,EST,0,0,0.00,0.00,39.66,5.55,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,4,333,"Malá, Hana",Chuck,MIX,CZE,0,0,0.00,0.00,40.17,5.48,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,5,374,"Portimojärvi, Saana",Isla,MAS,FIN,0,0,0.00,0.00,40.43,5.44,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,6,316,"Blazinauskaite, Dovile",Minsoo,Sheltie,LTU,0,0,0.00,0.00,40.50,5.43,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,7,402,"Malá, Hana",Dotty,MIX,CZE,0,0,0.00,0.00,40.69,5.41,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,8,347,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,0,0,0.00,0.00,42.51,5.18,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,9,404,"Happonen, Natali",Essie,PRT,EST,0,0,0.00,0.00,43.74,5.03,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,10,303,"Steinmetz, Carina",Amy,Sheltie,DEU,0,0,0.00,0.00,44.04,5,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,11,384,"Weiß, Yvonne",Chico,MIX,DEU,1,0,8.23,13.23,54.23,4.06,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,12,362,"Kolacna, Tereza",Bíba,Poodle,CZE,0,0,19.18,19.18,65.18,3.38,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,13,354,"Volosenkiniene, Ausra",Andora,Poodle,LTU,2,1,12.65,27.65,58.65,3.75,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,14,321,"Gadomska, Magda",Reksia,Poodle,POL,2,2,15.27,35.27,61.27,3.59,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,308,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,323,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,324,"Rokicka, Julia",Taco,Sheltie,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,325,"Cisak, Krystyna",Lizio,Mudi,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,326,"Burak, Jarosław",Perła,Mudi,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,327,"Beshovishka, Marina",Eip,Mudi,BGR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,328,"Heyne, Laura",Peka,Kelpie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,330,"Piirsalu, Triine",Nomy,Cocker,EST,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,307,"Baj, Alicja",Figa,MIX,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,332,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,350,"Simonsen, Heidi",Cap,MAS,DNK,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,389,"Põder, Mia",Nami,MIX,EST,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,340,"Kuko, Christina",Mr. Jinx,Cocker,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,406,"Steinmetz, Carina",Ivy,MAS,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,376,"Driessen, Patrick",Lynn,Kelpie,NLD,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,343,"Spaetgens, Ina",Nym,Cocker,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,305,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,331,"Põder, Mia",Felö,Mudi,EST,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,345,"Schlutow, Steffen",Widow,MIX,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,306,"Driessen, Patrick",Eep,Kelpie,NLD,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,346,"Steinmetz, Carina",Tex,MAS,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,373,"Odeneg, Tanja",Elfriede,MAS,AUT,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,338,"Straková, Martina",AC,Cocker,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,341,"Reincke, Alina",Zissi,Mudi,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,382,"Kühne, Ronald",Janosch,Poodle,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,399,"Grygarova, Aneta",Story,Cocker,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,355,"Członkowska, Barbara",Molka,Pyrshep,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,398,"Elschner, Sarah",Now,Cocker,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,393,"Vykydalová, Radana",Lety,Pyrshep,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,320,"Řeholová, Adéla",Cína,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,337,"Majtánová, Adriána",Togo,Cocker,SVK,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,336,"Ernat, Darcy",Tango,Cocker,USA,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,380,"Wyszyńska, Weronika",Cass,Cocker,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,356,"Kwiecień, Olga",Maupka,Pyrshep,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,302,"Rosenberger, Sophie",Pina,Sheltie,AUT,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,319,"Prokesova, Lenka",Chia,Pyrshep,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,403,"Dunaway, Karen",Nyah,MAS,EST,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,391,"Gadomska, Magda",Kudeł,Poodle,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,381,"Filip, Ronja",Loki,MIX,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,369,"Rokicki, Krzysztof",Deyna,Sheltie,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,397,"Sandbakken, Mette",Beat,Sheltie,NOR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,352,"Jugulyte, Kristina",Nica,Poodle,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,318,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,396,"Řeholová, Adéla",Lixi,Cocker,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,342,"Stöhr, Milla	",Najuma,Cocker,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,401,"Kubíková, Lucie",Shani,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,366,"Zavizion, Katsiaryna",Darth Vader,Zwergschnauzer,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,392,"Marešová, Klára",Atyr,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,314,"Stepanek, Matthias",Navy,Border Collie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,363,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,383,"Kühne, Simone",Summit,Borderpup,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,372,"Burlikowska, Katarzyna",Yoki,Sheltie,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,385,"Blazinauskaite, Dovile",San,Sheltie,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,405,"Papp, Rita",Ella,Sheltie,HUN,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,351,"Dačiola, Mantas",Juda,MIX,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,304,"Válková, Klára",Maisie,MAS,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,312,"Holti, Krisztina",Forrest Gump,Beagle,HUN,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,348,"Sæther, Wenche",Trøkki,Sheltie,NOR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,349,"Sandbakken, Mette",Zack,MAS,NOR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,357,"Maruszczak, Roman",Zelda,Pyrshep,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,361,"Čampulová, Petra",Shelby,MIX,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,335,"Novotna, Katerina",Letty,Pyrshep,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,378,"Smółka, Marcin",Bam,MIX,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,313,"Sipos, Beáta",Luca,MIX,HUN,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,375,"Chylarecka, Katarzyna",Nieta,Toller,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,301,"Broulík, Rudolf",Sisi,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,358,"Oględzki, Zbigniew",Pucuś Srucuś,Pyrshep,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,370,"Werra, Wiktoria",Frania,Poodle,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,360,"Caffrey, Jana",Ari,Poodle,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,395,"Moroz, Kateryna",Rozie,Cocker,UKR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,353,"Pasukonyte, Ruta",Keja,Sheltie,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,367,"Korus, Maciej",Gin,Sheltie,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,371,"Burak, Jarosław",Elmo,Sheltie,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,315,"Tálasi, Zsófia",Tati,Mudi,HUN,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,388,"Dačiola, Mantas",Eros,Cocker,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,359,"Broulík, Rudolf",Bára,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,368,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,377,"Smółka, Agnieszka",Dum,Cocker,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,344,"Maischatz, Nathalie",Lulu,Sheltie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,387,"Simkute, Zivile",Piko,Poodle,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,309,"Konečná, Martina",Kao,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,386,"Maischatz, Nathalie",Rosa,Sheltie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,311,"Ujma, Alicja",Millie,Mudi,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,364,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_1,Medium,Agility,False,,310,"Szymańska, Maja",Merida,MAS,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,1,406,"Steinmetz, Carina",Ivy,MAS,DEU,0,0,0.00,0.00,41.79,5.26,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,2,402,"Malá, Hana",Dotty,MIX,CZE,0,0,0.00,0.00,43.53,5.05,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,3,320,"Řeholová, Adéla",Cína,Sheltie,CZE,0,0,0.00,0.00,43.90,5.01,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,4,356,"Kwiecień, Olga",Maupka,Pyrshep,POL,0,0,0.00,0.00,44.54,4.94,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,5,391,"Gadomska, Magda",Kudeł,Poodle,POL,0,0,0.00,0.00,45.32,4.85,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,6,316,"Blazinauskaite, Dovile",Minsoo,Sheltie,LTU,0,0,0.00,0.00,45.48,4.84,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,7,332,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,0,0,0.00,0.00,46.85,4.7,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,8,305,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,0,0,0.00,0.00,47.65,4.62,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,9,361,"Čampulová, Petra",Shelby,MIX,CZE,0,0,0.00,0.00,48.22,4.56,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,10,360,"Caffrey, Jana",Ari,Poodle,CZE,0,0,2.79,2.79,51.79,4.25,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,11,303,"Steinmetz, Carina",Amy,Sheltie,DEU,1,0,0.00,5.00,47.22,4.66,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,12,372,"Burlikowska, Katarzyna",Yoki,Sheltie,POL,0,1,0.09,5.09,49.09,4.48,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,13,351,"Dačiola, Mantas",Juda,MIX,LTU,0,1,1.28,6.28,50.28,4.38,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,14,381,"Filip, Ronja",Loki,MIX,DEU,0,0,6.30,6.30,55.30,3.98,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,15,353,"Pasukonyte, Ruta",Keja,Sheltie,LTU,0,1,4.27,9.27,53.27,4.13,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,16,326,"Burak, Jarosław",Perła,Mudi,POL,1,1,0.00,10.00,47.69,4.61,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,17,374,"Portimojärvi, Saana",Isla,MAS,FIN,1,1,3.24,13.24,52.24,4.21,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,18,341,"Reincke, Alina",Zissi,Mudi,DEU,3,0,0.00,15.00,44.75,4.92,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,19,366,"Zavizion, Katsiaryna",Darth Vader,Zwergschnauzer,POL,1,1,11.01,21.01,60.01,3.67,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,20,396,"Řeholová, Adéla",Lixi,Cocker,CZE,2,2,1.58,21.58,50.58,4.35,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,21,349,"Sandbakken, Mette",Zack,MAS,NOR,1,2,11.04,26.04,60.04,3.66,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,22,313,"Sipos, Beáta",Luca,MIX,HUN,0,2,19.57,29.57,68.57,3.21,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,310,"Szymańska, Maja",Merida,MAS,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,333,"Malá, Hana",Chuck,MIX,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,388,"Dačiola, Mantas",Eros,Cocker,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,370,"Werra, Wiktoria",Frania,Poodle,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,380,"Wyszyńska, Weronika",Cass,Cocker,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,308,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,319,"Prokesova, Lenka",Chia,Pyrshep,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,346,"Steinmetz, Carina",Tex,MAS,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,393,"Vykydalová, Radana",Lety,Pyrshep,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,307,"Baj, Alicja",Figa,MIX,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,347,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,340,"Kuko, Christina",Mr. Jinx,Cocker,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,321,"Gadomska, Magda",Reksia,Poodle,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,302,"Rosenberger, Sophie",Pina,Sheltie,AUT,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,325,"Cisak, Krystyna",Lizio,Mudi,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,330,"Pent, Toomas",Nomy,Cocker,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,329,"Pent, Toomas",Mürru,Mudi,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,331,"Põder, Mia",Felö,Mudi,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,309,"Konečná, Martina",Kao,Sheltie,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,327,"Beshovishka, Marina",Eip,Mudi,BGR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,355,"Członkowska, Barbara",Molka,Pyrshep,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,306,"Driessen, Patrick",Eep,Kelpie,NLD,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,382,"Kühne, Ronald",Janosch,Poodle,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,334,"Maršálková, Adéla",Víno,Manchester Terier,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,342,"Stöhr, Milla	",Najuma,Cocker,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,344,"Maischatz, Nathalie",Lulu,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,343,"Spaetgens, Ina",Nym,Cocker,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,369,"Rokicki, Krzysztof",Deyna,Sheltie,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,312,"Holti, Krisztina",Forrest Gump,Beagle,HUN,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,376,"Driessen, Patrick",Lynn,Kelpie,NLD,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,328,"Heyne, Laura",Peka,Kelpie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,375,"Chylarecka, Katarzyna",Nieta,Toller,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,339,"Szydłowska, Ola",Hopie,Cocker,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,399,"Grygarova, Aneta",Story,Cocker,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,350,"Simonsen, Heidi",Cap,MAS,DNK,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,387,"Simkute, Zivile",Piko,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,345,"Schlutow, Steffen",Widow,MIX,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,368,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,304,"Válková, Klára",Maisie,MAS,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,301,"Broulík, Rudolf",Sisi,Sheltie,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,404,"Happonen, Natali",Essie,PRT,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,384,"Weiß, Yvonne",Chico,MIX,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,317,"Domańska, Magdalena",Gavu,Pyrshep,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,335,"Novotna, Katerina",Letty,Pyrshep,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,362,"Kolacna, Tereza",Bíba,Poodle,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,363,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,338,"Straková, Martina",AC,Cocker,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,397,"Sandbakken, Mette",Beat,Sheltie,NOR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,389,"Põder, Mia",Nami,MIX,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,405,"Papp, Rita",Ella,Sheltie,HUN,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,398,"Elschner, Sarah",Now,Cocker,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,392,"Marešová, Klára",Atyr,Sheltie,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,403,"Dunaway, Karen",Nyah,MAS,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,371,"Burak, Jarosław",Elmo,Sheltie,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,395,"Moroz, Kateryna",Rozie,Cocker,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,348,"Sæther, Wenche",Trøkki,Sheltie,NOR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,323,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,314,"Stepanek, Matthias",Navy,Border Collie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,354,"Volosenkiniene, Ausra",Andora,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,352,"Jugulyte, Kristina",Nica,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,367,"Korus, Maciej",Gin,Sheltie,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,386,"Maischatz, Nathalie",Rosa,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,337,"Majtánová, Adriána",Togo,Cocker,SVK,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,385,"Blazinauskaite, Dovile",San,Sheltie,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,373,"Odeneg, Tanja",Elfriede,MAS,AUT,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,378,"Smółka, Marcin",Bam,MIX,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,358,"Oględzki, Zbigniew",Pucuś Srucuś,Pyrshep,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,401,"Kubíková, Lucie",Shani,Sheltie,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,377,"Smółka, Agnieszka",Dum,Cocker,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,318,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,315,"Tálasi, Zsófia",Tati,Mudi,HUN,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,324,"Rokicka, Julia",Taco,Sheltie,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,311,"Ujma, Alicja",Millie,Mudi,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,383,"Kühne, Simone",Summit,Borderpup,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_medium_2,Medium,Agility,False,,364,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,1,220,"Boogk, Marlon",Bee,Cocker,FRA,0,0,0.00,0.00,41.05,5.36,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,1,126,"Drobečková, Jitka",Archie,Papillon,CZE,0,0,0.00,0.00,42.42,5.04,False,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,2,215,"Konečná, Martina",Sofinka,PRT,CZE,0,0,0.00,0.00,43.87,5.01,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,2,123,"Serhiienko, Nadiia",Fly,Papillon,UKR,0,0,0.00,0.00,45.62,4.69,False,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,3,224,"Piirsalu, Triine",Roxy,Miniature Pincsher,EST,0,0,0.00,0.00,45.03,4.89,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,3,122,"Kalinina, Anna",Chaos,Papillon,UKR,1,0,0.00,5.00,46.33,4.62,False,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,4,227,"Raamat, Keida",Drifty,Sheltie,EST,0,0,2.30,2.30,50.30,4.37,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,4,124,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,0,1,1.76,6.76,50.76,4.22,False,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,5,241,"Frimmelová, Hana",Bio,PRT,CZE,1,0,0.00,5.00,43.05,5.11,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,5,115,"Guobiene, Rasa",Manga,Sheltie,LTU,0,1,4.78,9.78,53.78,3.98,False,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,6,242,"Lajmarová, Denisa",Gay,PRT,CZE,1,0,0.00,5.00,43.33,5.08,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,6,121,"Gasparavičiūtė, Deimilė",Leila,Poodle,LTU,2,0,0.00,10.00,46.16,4.64,False,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,7,221,"Rosenberger, Sophie",Light,Sheltie,AUT,1,0,0.00,5.00,43.52,5.06,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,7,116,"Kretková, Jenifer",Bonnie,Cavalier,CZE,2,0,0.00,10.00,48.06,4.45,False,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,8,204,"Šilvienė, Vaida",Cooper,Cairn Terrier,LTU,1,0,0.00,5.00,45.88,4.8,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,9,212,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,1,1,0.00,10.00,46.40,4.74,False,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,205,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,229,"Dankin, Ala",Chester,Papillon,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,256,"Stepanek, Matthias",Lilly,Sheltie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,217,"Sůrová, Viktorie",Missi,American Hairless Terrier,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,243,"Remačová, Vanessa",Pirátka,PRT,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,222,"Steinmetz, Carina",Chip,Sheltie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,249,"Hangkamer-Kühnen, Jannes",Merle,Sheltie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,244,"Kwiecień, Olga",Mojo,Cocker,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,202,"Hangkamer-Kühnen, Jannes",Anakin,Sheltie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,209,"Winkel, Anna",Ready,Border Terrier,LUX,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,253,"Eimhjellen, Kine",Neat,Sheltie,NOR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,228,"Kavaliauskaite, Meda",Ela,MIX,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,210,"Dell-Brown, Leigh-Anne",Chaos,Sheltie,DEU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,239,"Marková, Pavla",Minnie,Zwergschnauzer,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,255,"Jaworska, Ania",Zinna,Sheltie,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,247,"Kleinrubatscher, Christina",Iggy,PRT,AUT,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,248,"Lichtenauer, Karl",Guinness,PRT,AUT,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,231,"Malá, Hana",Ziggy,MIX,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,207,"Marková, Pavla",Dee,Zwergschnauzer,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,232,"Tučková, Eliška",Dixie,Poodle,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,254,"Götzendorfer, Franz-Josef",Riddi,Sheltie,AUT,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,235,"Kretková, Lenka",Ray,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,214,"Brzobohatá, Pavla",Waly,German Spitz,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,208,"Petrenko, Varvara",Lutra,Border Terrier,UKR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,216,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,223,"Válková, Klára",Grace,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,219,"Guobys, Darius",Lulu,Poodle,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,240,"Benešová, Jirina",Ozy,PRT,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,203,"Happonen, Natali",Tami,PRT,EST,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,206,"Vocelková, Alena",Niké,Sheltie,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,246,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,225,"Pärl, Piret",Jackie,MIX,EST,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,230,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,234,"Bálintová, Kamila",Kazzi,Poodle,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,236,"Špinková, Pavlína",Toffi,Kooikerhondje,CZE,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,252,"Petrenko, Varvara",Roo,Sheltie,UKR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,233,"Narewska, Paulina",Lilo,Beagle,POL,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,226,"Brand, Ede",Jete,Sheltie,EST,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,237,"Molas Coll, Erika",Quentin,Poodle,HUN,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,213,"Kordun, Mariia",Elty,Schipperke,UKR,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,218,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,,,,,,,True,Roman Lukac,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,127,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,106,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,120,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,111,"Rębkowska, Luiza",Leluś,Sheltie,POL,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,113,"Chytilová, Martina",Kiri,Poodle,CZE,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,108,"Launagaite, Aiste",Spookiss,Poodle,LTU,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,104,"Remačová, Vanessa",Rocketka,JRT,CZE,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,109,"Muravjova, Gabrielė",Horo,Poodle,LTU,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,101,"Klobučar, Nika",Ai,Papillon,SVN,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,102,"Samlíková, Valerie",Tamika,Papillon,CZE,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,114,"Volosenkiniene, Ausra",Biskoti,Poodle,LTU,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,118,"Mund, Svenja",Pickett,German Spitz,DEU,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,103,"Valentić, Ines",Ni,Papillon,SVN,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,119,"Szymański, Marcin",Monti,MIX,POL,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,128,"Klobučar, Nika",Nixie,Papillon,SVN,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,110,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,125,"Mańczak, Adrianna",Papitto,JRT,POL,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,107,"Bálintová, Kamila",Henry,Poodle,CZE,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_1,Small,Agility,False,,117,"Stawarska, Dorota",Tycia,Cavalier,POL,,,,,,,True,Roman Lukac,,,214.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,1,216,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,0,0.00,0.00,44.53,4.94,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,1,106,"Nejedlá, Alena",Fionka,Papillon,CZE,1,0,0.00,5.00,49.08,4.48,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,2,222,"Steinmetz, Carina",Chip,Sheltie,DEU,0,0,0.00,0.00,45.60,4.82,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,2,107,"Bálintová, Kamila",Henry,Poodle,CZE,1,0,0.00,5.00,50.23,4.38,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,3,256,"Stepanek, Matthias",Lilly,Sheltie,DEU,0,0,0.00,0.00,46.17,4.76,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,3,101,"Klobučar, Nika",Ai,Papillon,SVN,0,1,0.00,5.00,55.52,3.96,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,4,231,"Malá, Hana",Ziggy,MIX,CZE,1,0,0.00,5.00,43.42,5.07,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,4,121,"Gasparavičiūtė, Deimilė",Leila,Poodle,LTU,2,0,0.00,10.00,52.03,4.23,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,5,248,"Lichtenauer, Karl",Guinness,PRT,AUT,0,1,0.00,5.00,51.01,4.31,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,5,124,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,2,1,0.00,15.00,55.70,3.95,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,6,253,"Eimhjellen, Kine",Neat,Sheltie,NOR,1,0,0.44,5.44,52.44,4.2,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,6,104,"Remačová, Vanessa",Rocketka,JRT,CZE,1,2,0.00,15.00,56.57,3.89,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,7,226,"Brand, Ede",Jete,Sheltie,EST,1,2,1.23,16.23,53.23,4.13,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,8,235,"Kretková, Lenka",Ray,Sheltie,CZE,0,2,8.55,18.55,60.55,3.63,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,9,208,"Petrenko, Varvara",Lutra,Border Terrier,UKR,0,2,17.10,27.10,69.10,3.18,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,243,"Remačová, Vanessa",Pirátka,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,246,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,221,"Rosenberger, Sophie",Light,Sheltie,AUT,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,241,"Frimmelová, Hana",Bio,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,204,"Šilvienė, Vaida",Cooper,Cairn Terrier,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,207,"Marková, Pavla",Dee,Zwergschnauzer,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,220,"Boogk, Marlon",Bee,Cocker,FRA,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,214,"Brzobohatá, Pavla",Waly,German Spitz,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,217,"Sůrová, Viktorie",Missi,American Hairless Terrier,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,240,"Benešová, Jirina",Ozy,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,203,"Happonen, Natali",Tami,PRT,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,244,"Kwiecień, Olga",Mojo,Cocker,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,227,"Raamat, Keida",Drifty,Sheltie,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,234,"Bálintová, Kamila",Kazzi,Poodle,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,219,"Guobys, Darius",Lulu,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,223,"Válková, Klára",Grace,Sheltie,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,225,"Pärl, Piret",Jackie,MIX,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,232,"Tučková, Eliška",Dixie,Poodle,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,206,"Vocelková, Alena",Niké,Sheltie,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,236,"Špinková, Pavlína",Toffi,Kooikerhondje,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,218,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,230,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,254,"Götzendorfer, Franz-Josef",Riddi,Sheltie,AUT,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,202,"Hangkamer-Kühnen, Jannes",Anakin,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,247,"Kleinrubatscher, Christina",Iggy,PRT,AUT,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,210,"Dell-Brown, Leigh-Anne",Chaos,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,249,"Hangkamer-Kühnen, Jannes",Merle,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,205,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,209,"Winkel, Anna",Ready,Border Terrier,LUX,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,233,"Narewska, Paulina",Lilo,Beagle,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,255,"Jaworska, Ania",Zinna,Sheltie,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,212,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,237,"Molas Coll, Erika",Quentin,Poodle,HUN,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,228,"Kavaliauskaite, Meda",Ela,MIX,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,229,"Dankin, Ala",Chester,Papillon,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,213,"Kordun, Mariia",Elty,Schipperke,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,109,"Muravjova, Gabrielė",Horo,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,122,"Kalinina, Anna",Chaos,Papillon,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,119,"Szymański, Marcin",Monti,MIX,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,120,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,113,"Chytilová, Martina",Kiri,Poodle,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,115,"Guobiene, Rasa",Manga,Sheltie,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,116,"Kretková, Jenifer",Bonnie,Cavalier,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,128,"Klobučar, Nika",Nixie,Papillon,SVN,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,127,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,102,"Samlíková, Valerie",Tamika,Papillon,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,126,"Drobečková, Jitka",Archie,Papillon,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,103,"Valentić, Ines",Ni,Papillon,SVN,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,111,"Rębkowska, Luiza",Leluś,Sheltie,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,110,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,114,"Volosenkiniene, Ausra",Biskoti,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,125,"Mańczak, Adrianna",Papitto,JRT,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,118,"Mund, Svenja",Pickett,German Spitz,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_agility_small_2,Small,Agility,False,,117,"Stawarska, Dorota",Tycia,Cavalier,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,1,329,"Pent, Toomas",Mürru,Mudi,EST,0,0,0.00,0.00,39.76,5.53,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,2,320,"Řeholová, Adéla",Cína,Sheltie,CZE,0,0,0.00,0.00,42.95,5.12,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,3,316,"Blazinauskaite, Dovile",Minsoo,Sheltie,LTU,0,0,0.00,0.00,43.41,5.07,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,4,347,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,0,0,0.00,0.00,43.62,5.04,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,5,404,"Happonen, Natali",Essie,PRT,EST,0,0,0.00,0.00,45.22,4.87,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,6,305,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,0,0,0.05,0.05,46.05,4.78,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,7,332,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,0,0,0.11,0.11,46.11,4.77,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,8,401,"Kubíková, Lucie",Shani,Sheltie,CZE,0,0,3.03,3.03,49.03,4.49,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,9,359,"Broulík, Rudolf",Bára,Sheltie,CZE,0,0,3.85,3.85,49.85,4.41,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,10,370,"Werra, Wiktoria",Frania,Poodle,POL,1,0,0.00,5.00,41.70,5.28,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,11,326,"Burak, Jarosław",Perła,Mudi,POL,1,0,0.00,5.00,42.15,5.22,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,12,406,"Steinmetz, Carina",Ivy,MAS,DEU,0,1,0.00,5.00,42.58,5.17,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,13,375,"Chylarecka, Katarzyna",Nieta,Toller,POL,1,0,0.00,5.00,44.04,5,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,14,393,"Vykydalová, Radana",Lety,Pyrshep,CZE,0,0,6.56,6.56,52.56,4.19,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,15,356,"Kwiecień, Olga",Maupka,Pyrshep,POL,1,1,0.00,10.00,42.55,5.17,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,16,317,"Domańska, Magdalena",Gavu,Pyrshep,POL,2,0,1.24,11.24,47.24,4.66,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,361,"Čampulová, Petra",Shelby,MIX,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,327,"Beshovishka, Marina",Eip,Mudi,BGR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,303,"Steinmetz, Carina",Amy,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,391,"Gadomska, Magda",Kudeł,Poodle,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,333,"Malá, Hana",Chuck,MIX,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,302,"Rosenberger, Sophie",Pina,Sheltie,AUT,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,374,"Portimojärvi, Saana",Isla,MAS,FIN,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,334,"Maršálková, Adéla",Víno,Manchester Terier,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,384,"Weiß, Yvonne",Chico,MIX,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_medium,Medium,Final,False,,402,"Malá, Hana",Dotty,MIX,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,1,223,"Válková, Klára",Grace,Sheltie,CZE,0,0,0.00,0.00,40.36,5.45,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,1,113,"Chytilová, Martina",Kiri,Poodle,CZE,0,0,0.00,0.00,41.65,5.28,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,2,244,"Kwiecień, Olga",Mojo,Cocker,POL,0,0,0.00,0.00,40.83,5.39,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,2,126,"Drobečková, Jitka",Archie,Papillon,CZE,0,0,0.00,0.00,43.46,5.06,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,3,231,"Malá, Hana",Ziggy,MIX,CZE,0,0,0.00,0.00,40.90,5.38,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,3,106,"Nejedlá, Alena",Fionka,Papillon,CZE,0,0,0.00,0.00,45.10,4.88,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,4,222,"Steinmetz, Carina",Chip,Sheltie,DEU,1,0,0.00,5.00,40.85,5.39,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,4,107,"Bálintová, Kamila",Henry,Poodle,CZE,0,0,0.00,0.00,46.50,4.73,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,5,232,"Tučková, Eliška",Dixie,Poodle,CZE,1,0,0.00,5.00,42.11,5.22,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,5,127,"Senčuchová, Iva",Racochejl,Papillon,CZE,0,0,0.00,0.00,47.34,4.65,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,6,256,"Stepanek, Matthias",Lilly,Sheltie,DEU,2,0,0.00,10.00,42.84,5.14,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,6,123,"Serhiienko, Nadiia",Fly,Papillon,UKR,1,1,2.77,12.77,50.77,4.33,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,7,227,"Raamat, Keida",Drifty,Sheltie,EST,1,0,9.12,14.12,56.12,3.92,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,8,224,"Pent, Toomas",Roxy,Miniature Pincsher,EST,2,0,6.47,16.47,53.47,4.11,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,,220,"Boogk, Marlon",Bee,Cocker,FRA,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,,242,"Lajmarová, Denisa",Gay,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,,241,"Frimmelová, Hana",Bio,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,,216,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,,215,"Konečná, Martina",Sofinka,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_final_small,Small,Final,False,,116,"Kretková, Jenifer",Bonnie,Cavalier,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,1,406,"Steinmetz, Carina",Ivy,MAS,DEU,0,0,0.00,0.00,38.41,5.34,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,2,327,"Beshovishka, Marina",Eip,Mudi,BGR,0,0,0.00,0.00,39.03,5.25,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,3,370,"Werra, Wiktoria",Frania,Poodle,POL,0,0,0.00,0.00,40.33,5.08,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,4,305,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,0,0,0.00,0.00,41.10,4.99,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,5,401,"Kubíková, Lucie",Shani,Sheltie,CZE,0,0,2.84,2.84,47.84,4.29,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,6,375,"Chylarecka, Katarzyna",Nieta,Toller,POL,1,0,0.00,5.00,39.11,5.24,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,7,303,"Steinmetz, Carina",Amy,Sheltie,DEU,1,0,0.00,5.00,40.98,5,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,8,329,"Pent, Toomas",Mürru,Mudi,EST,0,1,0.00,5.00,44.38,4.62,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,9,393,"Vykydalová, Radana",Lety,Pyrshep,CZE,0,1,0.00,5.00,44.59,4.6,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,10,321,"Gadomska, Magda",Reksia,Poodle,POL,0,1,0.45,5.45,45.45,4.51,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,11,353,"Pasukonyte, Ruta",Keja,Sheltie,LTU,0,1,0.73,5.73,45.73,4.48,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,12,381,"Filip, Ronja",Loki,MIX,DEU,0,1,1.98,6.98,46.98,4.36,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,13,320,"Řeholová, Adéla",Cína,Sheltie,CZE,0,2,0.00,10.00,44.67,4.59,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,14,384,"Weiß, Yvonne",Chico,MIX,DEU,0,2,7.55,17.55,52.55,3.9,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,15,364,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,0,2,18.32,28.32,63.32,3.24,False,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,372,"Burlikowska, Katarzyna",Yoki,Sheltie,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,352,"Jugulyte, Kristina",Nica,Poodle,LTU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,398,"Elschner, Sarah",Now,Cocker,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,363,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,403,"Dunaway, Karen",Nyah,MAS,EST,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,360,"Caffrey, Jana",Ari,Poodle,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,308,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,374,"Portimojärvi, Saana",Isla,MAS,FIN,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,336,"Ernat, Darcy",Tango,Cocker,USA,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,335,"Novotna, Katerina",Letty,Pyrshep,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,307,"Baj, Alicja",Figa,MIX,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,395,"Moroz, Kateryna",Rozie,Cocker,UKR,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,371,"Burak, Jarosław",Elmo,Sheltie,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,382,"Kühne, Ronald",Janosch,Poodle,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,340,"Kuko, Christina",Mr. Jinx,Cocker,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,369,"Rokicki, Krzysztof",Deyna,Sheltie,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,366,"Zavizion, Katsiaryna",Darth Vader,Zwergschnauzer,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,361,"Čampulová, Petra",Shelby,MIX,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,373,"Odeneg, Tanja",Elfriede,MAS,AUT,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,397,"Sandbakken, Mette",Beat,Sheltie,NOR,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,402,"Malá, Hana",Dotty,MIX,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,333,"Malá, Hana",Chuck,MIX,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,304,"Válková, Klára",Maisie,MAS,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,312,"Holti, Krisztina",Forrest Gump,Beagle,HUN,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,355,"Członkowska, Barbara",Molka,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,392,"Marešová, Klára",Atyr,Sheltie,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,388,"Dačiola, Mantas",Eros,Cocker,LTU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,387,"Simkute, Zivile",Piko,Poodle,LTU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,343,"Spaetgens, Ina",Nym,Cocker,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,311,"Ujma, Alicja",Millie,Mudi,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,334,"Maršálková, Adéla",Víno,Manchester Terier,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,385,"Blazinauskaite, Dovile",San,Sheltie,LTU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,389,"Põder, Mia",Nami,MIX,EST,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,341,"Reincke, Alina",Zissi,Mudi,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,345,"Schlutow, Steffen",Widow,MIX,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,318,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,350,"Simonsen, Heidi",Cap,MAS,DNK,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,325,"Cisak, Krystyna",Lizio,Mudi,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,380,"Wyszyńska, Weronika",Cass,Cocker,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,306,"Driessen, Patrick",Eep,Kelpie,NLD,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,330,"Piirsalu, Triine",Nomy,Cocker,EST,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,349,"Sandbakken, Mette",Zack,MAS,NOR,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,319,"Prokesova, Lenka",Chia,Pyrshep,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,383,"Kühne, Simone",Summit,Borderpup,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,326,"Burak, Jarosław",Perła,Mudi,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,309,"Konečná, Martina",Kao,Sheltie,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,351,"Dačiola, Mantas",Juda,MIX,LTU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,357,"Maruszczak, Roman",Zelda,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,332,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,391,"Gadomska, Magda",Kudeł,Poodle,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,376,"Driessen, Patrick",Lynn,Kelpie,NLD,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,342,"Stöhr, Milla	",Najuma,Cocker,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,302,"Rosenberger, Sophie",Pina,Sheltie,AUT,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,339,"Szydłowska, Ola",Hopie,Cocker,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,405,"Papp, Rita",Ella,Sheltie,HUN,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,337,"Majtánová, Adriána",Togo,Cocker,SVK,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,396,"Řeholová, Adéla",Lixi,Cocker,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,347,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,323,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,338,"Straková, Martina",AC,Cocker,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,378,"Smółka, Marcin",Bam,MIX,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,348,"Sæther, Wenche",Trøkki,Sheltie,NOR,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,346,"Steinmetz, Carina",Tex,MAS,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,301,"Broulík, Rudolf",Sisi,Sheltie,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,310,"Szymańska, Maja",Merida,MAS,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,368,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,386,"Maischatz, Nathalie",Rosa,Sheltie,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,331,"Põder, Mia",Felö,Mudi,EST,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,316,"Blazinauskaite, Dovile",Minsoo,Sheltie,LTU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,313,"Sipos, Beáta",Luca,MIX,HUN,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,359,"Broulík, Rudolf",Bára,Sheltie,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,358,"Oględzki, Zbigniew",Pucuś Srucuś,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,344,"Maischatz, Nathalie",Lulu,Sheltie,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,356,"Kwiecień, Olga",Maupka,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,314,"Stepanek, Matthias",Navy,Border Collie,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,354,"Volosenkiniene, Ausra",Andora,Poodle,LTU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,377,"Smółka, Agnieszka",Dum,Cocker,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,362,"Kolacna, Tereza",Bíba,Poodle,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,328,"Heyne, Laura",Peka,Kelpie,DEU,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,399,"Grygarova, Aneta",Story,Cocker,CZE,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,317,"Domańska, Magdalena",Gavu,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,404,"Happonen, Natali",Essie,PRT,EST,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,367,"Korus, Maciej",Gin,Sheltie,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,324,"Rokicka, Julia",Taco,Sheltie,POL,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_1,Medium,Jumping,False,,315,"Tálasi, Zsófia",Tati,Mudi,HUN,,,,,,,True,Seppo Saviko,,,205.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,1,326,"Burak, Jarosław",Perła,Mudi,POL,0,0,0.00,0.00,39.11,5.6,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,2,393,"Vykydalová, Radana",Lety,Pyrshep,CZE,0,0,0.00,0.00,41.79,5.24,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,3,320,"Řeholová, Adéla",Cína,Sheltie,CZE,0,0,0.00,0.00,41.88,5.23,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,4,303,"Steinmetz, Carina",Amy,Sheltie,DEU,0,0,0.00,0.00,41.91,5.23,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,5,404,"Happonen, Natali",Essie,PRT,EST,0,0,0.00,0.00,42.36,5.17,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,6,332,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,0,0,0.00,0.00,43.07,5.08,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,7,359,"Broulík, Rudolf",Bára,Sheltie,CZE,0,0,3.93,3.93,48.93,4.48,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,8,384,"Weiß, Yvonne",Chico,MIX,DEU,0,0,4.09,4.09,49.09,4.46,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,9,302,"Rosenberger, Sophie",Pina,Sheltie,AUT,1,0,0.00,5.00,35.01,6.26,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,10,392,"Marešová, Klára",Atyr,Sheltie,CZE,1,0,0.00,5.00,40.69,5.38,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,11,371,"Burak, Jarosław",Elmo,Sheltie,POL,1,0,0.00,5.00,43.01,5.09,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,12,352,"Jugulyte, Kristina",Nica,Poodle,LTU,0,1,0.00,5.00,43.52,5.03,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,13,342,"Stöhr, Milla	",Najuma,Cocker,DEU,0,1,0.71,5.71,45.71,4.79,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,14,395,"Moroz, Kateryna",Rozie,Cocker,UKR,1,0,3.44,8.44,48.44,4.52,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,15,307,"Baj, Alicja",Figa,MIX,POL,0,1,4.23,9.23,49.23,4.45,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,16,312,"Holti, Krisztina",Forrest Gump,Beagle,HUN,0,1,5.28,10.28,50.28,4.36,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,17,397,"Sandbakken, Mette",Beat,Sheltie,NOR,3,0,0.00,15.00,38.74,5.65,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,18,377,"Smółka, Agnieszka",Dum,Cocker,POL,1,0,13.81,18.81,58.81,3.72,False,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,349,"Sandbakken, Mette",Zack,MAS,NOR,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,350,"Simonsen, Heidi",Cap,MAS,DNK,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,382,"Kühne, Ronald",Janosch,Poodle,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,333,"Malá, Hana",Chuck,MIX,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,328,"Heyne, Laura",Peka,Kelpie,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,304,"Válková, Klára",Maisie,MAS,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,334,"Maršálková, Adéla",Víno,Manchester Terier,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,406,"Steinmetz, Carina",Ivy,MAS,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,380,"Wyszyńska, Weronika",Cass,Cocker,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,306,"Driessen, Patrick",Eep,Kelpie,NLD,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,335,"Novotna, Katerina",Letty,Pyrshep,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,376,"Driessen, Patrick",Lynn,Kelpie,NLD,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,324,"Rokicka, Julia",Taco,Sheltie,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,331,"Põder, Mia",Felö,Mudi,EST,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,337,"Majtánová, Adriána",Togo,Cocker,SVK,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,374,"Portimojärvi, Saana",Isla,MAS,FIN,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,356,"Kwiecień, Olga",Maupka,Pyrshep,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,346,"Steinmetz, Carina",Tex,MAS,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,305,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,336,"Ernat, Darcy",Tango,Cocker,USA,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,319,"Prokesova, Lenka",Chia,Pyrshep,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,339,"Szydłowska, Ola",Hopie,Cocker,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,338,"Straková, Martina",AC,Cocker,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,343,"Spaetgens, Ina",Nym,Cocker,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,325,"Cisak, Krystyna",Lizio,Mudi,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,341,"Reincke, Alina",Zissi,Mudi,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,388,"Dačiola, Mantas",Eros,Cocker,LTU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,340,"Kuko, Christina",Mr. Jinx,Cocker,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,361,"Čampulová, Petra",Shelby,MIX,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,308,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,355,"Członkowska, Barbara",Molka,Pyrshep,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,369,"Rokicki, Krzysztof",Deyna,Sheltie,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,348,"Sæther, Wenche",Trøkki,Sheltie,NOR,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,373,"Odeneg, Tanja",Elfriede,MAS,AUT,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,401,"Kubíková, Lucie",Shani,Sheltie,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,347,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,362,"Kolacna, Tereza",Bíba,Poodle,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,309,"Konečná, Martina",Kao,Sheltie,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,330,"Pent, Toomas",Nomy,Cocker,EST,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,317,"Domańska, Magdalena",Gavu,Pyrshep,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,351,"Dačiola, Mantas",Juda,MIX,LTU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,367,"Korus, Maciej",Gin,Sheltie,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,315,"Tálasi, Zsófia",Tati,Mudi,HUN,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,386,"Maischatz, Nathalie",Rosa,Sheltie,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,357,"Maruszczak, Roman",Zelda,Pyrshep,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,353,"Pasukonyte, Ruta",Keja,Sheltie,LTU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,398,"Elschner, Sarah",Now,Cocker,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,403,"Dunaway, Karen",Nyah,MAS,EST,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,329,"Pent, Toomas",Mürru,Mudi,EST,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,366,"Zavizion, Katsiaryna",Darth Vader,Zwergschnauzer,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,381,"Filip, Ronja",Loki,MIX,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,345,"Schlutow, Steffen",Widow,MIX,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,372,"Burlikowska, Katarzyna",Yoki,Sheltie,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,327,"Beshovishka, Marina",Eip,Mudi,BGR,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,311,"Ujma, Alicja",Millie,Mudi,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,391,"Gadomska, Magda",Kudeł,Poodle,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,358,"Oględzki, Zbigniew",Pucuś Srucuś,Pyrshep,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,368,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,363,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,318,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,383,"Kühne, Simone",Summit,Borderpup,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,314,"Stepanek, Matthias",Navy,Border Collie,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,396,"Řeholová, Adéla",Lixi,Cocker,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,310,"Szymańska, Maja",Merida,MAS,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,313,"Sipos, Beáta",Luca,MIX,HUN,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,378,"Smółka, Marcin",Bam,MIX,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,389,"Põder, Mia",Nami,MIX,EST,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,316,"Blazinauskaite, Dovile",Minsoo,Sheltie,LTU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,301,"Broulík, Rudolf",Sisi,Sheltie,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,323,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,360,"Caffrey, Jana",Ari,Poodle,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,321,"Gadomska, Magda",Reksia,Poodle,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,344,"Maischatz, Nathalie",Lulu,Sheltie,DEU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,399,"Grygarova, Aneta",Story,Cocker,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,370,"Werra, Wiktoria",Frania,Poodle,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,375,"Chylarecka, Katarzyna",Nieta,Toller,POL,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,354,"Volosenkiniene, Ausra",Andora,Poodle,LTU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,387,"Simkute, Zivile",Piko,Poodle,LTU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,402,"Malá, Hana",Dotty,MIX,CZE,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,385,"Blazinauskaite, Dovile",San,Sheltie,LTU,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_medium_2,Medium,Jumping,False,,364,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,,,,,,,True,Annemarie van den Berge,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,1,241,"Frimmelová, Hana",Bio,PRT,CZE,0,0,0.00,0.00,37.31,5.9,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,1,127,"Senčuchová, Iva",Racochejl,Papillon,CZE,0,0,0.00,0.00,42.14,5.2,False,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,2,223,"Válková, Klára",Grace,Sheltie,CZE,0,0,0.00,0.00,37.88,5.81,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,2,123,"Serhiienko, Nadiia",Fly,Papillon,UKR,0,0,0.00,0.00,43.22,5.07,False,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,3,232,"Tučková, Eliška",Dixie,Poodle,CZE,0,0,0.00,0.00,37.99,5.79,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,3,122,"Kalinina, Anna",Chaos,Papillon,UKR,0,0,0.00,0.00,43.75,5.01,False,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,4,244,"Kwiecień, Olga",Mojo,Cocker,POL,0,0,0.00,0.00,38.06,5.78,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,4,107,"Bálintová, Kamila",Henry,Poodle,CZE,0,0,0.00,0.00,44.17,4.96,False,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,5,216,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,0,0.00,0.00,39.44,5.58,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,5,121,"Gasparavičiūtė, Deimilė",Leila,Poodle,LTU,0,0,0.00,0.00,45.41,4.82,False,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,6,221,"Rosenberger, Sophie",Light,Sheltie,AUT,0,0,0.00,0.00,39.93,5.51,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,6,118,"Mund, Svenja",Pickett,German Spitz,DEU,0,0,0.00,0.00,46.16,4.74,False,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,7,247,"Kleinrubatscher, Christina",Iggy,PRT,AUT,0,0,0.00,0.00,40.42,5.44,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,7,117,"Stawarska, Dorota",Tycia,Cavalier,POL,0,1,1.64,6.64,50.64,4.32,False,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,8,254,"Götzendorfer, Franz-Josef",Riddi,Sheltie,AUT,0,0,0.00,0.00,40.43,5.44,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,9,209,"Winkel, Anna",Ready,Border Terrier,LUX,0,0,0.00,0.00,40.57,5.42,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,10,242,"Lajmarová, Denisa",Gay,PRT,CZE,0,0,0.00,0.00,41.15,5.35,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,11,219,"Guobys, Darius",Lulu,Poodle,LTU,0,0,0.00,0.00,41.82,5.26,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,12,205,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,0,0,0.00,0.00,42.82,5.14,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,13,227,"Raamat, Keida",Drifty,Sheltie,EST,0,0,3.07,3.07,46.07,4.78,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,14,220,"Boogk, Marlon",Bee,Cocker,FRA,1,0,0.00,5.00,38.54,5.71,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,15,231,"Malá, Hana",Ziggy,MIX,CZE,1,0,0.00,5.00,40.00,5.5,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,16,253,"Eimhjellen, Kine",Neat,Sheltie,NOR,0,1,0.00,5.00,40.70,5.41,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,17,215,"Konečná, Martina",Sofinka,PRT,CZE,1,0,0.00,5.00,40.81,5.39,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,18,256,"Stepanek, Matthias",Lilly,Sheltie,DEU,0,1,0.44,5.44,43.44,5.06,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,19,234,"Bálintová, Kamila",Kazzi,Poodle,CZE,0,0,8.50,8.50,51.50,4.27,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,20,226,"Brand, Ede",Jete,Sheltie,EST,1,0,5.38,10.38,48.38,4.55,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,21,255,"Jaworska, Ania",Zinna,Sheltie,POL,1,0,6.90,11.90,49.90,4.41,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,22,236,"Špinková, Pavlína",Toffi,Kooikerhondje,CZE,0,1,10.41,15.41,53.41,4.12,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,23,237,"Molas Coll, Erika",Quentin,Poodle,HUN,0,2,11.89,21.89,54.89,4.01,False,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,201,"Lajmarová, Denisa",Rally,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,203,"Happonen, Natali",Tami,PRT,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,202,"Hangkamer-Kühnen, Jannes",Anakin,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,217,"Sůrová, Viktorie",Missi,American Hairless Terrier,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,248,"Lichtenauer, Karl",Guinness,PRT,AUT,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,249,"Hangkamer-Kühnen, Jannes",Merle,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,239,"Marková, Pavla",Minnie,Zwergschnauzer,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,204,"Šilvienė, Vaida",Cooper,Cairn Terrier,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,218,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,243,"Remačová, Vanessa",Pirátka,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,222,"Steinmetz, Carina",Chip,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,240,"Benešová, Jirina",Ozy,PRT,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,252,"Petrenko, Varvara",Roo,Sheltie,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,235,"Kretková, Lenka",Ray,Sheltie,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,225,"Pärl, Piret",Jackie,MIX,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,230,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,233,"Narewska, Paulina",Lilo,Beagle,POL,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,212,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,214,"Brzobohatá, Pavla",Waly,German Spitz,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,228,"Kavaliauskaite, Meda",Ela,MIX,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,207,"Marková, Pavla",Dee,Zwergschnauzer,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,210,"Dell-Brown, Leigh-Anne",Chaos,Sheltie,DEU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,206,"Vocelková, Alena",Niké,Sheltie,CZE,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,229,"Dankin, Ala",Chester,Papillon,LTU,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,208,"Petrenko, Varvara",Lutra,Border Terrier,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,246,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,213,"Kordun, Mariia",Elty,Schipperke,UKR,,,,,,,True,Stefanie Semkat,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,114,"Volosenkiniene, Ausra",Biskoti,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,110,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,120,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,125,"Mańczak, Adrianna",Papitto,JRT,POL,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,116,"Kretková, Jenifer",Bonnie,Cavalier,CZE,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,128,"Klobučar, Nika",Nixie,Papillon,SVN,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,109,"Muravjova, Gabrielė",Horo,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,126,"Drobečková, Jitka",Archie,Papillon,CZE,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,115,"Guobiene, Rasa",Manga,Sheltie,LTU,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,103,"Valentić, Ines",Ni,Papillon,SVN,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,102,"Samlíková, Valerie",Tamika,Papillon,CZE,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,113,"Chytilová, Martina",Kiri,Poodle,CZE,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,106,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,119,"Szymański, Marcin",Monti,MIX,POL,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,104,"Remačová, Vanessa",Rocketka,JRT,CZE,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,108,"Launagaite, Aiste",Spookiss,Poodle,LTU,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,124,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,101,"Klobučar, Nika",Ai,Papillon,SVN,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_1,Small,Jumping,False,,111,"Rębkowska, Luiza",Leluś,Sheltie,POL,,,,,,,True,Stefanie Semkat,,,219.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,1,223,"Válková, Klára",Grace,Sheltie,CZE,0,0,0.00,0.00,35.14,6.26,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,1,113,"Chytilová, Martina",Kiri,Poodle,CZE,0,0,0.00,0.00,34.94,6.3,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,2,220,"Boogk, Marlon",Bee,Cocker,FRA,0,0,0.00,0.00,35.85,6.14,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,2,116,"Kretková, Jenifer",Bonnie,Cavalier,CZE,0,0,0.00,0.00,38.13,5.77,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,3,232,"Tučková, Eliška",Dixie,Poodle,CZE,0,0,0.00,0.00,36.13,6.09,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,3,119,"Szymański, Marcin",Monti,MIX,POL,0,0,0.00,0.00,39.87,5.52,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,4,242,"Lajmarová, Denisa",Gay,PRT,CZE,0,0,0.00,0.00,36.60,6.01,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,4,122,"Kalinina, Anna",Chaos,Papillon,UKR,0,0,0.00,0.00,40.11,5.48,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,4,108,"Launagaite, Aiste",Spookiss,Poodle,LTU,0,0,0.00,0.00,40.12,5.48,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,5,209,"Winkel, Anna",Ready,Border Terrier,LUX,0,0,0.00,0.00,36.96,5.95,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,6,247,"Kleinrubatscher, Christina",Iggy,PRT,AUT,0,0,0.00,0.00,36.98,5.95,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,6,123,"Serhiienko, Nadiia",Fly,Papillon,UKR,0,0,0.00,0.00,40.76,5.4,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,7,216,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,0,0.00,0.00,37.02,5.94,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,7,118,"Mund, Svenja",Pickett,German Spitz,DEU,0,0,1.58,1.58,42.58,5.17,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,8,215,"Konečná, Martina",Sofinka,PRT,CZE,0,0,0.00,0.00,37.26,5.9,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,8,114,"Volosenkiniene, Ausra",Biskoti,Poodle,LTU,0,0,1.74,1.74,42.74,5.15,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,9,230,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,0,0,0.00,0.00,37.34,5.89,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,9,121,"Gasparavičiūtė, Deimilė",Leila,Poodle,LTU,1,0,1.14,6.14,42.14,5.22,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,10,221,"Rosenberger, Sophie",Light,Sheltie,AUT,0,0,0.00,0.00,37.89,5.81,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,10,128,"Klobučar, Nika",Nixie,Papillon,SVN,0,0,10.69,10.69,51.69,4.26,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,11,224,"Pent, Toomas",Roxy,Miniature Pincsher,EST,0,0,0.00,0.00,39.66,5.55,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,11,249,"Hangkamer-Kühnen, Jannes",Merle,Sheltie,DEU,0,0,0.00,0.00,39.66,5.55,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,11,110,"Kujawa, Katarzyna",Coffee,Papillon,POL,2,1,2.14,17.14,43.14,5.1,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,13,214,"Brzobohatá, Pavla",Waly,German Spitz,CZE,1,0,0.00,5.00,40.27,5.46,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,14,253,"Eimhjellen, Kine",Neat,Sheltie,NOR,0,1,0.02,5.02,41.02,5.36,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,15,206,"Vocelková, Alena",Niké,Sheltie,CZE,1,0,0.55,5.55,41.55,5.29,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,16,234,"Bálintová, Kamila",Kazzi,Poodle,CZE,0,0,6.02,6.02,47.02,4.68,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,17,226,"Brand, Ede",Jete,Sheltie,EST,0,1,1.65,6.65,42.65,5.16,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,18,233,"Narewska, Paulina",Lilo,Beagle,POL,0,1,4.11,9.11,45.11,4.88,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,19,203,"Happonen, Natali",Tami,PRT,EST,2,0,0.00,10.00,34.98,6.29,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,20,222,"Steinmetz, Carina",Chip,Sheltie,DEU,1,1,0.00,10.00,37.12,5.93,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,21,204,"Šilvienė, Vaida",Cooper,Cairn Terrier,LTU,1,1,3.32,13.32,44.32,4.96,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,22,255,"Jaworska, Ania",Zinna,Sheltie,POL,1,0,10.36,15.36,51.36,4.28,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,23,227,"Raamat, Keida",Drifty,Sheltie,EST,0,2,7.50,17.50,48.50,4.54,False,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,256,"Stepanek, Matthias",Lilly,Sheltie,DEU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,243,"Remačová, Vanessa",Pirátka,PRT,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,241,"Frimmelová, Hana",Bio,PRT,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,217,"Sůrová, Viktorie",Missi,American Hairless Terrier,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,229,"Dankin, Ala",Chester,Papillon,LTU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,240,"Benešová, Jirina",Ozy,PRT,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,202,"Hangkamer-Kühnen, Jannes",Anakin,Sheltie,DEU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,231,"Malá, Hana",Ziggy,MIX,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,248,"Lichtenauer, Karl",Guinness,PRT,AUT,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,244,"Kwiecień, Olga",Mojo,Cocker,POL,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,208,"Petrenko, Varvara",Lutra,Border Terrier,UKR,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,252,"Petrenko, Varvara",Roo,Sheltie,UKR,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,228,"Kavaliauskaite, Meda",Ela,MIX,LTU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,254,"Götzendorfer, Franz-Josef",Riddi,Sheltie,AUT,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,219,"Guobys, Darius",Lulu,Poodle,LTU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,207,"Marková, Pavla",Dee,Zwergschnauzer,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,210,"Dell-Brown, Leigh-Anne",Chaos,Sheltie,DEU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,225,"Pärl, Piret",Jackie,MIX,EST,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,205,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,236,"Špinková, Pavlína",Toffi,Kooikerhondje,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,239,"Marková, Pavla",Minnie,Zwergschnauzer,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,246,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,235,"Kretková, Lenka",Ray,Sheltie,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,212,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,218,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,213,"Kordun, Mariia",Elty,Schipperke,UKR,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,237,"Molas Coll, Erika",Quentin,Poodle,HUN,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,125,"Mańczak, Adrianna",Papitto,JRT,POL,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,127,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,102,"Samlíková, Valerie",Tamika,Papillon,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,120,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,106,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,115,"Guobiene, Rasa",Manga,Sheltie,LTU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,103,"Valentić, Ines",Ni,Papillon,SVN,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,101,"Klobučar, Nika",Ai,Papillon,SVN,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,109,"Muravjova, Gabrielė",Horo,Poodle,LTU,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,111,"Rębkowska, Luiza",Leluś,Sheltie,POL,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,104,"Remačová, Vanessa",Rocketka,JRT,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,126,"Drobečková, Jitka",Archie,Papillon,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,124,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,107,"Bálintová, Kamila",Henry,Poodle,CZE,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",ind_jumping_small_2,Small,Jumping,False,,117,"Stawarska, Dorota",Tycia,Cavalier,POL,,,,,,,True,Fanny Gott,,,220.0
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,1,406,"Steinmetz, Carina",Ivy,MAS,DEU,0,0,0.00,0.00,36.31,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,2,329,"Pent, Toomas",Mürru,Mudi,EST,0,0,0.00,0.00,37.53,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,3,302,"Rosenberger, Sophie",Pina,Sheltie,AUT,0,0,0.00,0.00,37.76,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,4,346,"Steinmetz, Carina",Tex,MAS,DEU,0,0,0.00,0.00,38.19,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,5,370,"Werra, Wiktoria",Frania,Poodle,POL,0,0,0.00,0.00,39.98,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,6,391,"Gadomska, Magda",Kudeł,Poodle,POL,0,0,0.00,0.00,40.72,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,7,316,"Blazinauskaite, Dovile",Minsoo,Sheltie,LTU,0,0,0.00,0.00,41.14,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,8,396,"Řeholová, Adéla",Lixi,Cocker,CZE,0,0,0.00,0.00,41.74,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,9,320,"Řeholová, Adéla",Cína,Sheltie,CZE,0,0,0.00,0.00,41.86,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,10,404,"Happonen, Natali",Essie,PRT,EST,0,0,0.49,0.49,42.49,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,11,305,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,0,0,1.79,1.79,43.79,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,12,403,"Dunaway, Karen",Nyah,MAS,EST,0,0,2.26,2.26,44.26,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,13,374,"Portimojärvi, Saana",Isla,MAS,FIN,1,0,0.00,5.00,39.05,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,14,319,"Prokesova, Lenka",Chia,Pyrshep,CZE,1,0,0.00,5.00,40.82,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,15,401,"Kubíková, Lucie",Shani,Sheltie,CZE,0,0,5.92,5.92,47.92,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,16,333,"Malá, Hana",Chuck,MIX,CZE,0,1,1.50,6.50,43.50,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,17,303,"Steinmetz, Carina",Amy,Sheltie,DEU,1,0,1.53,6.53,43.53,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,18,372,"Burlikowska, Katarzyna",Yoki,Sheltie,POL,0,1,1.84,6.84,43.84,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,19,359,"Broulík, Rudolf",Bára,Sheltie,CZE,0,0,7.16,7.16,49.16,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,20,378,"Smółka, Marcin",Bam,MIX,POL,0,0,10.45,10.45,52.45,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,21,352,"Jugulyte, Kristina",Nica,Poodle,LTU,1,1,1.89,11.89,43.89,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,22,309,"Konečná, Martina",Kao,Sheltie,CZE,0,1,7.45,12.45,49.45,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,23,405,"Papp, Rita",Ella,Sheltie,HUN,1,1,2.63,12.63,44.63,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,24,357,"Maruszczak, Roman",Zelda,Pyrshep,POL,0,2,4.87,14.87,46.87,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,25,393,"Vykydalová, Radana",Lety,Pyrshep,CZE,0,1,10.90,15.90,52.90,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,26,301,"Broulík, Rudolf",Sisi,Sheltie,CZE,1,1,7.15,17.15,49.15,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,27,371,"Burak, Jarosław",Elmo,Sheltie,POL,2,0,8.92,18.92,50.92,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,28,353,"Pasukonyte, Ruta",Keja,Sheltie,LTU,1,1,9.27,19.27,51.27,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,29,323,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,0,1,15.64,20.64,57.64,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,30,366,"Zavizion, Katsiaryna",Darth Vader,Zwergschnauzer,POL,1,2,16.43,31.43,58.43,0,False,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,304,"Válková, Klára",Maisie,MAS,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,317,"Domańska, Magdalena",Gavu,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,318,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,338,"Straková, Martina",AC,Cocker,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,351,"Dačiola, Mantas",Juda,MIX,LTU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,354,"Volosenkiniene, Ausra",Andora,Poodle,LTU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,362,"Kolacna, Tereza",Bíba,Poodle,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,373,"Odeneg, Tanja",Elfriede,MAS,AUT,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,392,"Marešová, Klára",Atyr,Sheltie,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,395,"Moroz, Kateryna",Rozie,Cocker,UKR,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,332,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,367,"Korus, Maciej",Gin,Sheltie,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,382,"Kühne, Ronald",Janosch,Poodle,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,312,"Holti, Krisztina",Forrest Gump,Beagle,HUN,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,307,"Baj, Alicja",Figa,MIX,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,345,"Schlutow, Steffen",Widow,MIX,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,334,"Maršálková, Adéla",Víno,Manchester Terier,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,342,"Stöhr, Milla	",Najuma,Cocker,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,343,"Spaetgens, Ina",Nym,Cocker,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,325,"Cisak, Krystyna",Lizio,Mudi,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,308,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,348,"Sæther, Wenche",Trøkki,Sheltie,NOR,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,331,"Põder, Mia",Felö,Mudi,EST,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,340,"Kuko, Christina",Mr. Jinx,Cocker,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,330,"Pent, Toomas",Nomy,Cocker,EST,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,380,"Wyszyńska, Weronika",Cass,Cocker,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,349,"Sandbakken, Mette",Zack,MAS,NOR,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,389,"Põder, Mia",Nami,MIX,EST,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,398,"Elschner, Sarah",Now,Cocker,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,376,"Driessen, Patrick",Lynn,Kelpie,NLD,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,306,"Driessen, Patrick",Eep,Kelpie,NLD,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,369,"Rokicki, Krzysztof",Deyna,Sheltie,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,385,"Blazinauskaite, Dovile",San,Sheltie,LTU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,356,"Kwiecień, Olga",Maupka,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,381,"Filip, Ronja",Loki,MIX,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,336,"Ernat, Darcy",Tango,Cocker,USA,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,397,"Sandbakken, Mette",Beat,Sheltie,NOR,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,321,"Gadomska, Magda",Reksia,Poodle,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,350,"Simonsen, Heidi",Cap,MAS,DNK,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,347,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,355,"Członkowska, Barbara",Molka,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,313,"Sipos, Beáta",Luca,MIX,HUN,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,314,"Stepanek, Matthias",Navy,Border Collie,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,358,"Oględzki, Zbigniew",Pucuś Srucuś,Pyrshep,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,383,"Kühne, Simone",Summit,Borderpup,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,327,"Beshovishka, Marina",Eip,Mudi,BGR,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,399,"Grygarova, Aneta",Story,Cocker,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,337,"Majtánová, Adriána",Togo,Cocker,SVK,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,335,"Novotna, Katerina",Letty,Pyrshep,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,388,"Dačiola, Mantas",Eros,Cocker,LTU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,328,"Heyne, Laura",Peka,Kelpie,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,384,"Weiß, Yvonne",Chico,MIX,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,310,"Szymańska, Maja",Merida,MAS,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,339,"Szydłowska, Ola",Hopie,Cocker,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,387,"Simkute, Zivile",Piko,Poodle,LTU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,361,"Čampulová, Petra",Shelby,MIX,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,326,"Burak, Jarosław",Perła,Mudi,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,315,"Tálasi, Zsófia",Tati,Mudi,HUN,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,386,"Maischatz, Nathalie",Rosa,Sheltie,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,360,"Caffrey, Jana",Ari,Poodle,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,402,"Malá, Hana",Dotty,MIX,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,368,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,324,"Rokicka, Julia",Taco,Sheltie,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,311,"Ujma, Alicja",Millie,Mudi,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,363,"Krebsová, Aneta",Desi,Pyrshep,CZE,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,377,"Smółka, Agnieszka",Dum,Cocker,POL,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,344,"Maischatz, Nathalie",Lulu,Sheltie,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,341,"Reincke, Alina",Zissi,Mudi,DEU,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_medium,Medium,Agility,True,,364,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,,,,,,,True,Seppo Saviko,,,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,1,222,"Steinmetz, Carina",Chip,Sheltie,DEU,0,0,0.00,0.00,39.31,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,2,232,"Tučková, Eliška",Dixie,Poodle,CZE,0,0,0.00,0.00,41.41,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,3,216,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,0,0.00,0.00,43.10,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,4,253,"Eimhjellen, Kine",Neat,Sheltie,NOR,0,0,0.00,0.00,44.73,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,5,121,"Gasparavičiūtė, Deimilė",Leila,Poodle,LTU,0,0,0.64,0.64,46.64,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,6,124,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,0,0,1.35,1.35,47.35,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,7,104,"Remačová, Vanessa",Rocketka,JRT,CZE,0,0,1.45,1.45,47.45,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,8,107,"Bálintová, Kamila",Henry,Poodle,CZE,0,0,2.45,2.45,48.45,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,9,228,"Kavaliauskaite, Meda",Ela,MIX,LTU,0,0,3.47,3.47,49.47,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,10,212,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,1,0,0.00,5.00,41.11,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,11,242,"Lajmarová, Denisa",Gay,PRT,CZE,1,0,0.00,5.00,41.94,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,12,225,"Pärl, Piret",Jackie,MIX,EST,0,1,0.00,5.00,42.89,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,13,248,"Lichtenauer, Karl",Guinness,PRT,AUT,1,0,0.00,5.00,43.30,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,14,219,"Guobys, Darius",Lulu,Poodle,LTU,1,0,0.00,5.00,44.04,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,15,223,"Válková, Klára",Grace,Sheltie,CZE,0,1,0.00,5.00,44.46,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,16,102,"Samlíková, Valerie",Tamika,Papillon,CZE,0,1,0.00,5.00,45.43,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,17,221,"Rosenberger, Sophie",Light,Sheltie,AUT,0,1,0.86,5.86,46.86,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,18,204,"Šilvienė, Vaida",Cooper,Cairn Terrier,LTU,0,1,2.06,7.06,48.06,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,19,247,"Kleinrubatscher, Christina",Iggy,PRT,AUT,0,1,2.62,7.62,48.62,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,20,227,"Raamat, Keida",Drifty,Sheltie,EST,0,1,4.71,9.71,50.71,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,21,256,"Stepanek, Matthias",Lilly,Sheltie,DEU,1,1,0.00,10.00,45.83,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,22,116,"Kretková, Jenifer",Bonnie,Cavalier,CZE,0,1,5.06,10.06,51.06,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,23,208,"Petrenko, Varvara",Lutra,Border Terrier,UKR,1,0,5.98,10.98,51.98,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,24,202,"Hangkamer-Kühnen, Jannes",Anakin,Sheltie,DEU,0,2,1.17,11.17,47.17,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,25,231,"Malá, Hana",Ziggy,MIX,CZE,0,2,1.52,11.52,47.52,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,26,249,"Hangkamer-Kühnen, Jannes",Merle,Sheltie,DEU,2,0,2.26,12.26,48.26,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,27,123,"Serhiienko, Nadiia",Fly,Papillon,UKR,0,1,7.80,12.80,53.80,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,28,117,"Stawarska, Dorota",Tycia,Cavalier,POL,0,1,9.69,14.69,55.69,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,29,237,"Molas Coll, Erika",Quentin,Poodle,HUN,0,1,10.79,15.79,56.79,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,30,214,"Brzobohatá, Pavla",Waly,German Spitz,CZE,2,1,2.51,17.51,48.51,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,31,233,"Narewska, Paulina",Lilo,Beagle,POL,0,2,10.26,20.26,56.26,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,32,224,"Pent, Toomas",Roxy,Miniature Pincsher,EST,2,1,7.62,22.62,53.62,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,33,234,"Bálintová, Kamila",Kazzi,Poodle,CZE,2,1,13.43,28.43,59.43,0,False,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,217,"Sůrová, Viktorie",Missi,American Hairless Terrier,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,215,"Konečná, Martina",Sofinka,PRT,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,127,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,241,"Frimmelová, Hana",Bio,PRT,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,113,"Chytilová, Martina",Kiri,Poodle,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,243,"Remačová, Vanessa",Pirátka,PRT,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,106,"Nejedlá, Alena",Fionka,Papillon,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,120,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,109,"Muravjova, Gabrielė",Horo,Poodle,LTU,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,254,"Götzendorfer, Franz-Josef",Riddi,Sheltie,AUT,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,220,"Boogk, Marlon",Bee,Cocker,FRA,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,239,"Marková, Pavla",Minnie,Zwergschnauzer,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,209,"Winkel, Anna",Ready,Border Terrier,LUX,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,252,"Petrenko, Varvara",Roo,Sheltie,UKR,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,205,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,244,"Kwiecień, Olga",Mojo,Cocker,POL,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,207,"Marková, Pavla",Dee,Zwergschnauzer,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,230,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,108,"Launagaite, Aiste",Spookiss,Poodle,LTU,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,206,"Vocelková, Alena",Niké,Sheltie,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,110,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,115,"Guobiene, Rasa",Manga,Sheltie,LTU,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,240,"Benešová, Jirina",Ozy,PRT,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,101,"Klobučar, Nika",Ai,Papillon,SVN,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,128,"Klobučar, Nika",Nixie,Papillon,SVN,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,203,"Happonen, Natali",Tami,PRT,EST,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,103,"Valentić, Ines",Ni,Papillon,SVN,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,226,"Brand, Ede",Jete,Sheltie,EST,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,235,"Kretková, Lenka",Ray,Sheltie,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,118,"Mund, Svenja",Pickett,German Spitz,DEU,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,218,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,210,"Dell-Brown, Leigh-Anne",Chaos,Sheltie,DEU,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,114,"Volosenkiniene, Ausra",Biskoti,Poodle,LTU,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,246,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,126,"Drobečková, Jitka",Archie,Papillon,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,236,"Špinková, Pavlína",Toffi,Kooikerhondje,CZE,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,119,"Szymański, Marcin",Monti,MIX,POL,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,122,"Kalinina, Anna",Chaos,Papillon,UKR,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,111,"Rębkowska, Luiza",Leluś,Sheltie,POL,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,255,"Jaworska, Ania",Zinna,Sheltie,POL,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,213,"Kordun, Mariia",Elty,Schipperke,UKR,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_agility_small,Small,Agility,True,,229,"Dankin, Ala",Chester,Papillon,LTU,,,,,,,True,Seppo Saviko,,213.0,
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,1,304,"Válková, Klára",Maisie,MAS,CZE,0,0,0.00,0.00,32.75,5.71,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,2,346,"Steinmetz, Carina",Tex,MAS,DEU,0,0,0.00,0.00,32.88,5.69,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,3,342,"Stöhr, Milla	",Najuma,Cocker,DEU,0,0,0.00,0.00,33.67,5.55,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,4,406,"Steinmetz, Carina",Ivy,MAS,DEU,0,0,0.00,0.00,33.81,5.53,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,5,363,"Krebsová, Aneta",Desi,Pyrshep,CZE,0,0,0.00,0.00,34.11,5.48,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,6,329,"Pent, Toomas",Mürru,Mudi,EST,0,0,0.00,0.00,34.18,5.47,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,7,328,"Heyne, Laura",Peka,Kelpie,DEU,0,0,0.00,0.00,34.96,5.35,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,8,391,"Gadomska, Magda",Kudeł,Poodle,POL,0,0,0.00,0.00,34.97,5.35,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,8,374,"Portimojärvi, Saana",Isla,MAS,FIN,0,0,0.00,0.00,34.98,5.35,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,10,320,"Řeholová, Adéla",Cína,Sheltie,CZE,0,0,0.00,0.00,34.99,5.34,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,11,318,"Kanapeckas, Darius",Froyg,Pyrshep,LTU,0,0,0.00,0.00,35.17,5.32,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,12,331,"Põder, Mia",Felö,Mudi,EST,0,0,0.00,0.00,35.24,5.31,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,13,337,"Majtánová, Adriána",Togo,Cocker,SVK,0,0,0.00,0.00,35.37,5.29,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,14,326,"Burak, Jarosław",Perła,Mudi,POL,0,0,0.00,0.00,36.08,5.18,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,15,325,"Cisak, Krystyna",Lizio,Mudi,POL,0,0,0.00,0.00,36.24,5.16,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,16,369,"Rokicki, Krzysztof",Deyna,Sheltie,POL,0,0,0.00,0.00,36.43,5.13,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,17,303,"Steinmetz, Carina",Amy,Sheltie,DEU,0,0,0.00,0.00,37.91,4.93,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,18,332,"Kociánová, Marie-Anna",Cookie,Sheltie,CZE,0,0,0.28,0.28,38.28,4.89,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,19,381,"Filip, Ronja",Loki,MIX,DEU,0,0,0.55,0.55,38.55,4.85,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,20,351,"Dačiola, Mantas",Juda,MIX,LTU,0,0,0.88,0.88,38.88,4.81,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,21,393,"Vykydalová, Radana",Lety,Pyrshep,CZE,0,0,2.70,2.70,40.70,4.59,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,22,401,"Kubíková, Lucie",Shani,Sheltie,CZE,0,0,3.13,3.13,41.13,4.55,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,23,349,"Sandbakken, Mette",Zack,MAS,NOR,0,0,4.12,4.12,42.12,4.44,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,24,404,"Happonen, Natali",Essie,PRT,EST,0,0,4.38,4.38,42.38,4.41,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,25,302,"Rosenberger, Sophie",Pina,Sheltie,AUT,1,0,0.00,5.00,32.77,5.71,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,26,389,"Põder, Mia",Nami,MIX,EST,0,1,0.00,5.00,34.13,5.48,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,27,373,"Odeneg, Tanja",Elfriede,MAS,AUT,1,0,0.00,5.00,34.60,5.4,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,28,398,"Elschner, Sarah",Now,Cocker,DEU,1,0,0.00,5.00,35.07,5.33,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,29,372,"Burlikowska, Katarzyna",Yoki,Sheltie,POL,0,1,0.00,5.00,35.18,5.32,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,30,339,"Szydłowska, Ola",Hopie,Cocker,POL,1,0,0.00,5.00,36.34,5.15,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,31,357,"Maruszczak, Roman",Zelda,Pyrshep,POL,0,1,0.00,5.00,37.57,4.98,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,32,355,"Członkowska, Barbara",Molka,Pyrshep,POL,0,1,0.26,5.26,38.26,4.89,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,33,316,"Blazinauskaite, Dovile",Minsoo,Sheltie,LTU,0,1,0.35,5.35,38.35,4.88,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,34,352,"Jugulyte, Kristina",Nica,Poodle,LTU,0,1,0.73,5.73,38.73,4.83,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,35,395,"Moroz, Kateryna",Rozie,Cocker,UKR,0,0,5.75,5.75,43.75,4.27,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,36,323,"ROGIŃSKA, KAROLINA",NEMO,MIX,POL,0,0,5.78,5.78,43.78,4.27,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,37,301,"Broulík, Rudolf",Sisi,Sheltie,CZE,0,1,1.18,6.18,39.18,4.77,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,38,385,"Blazinauskaite, Dovile",San,Sheltie,LTU,0,1,1.50,6.50,39.50,4.73,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,39,368,"ROGIŃSKA, KAROLINA",ROSA,MIX,POL,0,1,1.92,6.92,39.92,4.68,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,40,396,"Řeholová, Adéla",Lixi,Cocker,CZE,1,0,2.24,7.24,40.24,4.65,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,41,378,"Smółka, Marcin",Bam,MIX,POL,0,0,8.19,8.19,46.19,4.05,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,42,354,"Volosenkiniene, Ausra",Andora,Poodle,LTU,0,1,3.22,8.22,41.22,4.54,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,43,360,"Caffrey, Jana",Ari,Poodle,CZE,0,1,4.89,9.89,42.89,4.36,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,44,319,"Prokesova, Lenka",Chia,Pyrshep,CZE,1,1,0.00,10.00,37.22,5.02,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,45,312,"Holti, Krisztina",Forrest Gump,Beagle,HUN,0,1,5.52,10.52,43.52,4.3,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,46,359,"Broulík, Rudolf",Bára,Sheltie,CZE,0,1,9.52,14.52,47.52,3.94,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,47,387,"Simkute, Zivile",Piko,Poodle,LTU,0,2,5.20,15.20,43.20,4.33,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,48,315,"Tálasi, Zsófia",Tati,Mudi,HUN,0,2,5.59,15.59,43.59,4.29,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,49,386,"Maischatz, Nathalie",Rosa,Sheltie,DEU,0,1,13.59,18.59,51.59,3.62,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,50,371,"Burak, Jarosław",Elmo,Sheltie,POL,2,1,4.79,19.79,42.79,4.37,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,51,307,"Baj, Alicja",Figa,MIX,POL,0,2,16.21,26.21,54.21,3.45,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,52,384,"Weiß, Yvonne",Chico,MIX,DEU,1,2,11.31,26.31,49.31,3.79,False,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,335,"Novotna, Katerina",Letty,Pyrshep,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,380,"Wyszyńska, Weronika",Cass,Cocker,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,383,"Kühne, Simone",Summit,Borderpup,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,327,"Beshovishka, Marina",Eip,Mudi,BGR,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,358,"Oględzki, Zbigniew",Pucuś Srucuś,Pyrshep,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,399,"Grygarova, Aneta",Story,Cocker,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,309,"Konečná, Martina",Kao,Sheltie,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,370,"Werra, Wiktoria",Frania,Poodle,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,376,"Driessen, Patrick",Lynn,Kelpie,NLD,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,382,"Kühne, Ronald",Janosch,Poodle,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,362,"Kolacna, Tereza",Bíba,Poodle,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,343,"Spaetgens, Ina",Nym,Cocker,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,308,"Hruza, Kristyna",Ti,Mudi,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,402,"Malá, Hana",Dotty,MIX,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,341,"Reincke, Alina",Zissi,Mudi,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,347,"Dell-Brown, Leigh-Anne",Einstein,Sheltie,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,356,"Kwiecień, Olga",Maupka,Pyrshep,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,348,"Sæther, Wenche",Trøkki,Sheltie,NOR,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,310,"Szymańska, Maja",Merida,MAS,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,403,"Dunaway, Karen",Nyah,MAS,EST,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,317,"Domańska, Magdalena",Gavu,Pyrshep,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,340,"Kuko, Christina",Mr. Jinx,Cocker,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,306,"Driessen, Patrick",Eep,Kelpie,NLD,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,338,"Straková, Martina",AC,Cocker,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,405,"Papp, Rita",Ella,Sheltie,HUN,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,345,"Schlutow, Steffen",Widow,MIX,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,353,"Pasukonyte, Ruta",Keja,Sheltie,LTU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,313,"Sipos, Beáta",Luca,MIX,HUN,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,336,"Ernat, Darcy",Tango,Cocker,USA,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,397,"Sandbakken, Mette",Beat,Sheltie,NOR,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,324,"Rokicka, Julia",Taco,Sheltie,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,367,"Korus, Maciej",Gin,Sheltie,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,305,"Dell-Brown, Leigh-Anne",Echo,Sheltie,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,333,"Malá, Hana",Chuck,MIX,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,330,"Pent, Toomas",Nomy,Cocker,EST,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,334,"Maršálková, Adéla",Víno,Manchester Terier,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,361,"Čampulová, Petra",Shelby,MIX,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,314,"Stepanek, Matthias",Navy,Border Collie,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,321,"Gadomska, Magda",Reksia,Poodle,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,311,"Ujma, Alicja",Millie,Mudi,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,392,"Marešová, Klára",Atyr,Sheltie,CZE,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,350,"Simonsen, Heidi",Cap,MAS,DNK,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,377,"Smółka, Agnieszka",Dum,Cocker,POL,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,364,"Pukhalska, Anastasiia",Faster,Sheltie,UKR,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,388,"Dačiola, Mantas",Eros,Cocker,LTU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_medium,Medium,Jumping,True,,344,"Maischatz, Nathalie",Lulu,Sheltie,DEU,,,,,,,True,Fanny Gott,,,187.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,1,240,"Benešová, Jirina",Ozy,PRT,CZE,0,0,0.00,0.00,33.75,5.9,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,2,220,"Boogk, Marlon",Bee,Cocker,FRA,0,0,0.00,0.00,34.59,5.75,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,3,222,"Steinmetz, Carina",Chip,Sheltie,DEU,0,0,0.00,0.00,34.73,5.73,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,4,225,"Pärl, Piret",Jackie,MIX,EST,0,0,0.00,0.00,35.05,5.68,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,5,232,"Tučková, Eliška",Dixie,Poodle,CZE,0,0,0.00,0.00,35.55,5.6,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,6,256,"Stepanek, Matthias",Lilly,Sheltie,DEU,0,0,0.00,0.00,35.59,5.59,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,7,216,"Sůrová, Sofie",Izí,American Hairless Terrier,CZE,0,0,0.00,0.00,36.17,5.5,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,8,209,"Winkel, Anna",Ready,Border Terrier,LUX,0,0,0.00,0.00,36.26,5.49,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,9,248,"Lichtenauer, Karl",Guinness,PRT,AUT,0,0,0.00,0.00,36.47,5.46,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,10,102,"Samlíková, Valerie",Tamika,Papillon,CZE,0,0,0.00,0.00,37.41,5.32,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,11,254,"Götzendorfer, Franz-Josef",Riddi,Sheltie,AUT,0,0,0.00,0.00,37.88,5.25,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,12,243,"Remačová, Vanessa",Pirátka,PRT,CZE,0,0,0.00,0.00,38.07,5.23,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,13,224,"Pent, Toomas",Roxy,Miniature Pincsher,EST,0,0,0.00,0.00,38.97,5.11,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,14,206,"Vocelková, Alena",Niké,Sheltie,CZE,0,0,1.37,1.37,40.37,4.93,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,15,249,"Hangkamer-Kühnen, Jannes",Merle,Sheltie,DEU,0,0,1.44,1.44,40.44,4.92,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,16,227,"Raamat, Keida",Drifty,Sheltie,EST,0,0,1.47,1.47,40.47,4.92,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,17,118,"Mund, Svenja",Pickett,German Spitz,DEU,0,0,3.60,3.60,42.60,4.67,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,18,236,"Špinková, Pavlína",Toffi,Kooikerhondje,CZE,0,0,3.94,3.94,42.94,4.63,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,19,104,"Remačová, Vanessa",Rocketka,JRT,CZE,0,0,4.42,4.42,43.42,4.58,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,20,244,"Kwiecień, Olga",Mojo,Cocker,POL,1,0,0.00,5.00,34.96,5.69,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,21,208,"Petrenko, Varvara",Lutra,Border Terrier,UKR,0,0,5.23,5.23,44.23,4.5,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,22,204,"Šilvienė, Vaida",Cooper,Cairn Terrier,LTU,1,0,0.29,5.29,39.29,5.06,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,23,235,"Kretková, Lenka",Ray,Sheltie,CZE,0,0,5.30,5.30,44.30,4.49,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,24,221,"Rosenberger, Sophie",Light,Sheltie,AUT,0,1,0.92,5.92,39.92,4.98,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,25,212,"Tkachuk, Oleksandra",Nicolette,JRT,UKR,0,1,1.67,6.67,40.67,4.89,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,26,247,"Kleinrubatscher, Christina",Iggy,PRT,AUT,0,1,1.86,6.86,40.86,4.87,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,27,226,"Brand, Ede",Jete,Sheltie,EST,0,1,2.28,7.28,41.28,4.82,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,28,124,"Pőthe, Péter",Mázli My Little Fox,MIX,CZE,1,0,2.96,7.96,41.96,4.74,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,29,119,"Szymański, Marcin",Monti,MIX,POL,0,1,4.91,9.91,43.91,4.53,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,30,207,"Marková, Pavla",Dee,Zwergschnauzer,CZE,0,1,5.37,10.37,44.37,4.49,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,31,103,"Valentić, Ines",Ni,Papillon,SVN,0,1,5.39,10.39,44.39,4.48,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,32,234,"Bálintová, Kamila",Kazzi,Poodle,CZE,0,0,11.92,11.92,50.92,3.91,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,33,255,"Jaworska, Ania",Zinna,Sheltie,POL,1,0,7.49,12.49,46.49,4.28,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,34,106,"Nejedlá, Alena",Fionka,Papillon,CZE,1,1,2.76,12.76,41.76,4.77,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,35,215,"Konečná, Martina",Sofinka,PRT,CZE,0,2,4.83,14.83,43.83,4.54,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,36,123,"Serhiienko, Nadiia",Fly,Papillon,UKR,0,2,5.62,15.62,44.62,4.46,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,37,253,"Eimhjellen, Kine",Neat,Sheltie,NOR,1,1,6.65,16.65,45.65,4.36,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,38,219,"Guobys, Darius",Lulu,Poodle,LTU,0,2,6.75,16.75,45.75,4.35,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,39,229,"Dankin, Ala",Chester,Papillon,LTU,1,2,5.36,20.36,44.36,4.49,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,40,231,"Malá, Hana",Ziggy,MIX,CZE,2,2,4.40,24.40,43.40,4.59,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,41,203,"Happonen, Natali",Tami,PRT,EST,3,1,7.31,27.31,46.31,4.3,False,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,246,"Happonen, Natali",Tuli,PRT,EST,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,223,"Válková, Klára",Grace,Sheltie,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,241,"Frimmelová, Hana",Bio,PRT,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,242,"Lajmarová, Denisa",Gay,PRT,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,113,"Chytilová, Martina",Kiri,Poodle,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,120,"Holubová, Lenka",Bungee,Papillon,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,127,"Senčuchová, Iva",Racochejl,Papillon,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,121,"Gasparavičiūtė, Deimilė",Leila,Poodle,LTU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,210,"Dell-Brown, Leigh-Anne",Chaos,Sheltie,DEU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,115,"Guobiene, Rasa",Manga,Sheltie,LTU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,217,"Sůrová, Viktorie",Missi,American Hairless Terrier,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,202,"Hangkamer-Kühnen, Jannes",Anakin,Sheltie,DEU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,205,"Götzendorfer, Franz-Josef",Clixx,Sheltie,AUT,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,122,"Kalinina, Anna",Chaos,Papillon,UKR,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,230,"Čampulová, Petra",Jupiii,Miniature Pinscher,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,116,"Kretková, Jenifer",Bonnie,Cavalier,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,126,"Drobečková, Jitka",Archie,Papillon,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,114,"Volosenkiniene, Ausra",Biskoti,Poodle,LTU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,214,"Brzobohatá, Pavla",Waly,German Spitz,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,110,"Kujawa, Katarzyna",Coffee,Papillon,POL,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,252,"Petrenko, Varvara",Roo,Sheltie,UKR,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,108,"Launagaite, Aiste",Spookiss,Poodle,LTU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,107,"Bálintová, Kamila",Henry,Poodle,CZE,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,109,"Muravjova, Gabrielė",Horo,Poodle,LTU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,218,"Kanapeckas, Darius",Dobby,Miniature Pinscher,LTU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,128,"Klobučar, Nika",Nixie,Papillon,SVN,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,117,"Stawarska, Dorota",Tycia,Cavalier,POL,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,237,"Molas Coll, Erika",Quentin,Poodle,HUN,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,101,"Klobučar, Nika",Ai,Papillon,SVN,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,233,"Narewska, Paulina",Lilo,Beagle,POL,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,228,"Kavaliauskaite, Meda",Ela,MIX,LTU,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,111,"Rębkowska, Luiza",Leluś,Sheltie,POL,,,,,,,True,Annemarie van den Berge,,,199.0
+"Polish Open 2026 (XS, S & M)",team_jumping_small,Small,Jumping,True,,213,"Kordun, Mariia",Elty,Schipperke,UKR,,,,,,,True,Annemarie van den Berge,,,199.0
