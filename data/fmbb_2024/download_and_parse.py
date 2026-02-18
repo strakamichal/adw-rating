@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Download and parse FMBB World Championship 2024 combined individual results."""
+"""Download and parse FMBB World Championship 2024 combined individual results.
+
+The official PDF contains a combined table with separate Agility and Jumping
+columns (Time Ag, Time Ju, Pen ag, Pen ju). We split these into two individual
+runs for the rating system.
+"""
 
 import csv
 import io
@@ -42,6 +47,9 @@ COUNTRY_TO_ISO3 = {
     "United Kingdom": "GBR",
 }
 
+# Penalty threshold for elimination (DSQ entries have pen=100)
+ELIM_PENALTY_THRESHOLD = 100.0
+
 
 def to_float(v: str):
     v = (v or "").strip().replace(",", ".")
@@ -54,10 +62,17 @@ def to_float(v: str):
 
 
 def main():
-    pdf_bytes = requests.get(PDF_URL, timeout=30, headers={"User-Agent": "Mozilla/5.0"}).content
-    (BASE_DIR / "fmbb_2024_individual_combined.pdf").write_bytes(pdf_bytes)
+    pdf_path = BASE_DIR / "fmbb_2024_individual_combined.pdf"
+    if pdf_path.exists():
+        pdf_bytes = pdf_path.read_bytes()
+    else:
+        pdf_bytes = requests.get(PDF_URL, timeout=30, headers={"User-Agent": "Mozilla/5.0"}).content
+        pdf_path.write_bytes(pdf_bytes)
 
-    rows = []
+    # Parse combined table from PDF
+    # Columns: Clas, N, Handler, Dog, Breed, Country, Time Ag, Time Ju, Time Tot,
+    #          Pen ag, Pen ju, Pen TOT, Qual
+    entries = []
     with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
         table = (pdf.pages[0].extract_tables() or [None])[0]
         if not table:
@@ -69,34 +84,72 @@ def main():
             if not (r[0] or "").strip().isdigit():
                 continue
 
-            rank = int((r[0] or "").strip())
             start_no = (r[1] or "").strip()
             handler = (r[2] or "").strip()
             dog = (r[3] or "").strip()
             breed = (r[4] or "").strip()
             country = COUNTRY_TO_ISO3.get((r[5] or "").strip(), (r[5] or "").strip())
 
-            # Combined final: use total values from PDF
-            time_total = to_float(r[8] or "")
-            penalties_total = to_float(r[11] or "")
+            time_ag = to_float(r[6] or "")
+            time_ju = to_float(r[7] or "")
+            pen_ag = to_float(r[9] or "")
+            pen_ju = to_float(r[10] or "")
 
-            rows.append({
-                "competition": COMPETITION_NAME,
-                "round_key": "ind_final_large_1",
-                "size": "Large",
-                "discipline": "Final",
-                "is_team_round": "False",
-                "rank": rank,
+            entries.append({
                 "start_no": start_no,
                 "handler": handler,
                 "dog": dog,
                 "breed": breed,
                 "country": country,
+                "time_ag": time_ag,
+                "time_ju": time_ju,
+                "pen_ag": pen_ag,
+                "pen_ju": pen_ju,
+            })
+
+    # Split into two runs: Agility and Jumping
+    all_rows = []
+
+    for discipline, time_key, pen_key, round_key in [
+        ("Agility", "time_ag", "pen_ag", "ind_agility_large_1"),
+        ("Jumping", "time_ju", "pen_ju", "ind_jumping_large_1"),
+    ]:
+        run_entries = []
+        for e in entries:
+            pen = e[pen_key]
+            time_val = e[time_key]
+            eliminated = (pen != "" and pen >= ELIM_PENALTY_THRESHOLD) or time_val == ""
+            run_entries.append({
+                "entry": e,
+                "pen": pen if pen != "" else 999,
+                "time": time_val if time_val != "" else 999,
+                "eliminated": eliminated,
+            })
+
+        # Rank: clean entries sorted by (penalties, time), then eliminated
+        clean = [x for x in run_entries if not x["eliminated"]]
+        elim = [x for x in run_entries if x["eliminated"]]
+        clean.sort(key=lambda x: (x["pen"], x["time"]))
+
+        for rank, x in enumerate(clean, 1):
+            e = x["entry"]
+            all_rows.append({
+                "competition": COMPETITION_NAME,
+                "round_key": round_key,
+                "size": "Large",
+                "discipline": discipline,
+                "is_team_round": "False",
+                "rank": rank,
+                "start_no": e["start_no"],
+                "handler": e["handler"],
+                "dog": e["dog"],
+                "breed": e["breed"],
+                "country": e["country"],
                 "faults": "",
                 "refusals": "",
                 "time_faults": "",
-                "total_faults": penalties_total,
-                "time": time_total,
+                "total_faults": x["pen"] if x["pen"] != 999 else "",
+                "time": x["time"] if x["time"] != 999 else "",
                 "speed": "",
                 "eliminated": "False",
                 "judge": "",
@@ -105,15 +158,50 @@ def main():
                 "course_length": "",
             })
 
-    rows.sort(key=lambda r: int(r["rank"]))
+        for x in elim:
+            e = x["entry"]
+            all_rows.append({
+                "competition": COMPETITION_NAME,
+                "round_key": round_key,
+                "size": "Large",
+                "discipline": discipline,
+                "is_team_round": "False",
+                "rank": "",
+                "start_no": e["start_no"],
+                "handler": e["handler"],
+                "dog": e["dog"],
+                "breed": e["breed"],
+                "country": e["country"],
+                "faults": "",
+                "refusals": "",
+                "time_faults": "",
+                "total_faults": "",
+                "time": "",
+                "speed": "",
+                "eliminated": "True",
+                "judge": "",
+                "sct": "",
+                "mct": "",
+                "course_length": "",
+            })
+
+        print(f"{discipline}: {len(clean)} clean + {len(elim)} eliminated = {len(run_entries)} total")
+
+    all_rows.sort(
+        key=lambda r: (
+            r["round_key"],
+            int(r["rank"]) if r["rank"] != "" else 999999,
+            r["start_no"],
+        )
+    )
 
     out_csv = BASE_DIR / "fmbb_2024_results.csv"
     with out_csv.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=TARGET_COLUMNS)
         w.writeheader()
-        w.writerows(rows)
+        w.writerows(all_rows)
 
-    print(f"Rows: {len(rows)}")
+    print(f"Total rows: {len(all_rows)}")
     print(f"CSV: {out_csv}")
 
 
