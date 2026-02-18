@@ -135,6 +135,7 @@ def calculate_live_ratings(runs, profiles):
                     "date": comp_info["date"],
                     "tier": comp_info["tier"],
                     "teams_by_size": {},
+                    "team_ids_by_size": {},
                     "runs_total": 0,
                     "clean_runs_total": 0,
                     "total_entries": 0,
@@ -230,6 +231,7 @@ def calculate_live_ratings(runs, profiles):
             # Save unique teams for this size in this competition
             if comp_teams_this_size:
                 comp_stats[comp_dir]["teams_by_size"][size] = len(comp_teams_this_size)
+                comp_stats[comp_dir]["team_ids_by_size"][size] = comp_teams_this_size
 
         size_results = {}
         for team_id, rating in team_ratings.items():
@@ -276,6 +278,20 @@ def calculate_live_ratings(runs, profiles):
         for team in all_ratings[size].values():
             team["skill_tier"] = base.skill_tier_label(team["rating"], thresholds)
             team["provisional"] = is_live_provisional(team["sigma"])
+
+    # Compute average rating per competition from final ratings
+    for comp_dir, cs in comp_stats.items():
+        ratings_sum = 0.0
+        ratings_count = 0
+        for size, team_ids in cs.get("team_ids_by_size", {}).items():
+            if size in all_ratings:
+                for tid in team_ids:
+                    if tid in all_ratings[size]:
+                        ratings_sum += all_ratings[size][tid]["rating"]
+                        ratings_count += 1
+        cs["avg_rating"] = round(ratings_sum / ratings_count, 1) if ratings_count else 0
+        # Clean up team_ids (not needed in output)
+        cs.pop("team_ids_by_size", None)
 
     return all_ratings, cutoff_date, latest_date, comp_stats
 
@@ -417,6 +433,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
             total_teams = sum(cs["teams_by_size"].values())
             sizes_detail = ", ".join(f"{s}: {n}" for s, n in sorted(cs["teams_by_size"].items()))
             clean_pct = round(cs["clean_runs_total"] / cs["total_entries"] * 100, 1) if cs["total_entries"] else 0
+            avg_rating = cs.get("avg_rating", 0)
             comp_rows_html += (
                 f"<tr>"
                 f"<td>{base._esc(cs['name'])}</td>"
@@ -424,6 +441,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                 f"<td>{tier_badge}</td>"
                 f"<td class='num' title='{sizes_detail}'>{total_teams}</td>"
                 f"<td class='num'>{cs['runs_total']}</td>"
+                f"<td class='num'>{avg_rating:.0f}</td>"
                 f"<td class='num'>{clean_pct:.1f}%</td>"
                 f"</tr>\n"
             )
@@ -520,7 +538,8 @@ h1 {{ margin-bottom: 4px; }}
                     <th onclick="sortTable('table-competitions', 2, 'str')">Tier</th>
                     <th onclick="sortTable('table-competitions', 3, 'num')">Teams</th>
                     <th onclick="sortTable('table-competitions', 4, 'num')">Rounds</th>
-                    <th onclick="sortTable('table-competitions', 5, 'num')">Clean %</th>
+                    <th onclick="sortTable('table-competitions', 5, 'num')">Avg Rating</th>
+                    <th onclick="sortTable('table-competitions', 6, 'num')">Clean %</th>
                 </tr>
             </thead>
             <tbody>
@@ -532,75 +551,75 @@ h1 {{ margin-bottom: 4px; }}
     <!-- METHODOLOGY SECTION -->
     <div id="section-methodology" class="section">
         <div class="methodology">
-            <h2>Jak funguje ADW Live Rating</h2>
-            <p>ADW Live Rating je systém hodnocení agility týmů (psovod + pes) založený na výsledcích z mezinárodních soutěží. Používá statistický model <strong>OpenSkill (Plackett-Luce)</strong>, který je moderní alternativou k systémům Elo nebo Glicko — na rozdíl od nich umí pracovat s celým pořadím v běhu (nejen výhra/prohra) a je navržený pro soutěže s více účastníky.</p>
+            <h2>How ADW Live Rating works</h2>
+            <p>ADW Live Rating is a ranking system for agility teams (handler + dog) based on results from international competitions. It uses the <strong>OpenSkill (Plackett-Luce)</strong> statistical model, a modern alternative to Elo or Glicko — unlike those systems, it can work with full run rankings (not just win/loss) and is designed for multi-participant competitions.</p>
 
-            <h2>Základní princip</h2>
-            <p>Každý tým má dva vnitřní parametry:</p>
+            <h2>Core concept</h2>
+            <p>Each team has two internal parameters:</p>
             <ul>
-                <li><strong>mu (μ)</strong> — odhad skutečné síly týmu. Vyšší = lepší.</li>
-                <li><strong>sigma (σ)</strong> — míra nejistoty. Nový tým má vysokou sigmu; s více běhy klesá.</li>
+                <li><strong>mu (μ)</strong> — estimate of the team's true skill. Higher = better.</li>
+                <li><strong>sigma (σ)</strong> — uncertainty measure. New teams have high sigma; it decreases with more runs.</li>
             </ul>
-            <p>Po každém běhu model porovná výsledek se očekávaným pořadím a upraví mu i sigmu všech účastníků.</p>
+            <p>After each run, the model compares the actual result with the expected ranking and adjusts mu and sigma for all participants.</p>
 
             <h3>Sigma decay</h3>
-            <p>Po každém zpracovaném běhu se sigma násobí faktorem <code>{LIVE_SIGMA_DECAY}</code>. To znamená, že s více daty roste jistota o ratingu týmu. Minimální sigma je <code>{base.SIGMA_MIN}</code>.</p>
+            <p>After each processed run, sigma is multiplied by a factor of <code>{LIVE_SIGMA_DECAY}</code>. This means confidence in the team's rating grows with more data. Minimum sigma is <code>{base.SIGMA_MIN}</code>.</p>
 
-            <h2>Výpočet veřejného ratingu</h2>
+            <h2>Public rating calculation</h2>
             <div class="formula">
                 rating_base = {DISPLAY_BASE} + {DISPLAY_SCALE} × (μ − {RATING_SIGMA_MULTIPLIER} × σ)<br>
                 rating = rating_base × quality_factor
             </div>
 
             <h3>Podium boost (quality factor)</h3>
-            <p>Veřejný rating se upravuje podle kvality výsledků týmu:</p>
+            <p>The public rating is adjusted based on the quality of a team's results:</p>
             <div class="formula">
                 quality_score = 0.45 × clean% + 0.35 × top10% + 0.20 × min(100, top3% × 3)<br>
                 quality_factor = {PODIUM_BOOST_BASE:.2f} + {PODIUM_BOOST_RANGE:.2f} × clamp(quality_score / {PODIUM_BOOST_TARGET:.0f})
             </div>
-            <p>Quality factor se pohybuje od <code>{PODIUM_BOOST_BASE:.2f}</code> (žádné čisté běhy) do <code>{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.2f}</code> (vynikající výsledky). Tým s vysokým clean% a pravidelnými umístěními v top 10 tak dostane bonus, zatímco tým s mnoha vyřazeními má rating mírně snížený.</p>
+            <p>Quality factor ranges from <code>{PODIUM_BOOST_BASE:.2f}</code> (no clean runs) to <code>{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.2f}</code> (excellent results). Teams with high clean% and regular top-10 placements receive a bonus, while teams with many eliminations have their rating slightly reduced.</p>
 
-            <h2>Váha soutěží (tier systém)</h2>
-            <p>Soutěže jsou rozděleny do dvou úrovní:</p>
+            <h2>Competition weighting (tier system)</h2>
+            <p>Competitions are divided into two tiers:</p>
             <ul>
-                <li><strong>Major (tier 1)</strong> — AWC, EO, JOAWC/SOAWC — běhy mají váhu <code>{MAJOR_EVENT_WEIGHT}×</code></li>
-                <li><strong>Open (tier 2)</strong> — ostatní mezinárodní soutěže — standardní váha <code>1.0×</code></li>
+                <li><strong>Major (tier 1)</strong> — AWC, EO, JOAWC/SOAWC — runs carry <code>{MAJOR_EVENT_WEIGHT}×</code> weight</li>
+                <li><strong>Open (tier 2)</strong> — other international competitions — standard <code>1.0×</code> weight</li>
             </ul>
-            <p>Vyšší váha u Major soutěží znamená, že výsledky z těchto prestižních akcí mají větší vliv na posun ratingu.</p>
+            <p>Higher weight for Major events means results from these prestigious competitions have a greater impact on rating changes.</p>
 
             <h2>Skill tiers</h2>
             <table class="param-table">
-                <tr><th>Tier</th><th>Podmínka</th><th>Barva</th></tr>
-                <tr><td><strong>Elite</strong></td><td>Top {base.ELITE_TOP_PERCENT*100:.0f}% v dané kategorii</td><td style="border-left:3px solid #f59e0b; padding-left:12px;">zlatá</td></tr>
-                <tr><td><strong>Champion</strong></td><td>Top {base.CHAMPION_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid #8b5cf6; padding-left:12px;">fialová</td></tr>
-                <tr><td><strong>Expert</strong></td><td>Top {base.EXPERT_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid #3b82f6; padding-left:12px;">modrá</td></tr>
-                <tr><td><strong>Competitor</strong></td><td>Ostatní</td><td style="border-left:3px solid #10b981; padding-left:12px;">zelená</td></tr>
+                <tr><th>Tier</th><th>Condition</th><th>Color</th></tr>
+                <tr><td><strong>Elite</strong></td><td>Top {base.ELITE_TOP_PERCENT*100:.0f}% in category</td><td style="border-left:3px solid #f59e0b; padding-left:12px;">gold</td></tr>
+                <tr><td><strong>Champion</strong></td><td>Top {base.CHAMPION_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid #8b5cf6; padding-left:12px;">purple</td></tr>
+                <tr><td><strong>Expert</strong></td><td>Top {base.EXPERT_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid #3b82f6; padding-left:12px;">blue</td></tr>
+                <tr><td><strong>Competitor</strong></td><td>Everyone else</td><td style="border-left:3px solid #10b981; padding-left:12px;">green</td></tr>
             </table>
 
             <h2>Provisional status (PROV)</h2>
-            <p>Tým s <code>σ ≥ {LIVE_PROVISIONAL_SIGMA_THRESHOLD}</code> je označen jako <span class="prov-badge">PROV</span> — to znamená, že systém ještě nemá dostatek dat pro spolehlivý odhad. Rating se s dalšími běhy stabilizuje.</p>
+            <p>A team with <code>σ ≥ {LIVE_PROVISIONAL_SIGMA_THRESHOLD}</code> is marked as <span class="prov-badge">PROV</span> — this means the system doesn't yet have enough data for a reliable estimate. The rating will stabilize with more runs.</p>
 
-            <h2>Live window a minimální počet běhů</h2>
+            <h2>Live window and minimum runs</h2>
             <ul>
-                <li>Započítávají se pouze běhy z posledních <strong>{LIVE_WINDOW_DAYS} dní</strong> (≈ {LIVE_WINDOW_DAYS / 365:.1f} roku) od poslední soutěže v datasetu.</li>
-                <li>Pro zobrazení v žebříčku je potřeba alespoň <strong>{MIN_RUNS_FOR_LIVE_RANKING} běhů</strong> v tomto okně.</li>
-                <li>Minimální počet účastníků v běhu pro jeho započítání: <strong>{base.MIN_FIELD_SIZE}</strong></li>
+                <li>Only runs from the last <strong>{LIVE_WINDOW_DAYS} days</strong> (~{LIVE_WINDOW_DAYS / 365:.1f} years) from the latest competition in the dataset are counted.</li>
+                <li>A minimum of <strong>{MIN_RUNS_FOR_LIVE_RANKING} runs</strong> within this window is required to appear in the rankings.</li>
+                <li>Minimum participants per run for it to count: <strong>{base.MIN_FIELD_SIZE}</strong></li>
             </ul>
 
-            <h2>Parametry systému</h2>
+            <h2>System parameters</h2>
             <table class="param-table">
-                <tr><th>Parametr</th><th>Hodnota</th><th>Popis</th></tr>
-                <tr><td><code>LIVE_WINDOW_DAYS</code></td><td>{LIVE_WINDOW_DAYS}</td><td>Časové okno pro započítání běhů</td></tr>
-                <tr><td><code>MIN_RUNS</code></td><td>{MIN_RUNS_FOR_LIVE_RANKING}</td><td>Minimum běhů pro zobrazení</td></tr>
-                <tr><td><code>SIGMA_DECAY</code></td><td>{LIVE_SIGMA_DECAY}</td><td>Faktor snížení nejistoty po každém běhu</td></tr>
-                <tr><td><code>SIGMA_MIN</code></td><td>{base.SIGMA_MIN}</td><td>Minimální sigma (floor)</td></tr>
-                <tr><td><code>PROV_THRESHOLD</code></td><td>{LIVE_PROVISIONAL_SIGMA_THRESHOLD}</td><td>Sigma práh pro provisional status</td></tr>
-                <tr><td><code>DISPLAY_BASE</code></td><td>{DISPLAY_BASE}</td><td>Základ veřejného ratingu</td></tr>
-                <tr><td><code>DISPLAY_SCALE</code></td><td>{DISPLAY_SCALE}</td><td>Škálovací faktor</td></tr>
-                <tr><td><code>MAJOR_WEIGHT</code></td><td>{MAJOR_EVENT_WEIGHT}</td><td>Váha Major soutěží</td></tr>
-                <tr><td><code>PODIUM_BASE</code></td><td>{PODIUM_BOOST_BASE}</td><td>Minimální quality factor</td></tr>
-                <tr><td><code>PODIUM_RANGE</code></td><td>{PODIUM_BOOST_RANGE}</td><td>Rozsah quality factoru</td></tr>
-                <tr><td><code>MIN_FIELD_SIZE</code></td><td>{base.MIN_FIELD_SIZE}</td><td>Minimum účastníků v běhu</td></tr>
+                <tr><th>Parameter</th><th>Value</th><th>Description</th></tr>
+                <tr><td><code>LIVE_WINDOW_DAYS</code></td><td>{LIVE_WINDOW_DAYS}</td><td>Time window for counting runs</td></tr>
+                <tr><td><code>MIN_RUNS</code></td><td>{MIN_RUNS_FOR_LIVE_RANKING}</td><td>Minimum runs to appear in rankings</td></tr>
+                <tr><td><code>SIGMA_DECAY</code></td><td>{LIVE_SIGMA_DECAY}</td><td>Uncertainty reduction factor per run</td></tr>
+                <tr><td><code>SIGMA_MIN</code></td><td>{base.SIGMA_MIN}</td><td>Minimum sigma (floor)</td></tr>
+                <tr><td><code>PROV_THRESHOLD</code></td><td>{LIVE_PROVISIONAL_SIGMA_THRESHOLD}</td><td>Sigma threshold for provisional status</td></tr>
+                <tr><td><code>DISPLAY_BASE</code></td><td>{DISPLAY_BASE}</td><td>Public rating base</td></tr>
+                <tr><td><code>DISPLAY_SCALE</code></td><td>{DISPLAY_SCALE}</td><td>Scaling factor</td></tr>
+                <tr><td><code>MAJOR_WEIGHT</code></td><td>{MAJOR_EVENT_WEIGHT}</td><td>Major event weight multiplier</td></tr>
+                <tr><td><code>PODIUM_BASE</code></td><td>{PODIUM_BOOST_BASE}</td><td>Minimum quality factor</td></tr>
+                <tr><td><code>PODIUM_RANGE</code></td><td>{PODIUM_BOOST_RANGE}</td><td>Quality factor range</td></tr>
+                <tr><td><code>MIN_FIELD_SIZE</code></td><td>{base.MIN_FIELD_SIZE}</td><td>Minimum participants per run</td></tr>
             </table>
         </div>
     </div>
