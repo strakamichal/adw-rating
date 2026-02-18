@@ -189,6 +189,8 @@ def calculate_live_ratings(runs, profiles):
                             "top10_runs": 0,
                             "last_comp": "",
                             "last_comp_date": "",
+                            "prev_mu": None,
+                            "prev_sigma": None,
                         }
 
                     teams.append([team_ratings[team_id]])
@@ -212,6 +214,11 @@ def calculate_live_ratings(runs, profiles):
                 comp_stats[comp_dir]["finished_runs_total"] += len(clean)
                 for entry, rank in ranked_entries:
                     comp_teams_this_size.add(entry["team_id"])
+
+                # Snapshot current ratings before update (for trend arrows)
+                for team_id in entry_order:
+                    team_stats[team_id]["prev_mu"] = team_ratings[team_id].mu
+                    team_stats[team_id]["prev_sigma"] = team_ratings[team_id].sigma
 
                 tier = entries[0]["comp_tier"]
                 tier_weight = MAJOR_EVENT_WEIGHT if (ENABLE_MAJOR_EVENT_WEIGHTING and tier == 1) else 1.0
@@ -241,6 +248,12 @@ def calculate_live_ratings(runs, profiles):
             top10_pct = round((stats["top10_runs"] / num_runs) * 100.0, 1) if num_runs else 0.0
             rating_base = live_rating(rating.mu, rating.sigma)
             quality_factor = podium_boost_factor(finished_pct, top3_pct, top10_pct) if ENABLE_PODIUM_BOOST else 1.0
+            prev_mu = stats.get("prev_mu")
+            prev_sigma = stats.get("prev_sigma")
+            prev_rating = None
+            if prev_mu is not None and prev_sigma is not None:
+                prev_rating_base = live_rating(prev_mu, prev_sigma)
+                prev_rating = round(prev_rating_base * quality_factor, 1)
             size_results[team_id] = {
                 "mu": rating.mu,
                 "sigma": rating.sigma,
@@ -260,6 +273,7 @@ def calculate_live_ratings(runs, profiles):
                 "top3_pct": top3_pct,
                 "top10_pct": top10_pct,
                 "last_comp": stats["last_comp"],
+                "prev_rating": prev_rating,
             }
 
         sorted_teams = sorted(size_results.items(), key=lambda x: -x[1]["rating"])
@@ -346,6 +360,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
             (team for team in all_ratings[size].values() if team["num_runs"] >= MIN_RUNS_FOR_LIVE_RANKING),
             key=lambda x: -x["rating"],
         )
+
         rows = []
         for rank, team in enumerate(sorted_teams, 1):
             provisional_badge = ""
@@ -364,21 +379,52 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
             else:
                 dog_cell = ""
 
+            # Medal badges for top 3
+            rank_class = f" rank-{rank}" if rank <= 3 else ""
+            if rank == 1:
+                rank_cell = "<span class='medal gold'>1</span>"
+            elif rank == 2:
+                rank_cell = "<span class='medal silver'>2</span>"
+            elif rank == 3:
+                rank_cell = "<span class='medal bronze'>3</span>"
+            else:
+                rank_cell = str(rank)
+
+            # Rating change arrow
+            prev = team.get("prev_rating")
+            if prev is None:
+                trend_html = " <span class='trend trend-new'>NEW</span>"
+            else:
+                delta = round(team["rating"] - prev)
+                if delta > 0:
+                    trend_html = f" <span class='trend trend-up'>&#9650;{delta}</span>"
+                elif delta < 0:
+                    trend_html = f" <span class='trend trend-down'>&#9660;{abs(delta)}</span>"
+                else:
+                    trend_html = ""
+
             rows.append(
-                f"<tr class='tier-{team.get('skill_tier', 'Competitor').lower()}'>"
-                f"<td>{rank}</td>"
+                f"<tr class='tier-{team.get('skill_tier', 'Competitor').lower()}{rank_class}'>"
+                f"<td class='rank-cell'>{rank_cell}</td>"
                 f"<td>{handler_cell}</td>"
                 f"<td>{dog_cell}</td>"
                 f"<td>{base._esc(team['country'])}</td>"
-                f"<td class='num'>{team['rating']:.0f}</td>"
+                f"<td class='num rating-cell'>{team['rating']:.0f}{trend_html}</td>"
                 f"<td class='num'>{team['num_runs']}</td>"
                 f"<td class='num'>{team['finished_pct']:.1f}%</td>"
                 f"<td class='num'>{team['top3_pct']:.1f}%</td>"
-                f"<td>{base._esc(team['last_comp'])}</td>"
                 f"</tr>"
             )
 
         tables[size] = "\n".join(rows)
+
+    # Compute static summary stats for header cards
+    total_teams = sum(
+        sum(1 for t in s.values() if t["num_runs"] >= MIN_RUNS_FOR_LIVE_RANKING)
+        for s in all_ratings.values()
+    )
+    total_comps = len(comp_stats) if comp_stats else 0
+    total_rounds = sum(cs["runs_total"] for cs in comp_stats.values()) if comp_stats else 0
 
     tab_buttons = []
     for idx, size in enumerate(sizes):
@@ -394,6 +440,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
         display = "block" if idx == 0 else "none"
         tab_contents.append(f"""
         <div id="tab-{size}" class="tab-content" style="display:{display}">
+          <div class="table-card">
             <table class="rating-table" id="table-{size}">
                 <thead>
                     <tr>
@@ -401,17 +448,17 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                         <th onclick="sortTable('table-{size}', 1, 'str')">Handler</th>
                         <th onclick="sortTable('table-{size}', 2, 'str')">Dog</th>
                         <th onclick="sortTable('table-{size}', 3, 'str')">Country</th>
-                        <th onclick="sortTable('table-{size}', 4, 'num')">Rating</th>
-                        <th onclick="sortTable('table-{size}', 5, 'num')">Runs</th>
-                        <th onclick="sortTable('table-{size}', 6, 'num')">Finished %</th>
-                        <th onclick="sortTable('table-{size}', 7, 'num')">TOP3 %</th>
-                        <th onclick="sortTable('table-{size}', 8, 'str')">Last Competition</th>
+                        <th class="num" onclick="sortTable('table-{size}', 4, 'num')">Rating</th>
+                        <th class="num" onclick="sortTable('table-{size}', 5, 'num')">Runs</th>
+                        <th class="num" onclick="sortTable('table-{size}', 6, 'num')">Finished</th>
+                        <th class="num" onclick="sortTable('table-{size}', 7, 'num')">TOP3</th>
                     </tr>
                 </thead>
                 <tbody>
                     {tables[size]}
                 </tbody>
             </table>
+          </div>
         </div>""")
 
     # --- Build competition stats rows ---
@@ -422,7 +469,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
             tier_badge = ('<span class="tier-badge major">Major</span>'
                           if cs["tier"] == 1
                           else '<span class="tier-badge open">Open</span>')
-            total_teams = sum(cs["teams_by_size"].values())
+            comp_team_count = sum(cs["teams_by_size"].values())
             sizes_detail = ", ".join(f"{s}: {n}" for s, n in sorted(cs["teams_by_size"].items()))
             finished_pct = round(cs["finished_runs_total"] / cs["total_entries"] * 100, 1) if cs["total_entries"] else 0
             avg_rating = cs.get("avg_rating", 0)
@@ -431,7 +478,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                 f"<td>{base._esc(cs['name'])}</td>"
                 f"<td>{cs['date']}</td>"
                 f"<td>{tier_badge}</td>"
-                f"<td class='num' title='{sizes_detail}'>{total_teams}</td>"
+                f"<td class='num' title='{sizes_detail}'>{comp_team_count}</td>"
                 f"<td class='num'>{cs['runs_total']}</td>"
                 f"<td class='num'>{avg_rating:.0f}</td>"
                 f"<td class='num'>{finished_pct:.1f}%</td>"
@@ -445,70 +492,536 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ADW Live Rating</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {{
+    --bg-primary: #0a0e17;
+    --bg-secondary: #0f1629;
+    --bg-card: rgba(15, 23, 42, 0.8);
+    --bg-card-hover: rgba(30, 41, 59, 0.6);
+    --border-subtle: rgba(99, 102, 241, 0.15);
+    --border-medium: rgba(99, 102, 241, 0.25);
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #6366f1;
+    --accent-light: #818cf8;
+    --accent-glow: rgba(99, 102, 241, 0.3);
+    --elite: #f59e0b;
+    --champion: #a78bfa;
+    --expert: #60a5fa;
+    --competitor: #34d399;
+    --gold: linear-gradient(135deg, #f59e0b, #d97706);
+    --silver: linear-gradient(135deg, #94a3b8, #64748b);
+    --bronze: linear-gradient(135deg, #c2854a, #92400e);
+    --glass-blur: blur(20px);
+    --radius: 12px;
+    --radius-sm: 8px;
+}}
+
 * {{ margin: 0; padding: 0; box-sizing: border-box; }}
-body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; padding: 20px; }}
-h1 {{ margin-bottom: 4px; }}
-.subtitle {{ color: #666; margin-bottom: 20px; font-size: 14px; }}
-.nav-tabs {{ display: flex; gap: 0; margin-bottom: 24px; border-bottom: 2px solid #e5e7eb; }}
-.nav-tab {{ padding: 10px 20px; border: none; background: none; cursor: pointer; font-size: 15px; font-weight: 500; color: #666; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all 0.2s; }}
-.nav-tab:hover {{ color: #333; }}
-.nav-tab.active {{ color: #2563eb; border-bottom-color: #2563eb; }}
-.section {{ display: none; }}
-.section.active {{ display: block; }}
-.tabs {{ display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }}
-.tab-btn {{ padding: 8px 16px; border: 1px solid #ddd; background: #fff; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 500; }}
-.tab-btn.active {{ background: #2563eb; color: #fff; border-color: #2563eb; }}
-.tab-btn .count {{ font-weight: 400; opacity: 0.8; }}
-.rating-table {{ width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
-.rating-table th {{ background: #f8f9fa; padding: 10px 12px; text-align: left; font-size: 13px; color: #555; cursor: pointer; user-select: none; border-bottom: 2px solid #e5e7eb; }}
-.rating-table th:hover {{ background: #e5e7eb; }}
-.rating-table td {{ padding: 8px 12px; border-bottom: 1px solid #f0f0f0; font-size: 14px; }}
-.rating-table td.num {{ text-align: right; font-variant-numeric: tabular-nums; }}
-.rating-table tbody tr:hover {{ background: #f8faff; }}
-.tier-elite td:first-child {{ border-left: 3px solid #f59e0b; }}
-.tier-champion td:first-child {{ border-left: 3px solid #8b5cf6; }}
-.tier-expert td:first-child {{ border-left: 3px solid #3b82f6; }}
-.tier-competitor td:first-child {{ border-left: 3px solid #10b981; }}
-.reg-name {{ font-size: 11px; color: #888; }}
-.prov-badge {{ display: inline-block; margin-left: 6px; padding: 1px 4px; border-radius: 4px; background: #eef2ff; color: #334155; font-size: 10px; font-weight: 700; letter-spacing: 0.2px; vertical-align: middle; }}
-.filters {{ display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }}
-.search-box input {{ padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; width: 320px; max-width: 100%; }}
-.tier-badge {{ display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }}
-.tier-badge.major {{ background: #fef3c7; color: #92400e; }}
-.tier-badge.open {{ background: #e0e7ff; color: #3730a3; }}
+
+body {{
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 50%, rgba(139, 92, 246, 0.06), transparent);
+}}
+
+/* Hero Header */
+.hero {{
+    padding: 48px 24px 32px;
+    text-align: center;
+    position: relative;
+}}
+
+.hero h1 {{
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}}
+
+.hero h1 .gradient-text {{
+    background: linear-gradient(135deg, var(--accent-light), #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}}
+
+.hero .subtitle {{
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}}
+
+.stat-cards {{
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}}
+
+.stat-card {{
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 16px 24px;
+    min-width: 140px;
+    text-align: center;
+}}
+
+.stat-card .stat-value {{
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-light);
+    font-variant-numeric: tabular-nums;
+}}
+
+.stat-card .stat-label {{
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}}
+
+.accent-bar {{
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    margin: 0 auto;
+    max-width: 600px;
+}}
+
+/* Sticky Nav */
+.main-nav {{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 12px 24px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}}
+
+.main-nav .nav-pill {{
+    padding: 8px 20px;
+    border: 1px solid var(--border-subtle);
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 99px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}}
+
+.main-nav .nav-pill:hover {{
+    color: var(--text-primary);
+    border-color: var(--border-medium);
+    background: var(--bg-card-hover);
+}}
+
+.main-nav .nav-pill.active {{
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+}}
+
+.main-nav .nav-pill svg {{
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+}}
+
+/* Content Area */
+.content-area {{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px;
+}}
+
+.section {{ display: none; opacity: 0; transition: opacity 0.3s ease; }}
+.section.active {{ display: block; opacity: 1; }}
+
+/* Toolbar (tabs + search on one line) */
+.toolbar {{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}}
+
+.search-box {{
+    position: relative;
+}}
+
+.search-box svg {{
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+}}
+
+.search-box input {{
+    padding: 10px 12px 10px 36px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: inherit;
+    width: 340px;
+    max-width: 100%;
+    background: var(--bg-card);
+    color: var(--text-primary);
+    transition: border-color 0.2s;
+}}
+
+.search-box input::placeholder {{ color: var(--text-muted); }}
+.search-box input:focus {{ outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }}
+
+/* Size Tabs (segmented control) */
+.size-tabs {{
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    width: fit-content;
+}}
+
+.tab-btn {{
+    padding: 8px 18px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+}}
+
+.tab-btn:hover {{ color: var(--text-primary); background: var(--bg-card-hover); }}
+
+.tab-btn.active {{
+    background: var(--accent);
+    color: #fff;
+}}
+
+.tab-btn .count {{ font-weight: 400; opacity: 0.7; font-size: 12px; }}
+
+/* Table Card (glass container) */
+.table-card {{
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    overflow: hidden;
+}}
+
+/* Rating Table */
+.rating-table {{ width: 100%; border-collapse: collapse; }}
+
+.rating-table th {{
+    background: rgba(15, 23, 42, 0.95);
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+    transition: color 0.2s;
+}}
+
+.rating-table th:hover {{ color: var(--text-secondary); }}
+
+.rating-table th.sorted-asc::after {{ content: ' \\25B2'; font-size: 9px; }}
+.rating-table th.sorted-desc::after {{ content: ' \\25BC'; font-size: 9px; }}
+
+.rating-table td {{
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+    font-size: 14px;
+    color: var(--text-primary);
+}}
+
+.rating-table td.num {{
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-secondary);
+}}
+
+.rating-table td.rating-cell {{
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff !important;
+}}
+
+.rating-table td.rank-cell {{
+    width: 48px;
+    text-align: center;
+    color: var(--text-muted);
+    font-weight: 500;
+}}
+
+.rating-table tbody tr {{
+    transition: background 0.15s ease;
+}}
+
+.rating-table tbody tr:hover {{
+    background: rgba(99, 102, 241, 0.06);
+}}
+
+/* Tier borders */
+.tier-elite td:first-child {{ border-left: 3px solid var(--elite); }}
+.tier-champion td:first-child {{ border-left: 3px solid var(--champion); }}
+.tier-expert td:first-child {{ border-left: 3px solid var(--expert); }}
+.tier-competitor td:first-child {{ border-left: 3px solid var(--competitor); }}
+
+/* Top 3 row highlights */
+.rank-1 {{ background: rgba(245, 158, 11, 0.06); }}
+.rank-2 {{ background: rgba(148, 163, 184, 0.04); }}
+.rank-3 {{ background: rgba(194, 133, 74, 0.04); }}
+
+/* Medal badges */
+.medal {{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}}
+
+.medal.gold {{
+    background: var(--gold);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+}}
+
+.medal.silver {{
+    background: var(--silver);
+    box-shadow: 0 0 12px rgba(148, 163, 184, 0.3);
+}}
+
+.medal.bronze {{
+    background: var(--bronze);
+    box-shadow: 0 0 12px rgba(194, 133, 74, 0.3);
+}}
+
+/* Misc */
+.reg-name {{ font-size: 11px; color: var(--text-muted); }}
+
+.prov-badge {{
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--accent-light);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    vertical-align: middle;
+}}
+
+/* Trend arrows */
+.trend {{ font-size: 12px; font-weight: 600; margin-left: 4px; }}
+.trend-up {{ color: var(--competitor); }}
+.trend-down {{ color: #ef4444; }}
+.trend-same {{ color: var(--text-muted); }}
+.trend-new {{ color: var(--accent-light); font-size: 10px; }}
+
+/* Numeric header alignment */
+.rating-table th.num {{ text-align: right; }}
+
+.tier-badge {{
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 600;
+}}
+
+.tier-badge.major {{
+    background: transparent;
+    color: var(--elite);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+}}
+
+.tier-badge.open {{
+    background: transparent;
+    color: var(--accent-light);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}}
+
+/* Methodology */
 .methodology {{ max-width: 800px; }}
-.methodology h2 {{ margin: 28px 0 12px; font-size: 20px; color: #1e293b; }}
+
+.methodology h2 {{
+    margin: 32px 0 12px;
+    font-size: 20px;
+    color: var(--text-primary);
+    font-weight: 600;
+}}
+
 .methodology h2:first-child {{ margin-top: 0; }}
-.methodology h3 {{ margin: 20px 0 8px; font-size: 16px; color: #334155; }}
-.methodology p {{ margin: 8px 0; line-height: 1.6; color: #475569; }}
-.methodology code {{ background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 13px; color: #0f172a; }}
-.methodology ul {{ margin: 8px 0 8px 20px; line-height: 1.6; color: #475569; }}
-.methodology .formula {{ background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; margin: 12px 0; font-family: 'SF Mono', Monaco, monospace; font-size: 14px; color: #1e293b; }}
-.methodology .param-table {{ width: 100%; border-collapse: collapse; margin: 12px 0; }}
-.methodology .param-table th {{ background: #f8f9fa; padding: 8px 12px; text-align: left; font-size: 13px; border-bottom: 2px solid #e5e7eb; }}
-.methodology .param-table td {{ padding: 8px 12px; border-bottom: 1px solid #f0f0f0; font-size: 14px; }}
+
+.methodology h3 {{
+    margin: 24px 0 8px;
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}}
+
+.methodology p {{
+    margin: 8px 0;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}}
+
+.methodology strong {{ color: var(--text-primary); }}
+
+.methodology code {{
+    background: rgba(99, 102, 241, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-light);
+}}
+
+.methodology ul {{
+    margin: 8px 0 8px 20px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}}
+
+.methodology .formula {{
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--text-primary);
+}}
+
+.methodology .param-table {{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+}}
+
+.methodology .param-table th {{
+    background: rgba(15, 23, 42, 0.95);
+    padding: 10px 14px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-subtle);
+}}
+
+.methodology .param-table td {{
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.5);
+    font-size: 14px;
+    color: var(--text-secondary);
+}}
+
+/* Responsive */
+@media (max-width: 768px) {{
+    .hero {{ padding: 32px 16px 24px; }}
+    .hero h1 {{ font-size: 28px; }}
+    .stat-cards {{ display: none; }}
+    .content-area {{ padding: 16px; }}
+    .table-card {{ overflow-x: auto; }}
+    .rating-table {{ min-width: 700px; }}
+    .search-box input {{ width: 100%; }}
+    .main-nav {{ gap: 4px; padding: 10px 12px; }}
+    .main-nav .nav-pill {{ padding: 6px 14px; font-size: 13px; }}
+    .size-tabs {{ width: 100%; }}
+}}
 </style>
 </head>
 <body>
-    <h1>ADW Live Rating</h1>
-    <p class="subtitle">Data from {cutoff_date} to {latest_date} ({LIVE_WINDOW_DAYS} days window), min {MIN_RUNS_FOR_LIVE_RANKING} runs to qualify.</p>
-
-    <div class="nav-tabs">
-        <button class="nav-tab active" onclick="showSection('rankings', this)">Rankings</button>
-        <button class="nav-tab" onclick="showSection('competitions', this)">Competitions ({len(comp_stats) if comp_stats else 0})</button>
-        <button class="nav-tab" onclick="showSection('methodology', this)">How it works</button>
-    </div>
-
-    <!-- RANKINGS SECTION -->
-    <div id="section-rankings" class="section active">
-        <div class="filters">
-            <div class="search-box">
-                <input id="search" type="text" placeholder="Search handler, dog, country..." oninput="filterRows()">
+    <header class="hero">
+        <h1>ADW <span class="gradient-text">Live Rating</span></h1>
+        <p class="subtitle">Experimental algorithm &middot; data window {cutoff_date} to {latest_date}</p>
+        <div class="stat-cards">
+            <div class="stat-card">
+                <div class="stat-value">{total_teams}</div>
+                <div class="stat-label">Teams</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{total_comps}</div>
+                <div class="stat-label">Competitions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">{total_rounds}</div>
+                <div class="stat-label">Rounds</div>
             </div>
         </div>
+    </header>
+    <div class="accent-bar"></div>
 
-        <div class="tabs">
-            {"".join(tab_buttons)}
+    <nav class="main-nav">
+        <button class="nav-pill active" onclick="showSection('rankings', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+            Rankings
+        </button>
+        <button class="nav-pill" onclick="showSection('competitions', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3 6h18"/></svg>
+            Competitions ({len(comp_stats) if comp_stats else 0})
+        </button>
+        <button class="nav-pill" onclick="showSection('methodology', this)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/></svg>
+            How it works
+        </button>
+    </nav>
+
+    <main class="content-area">
+    <!-- RANKINGS SECTION -->
+    <div id="section-rankings" class="section active">
+        <div class="toolbar">
+            <div class="size-tabs">
+                {"".join(tab_buttons)}
+            </div>
+            <div class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input id="search" type="text" placeholder="Search handler, dog, country..." oninput="filterRows()">
+            </div>
         </div>
 
         {"".join(tab_contents)}
@@ -516,22 +1029,24 @@ h1 {{ margin-bottom: 4px; }}
 
     <!-- COMPETITIONS SECTION -->
     <div id="section-competitions" class="section">
+        <div class="table-card">
         <table class="rating-table" id="table-competitions">
             <thead>
                 <tr>
                     <th onclick="sortTable('table-competitions', 0, 'str')">Competition</th>
                     <th onclick="sortTable('table-competitions', 1, 'str')">Date</th>
                     <th onclick="sortTable('table-competitions', 2, 'str')">Tier</th>
-                    <th onclick="sortTable('table-competitions', 3, 'num')">Teams</th>
-                    <th onclick="sortTable('table-competitions', 4, 'num')">Rounds</th>
-                    <th onclick="sortTable('table-competitions', 5, 'num')">Avg Rating</th>
-                    <th onclick="sortTable('table-competitions', 6, 'num')">Finished %</th>
+                    <th class="num" onclick="sortTable('table-competitions', 3, 'num')">Teams</th>
+                    <th class="num" onclick="sortTable('table-competitions', 4, 'num')">Rounds</th>
+                    <th class="num" onclick="sortTable('table-competitions', 5, 'num')">Avg Rating</th>
+                    <th class="num" onclick="sortTable('table-competitions', 6, 'num')">Finished</th>
                 </tr>
             </thead>
             <tbody>
                 {comp_rows_html}
             </tbody>
         </table>
+        </div>
     </div>
 
     <!-- METHODOLOGY SECTION -->
@@ -553,36 +1068,36 @@ h1 {{ margin-bottom: 4px; }}
 
             <h2>Public rating calculation</h2>
             <div class="formula">
-                rating_base = {DISPLAY_BASE} + {DISPLAY_SCALE} × (μ − {RATING_SIGMA_MULTIPLIER} × σ)<br>
-                rating = rating_base × quality_factor
+                rating_base = {DISPLAY_BASE} + {DISPLAY_SCALE} &times; (&mu; &minus; {RATING_SIGMA_MULTIPLIER} &times; &sigma;)<br>
+                rating = rating_base &times; quality_factor
             </div>
 
             <h3>Podium boost (quality factor)</h3>
             <p>The public rating is adjusted based on the quality of a team's results:</p>
             <div class="formula">
-                quality_factor = {PODIUM_BOOST_BASE:.2f} + {PODIUM_BOOST_RANGE:.2f} × clamp(top3% / {PODIUM_BOOST_TARGET:.0f})
+                quality_factor = {PODIUM_BOOST_BASE:.2f} + {PODIUM_BOOST_RANGE:.2f} &times; clamp(top3% / {PODIUM_BOOST_TARGET:.0f})
             </div>
             <p>Quality factor ranges from <code>{PODIUM_BOOST_BASE:.2f}</code> (no top-3 finishes) to <code>{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.2f}</code> (frequent podium placements). Teams that consistently finish in the top 3 receive a significant bonus, while teams without podium results have their rating reduced.</p>
 
             <h2>Competition weighting (tier system)</h2>
             <p>Competitions are divided into two tiers:</p>
             <ul>
-                <li><strong>Major (tier 1)</strong> — AWC, EO, JOAWC/SOAWC — runs carry <code>{MAJOR_EVENT_WEIGHT}×</code> weight</li>
-                <li><strong>Open (tier 2)</strong> — other international competitions — standard <code>1.0×</code> weight</li>
+                <li><strong>Major (tier 1)</strong> — AWC, EO, JOAWC/SOAWC — runs carry <code>{MAJOR_EVENT_WEIGHT}&times;</code> weight</li>
+                <li><strong>Open (tier 2)</strong> — other international competitions — standard <code>1.0&times;</code> weight</li>
             </ul>
             <p>Higher weight for Major events means results from these prestigious competitions have a greater impact on rating changes.</p>
 
             <h2>Skill tiers</h2>
             <table class="param-table">
                 <tr><th>Tier</th><th>Condition</th><th>Color</th></tr>
-                <tr><td><strong>Elite</strong></td><td>Top {base.ELITE_TOP_PERCENT*100:.0f}% in category</td><td style="border-left:3px solid #f59e0b; padding-left:12px;">gold</td></tr>
-                <tr><td><strong>Champion</strong></td><td>Top {base.CHAMPION_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid #8b5cf6; padding-left:12px;">purple</td></tr>
-                <tr><td><strong>Expert</strong></td><td>Top {base.EXPERT_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid #3b82f6; padding-left:12px;">blue</td></tr>
-                <tr><td><strong>Competitor</strong></td><td>Everyone else</td><td style="border-left:3px solid #10b981; padding-left:12px;">green</td></tr>
+                <tr><td><strong>Elite</strong></td><td>Top {base.ELITE_TOP_PERCENT*100:.0f}% in category</td><td style="border-left:3px solid var(--elite); padding-left:12px;">gold</td></tr>
+                <tr><td><strong>Champion</strong></td><td>Top {base.CHAMPION_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid var(--champion); padding-left:12px;">purple</td></tr>
+                <tr><td><strong>Expert</strong></td><td>Top {base.EXPERT_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid var(--expert); padding-left:12px;">blue</td></tr>
+                <tr><td><strong>Competitor</strong></td><td>Everyone else</td><td style="border-left:3px solid var(--competitor); padding-left:12px;">green</td></tr>
             </table>
 
             <h2>Few runs status</h2>
-            <p>A team with <code>σ ≥ {LIVE_PROVISIONAL_SIGMA_THRESHOLD}</code> is marked as <span class="prov-badge">FEW RUNS</span> — this means the system doesn't yet have enough data for a reliable estimate. The rating will stabilize with more runs.</p>
+            <p>A team with <code>&sigma; &ge; {LIVE_PROVISIONAL_SIGMA_THRESHOLD}</code> is marked as <span class="prov-badge">FEW RUNS</span> — this means the system doesn't yet have enough data for a reliable estimate. The rating will stabilize with more runs.</p>
 
             <h2>Live window and minimum runs</h2>
             <ul>
@@ -608,14 +1123,20 @@ h1 {{ margin-bottom: 4px; }}
             </table>
         </div>
     </div>
+    </main>
 
 <script>
 let currentTab = '{sizes[0] if sizes else ""}';
 
 function showSection(sectionId, buttonEl) {{
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById('section-' + sectionId).classList.add('active');
-    document.querySelectorAll('.nav-tab').forEach(btn => btn.classList.remove('active'));
+    document.querySelectorAll('.section').forEach(s => {{
+        s.classList.remove('active');
+    }});
+    const target = document.getElementById('section-' + sectionId);
+    // Trigger reflow for opacity transition
+    target.offsetHeight;
+    target.classList.add('active');
+    document.querySelectorAll('.nav-pill').forEach(btn => btn.classList.remove('active'));
     if (buttonEl) buttonEl.classList.add('active');
 }}
 
@@ -634,9 +1155,18 @@ function sortTable(tableId, colIdx, type) {{
     const table = document.getElementById(tableId);
     const tbody = table.querySelector('tbody');
     const rows = Array.from(tbody.querySelectorAll('tr'));
-    const th = table.querySelectorAll('th')[colIdx];
+    const headers = table.querySelectorAll('th');
+    const th = headers[colIdx];
     const asc = th.dataset.sort !== 'asc';
+
+    // Clear sort indicators from all headers in this table
+    headers.forEach(h => {{
+        h.classList.remove('sorted-asc', 'sorted-desc');
+        if (h !== th) h.dataset.sort = '';
+    }});
+
     th.dataset.sort = asc ? 'asc' : 'desc';
+    th.classList.add(asc ? 'sorted-asc' : 'sorted-desc');
 
     rows.sort((a, b) => {{
         let va = a.cells[colIdx].textContent.trim();
@@ -660,6 +1190,8 @@ function filterRows() {{
         row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
     }});
 }}
+
+// Init
 </script>
 </body>
 </html>"""
@@ -667,7 +1199,13 @@ function filterRows() {{
     with open(outpath, "w", encoding="utf-8") as html_file:
         html_file.write(html)
 
+    # Also write to repo root as index.html
+    root_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "index.html")
+    with open(root_path, "w", encoding="utf-8") as root_file:
+        root_file.write(html)
+
     print(f"HTML written to {outpath}")
+    print(f"HTML written to {root_path}")
 
 
 def main():
