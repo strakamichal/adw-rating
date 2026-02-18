@@ -213,6 +213,7 @@ REGISTERED_TO_CALL = {
     "black swan gates of heaven": "chilli",
     "galactic breez almondjoy": "twist",
     'a3ch flank "ray" ballarat': "ray",
+    "a3ch farid fort fox": "shani",
 }
 
 # Manual registered-name typo fixes: normalized_variant -> canonical_registered_name
