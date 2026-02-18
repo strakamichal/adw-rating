@@ -26,7 +26,7 @@ import calculate_rating as base
 # Live config
 # ---------------------------------------------------------------------------
 
-LIVE_WINDOW_DAYS = 913  # 2.5 years
+LIVE_WINDOW_DAYS = 730  # 2 years
 MIN_RUNS_FOR_LIVE_RANKING = 5
 LIVE_SIGMA_DECAY = 0.99
 LIVE_PROVISIONAL_SIGMA_THRESHOLD = 7.8
