@@ -361,6 +361,13 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
             key=lambda x: -x["rating"],
         )
 
+        # Build previous-rank lookup for trend arrows
+        prev_ranked = [t for t in sorted_teams if t.get("prev_rating") is not None]
+        prev_ranked.sort(key=lambda t: -t["prev_rating"])
+        prev_rank_map = {}
+        for prev_rank, team in enumerate(prev_ranked, 1):
+            prev_rank_map[(team["handler"], team["dog"])] = prev_rank
+
         rows = []
         for rank, team in enumerate(sorted_teams, 1):
             provisional_badge = ""
@@ -390,26 +397,28 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
             else:
                 rank_cell = str(rank)
 
-            # Rating change arrow
-            prev = team.get("prev_rating")
-            if prev is None:
-                trend_html = " <span class='trend trend-new'>NEW</span>"
-            else:
-                delta = round(team["rating"] - prev)
-                if delta > 0:
-                    trend_html = f" <span class='trend trend-up'>&#9650;{delta}</span>"
-                elif delta < 0:
-                    trend_html = f" <span class='trend trend-down'>&#9660;{abs(delta)}</span>"
+            # Rank change arrow
+            key = (team["handler"], team["dog"])
+            if team.get("prev_rating") is None:
+                trend_html = "<span class='trend trend-new'>NEW</span>"
+            elif key in prev_rank_map:
+                rank_change = prev_rank_map[key] - rank
+                if rank_change > 0:
+                    trend_html = f"<span class='trend trend-up'>&#9650;{rank_change}</span>"
+                elif rank_change < 0:
+                    trend_html = f"<span class='trend trend-down'>&#9660;{abs(rank_change)}</span>"
                 else:
-                    trend_html = ""
+                    trend_html = "<span class='trend trend-same'>&mdash;</span>"
+            else:
+                trend_html = "<span class='trend trend-new'>NEW</span>"
 
             rows.append(
                 f"<tr class='tier-{team.get('skill_tier', 'Competitor').lower()}{rank_class}'>"
-                f"<td class='rank-cell'>{rank_cell}</td>"
+                f"<td class='rank-cell'>{rank_cell} {trend_html}</td>"
                 f"<td>{handler_cell}</td>"
                 f"<td>{dog_cell}</td>"
                 f"<td>{base._esc(team['country'])}</td>"
-                f"<td class='num rating-cell'>{team['rating']:.0f}{trend_html}</td>"
+                f"<td class='num rating-cell'>{team['rating']:.0f}</td>"
                 f"<td class='num'>{team['num_runs']}</td>"
                 f"<td class='num'>{team['finished_pct']:.1f}%</td>"
                 f"<td class='num'>{team['top3_pct']:.1f}%</td>"
@@ -853,7 +862,7 @@ body {{
 }}
 
 /* Trend arrows */
-.trend {{ font-size: 12px; font-weight: 600; margin-left: 4px; }}
+.trend {{ font-size: 12px; font-weight: 600; margin-left: 8px; }}
 .trend-up {{ color: var(--competitor); }}
 .trend-down {{ color: #ef4444; }}
 .trend-same {{ color: var(--text-muted); }}
@@ -990,7 +999,7 @@ body {{
             </div>
             <div class="stat-card">
                 <div class="stat-value">{total_rounds}</div>
-                <div class="stat-label">Rounds</div>
+                <div class="stat-label">Runs</div>
             </div>
         </div>
     </header>
