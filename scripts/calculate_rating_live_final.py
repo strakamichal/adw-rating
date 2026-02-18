@@ -43,12 +43,12 @@ DISPLAY_BASE = base.DISPLAY_BASE
 DISPLAY_SCALE = base.DISPLAY_SCALE
 
 # Podium boost: quality post-adjustment applied to public rating.
-# quality_score = 0.45*clean_pct + 0.35*top10_pct + 0.20*min(100, top3_pct*3)
-# factor = PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE * clamp01(quality_score / PODIUM_BOOST_TARGET)
+# Based purely on top-3 placement percentage.
+# factor = PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE * clamp01(top3_pct / PODIUM_BOOST_TARGET)
 ENABLE_PODIUM_BOOST = True
-PODIUM_BOOST_BASE = 0.82
-PODIUM_BOOST_RANGE = 0.18
-PODIUM_BOOST_TARGET = 70.0
+PODIUM_BOOST_BASE = 0.85
+PODIUM_BOOST_RANGE = 0.20
+PODIUM_BOOST_TARGET = 50.0
 
 
 def _parse_date(date_str):
@@ -67,10 +67,8 @@ def live_rating(mu, sigma):
     return DISPLAY_BASE + DISPLAY_SCALE * (mu - RATING_SIGMA_MULTIPLIER * sigma)
 
 
-def podium_boost_factor(clean_pct, top3_pct, top10_pct):
-    top3_signal = min(100.0, top3_pct * 3.0)
-    quality_score = (0.45 * clean_pct) + (0.35 * top10_pct) + (0.20 * top3_signal)
-    quality_norm = max(0.0, min(1.0, quality_score / PODIUM_BOOST_TARGET))
+def podium_boost_factor(finished_pct, top3_pct, top10_pct):
+    quality_norm = max(0.0, min(1.0, top3_pct / PODIUM_BOOST_TARGET))
     return PODIUM_BOOST_BASE + (PODIUM_BOOST_RANGE * quality_norm)
 
 
@@ -108,7 +106,7 @@ def calculate_live_ratings(runs, profiles):
         by_size[run["size"]].append(run)
 
     all_ratings = {}
-    # Per-competition stats: comp_dir -> {name, date, tier, teams_by_size, runs_total, clean_runs, total_entries}
+    # Per-competition stats: comp_dir -> {name, date, tier, teams_by_size, runs_total, finished_runs, total_entries}
     comp_stats = {}
 
     for size in sorted(by_size.keys()):
@@ -137,7 +135,7 @@ def calculate_live_ratings(runs, profiles):
                     "teams_by_size": {},
                     "team_ids_by_size": {},
                     "runs_total": 0,
-                    "clean_runs_total": 0,
+                    "finished_runs_total": 0,
                     "total_entries": 0,
                 }
 
@@ -186,7 +184,7 @@ def calculate_live_ratings(runs, profiles):
                         team_ratings[team_id] = model.rating()
                         team_stats[team_id] = {
                             "num_runs": 0,
-                            "clean_runs": 0,
+                            "finished_runs": 0,
                             "top3_runs": 0,
                             "top10_runs": 0,
                             "last_comp": "",
@@ -199,7 +197,7 @@ def calculate_live_ratings(runs, profiles):
 
                     team_stats[team_id]["num_runs"] += 1
                     if not entry["eliminated"] and entry["rank"] is not None:
-                        team_stats[team_id]["clean_runs"] += 1
+                        team_stats[team_id]["finished_runs"] += 1
                         if rank <= 3:
                             team_stats[team_id]["top3_runs"] += 1
                         if rank <= 10:
@@ -211,7 +209,7 @@ def calculate_live_ratings(runs, profiles):
                 # Track competition stats
                 comp_stats[comp_dir]["runs_total"] += 1
                 comp_stats[comp_dir]["total_entries"] += len(ranked_entries)
-                comp_stats[comp_dir]["clean_runs_total"] += len(clean)
+                comp_stats[comp_dir]["finished_runs_total"] += len(clean)
                 for entry, rank in ranked_entries:
                     comp_teams_this_size.add(entry["team_id"])
 
@@ -238,11 +236,11 @@ def calculate_live_ratings(runs, profiles):
             stats = team_stats[team_id]
             profile = profiles.get(team_id, {})
             num_runs = stats["num_runs"]
-            clean_pct = round((stats["clean_runs"] / num_runs) * 100.0, 1) if num_runs else 0.0
+            finished_pct = round((stats["finished_runs"] / num_runs) * 100.0, 1) if num_runs else 0.0
             top3_pct = round((stats["top3_runs"] / num_runs) * 100.0, 1) if num_runs else 0.0
             top10_pct = round((stats["top10_runs"] / num_runs) * 100.0, 1) if num_runs else 0.0
             rating_base = live_rating(rating.mu, rating.sigma)
-            quality_factor = podium_boost_factor(clean_pct, top3_pct, top10_pct) if ENABLE_PODIUM_BOOST else 1.0
+            quality_factor = podium_boost_factor(finished_pct, top3_pct, top10_pct) if ENABLE_PODIUM_BOOST else 1.0
             size_results[team_id] = {
                 "mu": rating.mu,
                 "sigma": rating.sigma,
@@ -255,10 +253,10 @@ def calculate_live_ratings(runs, profiles):
                 "registered_name": profile.get("registered_name", ""),
                 "country": profile.get("country", ""),
                 "num_runs": num_runs,
-                "clean_runs": stats["clean_runs"],
+                "finished_runs": stats["finished_runs"],
                 "top3_runs": stats["top3_runs"],
                 "top10_runs": stats["top10_runs"],
-                "clean_pct": clean_pct,
+                "finished_pct": finished_pct,
                 "top3_pct": top3_pct,
                 "top10_pct": top10_pct,
                 "last_comp": stats["last_comp"],
@@ -306,7 +304,7 @@ def write_csv_live(all_ratings):
             "rank", "handler", "call_name", "registered_name", "size", "country",
             "mu", "sigma", "rating",
             "tier", "provisional", "num_runs",
-            "clean_pct", "top3_pct", "top10_pct",
+            "finished_pct", "top3_pct", "top10_pct",
             "last_competition",
         ])
 
@@ -329,7 +327,7 @@ def write_csv_live(all_ratings):
                     team.get("skill_tier", "Competitor"),
                     str(team.get("provisional", False)).lower(),
                     team["num_runs"],
-                    team["clean_pct"],
+                    team["finished_pct"],
                     team["top3_pct"],
                     team["top10_pct"],
                     team["last_comp"],
@@ -356,7 +354,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
         for rank, team in enumerate(sorted_teams, 1):
             provisional_badge = ""
             if team.get("provisional", False):
-                provisional_badge = " <span class='prov-badge'>PROV</span>"
+                provisional_badge = " <span class='prov-badge'>FEW RUNS</span>"
             handler_cell = f"{base._esc(team['handler'])}{provisional_badge}"
 
             call = base._esc(team.get("call_name", ""))
@@ -378,7 +376,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                 f"<td>{base._esc(team['country'])}</td>"
                 f"<td class='num'>{team['rating']:.0f}</td>"
                 f"<td class='num'>{team['num_runs']}</td>"
-                f"<td class='num'>{team['clean_pct']:.1f}%</td>"
+                f"<td class='num'>{team['finished_pct']:.1f}%</td>"
                 f"<td class='num'>{team['top3_pct']:.1f}%</td>"
                 f"<td class='num'>{team['top10_pct']:.1f}%</td>"
                 f"<td>{base._esc(team['last_comp'])}</td>"
@@ -410,7 +408,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                         <th onclick="sortTable('table-{size}', 3, 'str')">Country</th>
                         <th onclick="sortTable('table-{size}', 4, 'num')">Rating</th>
                         <th onclick="sortTable('table-{size}', 5, 'num')">Runs</th>
-                        <th onclick="sortTable('table-{size}', 6, 'num')">Clean %</th>
+                        <th onclick="sortTable('table-{size}', 6, 'num')">Finished %</th>
                         <th onclick="sortTable('table-{size}', 7, 'num')">TOP3 %</th>
                         <th onclick="sortTable('table-{size}', 8, 'num')">TOP10 %</th>
                         <th onclick="sortTable('table-{size}', 9, 'str')">Last Competition</th>
@@ -432,7 +430,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                           else '<span class="tier-badge open">Open</span>')
             total_teams = sum(cs["teams_by_size"].values())
             sizes_detail = ", ".join(f"{s}: {n}" for s, n in sorted(cs["teams_by_size"].items()))
-            clean_pct = round(cs["clean_runs_total"] / cs["total_entries"] * 100, 1) if cs["total_entries"] else 0
+            finished_pct = round(cs["finished_runs_total"] / cs["total_entries"] * 100, 1) if cs["total_entries"] else 0
             avg_rating = cs.get("avg_rating", 0)
             comp_rows_html += (
                 f"<tr>"
@@ -442,7 +440,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                 f"<td class='num' title='{sizes_detail}'>{total_teams}</td>"
                 f"<td class='num'>{cs['runs_total']}</td>"
                 f"<td class='num'>{avg_rating:.0f}</td>"
-                f"<td class='num'>{clean_pct:.1f}%</td>"
+                f"<td class='num'>{finished_pct:.1f}%</td>"
                 f"</tr>\n"
             )
 
@@ -539,7 +537,7 @@ h1 {{ margin-bottom: 4px; }}
                     <th onclick="sortTable('table-competitions', 3, 'num')">Teams</th>
                     <th onclick="sortTable('table-competitions', 4, 'num')">Rounds</th>
                     <th onclick="sortTable('table-competitions', 5, 'num')">Avg Rating</th>
-                    <th onclick="sortTable('table-competitions', 6, 'num')">Clean %</th>
+                    <th onclick="sortTable('table-competitions', 6, 'num')">Finished %</th>
                 </tr>
             </thead>
             <tbody>
@@ -574,10 +572,9 @@ h1 {{ margin-bottom: 4px; }}
             <h3>Podium boost (quality factor)</h3>
             <p>The public rating is adjusted based on the quality of a team's results:</p>
             <div class="formula">
-                quality_score = 0.45 × clean% + 0.35 × top10% + 0.20 × min(100, top3% × 3)<br>
-                quality_factor = {PODIUM_BOOST_BASE:.2f} + {PODIUM_BOOST_RANGE:.2f} × clamp(quality_score / {PODIUM_BOOST_TARGET:.0f})
+                quality_factor = {PODIUM_BOOST_BASE:.2f} + {PODIUM_BOOST_RANGE:.2f} × clamp(top3% / {PODIUM_BOOST_TARGET:.0f})
             </div>
-            <p>Quality factor ranges from <code>{PODIUM_BOOST_BASE:.2f}</code> (no clean runs) to <code>{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.2f}</code> (excellent results). Teams with high clean% and regular top-10 placements receive a bonus, while teams with many eliminations have their rating slightly reduced.</p>
+            <p>Quality factor ranges from <code>{PODIUM_BOOST_BASE:.2f}</code> (no top-3 finishes) to <code>{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.2f}</code> (frequent podium placements). Teams that consistently finish in the top 3 receive a significant bonus, while teams without podium results have their rating reduced.</p>
 
             <h2>Competition weighting (tier system)</h2>
             <p>Competitions are divided into two tiers:</p>
@@ -596,8 +593,8 @@ h1 {{ margin-bottom: 4px; }}
                 <tr><td><strong>Competitor</strong></td><td>Everyone else</td><td style="border-left:3px solid #10b981; padding-left:12px;">green</td></tr>
             </table>
 
-            <h2>Provisional status (PROV)</h2>
-            <p>A team with <code>σ ≥ {LIVE_PROVISIONAL_SIGMA_THRESHOLD}</code> is marked as <span class="prov-badge">PROV</span> — this means the system doesn't yet have enough data for a reliable estimate. The rating will stabilize with more runs.</p>
+            <h2>Few runs status</h2>
+            <p>A team with <code>σ ≥ {LIVE_PROVISIONAL_SIGMA_THRESHOLD}</code> is marked as <span class="prov-badge">FEW RUNS</span> — this means the system doesn't yet have enough data for a reliable estimate. The rating will stabilize with more runs.</p>
 
             <h2>Live window and minimum runs</h2>
             <ul>

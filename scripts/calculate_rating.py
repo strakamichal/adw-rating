@@ -63,6 +63,9 @@ COMPETITIONS = {
     "norwegian_open_2024":         {"date": "2024-10-11", "tier": 2, "name": "Norwegian Open 2024"},
     "norwegian_open_2025":         {"date": "2025-10-10", "tier": 2, "name": "Norwegian Open 2025"},
     "slovenian_open_2025":         {"date": "2025-06-27", "tier": 2, "name": "Slovenian Open 2025"},
+    "lotw_i_2025_2026":            {"date": "2025-11-01", "tier": 2, "name": "Lord of the Winter I. 2025/2026"},
+    "lotw_ii_2025_2026":           {"date": "2025-12-06", "tier": 2, "name": "Lord of the Winter II. 2025/2026"},
+    "lotw_iii_2025_2026":          {"date": "2026-02-07", "tier": 2, "name": "Lord of the Winter III. 2025/2026"},
 }
 
 # ---------------------------------------------------------------------------
@@ -179,6 +182,8 @@ def ordered_sizes(size_keys):
 # Manual dog name aliases: normalized_call_name -> canonical_call_name
 DOG_ALIASES = {
     "sayonara": "seeya",
+    "sayonara seeya": "seeya",
+    "black swan": "chilli",
     "finrod frances": "cis",
     "pszenik": "psenik",
 }
@@ -204,15 +209,20 @@ REGISTERED_TO_CALL = {
     "libby granting pleasure": "psenik",
     "clever and fast of youwentis": "carrie",
     "clever and fastvof youwentis": "carrie",
+    "never never land sayonara": "seeya",
+    "black swan gates of heaven": "chilli",
 }
 
 # Manual registered-name typo fixes: normalized_variant -> canonical_registered_name
 REGISTERED_NAME_ALIASES = {
     "clever and fastvof youwentis": "clever and fast of youwentis",
+    "nnl sayonara": "never never land sayonara",
+    "never never land s'sayonara": "never never land sayonara",
 }
 
 # Manual display form overrides for normalized call names.
 CALL_NAME_DISPLAY = {
+    "chilli": "Chilli",
     "cis": "Cis",
     "psenik": "Pšeník",
 }
@@ -225,11 +235,22 @@ HANDLER_ALIASES = {
 # Manual handler display overrides: canonical_normalized_handler -> display name
 HANDLER_DISPLAY_OVERRIDES = {
     "katerina tercova": "Kateřina Terčová",
+    "golab iwona": "Iwona Gołąb",
 }
 
 
+# Characters that NFKD decomposition doesn't handle (single codepoints
+# without a base+combining decomposition).
+_EXTRA_TRANSLITERATION = str.maketrans({
+    "ł": "l", "Ł": "L",
+    "đ": "d", "Đ": "D",
+    "ø": "o", "Ø": "O",
+})
+
+
 def strip_diacritics(s):
-    """Remove diacritics: 'Diviš' -> 'Divis', 'Glejdurová' -> 'Glejdurova'."""
+    """Remove diacritics: 'Diviš' -> 'Divis', 'Gołąb' -> 'Golab'."""
+    s = s.translate(_EXTRA_TRANSLITERATION)
     nfkd = unicodedata.normalize("NFKD", s)
     return "".join(c for c in nfkd if not unicodedata.combining(c))
 
@@ -817,10 +838,17 @@ def _extract_raw_call_name(dog_str):
     """Extract call name in original case from a dog string."""
     match = re.search(r"\(([^)]+)\)\s*$", dog_str)
     if match:
-        return match.group(1).strip()
+        candidate = match.group(1).strip()
+        if candidate.lower() not in NON_CALL_SUFFIXES:
+            return candidate
+        # Technical suffix — fall through to parse the base string
+        dog_str = dog_str[:match.start()].strip()
     match = re.search(r'"([^"]+)"\s*$', dog_str)
     if match:
-        return match.group(1).strip()
+        candidate = match.group(1).strip()
+        if candidate.lower() not in NON_CALL_SUFFIXES:
+            return candidate
+        dog_str = dog_str[:match.start()].strip()
     # If it's a short name (1-2 words), it is the call name
     if len(dog_str.split()) <= 2:
         return dog_str.strip()
