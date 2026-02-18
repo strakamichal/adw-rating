@@ -7,13 +7,14 @@ Master workflow for creating project documentation with AI agent assistance. Thi
 Before starting, identify your scenario and check which phases apply:
 
 ### Greenfield (new project)
-- [ ] ~~Phase 1: AS-IS~~ — **SKIP** (nothing to analyze)
-- [ ] Phase 2: Vision & scope
-- [ ] Phase 3: Domain model
-- [ ] Phase 4: Architecture
-- [ ] Phase 5: UI structure
-- [ ] Phase 6: Implementation plan
-- [ ] Phase 7: AI guidelines
+- [x] ~~Phase 1: AS-IS~~ — **SKIP** (nothing to analyze)
+- [x] Phase 2: Vision & scope
+- [x] Phase 3: Domain model
+- [x] Phase 4: Architecture
+- [x] Phase 5: UI structure
+- [ ] Phase 6: Implementation plan — **IN PROGRESS** (template present, tasks not filled in)
+- [ ] Phase 7: AI guidelines — **NOT STARTED** (generic template, not customized for ADW Rating)
+- [x] Phase 8: Rating rules *(project-specific addition)*
 
 ---
 
@@ -72,13 +73,13 @@ These rules apply to every AI agent run during documentation:
 7. **Fill in protection sections** — this is critical for AI safety
 
 **Done criteria**:
-- [ ] Vision explains the "why" clearly
-- [ ] Scope lists all areas/modules covered
-- [ ] Non-goals are explicit
-- [ ] Key use cases are listed (5-15 items)
-- [ ] NFRs are defined with measurable targets where possible
-- [ ] Change summary vs AS-IS (rewrite only)
-- [ ] Protection sections filled: Always / Ask first / Never
+- [x] Vision explains the "why" clearly
+- [x] Scope lists all areas/modules covered (9 functional areas)
+- [x] Non-goals are explicit (6 items)
+- [x] Key use cases are listed (11 use cases)
+- [x] NFRs are defined with measurable targets where possible (7 NFRs)
+- [x] ~~Change summary vs AS-IS~~ (N/A — greenfield)
+- [x] Protection sections filled: Always / Ask first / Never
 
 ---
 
@@ -97,13 +98,13 @@ These rules apply to every AI agent run during documentation:
 6. Add acceptance criteria per entity
 
 **Done criteria**:
-- [ ] Glossary covers all domain terms used in the project
-- [ ] All entities from scope have field definitions
-- [ ] Business rules / validation documented per entity
-- [ ] Relationships between entities described
-- [ ] Enums defined with all values
-- [ ] Mapping from AS-IS (rewrite only)
-- [ ] Acceptance criteria present for core entities
+- [x] Glossary covers all domain terms used in the project (24 terms)
+- [x] All entities from scope have field definitions (11 entities)
+- [x] Business rules / validation documented per entity
+- [x] Relationships between entities described (14 relationships)
+- [x] Enums defined with all values (6 enums)
+- [x] ~~Mapping from AS-IS~~ (N/A — greenfield, but Python script mapping included)
+- [x] Acceptance criteria present for core entities
 
 ---
 
@@ -122,12 +123,12 @@ These rules apply to every AI agent run during documentation:
 6. Document deployment topology and CI/CD pipeline
 
 **Done criteria**:
-- [ ] Technical stack fully specified
-- [ ] Project structure with dependency rules (who can depend on whom)
-- [ ] Internal flow described (request lifecycle)
-- [ ] External integrations listed
-- [ ] API outline with endpoints per module
-- [ ] Deployment and runtime documented
+- [x] Technical stack fully specified (C#/.NET 10, Blazor SSR, SQL Server 2022, EF Core)
+- [x] Project structure with dependency rules (7-layer clean architecture)
+- [x] Internal flow described (request lifecycle)
+- [x] External integrations listed (none in MVP — CSV imports only)
+- [x] API outline with endpoints per module (18 endpoints, 8 DTOs, 20+ CLI commands)
+- [x] Deployment and runtime documented (Windows Server, IIS, ARR)
 
 ---
 
@@ -147,13 +148,13 @@ These rules apply to every AI agent run during documentation:
 7. Add verification guides for key flows
 
 **Done criteria**:
-- [ ] Navigation structure defined
-- [ ] All screens from scope listed with purpose
-- [ ] Role-based access matrix present
-- [ ] Key UI flows described step by step
-- [ ] Export/download patterns defined
-- [ ] Per-screen acceptance criteria present
-- [ ] Verification guides for 2-4 key flows
+- [x] Navigation structure defined (main menu + secondary nav)
+- [x] All screens from scope listed with purpose (6 screens)
+- [x] Role-based access matrix present (public read-only in MVP)
+- [x] Key UI flows described step by step (3 flows)
+- [x] Export/download patterns defined (none in MVP)
+- [x] Per-screen acceptance criteria present
+- [x] Verification guides for 2-4 key flows (3 guides)
 
 ---
 
@@ -172,12 +173,12 @@ These rules apply to every AI agent run during documentation:
 6. For rewrites: include data migration tasks
 
 **Done criteria**:
-- [ ] Phases defined with clear scope per phase
-- [ ] All tasks have descriptions, dependencies, and test expectations
-- [ ] Completion gates defined per task
-- [ ] Task ordering makes sense (foundation first, then features)
-- [ ] Data migration tasks included (rewrite only)
-- [ ] Estimated task count feels manageable per phase (5-20 tasks)
+- [x] Phases defined with clear scope per phase (3 phases + data migration)
+- [ ] All tasks have descriptions, dependencies, and test expectations — **tasks not yet filled in**
+- [x] Completion gates defined per task (template-level)
+- [ ] Task ordering makes sense (foundation first, then features) — **blocked by missing tasks**
+- [x] ~~Data migration tasks included~~ (N/A — greenfield)
+- [ ] Estimated task count feels manageable per phase (5-20 tasks) — **blocked by missing tasks**
 
 ---
 
@@ -196,13 +197,32 @@ These rules apply to every AI agent run during documentation:
 6. Define observability and logging standards
 
 **Done criteria**:
-- [ ] Coding style defined with examples
-- [ ] Test pyramid documented with layer-specific guidance
-- [ ] Docs sync rules clear
-- [ ] Boundaries section filled (Always / Ask first / Never)
-- [ ] Output format defined
-- [ ] Observability rules defined
-- [ ] Guidelines are specific enough to be actionable, not generic platitudes
+- [ ] Coding style defined with examples — **generic template, uses `TrainingSession`/`Employee` examples instead of ADW Rating entities**
+- [ ] Test pyramid documented with layer-specific guidance — **structure present but examples generic**
+- [x] Docs sync rules clear
+- [ ] Boundaries section filled (Always / Ask first / Never) — **structure present but not project-specific**
+- [x] Output format defined
+- [ ] Observability rules defined — **full of `[e.g., ...]` placeholders, nothing filled in**
+- [ ] Guidelines are specific enough to be actionable, not generic platitudes — **FAILS: entire doc is a generic template**
+
+---
+
+## Phase 8: Rating Rules *(project-specific)*
+
+**Goal**: Define the rating algorithm, parameters, and scoring logic.
+
+**Template**: [`08-rating-rules.md`](08-rating-rules.md)
+
+Supplementary: [`08-results-csv-format.md`](08-results-csv-format.md)
+
+**Done criteria**:
+- [x] Input data and team identity defined
+- [x] Run selection rules (time window, minimum field, deduplication, eliminations)
+- [x] Core model specified (OpenSkill PlackettLuce with initial values, weighting)
+- [x] Display rating formula (base + podium boost + cross-size normalization)
+- [x] Team statistics tracked (RunCount, FinishedRunCount, Top3RunCount)
+- [x] Tier labels with thresholds (Elite/Champion/Expert/Competitor)
+- [x] Configuration parameters documented (17 parameters with defaults)
 
 ---
 
@@ -211,6 +231,24 @@ These rules apply to every AI agent run during documentation:
 Once all documentation is complete:
 
 1. **Cross-reference check**: entity names in domain model match API endpoints, UI screens reference correct entities, implementation plan covers all scope items
-2. **Customize CLAUDE.md**: update with project-specific architecture rules, source of truth links, and test commands
+2. **Customize CLAUDE.md**: update with project-specific architecture rules, source of truth links, and test commands — **DONE**
 3. **Start implementing**: follow the implementation plan, one task at a time
 4. **Keep docs updated**: when implementation reveals needed changes, update docs in the same commit
+
+### Current status (2026-02-19)
+
+| Phase | Status |
+|-------|--------|
+| ~~Phase 1: AS-IS~~ | SKIP (greenfield) |
+| Phase 2: Vision & scope | **DONE** |
+| Phase 3: Domain model | **DONE** |
+| Phase 4: Architecture | **DONE** |
+| Phase 5: UI structure | **DONE** |
+| Phase 6: Implementation plan | **PARTIAL** — template ready, tasks need decomposition |
+| Phase 7: AI guidelines | **NOT STARTED** — generic template, needs full customization |
+| Phase 8: Rating rules | **DONE** |
+| CLAUDE.md customized | **DONE** |
+
+**Next steps**:
+1. Customize Phase 7 (AI guidelines) with ADW Rating-specific examples, naming, and observability config
+2. Fill in Phase 6 with concrete tasks decomposed from scope
