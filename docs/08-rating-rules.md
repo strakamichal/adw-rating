@@ -5,11 +5,6 @@ Tento dokument popisuje aktuálně používaný výpočet leaderboardu v:
 - `scripts/calculate_rating.py` (načtení dat, identita týmu, deduplikace)
 - `scripts/calculate_rating_live_final.py` (finální veřejný rating)
 
-Platí stav po zavedení:
-
-- live okno **2,5 roku** (`LIVE_WINDOW_DAYS = 913`)
-- kvalifikační úprava skóre **Podium boost**
-
 ## 1. Vstupní data a identita týmu
 
 ### 1.1 Zdroje
@@ -29,6 +24,7 @@ Kde `normalized_dog_id` je preferenčně call name, jinak registered name.
 Používají se pravidla z `scripts/calculate_rating.py`:
 
 - odstranění diakritiky pro interní matching
+- normalizace typografických uvozovek (`""`) na ASCII (`""`)
 - sjednocení `Last, First` vs `First Last`
 - aliasy handlerů (např. `Katka Terčová` -> `Kateřina Terčová` interně)
 - aliasy psích jmen a registered name
@@ -42,7 +38,7 @@ Výsledek: jeden pes/psovod se má v ratingu chovat jako jedna entita i při rů
 ### 2.1 Časové okno
 
 - `latest_date` = nejnovější datum soutěže v datasetu
-- `cutoff_date = latest_date - 913 dní`
+- `cutoff_date = latest_date - 730 dní` (2 roky)
 - do live výpočtu jdou jen běhy s `comp_date >= cutoff_date`
 
 ### 2.2 Minimální velikost pole
@@ -90,28 +86,29 @@ Nejdřív se spočítá základ:
 
 ### 4.2 Podium boost (kvalitativní korekce)
 
-Na `rating_base` se aplikuje faktor podle kvality výsledků:
+Na `rating_base` se aplikuje faktor podle procenta TOP3 umístění:
 
-- `quality_score = 0.45*clean_pct + 0.35*top10_pct + 0.20*min(100, top3_pct*3)`
-- `quality_norm = clamp(quality_score / 70.0, 0, 1)`
-- `quality_factor = 0.82 + 0.18 * quality_norm`
+- `quality_norm = clamp(top3_pct / 50.0, 0, 1)`
+- `quality_factor = 0.85 + 0.20 * quality_norm`
 - `rating = rating_base * quality_factor`
 
 Interpretace:
 
-- týmy s lepší kombinací čistoty + TOP10 + TOP3 mají faktor blíž `1.00`
-- týmy s horší kvalitou mají faktor blíž `0.82`
-- tím se omezuje efekt „jen hodně běhů“ bez dobrých umístění
+- týmy s častými TOP3 umístěními mají faktor blíž `1.05`
+- týmy bez TOP3 umístění mají faktor `0.85`
+- tím se odměňují konzistentně dobré výsledky a penalizuje „jen hodně běhů"
+
+### 4.3 Trend (změna pořadí)
+
+Pro každý tým se sleduje předchozí rating (mu/sigma před posledním updatem). Na leaderboardu se zobrazuje změna pořadí oproti předchozímu stavu (▲ posun nahoru, ▼ posun dolů, NEW pro nové týmy).
 
 ## 5. Statistika týmů
 
 Pro každý tým se v live okně sleduje:
 
 - `num_runs`
-- `clean_runs`, `clean_pct`
+- `finished_runs`, `finished_pct`
 - `top3_runs`, `top3_pct`
-- `top10_runs`, `top10_pct`
-- `last_comp` (poslední soutěž v okně)
 
 ## 6. Tier labely a PROV
 
@@ -128,7 +125,7 @@ Výpočet používá jen týmy s `num_runs >= MIN_RUNS_FOR_LIVE_RANKING`.
 
 ### 6.2 Provisional
 
-- `PROV` pokud `sigma >= LIVE_PROVISIONAL_SIGMA_THRESHOLD`
+- `FEW RUNS` pokud `sigma >= LIVE_PROVISIONAL_SIGMA_THRESHOLD`
 - aktuálně `LIVE_PROVISIONAL_SIGMA_THRESHOLD = 7.8`
 
 ## 7. Výstup a řazení
@@ -137,17 +134,26 @@ Generují se:
 
 - `output/ratings_live_final.csv`
 - `output/ratings_live_final.html`
+- `index.html` (kopie HTML v rootu repozitáře)
 
 Řazení v leaderboardu je v rámci každé size:
 
 1. podle `rating` sestupně
 2. zobrazují se jen týmy s `num_runs >= 5`
 
+### 7.1 Stat karty (hero)
+
+Statické globální součty:
+
+- **Teams** — počet kvalifikovaných týmů (min runs) přes všechny kategorie
+- **Competitions** — počet soutěží v datasetu
+- **Runs** — celkový počet kol
+
 ## 8. Aktuální konfigurační přehled
 
 | Parametr | Hodnota |
 |---|---:|
-| `LIVE_WINDOW_DAYS` | `913` |
+| `LIVE_WINDOW_DAYS` | `730` |
 | `MIN_RUNS_FOR_LIVE_RANKING` | `5` |
 | `MIN_FIELD_SIZE` | `6` |
 | `ENABLE_MAJOR_EVENT_WEIGHTING` | `True` |
@@ -156,9 +162,9 @@ Generují se:
 | `SIGMA_MIN` | `1.5` |
 | `RATING_SIGMA_MULTIPLIER` | `1.0` |
 | `ENABLE_PODIUM_BOOST` | `True` |
-| `PODIUM_BOOST_BASE` | `0.82` |
-| `PODIUM_BOOST_RANGE` | `0.18` |
-| `PODIUM_BOOST_TARGET` | `70.0` |
+| `PODIUM_BOOST_BASE` | `0.85` |
+| `PODIUM_BOOST_RANGE` | `0.20` |
+| `PODIUM_BOOST_TARGET` | `50.0` |
 | `LIVE_PROVISIONAL_SIGMA_THRESHOLD` | `7.8` |
 | `ELITE_TOP_PERCENT` | `0.02` |
 | `CHAMPION_TOP_PERCENT` | `0.10` |
