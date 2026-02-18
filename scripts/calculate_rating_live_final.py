@@ -31,6 +31,11 @@ MIN_RUNS_FOR_LIVE_RANKING = 5
 LIVE_SIGMA_DECAY = 0.99
 LIVE_PROVISIONAL_SIGMA_THRESHOLD = 7.8
 
+# Cross-size normalization: z-score each size to a common scale
+NORMALIZE_ACROSS_SIZES = True
+NORM_TARGET_MEAN = 1500.0
+NORM_TARGET_STD = 150.0
+
 # Major-event boost (AWC/EO/JOAWC tier-1 comps).
 # Keep this moderate to avoid over-amplifying single events.
 ENABLE_MAJOR_EVENT_WEIGHTING = True
@@ -283,6 +288,28 @@ def calculate_live_ratings(runs, profiles):
             print(f"  Top: {top['handler']} / {top['dog']} ({top['country']}) — {top['rating']}")
 
         all_ratings[size] = size_results
+
+    # Cross-size normalization: map each size to common mean/std
+    if NORMALIZE_ACROSS_SIZES:
+        for size in sorted(all_ratings.keys()):
+            qualified = [
+                t for t in all_ratings[size].values()
+                if t["num_runs"] >= MIN_RUNS_FOR_LIVE_RANKING
+            ]
+            if len(qualified) < 2:
+                continue
+            ratings = [t["rating"] for t in qualified]
+            size_mean = sum(ratings) / len(ratings)
+            size_std = (sum((r - size_mean) ** 2 for r in ratings) / len(ratings)) ** 0.5
+            if size_std < 1:
+                continue
+            for team in all_ratings[size].values():
+                z = (team["rating"] - size_mean) / size_std
+                team["rating"] = round(NORM_TARGET_MEAN + NORM_TARGET_STD * z, 1)
+                if team.get("prev_rating") is not None:
+                    z_prev = (team["prev_rating"] - size_mean) / size_std
+                    team["prev_rating"] = round(NORM_TARGET_MEAN + NORM_TARGET_STD * z_prev, 1)
+            print(f"  {size}: normalized (mean {size_mean:.0f}→{NORM_TARGET_MEAN:.0f}, std {size_std:.0f}→{NORM_TARGET_STD:.0f})")
 
     tier_thresholds = _compute_tier_thresholds(all_ratings)
     for size in sorted(all_ratings.keys()):
