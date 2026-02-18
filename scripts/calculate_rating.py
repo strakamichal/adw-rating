@@ -212,6 +212,7 @@ REGISTERED_TO_CALL = {
     "never never land sayonara": "seeya",
     "black swan gates of heaven": "chilli",
     "galactic breez almondjoy": "twist",
+    'a3ch flank "ray" ballarat': "ray",
 }
 
 # Manual registered-name typo fixes: normalized_variant -> canonical_registered_name
@@ -226,6 +227,7 @@ CALL_NAME_DISPLAY = {
     "chilli": "Chilli",
     "cis": "Cis",
     "psenik": "Pšeník",
+    "ray": "Ray",
 }
 
 # Manual handler aliases: normalized_handler -> canonical_normalized_handler
@@ -237,6 +239,7 @@ HANDLER_ALIASES = {
 HANDLER_DISPLAY_OVERRIDES = {
     "katerina tercova": "Kateřina Terčová",
     "golab iwona": "Iwona Gołąb",
+    "petra vyplelova": "Petra Vyplelová",
 }
 
 
@@ -298,6 +301,9 @@ def parse_dog_name(dog_name):
       'Day'                           -> ('day', '')
     """
     dog_name = strip_diacritics(dog_name).strip()
+    # Normalize smart/curly quotes to ASCII
+    dog_name = dog_name.replace("\u201C", '"').replace("\u201D", '"')
+    dog_name = dog_name.replace("\u2018", "'").replace("\u2019", "'")
 
     # Try to extract from parentheses at end: "... (CallName)"
     match = re.search(r"\(([^)]+)\)\s*$", dog_name)
