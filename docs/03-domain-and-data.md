@@ -107,6 +107,7 @@
 | `IsActive` | bool | yes | True if `RunCount >= MIN_RUNS_FOR_LIVE_RANKING` and has runs within the time window |
 | `IsProvisional` | bool | yes | True if `Sigma >= LIVE_PROVISIONAL_SIGMA_THRESHOLD` |
 | `TierLabel` | TierLabel | no | Percentile-based label: Elite, Champion, Expert, Competitor. Null if not active |
+| `PeakNormalizedRating` | float | yes | Highest NormalizedRating ever achieved by this team. Updated during recalculation. Used on handler profile to show career peak |
 
 **Computed (not stored)**: `FinishedPct = FinishedRunCount / RunCount`, `Top3Pct = Top3RunCount / RunCount`. Used in podium boost calculation (see `docs/08-rating-rules.md`).
 
@@ -326,13 +327,14 @@
 | `Mu` | float | yes | Team's mu after this run was processed |
 | `Sigma` | float | yes | Team's sigma after this run was processed |
 | `Rating` | float | yes | Per-category display rating at this point |
-| `NormalizedRating` | float | yes | Cross-size normalized rating at this point |
+| `NormalizedRating` | float | yes | Cross-size normalized rating at this point (see note below) |
 
 **Rules**:
 - (`TeamId`, `RunResultId`) must be unique — one snapshot per team per run.
 - Snapshots are created during batch rating recalculation, not during import.
 - On full recalculation, all existing snapshots are deleted and regenerated.
 - Ordered by `Date` (then by Run processing order within a competition) to form the progression timeline.
+- **Normalization note**: `NormalizedRating` in all snapshots uses the normalization parameters (per-size mean and std) computed at the end of the current recalculation cycle. It does **not** reflect what the normalized rating actually was at that historical point in time. This is a deliberate simplification — recomputing normalization stats at every historical point would be prohibitively expensive and fragile. The chart shows relative progression within the current normalization frame.
 
 **Acceptance criteria**:
 - [ ] Snapshot is created for each run result processed during recalculation

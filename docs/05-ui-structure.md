@@ -1,148 +1,221 @@
 # UI Structure
 
-<!-- AI AGENT: To fill this document:
-1. Derive screens from the scope in 02-to-be.md and use cases
-2. Navigation should reflect the main modules
-3. Role-based access comes from domain model (roles, permissions)
-4. Key flows should trace a complete user journey (not just one screen)
-5. Every screen needs acceptance criteria — these become your E2E test specs
-6. Verification guides help reviewers (human or AI) validate the implementation
--->
+> **Note**: Web pages, routes, and components are defined in [04-architecture-and-interfaces.md, section 7](04-architecture-and-interfaces.md#7-web-pages-blazor-ssr). This document extends that section with navigation, acceptance criteria, key flows, and verification guides.
 
 ## 1. Navigation
 
-<!-- Define the main menu structure and navigation hierarchy. -->
-
 ### Main menu
 
-| Section | Path | Icon | Access |
-|---------|------|------|--------|
-| [Home/Dashboard] | `/` | [icon] | All authenticated users |
-| [Module 1] | `/[module1]` | [icon] | [Roles] |
-| [Module 2] | `/[module2]` | [icon] | [Roles] |
-| [Settings] | `/settings` | [icon] | Admin |
+| Section | Path | Access |
+|---------|------|--------|
+| Home | `/` | Public |
+| Rankings | `/rankings` | Public |
+| Competitions | `/competitions` | Public |
+
+No admin UI in MVP — all admin operations are via CLI.
+
+### Secondary navigation (in-page)
+
+- **Rankings page**: Size category tabs (S / M / I / L), country filter dropdown, name search input
+- **Competitions page**: Year filter, tier filter, country filter
+- **Handler profile**: Dog/team selector to switch between teams
 
 ### Breadcrumb pattern
 
-`[Home] > [Module] > [Entity List] > [Entity Detail]`
+- Rankings: `Home > Rankings`
+- Team profile: `Home > Rankings > {Handler} & {Dog}`
+- Handler profile: `Home > Rankings > {Handler}`
+- Competition detail: `Home > Competitions > {Competition Name}`
 
 ## 2. Screens
 
-<!-- List all screens per module with their purpose and key elements. -->
+### Home — `/`
 
-### [Module 1]
-
-#### [Entity] List — `/[module]/[entities]`
-
-**Purpose**: Browse, search, and filter [entities].
+**Purpose**: Landing page with summary stats and entry points.
 
 **Key elements**:
-- Search/filter bar: [filterable fields]
-- Data table with columns: [column list]
-- Pagination
-- Actions: [New, Edit, Delete, Export]
+- Summary cards: qualified teams count, competitions count, total runs
+- Quick links to rankings (one per size category)
+- Brief explanation of the rating system
 
 **Acceptance criteria**:
-- [ ] Shows paginated list with columns: [list columns]
-- [ ] Filter by [field] works correctly
-- [ ] Sort by [field] works correctly
-- [ ] Empty state shows appropriate message
-- [ ] Loading state visible during data fetch
-- [ ] "New" button navigates to create form
-- [ ] Row click navigates to detail view
-- [ ] Export to [format] downloads correct data
-
-#### [Entity] Detail — `/[module]/[entities]/{id}`
-
-**Purpose**: View and edit a single [entity].
-
-**Key elements**:
-- Read-only detail view with key fields
-- Edit button → switches to edit mode or navigates to form
-- Related entities section (tabs or sections)
-- Action buttons: [Save, Cancel, Delete]
-
-**Acceptance criteria**:
-- [ ] Displays all entity fields correctly
-- [ ] Edit mode enables form fields
-- [ ] Save validates and persists changes
-- [ ] Cancel discards unsaved changes
-- [ ] Delete asks for confirmation before proceeding
-- [ ] Related entities shown in [tabs/sections]
-
-#### [Entity] Form — `/[module]/[entities]/new` or `/{id}/edit`
-
-**Purpose**: Create or edit an [entity].
-
-**Key elements**:
-- Form fields matching entity definition from domain model
-- Validation messages per field
-- Save / Cancel buttons
-
-**Acceptance criteria**:
-- [ ] All required fields are marked
-- [ ] Validation errors shown inline per field
-- [ ] Successful save redirects to [detail/list]
-- [ ] Server-side validation errors displayed
-- [ ] Form pre-filled in edit mode
+- [ ] Shows summary stats from `GET /api/rankings/summary`
+- [ ] Links to `/rankings?size=S`, `/rankings?size=M`, etc. work
+- [ ] Page loads under 2 s on 4G
 
 ---
 
-<!-- Copy the screen templates above for each module. -->
+### Rankings — `/rankings`
 
-### [Module 2]
+**Purpose**: Paginated leaderboard filtered by size, country, and name.
 
-<!-- ... -->
+**Key elements**:
+- Size category tabs (S / M / I / L) — `size` query param, required
+- Country filter dropdown — `country` query param
+- Name search input — `search` query param
+- Data table: rank, trend arrow, handler name, dog name, country flag, normalized rating, tier label, run count
+- Pagination controls
+
+**Acceptance criteria**:
+- [ ] Default view shows Large category leaderboard
+- [ ] Switching size tab reloads data via Enhanced Navigation
+- [ ] Country filter limits results to selected country
+- [ ] Search filters by handler or dog name (min 2 chars)
+- [ ] Pagination works correctly (page, pageSize query params)
+- [ ] Provisional teams show "FEW RUNS" badge
+- [ ] Tier labels (Elite, Champion, Expert, Competitor) displayed as badges
+- [ ] Trend arrows show rank change (▲ up, ▼ down, NEW)
+- [ ] Clicking a team row navigates to `/teams/{slug}`
+- [ ] Empty state when no results match filters
+
+---
+
+### Team Profile — `/teams/{slug}`
+
+**Purpose**: Detailed view of a single team (handler + dog).
+
+**Key elements**:
+- Bio card: handler name + country, dog name + breed, size category
+- Rating display: normalized rating ± sigma, tier label
+- Stats: run count, finished %, top3 %, average rank
+- Rating progression chart (from `/api/teams/{slug}/history`)
+- Competition history table (from `/api/teams/{slug}/results`, paginated)
+- Inactive banner if `isActive = false`
+
+**Acceptance criteria**:
+- [ ] All bio card fields displayed correctly
+- [ ] Rating chart renders with correct data points
+- [ ] Competition history table shows: date, competition name, discipline, rank, faults, time, speed
+- [ ] Clicking competition name navigates to `/competitions/{slug}`
+- [ ] Clicking handler name navigates to `/handlers/{slug}`
+- [ ] Inactive teams show "Inactive — not enough recent runs" banner
+- [ ] 404 page for non-existent slug
+- [ ] Open Graph meta tags set (title: "Handler & Dog — ADW Rating", description with rating)
+
+---
+
+### Handler Profile — `/handlers/{slug}`
+
+**Purpose**: Overview of a handler's career across all dogs.
+
+**Key elements**:
+- Handler info: name, country
+- Teams list: each team with dog name, size, current rating, peak rating, tier label, active status
+- Dog selector: clicking a team shows run history + rating chart for that team
+
+**Acceptance criteria**:
+- [ ] All handler's teams displayed with current and peak rating
+- [ ] Selecting a team shows run history table (reuses team results endpoint)
+- [ ] Rating chart for selected team shows progression
+- [ ] Clicking dog/team navigates to `/teams/{slug}`
+- [ ] 404 page for non-existent slug
+- [ ] Open Graph meta tags set
+
+---
+
+### Competition List — `/competitions`
+
+**Purpose**: Browsable, searchable list of all imported competitions.
+
+**Key elements**:
+- Year filter dropdown
+- Tier filter (Tier 1, Tier 2, All)
+- Country filter dropdown
+- Search input (competition name)
+- Data table: date, name, location, country, tier, participant count
+- Sorted by date descending (newest first)
+- Pagination
+
+**Acceptance criteria**:
+- [ ] Shows all competitions sorted by date (newest first)
+- [ ] Year filter works
+- [ ] Tier filter works
+- [ ] Country filter works
+- [ ] Search by name works (min 2 chars)
+- [ ] Clicking a row navigates to `/competitions/{slug}`
+- [ ] Pagination works correctly
+
+---
+
+### Competition Detail — `/competitions/{slug}`
+
+**Purpose**: Full results for a single competition.
+
+**Key elements**:
+- Competition header: name, dates, location, country, tier
+- Runs grouped by: date (day 1, day 2, …) → size category → discipline
+- Each run section expandable or pre-expanded with results table
+- Results table columns: rank, handler, dog, country, faults, refusals, time faults, time, speed, eliminated
+
+**Acceptance criteria**:
+- [ ] Competition metadata displayed in header
+- [ ] Runs grouped correctly by date/size/discipline
+- [ ] Results table shows all columns from RunResultDto
+- [ ] Clicking a team navigates to `/teams/{slug}`
+- [ ] Eliminated teams shown at bottom with "ELIM" badge
+- [ ] 404 page for non-existent slug
 
 ## 3. Role-based access
 
-<!-- Define which roles can see and do what. -->
+No roles in MVP. All pages are public, read-only. Admin operations are CLI-only.
 
-| Screen / Action | [Role 1, e.g., Admin] | [Role 2, e.g., Manager] | [Role 3, e.g., User] |
-|----------------|----------------------|------------------------|---------------------|
-| [Entity] List | View, Create, Delete | View, Create | View |
-| [Entity] Detail | View, Edit, Delete | View, Edit | View |
-| Settings | Full access | — | — |
+| Screen | Public | Admin (CLI) |
+|--------|--------|-------------|
+| All web pages | View | — |
+| Import / Recalculate / Merge | — | Full access |
 
 ## 4. Key UI flows
 
-<!-- Describe 2-4 complete user journeys through the application. -->
+### Flow 1: Browse rankings and view team profile
 
-### Flow 1: [Flow name, e.g., "Create and schedule a session"]
-
-1. User navigates to [starting point]
-2. Clicks [action]
-3. Fills in [form fields]
-4. Submits → system [validates, creates, notifies...]
-5. User is redirected to [destination]
-6. [Additional steps if any]
-
-**Verification guide**:
-1. Navigate to `/[path]`
-2. Click "[Button text]"
-3. Fill required fields: [list them]
-4. Click "Save" → verify redirect to [path]
-5. Verify [entity] appears in the list
-6. Verify [related data] is correct
-
-### Flow 2: [Flow name]
-
-1. [Steps...]
+1. Visitor opens `/rankings` (defaults to Large category)
+2. Switches to Medium tab
+3. Filters by country "CZE"
+4. Sees filtered leaderboard
+5. Clicks on a team row → navigates to `/teams/{slug}`
+6. Views bio card, rating chart, competition history
+7. Clicks a competition in the history → navigates to `/competitions/{slug}`
 
 **Verification guide**:
-1. [Steps...]
+1. Navigate to `/rankings`
+2. Click "M" size tab → verify URL is `/rankings?size=M`
+3. Select "CZE" in country filter → verify filtered results
+4. Click first team → verify team profile loads
+5. Verify rating chart renders
+6. Click a competition in history → verify competition detail loads
+
+### Flow 2: Search for a handler
+
+1. Visitor uses the search bar (global search)
+2. Types a handler name (e.g., "Tercova")
+3. Search results appear: matching teams, handlers, competitions
+4. Clicks handler result → navigates to `/handlers/{slug}`
+5. Views all teams, selects one → sees run history and rating chart
+
+**Verification guide**:
+1. Type "Tercova" in the search bar
+2. Verify results include handler and team matches
+3. Click handler result → verify handler profile loads
+4. Click a team → verify run history appears
+
+### Flow 3: Browse competition results
+
+1. Visitor opens `/competitions`
+2. Filters by year 2024
+3. Clicks "AWC 2024" → navigates to `/competitions/awc2024`
+4. Sees results grouped by day → size → discipline
+5. Expands Large Agility Run 1
+6. Sees full results table with placements, times, faults
+7. Clicks a team → navigates to team profile
+
+**Verification guide**:
+1. Navigate to `/competitions`
+2. Select year 2024 → verify filtered list
+3. Click "AWC 2024" → verify competition detail loads
+4. Verify runs are grouped by date/size/discipline
+5. Verify results table has all expected columns
+6. Click a team → verify team profile loads
 
 ## 5. Export and download UX
 
-<!-- Define patterns for data exports and file downloads. -->
-
-| Export | Format | Trigger | Content |
-|--------|--------|---------|---------|
-| [Entity] list export | [Excel / CSV / PDF] | Button on list page | [What data is included] |
-| [Report name] | [Excel / PDF] | Button on [page] | [What data is included] |
-
-**UX pattern**:
-- Export button shows loading indicator while generating
-- File downloads automatically when ready
-- Error toast shown if export fails
-- [Large exports: background job with notification when ready]
+No exports in MVP. Future consideration: CSV export of rankings or competition results.
