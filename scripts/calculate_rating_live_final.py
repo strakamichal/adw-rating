@@ -414,8 +414,8 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
 
             rows.append(
                 f"<tr class='tier-{team.get('skill_tier', 'Competitor').lower()}{rank_class}'>"
-                f"<td class='rank-cell'>{rank_cell} {trend_html}</td>"
-                f"<td>{handler_cell}</td>"
+                f"<td class='rank-cell'>{rank_cell}</td>"
+                f"<td>{trend_html} {handler_cell}</td>"
                 f"<td>{dog_cell}</td>"
                 f"<td>{base._esc(team['country'])}</td>"
                 f"<td class='num rating-cell'>{team['rating']:.0f}</td>"
@@ -862,7 +862,7 @@ body {{
 }}
 
 /* Trend arrows */
-.trend {{ font-size: 12px; font-weight: 600; margin-left: 8px; }}
+.trend {{ font-size: 12px; font-weight: 600; margin-right: 6px; }}
 .trend-up {{ color: var(--competitor); }}
 .trend-down {{ color: #ef4444; }}
 .trend-same {{ color: var(--text-muted); }}
