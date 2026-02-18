@@ -234,6 +234,7 @@ CALL_NAME_DISPLAY = {
 # Manual handler aliases: normalized_handler -> canonical_normalized_handler
 HANDLER_ALIASES = {
     "katka tercova": "katerina tercova",
+    "adrian alonso bajo": "adrian bajo",
 }
 
 # Manual handler display overrides: canonical_normalized_handler -> display name
