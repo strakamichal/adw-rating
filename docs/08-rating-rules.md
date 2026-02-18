@@ -1,186 +1,176 @@
-# Rating Rules (Aktuální řešení)
+# Rating Rules
 
-Tento dokument popisuje aktuálně používaný výpočet leaderboardu v:
+This document describes the rating calculation algorithm used for the leaderboard. It serves as the single source of truth for all rating parameters and formulas.
 
-- `scripts/calculate_rating.py` (načtení dat, identita týmu, deduplikace)
-- `scripts/calculate_rating_live_final.py` (finální veřejný rating)
+## 1. Input Data and Team Identity
 
-## 1. Vstupní data a identita týmu
+### 1.1 Sources
 
-### 1.1 Zdroje
+Rating calculation uses run results from all competitions registered in the system. Each run result links to a Team (handler + dog combination) via the domain model (see `docs/03-domain-and-data.md`).
 
-Do výpočtu vstupují normalizovaná CSV z `data/*/*_results.csv` jen pro soutěže registrované v `COMPETITIONS`.
+### 1.2 Team Identity
 
-### 1.2 Týmová identita
+A team is identified by the unique (HandlerId, DogId) pair. Identity resolution (alias matching, diacritics normalization, name reordering) is applied during import to ensure the same real-world handler+dog pair maps to a single Team entity.
 
-Tým je interně identifikován jako:
+### 1.3 Name Normalization
 
-- `team_id = normalize_handler(handler) + "|||" + normalized_dog_id`
+During import, the following normalization rules are applied:
 
-Kde `normalized_dog_id` je preferenčně call name, jinak registered name.
+- Strip diacritics for internal matching
+- Normalize typographic quotes (`\u201c\u201d`) to ASCII (`""`)
+- Unify `Last, First` vs `First Last` name order
+- Apply handler aliases (e.g., `Katka Tercova` → `Katerina Tercova`)
+- Apply dog name aliases and registered name mappings
+- Map registered name → call name (e.g., `A3Ch Libby Granting Pleasure` → `Psenik`)
+- Fuzzy merge variants of the same dog for the same handler
 
-### 1.3 Normalizace jmen
+Result: one dog/handler behaves as a single entity in ratings regardless of spelling variations.
 
-Používají se pravidla z `scripts/calculate_rating.py`:
+## 2. Run Selection for Live Calculation
 
-- odstranění diakritiky pro interní matching
-- normalizace typografických uvozovek (`""`) na ASCII (`""`)
-- sjednocení `Last, First` vs `First Last`
-- aliasy handlerů (např. `Katka Terčová` -> `Kateřina Terčová` interně)
-- aliasy psích jmen a registered name
-- mapování registered name -> call name (např. `A3Ch Libby Granting Pleasure` -> `Pšeník`)
-- fuzzy merge variant stejného psa u stejného handlera
+### 2.1 Time Window
 
-Výsledek: jeden pes/psovod se má v ratingu chovat jako jedna entita i při různých zápisech.
+- `latest_date` = most recent competition date in the dataset
+- `cutoff_date = latest_date - LIVE_WINDOW_DAYS` (default: 730 days / 2 years)
+- Only runs with `comp_date >= cutoff_date` are included in the live calculation
 
-## 2. Výběr běhů do live výpočtu
+### 2.2 Minimum Field Size
 
-### 2.1 Časové okno
+A run counts for rating only if it has at least `MIN_FIELD_SIZE` (default: 6) teams after deduplication.
 
-- `latest_date` = nejnovější datum soutěže v datasetu
-- `cutoff_date = latest_date - 730 dní` (2 roky)
-- do live výpočtu jdou jen běhy s `comp_date >= cutoff_date`
+### 2.3 Deduplication Within a Run
 
-### 2.2 Minimální velikost pole
+Within a single run (`RoundKey`), each team is counted at most once.
 
-Kolo se započítá jen pokud má po deduplikaci minimálně:
+### 2.4 Elimination Handling
 
-- `MIN_FIELD_SIZE = 6` týmů
+- Non-eliminated teams with a valid `Rank` are ordered by placement
+- Eliminated teams share a tied last place: `last_rank = count_of_non_eliminated + 1`
 
-### 2.3 Deduplikace v kole
-
-V rámci jednoho kola (`round_key`) se každý `team_id` bere maximálně jednou.
-
-### 2.4 Zpracování eliminací
-
-- neeliminovaní s validním `rank` jsou seřazeni dle pořadí
-- eliminovaní sdílí společné poslední pořadí (`last_rank = len(clean)+1`)
-
-## 3. Core rating model (OpenSkill)
+## 3. Core Rating Model (OpenSkill)
 
 ### 3.1 Model
 
-- `PlackettLuce` (OpenSkill)
+- PlackettLuce (OpenSkill)
+- Default initial values: `μ₀ = 25.0`, `σ₀ = μ₀/3 ≈ 8.333`
 
-### 3.2 Váha velkých akcí
+### 3.2 Major Event Weighting
 
-- pokud je soutěž `tier == 1`, použije se váha `1.2`
-- jinak váha `1.0`
+- If a competition has `Tier == 1`, weight `MAJOR_EVENT_WEIGHT` (default: 1.2) is applied
+- Otherwise weight `1.0`
 
-### 3.3 Stabilizace nejistoty
+### 3.3 Uncertainty Stabilization
 
-Po každém update:
+After each update:
 
-- `sigma = max(SIGMA_MIN, sigma * LIVE_SIGMA_DECAY)`
-- `LIVE_SIGMA_DECAY = 0.99`
-- `SIGMA_MIN = 1.5` (z `calculate_rating.py`)
+- `sigma = max(SIGMA_MIN, sigma * SIGMA_DECAY)`
+- `SIGMA_DECAY` default: `0.99`
+- `SIGMA_MIN` default: `1.5`
 
-## 4. Veřejné skóre (Rating)
+## 4. Display Rating
 
-### 4.1 Base rating
+### 4.1 Base Rating
 
-Nejdřív se spočítá základ:
+First, a base rating is computed per team:
 
 - `rating_base = DISPLAY_BASE + DISPLAY_SCALE * (mu - RATING_SIGMA_MULTIPLIER * sigma)`
-- aktuálně: `DISPLAY_BASE = 1000`, `DISPLAY_SCALE = 40`, `RATING_SIGMA_MULTIPLIER = 1.0`
+- Defaults: `DISPLAY_BASE = 1000`, `DISPLAY_SCALE = 40`, `RATING_SIGMA_MULTIPLIER = 1.0`
 
-### 4.2 Podium boost (kvalitativní korekce)
+### 4.2 Podium Boost (Quality Correction)
 
-Na `rating_base` se aplikuje faktor podle procenta TOP3 umístění:
+A quality factor is applied to `rating_base` based on the team's TOP3 placement percentage:
 
-- `quality_norm = clamp(top3_pct / 50.0, 0, 1)`
-- `quality_factor = 0.85 + 0.20 * quality_norm`
+- `quality_norm = clamp(top3_pct / PODIUM_BOOST_TARGET, 0, 1)`
+- `quality_factor = PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE * quality_norm`
 - `rating = rating_base * quality_factor`
 
-Interpretace:
+Defaults: `PODIUM_BOOST_BASE = 0.85`, `PODIUM_BOOST_RANGE = 0.20`, `PODIUM_BOOST_TARGET = 50.0`
 
-- týmy s častými TOP3 umístěními mají faktor blíž `1.05`
-- týmy bez TOP3 umístění mají faktor `0.85`
-- tím se odměňují konzistentně dobré výsledky a penalizuje „jen hodně běhů"
+Interpretation:
 
-### 4.3 Normalizace napříč kategoriemi
+- Teams with frequent TOP3 placements get a factor close to `1.05`
+- Teams without TOP3 placements get a factor of `0.85`
+- This rewards consistently strong results and penalizes "just many runs"
 
-Po výpočtu ratingů v každé velikostní kategorii se provede z-score normalizace na společnou škálu:
+### 4.3 Cross-Size Normalization
 
-- Pro každou kategorii se spočítá průměr a směrodatná odchylka (z kvalifikovaných týmů)
-- `normalized_rating = TARGET_MEAN + TARGET_STD * (rating - size_mean) / size_std`
-- `TARGET_MEAN = 1500`, `TARGET_STD = 150`
+After computing ratings within each size category (S, M, I, L), z-score normalization is applied to a common scale:
 
-Tím se zajistí, že rating 1650 znamená „1 směrodatná odchylka nad průměrem" v jakékoliv kategorii. Pořadí v rámci kategorie se nezmění, ale čísla jsou porovnatelná napříč kategoriemi (Small, Medium, Intermediate, Large).
+- For each category, compute mean and standard deviation (from qualified teams only)
+- `normalized_rating = NORM_TARGET_MEAN + NORM_TARGET_STD * (rating - size_mean) / size_std`
+- Defaults: `NORM_TARGET_MEAN = 1500`, `NORM_TARGET_STD = 150`
 
-Normalizace se aplikuje i na `prev_rating` (pro trend šipky), aby změny pořadí byly konzistentní.
+This ensures that a normalized rating of 1650 means "1 standard deviation above the mean" in any category. Ranking order within a category does not change, but values are comparable across categories (S, M, I, L).
 
-### 4.4 Trend (změna pořadí)
+Normalization is also applied to `prev_rating` (for trend arrows) so that rank changes are consistent.
 
-Pro každý tým se sleduje předchozí rating (mu/sigma před posledním updatem). Na leaderboardu se zobrazuje změna pořadí oproti předchozímu stavu (▲ posun nahoru, ▼ posun dolů, NEW pro nové týmy).
+### 4.4 Trend (Rank Change)
 
-## 5. Statistika týmů
+For each team, the previous rating state (mu/sigma before the last update) is tracked. The leaderboard displays rank change compared to the previous state (▲ moved up, ▼ moved down, NEW for new teams).
 
-Pro každý tým se v live okně sleduje:
+## 5. Team Statistics
 
-- `num_runs`
-- `finished_runs`, `finished_pct`
-- `top3_runs`, `top3_pct`
+For each team within the live window:
 
-## 6. Tier labely a PROV
+- `RunCount` — total runs
+- `FinishedRunCount` — non-eliminated runs
+- `FinishedPct` — `FinishedRunCount / RunCount` (computed, not stored)
+- `Top3RunCount` — runs with rank 1–3
+- `Top3Pct` — `Top3RunCount / RunCount` (computed, not stored)
 
-### 6.1 Tier labely (po velikostech)
+## 6. Tier Labels and Provisional
 
-Po výpočtu `rating` se v každé size kategorii spočítají percentily:
+### 6.1 Tier Labels (per size category)
 
-- `Elite`: top 2 %
-- `Champion`: top 10 %
-- `Expert`: top 30 %
-- jinak `Competitor`
+After computing `rating`, percentile-based labels are assigned within each size category:
 
-Výpočet používá jen týmy s `num_runs >= MIN_RUNS_FOR_LIVE_RANKING`.
+- `Elite`: top 2 % (`ELITE_TOP_PERCENT = 0.02`)
+- `Champion`: top 10 % (`CHAMPION_TOP_PERCENT = 0.10`)
+- `Expert`: top 30 % (`EXPERT_TOP_PERCENT = 0.30`)
+- Otherwise: `Competitor`
+
+Only teams with `RunCount >= MIN_RUNS_FOR_LIVE_RANKING` are included in the percentile calculation.
 
 ### 6.2 Provisional
 
-- `FEW RUNS` pokud `sigma >= LIVE_PROVISIONAL_SIGMA_THRESHOLD`
-- aktuálně `LIVE_PROVISIONAL_SIGMA_THRESHOLD = 7.8`
+- A team is marked as provisional ("FEW RUNS") if `sigma >= PROVISIONAL_SIGMA_THRESHOLD`
+- Default: `PROVISIONAL_SIGMA_THRESHOLD = 7.8`
 
-## 7. Výstup a řazení
+## 7. Output and Sorting
 
-Generují se:
+### 7.1 Leaderboard Sorting
 
-- `output/ratings_live_final.csv`
-- `output/ratings_live_final.html`
-- `index.html` (kopie HTML v rootu repozitáře)
+Within each size category, teams are sorted by `NormalizedRating` descending. Only teams with `RunCount >= MIN_RUNS_FOR_LIVE_RANKING` (default: 5) are displayed.
 
-Řazení v leaderboardu je v rámci každé size:
+### 7.2 Summary Cards
 
-1. podle `rating` sestupně
-2. zobrazují se jen týmy s `num_runs >= 5`
+Global summary statistics displayed on the leaderboard:
 
-### 7.1 Stat karty (hero)
+- **Teams** — count of qualified teams (meeting min runs) across all categories
+- **Competitions** — count of competitions in the dataset
+- **Runs** — total number of runs
 
-Statické globální součty:
+## 8. Configuration Parameters
 
-- **Teams** — počet kvalifikovaných týmů (min runs) přes všechny kategorie
-- **Competitions** — počet soutěží v datasetu
-- **Runs** — celkový počet kol
+All parameters are stored in the `RatingConfiguration` entity (see `docs/03-domain-and-data.md`). Default values:
 
-## 8. Aktuální konfigurační přehled
-
-| Parametr | Hodnota |
+| Parameter | Default |
 |---|---:|
-| `LIVE_WINDOW_DAYS` | `730` |
-| `MIN_RUNS_FOR_LIVE_RANKING` | `5` |
-| `MIN_FIELD_SIZE` | `6` |
-| `ENABLE_MAJOR_EVENT_WEIGHTING` | `True` |
-| `MAJOR_EVENT_WEIGHT` | `1.20` |
-| `LIVE_SIGMA_DECAY` | `0.99` |
-| `SIGMA_MIN` | `1.5` |
-| `RATING_SIGMA_MULTIPLIER` | `1.0` |
-| `ENABLE_PODIUM_BOOST` | `True` |
-| `PODIUM_BOOST_BASE` | `0.85` |
-| `PODIUM_BOOST_RANGE` | `0.20` |
-| `PODIUM_BOOST_TARGET` | `50.0` |
-| `LIVE_PROVISIONAL_SIGMA_THRESHOLD` | `7.8` |
-| `NORMALIZE_ACROSS_SIZES` | `True` |
-| `NORM_TARGET_MEAN` | `1500` |
-| `NORM_TARGET_STD` | `150` |
-| `ELITE_TOP_PERCENT` | `0.02` |
-| `CHAMPION_TOP_PERCENT` | `0.10` |
-| `EXPERT_TOP_PERCENT` | `0.30` |
+| `LiveWindowDays` | `730` |
+| `MinRunsForLiveRanking` | `5` |
+| `MinFieldSize` | `6` |
+| `MajorEventWeight` | `1.20` |
+| `SigmaDecay` | `0.99` |
+| `SigmaMin` | `1.5` |
+| `RatingSigmaMultiplier` | `1.0` |
+| `DisplayBase` | `1000` |
+| `DisplayScale` | `40` |
+| `PodiumBoostBase` | `0.85` |
+| `PodiumBoostRange` | `0.20` |
+| `PodiumBoostTarget` | `50.0` |
+| `ProvisionalSigmaThreshold` | `7.8` |
+| `NormTargetMean` | `1500` |
+| `NormTargetStd` | `150` |
+| `EliteTopPercent` | `0.02` |
+| `ChampionTopPercent` | `0.10` |
+| `ExpertTopPercent` | `0.30` |

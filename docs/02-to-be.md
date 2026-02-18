@@ -30,7 +30,7 @@ Build a web application for calculating and displaying performance ratings of ag
 - **Run** — A single scored attempt within a competition (e.g., agility individual Large run 1). Each run has its own results (placement, time, faults). Runs are the atomic unit for rating calculation. Combined/aggregate results (e.g., individual overall) are not tracked — only individual runs matter.
 - **Discipline** — The type of course within a competition run (e.g., Agility, Jumping, Final). A fixed enumeration maintained in the system.
 - **Competition tier** — A classification of competition importance that affects rating weight. Defined in `docs/08-rating-rules.md` (currently: Tier 1 with weight 1.2, others with weight 1.0).
-- **Size category** — Dog height category using FCI classification: S (<35 cm), M (35–43 cm), L (>43 cm). Ratings are calculated separately per category, then normalized to a common scale for cross-category comparability (see `docs/08-rating-rules.md`). Only FCI size categories are used; competitions from other organizations are mapped to FCI categories.
+- **Size category** — Dog height category using FCI classification: S (Small, <35 cm), M (Medium, 35–43 cm), I (Intermediate, 43–48 cm), L (Large, >48 cm). Ratings are calculated separately per category, then normalized to a common scale for cross-category comparability (see `docs/08-rating-rules.md`). If a source uses XS, it is mapped to S during import.
 - **Active team** — A team that meets the minimum activity thresholds defined in `docs/08-rating-rules.md` (run count and time window). Only active teams appear in the live rankings. Inactive teams retain their profile (marked as inactive) but are excluded from the leaderboard.
 
 ## 3. Scope (MVP)
@@ -40,7 +40,7 @@ The MVP covers the following functional areas:
 1. **Rating engine** — Rating calculation from individual run results. Ratings are per team, separated by size category. Competition tier weighting affects rating impact. Algorithm details and parameters are defined in `docs/08-rating-rules.md`.
 2. **Competition data import** — Manual import of structured result data (CSV/Excel) via CLI or admin script. Covers 2–3 years of major international events. Import is all-or-nothing: the entire file must be valid or the import is rejected. Errors are reported for correction.
 3. **Identity resolution** — Aggressive automatic fuzzy matching of handlers and dogs across imports (diacritics normalization, Levenshtein distance, alias tables). The system must maximize match rate to minimize duplicates. Confirmed matches are stored in an alias table for future imports. When matching fails, a new entity is created. After each import, the system generates a report of newly created entities and potential duplicates for admin review. Admin can merge duplicates at any time.
-4. **Rankings** — Paginated interactive leaderboard filtered by size category (S/M/L) and country. Only active teams displayed (thresholds defined in `docs/08-rating-rules.md`).
+4. **Rankings** — Paginated interactive leaderboard filtered by size category (S/M/I/L) and country. Only active teams displayed (thresholds defined in `docs/08-rating-rules.md`).
 5. **Team profiles (bio cards)** — Handler + dog info, current rating ± deviation, rating progression chart, competition history, statistics (clean run rate, average placement). No photos in MVP (initials/generic avatar as placeholder).
 6. **Handler profiles** — Aggregated view: all dogs (teams), peak rating per team, career statistics. The handler can select a specific dog to see the full run history for that team (competition, date, discipline, placement, time, faults, speed) and a rating progression chart showing how each competition changed the team's rating over time.
 7. **Competition list (results database)** — Browsable, searchable list of all imported competitions. Each entry shows name, dates, location, tier, and number of participants. Sorted by date (newest first). Filterable by year, tier, and country.
@@ -83,11 +83,11 @@ These items are out of scope for **all planned phases**:
 - **Notifications** — no email, push, or in-app notifications.
 - **Multi-language UI** — English only for the foreseeable future.
 - **Offline/PWA mode** — not needed for this type of content site.
-- **Team/squad competitions** — only individual results are rated. Team events may be displayed but do not contribute to team ratings.
+- **Team/squad aggregate results** — only individual run placements are rated. In team events, each handler's individual placement in the run is used for rating (same as any other run). The aggregate team score is not tracked.
 
 ## 5. Key use cases
 
-1. **Browse global rankings** — A visitor opens the ranking page, selects size category (S/M/L), optionally filters by country or searches by name, and browses the paginated leaderboard of active teams sorted by rating.
+1. **Browse global rankings** — A visitor opens the ranking page, selects size category (S/M/I/L), optionally filters by country or searches by name, and browses the paginated leaderboard of active teams sorted by rating.
 2. **View team profile** — A visitor clicks on a team in the rankings (or finds it via search) and sees the bio card: rating ± deviation, rating chart over time, competition history, and statistics.
 3. **View handler profile** — A visitor views a handler's page showing all their dogs (teams), peak ratings, and career overview. They select a specific dog and see the complete run history for that team (competition, date, discipline, rank, faults, time, speed) and a chart showing how the rating changed over time. They can click on any competition to jump to its detail page.
 4. **Browse competitions** — A visitor opens the competitions page and sees a chronological list of all imported events. They can filter by year, tier, or country, and click on any competition to see full results.
@@ -106,10 +106,10 @@ These items are out of scope for **all planned phases**:
 ### Always (invariants that must always hold)
 
 - Validate imported competition data before storing (required fields, no duplicate entries, valid date/placement values). Entire import must pass validation or nothing is stored.
-- Size categories (S/M/L) must be kept strictly separate in rating calculation — never mix ratings across categories. Cross-category normalization (z-score) is applied only for display comparability, not for ranking within a category.
+- Size categories (S/M/I/L) must be kept strictly separate in rating calculation — never mix ratings across categories. Cross-category normalization (z-score) is applied only for display comparability, not for ranking within a category.
 - Rating recalculation must be deterministic and reproducible — same input data must produce the same ratings.
 - All public pages must be server-rendered or statically generated for SEO.
-- Keep competition result data immutable after import — edits go through a re-import or explicit correction workflow.
+- Keep competition result data immutable after import — corrections go through deleting the competition (cascading to runs/results) and re-importing corrected data.
 - Identity resolution alias table must be append-only — confirmed matches are never silently removed.
 
 ### Ask first (agent must stop and ask before proceeding)
