@@ -98,7 +98,19 @@ Interpretace:
 - týmy bez TOP3 umístění mají faktor `0.85`
 - tím se odměňují konzistentně dobré výsledky a penalizuje „jen hodně běhů"
 
-### 4.3 Trend (změna pořadí)
+### 4.3 Normalizace napříč kategoriemi
+
+Po výpočtu ratingů v každé velikostní kategorii se provede z-score normalizace na společnou škálu:
+
+- Pro každou kategorii se spočítá průměr a směrodatná odchylka (z kvalifikovaných týmů)
+- `normalized_rating = TARGET_MEAN + TARGET_STD * (rating - size_mean) / size_std`
+- `TARGET_MEAN = 1500`, `TARGET_STD = 150`
+
+Tím se zajistí, že rating 1650 znamená „1 směrodatná odchylka nad průměrem" v jakékoliv kategorii. Pořadí v rámci kategorie se nezmění, ale čísla jsou porovnatelná napříč kategoriemi (Small, Medium, Intermediate, Large).
+
+Normalizace se aplikuje i na `prev_rating` (pro trend šipky), aby změny pořadí byly konzistentní.
+
+### 4.4 Trend (změna pořadí)
 
 Pro každý tým se sleduje předchozí rating (mu/sigma před posledním updatem). Na leaderboardu se zobrazuje změna pořadí oproti předchozímu stavu (▲ posun nahoru, ▼ posun dolů, NEW pro nové týmy).
 
@@ -166,6 +178,9 @@ Statické globální součty:
 | `PODIUM_BOOST_RANGE` | `0.20` |
 | `PODIUM_BOOST_TARGET` | `50.0` |
 | `LIVE_PROVISIONAL_SIGMA_THRESHOLD` | `7.8` |
+| `NORMALIZE_ACROSS_SIZES` | `True` |
+| `NORM_TARGET_MEAN` | `1500` |
+| `NORM_TARGET_STD` | `150` |
 | `ELITE_TOP_PERCENT` | `0.02` |
 | `CHAMPION_TOP_PERCENT` | `0.10` |
 | `EXPERT_TOP_PERCENT` | `0.30` |

@@ -1115,6 +1115,13 @@ body {{
             </div>
             <p>Quality factor ranges from <code>{PODIUM_BOOST_BASE:.2f}</code> (no top-3 finishes) to <code>{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.2f}</code> (frequent podium placements). Teams that consistently finish in the top 3 receive a significant bonus, while teams without podium results have their rating reduced.</p>
 
+            <h3>Cross-size normalization</h3>
+            <p>Each size category (Small, Medium, Intermediate, Large) has a different competitive landscape — some categories have more teams and tighter rating distributions. To make ratings <strong>comparable across categories</strong>, a z-score normalization is applied:</p>
+            <div class="formula">
+                normalized = {NORM_TARGET_MEAN:.0f} + {NORM_TARGET_STD:.0f} &times; (rating &minus; size_mean) / size_std
+            </div>
+            <p>This maps each category to a common scale with mean <code>{NORM_TARGET_MEAN:.0f}</code> and standard deviation <code>{NORM_TARGET_STD:.0f}</code>. A rating of {NORM_TARGET_MEAN + NORM_TARGET_STD:.0f} means "one standard deviation above average" regardless of category. The ranking within each category is preserved.</p>
+
             <h2>Competition weighting (tier system)</h2>
             <p>Competitions are divided into two tiers:</p>
             <ul>
@@ -1156,6 +1163,8 @@ body {{
                 <tr><td><code>PODIUM_BASE</code></td><td>{PODIUM_BOOST_BASE}</td><td>Minimum quality factor</td></tr>
                 <tr><td><code>PODIUM_RANGE</code></td><td>{PODIUM_BOOST_RANGE}</td><td>Quality factor range</td></tr>
                 <tr><td><code>MIN_FIELD_SIZE</code></td><td>{base.MIN_FIELD_SIZE}</td><td>Minimum participants per run</td></tr>
+                <tr><td><code>NORM_MEAN</code></td><td>{NORM_TARGET_MEAN:.0f}</td><td>Normalized rating mean</td></tr>
+                <tr><td><code>NORM_STD</code></td><td>{NORM_TARGET_STD:.0f}</td><td>Normalized rating std deviation</td></tr>
             </table>
         </div>
     </div>
