@@ -186,6 +186,7 @@ DOG_ALIASES = {
     "black swan": "chilli",
     "finrod frances": "cis",
     "pszenik": "psenik",
+    "eglan tine": "rey",
 }
 
 # Tokens frequently found in exports as technical suffixes, not real call names.
@@ -214,6 +215,8 @@ REGISTERED_TO_CALL = {
     "galactic breez almondjoy": "twist",
     'a3ch flank "ray" ballarat': "ray",
     "a3ch farid fort fox": "shani",
+    "eglan tine koryfej rey": "rey",
+    "eglan tine koryfej": "rey",
 }
 
 # Manual registered-name typo fixes: normalized_variant -> canonical_registered_name
@@ -229,6 +232,7 @@ CALL_NAME_DISPLAY = {
     "cis": "Cis",
     "psenik": "Pšeník",
     "ray": "Ray",
+    "rey": "Rey",
 }
 
 # Manual handler aliases: normalized_handler -> canonical_normalized_handler
