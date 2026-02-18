@@ -211,6 +211,7 @@ REGISTERED_TO_CALL = {
     "clever and fastvof youwentis": "carrie",
     "never never land sayonara": "seeya",
     "black swan gates of heaven": "chilli",
+    "galactic breez almondjoy": "twist",
 }
 
 # Manual registered-name typo fixes: normalized_variant -> canonical_registered_name
