@@ -4,9 +4,7 @@ You are an AI coding agent with READ/WRITE access to this repository.
 
 ## Primary goal
 
-<!-- ✏️ CUSTOMIZE: Replace with your project's goal. -->
-
-Implement the [Project Name] system incrementally according to the target docs, starting with Phase 1 in `docs/06-implementation-plan.md`.
+Implement the **ADW Rating** system incrementally according to the target docs, starting with Phase 1 in `docs/06-implementation-plan.md`.
 
 ## Source of truth
 
@@ -17,9 +15,7 @@ Implement the [Project Name] system incrementally according to the target docs, 
 - Implementation phases: `docs/06-implementation-plan.md`
 - Coding/test rules: `docs/07-ai-guidelines.md`
 
-<!-- ✏️ CUSTOMIZE: Add project-specific doc references if needed: -->
-<!-- - Component library docs: `docs/[library]/` (start with `quick-reference.md`) -->
-<!-- - API specification: `docs/api/openapi.yaml` -->
+- Rating algorithm and parameters: `docs/08-rating-rules.md`
 
 ## How to work
 
@@ -34,51 +30,46 @@ Implement the [Project Name] system incrementally according to the target docs, 
 
 - Tests: follow `docs/07-ai-guidelines.md` (unit/integration/E2E expectations).
 - Observability: log request context and audit sensitive mutations as specified.
-<!-- ✏️ CUSTOMIZE: Add your critical security/quality requirements: -->
-- Security: tenant isolation (`TenantId`) is mandatory for all queries.
+- Security: MVP is fully public/read-only. No auth needed. Admin operations via CLI only.
 
 ## Architecture rules (MUST follow)
-
-<!-- ✏️ CUSTOMIZE: Replace this example with your actual architecture. The key is to
-     define explicit dependency rules so the agent never violates layer boundaries. -->
 
 **Clean architecture – data layer must be replaceable:**
 
 ```
-Api, Web, Worker, Service  ──►  Domain (interfaces)  ◄──  Data.PostgreSql (implements)
+Api, Cli, Service  ──►  Domain (interfaces)  ◄──  Data.Mssql (implements)
+Web  ──►  ApiClient  ──►  Domain
 ```
 
 | Project | Can depend on | CANNOT depend on |
 |---------|---------------|------------------|
 | **Domain** | nothing | anything else |
 | **Service** | Domain | Data.*, Api, Web |
-| **Data.PostgreSql** | Domain | Service, Api, Web |
-| **Api** | Domain, Service | — |
+| **Data.Mssql** | Domain | Service, Api, Web |
+| **Api** | Domain, Service | Web, Cli |
 | **Web** | Domain, ApiClient | Service, Data.* |
-| **Worker** | Domain, Service | — |
 | **ApiClient** | Domain | Service, Data.* |
+| **Cli** | Domain, Service, Data.Mssql (DI registration only) | Api, Web |
 
 **Key rules:**
-1. **Never use `AppDbContext` or any `Data.*` types outside of `Data.PostgreSql`** (except DI registration in `Program.cs`)
+1. **Never use `AppDbContext` or any `Data.*` types outside of `Data.Mssql`** (except DI registration in `Program.cs` of host projects)
 2. **All data access goes through repository interfaces** defined in `Domain/Interfaces/`
-3. **Every entity that needs direct querying must have an `I*Repository`** interface in Domain and implementation in Data.PostgreSql
+3. **Every entity that needs direct querying must have an `I*Repository`** interface in Domain and implementation in Data.Mssql
 4. **Service layer depends only on interfaces**, never on concrete implementations
 
-This allows swapping `Data.PostgreSql` for `Data.SqlServer` or `Data.InMemory` without changing any other code.
+This allows swapping `Data.Mssql` for `Data.InMemory` (tests) without changing any other code.
 
 ## Running tests selectively
 
 Don't run all tests every time — run only what's relevant to your changes:
 
-<!-- ✏️ CUSTOMIZE: Replace test project names and filter patterns with your actual projects. -->
-
 | Changed layer | Run these tests |
 |---------------|-----------------|
-| Domain entities / DB config | `dotnet test tests/MyApp.IntegrationTests/ --filter "FullyQualifiedName~Entities"` |
-| Repository | `dotnet test tests/MyApp.IntegrationTests/ --filter "FullyQualifiedName~Repositories"` |
-| Service | `dotnet test tests/MyApp.Tests/` (unit tests) |
-| API Controller | `dotnet test tests/MyApp.IntegrationTests/ --filter "FullyQualifiedName~Controllers"` |
-| Web UI | `dotnet test tests/MyApp.E2ETests/` (E2E tests — **required** for any UI change) |
+| Domain entities / DB config | `dotnet test tests/AdwRating.IntegrationTests/ --filter "FullyQualifiedName~Entities"` |
+| Repository | `dotnet test tests/AdwRating.IntegrationTests/ --filter "FullyQualifiedName~Repositories"` |
+| Service | `dotnet test tests/AdwRating.Tests/` (unit tests) |
+| API Controller | `dotnet test tests/AdwRating.IntegrationTests/ --filter "FullyQualifiedName~Controllers"` |
+| Web UI | `dotnet test tests/AdwRating.E2ETests/` (E2E tests — **required** for any UI change) |
 | Full regression | `dotnet test` (only before PR or when unsure) |
 
 API integration tests start a full WebApplicationFactory — avoid running them when you only changed entities or services.
