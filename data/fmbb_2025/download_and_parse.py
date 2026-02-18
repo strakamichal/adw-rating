@@ -10,10 +10,14 @@ from bs4 import BeautifulSoup
 BASE_DIR = Path(__file__).parent
 COMPETITION_NAME = "FMBB World Championship 2025"
 
-SOURCES = {
-    "agility": "https://agilitynews.eu/?p=6256",
-    "jumping": "https://agilitynews.eu/?p=6245",
-}
+SOURCES = [
+    {"url": "https://agilitynews.eu/?p=6155", "discipline": "Jumping", "round": 1},
+    {"url": "https://agilitynews.eu/?p=6171", "discipline": "Agility", "round": 1},
+    {"url": "https://agilitynews.eu/?p=6184", "discipline": "Jumping", "round": 2},
+    {"url": "https://agilitynews.eu/?p=6191", "discipline": "Agility", "round": 2},
+    {"url": "https://agilitynews.eu/?p=6245", "discipline": "Jumping", "round": 3, "label": "Final"},
+    {"url": "https://agilitynews.eu/?p=6256", "discipline": "Agility", "round": 3, "label": "Final"},
+]
 
 TARGET_COLUMNS = [
     "competition", "round_key", "size", "discipline", "is_team_round",
@@ -68,13 +72,15 @@ def split_handler_country(value: str):
     return txt, ""
 
 
-def parse_page(url: str, discipline: str):
+def parse_page(url: str, discipline: str, round_num: int):
     html = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"}).text
     soup = BeautifulSoup(html, "html.parser")
     table = soup.find("table")
     rows = []
     if not table:
         return rows
+
+    round_key = f"ind_{discipline.lower()}_large_{round_num}"
 
     for tr in table.find_all("tr"):
         cols = [c.get_text(" ", strip=True) for c in tr.find_all(["td", "th"])]
@@ -109,7 +115,7 @@ def parse_page(url: str, discipline: str):
 
         rows.append({
             "competition": COMPETITION_NAME,
-            "round_key": f"ind_{discipline.lower()}_large_1",
+            "round_key": round_key,
             "size": "Large",
             "discipline": discipline,
             "is_team_round": "False",
@@ -137,9 +143,10 @@ def parse_page(url: str, discipline: str):
 
 def main():
     all_rows = []
-    for discipline, url in SOURCES.items():
-        rows = parse_page(url, discipline.title())
-        print(f"{discipline}: {len(rows)}")
+    for src in SOURCES:
+        rows = parse_page(src["url"], src["discipline"], src["round"])
+        label = src.get("label", f"Round {src['round']}")
+        print(f"{src['discipline']} {label}: {len(rows)} rows")
         all_rows.extend(rows)
 
     all_rows.sort(
