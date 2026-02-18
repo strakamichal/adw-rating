@@ -156,12 +156,19 @@ def parse_pdf(pdf_name: str, pdf_bytes: bytes):
                     if not row or len(row) < 8:
                         continue
                     c0 = (row[0] or "").strip()
-                    if not c0 or c0.lower().startswith("rank"):
-                        continue
-                    if not c0.isdigit():
+                    if c0.lower().startswith("rank"):
                         continue
 
-                    rank = int(c0)
+                    # Check if this is an eliminated row (no rank, "Elim" in row)
+                    row_text = " ".join((c or "") for c in row).lower()
+                    is_elim = "elim" in row_text
+
+                    if not c0.isdigit() and not is_elim:
+                        continue
+                    if not c0 and not is_elim:
+                        continue
+
+                    rank = int(c0) if c0.isdigit() else ""
                     handler = (row[1] or "").strip()
                     dog_short = (row[2] or "").strip()
                     dog_registered = (row[3] or "").strip()
@@ -172,10 +179,17 @@ def parse_pdf(pdf_name: str, pdf_bytes: bytes):
                     # Some rows have breed split across columns and missing country.
                     if not country and country_raw:
                         breed = f"{breed} {country_raw}".strip()
-                    faults = to_float(row[6] or "")
-                    time_val = to_float(row[7] or "")
+
+                    if is_elim:
+                        faults = ""
+                        time_val = ""
+                    else:
+                        faults = to_float(row[6] or "")
+                        time_val = to_float(row[7] or "")
 
                     dog = dog_registered or dog_short
+                    if not handler:
+                        continue
 
                     speed = ""
                     if course_length not in ("", 0) and time_val not in ("", 0):
@@ -199,7 +213,7 @@ def parse_pdf(pdf_name: str, pdf_bytes: bytes):
                         "total_faults": faults,
                         "time": time_val,
                         "speed": speed,
-                        "eliminated": "False",
+                        "eliminated": str(is_elim),
                         "judge": judge,
                         "sct": sct,
                         "mct": mct,
@@ -209,7 +223,7 @@ def parse_pdf(pdf_name: str, pdf_bytes: bytes):
     # dedupe duplicates across pages
     dedup = {}
     for r in rows:
-        key = (r["rank"], r["handler"], r["dog"])
+        key = (r["rank"], r["handler"], r["dog"], r["eliminated"])
         dedup[key] = r
 
     meta = {
