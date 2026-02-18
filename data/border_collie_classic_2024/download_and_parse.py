@@ -102,6 +102,34 @@ def fetch_html(class_id: str) -> str:
     return r.text
 
 
+def parse_eliminated_row(text: str):
+    """Parse the 'Eliminated: Name1 & Dog1 (faults), Name2 & Dog2, ...' text."""
+    # Remove the "Eliminated:" prefix
+    text = re.sub(r"^Eliminated\s*:\s*", "", text, flags=re.IGNORECASE).strip()
+    if not text:
+        return []
+
+    # Split by comma, but commas inside parentheses are fault data
+    # Strategy: split on ", " followed by an uppercase letter (new entry)
+    # Better: match "Name & Dog (faults)" or "Name & Dog" patterns
+    parts = re.split(r",\s*(?=[A-ZÄÖÜÉÈÊËÀÁÂÃÅÆÇÐÑÒÓÔÕØÙÚÛÝÞ])", text)
+
+    results = []
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+        # Remove trailing fault info in parentheses
+        name_part = re.sub(r'\s*\([^)]*\)\s*$', '', part).strip()
+        # Remove HTML entities
+        name_part = name_part.replace('"', '"').replace("&amp;", "&")
+        handler, dog = parse_handler_and_dog(name_part)
+        if handler:
+            results.append({"handler": handler, "dog": dog})
+
+    return results
+
+
 def parse_class(class_id: str, cfg: dict):
     html = fetch_html(class_id)
     soup = BeautifulSoup(html, "html.parser")
@@ -110,18 +138,44 @@ def parse_class(class_id: str, cfg: dict):
     if not table:
         return []
 
-    rows = []
+    entries = []
+    elim_entries = []
+
     for tr in table.find_all("tr"):
+        # Check for eliminated row (colspan=99)
+        td_colspan = tr.find("td", attrs={"colspan": True})
+        if td_colspan:
+            raw_text = td_colspan.get_text(" ", strip=True)
+            if "eliminated" in raw_text.lower():
+                elim_entries = parse_eliminated_row(raw_text)
+            continue
+
         cols = [" ".join(td.get_text(" ", strip=True).split()) for td in tr.find_all(["th", "td"])]
         if len(cols) < 8:
             continue
         if cols[0] == "Award":
             continue
 
-        rank = parse_rank(cols[0])
         handler, dog = parse_handler_and_dog(cols[3])
-        faults, refusals, time_faults = parse_run_data(cols[5])
+        total_faults = to_float(cols[6])
+        time_val = to_float(cols[7])
 
+        entries.append({
+            "handler": handler,
+            "dog": dog,
+            "country": parse_country(cols[4]),
+            "total_faults": total_faults,
+            "time": time_val,
+        })
+
+    # Assign ranks by sorting clean entries by (total_faults, time)
+    entries.sort(key=lambda e: (
+        float(e["total_faults"]) if e["total_faults"] != "" else 0,
+        float(e["time"]) if e["time"] != "" else 999,
+    ))
+
+    rows = []
+    for rank, e in enumerate(entries, 1):
         rows.append({
             "competition": COMPETITION_NAME,
             "round_key": cfg["round_key"],
@@ -130,17 +184,43 @@ def parse_class(class_id: str, cfg: dict):
             "is_team_round": "False",
             "rank": rank,
             "start_no": "",
-            "handler": handler,
-            "dog": dog,
+            "handler": e["handler"],
+            "dog": e["dog"],
             "breed": "",
-            "country": parse_country(cols[4]),
-            "faults": faults,
-            "refusals": refusals,
-            "time_faults": time_faults,
-            "total_faults": to_float(cols[6]),
-            "time": to_float(cols[7]),
+            "country": e["country"],
+            "faults": "",
+            "refusals": "",
+            "time_faults": "",
+            "total_faults": e["total_faults"],
+            "time": e["time"],
             "speed": "",
             "eliminated": "False",
+            "judge": "",
+            "sct": "",
+            "mct": "",
+            "course_length": "",
+        })
+
+    for e in elim_entries:
+        rows.append({
+            "competition": COMPETITION_NAME,
+            "round_key": cfg["round_key"],
+            "size": cfg["size"],
+            "discipline": cfg["discipline"],
+            "is_team_round": "False",
+            "rank": "",
+            "start_no": "",
+            "handler": e["handler"],
+            "dog": e["dog"],
+            "breed": "",
+            "country": "",
+            "faults": "",
+            "refusals": "",
+            "time_faults": "",
+            "total_faults": "",
+            "time": "",
+            "speed": "",
+            "eliminated": "True",
             "judge": "",
             "sct": "",
             "mct": "",
