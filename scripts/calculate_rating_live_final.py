@@ -304,7 +304,7 @@ def write_csv_live(all_ratings):
             "rank", "handler", "call_name", "registered_name", "size", "country",
             "mu", "sigma", "rating",
             "tier", "provisional", "num_runs",
-            "finished_pct", "top3_pct", "top10_pct",
+            "finished_pct", "top3_pct",
             "last_competition",
         ])
 
@@ -329,7 +329,6 @@ def write_csv_live(all_ratings):
                     team["num_runs"],
                     team["finished_pct"],
                     team["top3_pct"],
-                    team["top10_pct"],
                     team["last_comp"],
                 ])
 
@@ -342,14 +341,11 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
 
     sizes = base.ordered_sizes(all_ratings.keys())
     tables = {}
-    countries_by_size = {}
-
     for size in sizes:
         sorted_teams = sorted(
             (team for team in all_ratings[size].values() if team["num_runs"] >= MIN_RUNS_FOR_LIVE_RANKING),
             key=lambda x: -x["rating"],
         )
-        countries_by_size[size] = sorted({team["country"] for team in sorted_teams if team["country"]})
         rows = []
         for rank, team in enumerate(sorted_teams, 1):
             provisional_badge = ""
@@ -378,7 +374,6 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                 f"<td class='num'>{team['num_runs']}</td>"
                 f"<td class='num'>{team['finished_pct']:.1f}%</td>"
                 f"<td class='num'>{team['top3_pct']:.1f}%</td>"
-                f"<td class='num'>{team['top10_pct']:.1f}%</td>"
                 f"<td>{base._esc(team['last_comp'])}</td>"
                 f"</tr>"
             )
@@ -410,8 +405,7 @@ def write_html_live(all_ratings, cutoff_date, latest_date, comp_stats=None):
                         <th onclick="sortTable('table-{size}', 5, 'num')">Runs</th>
                         <th onclick="sortTable('table-{size}', 6, 'num')">Finished %</th>
                         <th onclick="sortTable('table-{size}', 7, 'num')">TOP3 %</th>
-                        <th onclick="sortTable('table-{size}', 8, 'num')">TOP10 %</th>
-                        <th onclick="sortTable('table-{size}', 9, 'str')">Last Competition</th>
+                        <th onclick="sortTable('table-{size}', 8, 'str')">Last Competition</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -479,7 +473,6 @@ h1 {{ margin-bottom: 4px; }}
 .prov-badge {{ display: inline-block; margin-left: 6px; padding: 1px 4px; border-radius: 4px; background: #eef2ff; color: #334155; font-size: 10px; font-weight: 700; letter-spacing: 0.2px; vertical-align: middle; }}
 .filters {{ display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }}
 .search-box input {{ padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; width: 320px; max-width: 100%; }}
-.country-box select {{ padding: 8px 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; background: #fff; min-width: 180px; }}
 .tier-badge {{ display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }}
 .tier-badge.major {{ background: #fef3c7; color: #92400e; }}
 .tier-badge.open {{ background: #e0e7ff; color: #3730a3; }}
@@ -511,11 +504,6 @@ h1 {{ margin-bottom: 4px; }}
         <div class="filters">
             <div class="search-box">
                 <input id="search" type="text" placeholder="Search handler, dog, country..." oninput="filterRows()">
-            </div>
-            <div class="country-box">
-                <select id="country-filter" onchange="filterRows()">
-                    <option value="">All countries</option>
-                </select>
             </div>
         </div>
 
@@ -623,7 +611,6 @@ h1 {{ margin-bottom: 4px; }}
 
 <script>
 let currentTab = '{sizes[0] if sizes else ""}';
-const countriesBySize = {countries_by_size};
 
 function showSection(sectionId, buttonEl) {{
     document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
@@ -640,26 +627,7 @@ function showTab(size, buttonEl) {{
     if (buttonEl) {{
         buttonEl.classList.add('active');
     }}
-    updateCountryFilterOptions();
     filterRows();
-}}
-
-function updateCountryFilterOptions() {{
-    const select = document.getElementById('country-filter');
-    const previous = select.value;
-    while (select.options.length > 1) select.remove(1);
-    const options = countriesBySize[currentTab] || [];
-    options.forEach(country => {{
-        const option = document.createElement('option');
-        option.value = country;
-        option.textContent = country;
-        select.appendChild(option);
-    }});
-    if (previous && options.includes(previous)) {{
-        select.value = previous;
-    }} else {{
-        select.value = '';
-    }}
 }}
 
 function sortTable(tableId, colIdx, type) {{
@@ -685,20 +653,13 @@ function sortTable(tableId, colIdx, type) {{
 
 function filterRows() {{
     const q = document.getElementById('search').value.toLowerCase();
-    const country = document.getElementById('country-filter').value;
     const table = document.getElementById('table-' + currentTab);
     if (!table) return;
     const rows = table.querySelectorAll('tbody tr');
     rows.forEach(row => {{
-        const text = row.textContent.toLowerCase();
-        const rowCountry = row.cells[3] ? row.cells[3].textContent.trim() : '';
-        const matchesText = text.includes(q);
-        const matchesCountry = !country || rowCountry === country;
-        row.style.display = (matchesText && matchesCountry) ? '' : 'none';
+        row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
     }});
 }}
-
-updateCountryFilterOptions();
 </script>
 </body>
 </html>"""
