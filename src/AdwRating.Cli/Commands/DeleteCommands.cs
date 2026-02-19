@@ -1,4 +1,5 @@
 using System.CommandLine;
+using AdwRating.Cli;
 using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
@@ -8,14 +9,14 @@ namespace AdwRating.Cli.Commands;
 
 public static class DeleteCommands
 {
-    public static Command Create(Option<string> connectionOption)
+    public static Command Create(Option<string?> connectionOption)
     {
         var command = new Command("delete", "Delete entities");
         command.Add(CreateCompetitionCommand(connectionOption));
         return command;
     }
 
-    private static Command CreateCompetitionCommand(Option<string> connectionOption)
+    private static Command CreateCompetitionCommand(Option<string?> connectionOption)
     {
         var idArg = new Argument<int>("id") { Description = "Competition ID" };
         var command = new Command("competition", "Delete a competition and all its data");
@@ -23,7 +24,7 @@ public static class DeleteCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var id = parseResult.GetValue(idArg);
 
             var services = new ServiceCollection();

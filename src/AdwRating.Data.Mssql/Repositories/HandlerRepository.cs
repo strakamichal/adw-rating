@@ -35,6 +35,7 @@ public class HandlerRepository : IHandlerRepository
         var normalizedQuery = query.ToLower();
         return await _context.Handlers
             .Where(h => h.NormalizedName.Contains(normalizedQuery))
+            .OrderBy(h => h.NormalizedName)
             .Take(limit)
             .ToListAsync();
     }

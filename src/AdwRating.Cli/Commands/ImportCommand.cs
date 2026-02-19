@@ -1,4 +1,5 @@
 using System.CommandLine;
+using AdwRating.Cli;
 using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
 using AdwRating.Domain.Models;
@@ -10,7 +11,7 @@ namespace AdwRating.Cli.Commands;
 
 public static class ImportCommand
 {
-    public static Command Create(Option<string> connectionOption)
+    public static Command Create(Option<string?> connectionOption)
     {
         var fileArgument = new Argument<FileInfo>("file") { Description = "Path to CSV file" };
         var competitionOption = new Option<string>("--competition") { Description = "Competition slug", Required = true };
@@ -36,7 +37,7 @@ public static class ImportCommand
         command.SetAction(async (parseResult, cancellationToken) =>
         {
             var file = parseResult.GetValue(fileArgument);
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var slug = parseResult.GetValue(competitionOption)!;
             var name = parseResult.GetValue(nameOption)!;
             var date = parseResult.GetValue(dateOption);

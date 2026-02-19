@@ -47,6 +47,15 @@ public class TeamRepository : ITeamRepository
             .ToListAsync();
     }
 
+    public async Task<IReadOnlyList<Team>> GetByDogIdAsync(int dogId)
+    {
+        return await _context.Teams
+            .Include(t => t.Handler)
+            .Include(t => t.Dog)
+            .Where(t => t.DogId == dogId)
+            .ToListAsync();
+    }
+
     public async Task<PagedResult<Team>> GetRankedTeamsAsync(RankingFilter filter)
     {
         var query = _context.Teams

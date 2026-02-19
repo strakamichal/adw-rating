@@ -1,11 +1,11 @@
 using System.CommandLine;
 using AdwRating.Cli.Commands;
 
-var connectionOption = new Option<string>("--connection")
+var connectionOption = new Option<string?>("--connection")
 {
-    Description = "SQL Server connection string",
-    Required = true,
-    Recursive = true
+    Description = "SQL Server connection string (or set ADW_RATING_CONNECTION env var)",
+    Recursive = true,
+    HelpName = "connection-string"
 };
 
 var rootCommand = new RootCommand("ADW Rating CLI");

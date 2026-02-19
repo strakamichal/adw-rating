@@ -1,4 +1,5 @@
 using System.CommandLine;
+using AdwRating.Cli;
 using AdwRating.Data.Mssql;
 using AdwRating.Domain.Entities;
 using AdwRating.Domain.Enums;
@@ -10,7 +11,7 @@ namespace AdwRating.Cli.Commands;
 
 public static class AliasCommands
 {
-    public static Command Create(Option<string> connectionOption)
+    public static Command Create(Option<string?> connectionOption)
     {
         var command = new Command("add", "Add entities");
         var aliasCommand = new Command("alias", "Add alias for a handler or dog");
@@ -20,7 +21,7 @@ public static class AliasCommands
         return command;
     }
 
-    private static Command CreateHandlerAliasCommand(Option<string> connectionOption)
+    private static Command CreateHandlerAliasCommand(Option<string?> connectionOption)
     {
         var handlerIdArg = new Argument<int>("handler-id") { Description = "Handler ID" };
         var aliasNameArg = new Argument<string>("alias-name") { Description = "Alias name" };
@@ -31,7 +32,7 @@ public static class AliasCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var handlerId = parseResult.GetValue(handlerIdArg);
             var aliasName = parseResult.GetValue(aliasNameArg)!;
 
@@ -64,7 +65,7 @@ public static class AliasCommands
         return command;
     }
 
-    private static Command CreateDogAliasCommand(Option<string> connectionOption)
+    private static Command CreateDogAliasCommand(Option<string?> connectionOption)
     {
         var dogIdArg = new Argument<int>("dog-id") { Description = "Dog ID" };
         var aliasNameArg = new Argument<string>("alias-name") { Description = "Alias name" };
@@ -77,7 +78,7 @@ public static class AliasCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var dogId = parseResult.GetValue(dogIdArg);
             var aliasName = parseResult.GetValue(aliasNameArg)!;
             var aliasType = parseResult.GetValue(typeOption);

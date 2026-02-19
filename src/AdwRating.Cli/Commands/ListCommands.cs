@@ -1,4 +1,5 @@
 using System.CommandLine;
+using AdwRating.Cli;
 using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
 using AdwRating.Domain.Models;
@@ -9,7 +10,7 @@ namespace AdwRating.Cli.Commands;
 
 public static class ListCommands
 {
-    public static Command Create(Option<string> connectionOption)
+    public static Command Create(Option<string?> connectionOption)
     {
         var command = new Command("list", "List entities");
         command.Add(CreateCompetitionsCommand(connectionOption));
@@ -28,13 +29,13 @@ public static class ListCommands
         return services.BuildServiceProvider();
     }
 
-    private static Command CreateCompetitionsCommand(Option<string> connectionOption)
+    private static Command CreateCompetitionsCommand(Option<string?> connectionOption)
     {
         var command = new Command("competitions", "List competitions");
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             await using var provider = BuildProvider(connectionString);
             var repo = provider.GetRequiredService<ICompetitionRepository>();
 
@@ -54,18 +55,24 @@ public static class ListCommands
         return command;
     }
 
-    private static Command CreateHandlersCommand(Option<string> connectionOption)
+    private static Command CreateHandlersCommand(Option<string?> connectionOption)
     {
-        var searchOption = new Option<string>("--search") { Description = "Search term", Required = true };
-        var command = new Command("handlers", "Search handlers");
+        var searchOption = new Option<string>("--search") { Description = "Search term" };
+        var command = new Command("handlers", "List/search handlers");
         command.Add(searchOption);
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
-            var search = parseResult.GetValue(searchOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
+            var search = parseResult.GetValue(searchOption);
             await using var provider = BuildProvider(connectionString);
             var repo = provider.GetRequiredService<IHandlerRepository>();
+
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                Console.Error.WriteLine("Use --search <term> to search handlers.");
+                return 1;
+            }
 
             var results = await repo.SearchAsync(search, 50);
 
@@ -82,18 +89,24 @@ public static class ListCommands
         return command;
     }
 
-    private static Command CreateDogsCommand(Option<string> connectionOption)
+    private static Command CreateDogsCommand(Option<string?> connectionOption)
     {
-        var searchOption = new Option<string>("--search") { Description = "Search term", Required = true };
-        var command = new Command("dogs", "Search dogs");
+        var searchOption = new Option<string>("--search") { Description = "Search term" };
+        var command = new Command("dogs", "List/search dogs");
         command.Add(searchOption);
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
-            var search = parseResult.GetValue(searchOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
+            var search = parseResult.GetValue(searchOption);
             await using var provider = BuildProvider(connectionString);
             var repo = provider.GetRequiredService<IDogRepository>();
+
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                Console.Error.WriteLine("Use --search <term> to search dogs.");
+                return 1;
+            }
 
             var results = await repo.SearchAsync(search, 50);
 
@@ -110,17 +123,17 @@ public static class ListCommands
         return command;
     }
 
-    private static Command CreateImportsCommand(Option<string> connectionOption)
+    private static Command CreateImportsCommand(Option<string?> connectionOption)
     {
         var command = new Command("imports", "List recent imports");
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             await using var provider = BuildProvider(connectionString);
             var repo = provider.GetRequiredService<IImportLogRepository>();
 
-            var results = await repo.GetRecentAsync(20);
+            var results = await repo.GetRecentAsync(100);
 
             Console.WriteLine($"{"ID",-6} {"FileName",-35} {"Date",-20} {"Status",-12} {"Rows",-6}");
             Console.WriteLine(new string('-', 79));
@@ -135,7 +148,7 @@ public static class ListCommands
         return command;
     }
 
-    private static Command CreateAliasesCommand(Option<string> connectionOption)
+    private static Command CreateAliasesCommand(Option<string?> connectionOption)
     {
         var command = new Command("aliases", "List aliases for a handler or dog");
         command.Add(CreateHandlerAliasesCommand(connectionOption));
@@ -143,7 +156,7 @@ public static class ListCommands
         return command;
     }
 
-    private static Command CreateHandlerAliasesCommand(Option<string> connectionOption)
+    private static Command CreateHandlerAliasesCommand(Option<string?> connectionOption)
     {
         var idArg = new Argument<int>("id") { Description = "Handler ID" };
         var command = new Command("handler", "List aliases for a handler");
@@ -151,7 +164,7 @@ public static class ListCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var handlerId = parseResult.GetValue(idArg);
             await using var provider = BuildProvider(connectionString);
             var repo = provider.GetRequiredService<IHandlerAliasRepository>();
@@ -171,7 +184,7 @@ public static class ListCommands
         return command;
     }
 
-    private static Command CreateDogAliasesCommand(Option<string> connectionOption)
+    private static Command CreateDogAliasesCommand(Option<string?> connectionOption)
     {
         var idArg = new Argument<int>("id") { Description = "Dog ID" };
         var command = new Command("dog", "List aliases for a dog");
@@ -179,7 +192,7 @@ public static class ListCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var dogId = parseResult.GetValue(idArg);
             await using var provider = BuildProvider(connectionString);
             var repo = provider.GetRequiredService<IDogAliasRepository>();

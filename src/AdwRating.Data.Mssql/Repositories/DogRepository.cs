@@ -30,6 +30,7 @@ public class DogRepository : IDogRepository
         var normalizedQuery = query.ToLower();
         return await _context.Dogs
             .Where(d => d.NormalizedCallName.Contains(normalizedQuery))
+            .OrderBy(d => d.NormalizedCallName)
             .Take(limit)
             .ToListAsync();
     }

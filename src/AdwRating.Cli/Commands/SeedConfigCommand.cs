@@ -1,4 +1,5 @@
 using System.CommandLine;
+using AdwRating.Cli;
 using AdwRating.Data.Mssql;
 using AdwRating.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -10,13 +11,13 @@ namespace AdwRating.Cli.Commands;
 
 public static class SeedConfigCommand
 {
-    public static Command Create(Option<string> connectionOption)
+    public static Command Create(Option<string?> connectionOption)
     {
         var command = new Command("seed-config", "Create default rating configuration if none exists");
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
 
             var services = new ServiceCollection();
             services.AddDataMssql(connectionString);

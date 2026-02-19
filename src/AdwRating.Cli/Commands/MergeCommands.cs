@@ -1,4 +1,5 @@
 using System.CommandLine;
+using AdwRating.Cli;
 using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
 using AdwRating.Service;
@@ -9,7 +10,7 @@ namespace AdwRating.Cli.Commands;
 
 public static class MergeCommands
 {
-    public static Command Create(Option<string> connectionOption)
+    public static Command Create(Option<string?> connectionOption)
     {
         var command = new Command("merge", "Merge duplicate entities");
         command.Add(CreateHandlerCommand(connectionOption));
@@ -26,7 +27,7 @@ public static class MergeCommands
         return services.BuildServiceProvider();
     }
 
-    private static Command CreateHandlerCommand(Option<string> connectionOption)
+    private static Command CreateHandlerCommand(Option<string?> connectionOption)
     {
         var sourceArg = new Argument<int>("source-id") { Description = "Source handler ID (will be merged into target)" };
         var targetArg = new Argument<int>("target-id") { Description = "Target handler ID (will be kept)" };
@@ -39,7 +40,7 @@ public static class MergeCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var sourceId = parseResult.GetValue(sourceArg);
             var targetId = parseResult.GetValue(targetArg);
             var dryRun = parseResult.GetValue(dryRunOption);
@@ -90,7 +91,7 @@ public static class MergeCommands
         return command;
     }
 
-    private static Command CreateDogCommand(Option<string> connectionOption)
+    private static Command CreateDogCommand(Option<string?> connectionOption)
     {
         var sourceArg = new Argument<int>("source-id") { Description = "Source dog ID (will be merged into target)" };
         var targetArg = new Argument<int>("target-id") { Description = "Target dog ID (will be kept)" };
@@ -103,7 +104,7 @@ public static class MergeCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = parseResult.GetValue(connectionOption)!;
+            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var sourceId = parseResult.GetValue(sourceArg);
             var targetId = parseResult.GetValue(targetArg);
             var dryRun = parseResult.GetValue(dryRunOption);

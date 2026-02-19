@@ -8,13 +8,13 @@ namespace AdwRating.Tests.Cli;
 [TestFixture]
 public class CliCommandTests
 {
-    private Option<string> _connectionOption = null!;
+    private Option<string?> _connectionOption = null!;
     private RootCommand _rootCommand = null!;
 
     [SetUp]
     public void SetUp()
     {
-        _connectionOption = new Option<string>("--connection")
+        _connectionOption = new Option<string?>("--connection")
         {
             Description = "SQL Server connection string",
             Required = true,
@@ -54,10 +54,10 @@ public class CliCommandTests
     }
 
     [Test]
-    public void ListHandlers_RequiresSearch()
+    public void ListHandlers_WithoutSearch_ParsesCorrectly()
     {
         var result = Parse("--connection test list handlers");
-        Assert.That(result.Errors, Is.Not.Empty);
+        Assert.That(result.Errors, Is.Empty);
     }
 
     [Test]
@@ -68,10 +68,10 @@ public class CliCommandTests
     }
 
     [Test]
-    public void ListDogs_RequiresSearch()
+    public void ListDogs_WithoutSearch_ParsesCorrectly()
     {
         var result = Parse("--connection test list dogs");
-        Assert.That(result.Errors, Is.Not.Empty);
+        Assert.That(result.Errors, Is.Empty);
     }
 
     [Test]
