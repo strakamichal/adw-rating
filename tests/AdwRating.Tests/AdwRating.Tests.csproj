@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\AdwRating.Domain\AdwRating.Domain.csproj" />
     <ProjectReference Include="..\..\src\AdwRating.Service\AdwRating.Service.csproj" />
+    <ProjectReference Include="..\..\src\AdwRating.Cli\AdwRating.Cli.csproj" />
   </ItemGroup>
 
 </Project>
