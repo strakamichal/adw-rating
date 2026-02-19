@@ -56,7 +56,7 @@ public static class ListCommands
 
     private static Command CreateHandlersCommand(Option<string> connectionOption)
     {
-        var searchOption = new Option<string>("--search", "Search term") { Required = true };
+        var searchOption = new Option<string>("--search") { Description = "Search term", Required = true };
         var command = new Command("handlers", "Search handlers");
         command.Add(searchOption);
 
@@ -84,7 +84,7 @@ public static class ListCommands
 
     private static Command CreateDogsCommand(Option<string> connectionOption)
     {
-        var searchOption = new Option<string>("--search", "Search term") { Required = true };
+        var searchOption = new Option<string>("--search") { Description = "Search term", Required = true };
         var command = new Command("dogs", "Search dogs");
         command.Add(searchOption);
 
@@ -126,7 +126,7 @@ public static class ListCommands
             Console.WriteLine(new string('-', 79));
             foreach (var i in results)
             {
-                Console.WriteLine($"{i.Id,-6} {i.FileName,-35} {i.ImportedAt:yyyy-MM-dd HH:mm,-20} {i.Status,-12} {i.RowCount,-6}");
+                Console.WriteLine($"{i.Id,-6} {i.FileName,-35} {i.ImportedAt.ToString("yyyy-MM-dd HH:mm"),-20} {i.Status,-12} {i.RowCount,-6}");
             }
             Console.WriteLine($"\nTotal: {results.Count}");
             return 0;
@@ -162,7 +162,7 @@ public static class ListCommands
             Console.WriteLine(new string('-', 68));
             foreach (var a in results)
             {
-                Console.WriteLine($"{a.Id,-6} {a.AliasName,-30} {a.Source,-12} {a.CreatedAt:yyyy-MM-dd HH:mm,-20}");
+                Console.WriteLine($"{a.Id,-6} {a.AliasName,-30} {a.Source,-12} {a.CreatedAt.ToString("yyyy-MM-dd HH:mm"),-20}");
             }
             Console.WriteLine($"\nTotal: {results.Count}");
             return 0;
@@ -190,7 +190,7 @@ public static class ListCommands
             Console.WriteLine(new string('-', 79));
             foreach (var a in results)
             {
-                Console.WriteLine($"{a.Id,-6} {a.AliasName,-25} {a.AliasType,-16} {a.Source,-12} {a.CreatedAt:yyyy-MM-dd HH:mm,-20}");
+                Console.WriteLine($"{a.Id,-6} {a.AliasName,-25} {a.AliasType,-16} {a.Source,-12} {a.CreatedAt.ToString("yyyy-MM-dd HH:mm"),-20}");
             }
             Console.WriteLine($"\nTotal: {results.Count}");
             return 0;

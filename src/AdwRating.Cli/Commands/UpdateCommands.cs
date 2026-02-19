@@ -18,7 +18,7 @@ public static class UpdateCommands
     private static Command CreateHandlerCommand(Option<string> connectionOption)
     {
         var idArg = new Argument<int>("id") { Description = "Handler ID" };
-        var countryOption = new Option<string>("--country", "New country code (ISO 3166-1 alpha-3)") { Required = true };
+        var countryOption = new Option<string>("--country") { Description = "New country code (ISO 3166-1 alpha-3)", Required = true };
 
         var command = new Command("handler", "Update handler fields");
         command.Add(idArg);

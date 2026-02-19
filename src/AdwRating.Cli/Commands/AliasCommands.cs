@@ -68,7 +68,7 @@ public static class AliasCommands
     {
         var dogIdArg = new Argument<int>("dog-id") { Description = "Dog ID" };
         var aliasNameArg = new Argument<string>("alias-name") { Description = "Alias name" };
-        var typeOption = new Option<DogAliasType>("--type", "Alias type") { Required = true };
+        var typeOption = new Option<DogAliasType>("--type") { Description = "Alias type", Required = true };
 
         var command = new Command("dog", "Add alias for a dog");
         command.Add(dogIdArg);

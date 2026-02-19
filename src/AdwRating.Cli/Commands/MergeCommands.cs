@@ -30,7 +30,7 @@ public static class MergeCommands
     {
         var sourceArg = new Argument<int>("source-id") { Description = "Source handler ID (will be merged into target)" };
         var targetArg = new Argument<int>("target-id") { Description = "Target handler ID (will be kept)" };
-        var dryRunOption = new Option<bool>("--dry-run", "Show what would happen without making changes");
+        var dryRunOption = new Option<bool>("--dry-run") { Description = "Show what would happen without making changes" };
 
         var command = new Command("handler", "Merge two handlers");
         command.Add(sourceArg);
@@ -94,7 +94,7 @@ public static class MergeCommands
     {
         var sourceArg = new Argument<int>("source-id") { Description = "Source dog ID (will be merged into target)" };
         var targetArg = new Argument<int>("target-id") { Description = "Target dog ID (will be kept)" };
-        var dryRunOption = new Option<bool>("--dry-run", "Show what would happen without making changes");
+        var dryRunOption = new Option<bool>("--dry-run") { Description = "Show what would happen without making changes" };
 
         var command = new Command("dog", "Merge two dogs");
         command.Add(sourceArg);
