@@ -15,4 +15,7 @@ public class ImportLog
     public int NewTeamsCount { get; set; }
     public string? Errors { get; set; }
     public string? Warnings { get; set; }
+
+    // Navigation properties
+    public Competition? Competition { get; set; }
 }

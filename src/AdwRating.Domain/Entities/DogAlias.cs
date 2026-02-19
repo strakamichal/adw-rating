@@ -10,4 +10,7 @@ public class DogAlias
     public DogAliasType AliasType { get; set; }
     public AliasSource Source { get; set; }
     public DateTime CreatedAt { get; set; }
+
+    // Navigation properties
+    public Dog CanonicalDog { get; set; } = null!;
 }

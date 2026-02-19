@@ -10,4 +10,9 @@ public class RatingSnapshot
     public float Mu { get; set; }
     public float Sigma { get; set; }
     public float Rating { get; set; }
+
+    // Navigation properties
+    public Team Team { get; set; } = null!;
+    public RunResult RunResult { get; set; } = null!;
+    public Competition Competition { get; set; } = null!;
 }

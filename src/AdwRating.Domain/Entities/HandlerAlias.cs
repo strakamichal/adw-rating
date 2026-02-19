@@ -9,4 +9,7 @@ public class HandlerAlias
     public int CanonicalHandlerId { get; set; }
     public AliasSource Source { get; set; }
     public DateTime CreatedAt { get; set; }
+
+    // Navigation properties
+    public Handler CanonicalHandler { get; set; } = null!;
 }
