@@ -43,238 +43,238 @@
 
 **Goal**: Solution structure, domain model, database schema, test infrastructure.
 
-- [ ] **1.1** Create solution and project structure
+- [x] **1.1** Create solution and project structure *(done — uses `.slnx` format for .NET 10)*
   - Create `AdwRating.sln` with all 7 `src/` projects and 3 `tests/` projects. Set up project references per dependency rules in `04-architecture-and-interfaces.md` section 2. Add `.editorconfig`, `global.json` (.NET 10), `Directory.Build.props`.
   - Files: `AdwRating.sln`, all `.csproj` files, `global.json`, `Directory.Build.props`
   - Dependencies: none
   - Tests: `dotnet build` passes
   - **Completion gates**: build
 
-- [ ] **1.2** Domain enums
+- [x] **1.2** Domain enums
   - Create all enums: `SizeCategory` (S, M, I, L), `Discipline` (Agility, Jumping, Final), `TierLabel` (Elite, Champion, Expert, Competitor), `AliasSource` (Manual, Import, FuzzyMatch), `DogAliasType` (CallName, RegisteredName), `ImportStatus` (Success, Rejected, PartialWarning).
   - Files: `Domain/Enums/*.cs` (one file per enum or single `Enums.cs`)
   - Dependencies: 1.1
   - Tests: none (trivial enum definitions)
   - **Completion gates**: build
 
-- [ ] **1.3a** Domain entity — Handler
+- [x] **1.3a** Domain entity — Handler
   - Create `Handler` entity class with all fields from `03-domain-and-data.md` section 2: Id, Name, NormalizedName, Country, Slug.
   - Files: `Domain/Entities/Handler.cs`
   - Dependencies: 1.2
   - Tests: none (simple POCO)
   - **Completion gates**: build
 
-- [ ] **1.3b** Domain entity — Dog
+- [x] **1.3b** Domain entity — Dog
   - Create `Dog` entity class with all fields from `03-domain-and-data.md` section 2: Id, CallName, NormalizedCallName, RegisteredName, Breed, SizeCategory, SizeCategoryOverride.
   - Files: `Domain/Entities/Dog.cs`
   - Dependencies: 1.2
   - Tests: none (simple POCO)
   - **Completion gates**: build
 
-- [ ] **1.3c** Domain entity — Team
+- [x] **1.3c** Domain entity — Team
   - Create `Team` entity class with all fields from `03-domain-and-data.md` section 2: Id, HandlerId, DogId, Slug, Mu, Sigma, Rating, PrevMu, PrevSigma, PrevRating, RunCount, FinishedRunCount, Top3RunCount, IsActive, IsProvisional, TierLabel, PeakRating. Include navigation properties to Handler and Dog. Rating field defaults (Mu, Sigma) come from `RatingConfiguration.Mu0` and `RatingConfiguration.Sigma0` at runtime — the entity itself has no hardcoded defaults.
   - Files: `Domain/Entities/Team.cs`
   - Dependencies: 1.3a, 1.3b
   - Tests: none (simple POCO)
   - **Completion gates**: build
 
-- [ ] **1.3d** Domain helpers — SlugHelper and NameNormalizer (basic)
+- [x] **1.3d** Domain helpers — SlugHelper and NameNormalizer (basic) *(done — includes diacritics stripping with Unicode FormD + special char mappings)*
   - Create **basic** slug generation helper and name normalization helper (static utility methods). Just enough for entity creation: slug from name (lowercase, replace spaces with hyphens, remove non-alphanumeric), name normalization (lowercase, trim). Full production implementation with diacritics stripping, name reordering is done in task 3.1.
   - Files: `Domain/Helpers/SlugHelper.cs`, `Domain/Helpers/NameNormalizer.cs`
   - Dependencies: 1.1
   - Tests: Unit tests for basic `SlugHelper` (simple name → slug) and `NameNormalizer` (lowercase, trim whitespace)
   - **Completion gates**: build | tests
 
-- [ ] **1.4a** Domain entity — Competition
+- [x] **1.4a** Domain entity — Competition
   - Create `Competition` entity class with all fields from `03-domain-and-data.md`: Id, Slug, Name, Date, EndDate, Country, Location, Tier, Organization. Include navigation property to Runs collection.
   - Files: `Domain/Entities/Competition.cs`
   - Dependencies: 1.2
   - Tests: none (simple POCO)
   - **Completion gates**: build
 
-- [ ] **1.4b** Domain entity — Run
+- [x] **1.4b** Domain entity — Run
   - Create `Run` entity class with all fields from `03-domain-and-data.md`: Id, CompetitionId, Date, RunNumber, RoundKey, SizeCategory, Discipline, IsTeamRound, Judge, Sct, Mct, CourseLength, OriginalSizeCategory. Include navigation properties.
   - Files: `Domain/Entities/Run.cs`
   - Dependencies: 1.2, 1.4a
   - Tests: none (simple POCO)
   - **Completion gates**: build
 
-- [ ] **1.4c** Domain entity — RunResult
+- [x] **1.4c** Domain entity — RunResult
   - Create `RunResult` entity class with all fields from `03-domain-and-data.md`: Id, RunId, TeamId, Rank, Faults, Refusals, TimeFaults, TotalFaults, Time, Speed, Eliminated, StartNo. Include navigation properties.
   - Files: `Domain/Entities/RunResult.cs`
   - Dependencies: 1.2, 1.3c, 1.4b
   - Tests: none (simple POCO)
   - **Completion gates**: build
 
-- [ ] **1.5a** Domain entities — HandlerAlias, DogAlias
+- [x] **1.5a** Domain entities — HandlerAlias, DogAlias
   - Create `HandlerAlias` entity (Id, AliasName, CanonicalHandlerId, Source, CreatedAt) and `DogAlias` entity (Id, AliasName, CanonicalDogId, AliasType, Source, CreatedAt) per `03-domain-and-data.md`.
   - Files: `Domain/Entities/HandlerAlias.cs`, `Domain/Entities/DogAlias.cs`
   - Dependencies: 1.2
   - Tests: none (simple POCOs)
   - **Completion gates**: build
 
-- [ ] **1.5b** Domain entity — ImportLog
+- [x] **1.5b** Domain entity — ImportLog
   - Create `ImportLog` entity with all fields from `03-domain-and-data.md`: Id, CompetitionId, FileName, ImportedAt, Status, RowCount, NewHandlersCount, NewDogsCount, NewTeamsCount, Errors, Warnings.
   - Files: `Domain/Entities/ImportLog.cs`
   - Dependencies: 1.2
   - Tests: none (simple POCO)
   - **Completion gates**: build
 
-- [ ] **1.5c** Domain entities — RatingSnapshot, RatingConfiguration
+- [x] **1.5c** Domain entities — RatingSnapshot, RatingConfiguration
   - Create `RatingSnapshot` entity (Id, TeamId, RunResultId, CompetitionId, Date, Mu, Sigma, Rating) and `RatingConfiguration` entity with all fields from `03-domain-and-data.md` (all rating parameters including `Mu0`, `Sigma0`, with defaults from `08-rating-rules.md` section 8).
   - Files: `Domain/Entities/RatingSnapshot.cs`, `Domain/Entities/RatingConfiguration.cs`
   - Dependencies: 1.2
   - Tests: none (simple POCOs)
   - **Completion gates**: build
 
-- [ ] **1.6a** Domain models — PagedResult, filters, ImportResult, CompetitionMetadata
+- [x] **1.6a** Domain models — PagedResult, filters, ImportResult, CompetitionMetadata
   - Create shared models: `PagedResult<T>`, `RankingFilter`, `CompetitionFilter`, `ImportResult`, `CompetitionMetadata`, `RankingSummary`, `SearchResult`. All definitions are in `04-architecture-and-interfaces.md` section 3 (Common types).
   - Files: `Domain/Models/PagedResult.cs`, `Domain/Models/RankingFilter.cs`, `Domain/Models/CompetitionFilter.cs`, `Domain/Models/ImportResult.cs`, `Domain/Models/CompetitionMetadata.cs`, `Domain/Models/RankingSummary.cs`, `Domain/Models/SearchResult.cs`
   - Dependencies: 1.2
   - Tests: none (record definitions)
   - **Completion gates**: build
 
-- [ ] **1.6b** Domain DTOs — TeamRankingDto, TeamDetailDto, TeamResultDto
+- [x] **1.6b** Domain DTOs — TeamRankingDto, TeamDetailDto, TeamResultDto
   - Create DTOs used by Rankings and Team profile APIs. Definitions in `04-architecture-and-interfaces.md` section 3 (API DTOs).
   - Files: `Domain/Models/TeamRankingDto.cs`, `Domain/Models/TeamDetailDto.cs`, `Domain/Models/TeamResultDto.cs`
   - Dependencies: 1.2
   - Tests: none (record definitions)
   - **Completion gates**: build
 
-- [ ] **1.6c** Domain DTOs — CompetitionDetailDto, HandlerDetailDto, HandlerTeamSummaryDto
+- [x] **1.6c** Domain DTOs — CompetitionDetailDto, HandlerDetailDto, HandlerTeamSummaryDto
   - Create remaining MVP DTOs. Definitions in `04-architecture-and-interfaces.md` section 3 (API DTOs).
   - Files: `Domain/Models/CompetitionDetailDto.cs`, `Domain/Models/HandlerDetailDto.cs`, `Domain/Models/HandlerTeamSummaryDto.cs`
   - Dependencies: 1.2
   - Tests: none (record definitions)
   - **Completion gates**: build
 
-- [ ] **1.7a** Domain interfaces — Handler, Dog, Team repositories
+- [x] **1.7a** Domain interfaces — Handler, Dog, Team repositories
   - Create `IHandlerRepository`, `IDogRepository`, `ITeamRepository` interfaces from `04-architecture-and-interfaces.md` section 3 (Repository interfaces).
   - Files: `Domain/Interfaces/IHandlerRepository.cs`, `Domain/Interfaces/IDogRepository.cs`, `Domain/Interfaces/ITeamRepository.cs`
   - Dependencies: 1.3c, 1.6a
   - Tests: none (interface definitions)
   - **Completion gates**: build
 
-- [ ] **1.7b** Domain interfaces — Competition, Run, RunResult repositories
+- [x] **1.7b** Domain interfaces — Competition, Run, RunResult repositories
   - Create `ICompetitionRepository`, `IRunRepository`, `IRunResultRepository` interfaces from `04-architecture-and-interfaces.md` section 3.
   - Files: `Domain/Interfaces/ICompetitionRepository.cs`, `Domain/Interfaces/IRunRepository.cs`, `Domain/Interfaces/IRunResultRepository.cs`
   - Dependencies: 1.4c, 1.6a
   - Tests: none (interface definitions)
   - **Completion gates**: build
 
-- [ ] **1.7c** Domain interfaces — Alias, ImportLog, RatingSnapshot, RatingConfiguration repositories
+- [x] **1.7c** Domain interfaces — Alias, ImportLog, RatingSnapshot, RatingConfiguration repositories
   - Create `IHandlerAliasRepository`, `IDogAliasRepository`, `IRatingSnapshotRepository`, `IRatingConfigurationRepository`, `IImportLogRepository` from `04-architecture-and-interfaces.md` section 3.
   - Files: `Domain/Interfaces/IHandlerAliasRepository.cs`, `Domain/Interfaces/IDogAliasRepository.cs`, `Domain/Interfaces/IRatingSnapshotRepository.cs`, `Domain/Interfaces/IRatingConfigurationRepository.cs`, `Domain/Interfaces/IImportLogRepository.cs`
   - Dependencies: 1.5a, 1.5b, 1.5c
   - Tests: none (interface definitions)
   - **Completion gates**: build
 
-- [ ] **1.8a** Domain interfaces — Import, Rating, Ranking services
+- [x] **1.8a** Domain interfaces — Import, Rating, Ranking services
   - Create `IImportService`, `IRatingService`, `IRankingService` from `04-architecture-and-interfaces.md` section 3 (Service interfaces).
   - Files: `Domain/Interfaces/IImportService.cs`, `Domain/Interfaces/IRatingService.cs`, `Domain/Interfaces/IRankingService.cs`
   - Dependencies: 1.6a
   - Tests: none (interface definitions)
   - **Completion gates**: build
 
-- [ ] **1.8b** Domain interfaces — Search, IdentityResolution, TeamProfile, Merge services
+- [x] **1.8b** Domain interfaces — Search, IdentityResolution, TeamProfile, Merge services
   - Create `ISearchService`, `IIdentityResolutionService`, `ITeamProfileService`, `IMergeService` from `04-architecture-and-interfaces.md` section 3. Exclude `IHandlerProfileService` (Phase 1.5), `ICountryRankingService` and `IJudgeProfileService` (Phase 2).
   - Files: `Domain/Interfaces/ISearchService.cs`, `Domain/Interfaces/IIdentityResolutionService.cs`, `Domain/Interfaces/ITeamProfileService.cs`, `Domain/Interfaces/IMergeService.cs`
   - Dependencies: 1.6a, 1.6b
   - Tests: none (interface definitions)
   - **Completion gates**: build
 
-- [ ] **1.9a** Data.Mssql — DbContext
+- [x] **1.9a** Data.Mssql — DbContext
   - Create `AppDbContext` with `DbSet<>` for all MVP entities (Handler, Dog, Team, Competition, Run, RunResult, HandlerAlias, DogAlias, ImportLog, RatingSnapshot, RatingConfiguration).
   - Files: `Data.Mssql/AppDbContext.cs`
   - Dependencies: 1.3c, 1.4c, 1.5a, 1.5b, 1.5c
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.9b** Data.Mssql — EF config for Handler
+- [x] **1.9b** Data.Mssql — EF config for Handler
   - Create `IEntityTypeConfiguration<Handler>` with proper indexes, unique constraints on Slug, NormalizedName+Country, field lengths.
   - Files: `Data.Mssql/Configurations/HandlerConfiguration.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.9c** Data.Mssql — EF config for Dog
+- [x] **1.9c** Data.Mssql — EF config for Dog
   - Create `IEntityTypeConfiguration<Dog>` with proper indexes, field lengths, enum conversion for SizeCategory/SizeCategoryOverride.
   - Files: `Data.Mssql/Configurations/DogConfiguration.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.9d** Data.Mssql — EF config for Team
+- [x] **1.9d** Data.Mssql — EF config for Team
   - Create `IEntityTypeConfiguration<Team>` with unique constraint on (HandlerId, DogId), unique Slug, relationships to Handler and Dog, enum conversion for TierLabel.
   - Files: `Data.Mssql/Configurations/TeamConfiguration.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.10a** Data.Mssql — EF config for Competition
+- [x] **1.10a** Data.Mssql — EF config for Competition
   - Create `IEntityTypeConfiguration<Competition>` with unique constraint on Slug, field lengths, cascade delete to Runs.
   - Files: `Data.Mssql/Configurations/CompetitionConfiguration.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.10b** Data.Mssql — EF config for Run
+- [x] **1.10b** Data.Mssql — EF config for Run
   - Create `IEntityTypeConfiguration<Run>` with unique constraint on (CompetitionId, RoundKey), enum conversions, cascade delete to RunResults.
   - Files: `Data.Mssql/Configurations/RunConfiguration.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.10c** Data.Mssql — EF config for RunResult
+- [x] **1.10c** Data.Mssql — EF config for RunResult
   - Create `IEntityTypeConfiguration<RunResult>` with unique constraint on (RunId, TeamId), relationships.
   - Files: `Data.Mssql/Configurations/RunResultConfiguration.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.11a** Data.Mssql — EF configs for HandlerAlias, DogAlias
+- [x] **1.11a** Data.Mssql — EF configs for HandlerAlias, DogAlias
   - Create EF configurations for HandlerAlias (unique AliasName) and DogAlias (unique AliasName+AliasType).
   - Files: `Data.Mssql/Configurations/HandlerAliasConfiguration.cs`, `Data.Mssql/Configurations/DogAliasConfiguration.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.11b** Data.Mssql — EF configs for ImportLog, RatingSnapshot, RatingConfiguration
+- [x] **1.11b** Data.Mssql — EF configs for ImportLog, RatingSnapshot, RatingConfiguration
   - Create EF configurations for ImportLog, RatingSnapshot (unique TeamId+RunResultId), RatingConfiguration.
   - Files: `Data.Mssql/Configurations/ImportLogConfiguration.cs`, `Data.Mssql/Configurations/RatingSnapshotConfiguration.cs`, `Data.Mssql/Configurations/RatingConfigurationConfiguration.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.11c** Data.Mssql — DI registration
+- [x] **1.11c** Data.Mssql — DI registration
   - Add DI registration extension method `AddDataMssql(this IServiceCollection, string connectionString)` that registers `AppDbContext` and all repository implementations (stubs for now — actual implementations come in Phase 2).
   - Files: `Data.Mssql/ServiceCollectionExtensions.cs`
   - Dependencies: 1.9a
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **1.12** Data.Mssql — Initial migration
+- [x] **1.12** Data.Mssql — Initial migration
   - Generate initial EF Core migration capturing the full MVP schema. Verify migration SQL looks correct.
   - Files: `Data.Mssql/Migrations/*`
   - Dependencies: 1.9a, 1.9b, 1.9c, 1.9d, 1.10a, 1.10b, 1.10c, 1.11a, 1.11b
   - Tests: none (migration is verified by applying to a test DB in integration tests)
   - **Completion gates**: build
 
-- [ ] **1.13a** Test infrastructure — Unit test project + entity builders
+- [x] **1.13a** Test infrastructure — Unit test project + entity builders *(done — uses NUnit instead of xUnit)*
   - Set up `tests/AdwRating.Tests/` with xUnit. Add shared test entity builders — `HandlerBuilder`, `DogBuilder`, `TeamBuilder`, `CompetitionBuilder`, `RunBuilder`, `RunResultBuilder` — fluent API for creating test entities with sensible defaults (e.g., `new HandlerBuilder().WithName("John Smith").WithCountry("GBR").Build()`).
   - Files: `tests/AdwRating.Tests/` (project + `Builders/*.cs`)
   - Dependencies: 1.12
   - Tests: One smoke test verifying builder creates valid entities
   - **Completion gates**: build | tests
 
-- [ ] **1.13b** Test infrastructure — Integration test project + database fixture
+- [x] **1.13b** Test infrastructure — Integration test project + database fixture *(done — uses NUnit + Testcontainers.MsSql instead of xUnit + LocalDB)*
   - Set up `tests/AdwRating.IntegrationTests/` with xUnit. Create `DatabaseFixture` (`IAsyncLifetime`): creates a SQL Server LocalDB database, applies migrations (`context.Database.MigrateAsync()`), provides a scoped `AppDbContext`. Each test class gets a fresh DB (or uses transactions with rollback).
   - Files: `tests/AdwRating.IntegrationTests/TestBase.cs`, `tests/AdwRating.IntegrationTests/DatabaseFixture.cs`
   - Dependencies: 1.12
   - Tests: One smoke test — DB created via migrations, a Handler can be inserted and retrieved
   - **Completion gates**: build | tests
 
-- [ ] **1.13c** Test infrastructure — E2E test project scaffold
+- [x] **1.13c** Test infrastructure — E2E test project scaffold
   - Set up `tests/AdwRating.E2ETests/` with Playwright. No actual tests yet — just project structure and configuration.
   - Files: `tests/AdwRating.E2ETests/` (project scaffold)
   - Dependencies: 1.1
@@ -377,7 +377,7 @@
 
 **Goal**: CSV import with identity resolution via CLI. After this phase, competition data can be loaded into the database.
 
-- [ ] **3.1a** NameNormalizer — full production implementation
+- [ ] **3.1a** NameNormalizer — full production implementation *(partially done: diacritics stripping already implemented in 1.3d; remaining: "Last, First" reordering, typographic quote normalization)*
   - Extend `NameNormalizer` from task 1.3d with full production logic per `08-rating-rules.md` section 1.3: strip diacritics (e.g., "Kateřina Třičová" → "katerina tricova"), normalize whitespace, lowercase, unify "Last, First" ↔ "First Last" name order, normalize typographic quotes.
   - Files: `Domain/Helpers/NameNormalizer.cs`
   - Dependencies: 1.3d
