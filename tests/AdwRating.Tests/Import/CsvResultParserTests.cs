@@ -6,7 +6,7 @@ namespace AdwRating.Tests.Import;
 public class CsvResultParserTests
 {
     private const string Header =
-        "round_key,date,size_category,discipline,is_team_round,handler_name,handler_country,dog_call_name,rank,eliminated";
+        "round_key,date,size,discipline,is_team_round,handler,country,dog,rank,eliminated";
 
     private static Stream CreateCsvStream(string csvContent)
     {
@@ -98,7 +98,7 @@ public class CsvResultParserTests
         var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Has.Count.GreaterThanOrEqualTo(1));
-        Assert.That(errors.Any(e => e.Contains("handler_name")), Is.True);
+        Assert.That(errors.Any(e => e.Contains("handler is required")), Is.True);
     }
 
     [Test]
@@ -169,7 +169,7 @@ public class CsvResultParserTests
 
         var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
 
-        // Should have errors for: round_key, handler_name, dog_call_name, size_category, discipline (invalid), rank (invalid)
+        // Should have errors for: round_key, handler, dog, size, discipline (invalid), rank (invalid)
         Assert.That(errors, Has.Count.GreaterThanOrEqualTo(5));
     }
 

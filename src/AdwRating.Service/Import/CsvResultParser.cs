@@ -49,15 +49,15 @@ public static class CsvResultParser
             if (string.IsNullOrWhiteSpace(row.RoundKey))
                 errors.Add($"Row {lineNumber}: round_key is required.");
             if (string.IsNullOrWhiteSpace(row.HandlerName))
-                errors.Add($"Row {lineNumber}: handler_name is required.");
+                errors.Add($"Row {lineNumber}: handler is required.");
             if (string.IsNullOrWhiteSpace(row.HandlerCountry))
-                errors.Add($"Row {lineNumber}: handler_country is required.");
+                errors.Add($"Row {lineNumber}: country is required.");
             if (string.IsNullOrWhiteSpace(row.DogCallName))
-                errors.Add($"Row {lineNumber}: dog_call_name is required.");
+                errors.Add($"Row {lineNumber}: dog is required.");
             if (string.IsNullOrWhiteSpace(row.Discipline))
                 errors.Add($"Row {lineNumber}: discipline is required.");
             if (string.IsNullOrWhiteSpace(row.SizeCategory))
-                errors.Add($"Row {lineNumber}: size_category is required.");
+                errors.Add($"Row {lineNumber}: size is required.");
 
             // Discipline validation
             if (!string.IsNullOrWhiteSpace(row.Discipline) &&
@@ -97,16 +97,16 @@ public static class CsvResultParser
         {
             Map(m => m.RoundKey).Name("round_key");
             Map(m => m.Date).Name("date");
-            Map(m => m.SizeCategory).Name("size_category");
+            Map(m => m.SizeCategory).Name("size", "size_category");
             Map(m => m.Discipline).Name("discipline");
             Map(m => m.IsTeamRound).Name("is_team_round");
-            Map(m => m.HandlerName).Name("handler_name");
-            Map(m => m.HandlerCountry).Name("handler_country");
-            Map(m => m.DogCallName).Name("dog_call_name");
+            Map(m => m.HandlerName).Name("handler", "handler_name");
+            Map(m => m.HandlerCountry).Name("country", "handler_country");
+            Map(m => m.DogCallName).Name("dog", "dog_call_name");
             Map(m => m.Rank).Name("rank");
             Map(m => m.Eliminated).Name("eliminated");
             Map(m => m.DogRegisteredName).Name("dog_registered_name");
-            Map(m => m.DogBreed).Name("dog_breed");
+            Map(m => m.DogBreed).Name("breed", "dog_breed");
             Map(m => m.Faults).Name("faults");
             Map(m => m.Refusals).Name("refusals");
             Map(m => m.TimeFaults).Name("time_faults");

@@ -68,7 +68,7 @@ public class ImportServiceTests
         "FCI");
 
     private static string ValidCsvHeader =>
-        "round_key,date,size_category,discipline,is_team_round,handler_name,handler_country,dog_call_name,rank,eliminated,dog_breed,faults,refusals,time_faults,total_faults,time,speed,judge,sct,mct,course_length,start_no,run_number";
+        "round_key,date,size,discipline,is_team_round,handler,country,dog,rank,eliminated,breed,faults,refusals,time_faults,total_faults,time,speed,judge,sct,mct,course_length,start_no,run_number";
 
     private static string ValidCsvRow(
         string roundKey = "R1-L-Agility",
