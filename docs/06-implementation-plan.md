@@ -377,28 +377,28 @@
 
 **Goal**: CSV import with identity resolution via CLI. After this phase, competition data can be loaded into the database.
 
-- [ ] **3.1a** NameNormalizer — full production implementation *(partially done: diacritics stripping already implemented in 1.3d; remaining: "Last, First" reordering, typographic quote normalization)*
+- [x] **3.1a** NameNormalizer — full production implementation *(done: added "Last, First" reordering and typographic quote normalization)*
   - Extend `NameNormalizer` from task 1.3d with full production logic per `08-rating-rules.md` section 1.3: strip diacritics (e.g., "Kateřina Třičová" → "katerina tricova"), normalize whitespace, lowercase, unify "Last, First" ↔ "First Last" name order, normalize typographic quotes.
   - Files: `Domain/Helpers/NameNormalizer.cs`
   - Dependencies: 1.3d
   - Tests: Unit tests — diacritics stripping (Czech, German, French, Polish characters), "Last, First" → "First Last" reordering, typographic quote normalization, edge cases (empty string, null, double spaces)
   - **Completion gates**: build | tests
 
-- [ ] **3.1b** SlugHelper — full production implementation
+- [x] **3.1b** SlugHelper — full production implementation *(done: added edge-case tests)*
   - Extend `SlugHelper` from task 1.3d with full production logic: URL-safe slug from name (replace spaces with hyphens, remove non-alphanumeric except hyphens, collapse multiple hyphens), collision suffix (append `-2`, `-3` etc.). Pure function — collision checking done by the caller.
   - Files: `Domain/Helpers/SlugHelper.cs`
   - Dependencies: 1.3d
   - Tests: Unit tests — slug from name with special characters, slug collision suffix generation, diacritics in slugs
   - **Completion gates**: build | tests
 
-- [ ] **3.2a** Identity resolution — handler resolution
+- [x] **3.2a** Identity resolution — handler resolution
   - Implement handler resolution part of `IIdentityResolutionService` in Service project. `ResolveHandlerAsync(rawName, country)`: 1) Normalize name, 2) Check alias repo, 3) Check handler repo by normalized name+country, 4) Fuzzy match (Levenshtein ≤ 2, same country → create alias), 5) Create new handler. Log all resolution decisions.
   - Files: `Service/IdentityResolutionService.cs`
   - Dependencies: 3.1a, 2.1a, 2.1b
   - Tests: Unit tests with mocked repos — exact match, alias match, fuzzy match (creates alias), no match (creates new)
   - **Completion gates**: build | tests
 
-- [ ] **3.2b** Identity resolution — dog and team resolution
+- [x] **3.2b** Identity resolution — dog and team resolution
   - Add dog and team resolution to `IdentityResolutionService`. `ResolveDogAsync(rawDogName, breed, size)`: same pattern as handler (normalize, alias, exact, fuzzy, new). `ResolveTeamAsync(handlerId, dogId)`: lookup or create with default ratings.
   - Files: `Service/IdentityResolutionService.cs`
   - Dependencies: 3.2a, 2.2a, 2.2b, 2.3
@@ -406,49 +406,49 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` section 1.3, `03-domain-and-data.md` section 2
 
-- [ ] **3.3a** CSV parsing — CsvResultParser and ImportRow
+- [x] **3.3a** CSV parsing — CsvResultParser and ImportRow
   - Create a CSV parser that reads competition result files into a structured `ImportRow` intermediate format. Handle: header row matching by column name, BOM markers, trailing commas, inconsistent line endings, quoted fields with commas, empty rows. CSV format is defined in the CSV Format Specification at the end of this document.
   - Files: `Service/Import/CsvResultParser.cs`, `Service/Import/ImportRow.cs`
   - Dependencies: 1.6a
   - Tests: Unit tests — valid CSV parses correctly, BOM handling, empty rows ignored, quoted fields with commas
   - **Completion gates**: build | tests
 
-- [ ] **3.3b** CSV validation
+- [x] **3.3b** CSV validation
   - Add validation to `CsvResultParser`: required fields present, valid placement (positive integer or empty if eliminated), valid size categories, no duplicate (handler+dog) within a run. All-or-nothing — collect all errors at once.
   - Files: `Service/Import/CsvResultParser.cs`
   - Dependencies: 3.3a
   - Tests: Unit tests — missing required fields rejected, invalid placement rejected, duplicate team detected
   - **Completion gates**: build | tests
 
-- [ ] **3.3c** SizeCategoryMapper
+- [x] **3.3c** SizeCategoryMapper
   - Create `SizeCategoryMapper` for non-FCI organization size mapping based on the mapping table in `03-domain-and-data.md` section 3. Map AKC, USDAA, WAO, UKI, IFCS sizes to FCI S/M/I/L. Exclude AKC Preferred.
   - Files: `Service/Import/SizeCategoryMapper.cs`
   - Dependencies: 1.2
   - Tests: Unit tests — AKC "20 inch" → I, USDAA "22 inch" → L, WAO "500" → L, AKC Preferred → excluded, FCI passthrough
   - **Completion gates**: build | tests
 
-- [ ] **3.4** Import service
+- [x] **3.4** Import service
   - Implement `IImportService.ImportCompetitionAsync(filePath, slug, metadata)`. Orchestration: 1) Parse CSV, 2) Validate, 3) Create Competition, 4) Group by RoundKey → create Runs, 5) Resolve identities → create RunResults, 6) Write ImportLog, 7) Return ImportResult. Transactional — rolls back on failure. Reject duplicate slugs.
   - Files: `Service/ImportService.cs`
   - Dependencies: 3.2b, 3.3b, 3.3c, 2.4a, 2.4b, 2.4c, 2.5c
   - Tests: Unit tests with mocked repos — successful import, validation failure, duplicate slug rejected
   - **Completion gates**: build | tests
 
-- [ ] **3.5a** Service DI registration
+- [x] **3.5a** Service DI registration
   - Create `AddServices(this IServiceCollection)` extension method in Service project that registers all service implementations with their interfaces.
   - Files: `Service/ServiceCollectionExtensions.cs`
   - Dependencies: 3.4
   - Tests: none
   - **Completion gates**: build
 
-- [ ] **3.5b** CLI project setup and import command
+- [x] **3.5b** CLI project setup and import command
   - Set up `AdwRating.Cli` with System.CommandLine. Wire DI (`AddDataMssql` + `AddServices`). Implement `import` command: reads CSV path + `CompetitionMetadata` from CLI args, calls `IImportService.ImportCompetitionAsync`, prints summary. Add `--connection`, `--verbose`, `--dry-run` global options. CLI syntax: `import <file> --competition <slug> --name <name> --date <date> --tier <1|2> [--country <cc>] [--location <loc>] [--end-date <date>] [--organization <org>]`.
   - Files: `Cli/Program.cs`, `Cli/Commands/ImportCommand.cs`
   - Dependencies: 3.5a, 1.11c
   - Tests: Unit test for command argument parsing
   - **Completion gates**: build | tests
 
-- [ ] **3.5c** CLI — seed-config command
+- [x] **3.5c** CLI — seed-config command
   - Implement `seed-config` command: creates default `RatingConfiguration` if none exists. Use defaults from `08-rating-rules.md` section 8.
   - Files: `Cli/Commands/SeedConfigCommand.cs`
   - Dependencies: 3.5b
