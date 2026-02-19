@@ -1,6 +1,7 @@
 using System.CommandLine;
 using AdwRating.Data.Mssql;
 using AdwRating.Domain.Entities;
+using Microsoft.EntityFrameworkCore;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -22,6 +23,11 @@ public static class SeedConfigCommand
             services.AddLogging(builder => builder.AddConsole());
 
             await using var provider = services.BuildServiceProvider();
+
+            // Ensure database and schema exist
+            var dbContext = provider.GetRequiredService<AppDbContext>();
+            await dbContext.Database.EnsureCreatedAsync();
+
             var configRepo = provider.GetRequiredService<IRatingConfigurationRepository>();
 
             try
