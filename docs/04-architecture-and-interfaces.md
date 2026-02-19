@@ -322,8 +322,8 @@ public interface IHandlerProfileService
 {
     /// <summary>
     /// Returns handler detail with all teams, including peak rating per team.
-    /// Peak rating is the highest NormalizedRating the team ever achieved
-    /// (tracked via RatingSnapshots or a dedicated PeakNormalizedRating field on Team).
+    /// Peak rating is the highest Rating the team ever achieved
+    /// (tracked via RatingSnapshots or a dedicated PeakRating field on Team).
     /// </summary>
     Task<HandlerDetailDto?> GetBySlugAsync(string slug);
 }
@@ -420,8 +420,7 @@ public record TeamRankingDto(
     string HandlerCountry,
     string DogCallName,
     SizeCategory SizeCategory,
-    float NormalizedRating,    // primary display value
-    float Rating,              // per-category rating (before normalization)
+    float Rating,              // primary display value (after normalization)
     float Sigma,               // uncertainty (for ± display)
     int Rank,                  // position in current filtered leaderboard
     int? PrevRank,             // previous position (null if NEW)
@@ -442,10 +441,9 @@ public record TeamDetailDto(
     string? DogRegisteredName,
     string? DogBreed,
     SizeCategory SizeCategory,
-    float NormalizedRating,
     float Rating,
     float Sigma,
-    float PrevNormalizedRating,
+    float PrevRating,
     int RunCount,
     int FinishedRunCount,
     int Top3RunCount,
@@ -493,8 +491,8 @@ public record HandlerTeamSummaryDto(
     string DogCallName,
     string? DogBreed,
     SizeCategory SizeCategory,
-    float NormalizedRating,
-    float PeakNormalizedRating, // highest normalized rating ever achieved
+    float Rating,
+    float PeakRating, // highest rating ever achieved
     int RunCount,
     bool IsActive,
     TierLabel? TierLabel
@@ -510,6 +508,7 @@ public record CompetitionDetailDto(
     string? Country,
     string? Location,
     int Tier,
+    string? Organization,      // e.g., "FCI", "AKC", "WAO" — null defaults to FCI
     int RunCount,
     int ParticipantCount       // distinct teams across all runs
 );
@@ -522,6 +521,7 @@ public record RunSummaryDto(
     string RoundKey,
     DateOnly Date,
     SizeCategory SizeCategory,
+    string? OriginalSizeCategory, // original source category (e.g., "20 inch", "Small") — null for FCI
     Discipline Discipline,
     bool IsTeamRound,
     int ResultCount             // number of participating teams
@@ -573,7 +573,7 @@ Base path: `/api`
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/teams/{slug}` | Team profile (`TeamDetailDto`): rating, computed stats (finished %, top3 %, avg rank), handler+dog info. **Returns both active and inactive teams** — inactive teams are viewable but marked with `isActive: false` |
-| GET | `/api/teams/{slug}/history` | Rating progression snapshots for chart (`IReadOnlyList<RatingSnapshot>`). Note: `NormalizedRating` in snapshots uses the normalization parameters from the most recent recalculation, not the historical values at each point in time |
+| GET | `/api/teams/{slug}/history` | Rating progression snapshots for chart (`IReadOnlyList<RatingSnapshot>`). Note: `Rating` in snapshots uses the normalization parameters from the most recent recalculation, not the historical values at each point in time |
 | GET | `/api/teams/{slug}/results` | Paginated competition results for this team (`PagedResult<TeamResultDto>`). Each row combines RunResult + Run + Competition data. Ordered by date descending |
 
 ### Handlers
@@ -794,7 +794,7 @@ Issues identified during specification review and their resolutions:
 | 16 | No DTO definitions — API contract incomplete | **Added** full DTO definitions section: `TeamRankingDto`, `TeamDetailDto`, `TeamResultDto`, `HandlerDetailDto`, `HandlerTeamSummaryDto`, `CompetitionDetailDto`, `RunSummaryDto`, `RunResultDto`. |
 | 17 | No service interfaces for team/handler profiles | **Added** `ITeamProfileService` (detail + results) and `IHandlerProfileService` (detail with peak ratings). Controllers stay thin. |
 | 18 | `ISearchService` has no repository support | **Added** `SearchAsync` to `IDogRepository`. `ISearchService` implementation composes results from `IHandlerRepository.SearchAsync`, `IDogRepository.SearchAsync` (via teams), and `ICompetitionRepository.GetListAsync`. |
-| 19 | `RatingSnapshot.NormalizedRating` uses final normalization params, not historical | **Documented** in API endpoint description for `/api/teams/{slug}/history`. Design choice: snapshots use normalization params from most recent recalculation. |
+| 19 | `RatingSnapshot.Rating` uses final normalization params, not historical | **Documented** in API endpoint description for `/api/teams/{slug}/history`. Design choice: snapshots use normalization params from most recent recalculation. |
 | 20 | Missing batch loading for rating recalculation (N+1 risk) | **Added** `IRunResultRepository.GetByRunIdsAsync` for batch loading results across runs. |
 | 21 | `CompetitionMetadata.Tier` had no validation note | **Added** docstring: Tier must be 1 (major) or 2 (standard). |
 | 22 | Inactive teams not explicitly documented in API | **Clarified** `GET /api/teams/{slug}` returns both active and inactive teams. Rankings endpoint only returns active teams. |
