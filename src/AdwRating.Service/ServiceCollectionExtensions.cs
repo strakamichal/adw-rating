@@ -9,6 +9,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<IIdentityResolutionService, IdentityResolutionService>();
         services.AddScoped<IImportService, ImportService>();
+        services.AddScoped<IMergeService, MergeService>();
         return services;
     }
 }
