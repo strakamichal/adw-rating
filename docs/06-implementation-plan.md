@@ -461,35 +461,35 @@
 
 **Goal**: Complete admin tooling so you can import data, inspect it, fix duplicates, and iterate on data quality — all before building the rating engine or web UI.
 
-- [ ] **4.1** MergeService
+- [x] **4.1** MergeService
   - Implement `IMergeService` in Service — `MergeHandlersAsync` (reassign teams + aliases from source to target, delete source, handle slug conflicts), `MergeDogsAsync` (same-size validation, reassign teams + aliases, handle duplicate team merging).
   - Files: `Service/MergeService.cs`
   - Dependencies: 2.1a, 2.2a, 2.3
   - Tests: Unit tests — handler merge (teams reassigned, aliases moved), dog merge (same-size check, duplicate team handling)
   - **Completion gates**: build | tests
 
-- [ ] **4.2a** CLI — list commands
+- [x] **4.2a** CLI — list commands
   - Implement: `list competitions`, `list handlers --search`, `list dogs --search`, `list imports`. Table-formatted console output.
   - Files: `Cli/Commands/ListCommands.cs`
   - Dependencies: 3.5b, Phase 2
   - Tests: Smoke test — commands parse correctly
   - **Completion gates**: build | tests
 
-- [ ] **4.2b** CLI — show and alias list commands
+- [x] **4.2b** CLI — show and alias list commands
   - Implement: `show handler <id>`, `show dog <id>`, `list aliases handler <id>`, `list aliases dog <id>`.
   - Files: `Cli/Commands/ShowCommands.cs`
   - Dependencies: 3.5b, Phase 2
   - Tests: Smoke test — commands parse correctly
   - **Completion gates**: build | tests
 
-- [ ] **4.3a** CLI — merge commands
+- [x] **4.3a** CLI — merge commands
   - Implement `merge handler` and `merge dog` with confirmation prompt and `--dry-run`.
   - Files: `Cli/Commands/MergeCommands.cs`
   - Dependencies: 4.1, 3.5b
   - Tests: Unit test for confirmation prompt logic
   - **Completion gates**: build | tests
 
-- [ ] **4.3b** CLI — delete, update, add-alias commands
+- [x] **4.3b** CLI — delete, update, add-alias commands
   - Implement: `delete competition` (with confirmation), `update handler --country`, `add alias handler`, `add alias dog`.
   - Files: `Cli/Commands/DeleteCommands.cs`, `Cli/Commands/UpdateCommands.cs`, `Cli/Commands/AliasCommands.cs`
   - Dependencies: 3.5b, Phase 2
