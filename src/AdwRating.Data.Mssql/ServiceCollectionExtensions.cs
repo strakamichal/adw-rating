@@ -1,3 +1,5 @@
+using AdwRating.Data.Mssql.Repositories;
+using AdwRating.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,8 +12,18 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(connectionString));
 
-        // Repository implementations will be registered here in Phase 2
-        // e.g., services.AddScoped<IHandlerRepository, HandlerRepository>();
+        // Agent A repos — uncomment when implementations are created:
+        // services.AddScoped<IHandlerRepository, HandlerRepository>();
+        // services.AddScoped<IHandlerAliasRepository, HandlerAliasRepository>();
+        // services.AddScoped<IDogRepository, DogRepository>();
+        // services.AddScoped<IDogAliasRepository, DogAliasRepository>();
+        // services.AddScoped<ITeamRepository, TeamRepository>();
+        services.AddScoped<ICompetitionRepository, CompetitionRepository>();
+        services.AddScoped<IRunRepository, RunRepository>();
+        services.AddScoped<IRunResultRepository, RunResultRepository>();
+        services.AddScoped<IRatingSnapshotRepository, RatingSnapshotRepository>();
+        services.AddScoped<IRatingConfigurationRepository, RatingConfigurationRepository>();
+        services.AddScoped<IImportLogRepository, ImportLogRepository>();
 
         return services;
     }
