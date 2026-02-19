@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdwRating.Domain\AdwRating.Domain.csproj" />
+    <ProjectReference Include="..\AdwRating.Service\AdwRating.Service.csproj" />
+    <ProjectReference Include="..\AdwRating.Data.Mssql\AdwRating.Data.Mssql.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" Version="3.0.0-preview.1.26104.118" />
+  </ItemGroup>
+
+</Project>
