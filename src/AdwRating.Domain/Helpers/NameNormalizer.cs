@@ -51,6 +51,58 @@ public static class NameNormalizer
         return $"{first} {last}";
     }
 
+    /// <summary>
+    /// Extracts a call name from a dog name that may contain a registered name
+    /// with the call name in parentheses or double quotes.
+    /// Examples:
+    ///   "Daylight Neverending Force (Day)" → callName="Day", registeredName="Daylight Neverending Force"
+    ///   "Shadow of Aire Under Pressure ""Ninja""" → callName="Ninja", registeredName="Shadow of Aire Under Pressure"
+    ///   "Day" → callName=null (no extraction possible)
+    ///   "Let's Rock (FCI)" → callName=null (FCI is not a call name)
+    /// </summary>
+    public static (string? CallName, string? RegisteredName) ExtractCallName(string rawDogName)
+    {
+        if (string.IsNullOrWhiteSpace(rawDogName))
+            return (null, null);
+
+        var name = rawDogName.Trim();
+
+        // Ignored parenthetical tokens (not call names)
+        var ignored = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "FCI", "FCI registration", "AKC", "KC", "UKC", "CKC"
+        };
+
+        // Try double-quoted call name: Registered Name ""CallName""
+        var quoteMatch = Regex.Match(name, @"""([^""]+)""\s*$");
+        if (quoteMatch.Success)
+        {
+            var candidate = quoteMatch.Groups[1].Value.Trim();
+            if (!ignored.Contains(candidate) && candidate.Length >= 2)
+            {
+                var registered = name[..quoteMatch.Index].Trim().TrimEnd('"').Trim();
+                return (candidate, registered.Length > 0 ? registered : null);
+            }
+        }
+
+        // Try parenthesized call name: Registered Name (CallName)
+        // Match the last well-formed parenthetical group
+        var parenMatch = Regex.Match(name, @"\(([^()]+)\)\s*$");
+        if (parenMatch.Success)
+        {
+            var candidate = parenMatch.Groups[1].Value.Trim();
+            // Skip if it looks like a metadata tag rather than a name
+            if (!ignored.Contains(candidate) && candidate.Length >= 2
+                && !candidate.StartsWith("FCI", StringComparison.OrdinalIgnoreCase))
+            {
+                var registered = name[..parenMatch.Index].Trim();
+                return (candidate, registered.Length > 0 ? registered : null);
+            }
+        }
+
+        return (null, null);
+    }
+
     private static string StripDiacritics(string text)
     {
         var sb = new StringBuilder(text.Length);

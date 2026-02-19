@@ -75,4 +75,71 @@ public class NameNormalizerTests
         var result = NameNormalizer.Normalize("word1  \t  word2   word3");
         Assert.That(result, Is.EqualTo("word1 word2 word3"));
     }
+
+    // ExtractCallName tests
+
+    [Test]
+    public void ExtractCallName_Parentheses_ExtractsCallName()
+    {
+        var (callName, registered) = NameNormalizer.ExtractCallName("Daylight Neverending Force (Day)");
+        Assert.That(callName, Is.EqualTo("Day"));
+        Assert.That(registered, Is.EqualTo("Daylight Neverending Force"));
+    }
+
+    [Test]
+    public void ExtractCallName_DoubleQuotes_ExtractsCallName()
+    {
+        var (callName, registered) = NameNormalizer.ExtractCallName("Shadow of Aire Under Pressure \"Ninja\"");
+        Assert.That(callName, Is.EqualTo("Ninja"));
+        Assert.That(registered, Is.EqualTo("Shadow of Aire Under Pressure"));
+    }
+
+    [Test]
+    public void ExtractCallName_NoParensOrQuotes_ReturnsNull()
+    {
+        var (callName, registered) = NameNormalizer.ExtractCallName("Day");
+        Assert.That(callName, Is.Null);
+        Assert.That(registered, Is.Null);
+    }
+
+    [Test]
+    public void ExtractCallName_FCI_IsIgnored()
+    {
+        var (callName, registered) = NameNormalizer.ExtractCallName("Let's Rock Ryujin Jakka Shepter (FCI)");
+        Assert.That(callName, Is.Null);
+    }
+
+    [Test]
+    public void ExtractCallName_SameAsRegistered_StillExtracts()
+    {
+        var (callName, registered) = NameNormalizer.ExtractCallName("Plexie (Plexie)");
+        Assert.That(callName, Is.EqualTo("Plexie"));
+        Assert.That(registered, Is.EqualTo("Plexie"));
+    }
+
+    [Test]
+    public void ExtractCallName_EmptyOrWhitespace_ReturnsNull()
+    {
+        var (callName, _) = NameNormalizer.ExtractCallName("");
+        Assert.That(callName, Is.Null);
+
+        var (callName2, _) = NameNormalizer.ExtractCallName("   ");
+        Assert.That(callName2, Is.Null);
+    }
+
+    [Test]
+    public void ExtractCallName_MultiWordCallName()
+    {
+        var (callName, registered) = NameNormalizer.ExtractCallName("Contact Point's Blew Bayou (Blew Bayou)");
+        Assert.That(callName, Is.EqualTo("Blew Bayou"));
+        Assert.That(registered, Is.EqualTo("Contact Point's Blew Bayou"));
+    }
+
+    [Test]
+    public void ExtractCallName_ShortCandidate_IsIgnored()
+    {
+        // Single char in parens is too short to be a call name
+        var (callName, _) = NameNormalizer.ExtractCallName("Some Dog (X)");
+        Assert.That(callName, Is.Null);
+    }
 }

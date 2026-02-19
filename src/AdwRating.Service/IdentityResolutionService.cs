@@ -101,74 +101,143 @@ public class IdentityResolutionService : IIdentityResolutionService
 
     public async Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size)
     {
-        var normalizedName = NameNormalizer.Normalize(rawDogName);
+        var normalizedFull = NameNormalizer.Normalize(rawDogName);
 
-        // 1. Check alias table
-        var alias = await _dogAliasRepo.FindByAliasNameAndTypeAsync(normalizedName, DogAliasType.CallName);
-        if (alias is not null)
-        {
-            var canonical = await _dogRepo.GetByIdAsync(alias.CanonicalDogId);
-            _logger.LogDebug("Dog '{RawName}' resolved via alias to '{CanonicalName}'",
-                rawDogName, canonical!.CallName);
-            return canonical!;
-        }
+        // Extract call name from parentheses/quotes if present
+        var (extractedCallName, extractedRegistered) = NameNormalizer.ExtractCallName(rawDogName);
+        var normalizedCallName = extractedCallName is not null
+            ? NameNormalizer.Normalize(extractedCallName)
+            : null;
+        var normalizedRegistered = extractedRegistered is not null
+            ? NameNormalizer.Normalize(extractedRegistered)
+            : null;
 
-        // 2. Exact match on normalized name + size
-        var exact = await _dogRepo.FindByNormalizedNameAndSizeAsync(normalizedName, size);
-        if (exact is not null)
+        // Names to try for matching (call name first, then full input)
+        var namesToTry = new List<string>();
+        if (normalizedCallName is not null)
+            namesToTry.Add(normalizedCallName);
+        namesToTry.Add(normalizedFull);
+        if (normalizedRegistered is not null && !namesToTry.Contains(normalizedRegistered))
+            namesToTry.Add(normalizedRegistered);
+
+        // 1. Check alias table for all name variants
+        foreach (var nameVariant in namesToTry)
         {
-            // Update breed if previously unknown
-            if (exact.Breed is null && breed is not null)
+            var alias = await _dogAliasRepo.FindByAliasNameAndTypeAsync(nameVariant, DogAliasType.CallName);
+            if (alias is not null)
             {
-                exact.Breed = breed;
-                await _dogRepo.UpdateAsync(exact);
-                _logger.LogDebug("Updated breed for dog '{DogName}' to '{Breed}'",
-                    exact.CallName, breed);
+                var canonical = await _dogRepo.GetByIdAsync(alias.CanonicalDogId);
+                _logger.LogDebug("Dog '{RawName}' resolved via alias '{Alias}' to '{CanonicalName}'",
+                    rawDogName, nameVariant, canonical!.CallName);
+                return canonical!;
             }
-
-            _logger.LogDebug("Dog '{RawName}' resolved via exact match", rawDogName);
-            return exact;
         }
 
-        // 3. Fuzzy match: search candidates, filter same size, Levenshtein <= 2
-        var candidates = await _dogRepo.SearchAsync(normalizedName, FuzzySearchLimit);
-        foreach (var candidate in candidates)
+        // 2. Exact match on normalized name + size (try call name first, then full)
+        foreach (var nameVariant in namesToTry)
         {
-            if (candidate.SizeCategory != size)
-                continue;
-
-            var distance = LevenshteinDistance.Compute(normalizedName, candidate.NormalizedCallName);
-            if (distance <= MaxLevenshteinDistance)
+            var exact = await _dogRepo.FindByNormalizedNameAndSizeAsync(nameVariant, size);
+            if (exact is not null)
             {
-                _logger.LogInformation(
-                    "Dog '{RawName}' fuzzy-matched to '{CanonicalName}' (distance={Distance})",
-                    rawDogName, candidate.CallName, distance);
-
-                await _dogAliasRepo.CreateAsync(new DogAlias
+                if (exact.Breed is null && breed is not null)
                 {
-                    AliasName = normalizedName,
-                    CanonicalDogId = candidate.Id,
-                    AliasType = DogAliasType.CallName,
-                    Source = AliasSource.FuzzyMatch,
-                    CreatedAt = DateTime.UtcNow
-                });
+                    exact.Breed = breed;
+                    await _dogRepo.UpdateAsync(exact);
+                }
 
-                return candidate;
+                // Create aliases for name variants we haven't stored yet
+                await CreateDogAliasesIfNeeded(exact.Id, normalizedFull, normalizedCallName, normalizedRegistered, exact.NormalizedCallName);
+
+                _logger.LogDebug("Dog '{RawName}' resolved via exact match to '{CallName}'",
+                    rawDogName, exact.CallName);
+                return exact;
             }
         }
 
-        // 4. No match — create new dog
-        _logger.LogInformation("Dog '{RawName}' not found, creating new record", rawDogName);
+        // 3. Fuzzy match: search candidates by each name variant
+        foreach (var nameVariant in namesToTry)
+        {
+            var candidates = await _dogRepo.SearchAsync(nameVariant, FuzzySearchLimit);
+            foreach (var candidate in candidates)
+            {
+                if (candidate.SizeCategory != size)
+                    continue;
+
+                var distance = LevenshteinDistance.Compute(nameVariant, candidate.NormalizedCallName);
+                if (distance <= MaxLevenshteinDistance)
+                {
+                    _logger.LogInformation(
+                        "Dog '{RawName}' fuzzy-matched to '{CanonicalName}' (distance={Distance})",
+                        rawDogName, candidate.CallName, distance);
+
+                    await CreateDogAliasesIfNeeded(candidate.Id, normalizedFull, normalizedCallName, normalizedRegistered, candidate.NormalizedCallName);
+
+                    return candidate;
+                }
+            }
+        }
+
+        // 4. No match — create new dog (prefer extracted call name)
+        var storedCallName = extractedCallName ?? rawDogName;
+        var storedNormalized = normalizedCallName ?? normalizedFull;
+
+        _logger.LogInformation("Dog '{RawName}' not found, creating new record with CallName='{CallName}'",
+            rawDogName, storedCallName);
 
         var newDog = await _dogRepo.CreateAsync(new Dog
         {
-            CallName = rawDogName,
-            NormalizedCallName = normalizedName,
+            CallName = storedCallName,
+            NormalizedCallName = storedNormalized,
+            RegisteredName = extractedRegistered ?? (extractedCallName is not null ? rawDogName : null),
             Breed = breed,
             SizeCategory = size
         });
 
+        // Create aliases for all name variants
+        await CreateDogAliasesIfNeeded(newDog.Id, normalizedFull, normalizedCallName, normalizedRegistered, storedNormalized);
+
         return newDog;
+    }
+
+    private async Task CreateDogAliasesIfNeeded(int dogId, string normalizedFull, string? normalizedCallName, string? normalizedRegistered, string canonicalNormalized)
+    {
+        // Collect distinct name variants that differ from the canonical normalized name
+        var aliasNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        if (!string.Equals(normalizedFull, canonicalNormalized, StringComparison.OrdinalIgnoreCase))
+            aliasNames.Add(normalizedFull);
+        if (normalizedCallName is not null && !string.Equals(normalizedCallName, canonicalNormalized, StringComparison.OrdinalIgnoreCase))
+            aliasNames.Add(normalizedCallName);
+        if (normalizedRegistered is not null && !string.Equals(normalizedRegistered, canonicalNormalized, StringComparison.OrdinalIgnoreCase))
+            aliasNames.Add(normalizedRegistered);
+
+        foreach (var aliasName in aliasNames)
+        {
+            if (string.IsNullOrWhiteSpace(aliasName))
+                continue;
+
+            // Check if alias already exists
+            var existing = await _dogAliasRepo.FindByAliasNameAndTypeAsync(aliasName, DogAliasType.CallName);
+            if (existing is not null)
+                continue;
+
+            try
+            {
+                await _dogAliasRepo.CreateAsync(new DogAlias
+                {
+                    AliasName = aliasName,
+                    CanonicalDogId = dogId,
+                    AliasType = DogAliasType.CallName,
+                    Source = AliasSource.Import,
+                    CreatedAt = DateTime.UtcNow
+                });
+                _logger.LogDebug("Created dog alias '{Alias}' for dog {DogId}", aliasName, dogId);
+            }
+            catch (Exception ex)
+            {
+                // Unique constraint violation — alias was already created by another path
+                _logger.LogDebug("Dog alias '{Alias}' already exists: {Error}", aliasName, ex.Message);
+            }
+        }
     }
 
     public async Task<Team> ResolveTeamAsync(int handlerId, int dogId)
