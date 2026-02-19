@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AdwRating.Api/AdwRating.Api.csproj" />
+    <Project Path="src/AdwRating.ApiClient/AdwRating.ApiClient.csproj" />
+    <Project Path="src/AdwRating.Cli/AdwRating.Cli.csproj" />
+    <Project Path="src/AdwRating.Data.Mssql/AdwRating.Data.Mssql.csproj" />
+    <Project Path="src/AdwRating.Domain/AdwRating.Domain.csproj" />
+    <Project Path="src/AdwRating.Service/AdwRating.Service.csproj" />
+    <Project Path="src/AdwRating.Web/AdwRating.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AdwRating.E2ETests/AdwRating.E2ETests.csproj" />
+    <Project Path="tests/AdwRating.IntegrationTests/AdwRating.IntegrationTests.csproj" />
+    <Project Path="tests/AdwRating.Tests/AdwRating.Tests.csproj" />
+  </Folder>
+</Solution>

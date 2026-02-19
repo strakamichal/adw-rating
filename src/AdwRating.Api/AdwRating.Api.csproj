@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdwRating.Domain\AdwRating.Domain.csproj" />
+    <ProjectReference Include="..\AdwRating.Service\AdwRating.Service.csproj" />
+    <ProjectReference Include="..\AdwRating.Data.Mssql\AdwRating.Data.Mssql.csproj" />
+  </ItemGroup>
+
+</Project>
