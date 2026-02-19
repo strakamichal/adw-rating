@@ -100,8 +100,8 @@ public class ImportServiceTests
 
         _identityService.ResolveHandlerAsync("John Smith", "CZE").Returns(handler1);
         _identityService.ResolveHandlerAsync("Jane Doe", "CZE").Returns(handler2);
-        _identityService.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L).Returns(dog1);
-        _identityService.ResolveDogAsync("Buddy", "Border Collie", SizeCategory.L).Returns(dog2);
+        _identityService.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, Arg.Any<int>()).Returns(dog1);
+        _identityService.ResolveDogAsync("Buddy", "Border Collie", SizeCategory.L, Arg.Any<int>()).Returns(dog2);
         _identityService.ResolveTeamAsync(10, 20).Returns(team1);
         _identityService.ResolveTeamAsync(11, 21).Returns(team2);
 
@@ -211,8 +211,8 @@ public class ImportServiceTests
         var team2 = new Team { Id = 31, HandlerId = 10, DogId = 21 };
 
         _identityService.ResolveHandlerAsync("John Smith", "CZE").Returns(handler);
-        _identityService.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L).Returns(dog1);
-        _identityService.ResolveDogAsync("Buddy", "Border Collie", SizeCategory.L).Returns(dog2);
+        _identityService.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, Arg.Any<int>()).Returns(dog1);
+        _identityService.ResolveDogAsync("Buddy", "Border Collie", SizeCategory.L, Arg.Any<int>()).Returns(dog2);
         _identityService.ResolveTeamAsync(10, 20).Returns(team1);
         _identityService.ResolveTeamAsync(10, 21).Returns(team2);
 
@@ -223,8 +223,8 @@ public class ImportServiceTests
         // Handler should only be resolved once due to caching
         await _identityService.Received(1).ResolveHandlerAsync("John Smith", "CZE");
         // But dogs should be resolved separately
-        await _identityService.Received(1).ResolveDogAsync("Rex", Arg.Any<string?>(), SizeCategory.L);
-        await _identityService.Received(1).ResolveDogAsync("Buddy", Arg.Any<string?>(), SizeCategory.L);
+        await _identityService.Received(1).ResolveDogAsync("Rex", Arg.Any<string?>(), SizeCategory.L, Arg.Any<int>());
+        await _identityService.Received(1).ResolveDogAsync("Buddy", Arg.Any<string?>(), SizeCategory.L, Arg.Any<int>());
     }
 
     [Test]
@@ -242,7 +242,7 @@ public class ImportServiceTests
         var team = new Team { Id = 30, HandlerId = 10, DogId = 20 };
 
         _identityService.ResolveHandlerAsync("John Smith", "CZE").Returns(handler);
-        _identityService.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L).Returns(dog);
+        _identityService.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, Arg.Any<int>()).Returns(dog);
         _identityService.ResolveTeamAsync(10, 20).Returns(team);
 
         var result = await _sut.ImportCompetitionAsync(filePath, "test-comp", DefaultMetadata);

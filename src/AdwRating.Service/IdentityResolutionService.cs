@@ -99,7 +99,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         return newHandler;
     }
 
-    public async Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size)
+    public async Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size, int handlerId)
     {
         var normalizedFull = NameNormalizer.Normalize(rawDogName);
 
@@ -120,41 +120,57 @@ public class IdentityResolutionService : IIdentityResolutionService
         if (normalizedRegistered is not null && !namesToTry.Contains(normalizedRegistered))
             namesToTry.Add(normalizedRegistered);
 
-        // 1. Check alias table for all name variants
+        // Build set of dog IDs already associated with this handler (via teams)
+        var handlerTeams = await _teamRepo.GetByHandlerIdAsync(handlerId);
+        var handlerDogIds = new HashSet<int>(handlerTeams.Select(t => t.DogId));
+
+        // Helper: check if a dog candidate belongs to this handler
+        bool BelongsToHandler(int dogId) => handlerDogIds.Contains(dogId);
+
+        // 1. Check alias table — prefer alias hits that belong to this handler
+        Dog? aliasGlobalHit = null;
         foreach (var nameVariant in namesToTry)
         {
             var alias = await _dogAliasRepo.FindByAliasNameAndTypeAsync(nameVariant, DogAliasType.CallName);
             if (alias is not null)
             {
-                var canonical = await _dogRepo.GetByIdAsync(alias.CanonicalDogId);
-                _logger.LogDebug("Dog '{RawName}' resolved via alias '{Alias}' to '{CanonicalName}'",
-                    rawDogName, nameVariant, canonical!.CallName);
-                return canonical!;
+                if (BelongsToHandler(alias.CanonicalDogId))
+                {
+                    var canonical = await _dogRepo.GetByIdAsync(alias.CanonicalDogId);
+                    _logger.LogDebug("Dog '{RawName}' resolved via alias to handler's dog '{CallName}'",
+                        rawDogName, canonical!.CallName);
+                    return canonical!;
+                }
+                // Remember global hit but don't return yet — keep looking for handler-scoped match
+                aliasGlobalHit ??= await _dogRepo.GetByIdAsync(alias.CanonicalDogId);
             }
         }
 
-        // 2. Exact match on normalized name + size (try call name first, then full)
+        // 2. Exact match on normalized name + size — prefer handler's dogs
+        Dog? exactGlobalHit = null;
         foreach (var nameVariant in namesToTry)
         {
             var exact = await _dogRepo.FindByNormalizedNameAndSizeAsync(nameVariant, size);
             if (exact is not null)
             {
-                if (exact.Breed is null && breed is not null)
+                if (BelongsToHandler(exact.Id))
                 {
-                    exact.Breed = breed;
-                    await _dogRepo.UpdateAsync(exact);
+                    if (exact.Breed is null && breed is not null)
+                    {
+                        exact.Breed = breed;
+                        await _dogRepo.UpdateAsync(exact);
+                    }
+                    await CreateDogAliasesIfNeeded(exact.Id, normalizedFull, normalizedCallName, normalizedRegistered, exact.NormalizedCallName);
+                    _logger.LogDebug("Dog '{RawName}' resolved via exact match to handler's dog '{CallName}'",
+                        rawDogName, exact.CallName);
+                    return exact;
                 }
-
-                // Create aliases for name variants we haven't stored yet
-                await CreateDogAliasesIfNeeded(exact.Id, normalizedFull, normalizedCallName, normalizedRegistered, exact.NormalizedCallName);
-
-                _logger.LogDebug("Dog '{RawName}' resolved via exact match to '{CallName}'",
-                    rawDogName, exact.CallName);
-                return exact;
+                exactGlobalHit ??= exact;
             }
         }
 
-        // 3. Fuzzy match: search candidates by each name variant
+        // 3. Fuzzy match — prefer handler's dogs
+        Dog? fuzzyGlobalHit = null;
         foreach (var nameVariant in namesToTry)
         {
             var candidates = await _dogRepo.SearchAsync(nameVariant, FuzzySearchLimit);
@@ -166,18 +182,46 @@ public class IdentityResolutionService : IIdentityResolutionService
                 var distance = LevenshteinDistance.Compute(nameVariant, candidate.NormalizedCallName);
                 if (distance <= MaxLevenshteinDistance)
                 {
-                    _logger.LogInformation(
-                        "Dog '{RawName}' fuzzy-matched to '{CanonicalName}' (distance={Distance})",
-                        rawDogName, candidate.CallName, distance);
-
-                    await CreateDogAliasesIfNeeded(candidate.Id, normalizedFull, normalizedCallName, normalizedRegistered, candidate.NormalizedCallName);
-
-                    return candidate;
+                    if (BelongsToHandler(candidate.Id))
+                    {
+                        _logger.LogInformation("Dog '{RawName}' fuzzy-matched to handler's dog '{CallName}'",
+                            rawDogName, candidate.CallName);
+                        await CreateDogAliasesIfNeeded(candidate.Id, normalizedFull, normalizedCallName, normalizedRegistered, candidate.NormalizedCallName);
+                        return candidate;
+                    }
+                    fuzzyGlobalHit ??= candidate;
                 }
             }
         }
 
-        // 4. No match — create new dog (prefer extracted call name)
+        // 4. No handler-scoped match found. Use global match ONLY if the name is
+        //    specific enough (registered name or full name match, NOT just a short call name).
+        //    Short call names like "Beat", "Day" are too ambiguous for cross-handler matching.
+        var globalHit = aliasGlobalHit ?? exactGlobalHit ?? fuzzyGlobalHit;
+        if (globalHit is not null)
+        {
+            var matchedName = normalizedFull;
+            var isSpecificEnough = matchedName.Length > 10
+                || (normalizedRegistered is not null && normalizedRegistered.Length > 10);
+
+            if (isSpecificEnough)
+            {
+                if (globalHit.Breed is null && breed is not null)
+                {
+                    globalHit.Breed = breed;
+                    await _dogRepo.UpdateAsync(globalHit);
+                }
+                await CreateDogAliasesIfNeeded(globalHit.Id, normalizedFull, normalizedCallName, normalizedRegistered, globalHit.NormalizedCallName);
+                _logger.LogInformation("Dog '{RawName}' matched globally to '{CallName}' (no handler association)",
+                    rawDogName, globalHit.CallName);
+                return globalHit;
+            }
+
+            _logger.LogDebug("Dog '{RawName}' has global match '{CallName}' but name too short for cross-handler match — creating new",
+                rawDogName, globalHit.CallName);
+        }
+
+        // 5. No match — create new dog (prefer extracted call name)
         var storedCallName = extractedCallName ?? rawDogName;
         var storedNormalized = normalizedCallName ?? normalizedFull;
 

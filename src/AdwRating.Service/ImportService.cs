@@ -164,11 +164,11 @@ public class ImportService : IImportService
                 }
                 allHandlerIds.Add(handler.Id);
 
-                // Resolve dog (with cache)
-                var dogKey = $"{row.DogCallName}|{rowSize.Value}";
+                // Resolve dog (with cache, scoped to handler)
+                var dogKey = $"{handler.Id}|{row.DogCallName}|{rowSize.Value}";
                 if (!dogCache.TryGetValue(dogKey, out var dog))
                 {
-                    dog = await _identityService.ResolveDogAsync(row.DogCallName, row.DogBreed, rowSize.Value);
+                    dog = await _identityService.ResolveDogAsync(row.DogCallName, row.DogBreed, rowSize.Value, handler.Id);
                     dogCache[dogKey] = dog;
                 }
                 allDogIds.Add(dog.Id);

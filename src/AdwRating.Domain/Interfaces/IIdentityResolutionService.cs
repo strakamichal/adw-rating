@@ -6,6 +6,6 @@ namespace AdwRating.Domain.Interfaces;
 public interface IIdentityResolutionService
 {
     Task<Handler> ResolveHandlerAsync(string rawName, string country);
-    Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size);
+    Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size, int handlerId);
     Task<Team> ResolveTeamAsync(int handlerId, int dogId);
 }

@@ -185,12 +185,15 @@ public class IdentityResolutionServiceTests
             Breed = "Border Collie", SizeCategory = SizeCategory.L
         };
 
+        // Handler 10 owns dog 1 via a team
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team> { new() { Id = 30, HandlerId = 10, DogId = 1 } });
         _dogAliasRepo.FindByAliasNameAndTypeAsync("rex", DogAliasType.CallName)
             .Returns((DogAlias?)null);
         _dogRepo.FindByNormalizedNameAndSizeAsync("rex", SizeCategory.L)
             .Returns(dog);
 
-        var result = await _sut.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L);
+        var result = await _sut.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, 10);
 
         Assert.That(result, Is.SameAs(dog));
         await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
@@ -205,12 +208,15 @@ public class IdentityResolutionServiceTests
             Breed = null, SizeCategory = SizeCategory.L
         };
 
+        // Handler 10 owns dog 1 via a team
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team> { new() { Id = 30, HandlerId = 10, DogId = 1 } });
         _dogAliasRepo.FindByAliasNameAndTypeAsync("rex", DogAliasType.CallName)
             .Returns((DogAlias?)null);
         _dogRepo.FindByNormalizedNameAndSizeAsync("rex", SizeCategory.L)
             .Returns(dog);
 
-        var result = await _sut.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L);
+        var result = await _sut.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, 10);
 
         Assert.That(result.Breed, Is.EqualTo("Border Collie"));
         await _dogRepo.Received(1).UpdateAsync(
@@ -226,6 +232,9 @@ public class IdentityResolutionServiceTests
             Breed = "Sheltie", SizeCategory = SizeCategory.M
         };
 
+        // Handler 10 has no existing dogs
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team>());
         _dogAliasRepo.FindByAliasNameAndTypeAsync("buddy", DogAliasType.CallName)
             .Returns((DogAlias?)null);
         _dogRepo.FindByNormalizedNameAndSizeAsync("buddy", SizeCategory.M)
@@ -235,7 +244,7 @@ public class IdentityResolutionServiceTests
         _dogRepo.CreateAsync(Arg.Any<Dog>())
             .Returns(created);
 
-        var result = await _sut.ResolveDogAsync("Buddy", "Sheltie", SizeCategory.M);
+        var result = await _sut.ResolveDogAsync("Buddy", "Sheltie", SizeCategory.M, 10);
 
         Assert.That(result, Is.SameAs(created));
         await _dogRepo.Received(1).CreateAsync(
