@@ -40,7 +40,8 @@ public class ImportService : IImportService
 
         // 1. Parse CSV
         using var stream = File.OpenRead(filePath);
-        var (rows, parseErrors) = CsvResultParser.Parse(stream);
+        var (rows, parseErrors, parseWarnings) = CsvResultParser.Parse(stream);
+        warnings.AddRange(parseWarnings);
 
         // 2. If parse errors, write rejected ImportLog and return failure
         if (parseErrors.Count > 0)

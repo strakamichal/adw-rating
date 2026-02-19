@@ -8,10 +8,11 @@ public static class CsvResultParser
 {
     private static readonly string[] ValidDisciplines = ["Agility", "Jumping", "Final"];
 
-    public static (IReadOnlyList<ImportRow> Rows, IReadOnlyList<string> Errors) Parse(Stream csvStream)
+    public static (IReadOnlyList<ImportRow> Rows, IReadOnlyList<string> Errors, IReadOnlyList<string> Warnings) Parse(Stream csvStream)
     {
         var rows = new List<ImportRow>();
         var errors = new List<string>();
+        var warnings = new List<string>();
 
         var config = new CsvConfiguration(CultureInfo.InvariantCulture)
         {
@@ -31,12 +32,12 @@ public static class CsvResultParser
         var records = csv.GetRecords<ImportRow>().ToList();
         rows.AddRange(records);
 
-        Validate(rows, errors);
+        Validate(rows, errors, warnings);
 
-        return (rows, errors);
+        return (rows, errors, warnings);
     }
 
-    private static void Validate(List<ImportRow> rows, List<string> errors)
+    private static void Validate(List<ImportRow> rows, List<string> errors, List<string> warnings)
     {
         var duplicateTracker = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
 
@@ -50,8 +51,6 @@ public static class CsvResultParser
                 errors.Add($"Row {lineNumber}: round_key is required.");
             if (string.IsNullOrWhiteSpace(row.HandlerName))
                 errors.Add($"Row {lineNumber}: handler is required.");
-            if (string.IsNullOrWhiteSpace(row.HandlerCountry))
-                errors.Add($"Row {lineNumber}: country is required.");
             if (string.IsNullOrWhiteSpace(row.DogCallName))
                 errors.Add($"Row {lineNumber}: dog is required.");
             if (string.IsNullOrWhiteSpace(row.Discipline))
@@ -66,14 +65,16 @@ public static class CsvResultParser
                 errors.Add($"Row {lineNumber}: discipline '{row.Discipline}' is invalid. Must be one of: Agility, Jumping, Final.");
             }
 
-            // Rank/eliminated validation
+            // Rank/eliminated validation — empty rank with eliminated=false treated as eliminated with warning
             var isEliminated = "true".Equals(row.Eliminated?.Trim(), StringComparison.OrdinalIgnoreCase);
             if (!isEliminated)
             {
                 if (string.IsNullOrWhiteSpace(row.Rank) ||
                     !int.TryParse(row.Rank.Trim(), out var rank) || rank <= 0)
                 {
-                    errors.Add($"Row {lineNumber}: rank must be a positive integer when not eliminated.");
+                    // Treat as eliminated (DNS/NFC/etc.) with a warning instead of error
+                    rows[i] = row with { Eliminated = "true" };
+                    warnings.Add($"Row {lineNumber}: empty/invalid rank with eliminated=false — treating as eliminated.");
                 }
             }
 
