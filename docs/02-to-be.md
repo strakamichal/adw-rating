@@ -30,7 +30,7 @@ Build a web application for calculating and displaying performance ratings of ag
 - **Run** — A single scored attempt within a competition (e.g., agility individual Large run 1). Each run has its own results (placement, time, faults). Runs are the atomic unit for rating calculation. Combined/aggregate results (e.g., individual overall) are not tracked — only individual runs matter.
 - **Discipline** — The type of course within a competition run (e.g., Agility, Jumping, Final). A fixed enumeration maintained in the system.
 - **Competition tier** — A classification of competition importance that affects rating weight. Defined in `docs/08-rating-rules.md` (currently: Tier 1 with weight 1.2, others with weight 1.0).
-- **Size category** — Dog height category using FCI classification: S (Small, <35 cm), M (Medium, 35–43 cm), I (Intermediate, 43–48 cm), L (Large, >48 cm). Ratings are calculated separately per category, then normalized to a common scale for cross-category comparability (see `docs/08-rating-rules.md`). If a source uses XS, it is mapped to S during import.
+- **Size category** — Dog height category using FCI classification: S (Small, <35 cm), M (Medium, 35–43 cm), I (Intermediate, 43–48 cm), L (Large, >48 cm). Rating calculation is category-agnostic (all participants in a run are compared together regardless of size), but display ratings are normalized per size category to a common scale (target mean 1500) for cross-category comparability (see `docs/08-rating-rules.md`). If a source uses XS, it is mapped to S during import. Non-FCI organizations (AKC, USDAA, etc.) use different height categories which are mapped to FCI S/M/I/L during import (see mapping table in `docs/03-domain-and-data.md`).
 - **Active team** — A team that meets the minimum activity thresholds defined in `docs/08-rating-rules.md` (run count and time window). Only active teams appear in the live rankings. Inactive teams retain their profile (marked as inactive) but are excluded from the leaderboard.
 
 ## 3. Scope (MVP)
@@ -52,7 +52,13 @@ The MVP covers the following functional areas:
 Initial dataset targets major international competitions over the last 2–3 years:
 - **FCI events**: Agility World Championship (AWC), European Open (EO), Junior Open
 - **WAO events**: World Agility Open
+- **IFCS events**: IFCS World Championships
 - **Large international opens**: Polish Open, Hungarian Open, Slovenian Open, Moravia Open
+- **AKC events**: AKC Nationals, AKC Invitational, Westminster (standard heights only — Preferred excluded)
+- **USDAA events**: USDAA Nationals, Cynosport
+- **UKI events**: US Open, International events
+
+Non-FCI competitions use different height categories which are mapped to FCI S/M/I/L during import. See mapping table in `docs/03-domain-and-data.md`.
 
 Data formats vary by source and will need to be acquired and normalized. No existing dataset is available — data collection is a significant upfront effort.
 
@@ -106,7 +112,7 @@ These items are out of scope for **all planned phases**:
 ### Always (invariants that must always hold)
 
 - Validate imported competition data before storing (required fields, no duplicate entries, valid date/placement values). Entire import must pass validation or nothing is stored.
-- Size categories (S/M/I/L) must be kept strictly separate in rating calculation — never mix ratings across categories. Cross-category normalization (z-score) is applied only for display comparability, not for ranking within a category.
+- Size categories (S/M/I/L) must be kept strictly separate for **display and ranking** — leaderboards are per category, z-score normalization is per category. Rating calculation itself is category-agnostic: each run is processed as a single group regardless of participants' assigned categories (see `docs/08-rating-rules.md` section 4.4). This allows cross-category runs (e.g., WAO 500 with mixed I/L dogs) to count for all participants.
 - Rating recalculation must be deterministic and reproducible — same input data must produce the same ratings.
 - All public pages must be server-rendered or statically generated for SEO.
 - Keep competition result data immutable after import — corrections go through deleting the competition (cascading to runs/results) and re-importing corrected data.

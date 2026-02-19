@@ -16,7 +16,7 @@
 - **Competition tier**: Importance classification affecting rating weight (Tier 1 = weight 1.2, Tier 2 = weight 1.0).
 
 **Size and classification**
-- **Size category**: Dog height category using FCI classification: S (Small, <35 cm), M (Medium, 35–43 cm), I (Intermediate, 43–48 cm), L (Large, >48 cm). If a source uses XS, it is mapped to S during import. Ratings are calculated per category, then z-score normalized for cross-category comparability.
+- **Size category**: Dog height category using FCI classification: S (Small, <35 cm), M (Medium, 35–43 cm), I (Intermediate, 43–48 cm), L (Large, >48 cm). If a source uses XS, it is mapped to S during import. Rating calculation is category-agnostic (all participants in a run are compared together), then display ratings are z-score normalized per size category for cross-category comparability.
 - **Tier label**: Percentile-based label within a size category: Elite (top 2 %), Champion (top 10 %), Expert (top 30 %), Competitor (rest).
 - **Active team**: A team meeting minimum activity thresholds (≥5 runs in the last 730 days). Only active teams appear in the live rankings.
 
@@ -67,10 +67,14 @@
 | `RegisteredName` | string(300) | no | Full registered/kennel name (e.g., "Border Star Hall of Fame") |
 | `Breed` | string(100) | no | Dog breed (e.g., "Border Collie") |
 | `SizeCategory` | SizeCategory | yes | FCI size category: S, M, I, L |
+| `SizeCategoryOverride` | SizeCategory | no | Admin override. If set, takes precedence over automatic category determination. Null means auto-detect from run data |
 
 **Rules**:
 - `NormalizedCallName` is derived automatically from `CallName`.
-- A dog's size category is determined from import data. If a dog appears in different categories across imports, the most frequent category wins (log a warning).
+- A dog's size category is determined by priority:
+  1. `SizeCategoryOverride` (if set by admin) — takes absolute precedence.
+  2. Otherwise, the category from the dog's **most recent run** (by run date, then by import order within the same date). This ensures that remeasured dogs or dogs switching organizations immediately reflect their current category.
+  If the automatically determined category changes from the previous value, log a warning.
 - `RegisteredName` is stored only if it's meaningfully longer than the call name (>2 words).
 
 **Acceptance criteria**:
@@ -95,19 +99,17 @@
 | `Slug` | string(300) | yes | URL-friendly identifier for the team profile page |
 | `Mu` | float | yes | OpenSkill mean (internal). Default: μ₀ (see `docs/08-rating-rules.md`) |
 | `Sigma` | float | yes | OpenSkill uncertainty (internal). Default: σ₀ = μ₀/3 (see `docs/08-rating-rules.md`) |
-| `Rating` | float | yes | Per-category rating after display scaling + podium boost (before cross-size normalization). Used for ranking within a size category |
-| `NormalizedRating` | float | yes | Rating after cross-size z-score normalization (target mean 1500). The primary display value on the leaderboard and profiles |
+| `Rating` | float | yes | Display rating after display scaling, podium boost, and cross-size normalization (target mean 1500). The primary value for leaderboard ranking and display |
 | `PrevMu` | float | yes | Mu before the most recent rating update (for trend) |
 | `PrevSigma` | float | yes | Sigma before the most recent rating update |
-| `PrevRating` | float | yes | Previous per-category rating (before normalization) |
-| `PrevNormalizedRating` | float | yes | Previous normalized rating (for trend arrows on the leaderboard) |
+| `PrevRating` | float | yes | Previous Rating (for trend arrows on the leaderboard) |
 | `RunCount` | int | yes | Total runs in the active window |
 | `FinishedRunCount` | int | yes | Non-eliminated runs in the active window |
 | `Top3RunCount` | int | yes | Runs with rank 1–3 in the active window |
 | `IsActive` | bool | yes | True if `RunCount >= MIN_RUNS_FOR_LIVE_RANKING` and has runs within the time window |
 | `IsProvisional` | bool | yes | True if `Sigma >= LIVE_PROVISIONAL_SIGMA_THRESHOLD` |
 | `TierLabel` | TierLabel | no | Percentile-based label: Elite, Champion, Expert, Competitor. Null if not active |
-| `PeakNormalizedRating` | float | yes | Highest NormalizedRating ever achieved by this team. Updated during recalculation. Used on handler profile to show career peak |
+| `PeakRating` | float | yes | Highest Rating ever achieved by this team. Updated during recalculation. Used on handler profile to show career peak |
 
 **Computed (not stored)**: `FinishedPct = FinishedRunCount / RunCount`, `Top3Pct = Top3RunCount / RunCount`. Used in podium boost calculation (see `docs/08-rating-rules.md`).
 
@@ -142,6 +144,7 @@
 | `Country` | string(3) | no | Host country (ISO 3166-1 alpha-3) |
 | `Location` | string(200) | no | City or venue name |
 | `Tier` | int | yes | Competition tier (1 = major, 2 = standard) |
+| `Organization` | string(50) | no | Governing body or source organization (e.g., `FCI`, `AKC`, `USDAA`, `UKI`, `IFCS`). Null defaults to FCI. Used to select the correct size category mapping during import |
 
 **Rules**:
 - `Slug` must be unique across all competitions.
@@ -177,6 +180,7 @@
 | `Sct` | float | no | Standard Course Time in seconds |
 | `Mct` | float | no | Maximum Course Time in seconds |
 | `CourseLength` | float | no | Course length in meters |
+| `OriginalSizeCategory` | string(50) | no | Original size category as reported by the source (e.g., `"20 inch"`, `"24 inch Preferred"`, `"Medium"`). Null for FCI competitions where `SizeCategory` maps directly. Stored for transparency and debugging |
 
 **Rules**:
 - (`CompetitionId`, `RoundKey`) must be unique.
@@ -326,15 +330,14 @@
 | `Date` | date | yes | Date of the run (denormalized from Run.Date for chart x-axis) |
 | `Mu` | float | yes | Team's mu after this run was processed |
 | `Sigma` | float | yes | Team's sigma after this run was processed |
-| `Rating` | float | yes | Per-category display rating at this point |
-| `NormalizedRating` | float | yes | Cross-size normalized rating at this point (see note below) |
+| `Rating` | float | yes | Display rating at this point (after normalization, see note below) |
 
 **Rules**:
 - (`TeamId`, `RunResultId`) must be unique — one snapshot per team per run.
 - Snapshots are created during batch rating recalculation, not during import.
 - On full recalculation, all existing snapshots are deleted and regenerated.
 - Ordered by `Date` (then by Run processing order within a competition) to form the progression timeline.
-- **Normalization note**: `NormalizedRating` in all snapshots uses the normalization parameters (per-size mean and std) computed at the end of the current recalculation cycle. It does **not** reflect what the normalized rating actually was at that historical point in time. This is a deliberate simplification — recomputing normalization stats at every historical point would be prohibitively expensive and fragile. The chart shows relative progression within the current normalization frame.
+- **Normalization note**: `Rating` in all snapshots uses the normalization parameters (per-size mean and std) computed at the end of the current recalculation cycle. It does **not** reflect what the rating actually was at that historical point in time. This is a deliberate simplification — recomputing normalization stats at every historical point would be prohibitively expensive and fragile. The chart shows relative progression within the current normalization frame.
 
 **Acceptance criteria**:
 - [ ] Snapshot is created for each run result processed during recalculation
@@ -398,6 +401,40 @@
 | `ImportStatus` | `Success`, `Rejected`, `PartialWarning` | ImportLog.Status |
 
 **Note on size categories**: The CSV format may use verbose names (`Small`, `Medium`, `Intermediate`, `Large`) which are mapped to enum values (S, M, I, L) during import. If a source uses `XS` (Extra Small), it is mapped to `S`. All four FCI categories (S, M, I, L) are stored in the database.
+
+**Non-FCI size category mapping**: Competitions from non-FCI organizations (AKC, USDAA, UKI, IFCS, etc.) use different height categories. During import, these are mapped to FCI S/M/I/L based on the competition's `Organization` field. The original category is preserved in `Run.OriginalSizeCategory` for transparency. See the mapping table below.
+
+| Organization | Source category | → FCI SizeCategory | Excluded? | Notes |
+|---|---|---|---|---|
+| AKC | 8" | S | no | |
+| AKC | 12" | S | no | Most dogs under 35 cm |
+| AKC | 16" | M | no | |
+| AKC | 20" | I | no | |
+| AKC | 24" | L | no | |
+| AKC | *" Preferred | — | **yes** | Lower jump heights — results not comparable |
+| USDAA | 12" | S | no | |
+| USDAA | 16" | M | no | |
+| USDAA | 22" | L | no | Spans FCI I+L; majority are >48 cm |
+| USDAA | 26" | L | no | |
+| WAO | 250 | S | no | Dogs ≤320mm; FCI S is <350mm |
+| WAO | 300 | M | no | Dogs ≤380mm; FCI M is 350–430mm |
+| WAO | 400 | I | no | Dogs ≤440mm; FCI I is 430–480mm |
+| WAO | 500 | L | no | Dogs ≤500mm; spans FCI I/L boundary (440–500mm) |
+| WAO | 600 | L | no | Dogs >500mm |
+| UKI | S / M / I / L | S / M / I / L | no | Already FCI-compatible |
+| IFCS | S / M / L | S / M / L | no | No Intermediate; IFCS M is broader |
+
+**Rules for non-FCI mapping:**
+- If a dog appears in different FCI-mapped categories across organizations, the **most recent run** determines the dog's category (see Dog entity rules). Admin can override via `SizeCategoryOverride`.
+- AKC Preferred heights are excluded from rating — these use intentionally lower jump heights, making results incomparable with standard heights.
+- This mapping table is configuration (not a DB entity). It is applied during import and can be extended for new organizations without schema changes.
+
+**Known limitations of non-FCI mapping:**
+- The mapping is approximate. Height category boundaries differ between organizations (e.g., AKC 12" includes dogs up to ~35 cm, which overlaps the FCI S/M boundary). A small percentage of dogs near category boundaries may be mapped to a different FCI category than they would compete in at an FCI event.
+- Organizations without an Intermediate category (USDAA, IFCS) force a choice: their broader Medium or 22" class is mapped to a single FCI category, even though it spans two FCI categories. This introduces some rating noise for dogs near the I/L boundary.
+- WAO uses 5 height categories (250/300/400/500/600) which don't align 1:1 with FCI's 4 categories. WAO 500 (dogs ≤500mm) spans the FCI I/L boundary (FCI I is 430–480mm, FCI L is >480mm). These dogs are mapped to L, but some may be FCI Intermediate-sized.
+- WAO allows dogs to jump in a higher division than their measured height. A dog measured at 400mm jumping WAO 500 would be mapped to L, even though their actual height puts them in FCI I. If this dog later runs an FCI event in I, their category will automatically correct to I (most recent run wins). Admin can also override manually.
+- These limitations are disclosed on the website's "How it works" page (see `docs/05-ui-structure.md`).
 
 ## 4. Relationships
 

@@ -67,22 +67,22 @@ After each update:
 - `SIGMA_DECAY` default: `0.99`
 - `SIGMA_MIN` default: `1.5`
 
-## 4. Display Rating
+## 4. Rating Calculation
 
 ### 4.1 Base Rating
 
-First, a base rating is computed per team:
+First, a base rating is computed per team (intermediate value, not stored):
 
 - `rating_base = DISPLAY_BASE + DISPLAY_SCALE * (mu - RATING_SIGMA_MULTIPLIER * sigma)`
 - Defaults: `DISPLAY_BASE = 1000`, `DISPLAY_SCALE = 40`, `RATING_SIGMA_MULTIPLIER = 1.0`
 
 ### 4.2 Podium Boost (Quality Correction)
 
-A quality factor is applied to `rating_base` based on the team's TOP3 placement percentage:
+A quality factor is applied to `rating_base` based on the team's TOP3 placement percentage (intermediate value, not stored):
 
 - `quality_norm = clamp(top3_pct / PODIUM_BOOST_TARGET, 0, 1)`
 - `quality_factor = PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE * quality_norm`
-- `rating = rating_base * quality_factor`
+- `rating_raw = rating_base * quality_factor`
 
 Defaults: `PODIUM_BOOST_BASE = 0.85`, `PODIUM_BOOST_RANGE = 0.20`, `PODIUM_BOOST_TARGET = 50.0`
 
@@ -94,17 +94,36 @@ Interpretation:
 
 ### 4.3 Cross-Size Normalization
 
-After computing ratings within each size category (S, M, I, L), z-score normalization is applied to a common scale:
+After computing `rating_raw` within each size category (S, M, I, L), z-score normalization is applied to produce the final `Rating` (the stored value):
 
 - For each category, compute mean and standard deviation (from qualified teams only)
-- `normalized_rating = NORM_TARGET_MEAN + NORM_TARGET_STD * (rating - size_mean) / size_std`
+- `Rating = NORM_TARGET_MEAN + NORM_TARGET_STD * (rating_raw - size_mean) / size_std`
 - Defaults: `NORM_TARGET_MEAN = 1500`, `NORM_TARGET_STD = 150`
 
-This ensures that a normalized rating of 1650 means "1 standard deviation above the mean" in any category. Ranking order within a category does not change, but values are comparable across categories (S, M, I, L).
+This ensures that a Rating of 1650 means "1 standard deviation above the mean" in any category. Ranking order within a category does not change, but values are comparable across categories (S, M, I, L).
 
-Normalization is also applied to `prev_rating` (for trend arrows) so that rank changes are consistent.
+Normalization is also applied to `PrevRating` (for trend arrows) so that rank changes are consistent.
 
-### 4.4 Trend (Rank Change)
+### 4.4 Category-Agnostic Run Processing
+
+The rating engine processes **each run as a single group** — all participants in a run are compared against each other, regardless of their dog's assigned FCI size category. This is important for competitions where a single run may contain dogs from different FCI categories (e.g., WAO 500 includes both FCI-I and FCI-L sized dogs jumping the same course).
+
+**How it works:**
+1. A run is processed as-is: all teams in the run are ranked ordinally and fed into OpenSkill.
+2. Each team's mu/sigma is updated based on who they beat and lost to **within that run**.
+3. The team's `Dog.SizeCategory` (FCI S/M/I/L) determines which leaderboard they appear on and which normalization group they belong to.
+4. Cross-size normalization (section 4.3) is applied per `Dog.SizeCategory` for display.
+
+**Result:** A FCI-I dog competing in a WAO 500 run gets rated against all opponents in that run (including FCI-L dogs). Their rating then appears in the Intermediate leaderboard. This is fair — they actually ran the same course and the placement is a real comparison.
+
+**Known limitation — partially connected rating pools:** Internal mu/sigma values are on a single universal scale (all dogs start at μ₀=25), but categories that rarely compete against each other develop essentially independent mu distributions. A category with more competitors and more runs (e.g., Large) will have a wider mu spread and better-calibrated values than a smaller category (e.g., Intermediate). When dogs from different categories meet in a cross-category run (e.g., WAO 500), OpenSkill compares their mu values directly — but these values may not be perfectly calibrated relative to each other due to the different pool sizes and competition volumes. This is an inherent property of all Elo-family systems with partially connected pools (analogous to rating inflation across chess federations). Mitigations:
+- **Sigma (uncertainty)**: dogs with fewer runs have higher sigma, so their mu adjusts more per update — OpenSkill naturally adapts uncertain ratings faster.
+- **Cross-category runs act as calibration**: each WAO encounter improves the alignment between category mu scales over time.
+- **Normalization**: display ratings are z-score normalized per category (section 4.3), so the leaderboard within each category is unaffected by cross-category mu scale differences.
+- **Per-category leaderboard**: rankings are always within a single category — cross-category mu comparisons only matter during the OpenSkill update step, not for final ranking order.
+- In practice, the effect is small: cross-category runs are a minority of total runs, the impact on any single team's mu is marginal, and it averages out over multiple encounters.
+
+### 4.5 Trend (Rank Change)
 
 For each team, the previous rating state (mu/sigma before the last update) is tracked. The leaderboard displays rank change compared to the previous state (▲ moved up, ▼ moved down, NEW for new teams).
 
@@ -140,7 +159,7 @@ Only teams with `RunCount >= MIN_RUNS_FOR_LIVE_RANKING` are included in the perc
 
 ### 7.1 Leaderboard Sorting
 
-Within each size category, teams are sorted by `NormalizedRating` descending. Only teams with `RunCount >= MIN_RUNS_FOR_LIVE_RANKING` (default: 5) are displayed.
+Within each size category, teams are sorted by `Rating` descending. Only teams with `RunCount >= MIN_RUNS_FOR_LIVE_RANKING` (default: 5) are displayed.
 
 ### 7.2 Summary Cards
 
