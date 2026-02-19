@@ -287,84 +287,84 @@
 
 **Goal**: Implement all repository classes with integration tests. This completes the data access layer.
 
-- [ ] **2.1a** HandlerRepository
+- [x] **2.1a** HandlerRepository
   - Implement `IHandlerRepository` in Data.Mssql: CRUD, slug/name lookups, search (LIKE on NormalizedName), merge (reassign teams + aliases, delete source).
   - Files: `Data.Mssql/Repositories/HandlerRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — create handler, find by normalized name, search, merge
   - **Completion gates**: build | tests
 
-- [ ] **2.1b** HandlerAliasRepository
+- [x] **2.1b** HandlerAliasRepository
   - Implement `IHandlerAliasRepository` in Data.Mssql: alias lookup by normalized name, create, get by handler ID.
   - Files: `Data.Mssql/Repositories/HandlerAliasRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — create alias, lookup by name, get by handler ID
   - **Completion gates**: build | tests
 
-- [ ] **2.2a** DogRepository
+- [x] **2.2a** DogRepository
   - Implement `IDogRepository` in Data.Mssql: CRUD, name+size lookup, search, merge (same-size only, reassign teams + aliases).
   - Files: `Data.Mssql/Repositories/DogRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — create dog, find by name+size, search, merge
   - **Completion gates**: build | tests
 
-- [ ] **2.2b** DogAliasRepository
+- [x] **2.2b** DogAliasRepository
   - Implement `IDogAliasRepository` in Data.Mssql: alias+type lookup, create, get by dog ID.
   - Files: `Data.Mssql/Repositories/DogAliasRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — create alias, lookup by name+type, get by dog ID
   - **Completion gates**: build | tests
 
-- [ ] **2.3** TeamRepository
+- [x] **2.3** TeamRepository
   - Implement `ITeamRepository`: GetByHandlerAndDog, GetByHandlerId, GetRankedTeamsAsync (paginated, filtered by size/country/search, ordered by Rating desc, only active teams), GetAllAsync, CreateAsync, UpdateBatchAsync.
   - Files: `Data.Mssql/Repositories/TeamRepository.cs`
   - Dependencies: 2.1a, 2.2a
   - Tests: Integration tests — create team, ranked query with filters, batch update
   - **Completion gates**: build | tests
 
-- [ ] **2.4a** CompetitionRepository
+- [x] **2.4a** CompetitionRepository
   - Implement `ICompetitionRepository`: CRUD, slug lookup, paginated list with filters, cascade delete.
   - Files: `Data.Mssql/Repositories/CompetitionRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — create competition, slug lookup, paginated list, cascade delete
   - **Completion gates**: build | tests
 
-- [ ] **2.4b** RunRepository
+- [x] **2.4b** RunRepository
   - Implement `IRunRepository`: batch create, get by competition, get by roundKey, get all in window (for rating recalculation).
   - Files: `Data.Mssql/Repositories/RunRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — batch create runs, window query
   - **Completion gates**: build | tests
 
-- [ ] **2.4c** RunResultRepository
+- [x] **2.4c** RunResultRepository
   - Implement `IRunResultRepository`: batch create, get by run, get by multiple runs (batch loading), get by team with date filter.
   - Files: `Data.Mssql/Repositories/RunResultRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — batch create results, get by run IDs, team results query
   - **Completion gates**: build | tests
 
-- [ ] **2.5a** RatingSnapshotRepository
+- [x] **2.5a** RatingSnapshotRepository
   - Implement `IRatingSnapshotRepository`: get by team, replace all (delete all existing, insert new).
   - Files: `Data.Mssql/Repositories/RatingSnapshotRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — snapshot replace-all, get by team
   - **Completion gates**: build | tests
 
-- [ ] **2.5b** RatingConfigurationRepository
+- [x] **2.5b** RatingConfigurationRepository
   - Implement `IRatingConfigurationRepository`: get active, create (ensure only one active at a time).
   - Files: `Data.Mssql/Repositories/RatingConfigurationRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — create config, get active, only one active constraint
   - **Completion gates**: build | tests
 
-- [ ] **2.5c** ImportLogRepository
+- [x] **2.5c** ImportLogRepository
   - Implement `IImportLogRepository`: create, get recent (ordered by ImportedAt desc, limited).
   - Files: `Data.Mssql/Repositories/ImportLogRepository.cs`
   - Dependencies: Phase 1
   - Tests: Integration tests — create log, get recent with limit
   - **Completion gates**: build | tests
 
-- [ ] **2.6** Update Data.Mssql DI registration with all repositories
+- [x] **2.6** Update Data.Mssql DI registration with all repositories
   - Update `ServiceCollectionExtensions.AddDataMssql()` to register all repository implementations from 2.1–2.5.
   - Files: `Data.Mssql/ServiceCollectionExtensions.cs`
   - Dependencies: 2.1a–2.5c
