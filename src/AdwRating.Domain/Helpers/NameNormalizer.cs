@@ -22,11 +22,33 @@ public static class NameNormalizer
         if (string.IsNullOrWhiteSpace(name))
             return string.Empty;
 
-        var normalized = StripDiacritics(name);
+        var normalized = NormalizeTypographicQuotes(name);
+        normalized = ReorderLastFirst(normalized);
+        normalized = StripDiacritics(normalized);
         normalized = normalized.ToLowerInvariant().Trim();
         normalized = Regex.Replace(normalized, @"\s+", " ");
 
         return normalized;
+    }
+
+    private static string NormalizeTypographicQuotes(string text)
+    {
+        return text
+            .Replace('\u201C', '"')
+            .Replace('\u201D', '"')
+            .Replace('\u2018', '\'')
+            .Replace('\u2019', '\'');
+    }
+
+    private static string ReorderLastFirst(string text)
+    {
+        var parts = text.Split(',');
+        if (parts.Length != 2)
+            return text;
+
+        var last = parts[0].Trim();
+        var first = parts[1].Trim();
+        return $"{first} {last}";
     }
 
     private static string StripDiacritics(string text)

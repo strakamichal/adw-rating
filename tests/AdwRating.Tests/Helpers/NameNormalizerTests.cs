@@ -32,6 +32,36 @@ public class NameNormalizerTests
         Assert.That(result, Is.EqualTo(expected));
     }
 
+    [TestCase("Tercova, Katerina", "katerina tercova")]
+    [TestCase("Třičová, Kateřina", "katerina tricova")]
+    public void Normalize_ReordersLastFirst(string input, string expected)
+    {
+        var result = NameNormalizer.Normalize(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [TestCase("A, B, C", "a, b, c")]
+    public void Normalize_DoesNotReorderMultipleCommas(string input, string expected)
+    {
+        var result = NameNormalizer.Normalize(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [TestCase("John Smith", "john smith")]
+    public void Normalize_DoesNotReorderWithoutComma(string input, string expected)
+    {
+        var result = NameNormalizer.Normalize(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [TestCase("\u201CQuoted\u201D", "\"quoted\"")]
+    [TestCase("\u2018Quoted\u2019", "'quoted'")]
+    public void Normalize_NormalizesTypographicQuotes(string input, string expected)
+    {
+        var result = NameNormalizer.Normalize(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
     [Test]
     public void Normalize_PreservesSingleSpacesBetweenWords()
     {
