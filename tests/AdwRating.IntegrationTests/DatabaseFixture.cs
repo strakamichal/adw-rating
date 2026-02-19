@@ -4,31 +4,35 @@ using Testcontainers.MsSql;
 
 namespace AdwRating.IntegrationTests;
 
-public class DatabaseFixture : IAsyncLifetime
+[SetUpFixture]
+public class DatabaseFixture
 {
-    private readonly MsSqlContainer _container = new MsSqlBuilder("mcr.microsoft.com/mssql/server:2022-latest")
-        .Build();
+    private static MsSqlContainer? _container;
+    public static string ConnectionString { get; private set; } = string.Empty;
 
-    public AppDbContext CreateContext()
+    [OneTimeSetUp]
+    public async Task GlobalSetUp()
     {
-        var options = new DbContextOptionsBuilder<AppDbContext>()
-            .UseSqlServer(_container.GetConnectionString())
-            .Options;
-        return new AppDbContext(options);
-    }
-
-    public async Task InitializeAsync()
-    {
+        _container = new MsSqlBuilder("mcr.microsoft.com/mssql/server:2022-latest").Build();
         await _container.StartAsync();
+        ConnectionString = _container.GetConnectionString();
+
         await using var context = CreateContext();
         await context.Database.MigrateAsync();
     }
 
-    public async Task DisposeAsync()
+    [OneTimeTearDown]
+    public async Task GlobalTearDown()
     {
-        await _container.DisposeAsync();
+        if (_container is not null)
+            await _container.DisposeAsync();
+    }
+
+    public static AppDbContext CreateContext()
+    {
+        var options = new DbContextOptionsBuilder<AppDbContext>()
+            .UseSqlServer(ConnectionString)
+            .Options;
+        return new AppDbContext(options);
     }
 }
-
-[CollectionDefinition("Database")]
-public class DatabaseCollection : ICollectionFixture<DatabaseFixture>;
