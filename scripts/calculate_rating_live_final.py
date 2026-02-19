@@ -1089,82 +1089,77 @@ body {{
     <div id="section-methodology" class="section">
         <div class="methodology">
             <h2>How ADW Live Rating works</h2>
-            <p>ADW Live Rating is a ranking system for agility teams (handler + dog) based on results from international competitions. It uses the <strong>OpenSkill (Plackett-Luce)</strong> statistical model, a modern alternative to Elo or Glicko — unlike those systems, it can work with full run rankings (not just win/loss) and is designed for multi-participant competitions.</p>
+            <p>ADW Live Rating ranks agility teams (handler + dog) based on their results at international competitions. Think of it like a chess rating, but for agility &mdash; the more you compete and the better you place, the higher your rating climbs.</p>
 
-            <h2>Core concept</h2>
-            <p>Each team has two internal parameters:</p>
+            <h2>The big picture</h2>
+            <p>The system processes competitions <strong>in chronological order</strong>. For every run (a single round in a competition), it looks at how each team placed relative to everyone else in that run. Teams that beat expectations &mdash; finishing higher than their rating would predict &mdash; gain points. Teams that underperform lose points. Over time, the rating converges on a team's true skill level.</p>
+            <p>Under the hood we use <strong>OpenSkill (Plackett-Luce)</strong>, a modern statistical model similar to the Elo system used in chess, but designed for competitions where many participants are ranked at once (not just two players head-to-head).</p>
+
+            <h2>Step by step</h2>
+
+            <h3>1. Collect results</h3>
+            <p>We import results from international agility competitions. Each run is a single scored round &mdash; for example, "Individual Jumping Large, run 1" at EO 2024. A run must have at least <strong>{base.MIN_FIELD_SIZE} teams</strong> to count.</p>
+
+            <h3>2. Process runs chronologically</h3>
+            <p>Every team starts with the same default rating. Then, competition by competition and run by run, the algorithm updates all teams that participated:</p>
             <ul>
-                <li><strong>mu (μ)</strong> — estimate of the team's true skill. Higher = better.</li>
-                <li><strong>sigma (σ)</strong> — uncertainty measure. New teams have high sigma; it decreases with more runs.</li>
+                <li><strong>Beat stronger opponents?</strong> Your rating goes up more.</li>
+                <li><strong>Lost to weaker opponents?</strong> Your rating goes down more.</li>
+                <li><strong>Eliminated (DIS/DSQ)?</strong> You're placed last in that run &mdash; it hurts your rating, but one bad day won't ruin everything.</li>
             </ul>
-            <p>After each run, the model compares the actual result with the expected ranking and adjusts mu and sigma for all participants.</p>
+            <p>The size of the rating change depends on how surprising the result was. A big upset causes a big swing; a predictable finish barely moves the needle.</p>
 
-            <h3>Sigma decay</h3>
-            <p>After each processed run, sigma is multiplied by a factor of <code>{LIVE_SIGMA_DECAY}</code>. This means confidence in the team's rating grows with more data. Minimum sigma is <code>{base.SIGMA_MIN}</code>.</p>
+            <h3>3. Confidence grows over time</h3>
+            <p>New teams start with high <strong>uncertainty</strong> &mdash; the system doesn't know yet how good they really are. With each run, uncertainty shrinks and the rating becomes more stable. Teams with very few runs are marked <span class="prov-badge">FEW RUNS</span> to signal that their rating may still change significantly.</p>
 
-            <h2>Public rating calculation</h2>
-            <div class="formula">
-                rating_base = {DISPLAY_BASE} + {DISPLAY_SCALE} &times; (&mu; &minus; {RATING_SIGMA_MULTIPLIER} &times; &sigma;)<br>
-                rating = rating_base &times; quality_factor
-            </div>
+            <h3>4. Podium bonus</h3>
+            <p>Teams that consistently finish in the <strong>top 3</strong> receive a quality bonus of up to <strong>+{(PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE - PODIUM_BOOST_BASE) * 100:.0f}%</strong> on their rating. Teams without any podium finishes get a small penalty (<strong>&minus;{(1.0 - PODIUM_BOOST_BASE) * 100:.0f}%</strong>). This rewards not just beating weak fields, but actually winning competitive runs.</p>
 
-            <h3>Podium boost (quality factor)</h3>
-            <p>The public rating is adjusted based on the quality of a team's results:</p>
-            <div class="formula">
-                quality_factor = {PODIUM_BOOST_BASE:.2f} + {PODIUM_BOOST_RANGE:.2f} &times; clamp(top3% / {PODIUM_BOOST_TARGET:.0f})
-            </div>
-            <p>Quality factor ranges from <code>{PODIUM_BOOST_BASE:.2f}</code> (no top-3 finishes) to <code>{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.2f}</code> (frequent podium placements). Teams that consistently finish in the top 3 receive a significant bonus, while teams without podium results have their rating reduced.</p>
+            <h3>5. Major event boost</h3>
+            <p>Results from <strong>Major competitions</strong> (AWC, EO, JOAWC/SOAWC) carry <strong>{MAJOR_EVENT_WEIGHT}&times;</strong> the weight of regular Open competitions. Winning a run at AWC moves your rating more than winning a run at a regional open.</p>
 
-            <h3>Cross-size normalization</h3>
-            <p>Each size category (Small, Medium, Intermediate, Large) has a different competitive landscape — some categories have more teams and tighter rating distributions. To make ratings <strong>comparable across categories</strong>, a z-score normalization is applied:</p>
-            <div class="formula">
-                normalized = {NORM_TARGET_MEAN:.0f} + {NORM_TARGET_STD:.0f} &times; (rating &minus; size_mean) / size_std
-            </div>
-            <p>This maps each category to a common scale with mean <code>{NORM_TARGET_MEAN:.0f}</code> and standard deviation <code>{NORM_TARGET_STD:.0f}</code>. A rating of {NORM_TARGET_MEAN + NORM_TARGET_STD:.0f} means "one standard deviation above average" regardless of category. The ranking within each category is preserved.</p>
+            <h3>6. Cross-size normalization</h3>
+            <p>Each size category (Small, Medium, Intermediate, Large) is rated separately. Since some categories have more teams or tighter competition, we normalize the ratings so they are <strong>comparable across sizes</strong>. An average team in any category lands around <strong>{NORM_TARGET_MEAN:.0f}</strong> points. This means you can compare a Small team's rating to a Large team's rating on the same scale.</p>
 
-            <h2>Competition weighting (tier system)</h2>
-            <p>Competitions are divided into two tiers:</p>
+            <h2>What's included</h2>
             <ul>
-                <li><strong>Major (tier 1)</strong> — AWC, EO, JOAWC/SOAWC — runs carry <code>{MAJOR_EVENT_WEIGHT}&times;</code> weight</li>
-                <li><strong>Open (tier 2)</strong> — other international competitions — standard <code>1.0&times;</code> weight</li>
+                <li>Only runs from the last <strong>{LIVE_WINDOW_DAYS} days</strong> (~{LIVE_WINDOW_DAYS // 365} years) are counted &mdash; the rating reflects recent form, not lifetime history.</li>
+                <li>A team needs at least <strong>{MIN_RUNS_FOR_LIVE_RANKING} runs</strong> in this window to appear in the rankings.</li>
+                <li>Both individual and team rounds count (using individual placements within team rounds).</li>
             </ul>
-            <p>Higher weight for Major events means results from these prestigious competitions have a greater impact on rating changes.</p>
 
             <h2>Skill tiers</h2>
+            <p>Based on where a team's rating falls within its size category:</p>
             <table class="param-table">
-                <tr><th>Tier</th><th>Condition</th><th>Color</th></tr>
-                <tr><td><strong>Elite</strong></td><td>Top {base.ELITE_TOP_PERCENT*100:.0f}% in category</td><td style="border-left:3px solid var(--elite); padding-left:12px;">gold</td></tr>
-                <tr><td><strong>Champion</strong></td><td>Top {base.CHAMPION_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid var(--champion); padding-left:12px;">purple</td></tr>
-                <tr><td><strong>Expert</strong></td><td>Top {base.EXPERT_TOP_PERCENT*100:.0f}%</td><td style="border-left:3px solid var(--expert); padding-left:12px;">blue</td></tr>
-                <tr><td><strong>Competitor</strong></td><td>Everyone else</td><td style="border-left:3px solid var(--competitor); padding-left:12px;">green</td></tr>
+                <tr><th>Tier</th><th>What it means</th><th></th></tr>
+                <tr><td><strong>Elite</strong></td><td>Top {base.ELITE_TOP_PERCENT*100:.0f}% &mdash; the absolute best</td><td style="border-left:3px solid var(--elite); padding-left:12px;">gold</td></tr>
+                <tr><td><strong>Champion</strong></td><td>Top {base.CHAMPION_TOP_PERCENT*100:.0f}% &mdash; consistently excellent</td><td style="border-left:3px solid var(--champion); padding-left:12px;">purple</td></tr>
+                <tr><td><strong>Expert</strong></td><td>Top {base.EXPERT_TOP_PERCENT*100:.0f}% &mdash; above average</td><td style="border-left:3px solid var(--expert); padding-left:12px;">blue</td></tr>
+                <tr><td><strong>Competitor</strong></td><td>Everyone else &mdash; still competing at the international level!</td><td style="border-left:3px solid var(--competitor); padding-left:12px;">green</td></tr>
             </table>
 
-            <h2>Few runs status</h2>
-            <p>A team with <code>&sigma; &ge; {LIVE_PROVISIONAL_SIGMA_THRESHOLD}</code> is marked as <span class="prov-badge">FEW RUNS</span> — this means the system doesn't yet have enough data for a reliable estimate. The rating will stabilize with more runs.</p>
-
-            <h2>Live window and minimum runs</h2>
+            <h2>Reading the numbers</h2>
             <ul>
-                <li>Only runs from the last <strong>{LIVE_WINDOW_DAYS} days</strong> (~{LIVE_WINDOW_DAYS / 365:.1f} years) from the latest competition in the dataset are counted.</li>
-                <li>A minimum of <strong>{MIN_RUNS_FOR_LIVE_RANKING} runs</strong> within this window is required to appear in the rankings.</li>
-                <li>Minimum participants per run for it to count: <strong>{base.MIN_FIELD_SIZE}</strong></li>
+                <li><strong>Rating ~{NORM_TARGET_MEAN:.0f}</strong> = average among ranked teams in that size category.</li>
+                <li><strong>Rating ~{NORM_TARGET_MEAN + NORM_TARGET_STD:.0f}</strong> = clearly above average (top ~16%).</li>
+                <li><strong>Rating ~{NORM_TARGET_MEAN + 2*NORM_TARGET_STD:.0f}+</strong> = exceptional, among the very best in the world.</li>
+                <li><strong>Trend arrows</strong> (&#9650;&#9660;) show how a team's rank changed since the last competition was added.</li>
             </ul>
 
-            <h2>System parameters</h2>
+            <h2>Technical details</h2>
+            <p>For those interested in the math:</p>
+            <div class="formula">
+                rating = ({DISPLAY_BASE} + {DISPLAY_SCALE} &times; (&mu; &minus; {RATING_SIGMA_MULTIPLIER} &times; &sigma;)) &times; quality_factor
+            </div>
+            <p>Where <strong>&mu;</strong> (mu) is the estimated skill, <strong>&sigma;</strong> (sigma) is the uncertainty, and <strong>quality_factor</strong> is the podium bonus ({PODIUM_BOOST_BASE:.2f}&ndash;{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.2f} based on top-3 finish rate).</p>
             <table class="param-table">
                 <tr><th>Parameter</th><th>Value</th><th>Description</th></tr>
-                <tr><td><code>LIVE_WINDOW_DAYS</code></td><td>{LIVE_WINDOW_DAYS}</td><td>Time window for counting runs</td></tr>
-                <tr><td><code>MIN_RUNS</code></td><td>{MIN_RUNS_FOR_LIVE_RANKING}</td><td>Minimum runs to appear in rankings</td></tr>
-                <tr><td><code>SIGMA_DECAY</code></td><td>{LIVE_SIGMA_DECAY}</td><td>Uncertainty reduction factor per run</td></tr>
-                <tr><td><code>SIGMA_MIN</code></td><td>{base.SIGMA_MIN}</td><td>Minimum sigma (floor)</td></tr>
-                <tr><td><code>PROV_THRESHOLD</code></td><td>{LIVE_PROVISIONAL_SIGMA_THRESHOLD}</td><td>Sigma threshold for provisional status</td></tr>
-                <tr><td><code>DISPLAY_BASE</code></td><td>{DISPLAY_BASE}</td><td>Public rating base</td></tr>
-                <tr><td><code>DISPLAY_SCALE</code></td><td>{DISPLAY_SCALE}</td><td>Scaling factor</td></tr>
-                <tr><td><code>MAJOR_WEIGHT</code></td><td>{MAJOR_EVENT_WEIGHT}</td><td>Major event weight multiplier</td></tr>
-                <tr><td><code>PODIUM_BASE</code></td><td>{PODIUM_BOOST_BASE}</td><td>Minimum quality factor</td></tr>
-                <tr><td><code>PODIUM_RANGE</code></td><td>{PODIUM_BOOST_RANGE}</td><td>Quality factor range</td></tr>
-                <tr><td><code>MIN_FIELD_SIZE</code></td><td>{base.MIN_FIELD_SIZE}</td><td>Minimum participants per run</td></tr>
-                <tr><td><code>NORM_MEAN</code></td><td>{NORM_TARGET_MEAN:.0f}</td><td>Normalized rating mean</td></tr>
-                <tr><td><code>NORM_STD</code></td><td>{NORM_TARGET_STD:.0f}</td><td>Normalized rating std deviation</td></tr>
+                <tr><td>Live window</td><td>{LIVE_WINDOW_DAYS} days</td><td>Only recent results count</td></tr>
+                <tr><td>Min. runs</td><td>{MIN_RUNS_FOR_LIVE_RANKING}</td><td>Minimum runs to appear in rankings</td></tr>
+                <tr><td>Min. field size</td><td>{base.MIN_FIELD_SIZE}</td><td>Minimum teams in a run for it to count</td></tr>
+                <tr><td>Major event weight</td><td>{MAJOR_EVENT_WEIGHT}&times;</td><td>AWC, EO, JOAWC/SOAWC boost</td></tr>
+                <tr><td>Podium bonus range</td><td>{PODIUM_BOOST_BASE:.0%}&ndash;{PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE:.0%}</td><td>Based on top-3 finish percentage</td></tr>
+                <tr><td>Normalization target</td><td>{NORM_TARGET_MEAN:.0f} &plusmn; {NORM_TARGET_STD:.0f}</td><td>Cross-size rating scale</td></tr>
             </table>
         </div>
     </div>

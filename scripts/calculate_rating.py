@@ -198,6 +198,11 @@ NON_CALL_SUFFIXES = {
 # Manual registered name -> call name mapping (when data never provides
 # the call name in parentheses/quotes for a given registered name)
 REGISTERED_TO_CALL = {
+    "(tray) zunerry aeddan tray": "tray",
+    "a3ch zunerry aeddan tray": "tray",
+    "a3ch zunerry aeddan": "tray",
+    "zunerry aeddan tray": "tray",
+    "zunerry aeddan": "tray",
     "night magic alfa fortuna": "beat",
     "olympia misty highland": "olinka",
     "frisky fantine z certovy kazatelny": "fanta",
