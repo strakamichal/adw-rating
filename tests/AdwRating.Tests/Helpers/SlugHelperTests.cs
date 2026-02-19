@@ -21,6 +21,17 @@ public class SlugHelperTests
         Assert.Equal(expected, result);
     }
 
+    [Theory]
+    [InlineData("Kateřina Třičová", "katerina-tricova")]
+    [InlineData("Müller Schmidt", "muller-schmidt")]
+    [InlineData("François Dupont", "francois-dupont")]
+    [InlineData("Łukasz Wójcik", "lukasz-wojcik")]
+    public void GenerateSlug_StripsDiacriticsBeforeSlugifying(string input, string expected)
+    {
+        var result = SlugHelper.GenerateSlug(input);
+        Assert.Equal(expected, result);
+    }
+
     [Fact]
     public void GenerateSlug_RemovesNonAlphanumericExceptHyphens()
     {

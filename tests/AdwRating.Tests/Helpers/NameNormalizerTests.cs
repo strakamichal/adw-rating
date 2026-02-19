@@ -20,6 +20,19 @@ public class NameNormalizerTests
         Assert.Equal(expected, result);
     }
 
+    [Theory]
+    [InlineData("Kateřina Třičová", "katerina tricova")]
+    [InlineData("Müller", "muller")]
+    [InlineData("François", "francois")]
+    [InlineData("Łukasz Wójcik", "lukasz wojcik")]
+    [InlineData("Ünsal Özdemir", "unsal ozdemir")]
+    [InlineData("Ångström", "angstrom")]
+    public void Normalize_StripsDiacritics(string input, string expected)
+    {
+        var result = NameNormalizer.Normalize(input);
+        Assert.Equal(expected, result);
+    }
+
     [Fact]
     public void Normalize_PreservesSingleSpacesBetweenWords()
     {

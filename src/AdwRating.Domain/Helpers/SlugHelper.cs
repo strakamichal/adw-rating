@@ -9,7 +9,8 @@ public static class SlugHelper
         if (string.IsNullOrWhiteSpace(input))
             return string.Empty;
 
-        var slug = input.ToLowerInvariant();
+        // Strip diacritics first so accented chars become ASCII equivalents
+        var slug = NameNormalizer.Normalize(input);
         slug = slug.Replace(' ', '-');
         slug = Regex.Replace(slug, @"[^a-z0-9\-]", "");
         slug = Regex.Replace(slug, @"-{2,}", "-");
