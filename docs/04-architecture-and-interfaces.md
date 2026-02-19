@@ -236,6 +236,35 @@ public interface IDogAliasRepository
     Task CreateAsync(DogAlias alias);
 }
 
+// Domain/Interfaces/IJudgeRepository.cs — Phase 2
+public interface IJudgeRepository
+{
+    Task<Judge?> GetByIdAsync(int id);
+    Task<Judge?> GetBySlugAsync(string slug);
+    Task<Judge?> FindByNormalizedNameAsync(string normalizedName);
+    Task<IReadOnlyList<Judge>> SearchAsync(string query, int limit);
+    Task<Judge> CreateAsync(Judge judge);
+    Task UpdateAsync(Judge judge);
+    Task MergeAsync(int sourceId, int targetId);
+}
+
+// Domain/Interfaces/IJudgeAliasRepository.cs — Phase 2
+public interface IJudgeAliasRepository
+{
+    Task<JudgeAlias?> FindByAliasNameAsync(string normalizedAliasName);
+    Task<IReadOnlyList<JudgeAlias>> GetByJudgeIdAsync(int judgeId);
+    Task CreateAsync(JudgeAlias alias);
+}
+
+// Domain/Interfaces/IJudgeStatsRepository.cs — Phase 2
+public interface IJudgeStatsRepository
+{
+    Task<JudgeStats?> GetByJudgeIdAsync(int judgeId);
+    Task<PagedResult<JudgeStats>> GetAllRankedAsync(JudgeListFilter filter);
+    Task UpsertAsync(JudgeStats stats);
+    Task ReplaceAllAsync(IEnumerable<JudgeStats> stats);
+}
+
 // Domain/Interfaces/IRatingSnapshotRepository.cs
 public interface IRatingSnapshotRepository
 {
@@ -317,7 +346,7 @@ public interface ITeamProfileService
     Task<PagedResult<TeamResultDto>> GetResultsAsync(string teamSlug, int page = 1, int pageSize = 20);
 }
 
-// Domain/Interfaces/IHandlerProfileService.cs
+// Domain/Interfaces/IHandlerProfileService.cs — Phase 1.5
 public interface IHandlerProfileService
 {
     /// <summary>
@@ -328,7 +357,7 @@ public interface IHandlerProfileService
     Task<HandlerDetailDto?> GetBySlugAsync(string slug);
 }
 
-// Domain/Interfaces/ICountryRankingService.cs
+// Domain/Interfaces/ICountryRankingService.cs — Phase 2
 public interface ICountryRankingService
 {
     /// <summary>
@@ -343,6 +372,28 @@ public interface ICountryRankingService
     /// Returns null if country code doesn't exist in the dataset.
     /// </summary>
     Task<CountryDetailDto?> GetByCountryCodeAsync(string countryCode);
+}
+
+// Domain/Interfaces/IJudgeProfileService.cs — Phase 2
+public interface IJudgeProfileService
+{
+    /// <summary>
+    /// Returns judge detail with full stats, signature runs, and recent runs.
+    /// </summary>
+    Task<JudgeDetailDto?> GetBySlugAsync(string slug);
+
+    /// <summary>
+    /// Returns paginated judge listing, sortable by toughness score, runs, or name.
+    /// </summary>
+    Task<PagedResult<JudgeListDto>> GetListAsync(JudgeListFilter filter);
+
+    /// <summary>
+    /// Recalculates stats for all judges (batch operation).
+    /// Aggregates run results per judge, computes Toughness Score,
+    /// then computes percentiles across all qualified judges.
+    /// Called after rating recalculation or via CLI command.
+    /// </summary>
+    Task RecalculateAllStatsAsync();
 }
 
 // Domain/Interfaces/IMergeService.cs
@@ -405,7 +456,8 @@ public record CompetitionMetadata(
     DateOnly? EndDate,
     string? Country,           // ISO 3166-1 alpha-3
     string? Location,
-    int Tier                   // 1 = major (weight 1.2), 2 = standard (weight 1.0)
+    int Tier,                  // 1 = major (weight 1.2), 2 = standard (weight 1.0)
+    string? Organization       // e.g., "FCI", "AKC", "USDAA", "WAO", "UKI", "IFCS". Null defaults to FCI. Determines size category mapping
 );
 
 // Domain/Models/RankingSummary.cs
@@ -461,6 +513,7 @@ public record TeamDetailDto(
     float Rating,
     float Sigma,
     float PrevRating,
+    float PeakRating,              // highest Rating ever achieved
     int RunCount,
     int FinishedRunCount,
     int Top3RunCount,
@@ -512,6 +565,7 @@ public record HandlerTeamSummaryDto(
     float PeakRating, // highest rating ever achieved
     int RunCount,
     bool IsActive,
+    bool IsProvisional,            // true if sigma >= threshold ("FEW RUNS")
     TierLabel? TierLabel
 );
 
@@ -618,6 +672,100 @@ public record CountryTeamDto(
     float Rating,
     TierLabel? TierLabel
 );
+// Domain/Models/JudgeListFilter.cs — Phase 2
+public record JudgeListFilter(
+    string? Search,
+    string? Country,               // filter by countries they've judged in
+    string? SortBy,                // "toughness" (default), "runs", "elimination", "name"
+    bool SortDescending = true,
+    int Page = 1,
+    int PageSize = 50
+);
+
+// Domain/Models/JudgeListDto.cs — Phase 2
+public record JudgeListDto(
+    int Id,
+    string Slug,
+    string Name,
+    int TotalRuns,
+    int TotalCompetitions,
+    float? ToughnessScore,         // null if < 10 runs
+    float? ToughnessPercentile,
+    float EliminationRate,
+    float CleanRunRate,
+    float Tier1RunPercentage,
+    string CountriesJudgedIn       // comma-separated country codes
+);
+
+// Domain/Models/JudgeDetailDto.cs — Phase 2
+public record JudgeDetailDto(
+    int Id,
+    string Slug,
+    string Name,
+    // Volume
+    int TotalRuns,
+    int TotalCompetitions,
+    int TotalTeamsEvaluated,
+    DateOnly FirstRunDate,
+    DateOnly LastRunDate,
+    // Toughness Score
+    float? ToughnessScore,
+    float? ToughnessPercentile,
+    // Difficulty components
+    float EliminationRate,
+    float CleanRunRate,
+    float AvgFaultsPerFinisher,
+    float TimeFaultRate,
+    float AvgParticipantsPerRun,
+    // Course design indicators
+    float? SctTightness,
+    float? SpeedVariance,
+    Dictionary<string, float> FaultDistribution,
+    // Competition profile
+    float Tier1RunPercentage,
+    IReadOnlyList<string> CountriesJudgedIn,
+    Dictionary<string, int> SizeCategoryDistribution,
+    Dictionary<string, int> DisciplineDistribution,
+    // Signature stats
+    JudgeSignatureRunDto? ToughestRun,
+    JudgeSignatureRunDto? CleanestRun,
+    JudgeCompetitionDto? MostJudgedCompetition,
+    // Recent runs
+    IReadOnlyList<JudgeRunDto> RecentRuns
+);
+
+// Domain/Models/JudgeSignatureRunDto.cs — Phase 2
+public record JudgeSignatureRunDto(
+    string CompetitionSlug,
+    string CompetitionName,
+    DateOnly Date,
+    SizeCategory SizeCategory,
+    Discipline Discipline,
+    float Rate,                    // elimination rate or clean run rate for this run
+    int ParticipantCount
+);
+
+// Domain/Models/JudgeCompetitionDto.cs — Phase 2
+public record JudgeCompetitionDto(
+    string CompetitionSlug,
+    string CompetitionName,
+    int RunCount
+);
+
+// Domain/Models/JudgeRunDto.cs — Phase 2
+/// <summary>
+/// One row in the judge's recent runs table.
+/// </summary>
+public record JudgeRunDto(
+    string CompetitionSlug,
+    string CompetitionName,
+    DateOnly Date,
+    SizeCategory SizeCategory,
+    Discipline Discipline,
+    int ParticipantCount,
+    int EliminatedCount,
+    int CleanRunCount
+);
 ```
 
 ## 4. External integrations
@@ -649,34 +797,42 @@ Base path: `/api`
 | GET | `/api/teams/{slug}/history` | Rating progression snapshots for chart (`IReadOnlyList<RatingSnapshot>`). Note: `Rating` in snapshots uses the normalization parameters from the most recent recalculation, not the historical values at each point in time |
 | GET | `/api/teams/{slug}/results` | Paginated competition results for this team (`PagedResult<TeamResultDto>`). Each row combines RunResult + Run + Competition data. Ordered by date descending |
 
-### Handlers
+### Handlers *(Phase 1.5)*
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/handlers/{slug}` | Handler profile (`HandlerDetailDto`): all teams with peak ratings, career stats |
 | GET | `/api/handlers/{slug}/teams` | List of handler's teams with ratings (`IReadOnlyList<HandlerTeamSummaryDto>`) |
 
-### Countries
+### Countries *(Phase 2)*
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/countries` | Country ranking list (`IReadOnlyList<CountryRankingDto>`), sorted by CountryScore descending. Only countries meeting minimum team threshold are included |
 | GET | `/api/countries/{countryCode}` | Country detail (`CountryDetailDto`) with top N teams and category breakdown. Returns 404 if country has no teams in the dataset |
 
-### Competitions
+### Judges *(Phase 2)*
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/competitions` | Paginated competition list (`PagedResult<CompetitionDetailDto>`). Query params: `year`, `tier`, `country`, `search`, `page`, `pageSize` |
-| GET | `/api/competitions/{slug}` | Competition detail with metadata (`CompetitionDetailDto`) |
-| GET | `/api/competitions/{slug}/runs` | Flat list of all runs for a competition (`IReadOnlyList<RunSummaryDto>`), ordered by date → size → discipline. The UI groups by date/size/discipline for display |
-| GET | `/api/competitions/{slug}/runs/{roundKey}/results` | Full results table for a specific run (`IReadOnlyList<RunResultDto>`). The `roundKey` is resolved server-side to a Run ID via `IRunRepository.GetByCompetitionAndRoundKeyAsync` |
+| GET | `/api/judges` | Paginated judge listing (`PagedResult<JudgeListDto>`). Query params: `search` (optional), `country` (optional, countries they've judged in), `sortBy` (toughness/runs/elimination/name, default: toughness), `sortDesc` (default: true), `page`, `pageSize`. Judges with `ToughnessScore = null` are sorted to end when sorting by toughness |
+| GET | `/api/judges/{slug}` | Judge detail with full stats (`JudgeDetailDto`). Includes volume metrics, difficulty components, course design indicators, competition profile, signature stats, and recent 20 runs |
+| GET | `/api/judges/{slug}/runs` | Paginated list of runs officiated by this judge (`PagedResult<JudgeRunDto>`). Ordered by date descending. Each entry shows competition, category, discipline, participant count, elimination count, clean run count |
+
+### Competitions
+
+| Method | Endpoint | Description | Phase |
+|--------|----------|-------------|-------|
+| GET | `/api/competitions` | Paginated competition list (`PagedResult<CompetitionDetailDto>`). Query params: `year`, `tier`, `country`, `search`, `page`, `pageSize` | MVP |
+| GET | `/api/competitions/{slug}` | Competition detail with metadata (`CompetitionDetailDto`) | Phase 1.5 |
+| GET | `/api/competitions/{slug}/runs` | Flat list of all runs for a competition (`IReadOnlyList<RunSummaryDto>`), ordered by date → size → discipline. The UI groups by date/size/discipline for display | Phase 1.5 |
+| GET | `/api/competitions/{slug}/runs/{roundKey}/results` | Full results table for a specific run (`IReadOnlyList<RunResultDto>`). The `roundKey` is resolved server-side to a Run ID via `IRunRepository.GetByCompetitionAndRoundKeyAsync` | Phase 1.5 |
 
 ### Search
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/search` | Global search across teams, handlers, and competitions. Query params: `q` (required, min 2 chars), `limit` (default 10). Returns mixed results grouped by type — used for the search/autocomplete bar in the UI. Each result includes `type` (team/handler/competition), `slug`, `displayName`, and `subtitle` (e.g., country, rating) |
+| GET | `/api/search` | Global search across teams, handlers, competitions, and judges *(judges added in Phase 2)*. Query params: `q` (required, min 2 chars), `limit` (default 10). Returns mixed results grouped by type — used for the search/autocomplete bar in the UI. Each result includes `type` (team/handler/competition/judge), `slug`, `displayName`, and `subtitle` (e.g., country, rating, toughness score) |
 
 ### Response format
 
@@ -715,7 +871,7 @@ The CLI tool (`adw-cli`) provides all admin operations. It connects directly to 
 
 | Command | Description |
 |---------|-------------|
-| `import <file> --competition <slug> --name <name> --date <date> --tier <tier> [--country <cc>] [--location <loc>] [--end-date <date>] [--recalculate]` | Import competition results from CSV. `--recalculate` triggers full rating recalculation after successful import |
+| `import <file> --competition <slug> --name <name> --date <date> --tier <tier> [--country <cc>] [--location <loc>] [--end-date <date>] [--organization <org>] [--recalculate]` | Import competition results from CSV. `--organization` sets the governing body (FCI, AKC, USDAA, WAO, UKI, IFCS) for size category mapping — defaults to FCI if omitted. `--recalculate` triggers full rating recalculation after successful import |
 | `recalculate` | Full rating recalculation for all teams (all runs in live window, all sizes) |
 | `seed-config` | Create the default `RatingConfiguration` row (idempotent — skips if active config exists). Run once after initial DB setup |
 
@@ -743,6 +899,17 @@ The CLI tool (`adw-cli`) provides all admin operations. It connects directly to 
 | `show dog <id>` | Show dog detail: call name, registered name, breed, size, all teams (with handler + rating), all aliases |
 | `merge dog <source-id> <target-id>` | Merge two dog records (same size category only). Reassigns teams and aliases, deletes source. Shows preview before confirmation |
 
+### Judges *(Phase 2)*
+
+| Command | Description |
+|---------|-------------|
+| `list judges --search <query> [--limit <n>]` | Search judges by name (uses normalized matching). Shows ID, name, toughness score, total runs, countries |
+| `show judge <id>` | Show judge detail: name, slug, all aliases, toughness score, key stats |
+| `merge judge <source-id> <target-id>` | Merge two judge records. Reassigns all runs and aliases from source to target, deletes source. Shows preview before confirmation |
+| `add alias judge <judge-id> <alias-name>` | Manually add a judge alias (source = Manual) |
+| `recalculate judge-stats` | Recalculate statistics for all judges (can run independently of team rating recalculation) |
+| `backfill judge-resolution` | One-time command to resolve all existing `Run.Judge` strings to `Judge` entities via identity resolution. For runs imported before Phase 2 |
+
 ### Aliases
 
 | Command | Description |
@@ -769,16 +936,19 @@ All commands support:
 
 All pages use Static SSR with Enhanced Navigation. No SignalR, no WebSocket.
 
-| Route | Component | Description |
-|-------|-----------|-------------|
-| `/` | `Home` | Landing page with summary stats and links |
-| `/rankings` | `Rankings` | Leaderboard with size tabs, country filter, name search, pagination |
-| `/teams/{slug}` | `TeamProfile` | Bio card, rating chart, competition history, stats |
-| `/handlers/{slug}` | `HandlerProfile` | All dogs/teams, career overview. Dog selector for run history + rating chart |
-| `/countries` | `CountryRanking` | Country leaderboard with score, medal table, best team |
-| `/countries/{code}` | `CountryDetail` | Country profile with top N teams and category breakdown |
-| `/competitions` | `CompetitionList` | Chronological list with year/tier/country filters |
-| `/competitions/{slug}` | `CompetitionDetail` | Full results grouped by day → size → discipline |
+| Route | Component | Description | Phase |
+|-------|-----------|-------------|-------|
+| `/` | `Home` | Landing page with summary stats, top teams, search | MVP |
+| `/rankings` | `Rankings` | Leaderboard with size tabs, country filter, name search, pagination | MVP |
+| `/teams/{slug}` | `TeamProfile` | Bio card, rating chart, competition history, stats | MVP |
+| `/competitions` | `CompetitionList` | Chronological list with year/tier/country filters | MVP |
+| `/how-it-works` | `HowItWorks` | Static page explaining rating methodology | MVP |
+| `/handlers/{slug}` | `HandlerProfile` | All dogs/teams, career overview | Phase 1.5 |
+| `/competitions/{slug}` | `CompetitionDetail` | Full results grouped by day → size → discipline | Phase 1.5 |
+| `/countries` | `CountryRanking` | Country leaderboard with score, medal table, best team | Phase 2 |
+| `/countries/{code}` | `CountryDetail` | Country profile with top N teams and category breakdown | Phase 2 |
+| `/judges` | `JudgeListing` | Judge leaderboard with Toughness Score, sortable/filterable | Phase 2 |
+| `/judges/{slug}` | `JudgeProfile` | Judge profile with stats, radar chart, signature runs | Phase 2 |
 
 ### SEO
 
@@ -816,14 +986,14 @@ Filtering and pagination use query parameters (e.g., `/rankings?size=L&country=C
                     │                                              │
                     │   [SQL Server :1433] (native)                 │
                     │                                              │
-                    │   [adw-cli] (run manually via RDP / SSH)      │
+                    │   [SQL Server :1433] ◄── IP whitelist ── [adw-cli on admin PC]
                     └──────────────────────────────────────────────┘
 ```
 
 - **IIS** handles TLS termination (via `win-acme` for Let's Encrypt certificates) and reverse proxying via ARR + URL Rewrite.
 - **Api** and **Web** run as separate IIS sites (out-of-process Kestrel behind IIS), or as Windows Services for simpler management.
 - **Web** calls **Api** via `http://localhost:5001/api/` (no TLS overhead for internal calls).
-- **CLI** is run manually via RDP or SSH (OpenSSH server built into Windows Server).
+- **CLI** runs on the admin's local machine, connecting to the production SQL Server via remote connection string. SQL Server port (1433) is exposed with a Windows Firewall IP whitelist restricting access to the admin's IP address. No need to RDP/SSH into the server for data management.
 - **SQL Server** runs natively on Windows (no Docker needed).
 
 ### CI/CD pipeline (GitHub Actions)
@@ -881,3 +1051,4 @@ Issues identified during specification review and their resolutions:
 | 21 | `CompetitionMetadata.Tier` had no validation note | **Added** docstring: Tier must be 1 (major) or 2 (standard). |
 | 22 | Inactive teams not explicitly documented in API | **Clarified** `GET /api/teams/{slug}` returns both active and inactive teams. Rankings endpoint only returns active teams. |
 | 23 | Deployment target was Linux, should be Windows Server | **Changed** to Windows Server: IIS (ARR + URL Rewrite) instead of Caddy, native SQL Server instead of Docker, Windows Services / IIS app pools instead of systemd, `win-acme` for Let's Encrypt. |
+| 24 | MVP scope too large — 9 pages, ~15 endpoints | **Reduced MVP** to 5 pages (Home, Rankings, Team Profile, Competition List, How It Works) and ~8 endpoints. Handler profile + competition detail → Phase 1.5. Country rankings → Phase 2. Home page Recent Movers → Phase 2. Domain model and interfaces unchanged — only UI, service implementations, and API endpoints are phased. |

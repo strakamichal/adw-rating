@@ -32,6 +32,8 @@ Build a web application for calculating and displaying performance ratings of ag
 - **Competition tier** — A classification of competition importance that affects rating weight. Defined in `docs/08-rating-rules.md` (currently: Tier 1 with weight 1.2, others with weight 1.0).
 - **Size category** — Dog height category using FCI classification: S (Small, <35 cm), M (Medium, 35–43 cm), I (Intermediate, 43–48 cm), L (Large, >48 cm). Rating calculation is category-agnostic (all participants in a run are compared together regardless of size), but display ratings are normalized per size category to a common scale (target mean 1500) for cross-category comparability (see `docs/08-rating-rules.md`). If a source uses XS, it is mapped to S during import. Non-FCI organizations (AKC, USDAA, etc.) use different height categories which are mapped to FCI S/M/I/L during import (see mapping table in `docs/03-domain-and-data.md`).
 - **Active team** — A team that meets the minimum activity thresholds defined in `docs/08-rating-rules.md` (run count and time window). Only active teams appear in the live rankings. Inactive teams retain their profile (marked as inactive) but are excluded from the leaderboard.
+- **Judge** — A course designer/evaluator at a competition. Identified by name. One judge may officiate multiple runs across multiple competitions. Judge identity is resolved via aliases (same pattern as handlers).
+- **Toughness Score** — A composite 1–10 score measuring how challenging a judge's courses tend to be, based on elimination rate, clean run rate, average faults per finisher, and time fault rate. Algorithm details in `docs/08-rating-rules.md`.
 
 ## 3. Scope (MVP)
 
@@ -42,11 +44,10 @@ The MVP covers the following functional areas:
 3. **Identity resolution** — Aggressive automatic fuzzy matching of handlers and dogs across imports (diacritics normalization, Levenshtein distance, alias tables). The system must maximize match rate to minimize duplicates. Confirmed matches are stored in an alias table for future imports. When matching fails, a new entity is created. After each import, the system generates a report of newly created entities and potential duplicates for admin review. Admin can merge duplicates at any time.
 4. **Rankings** — Paginated interactive leaderboard filtered by size category (S/M/I/L) and country. Only active teams displayed (thresholds defined in `docs/08-rating-rules.md`).
 5. **Team profiles (bio cards)** — Handler + dog info, current rating ± deviation, rating progression chart, competition history, statistics (clean run rate, average placement). No photos in MVP (initials/generic avatar as placeholder).
-6. **Handler profiles** — Aggregated view: all dogs (teams), peak rating per team, career statistics. The handler can select a specific dog to see the full run history for that team (competition, date, discipline, placement, time, faults, speed) and a rating progression chart showing how each competition changed the team's rating over time.
-7. **Competition list (results database)** — Browsable, searchable list of all imported competitions. Each entry shows name, dates, location, tier, and number of participants. Sorted by date (newest first). Filterable by year, tier, and country.
-8. **Competition detail** — Full results for a single competition. Runs grouped by date (day 1, day 2, …) and within each day by size category and discipline. Each run shows the complete results table with all available columns (rank, handler, dog, country, faults, refusals, time faults, time, speed, eliminated). Click on any team navigates to the team profile.
-9. **Search** — Name filter integrated into the current view (rankings, competitions). Filters the displayed list as the user types.
-10. **Country rankings** — Aggregated country leaderboard computed from individual team ratings. Country Score = average of top N teams (default: 10) across all size categories (ratings are normalized, so cross-category averaging is valid). Supplemented by medal table (Elite/Champion/Expert counts) and category breakdown. Countries need minimum 3 qualified teams to appear. Algorithm details in `docs/08-rating-rules.md`.
+6. **Competition list** — Browsable, searchable list of all imported competitions. Each entry shows name, dates, location, tier, and number of participants. Sorted by date (newest first). Filterable by year, tier, and country. Competition detail pages are deferred to Phase 1.5.
+7. **Search** — Name filter integrated into the current view (rankings, competitions). Filters the displayed list as the user types.
+8. **Home page** — Landing page with hero section, prominent search bar, summary stats (qualified teams, competitions, runs), top 3 teams per size category, and recent competitions. Designed as the primary entry point for visitors from social media.
+9. **How It Works** — Static page explaining the rating methodology, data sources, size category mapping, and limitations. Builds trust and transparency.
 
 ### Data sources (MVP)
 
@@ -63,13 +64,22 @@ Non-FCI competitions use different height categories which are mapped to FCI S/M
 
 Data formats vary by source and will need to be acquired and normalized. No existing dataset is available — data collection is a significant upfront effort.
 
-### Scope (Phase 2 — Crowdsourcing)
+### Scope (Phase 1.5 — Profiles & Detail)
 
-1. **Admin authentication** — Simple login for admin users to manage competitions, review imports, and moderate data via the web UI.
-2. **Crowdsourced result uploads** — Competitors and organizers can submit competition results through a web upload interface (CSV/Excel). Submitted data enters a review queue.
-3. **Import review workflow** — Admin reviews and approves/rejects submitted results before they enter the rating calculation.
-4. **Competition calendar** — Upcoming events listed with date, location, and tier.
-5. **Claim your profile** — A handler can request to link their social/contact info to their profile (moderated by admin).
+Immediately after MVP launch. Adds depth to existing data without new backend features.
+
+1. **Handler profiles** — Aggregated view: all dogs (teams), peak rating per team, career statistics. The handler can select a specific dog to see the full run history for that team (competition, date, discipline, placement, time, faults, speed) and a rating progression chart showing how each competition changed the team's rating over time.
+2. **Competition detail** — Full results for a single competition. Runs grouped by date (day 1, day 2, …) and within each day by size category and discipline. Each run shows the complete results table with all available columns (rank, handler, dog, country, faults, refusals, time faults, time, speed, eliminated). Click on any team navigates to the team profile.
+
+### Scope (Phase 2 — Crowdsourcing & Country Rankings)
+
+1. **Country rankings** — Aggregated country leaderboard computed from individual team ratings. Country Score = average of top N teams (default: 10) across all size categories (ratings are normalized, so cross-category averaging is valid). Supplemented by medal table (Elite/Champion/Expert counts) and category breakdown. Countries need minimum 3 qualified teams to appear. Algorithm details in `docs/08-rating-rules.md`.
+2. **Admin authentication** — Simple login for admin users to manage competitions, review imports, and moderate data via the web UI.
+3. **Crowdsourced result uploads** — Competitors and organizers can submit competition results through a web upload interface (CSV/Excel). Submitted data enters a review queue.
+4. **Import review workflow** — Admin reviews and approves/rejects submitted results before they enter the rating calculation.
+5. **Competition calendar** — Upcoming events listed with date, location, and tier.
+6. **Claim your profile** — A handler can request to link their social/contact info to their profile (moderated by admin).
+7. **Judge profiles** — Judge listing and detail pages with statistics derived from officiated runs. Toughness Score (1–10 composite) based on elimination rate, clean run rate, average faults, and time fault rate. Judge identity resolution via alias table (same pattern as handlers). Judges searchable via global search.
 
 ### Scope (Phase 3 — Automation & Growth)
 
@@ -94,18 +104,27 @@ These items are out of scope for **all planned phases**:
 
 ## 5. Key use cases
 
+### MVP use cases
+
 1. **Browse global rankings** — A visitor opens the ranking page, selects size category (S/M/I/L), optionally filters by country or searches by name, and browses the paginated leaderboard of active teams sorted by rating.
 2. **View team profile** — A visitor clicks on a team in the rankings (or finds it via search) and sees the bio card: rating ± deviation, rating chart over time, competition history, and statistics.
-3. **View handler profile** — A visitor views a handler's page showing all their dogs (teams), peak ratings, and career overview. They select a specific dog and see the complete run history for that team (competition, date, discipline, rank, faults, time, speed) and a chart showing how the rating changed over time. They can click on any competition to jump to its detail page.
-4. **Browse competitions** — A visitor opens the competitions page and sees a chronological list of all imported events. They can filter by year, tier, or country, and click on any competition to see full results.
-5. **View competition results** — A visitor opens a competition detail page. Results are grouped by date (day 1, day 2, …), then by size category and discipline. Each run shows the full results table (rank, handler, dog, country, faults, time, speed, eliminated). The visitor can click on any team to navigate to their profile.
-6. **Filter by name** — A visitor types a name into the search/filter field on the rankings or competitions page. The displayed list is filtered in real-time to show matching entries.
-7. **Import competition results** — An admin imports a CSV/Excel file of competition results via CLI. The system validates the entire file, performs identity resolution (fuzzy matching against known handlers/dogs), and stores the results. If validation fails, the entire import is rejected with an error report.
-8. **Recalculate ratings** — After importing new competition data, the admin triggers a full rating recalculation. Ratings, deviations, and volatilities are updated for all affected teams.
-9. **Share a profile via social media** — A visitor copies a clean URL to a team profile and shares it on Instagram/Facebook. The link renders with proper Open Graph metadata (name, rating).
-10. **View inactive team** — A visitor finds a team that hasn't competed recently. The profile is accessible but marked as inactive, and the team is excluded from the live ranking.
-11. **Merge duplicate entities** — An admin discovers two handler or dog records that represent the same real-world entity. The admin merges them, consolidating competition history and recalculating ratings.
+3. **Browse competitions** — A visitor opens the competitions page and sees a chronological list of all imported events. They can filter by year, tier, or country.
+4. **Filter by name** — A visitor types a name into the search/filter field on the rankings or competitions page. The displayed list is filtered in real-time to show matching entries.
+5. **Import competition results** — An admin imports a CSV/Excel file of competition results via CLI. The system validates the entire file, performs identity resolution (fuzzy matching against known handlers/dogs), and stores the results. If validation fails, the entire import is rejected with an error report.
+6. **Recalculate ratings** — After importing new competition data, the admin triggers a full rating recalculation. Ratings, deviations, and volatilities are updated for all affected teams.
+7. **Share a profile via social media** — A visitor copies a clean URL to a team profile and shares it on Instagram/Facebook. The link renders with proper Open Graph metadata (name, rating).
+8. **View inactive team** — A visitor finds a team that hasn't competed recently. The profile is accessible but marked as inactive, and the team is excluded from the live ranking.
+9. **Merge duplicate entities** — An admin discovers two handler or dog records that represent the same real-world entity. The admin merges them, consolidating competition history and recalculating ratings.
+
+### Phase 1.5 use cases
+
+10. **View handler profile** — A visitor views a handler's page showing all their dogs (teams), peak ratings, and career overview. They select a specific dog and see the complete run history for that team (competition, date, discipline, rank, faults, time, speed) and a chart showing how the rating changed over time. They can click on any competition to jump to its detail page.
+11. **View competition results** — A visitor opens a competition detail page. Results are grouped by date (day 1, day 2, …), then by size category and discipline. Each run shows the full results table (rank, handler, dog, country, faults, time, speed, eliminated). The visitor can click on any team to navigate to their profile.
+
+### Phase 2 use cases
+
 12. **Browse country rankings** — A visitor opens the countries page and sees nations ranked by Country Score. Each entry shows score, team count, and medal table (Elite/Champion/Expert counts). Clicking a country shows its top teams with ratings and allows drilling into individual team profiles.
+13. **Browse judge profiles** — A visitor opens the judges page and sees judges ranked by Toughness Score. Each entry shows score, runs judged, elimination rate, and countries. Clicking a judge shows their profile with detailed stats, radar chart of judging style, signature runs (toughest/cleanest), and competition history.
 
 ## 6. Protection sections
 

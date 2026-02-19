@@ -97,8 +97,8 @@
 | `HandlerId` | int | yes | FK → Handler |
 | `DogId` | int | yes | FK → Dog |
 | `Slug` | string(300) | yes | URL-friendly identifier for the team profile page |
-| `Mu` | float | yes | OpenSkill mean (internal). Default: μ₀ (see `docs/08-rating-rules.md`) |
-| `Sigma` | float | yes | OpenSkill uncertainty (internal). Default: σ₀ = μ₀/3 (see `docs/08-rating-rules.md`) |
+| `Mu` | float | yes | OpenSkill mean (internal). Default: `RatingConfiguration.Mu0` |
+| `Sigma` | float | yes | OpenSkill uncertainty (internal). Default: `RatingConfiguration.Sigma0` |
 | `Rating` | float | yes | Display rating after display scaling, podium boost, and cross-size normalization (target mean 1500). The primary value for leaderboard ranking and display |
 | `PrevMu` | float | yes | Mu before the most recent rating update (for trend) |
 | `PrevSigma` | float | yes | Sigma before the most recent rating update |
@@ -106,8 +106,8 @@
 | `RunCount` | int | yes | Total runs in the active window |
 | `FinishedRunCount` | int | yes | Non-eliminated runs in the active window |
 | `Top3RunCount` | int | yes | Runs with rank 1–3 in the active window |
-| `IsActive` | bool | yes | True if `RunCount >= MIN_RUNS_FOR_LIVE_RANKING` and has runs within the time window |
-| `IsProvisional` | bool | yes | True if `Sigma >= LIVE_PROVISIONAL_SIGMA_THRESHOLD` |
+| `IsActive` | bool | yes | True if `RunCount >= RatingConfiguration.MinRunsForLiveRanking` and has runs within the time window |
+| `IsProvisional` | bool | yes | True if `Sigma >= RatingConfiguration.ProvisionalSigmaThreshold` |
 | `TierLabel` | TierLabel | no | Percentile-based label: Elite, Champion, Expert, Competitor. Null if not active |
 | `PeakRating` | float | yes | Highest Rating ever achieved by this team. Updated during recalculation. Used on handler profile to show career peak |
 
@@ -185,7 +185,7 @@
 **Rules**:
 - (`CompetitionId`, `RoundKey`) must be unique.
 - Team rounds (`IsTeamRound = true`) use the same individual placements as any other run. The `IsTeamRound` flag is metadata only (for display grouping); team rounds are **included** in rating calculation.
-- A run must have at least `MIN_FIELD_SIZE` (6) results to count for rating.
+- A run must have at least `RatingConfiguration.MinFieldSize` (default: 6) results to count for rating.
 
 **Acceptance criteria**:
 - [ ] Run can be created with CompetitionId, RoundKey, SizeCategory, Discipline, IsTeamRound
@@ -358,6 +358,8 @@
 | `Id` | int | yes | Primary key |
 | `CreatedAt` | datetime | yes | When this configuration was created |
 | `IsActive` | bool | yes | Only one configuration can be active at a time |
+| `Mu0` | float | yes | Initial mu for new teams (default: 25.0) |
+| `Sigma0` | float | yes | Initial sigma for new teams (default: μ₀/3 ≈ 8.333) |
 | `LiveWindowDays` | int | yes | Time window for active runs (default: 730) |
 | `MinRunsForLiveRanking` | int | yes | Minimum runs to appear in live rankings (default: 5) |
 | `MinFieldSize` | int | yes | Minimum participants for a run to count (default: 6) |
@@ -369,7 +371,7 @@
 | `RatingSigmaMultiplier` | float | yes | Sigma penalty in display rating (default: 1.0) |
 | `PodiumBoostBase` | float | yes | Minimum quality factor (default: 0.85) |
 | `PodiumBoostRange` | float | yes | Quality factor range (default: 0.20) |
-| `PodiumBoostTarget` | float | yes | Top3 percentage for max boost (default: 50.0) |
+| `PodiumBoostTarget` | float | yes | Top3 fraction for max boost (default: 0.50, i.e., 50 %) |
 | `ProvisionalSigmaThreshold` | float | yes | Sigma threshold for "FEW RUNS" label (default: 7.8) |
 | `NormTargetMean` | float | yes | Target mean for cross-size normalization (default: 1500) |
 | `NormTargetStd` | float | yes | Target std dev for cross-size normalization (default: 150) |
@@ -388,6 +390,116 @@
 - [ ] A default configuration is seeded on first run
 - [ ] Only one configuration can be active
 - [ ] Changing the active configuration triggers a full recalculation
+
+---
+
+### Judge *(Phase 2)*
+
+**Description**: A course designer/evaluator at a competition. Identity-resolved from `Run.Judge` string field.
+
+**Fields**:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `Id` | int | yes | Primary key |
+| `Name` | string(200) | yes | Display name (original diacritics preserved) |
+| `NormalizedName` | string(200) | yes | Lowercased, diacritics-stripped form for matching |
+| `Slug` | string(200) | yes | URL-friendly identifier for judge profile pages |
+
+**Rules**:
+- `NormalizedName` is derived automatically from `Name` (same rules as Handler: lowercase, strip diacritics, normalize whitespace).
+- `Slug` is derived from `Name`, must be unique. On collision append numeric suffix.
+- Judge entities are created during import when `Run.Judge` is non-null, via identity resolution (alias lookup → fuzzy match → create new).
+
+**Acceptance criteria**:
+- [ ] Judge can be created with Name
+- [ ] NormalizedName is auto-generated on create/update
+- [ ] Slug is unique and URL-safe
+
+---
+
+### JudgeAlias *(Phase 2)*
+
+**Description**: A confirmed mapping from a variant judge name to a canonical judge. Append-only. Same pattern as HandlerAlias.
+
+**Fields**:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `Id` | int | yes | Primary key |
+| `AliasName` | string(200) | yes | The variant name, stored in normalized form (same rules as `Judge.NormalizedName`) |
+| `CanonicalJudgeId` | int | yes | FK → Judge (the canonical record) |
+| `Source` | AliasSource | yes | How confirmed: Manual, Import, FuzzyMatch |
+| `CreatedAt` | datetime | yes | When the alias was created |
+
+**Rules**:
+- `AliasName` must be unique — one canonical mapping per variant.
+- Alias table is append-only.
+- Applied during import to resolve judge identity from `Run.Judge` string.
+
+**Acceptance criteria**:
+- [ ] Alias can be created with AliasName, CanonicalJudgeId, Source
+- [ ] Duplicate AliasName is rejected
+
+---
+
+### JudgeStats *(Phase 2)*
+
+**Description**: Precomputed statistics for a judge, regenerated during judge stats recalculation. One row per judge.
+
+**Fields**:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `Id` | int | yes | Primary key |
+| `JudgeId` | int | yes | FK → Judge (unique — one stats row per judge) |
+| `TotalRuns` | int | yes | Number of runs this judge has officiated |
+| `TotalCompetitions` | int | yes | Distinct competitions |
+| `TotalTeamsEvaluated` | int | yes | Distinct teams across all officiated runs |
+| `FirstRunDate` | date | yes | Earliest run date |
+| `LastRunDate` | date | yes | Most recent run date |
+| `EliminationRate` | float | yes | `eliminated / total_participants` across all runs (0.0–1.0) |
+| `CleanRunRate` | float | yes | `clean_finishers / all_finishers` (0.0–1.0) |
+| `AvgFaultsPerFinisher` | float | yes | `sum(TotalFaults) / count(finishers)` |
+| `TimeFaultRate` | float | yes | `count(TimeFaults > 0) / count(finishers)` (0.0–1.0) |
+| `AvgParticipantsPerRun` | float | yes | Average field size |
+| `Tier1RunPercentage` | float | yes | Fraction of runs at Tier 1 competitions (0.0–1.0) |
+| `ToughnessScore` | float | no | Composite score (1.0–10.0). Null if `TotalRuns < 10` |
+| `ToughnessPercentile` | float | no | Percentile rank among qualified judges (0.0–1.0). Null if `TotalRuns < 10` |
+| `SctTightness` | float | no | `avg(median_time / SCT)` across runs with SCT data. Null if insufficient data |
+| `SpeedVariance` | float | no | Avg std dev of speed among finishers. Null if insufficient data |
+| `CountriesJudgedIn` | string(500) | yes | Comma-separated ISO country codes |
+| `SizeCategoryDistribution` | string(200) | yes | JSON: `{"S":15,"M":20,"I":25,"L":40}` (run counts per category) |
+| `DisciplineDistribution` | string(200) | yes | JSON: `{"Agility":55,"Jumping":40,"Final":5}` (run counts per discipline) |
+| `FaultDistribution` | string(200) | yes | JSON: `{"clean":34,"low":28,"medium":22,"high":16}` (% of finishers by fault bucket: clean=0, low=1–5, medium=5–10, high=10+) |
+| `ToughestRunId` | int | no | FK → Run (run with highest elimination rate, min 20 participants). Null if none qualifies |
+| `CleanestRunId` | int | no | FK → Run (run with highest clean run rate, min 20 participants). Null if none qualifies |
+| `MostJudgedCompetitionId` | int | no | FK → Competition (competition with most runs by this judge) |
+| `RecalculatedAt` | datetime | yes | When stats were last computed |
+
+**Rules**:
+- `JudgeId` must be unique — one stats row per judge.
+- Stats are recomputed in batch (not incrementally). On recalculation, all stats are replaced.
+- Toughness Score uses all-time data (no time window), unlike team ratings.
+- Toughness Score formula is defined in `docs/08-rating-rules.md`.
+
+**Acceptance criteria**:
+- [ ] JudgeStats can be created with JudgeId and all required fields
+- [ ] Duplicate JudgeId is rejected
+- [ ] ToughnessScore is null when TotalRuns < 10
+- [ ] Full recalculation replaces all JudgeStats rows
+
+---
+
+## Run entity modification *(Phase 2)*
+
+Add `JudgeId` field to the Run entity:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `JudgeId` | int | no | FK → Judge. Resolved from `Run.Judge` string via judge identity resolution. Null if `Judge` string is null |
+
+The existing `Judge` (string) field is kept as-is — it stores the raw source data. `JudgeId` is the resolved foreign key populated during import.
 
 ---
 
@@ -454,6 +566,9 @@
 | RatingSnapshot → Team | N:1 | Many snapshots per team (one per run processed) |
 | RatingSnapshot → RunResult | 1:1 | One snapshot per run result |
 | RatingSnapshot → Competition | N:1 | Many snapshots reference the same competition |
+| Judge → Run | 1:N | One judge officiates many runs (via `Run.JudgeId`) *(Phase 2)* |
+| JudgeAlias → Judge | N:1 | Many aliases point to one canonical judge *(Phase 2)* |
+| Judge → JudgeStats | 1:1 | One precomputed stats row per judge *(Phase 2)* |
 
 **Ownership and cascading**:
 - Deleting a Competition cascades to its Runs and their RunResults. This is the mechanism for corrections — delete the competition and re-import corrected data. Admin-only operation.
