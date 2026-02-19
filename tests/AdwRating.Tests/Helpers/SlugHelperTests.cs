@@ -52,6 +52,36 @@ public class SlugHelperTests
         Assert.That(result, Is.EqualTo("hello-world"));
     }
 
+    [Test]
+    public void GenerateSlug_NullInput_ReturnsEmptyString()
+    {
+        var result = SlugHelper.GenerateSlug(null!);
+        Assert.That(result, Is.EqualTo(string.Empty));
+    }
+
+    [Test]
+    public void GenerateSlug_SpecialCharsOnly_ReturnsEmptyString()
+    {
+        var result = SlugHelper.GenerateSlug("@#$%");
+        Assert.That(result, Is.EqualTo(string.Empty));
+    }
+
+    [Test]
+    public void GenerateSlug_LongName_WorksCorrectly()
+    {
+        var longName = string.Join(" ", Enumerable.Repeat("Abcdefghij", 25)); // 250+ chars
+        var result = SlugHelper.GenerateSlug(longName);
+        Assert.That(result, Does.StartWith("abcdefghij-"));
+        Assert.That(result, Does.Not.Contain("  "));
+    }
+
+    [Test]
+    public void GenerateSlug_LastFirstPattern_ReordersAndSlugifies()
+    {
+        var result = SlugHelper.GenerateSlug("Tercova, Katerina");
+        Assert.That(result, Is.EqualTo("katerina-tercova"));
+    }
+
     [TestCase("base-slug", 2, "base-slug-2")]
     [TestCase("base-slug", 3, "base-slug-3")]
     [TestCase("john-smith", 10, "john-smith-10")]
