@@ -376,6 +376,8 @@
 | `EliteTopPercent` | float | yes | Percentile cutoff for Elite tier (default: 0.02) |
 | `ChampionTopPercent` | float | yes | Percentile cutoff for Champion tier (default: 0.10) |
 | `ExpertTopPercent` | float | yes | Percentile cutoff for Expert tier (default: 0.30) |
+| `CountryTopN` | int | yes | Number of top teams averaged for Country Score (default: 10) |
+| `MinTeamsForCountryRanking` | int | yes | Minimum active teams for a country to appear in country ranking (default: 3) |
 
 **Rules**:
 - Exactly one row must have `IsActive = true` at any time.

@@ -46,6 +46,7 @@ The MVP covers the following functional areas:
 7. **Competition list (results database)** — Browsable, searchable list of all imported competitions. Each entry shows name, dates, location, tier, and number of participants. Sorted by date (newest first). Filterable by year, tier, and country.
 8. **Competition detail** — Full results for a single competition. Runs grouped by date (day 1, day 2, …) and within each day by size category and discipline. Each run shows the complete results table with all available columns (rank, handler, dog, country, faults, refusals, time faults, time, speed, eliminated). Click on any team navigates to the team profile.
 9. **Search** — Name filter integrated into the current view (rankings, competitions). Filters the displayed list as the user types.
+10. **Country rankings** — Aggregated country leaderboard computed from individual team ratings. Country Score = average of top N teams (default: 10) across all size categories (ratings are normalized, so cross-category averaging is valid). Supplemented by medal table (Elite/Champion/Expert counts) and category breakdown. Countries need minimum 3 qualified teams to appear. Algorithm details in `docs/08-rating-rules.md`.
 
 ### Data sources (MVP)
 
@@ -104,6 +105,7 @@ These items are out of scope for **all planned phases**:
 9. **Share a profile via social media** — A visitor copies a clean URL to a team profile and shares it on Instagram/Facebook. The link renders with proper Open Graph metadata (name, rating).
 10. **View inactive team** — A visitor finds a team that hasn't competed recently. The profile is accessible but marked as inactive, and the team is excluded from the live ranking.
 11. **Merge duplicate entities** — An admin discovers two handler or dog records that represent the same real-world entity. The admin merges them, consolidating competition history and recalculating ratings.
+12. **Browse country rankings** — A visitor opens the countries page and sees nations ranked by Country Score. Each entry shows score, team count, and medal table (Elite/Champion/Expert counts). Clicking a country shows its top teams with ratings and allows drilling into individual team profiles.
 
 ## 6. Protection sections
 

@@ -328,6 +328,23 @@ public interface IHandlerProfileService
     Task<HandlerDetailDto?> GetBySlugAsync(string slug);
 }
 
+// Domain/Interfaces/ICountryRankingService.cs
+public interface ICountryRankingService
+{
+    /// <summary>
+    /// Returns all countries ranked by Country Score (average of top N teams).
+    /// Only countries with ≥ MinTeamsForCountryRanking active teams are included.
+    /// Country Score uses normalized Rating values (comparable across size categories).
+    /// </summary>
+    Task<IReadOnlyList<CountryRankingDto>> GetRankingsAsync();
+
+    /// <summary>
+    /// Returns detail for a single country including its top N teams.
+    /// Returns null if country code doesn't exist in the dataset.
+    /// </summary>
+    Task<CountryDetailDto?> GetByCountryCodeAsync(string countryCode);
+}
+
 // Domain/Interfaces/IMergeService.cs
 public interface IMergeService
 {
@@ -545,6 +562,62 @@ public record RunResultDto(
     float? Speed,
     bool Eliminated
 );
+
+// Domain/Models/CountryRankingDto.cs
+/// <summary>
+/// One row in the country ranking table.
+/// Country Score = average Rating of top N active non-provisional teams.
+/// </summary>
+public record CountryRankingDto(
+    string CountryCode,          // ISO 3166-1 alpha-3 (e.g., "CZE")
+    string CountryName,          // Human-readable (e.g., "Czech Republic")
+    int Rank,                    // Position in country ranking
+    float CountryScore,          // Average rating of top N teams
+    int QualifiedTeamCount,      // Total active non-provisional teams from this country
+    bool IsProvisional,          // true if teams < CountryTopN
+    int EliteCount,              // Teams with Elite tier label
+    int ChampionCount,
+    int ExpertCount,
+    int CompetitorCount,
+    string BestTeamSlug,         // Slug of highest-rated team
+    string BestTeamName,         // "Handler & Dog"
+    float BestTeamRating         // Rating of the highest-rated team
+);
+
+// Domain/Models/CountryDetailDto.cs
+/// <summary>
+/// Detail view for a single country with its top teams.
+/// </summary>
+public record CountryDetailDto(
+    string CountryCode,
+    string CountryName,
+    float CountryScore,
+    int Rank,
+    int QualifiedTeamCount,
+    bool IsProvisional,
+    int EliteCount,
+    int ChampionCount,
+    int ExpertCount,
+    int CompetitorCount,
+    int SCount,                  // Qualified teams in Small
+    int MCount,                  // Qualified teams in Medium
+    int ICount,                  // Qualified teams in Intermediate
+    int LCount,                  // Qualified teams in Large
+    IReadOnlyList<CountryTeamDto> TopTeams  // Top N teams used for score calculation
+);
+
+// Domain/Models/CountryTeamDto.cs
+/// <summary>
+/// A team entry within a country detail view.
+/// </summary>
+public record CountryTeamDto(
+    string TeamSlug,
+    string HandlerName,
+    string DogCallName,
+    SizeCategory SizeCategory,
+    float Rating,
+    TierLabel? TierLabel
+);
 ```
 
 ## 4. External integrations
@@ -582,6 +655,13 @@ Base path: `/api`
 |--------|----------|-------------|
 | GET | `/api/handlers/{slug}` | Handler profile (`HandlerDetailDto`): all teams with peak ratings, career stats |
 | GET | `/api/handlers/{slug}/teams` | List of handler's teams with ratings (`IReadOnlyList<HandlerTeamSummaryDto>`) |
+
+### Countries
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/countries` | Country ranking list (`IReadOnlyList<CountryRankingDto>`), sorted by CountryScore descending. Only countries meeting minimum team threshold are included |
+| GET | `/api/countries/{countryCode}` | Country detail (`CountryDetailDto`) with top N teams and category breakdown. Returns 404 if country has no teams in the dataset |
 
 ### Competitions
 
@@ -695,6 +775,8 @@ All pages use Static SSR with Enhanced Navigation. No SignalR, no WebSocket.
 | `/rankings` | `Rankings` | Leaderboard with size tabs, country filter, name search, pagination |
 | `/teams/{slug}` | `TeamProfile` | Bio card, rating chart, competition history, stats |
 | `/handlers/{slug}` | `HandlerProfile` | All dogs/teams, career overview. Dog selector for run history + rating chart |
+| `/countries` | `CountryRanking` | Country leaderboard with score, medal table, best team |
+| `/countries/{code}` | `CountryDetail` | Country profile with top N teams and category breakdown |
 | `/competitions` | `CompetitionList` | Chronological list with year/tier/country filters |
 | `/competitions/{slug}` | `CompetitionDetail` | Full results grouped by day → size → discipline |
 

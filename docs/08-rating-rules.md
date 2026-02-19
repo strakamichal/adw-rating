@@ -193,3 +193,35 @@ All parameters are stored in the `RatingConfiguration` entity (see `docs/03-doma
 | `EliteTopPercent` | `0.02` |
 | `ChampionTopPercent` | `0.10` |
 | `ExpertTopPercent` | `0.30` |
+| `CountryTopN` | `10` |
+| `MinTeamsForCountryRanking` | `3` |
+
+## 9. Country Rankings
+
+Country rankings aggregate individual team ratings into a per-country score. Since display ratings are z-score normalized (mean 1500, std 150) across all size categories, cross-category averaging is valid.
+
+### 9.1 Country Score
+
+Computed after team ratings and tier labels are assigned during recalculation:
+
+1. Group all active, non-provisional teams by `Handler.Country`
+2. For each country with ≥ `MIN_TEAMS_FOR_COUNTRY_RANKING` (default: 3) qualified teams:
+   - Take the top `COUNTRY_TOP_N` (default: 10) teams by `Rating` (across all size categories)
+   - If fewer than `COUNTRY_TOP_N` teams available, use all of them
+   - `CountryScore = average(top_teams_ratings)`
+3. Rank countries by `CountryScore` descending
+
+### 9.2 Provisional Countries
+
+Countries with `MIN_TEAMS_FOR_COUNTRY_RANKING ≤ teams < COUNTRY_TOP_N` are ranked but marked as **provisional** ("FEW TEAMS"). Their score is the average of all available teams — valid but based on a smaller sample.
+
+Countries with fewer than `MIN_TEAMS_FOR_COUNTRY_RANKING` teams are excluded from the country ranking entirely.
+
+### 9.3 Supplementary Metrics
+
+Displayed alongside Country Score (not used for ranking order):
+
+- **Medal table**: count of Elite / Champion / Expert / Competitor teams in this country
+- **Total qualified teams**: all active non-provisional teams from this country
+- **Best team**: highest-rated team (name + rating)
+- **Category breakdown**: qualified teams per size category (S / M / I / L)

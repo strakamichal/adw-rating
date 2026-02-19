@@ -16,7 +16,7 @@
 | Element | Desktop | Mobile |
 |---------|---------|--------|
 | Logo | "ADW Rating" brand mark, links to `/` | Compact logo |
-| Nav links | Rankings, Competitions | Hamburger menu |
+| Nav links | Rankings, Countries, Competitions | Hamburger menu |
 | Search | Always-visible search input in header | Search icon → expands to full-width input |
 
 ### Footer
@@ -32,6 +32,8 @@
 | Rankings | `Home > Rankings` |
 | Team profile | `Home > Rankings > {Handler} & {Dog}` |
 | Handler profile | `Home > Rankings > {Handler}` |
+| Country ranking | `Home > Countries` |
+| Country detail | `Home > Countries > {Country Name}` |
 | Competition detail | `Home > Competitions > {Competition Name}` |
 
 On mobile, breadcrumbs collapse to a back link: `< Back to Rankings`.
@@ -42,6 +44,7 @@ On mobile, breadcrumbs collapse to a back link: `< Back to Rankings`.
 |---------|------|--------|
 | Home | `/` | Public |
 | Rankings | `/rankings` | Public |
+| Countries | `/countries` | Public |
 | Competitions | `/competitions` | Public |
 | How It Works | `/how-it-works` | Public |
 
@@ -420,11 +423,107 @@ Data source: `GET /api/competitions/{slug}/runs/{roundKey}/results` → `IReadOn
 
 ---
 
+### Country Ranking — `/countries`
+
+**Purpose**: "Which nations dominate agility?" — a shareable leaderboard of countries, aggregating individual team ratings into a per-country score.
+
+**3.26 Country ranking table**
+
+| Column | Content | Notes |
+|--------|---------|-------|
+| **#** | Rank | Bold, prominent |
+| **Country** | Flag + country name | Clickable → `/countries/{code}` |
+| **Score** | Country Score (large, bold) | Average of top N teams' ratings |
+| **Teams** | Qualified team count | Total active non-provisional teams |
+| **Medal table** | Elite / Champion / Expert counts inline | E.g., "Elite: 3 · Champion: 8 · Expert: 15" |
+| **Best Team** | Handler & dog name + rating | Clickable → `/teams/{slug}` |
+
+**Row styling**:
+- Top 3 countries: subtle accent (gold / silver / bronze left-border)
+- Provisional countries (`IsProvisional`): slightly muted, "FEW TEAMS" badge
+
+Data source: `GET /api/countries` → `IReadOnlyList<CountryRankingDto>`
+
+**Acceptance criteria**:
+- [ ] Countries sorted by Country Score descending
+- [ ] Flag + country name displayed for each row
+- [ ] Score shown as prominent number
+- [ ] Medal table (Elite/Champion/Expert counts) shown inline
+- [ ] Best team name + rating clickable → team profile
+- [ ] Country row clickable → `/countries/{code}`
+- [ ] Provisional countries show "FEW TEAMS" badge
+- [ ] Top 3 countries have visual distinction
+- [ ] Page is server-rendered for SEO
+
+---
+
+### Country Detail — `/countries/{code}`
+
+**Purpose**: Profile page for a country showing its top teams and strength across size categories.
+
+**3.27 Country header**
+
+- Country flag (large) + country name
+- Country Score (large number) + rank (e.g., "#3 in the world")
+- "FEW TEAMS" badge if provisional
+
+Data source: `GET /api/countries/{code}` → `CountryDetailDto`
+
+**3.28 Stats row**
+
+Six stat cards:
+
+| Stat | Display | Source |
+|------|---------|--------|
+| Score | Country Score | `CountryDetailDto.CountryScore` |
+| Teams | Qualified team count | `CountryDetailDto.QualifiedTeamCount` |
+| Elite | Count | `CountryDetailDto.EliteCount` |
+| Champion | Count | `CountryDetailDto.ChampionCount` |
+| Expert | Count | `CountryDetailDto.ExpertCount` |
+| Categories | "S: N · M: N · I: N · L: N" | `SCount`, `MCount`, `ICount`, `LCount` |
+
+**3.29 Top teams table**
+
+The N teams that make up the Country Score. Sorted by Rating descending.
+
+| Column | Content | Notes |
+|--------|---------|-------|
+| **#** | Rank within country | |
+| **Team** | Handler name + dog call name | Clickable → `/teams/{slug}` |
+| **Category** | Size category badge (S/M/I/L) | |
+| **Rating** | Rating (bold) | |
+| **Tier** | Tier badge (Elite/Champion/Expert/Competitor) | |
+
+**3.30 All teams link**
+
+"View all {Country} teams in rankings →" links to `/rankings?country={code}` (existing rankings page with country filter pre-applied).
+
+**3.31 Open Graph meta tags**
+
+- `og:title`: "{Country Name} — ADW Rating"
+- `og:description`: "Score: {CountryScore} | #{Rank} | {QualifiedTeamCount} teams | Elite: {EliteCount}"
+
+**Acceptance criteria**:
+- [ ] Country flag and name displayed prominently
+- [ ] Country Score and world rank shown
+- [ ] Stats row shows all six metrics
+- [ ] Top teams table shows N teams with correct data
+- [ ] Team rows clickable → `/teams/{slug}`
+- [ ] Size category badges displayed
+- [ ] Tier badges styled (gold/silver/bronze)
+- [ ] "View all teams" link navigates to `/rankings?country={code}`
+- [ ] "FEW TEAMS" badge shown when provisional
+- [ ] 404 page for non-existent country code
+- [ ] Open Graph meta tags set correctly
+- [ ] Page is responsive
+
+---
+
 ### How It Works — `/how-it-works`
 
 **Purpose**: Transparent explanation of the rating system for competitors and fans. Builds trust by being upfront about methodology and limitations. Linked from the footer ("About" link) and from the home page "About the Rating" section.
 
-**3.25 Content sections (static page, no API calls):**
+**3.32 Content sections (static page, no API calls):**
 
 **Hero**
 - Title: "How the Rating Works"
@@ -453,6 +552,12 @@ Data source: `GET /api/competitions/{slug}/runs/{roundKey}/results` → `IReadOn
 - "When a competition mixes dogs from different categories in one run (e.g., WAO 500 includes both Intermediate and Large dogs), all competitors are rated against each other. The placement is real — they ran the same course."
 - Table showing the approximate mapping from non-FCI categories to FCI (simplified version of the one in `docs/03-domain-and-data.md`)
 - "AKC Preferred heights are excluded because dogs jump lower obstacles, making results incomparable."
+
+**Country rankings**
+- "Country Score is the average rating of a country's top 10 teams across all size categories."
+- "Since ratings are normalized (centered on 1500 in every size category), averaging across S, M, I, and L is valid."
+- "Countries need at least 3 qualified teams to appear in the country ranking. Countries with fewer than 10 teams are marked as provisional."
+- "The medal table shows how many Elite, Champion, and Expert teams a country has — a measure of depth alongside the score."
 
 **Limitations and disclaimers**
 - "ADW Rating is an independent project. It is not endorsed by or affiliated with FCI, AKC, USDAA, UKI, IFCS, or any other organization."
@@ -570,6 +675,8 @@ Used on: rankings table, team profile hero card.
 | Rankings | {Size} Rankings — ADW Rating |
 | Team profile | {Handler} & {Dog} — ADW Rating |
 | Handler profile | {Handler} — ADW Rating |
+| Country ranking | Country Rankings — ADW Rating |
+| Country detail | {Country Name} — ADW Rating |
 | Competition list | Competitions — ADW Rating |
 | Competition detail | {Competition Name} — ADW Rating |
 
@@ -579,11 +686,12 @@ Used on: rankings table, team profile hero card.
 |------|---------------------|
 | Team | "Rating: {Rating} | {TierLabel} | {SizeCategory} category | {RunCount} runs | {Top3Pct}% podium rate" |
 | Handler | "{N} teams | Best rating: {highest Rating} ({TierLabel})" |
+| Country | "Score: {CountryScore} | #{Rank} | {QualifiedTeamCount} teams | Elite: {EliteCount}" |
 | Competition | "{Date range} | {Location}, {Country} | {Tier label} | {ParticipantCount} teams" |
 
 ### Open Graph tags
 
-Set on team and handler profiles (detailed in sections 3.16 and 3.19). Include `og:title`, `og:description`, `og:url`. A branded fallback image is used for `og:image` (dynamic OG images are a future enhancement).
+Set on team, handler, and country profiles (detailed in sections 3.16, 3.19, and 3.31). Include `og:title`, `og:description`, `og:url`. A branded fallback image is used for `og:image` (dynamic OG images are a future enhancement).
 
 ### URL structure
 
@@ -591,6 +699,7 @@ All URLs are clean, human-readable, and bookmarkable:
 - `/rankings?size=L&country=CZE&page=2` — rankings with filters
 - `/teams/john-smith-rex` — team profile (slug-based)
 - `/handlers/john-smith` — handler profile
+- `/countries/CZE` — country profile
 - `/competitions/awc2024` — competition detail
 
 ---
