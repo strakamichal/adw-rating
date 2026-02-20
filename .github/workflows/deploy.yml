@@ -3,6 +3,9 @@ name: Build, Push & Deploy
 on:
   push:
     branches: [main]
+    paths:
+      - 'src/**'
+      - 'infra/Dockerfile.*'
 
 env:
   REGISTRY: ghcr.io
