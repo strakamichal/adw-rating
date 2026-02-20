@@ -1,0 +1,17 @@
+@* Search input with live dropdown — JS handles fetching and rendering *@
+
+<div class="search-wrapper" style="position: relative;">
+    <div class="search-input @CssClass">
+        <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+        <input type="search"
+               class="search-input__field"
+               placeholder="@Placeholder"
+               aria-label="Search" />
+    </div>
+    @* Dropdown is populated by search.js *@
+</div>
+
+@code {
+    [Parameter] public string CssClass { get; set; } = "";
+    [Parameter] public string Placeholder { get; set; } = "Search teams, handlers...";
+}

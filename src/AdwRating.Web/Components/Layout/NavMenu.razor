@@ -14,10 +14,7 @@
 
         @* Desktop search *@
         <div class="site-header__search">
-            <div class="search-input search-input--header">
-                <span class="search-input__icon" aria-hidden="true">&#128269;</span>
-                <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search" />
-            </div>
+            <SearchDropdown CssClass="search-input--header" />
         </div>
 
         @* Mobile: search icon toggle (CSS-only) *@
@@ -41,10 +38,7 @@
 
         @* Mobile search bar (full-width, expands below header) *@
         <div class="mobile-search-bar">
-            <div class="search-input">
-                <span class="search-input__icon" aria-hidden="true">&#128269;</span>
-                <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search" />
-            </div>
+            <SearchDropdown />
         </div>
 
     </div>
