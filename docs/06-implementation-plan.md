@@ -555,7 +555,7 @@
 
 **Goal**: REST API serving ranking, team, competition, and search data.
 
-- [ ] **6.1** API project setup
+- [x] **6.1** API project setup *(done — Program.cs with DI, JSON, CORS, ProblemDetails, health check)*
   - Set up `AdwRating.Api` with `Program.cs`. Configure: DI (`AddDataMssql` + `AddServices`), JSON serialization (camelCase, enum as string, ignore null), CORS (allow Web origin), global exception handler (ProblemDetails), health check (`GET /health`).
   - Files: `Api/Program.cs`, `Api/appsettings.json`, `Api/appsettings.Development.json`
   - Dependencies: Phase 1 (DI), Phase 2 (repos)
@@ -563,7 +563,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `04-architecture-and-interfaces.md` section 5
 
-- [ ] **6.2a** RankingService
+- [x] **6.2a** RankingService *(done — delegates to repo, computes summary from repos)*
   - Implement `IRankingService` in Service: delegates to `ITeamRepository.GetRankedTeamsAsync` with mapping to `TeamRankingDto`, computes rank numbers and rank change from PrevRating. Implement `GetSummaryAsync`.
   - Files: `Service/RankingService.cs`
   - Dependencies: 2.3
@@ -577,7 +577,7 @@
   - Tests: Integration test — query with size filter, pagination, summary endpoint, verify camelCase JSON
   - **Completion gates**: build | tests
 
-- [ ] **6.3a** TeamProfileService
+- [x] **6.3a** TeamProfileService *(done — loads team, computes stats, paginates results)*
   - Implement `ITeamProfileService` in Service: `GetBySlugAsync` (load team, compute FinishedPct/Top3Pct/AvgRank, map to `TeamDetailDto`), `GetResultsAsync` (paginated, join RunResult+Run+Competition, map to `TeamResultDto`).
   - Files: `Service/TeamProfileService.cs`
   - Dependencies: 2.3, 2.4a, 2.4c, 2.5a
@@ -598,7 +598,7 @@
   - Tests: Integration test — list with filters, pagination, empty result
   - **Completion gates**: build | tests
 
-- [ ] **6.5a** SearchService
+- [x] **6.5a** SearchService *(done — searches handlers, dogs→teams, competitions; combines results)*
   - Implement `ISearchService`: search handlers (by normalized name), dogs (by normalized call name, mapped to teams), competitions (by name). Combine as `IReadOnlyList<SearchResult>`.
   - Files: `Service/SearchService.cs`
   - Dependencies: 2.1a, 2.2a, 2.3, 2.4a

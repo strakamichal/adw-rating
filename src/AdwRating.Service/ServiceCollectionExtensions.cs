@@ -12,6 +12,9 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IImportService, ImportService>();
         services.AddScoped<IMergeService, MergeService>();
         services.AddScoped<IRatingService, RatingService>();
+        services.AddScoped<IRankingService, RankingService>();
+        services.AddScoped<ITeamProfileService, TeamProfileService>();
+        services.AddScoped<ISearchService, SearchService>();
         return services;
     }
 }

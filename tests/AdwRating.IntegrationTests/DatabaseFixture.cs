@@ -1,5 +1,6 @@
 using AdwRating.Data.Mssql;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Testcontainers.MsSql;
 
 namespace AdwRating.IntegrationTests;
@@ -32,6 +33,7 @@ public class DatabaseFixture
     {
         var options = new DbContextOptionsBuilder<AppDbContext>()
             .UseSqlServer(ConnectionString)
+            .ConfigureWarnings(w => w.Ignore(RelationalEventId.PendingModelChangesWarning))
             .Options;
         return new AppDbContext(options);
     }
