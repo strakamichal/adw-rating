@@ -138,9 +138,9 @@ public class ImportService : IImportService
         var dogCache = new Dictionary<string, Dog>(StringComparer.OrdinalIgnoreCase);
         var teamCache = new Dictionary<string, Team>();
 
-        var newHandlerCount = 0;
-        var newDogCount = 0;
-        var newTeamCount = 0;
+        var allHandlerIds = new HashSet<int>();
+        var allDogIds = new HashSet<int>();
+        var allTeamIds = new HashSet<int>();
 
         var runResults = new List<RunResult>();
 
@@ -159,31 +159,28 @@ public class ImportService : IImportService
                 var handlerKey = $"{row.HandlerName}|{row.HandlerCountry}";
                 if (!handlerCache.TryGetValue(handlerKey, out var handler))
                 {
-                    var (resolvedHandler, handlerIsNew) = await _identityService.ResolveHandlerAsync(row.HandlerName, row.HandlerCountry);
-                    handler = resolvedHandler;
+                    (handler, _) = await _identityService.ResolveHandlerAsync(row.HandlerName, row.HandlerCountry);
                     handlerCache[handlerKey] = handler;
-                    if (handlerIsNew) newHandlerCount++;
                 }
+                allHandlerIds.Add(handler.Id);
 
                 // Resolve dog (with cache, scoped to handler)
                 var dogKey = $"{handler.Id}|{row.DogCallName}|{rowSize.Value}";
                 if (!dogCache.TryGetValue(dogKey, out var dog))
                 {
-                    var (resolvedDog, dogIsNew) = await _identityService.ResolveDogAsync(row.DogCallName, row.DogBreed, rowSize.Value, handler.Id);
-                    dog = resolvedDog;
+                    (dog, _) = await _identityService.ResolveDogAsync(row.DogCallName, row.DogBreed, rowSize.Value, handler.Id);
                     dogCache[dogKey] = dog;
-                    if (dogIsNew) newDogCount++;
                 }
+                allDogIds.Add(dog.Id);
 
                 // Resolve team (with cache)
                 var teamKey = $"{handler.Id}-{dog.Id}";
                 if (!teamCache.TryGetValue(teamKey, out var team))
                 {
-                    var (resolvedTeam, teamIsNew) = await _identityService.ResolveTeamAsync(handler.Id, dog.Id);
-                    team = resolvedTeam;
+                    (team, _) = await _identityService.ResolveTeamAsync(handler.Id, dog.Id);
                     teamCache[teamKey] = team;
-                    if (teamIsNew) newTeamCount++;
                 }
+                allTeamIds.Add(team.Id);
 
                 var isEliminated = "true".Equals(row.Eliminated, StringComparison.OrdinalIgnoreCase);
 
@@ -204,10 +201,23 @@ public class ImportService : IImportService
             }
         }
 
-        // 7. Batch create run results
-        await _runResultRepo.CreateBatchAsync(runResults);
+        // 7. Deduplicate by (RunId, TeamId) to satisfy DB unique constraint.
+        // This can happen when different raw rows resolve to the same canonical handler+dog in one run.
+        var dedupedRunResults = runResults
+            .GroupBy(rr => new { rr.RunId, rr.TeamId })
+            .Select(g => g.First())
+            .ToList();
 
-        // 8. Write ImportLog
+        var duplicateCount = runResults.Count - dedupedRunResults.Count;
+        if (duplicateCount > 0)
+        {
+            warnings.Add($"Deduplicated {duplicateCount} duplicate run result rows after identity resolution.");
+        }
+
+        // 8. Batch create run results
+        await _runResultRepo.CreateBatchAsync(dedupedRunResults);
+
+        // 9. Write ImportLog
         var status = warnings.Count > 0 ? ImportStatus.PartialWarning : ImportStatus.Success;
         await _importLogRepo.CreateAsync(new ImportLog
         {
@@ -216,17 +226,17 @@ public class ImportService : IImportService
             ImportedAt = DateTime.UtcNow,
             Status = status,
             RowCount = rows.Count,
-            NewHandlersCount = newHandlerCount,
-            NewDogsCount = newDogCount,
-            NewTeamsCount = newTeamCount,
+            NewHandlersCount = allHandlerIds.Count,
+            NewDogsCount = allDogIds.Count,
+            NewTeamsCount = allTeamIds.Count,
             Errors = null,
             Warnings = warnings.Count > 0 ? string.Join("\n", warnings) : null
         });
 
         _logger.LogInformation(
-            "Import completed: {RowCount} rows, {NewHandlers} new handlers, {NewDogs} new dogs, {NewTeams} new teams",
-            rows.Count, newHandlerCount, newDogCount, newTeamCount);
+            "Import completed: {RowCount} rows, {Handlers} handlers, {Dogs} dogs, {Teams} teams",
+            rows.Count, allHandlerIds.Count, allDogIds.Count, allTeamIds.Count);
 
-        return new ImportResult(true, rows.Count, newHandlerCount, newDogCount, newTeamCount, [], warnings);
+        return new ImportResult(true, rows.Count, allHandlerIds.Count, allDogIds.Count, allTeamIds.Count, [], warnings);
     }
 }
