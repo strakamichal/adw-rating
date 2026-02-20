@@ -63,6 +63,23 @@ public class CompetitionRepository : ICompetitionRepository
             .ToDictionaryAsync(g => g.Key, g => g.Count());
     }
 
+    public async Task<Dictionary<int, (int Active, int Excluded)>> GetRunCountsAsync(IEnumerable<int> competitionIds)
+    {
+        var ids = competitionIds.ToList();
+        var counts = await _context.Runs
+            .Where(r => ids.Contains(r.CompetitionId))
+            .GroupBy(r => r.CompetitionId)
+            .Select(g => new
+            {
+                CompetitionId = g.Key,
+                Active = g.Count(r => !r.IsExcluded),
+                Excluded = g.Count(r => r.IsExcluded)
+            })
+            .ToDictionaryAsync(x => x.CompetitionId, x => (x.Active, x.Excluded));
+
+        return counts;
+    }
+
     public async Task<Competition> CreateAsync(Competition competition)
     {
         _context.Competitions.Add(competition);

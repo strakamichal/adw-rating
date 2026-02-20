@@ -9,6 +9,7 @@ public interface ICompetitionRepository
     Task<Competition?> GetBySlugAsync(string slug);
     Task<PagedResult<Competition>> GetListAsync(CompetitionFilter filter);
     Task<Dictionary<int, int>> GetTeamCountsAsync(IEnumerable<int> competitionIds);
+    Task<Dictionary<int, (int Active, int Excluded)>> GetRunCountsAsync(IEnumerable<int> competitionIds);
     Task<Competition> CreateAsync(Competition competition);
     Task DeleteCascadeAsync(int id);
 }

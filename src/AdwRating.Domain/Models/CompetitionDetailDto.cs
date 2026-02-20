@@ -11,5 +11,6 @@ public record CompetitionDetailDto(
     int Tier,
     string? Organization,
     int RunCount,
+    int ExcludedRunCount,
     int ParticipantCount
 );
