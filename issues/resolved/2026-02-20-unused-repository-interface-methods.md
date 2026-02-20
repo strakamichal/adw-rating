@@ -2,7 +2,7 @@
 
 - **Type**: improvement
 - **Priority**: low
-- **Status**: open
+- **Status**: resolved
 
 ## Description
 
@@ -24,8 +24,20 @@ These may be intended for future API endpoints or services (`IRankingService`, `
 
 ## Acceptance criteria
 
-- [ ] Either remove unused methods, or add a comment indicating which phase/feature they are reserved for
-- [ ] Build passes
+- [x] Either remove unused methods, or add a comment indicating which phase/feature they are reserved for
+- [x] Build passes
+
+## Resolution
+
+Removed the following unused methods from interfaces and their implementations:
+- `IDogRepository.FindByNormalizedNameAndSizeAsync` (singular) - only the plural `FindAll` variant is used
+- `IRunRepository.GetByCompetitionAndRoundKeyAsync` - no callers
+- `IRunResultRepository.GetByRunIdAsync` (singular) - only the plural `GetByRunIdsAsync` is used
+- `IRunResultRepository.GetByTeamIdAsync` - no callers
+
+Also removed `Domain/Helpers/LevenshteinDistance.cs` which had no callers anywhere in the codebase.
+
+These can be re-added when API endpoints or future services need them.
 
 ## Notes
 
