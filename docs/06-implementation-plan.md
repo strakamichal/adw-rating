@@ -510,7 +510,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` sections 3.1–3.3
 
-- [ ] **5.2** Rating recalculation — core loop
+- [x] **5.2** Rating recalculation — core loop
   - Implement `IRatingService.RecalculateAllAsync()` core loop per `08-rating-rules.md` sections 2–3. Load config, reset teams, compute cutoff, load runs in window, batch-load results, process each qualifying run (build rank list, apply weight, update mu/sigma, apply sigma decay, track counts). Save intermediate mu/sigma per team.
   - Files: `Service/Rating/RatingService.cs`
   - Dependencies: 5.1, 2.3, 2.4b, 2.4c, 2.5a, 2.5b

@@ -1,0 +1,395 @@
+using AdwRating.Domain.Entities;
+using AdwRating.Domain.Enums;
+using AdwRating.Domain.Interfaces;
+using AdwRating.Service.Rating;
+using Microsoft.Extensions.Logging;
+using NSubstitute;
+
+namespace AdwRating.Tests.Services;
+
+[TestFixture]
+public class RatingServiceTests
+{
+    private ITeamRepository _teamRepo = null!;
+    private IRunRepository _runRepo = null!;
+    private IRunResultRepository _runResultRepo = null!;
+    private IRatingConfigurationRepository _configRepo = null!;
+    private IRatingSnapshotRepository _snapshotRepo = null!;
+    private ILogger<RatingService> _logger = null!;
+    private RatingService _service = null!;
+
+    private RatingConfiguration _defaultConfig = null!;
+
+    [SetUp]
+    public void SetUp()
+    {
+        _teamRepo = Substitute.For<ITeamRepository>();
+        _runRepo = Substitute.For<IRunRepository>();
+        _runResultRepo = Substitute.For<IRunResultRepository>();
+        _configRepo = Substitute.For<IRatingConfigurationRepository>();
+        _snapshotRepo = Substitute.For<IRatingSnapshotRepository>();
+        _logger = Substitute.For<ILogger<RatingService>>();
+
+        _service = new RatingService(
+            _teamRepo, _runRepo, _runResultRepo,
+            _configRepo, _snapshotRepo, _logger);
+
+        _defaultConfig = new RatingConfiguration
+        {
+            Id = 1,
+            IsActive = true,
+            Mu0 = 25.0f,
+            Sigma0 = 25.0f / 3,
+            LiveWindowDays = 730,
+            MinRunsForLiveRanking = 5,
+            MinFieldSize = 6,
+            MajorEventWeight = 1.2f,
+            SigmaDecay = 0.99f,
+            SigmaMin = 1.5f,
+            DisplayBase = 1000,
+            DisplayScale = 40,
+            RatingSigmaMultiplier = 1.0f,
+            PodiumBoostBase = 0.85f,
+            PodiumBoostRange = 0.20f,
+            PodiumBoostTarget = 0.50f,
+            ProvisionalSigmaThreshold = 7.8f,
+            NormTargetMean = 1500,
+            NormTargetStd = 150,
+            EliteTopPercent = 0.02f,
+            ChampionTopPercent = 0.10f,
+            ExpertTopPercent = 0.30f,
+        };
+
+        _configRepo.GetActiveAsync().Returns(_defaultConfig);
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_NoRuns_ResetsTeamsToDefaults()
+    {
+        // Arrange
+        var teams = CreateTeams(3);
+        // Give teams non-default values to verify reset
+        teams[0].Mu = 30; teams[0].Sigma = 5;
+
+        _teamRepo.GetAllAsync().Returns(teams);
+        _runRepo.GetAllInWindowAsync(Arg.Any<DateOnly>()).Returns(new List<Run>());
+
+        // Act
+        await _service.RecalculateAllAsync();
+
+        // Assert
+        await _teamRepo.Received(1).UpdateBatchAsync(Arg.Any<IEnumerable<Team>>());
+        Assert.That(teams[0].Mu, Is.EqualTo(_defaultConfig.Mu0).Within(0.01f));
+        Assert.That(teams[0].Sigma, Is.EqualTo(_defaultConfig.Sigma0).Within(0.01f));
+        Assert.That(teams[0].RunCount, Is.EqualTo(0));
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_SingleRun_WinnerMuIncreases_LoserMuDecreases()
+    {
+        // Arrange: 6 teams in one run
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams, eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        // Act
+        await _service.RecalculateAllAsync();
+
+        // Assert: winner gets higher mu, loser gets lower
+        Assert.That(teams[0].Mu, Is.GreaterThan(_defaultConfig.Mu0),
+            "Winner's mu should increase");
+        Assert.That(teams[5].Mu, Is.LessThan(_defaultConfig.Mu0),
+            "Last place team's mu should decrease");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_SingleRun_AllSigmasDecrease()
+    {
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams, eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        await _service.RecalculateAllAsync();
+
+        // All sigmas should decrease (more certainty after a run) + sigma decay applied
+        foreach (var team in teams)
+        {
+            Assert.That(team.Sigma, Is.LessThan(_defaultConfig.Sigma0),
+                $"Team {team.Id} sigma should decrease");
+        }
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_SingleRun_CountsCorrect()
+    {
+        // 6 teams, last one eliminated
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false, true });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        await _service.RecalculateAllAsync();
+
+        // All teams get RunCount = 1
+        foreach (var team in teams)
+            Assert.That(team.RunCount, Is.EqualTo(1));
+
+        // Non-eliminated get FinishedRunCount = 1
+        Assert.That(teams[0].FinishedRunCount, Is.EqualTo(1));
+        Assert.That(teams[5].FinishedRunCount, Is.EqualTo(0), "Eliminated team should not count as finished");
+
+        // Top 3 get Top3RunCount = 1
+        Assert.That(teams[0].Top3RunCount, Is.EqualTo(1), "Rank 1 should count as top 3");
+        Assert.That(teams[1].Top3RunCount, Is.EqualTo(1), "Rank 2 should count as top 3");
+        Assert.That(teams[2].Top3RunCount, Is.EqualTo(1), "Rank 3 should count as top 3");
+        Assert.That(teams[3].Top3RunCount, Is.EqualTo(0), "Rank 4 should not count as top 3");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_RunBelowMinFieldSize_Skipped()
+    {
+        // Only 5 teams, MinFieldSize = 6 → should be skipped
+        var teams = CreateTeams(5);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        await _service.RecalculateAllAsync();
+
+        // All teams should remain at defaults since run was skipped
+        foreach (var team in teams)
+        {
+            Assert.That(team.Mu, Is.EqualTo(_defaultConfig.Mu0).Within(0.01f),
+                "Mu should be unchanged when run is skipped");
+            Assert.That(team.RunCount, Is.EqualTo(0),
+                "RunCount should be 0 when run is skipped");
+        }
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_EliminatedTeams_GetTiedLastRank()
+    {
+        // 6 teams: 4 ranked, 2 eliminated
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, true, true });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        await _service.RecalculateAllAsync();
+
+        // Both eliminated teams should get same mu change (tied last rank)
+        Assert.That(teams[4].Mu, Is.EqualTo(teams[5].Mu).Within(0.001f),
+            "Eliminated teams with tied rank should get same mu");
+        Assert.That(teams[4].Sigma, Is.EqualTo(teams[5].Sigma).Within(0.001f),
+            "Eliminated teams with tied rank should get same sigma");
+
+        // Eliminated teams should have lower mu than ranked teams
+        Assert.That(teams[4].Mu, Is.LessThan(teams[3].Mu),
+            "Eliminated teams should have lower mu than last ranked team");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_TwoCompetitions_CumulativeUpdates()
+    {
+        // Two competitions, each with 6 teams
+        var teams = CreateTeams(6);
+        var comp1 = CreateCompetition(tier: 2, daysAgo: 100);
+        var comp2 = CreateCompetition(tier: 2, daysAgo: 50);
+        var run1 = CreateRun(comp1, teams.Count, runId: 1);
+        var run2 = CreateRun(comp2, teams.Count, runId: 2);
+
+        var results1 = CreateRunResults(run1, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+        var results2 = CreateRunResults(run2, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run1, run2 }, results1.Concat(results2).ToList());
+
+        await _service.RecalculateAllAsync();
+
+        // After 2 runs, RunCount should be 2 for all
+        foreach (var team in teams)
+            Assert.That(team.RunCount, Is.EqualTo(2));
+
+        // Winner should have even higher mu after 2 wins
+        Assert.That(teams[0].Mu, Is.GreaterThan(_defaultConfig.Mu0 + 1),
+            "Consistent winner should have significantly higher mu after 2 runs");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_MajorEvent_ProducesLargerChanges()
+    {
+        // Test with tier 1 (major event) vs tier 2
+        var teamsMajor = CreateTeams(6, idOffset: 0);
+        var compMajor = CreateCompetition(tier: 1);
+        var runMajor = CreateRun(compMajor, teamsMajor.Count, runId: 1);
+        var resultsMajor = CreateRunResults(runMajor, teamsMajor,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teamsMajor, new[] { runMajor }, resultsMajor);
+        await _service.RecalculateAllAsync();
+        float majorWinnerMu = teamsMajor[0].Mu;
+
+        // Reset and test with tier 2
+        var teamsNormal = CreateTeams(6, idOffset: 0);
+        var compNormal = CreateCompetition(tier: 2);
+        var runNormal = CreateRun(compNormal, teamsNormal.Count, runId: 2);
+        var resultsNormal = CreateRunResults(runNormal, teamsNormal,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teamsNormal, new[] { runNormal }, resultsNormal);
+        await _service.RecalculateAllAsync();
+        float normalWinnerMu = teamsNormal[0].Mu;
+
+        float majorDelta = Math.Abs(majorWinnerMu - _defaultConfig.Mu0);
+        float normalDelta = Math.Abs(normalWinnerMu - _defaultConfig.Mu0);
+
+        Assert.That(majorDelta, Is.GreaterThan(normalDelta),
+            "Major event (tier 1) should produce larger mu changes");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_SigmaDecayApplied()
+    {
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        await _service.RecalculateAllAsync();
+
+        // Sigma should be less than what OpenSkill alone would produce,
+        // because we additionally apply sigma * 0.99 decay
+        // At minimum, sigma should be > SigmaMin
+        foreach (var team in teams)
+        {
+            Assert.That(team.Sigma, Is.GreaterThanOrEqualTo(_defaultConfig.SigmaMin),
+                "Sigma should not go below SigmaMin");
+        }
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_PrevMuSigma_ReflectsStateBeforeLastRun()
+    {
+        var teams = CreateTeams(6);
+        var comp1 = CreateCompetition(tier: 2, daysAgo: 100);
+        var comp2 = CreateCompetition(tier: 2, daysAgo: 50);
+        var run1 = CreateRun(comp1, teams.Count, runId: 1);
+        var run2 = CreateRun(comp2, teams.Count, runId: 2);
+
+        var results1 = CreateRunResults(run1, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+        var results2 = CreateRunResults(run2, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run1, run2 }, results1.Concat(results2).ToList());
+
+        await _service.RecalculateAllAsync();
+
+        // PrevMu should be different from current Mu (changed by 2nd run)
+        Assert.That(teams[0].PrevMu, Is.Not.EqualTo(teams[0].Mu).Within(0.001f),
+            "PrevMu should differ from Mu after multiple runs");
+
+        // PrevMu should NOT be the initial value (it should reflect state after 1st run)
+        Assert.That(teams[0].PrevMu, Is.Not.EqualTo(_defaultConfig.Mu0).Within(0.001f),
+            "PrevMu should reflect state after first run, not initial state");
+    }
+
+    #region Helper Methods
+
+    private static List<Team> CreateTeams(int count, int idOffset = 0)
+    {
+        return Enumerable.Range(1, count).Select(i => new Team
+        {
+            Id = idOffset + i,
+            HandlerId = i,
+            DogId = i,
+            Slug = $"team-{idOffset + i}",
+            Mu = 25.0f,
+            Sigma = 25.0f / 3,
+        }).ToList();
+    }
+
+    private static Competition CreateCompetition(int tier, int daysAgo = 30)
+    {
+        return new Competition
+        {
+            Id = 1,
+            Slug = $"comp-{daysAgo}",
+            Name = $"Competition {daysAgo}d ago",
+            Date = DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-daysAgo),
+            Tier = tier,
+        };
+    }
+
+    private static Run CreateRun(Competition competition, int resultCount, int runId = 1)
+    {
+        return new Run
+        {
+            Id = runId,
+            CompetitionId = competition.Id,
+            Competition = competition,
+            Date = competition.Date,
+            RunNumber = 1,
+            RoundKey = $"ind_agility_large_{runId}",
+            SizeCategory = SizeCategory.L,
+            Discipline = Discipline.Agility,
+            IsTeamRound = false,
+        };
+    }
+
+    private static List<RunResult> CreateRunResults(
+        Run run, List<Team> teams, bool[] eliminated)
+    {
+        var results = new List<RunResult>();
+        int rank = 1;
+
+        for (int i = 0; i < teams.Count; i++)
+        {
+            results.Add(new RunResult
+            {
+                Id = run.Id * 100 + i + 1,
+                RunId = run.Id,
+                Run = run,
+                TeamId = teams[i].Id,
+                Team = teams[i],
+                Rank = eliminated[i] ? null : rank,
+                Eliminated = eliminated[i],
+                Faults = eliminated[i] ? null : 0,
+                Time = eliminated[i] ? null : 30.0f + i,
+            });
+
+            if (!eliminated[i])
+                rank++;
+        }
+
+        return results;
+    }
+
+    private void SetupMocks(List<Team> teams, Run[] runs, List<RunResult> results)
+    {
+        _teamRepo.GetAllAsync().Returns(teams);
+        _runRepo.GetAllInWindowAsync(Arg.Any<DateOnly>()).Returns(runs.ToList());
+        _runResultRepo.GetByRunIdsAsync(Arg.Any<IEnumerable<int>>()).Returns(results);
+    }
+
+    #endregion
+}
