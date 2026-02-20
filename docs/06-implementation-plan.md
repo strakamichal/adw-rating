@@ -706,28 +706,28 @@
   - Tests: `dotnet build` passes
   - **Completion gates**: build
 
-- [ ] **7.3b** ApiClient — stub setup
+- [x] **7.3b** ApiClient — stub setup *(done — full implementation with all methods, not just stubs)*
   - Set up `AdwRating.ApiClient` with `AdwRatingApiClient` (typed HttpClient wrapper with stub methods returning empty/default data). Register in Web DI.
   - Files: `ApiClient/AdwRatingApiClient.cs`
   - Dependencies: 1.6a, 1.6b, 1.6c
   - Tests: `dotnet build` passes
   - **Completion gates**: build
 
-- [ ] **7.4a** ApiClient — rankings and summary methods
+- [x] **7.4a** ApiClient — rankings and summary methods
   - Implement `GetRankingsAsync(RankingFilter)` and `GetSummaryAsync()` in `AdwRatingApiClient`.
   - Files: `ApiClient/AdwRatingApiClient.cs`
   - Dependencies: 7.3b, Phase 6
   - Tests: Unit tests — verify URL construction with query params, deserialization, 404 handling
   - **Completion gates**: build | tests
 
-- [ ] **7.4b** ApiClient — team methods
+- [x] **7.4b** ApiClient — team methods
   - Implement `GetTeamAsync(slug)`, `GetTeamHistoryAsync(slug)`, `GetTeamResultsAsync(slug, page, pageSize)`.
   - Files: `ApiClient/AdwRatingApiClient.cs`
   - Dependencies: 7.3b, Phase 6
   - Tests: Unit tests — URL construction, deserialization, 404 → null
   - **Completion gates**: build | tests
 
-- [ ] **7.4c** ApiClient — competitions and search methods
+- [x] **7.4c** ApiClient — competitions and search methods
   - Implement `GetCompetitionsAsync(CompetitionFilter)` and `SearchAsync(query, limit)`.
   - Files: `ApiClient/AdwRatingApiClient.cs`
   - Dependencies: 7.3b, Phase 6
