@@ -2,7 +2,6 @@ using System.CommandLine;
 using AdwRating.Cli;
 using AdwRating.Data.Mssql;
 using AdwRating.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
