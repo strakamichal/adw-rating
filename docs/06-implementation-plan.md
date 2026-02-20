@@ -570,7 +570,7 @@
   - Tests: Unit test — mapping, rank computation, rank change
   - **Completion gates**: build | tests
 
-- [ ] **6.2b** Rankings controller
+- [x] **6.2b** Rankings controller *(done — GET /api/rankings with size/country/search/pagination, GET /api/rankings/summary)*
   - Create `RankingsController` with `GET /api/rankings` (paginated, filtered) and `GET /api/rankings/summary`.
   - Files: `Api/Controllers/RankingsController.cs`
   - Dependencies: 6.1, 6.2a
@@ -584,14 +584,14 @@
   - Tests: Unit test — stat computation, mapping
   - **Completion gates**: build | tests
 
-- [ ] **6.3b** Teams controller
+- [x] **6.3b** Teams controller *(done — GET /api/teams/{slug}, /history, /results with pagination and 404 handling)*
   - Create `TeamsController` with `GET /api/teams/{slug}`, `GET /api/teams/{slug}/history`, `GET /api/teams/{slug}/results`.
   - Files: `Api/Controllers/TeamsController.cs`
   - Dependencies: 6.1, 6.3a
   - Tests: Integration test — team detail, history snapshots, paginated results, 404 for unknown slug
   - **Completion gates**: build | tests
 
-- [ ] **6.4** Competitions controller
+- [x] **6.4** Competitions controller *(done — GET /api/competitions with year/tier/country/search filters, RunCount/ParticipantCount=0 for MVP)*
   - Create `CompetitionsController` with `GET /api/competitions` (paginated list, filters: year/tier/country/search). Map to `CompetitionDetailDto` with computed RunCount and ParticipantCount.
   - Files: `Api/Controllers/CompetitionsController.cs`
   - Dependencies: 6.1, 2.4a
@@ -605,7 +605,7 @@
   - Tests: Unit test — result merging, type labeling
   - **Completion gates**: build | tests
 
-- [ ] **6.5b** Search controller
+- [x] **6.5b** Search controller *(done — GET /api/search with min 2 char validation, limit param)*
   - Create `SearchController` with `GET /api/search?q=&limit=`. Min 2 chars validation.
   - Files: `Api/Controllers/SearchController.cs`
   - Dependencies: 6.1, 6.5a
