@@ -58,7 +58,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("John Smith", "GBR");
 
-        Assert.That(result, Is.SameAs(handler));
+        Assert.That(result.Handler, Is.SameAs(handler));
+        Assert.That(result.IsNew, Is.False);
         await _handlerRepo.DidNotReceive().CreateAsync(Arg.Any<Handler>());
     }
 
@@ -83,7 +84,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("Jon Smith", "GBR");
 
-        Assert.That(result, Is.SameAs(canonical));
+        Assert.That(result.Handler, Is.SameAs(canonical));
+        Assert.That(result.IsNew, Is.False);
         await _handlerRepo.DidNotReceive().FindByNormalizedNameAndCountryAsync(
             Arg.Any<string>(), Arg.Any<string>());
     }
@@ -112,7 +114,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("New Person", "CZE");
 
-        Assert.That(result, Is.SameAs(created));
+        Assert.That(result.Handler, Is.SameAs(created));
+        Assert.That(result.IsNew, Is.True);
         await _handlerRepo.Received(1).CreateAsync(
             Arg.Is<Handler>(h =>
                 h.Name == "New Person" &&
@@ -131,7 +134,7 @@ public class IdentityResolutionServiceTests
     {
         var handler = new Handler
         {
-            Id = 1, Name = "Ádám-Bökényi Andrea", NormalizedName = "adam bokenyi andrea",
+            Id = 1, Name = "Adam-Bokenyi Andrea", NormalizedName = "adam bokenyi andrea",
             Country = "HUN", Slug = "adam-bokenyi-andrea"
         };
 
@@ -142,9 +145,10 @@ public class IdentityResolutionServiceTests
         _handlerRepo.FindByNormalizedNameAsync("adam bokenyi andrea")
             .Returns(new List<Handler> { handler });
 
-        var result = await _sut.ResolveHandlerAsync("Ádám-Bökényi Andrea", "AUS");
+        var result = await _sut.ResolveHandlerAsync("\u00c1d\u00e1m-B\u00f6k\u00e9nyi Andrea", "AUS");
 
-        Assert.That(result, Is.SameAs(handler));
+        Assert.That(result.Handler, Is.SameAs(handler));
+        Assert.That(result.IsNew, Is.False);
         await _handlerRepo.DidNotReceive().CreateAsync(Arg.Any<Handler>());
     }
 
@@ -166,7 +170,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("Martin", "CZE");
 
-        Assert.That(result, Is.SameAs(created));
+        Assert.That(result.Handler, Is.SameAs(created));
+        Assert.That(result.IsNew, Is.True);
         // Should NOT have called FindByNormalizedNameAsync (single token)
         await _handlerRepo.DidNotReceive().FindByNormalizedNameAsync(Arg.Any<string>());
     }
@@ -201,7 +206,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("John Smith", "AUS");
 
-        Assert.That(result, Is.SameAs(created));
+        Assert.That(result.Handler, Is.SameAs(created));
+        Assert.That(result.IsNew, Is.True);
         await _handlerRepo.Received(1).CreateAsync(Arg.Any<Handler>());
     }
 
@@ -225,7 +231,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("Adrian Bajo", "ESP");
 
-        Assert.That(result, Is.SameAs(existing));
+        Assert.That(result.Handler, Is.SameAs(existing));
+        Assert.That(result.IsNew, Is.False);
         await _handlerRepo.DidNotReceive().CreateAsync(Arg.Any<Handler>());
         // Should create a FuzzyMatch alias
         await _handlerAliasRepo.Received(1).CreateAsync(
@@ -255,7 +262,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("Adrian Bajo Alonso", "ESP");
 
-        Assert.That(result, Is.SameAs(existing));
+        Assert.That(result.Handler, Is.SameAs(existing));
+        Assert.That(result.IsNew, Is.False);
         await _handlerRepo.DidNotReceive().CreateAsync(Arg.Any<Handler>());
     }
 
@@ -282,7 +290,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("Li Wei", "CHN");
 
-        Assert.That(result, Is.SameAs(created));
+        Assert.That(result.Handler, Is.SameAs(created));
+        Assert.That(result.IsNew, Is.True);
         // Should NOT have called containment search (name too short)
         await _handlerRepo.DidNotReceive().FindByNormalizedNameContainingAsync(Arg.Any<string>(), Arg.Any<string>());
     }
@@ -305,7 +314,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveHandlerAsync("Ola Gronek", "POL");
 
-        Assert.That(result.Country, Is.EqualTo("POL"));
+        Assert.That(result.Handler.Country, Is.EqualTo("POL"));
+        Assert.That(result.IsNew, Is.False);
         await _handlerRepo.Received(1).UpdateAsync(
             Arg.Is<Handler>(h => h.Country == "POL"));
     }
@@ -361,7 +371,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, 10);
 
-        Assert.That(result, Is.SameAs(dog));
+        Assert.That(result.Dog, Is.SameAs(dog));
+        Assert.That(result.IsNew, Is.False);
         await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
     }
 
@@ -384,7 +395,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, 10);
 
-        Assert.That(result.Breed, Is.EqualTo("Border Collie"));
+        Assert.That(result.Dog.Breed, Is.EqualTo("Border Collie"));
+        Assert.That(result.IsNew, Is.False);
         await _dogRepo.Received(1).UpdateAsync(
             Arg.Is<Dog>(d => d.Breed == "Border Collie"));
     }
@@ -410,7 +422,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveDogAsync("Buddy", "Sheltie", SizeCategory.M, 10);
 
-        Assert.That(result, Is.SameAs(created));
+        Assert.That(result.Dog, Is.SameAs(created));
+        Assert.That(result.IsNew, Is.True);
         await _dogRepo.Received(1).CreateAsync(
             Arg.Is<Dog>(d =>
                 d.CallName == "Buddy" &&
@@ -445,7 +458,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveDogAsync("Lucky", "Sheltie", SizeCategory.L, 20);
 
-        Assert.That(result, Is.SameAs(thisHandlersDog));
+        Assert.That(result.Dog, Is.SameAs(thisHandlersDog));
+        Assert.That(result.IsNew, Is.False);
         await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
     }
 
@@ -469,7 +483,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveDogAsync("Berta", null, SizeCategory.M, 10);
 
-        Assert.That(result, Is.SameAs(existingDog));
+        Assert.That(result.Dog, Is.SameAs(existingDog));
+        Assert.That(result.IsNew, Is.False);
         await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
     }
 
@@ -497,7 +512,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveDogAsync("Cinnamon Flycatcher of Noble County", null, SizeCategory.S, 10);
 
-        Assert.That(result, Is.SameAs(existingDog));
+        Assert.That(result.Dog, Is.SameAs(existingDog));
+        Assert.That(result.IsNew, Is.False);
         await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
     }
 
@@ -521,7 +537,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveDogAsync("Gia", null, SizeCategory.M, 10);
 
-        Assert.That(result, Is.SameAs(existingDog));
+        Assert.That(result.Dog, Is.SameAs(existingDog));
+        Assert.That(result.IsNew, Is.False);
         await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
     }
 
@@ -553,7 +570,8 @@ public class IdentityResolutionServiceTests
         var result = await _sut.ResolveDogAsync("Lis", null, SizeCategory.L, 10);
 
         // Should NOT match "Borealis" — should create a new dog
-        Assert.That(result, Is.SameAs(created));
+        Assert.That(result.Dog, Is.SameAs(created));
+        Assert.That(result.IsNew, Is.True);
         await _dogRepo.Received(1).CreateAsync(Arg.Any<Dog>());
     }
 
@@ -662,7 +680,8 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveTeamAsync(10, 20);
 
-        Assert.That(result, Is.SameAs(team));
+        Assert.That(result.Team, Is.SameAs(team));
+        Assert.That(result.IsNew, Is.False);
         await _teamRepo.DidNotReceive().CreateAsync(Arg.Any<Team>());
     }
 
@@ -697,16 +716,17 @@ public class IdentityResolutionServiceTests
 
         var result = await _sut.ResolveTeamAsync(10, 20);
 
+        Assert.That(result.IsNew, Is.True);
         Assert.Multiple(() =>
         {
-            Assert.That(result.HandlerId, Is.EqualTo(10));
-            Assert.That(result.DogId, Is.EqualTo(20));
-            Assert.That(result.Mu, Is.EqualTo(25.0f));
-            Assert.That(result.Sigma, Is.EqualTo(8.333f));
-            Assert.That(result.Slug, Is.EqualTo("john-smith-rex"));
-            Assert.That(result.IsProvisional, Is.True);
-            Assert.That(result.IsActive, Is.False);
-            Assert.That(result.RunCount, Is.EqualTo(0));
+            Assert.That(result.Team.HandlerId, Is.EqualTo(10));
+            Assert.That(result.Team.DogId, Is.EqualTo(20));
+            Assert.That(result.Team.Mu, Is.EqualTo(25.0f));
+            Assert.That(result.Team.Sigma, Is.EqualTo(8.333f));
+            Assert.That(result.Team.Slug, Is.EqualTo("john-smith-rex"));
+            Assert.That(result.Team.IsProvisional, Is.True);
+            Assert.That(result.Team.IsActive, Is.False);
+            Assert.That(result.Team.RunCount, Is.EqualTo(0));
         });
     }
 
@@ -731,7 +751,7 @@ public class IdentityResolutionServiceTests
     [Test]
     public void BuildNameRotations_ThreeTokens_ReturnsBothRotations()
     {
-        // "de groote andy" → ["andy de groote", "groote andy de"]
+        // "de groote andy" -> ["andy de groote", "groote andy de"]
         var result = IdentityResolutionService.BuildNameRotations("de groote andy");
         Assert.That(result, Has.Count.EqualTo(2));
         Assert.That(result, Does.Contain("andy de groote"));
@@ -741,7 +761,7 @@ public class IdentityResolutionServiceTests
     [Test]
     public void BuildNameRotations_FourTokens_ReturnsBothRotations()
     {
-        // "van der stock thora" → ["thora van der stock", "der stock thora van"]
+        // "van der stock thora" -> ["thora van der stock", "der stock thora van"]
         var result = IdentityResolutionService.BuildNameRotations("van der stock thora");
         Assert.That(result, Has.Count.EqualTo(2));
         Assert.That(result, Does.Contain("thora van der stock"));

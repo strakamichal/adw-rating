@@ -35,7 +35,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         _logger = logger;
     }
 
-    public async Task<Handler> ResolveHandlerAsync(string rawName, string country)
+    public async Task<(Handler Handler, bool IsNew)> ResolveHandlerAsync(string rawName, string country)
     {
         var normalizedName = NameNormalizer.Normalize(rawName);
 
@@ -47,7 +47,7 @@ public class IdentityResolutionService : IIdentityResolutionService
             _logger.LogDebug("Handler '{RawName}' resolved via alias to '{CanonicalName}'",
                 rawName, canonical!.Name);
             await BackfillHandlerProfileAsync(canonical!, rawName, country);
-            return canonical!;
+            return (canonical!, false);
         }
 
         // 2. Exact match on normalized name + country
@@ -56,7 +56,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         {
             _logger.LogDebug("Handler '{RawName}' resolved via exact match", rawName);
             await BackfillHandlerProfileAsync(exact, rawName, country);
-            return exact;
+            return (exact, false);
         }
 
         // 3. Country-agnostic fallback — same name, different country
@@ -72,12 +72,12 @@ public class IdentityResolutionService : IIdentityResolutionService
                     "Handler '{RawName}' ({Country}) matched country-agnostic to '{MatchName}' ({MatchCountry})",
                     rawName, country, match.Name, match.Country);
                 await BackfillHandlerProfileAsync(match, rawName, country);
-                return match;
+                return (match, false);
             }
         }
 
         // 4. Containment/substring match — "Adrian Bajo" ↔ "Adrian Bajo Alonso"
-        //    Requires: name length ≥ 10, 2+ tokens, same country, exactly 1 match
+        //    Requires: name length >= 10, 2+ tokens, same country, exactly 1 match
         if (normalizedName.Length >= 10 && nameTokens.Length >= 2)
         {
             var containmentMatches = await _handlerRepo.FindByNormalizedNameContainingAsync(normalizedName, country);
@@ -110,7 +110,7 @@ public class IdentityResolutionService : IIdentityResolutionService
                 }
 
                 await BackfillHandlerProfileAsync(match, rawName, country);
-                return match;
+                return (match, false);
             }
         }
 
@@ -128,7 +128,7 @@ public class IdentityResolutionService : IIdentityResolutionService
 
         await TryCreateReversedHandlerAliasesAsync(newHandler);
 
-        return newHandler;
+        return (newHandler, true);
     }
 
     /// <summary>
@@ -151,7 +151,7 @@ public class IdentityResolutionService : IIdentityResolutionService
             var cleaned = NameNormalizer.CleanDisplayName(handler.Name);
             if (cleaned != handler.Name)
             {
-                _logger.LogInformation("Cleaning handler name '{Old}' → '{New}'", handler.Name, cleaned);
+                _logger.LogInformation("Cleaning handler name '{Old}' -> '{New}'", handler.Name, cleaned);
                 handler.Name = cleaned;
                 updated = true;
             }
@@ -193,7 +193,7 @@ public class IdentityResolutionService : IIdentityResolutionService
     /// Builds name rotations to match "Firstname Surname" vs "Surname Firstname" patterns.
     /// For 2 tokens [A B]: returns [B A].
     /// For 3+ tokens [A B C]: returns [C A B] (last-to-front) and [B C A] (first-to-back).
-    /// This covers "De Groote Andy" ↔ "Andy De Groote" and "Ganzi Karl Heinz" ↔ "Karl Heinz Ganzi".
+    /// This covers "De Groote Andy" <-> "Andy De Groote" and "Ganzi Karl Heinz" <-> "Karl Heinz Ganzi".
     /// </summary>
     internal static List<string> BuildNameRotations(string normalizedName)
     {
@@ -205,18 +205,18 @@ public class IdentityResolutionService : IIdentityResolutionService
 
         if (parts.Length == 2)
         {
-            // Simple swap: [A B] → [B A]
+            // Simple swap: [A B] -> [B A]
             result.Add($"{parts[1]} {parts[0]}");
         }
         else
         {
-            // Rotate right (last to front): [A B C] → [C A B]
+            // Rotate right (last to front): [A B C] -> [C A B]
             var rotateRight = new string[parts.Length];
             rotateRight[0] = parts[^1];
             Array.Copy(parts, 0, rotateRight, 1, parts.Length - 1);
             result.Add(string.Join(' ', rotateRight));
 
-            // Rotate left (first to back): [A B C] → [B C A]
+            // Rotate left (first to back): [A B C] -> [B C A]
             var rotateLeft = new string[parts.Length];
             Array.Copy(parts, 1, rotateLeft, 0, parts.Length - 1);
             rotateLeft[^1] = parts[0];
@@ -228,7 +228,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         return result;
     }
 
-    public async Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size, int handlerId)
+    public async Task<(Dog Dog, bool IsNew)> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size, int handlerId)
     {
         var normalizedFull = NameNormalizer.Normalize(rawDogName);
 
@@ -268,7 +268,7 @@ public class IdentityResolutionService : IIdentityResolutionService
                     var canonical = await _dogRepo.GetByIdAsync(alias.CanonicalDogId);
                     _logger.LogDebug("Dog '{RawName}' resolved via alias to handler's dog '{CallName}'",
                         rawDogName, canonical!.CallName);
-                    return canonical!;
+                    return (canonical!, false);
                 }
                 // Remember global hit but don't return yet — keep looking for handler-scoped match
                 aliasGlobalHit ??= await _dogRepo.GetByIdAsync(alias.CanonicalDogId);
@@ -292,14 +292,14 @@ public class IdentityResolutionService : IIdentityResolutionService
                     await CreateDogAliasesIfNeeded(candidate.Id, normalizedFull, normalizedCallName, normalizedRegistered, candidate.NormalizedCallName);
                     _logger.LogDebug("Dog '{RawName}' resolved via exact match to handler's dog '{CallName}'",
                         rawDogName, candidate.CallName);
-                    return candidate;
+                    return (candidate, false);
                 }
                 exactGlobalHit ??= candidate;
             }
         }
 
         // 3. Handler-scoped fuzzy match: containment + size relaxation
-        //    "Berta" ↔ "Berta z Kojca Coli", or same dog in adjacent size (S↔M, I↔L)
+        //    "Berta" <-> "Berta z Kojca Coli", or same dog in adjacent size (S<->M, I<->L)
         if (handlerDogIds.Count > 0)
         {
             var fuzzyMatches = new List<Dog>();
@@ -358,7 +358,7 @@ public class IdentityResolutionService : IIdentityResolutionService
                     await _dogRepo.UpdateAsync(match);
 
                 await CreateDogAliasesIfNeeded(match.Id, normalizedFull, normalizedCallName, normalizedRegistered, match.NormalizedCallName);
-                return match;
+                return (match, false);
             }
         }
 
@@ -382,7 +382,7 @@ public class IdentityResolutionService : IIdentityResolutionService
                 await CreateDogAliasesIfNeeded(globalHit.Id, normalizedFull, normalizedCallName, normalizedRegistered, globalHit.NormalizedCallName);
                 _logger.LogInformation("Dog '{RawName}' matched globally to '{CallName}' (no handler association)",
                     rawDogName, globalHit.CallName);
-                return globalHit;
+                return (globalHit, false);
             }
 
             _logger.LogDebug("Dog '{RawName}' has global match '{CallName}' but name too short for cross-handler match — creating new",
@@ -408,7 +408,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         // Create aliases for all name variants
         await CreateDogAliasesIfNeeded(newDog.Id, normalizedFull, normalizedCallName, normalizedRegistered, storedNormalized);
 
-        return newDog;
+        return (newDog, true);
     }
 
     private async Task CreateDogAliasesIfNeeded(int dogId, string normalizedFull, string? normalizedCallName, string? normalizedRegistered, string canonicalNormalized)
@@ -452,14 +452,14 @@ public class IdentityResolutionService : IIdentityResolutionService
         }
     }
 
-    public async Task<Team> ResolveTeamAsync(int handlerId, int dogId)
+    public async Task<(Team Team, bool IsNew)> ResolveTeamAsync(int handlerId, int dogId)
     {
         // 1. Check for existing team
         var existing = await _teamRepo.GetByHandlerAndDogAsync(handlerId, dogId);
         if (existing is not null)
         {
             _logger.LogDebug("Team found for handler={HandlerId}, dog={DogId}", handlerId, dogId);
-            return existing;
+            return (existing, false);
         }
 
         // 2. Create new team with rating defaults from active config
@@ -492,7 +492,7 @@ public class IdentityResolutionService : IIdentityResolutionService
             PeakRating = 0
         });
 
-        return newTeam;
+        return (newTeam, true);
     }
 
     private async Task<string> GenerateUniqueHandlerSlugAsync(string baseSlug)
@@ -553,8 +553,8 @@ public class IdentityResolutionService : IIdentityResolutionService
 
     /// <summary>
     /// Checks if the shorter string appears as complete word(s) within the longer string.
-    /// "berta" in "berta z kojca coli" → true (word boundary match)
-    /// "lis" in "borealis" → false (not at word boundary)
+    /// "berta" in "berta z kojca coli" -> true (word boundary match)
+    /// "lis" in "borealis" -> false (not at word boundary)
     /// Strings must differ (not exact match — that's handled by earlier steps).
     /// </summary>
     internal static bool IsWordBoundaryContainment(string a, string b)
@@ -570,11 +570,11 @@ public class IdentityResolutionService : IIdentityResolutionService
 
         // Use word boundary regex: shorter must appear as whole word(s)
         var pattern = @"(?<!\w)" + Regex.Escape(shorter) + @"(?!\w)";
-        return Regex.IsMatch(longer, pattern, RegexOptions.IgnoreCase);
+        return Regex.IsMatch(longer, pattern, RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(100));
     }
 
     /// <summary>
-    /// Returns true if sizes are the same or adjacent in the FCI progression: S↔M, I↔L.
+    /// Returns true if sizes are the same or adjacent in the FCI progression: S<->M, I<->L.
     /// </summary>
     internal static bool IsAdjacentOrSameSize(SizeCategory a, SizeCategory b)
     {
