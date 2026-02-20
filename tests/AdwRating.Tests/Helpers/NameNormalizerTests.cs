@@ -180,4 +180,19 @@ public class NameNormalizerTests
         var (callName, _) = NameNormalizer.ExtractCallName("Granda (None)");
         Assert.That(callName, Is.Null);
     }
+
+    // CleanDisplayName tests
+
+    [TestCase("Gronek, Ola", "Ola Gronek")]
+    [TestCase("Třičová, Kateřina", "Kateřina Třičová")]
+    [TestCase("John Smith", "John Smith")]
+    [TestCase("  Extra  Spaces  ", "Extra Spaces")]
+    [TestCase("A, B, C", "A, B, C")]  // Multiple commas — not reordered
+    [TestCase("", "")]
+    [TestCase("   ", "   ")]
+    public void CleanDisplayName_ProducesExpectedResult(string input, string expected)
+    {
+        var result = NameNormalizer.CleanDisplayName(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }

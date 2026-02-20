@@ -43,6 +43,20 @@ public static class NameNormalizer
             .Replace('\u2019', '\'');
     }
 
+    /// <summary>
+    /// Cleans a display name: reorders "Last, First" → "First Last" and collapses whitespace.
+    /// Preserves original casing and diacritics (unlike Normalize which lowercases and strips).
+    /// </summary>
+    public static string CleanDisplayName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return name;
+
+        var cleaned = ReorderLastFirst(name.Trim());
+        cleaned = Regex.Replace(cleaned, @"\s+", " ").Trim();
+        return cleaned;
+    }
+
     private static string ReorderLastFirst(string text)
     {
         var parts = text.Split(',');

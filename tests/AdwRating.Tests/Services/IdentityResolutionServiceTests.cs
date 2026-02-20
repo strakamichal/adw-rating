@@ -287,6 +287,57 @@ public class IdentityResolutionServiceTests
         await _handlerRepo.DidNotReceive().FindByNormalizedNameContainingAsync(Arg.Any<string>(), Arg.Any<string>());
     }
 
+    [Test]
+    public async Task ResolveHandlerAsync_BackfillsCountry_WhenEmpty()
+    {
+        var handler = new Handler
+        {
+            Id = 1, Name = "Ola Gronek", NormalizedName = "ola gronek",
+            Country = "", Slug = "ola-gronek"
+        };
+
+        _handlerAliasRepo.FindByAliasNameAsync("ola gronek")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("ola gronek", "POL")
+            .Returns((Handler?)null);
+        _handlerRepo.FindByNormalizedNameAsync("ola gronek")
+            .Returns(new List<Handler> { handler });
+
+        var result = await _sut.ResolveHandlerAsync("Ola Gronek", "POL");
+
+        Assert.That(result.Country, Is.EqualTo("POL"));
+        await _handlerRepo.Received(1).UpdateAsync(
+            Arg.Is<Handler>(h => h.Country == "POL"));
+    }
+
+    [Test]
+    public async Task ResolveHandlerAsync_CommaName_CreatesWithCleanName()
+    {
+        var created = new Handler
+        {
+            Id = 99, Name = "Ola Gronek", NormalizedName = "ola gronek",
+            Country = "POL", Slug = "ola-gronek"
+        };
+
+        _handlerAliasRepo.FindByAliasNameAsync("ola gronek")
+            .Returns((HandlerAlias?)null);
+        _handlerAliasRepo.FindByAliasNameAsync("gronek ola")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("ola gronek", "POL")
+            .Returns((Handler?)null);
+        _handlerRepo.FindByNormalizedNameAsync("ola gronek")
+            .Returns(new List<Handler>());
+        _handlerRepo.FindByNormalizedNameContainingAsync("ola gronek", "POL")
+            .Returns(new List<Handler>());
+        _handlerRepo.CreateAsync(Arg.Any<Handler>())
+            .Returns(created);
+
+        var result = await _sut.ResolveHandlerAsync("Gronek, Ola", "POL");
+
+        await _handlerRepo.Received(1).CreateAsync(
+            Arg.Is<Handler>(h => h.Name == "Ola Gronek"));
+    }
+
     #endregion
 
     #region ResolveDogAsync
@@ -538,6 +589,59 @@ public class IdentityResolutionServiceTests
     public void IsAdjacentOrSameSize_ReturnsExpected(SizeCategory a, SizeCategory b, bool expected)
     {
         Assert.That(IdentityResolutionService.IsAdjacentOrSameSize(a, b), Is.EqualTo(expected));
+    }
+
+    #endregion
+
+    #region BackfillDogNames
+
+    [Test]
+    public void BackfillDogNames_ShortIncoming_SetsRegisteredName()
+    {
+        // Dog stored as "Berta z Kojca Coli" (call name), incoming is just "Berta"
+        var dog = new Dog
+        {
+            Id = 1, CallName = "Berta z Kojca Coli", NormalizedCallName = "berta z kojca coli",
+            RegisteredName = null, SizeCategory = SizeCategory.M
+        };
+
+        var updated = IdentityResolutionService.BackfillDogNames(dog, "Berta", null, null);
+
+        Assert.That(updated, Is.True);
+        Assert.That(dog.CallName, Is.EqualTo("Berta"));
+        Assert.That(dog.NormalizedCallName, Is.EqualTo("berta"));
+        Assert.That(dog.RegisteredName, Is.EqualTo("Berta z Kojca Coli"));
+    }
+
+    [Test]
+    public void BackfillDogNames_LongIncoming_SetsRegisteredName()
+    {
+        // Dog stored as "Cinnamon" (call name), incoming is "Cinnamon Flycatcher of Noble County"
+        var dog = new Dog
+        {
+            Id = 2, CallName = "Cinnamon", NormalizedCallName = "cinnamon",
+            RegisteredName = null, SizeCategory = SizeCategory.S
+        };
+
+        var updated = IdentityResolutionService.BackfillDogNames(dog, "Cinnamon Flycatcher of Noble County", null, null);
+
+        Assert.That(updated, Is.True);
+        Assert.That(dog.CallName, Is.EqualTo("Cinnamon"));
+        Assert.That(dog.RegisteredName, Is.EqualTo("Cinnamon Flycatcher of Noble County"));
+    }
+
+    [Test]
+    public void BackfillDogNames_SameLength_NoChange()
+    {
+        var dog = new Dog
+        {
+            Id = 3, CallName = "Gia", NormalizedCallName = "gia",
+            RegisteredName = null, SizeCategory = SizeCategory.S
+        };
+
+        var updated = IdentityResolutionService.BackfillDogNames(dog, "Gia", null, null);
+
+        Assert.That(updated, Is.False);
     }
 
     #endregion

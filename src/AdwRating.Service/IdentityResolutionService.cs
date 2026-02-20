@@ -46,6 +46,7 @@ public class IdentityResolutionService : IIdentityResolutionService
             var canonical = await _handlerRepo.GetByIdAsync(alias.CanonicalHandlerId);
             _logger.LogDebug("Handler '{RawName}' resolved via alias to '{CanonicalName}'",
                 rawName, canonical!.Name);
+            await BackfillHandlerProfileAsync(canonical!, rawName, country);
             return canonical!;
         }
 
@@ -54,6 +55,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         if (exact is not null)
         {
             _logger.LogDebug("Handler '{RawName}' resolved via exact match", rawName);
+            await BackfillHandlerProfileAsync(exact, rawName, country);
             return exact;
         }
 
@@ -69,6 +71,7 @@ public class IdentityResolutionService : IIdentityResolutionService
                 _logger.LogInformation(
                     "Handler '{RawName}' ({Country}) matched country-agnostic to '{MatchName}' ({MatchCountry})",
                     rawName, country, match.Name, match.Country);
+                await BackfillHandlerProfileAsync(match, rawName, country);
                 return match;
             }
         }
@@ -106,24 +109,56 @@ public class IdentityResolutionService : IIdentityResolutionService
                     _logger.LogDebug(ex, "Containment alias already exists for '{Name}'", normalizedName);
                 }
 
+                await BackfillHandlerProfileAsync(match, rawName, country);
                 return match;
             }
         }
 
         // 5. No match — create new handler
+        var displayName = NameNormalizer.CleanDisplayName(rawName);
         _logger.LogInformation("Handler '{RawName}' not found, creating new record", rawName);
 
         var newHandler = await _handlerRepo.CreateAsync(new Handler
         {
-            Name = rawName,
+            Name = displayName,
             NormalizedName = normalizedName,
             Country = country,
-            Slug = await GenerateUniqueHandlerSlugAsync(SlugHelper.GenerateSlug(rawName))
+            Slug = await GenerateUniqueHandlerSlugAsync(SlugHelper.GenerateSlug(displayName))
         });
 
         await TryCreateReversedHandlerAliasesAsync(newHandler);
 
         return newHandler;
+    }
+
+    /// <summary>
+    /// Backfills empty handler country and display name when new data provides them.
+    /// </summary>
+    private async Task BackfillHandlerProfileAsync(Handler handler, string rawName, string country)
+    {
+        var updated = false;
+
+        if (string.IsNullOrEmpty(handler.Country) && !string.IsNullOrEmpty(country))
+        {
+            _logger.LogInformation("Backfilling country '{Country}' for handler '{Name}'", country, handler.Name);
+            handler.Country = country;
+            updated = true;
+        }
+
+        // If stored name has comma (old import) but new raw name doesn't, prefer cleaned version
+        if (handler.Name.Contains(',') && !rawName.Contains(','))
+        {
+            var cleaned = NameNormalizer.CleanDisplayName(handler.Name);
+            if (cleaned != handler.Name)
+            {
+                _logger.LogInformation("Cleaning handler name '{Old}' → '{New}'", handler.Name, cleaned);
+                handler.Name = cleaned;
+                updated = true;
+            }
+        }
+
+        if (updated)
+            await _handlerRepo.UpdateAsync(handler);
     }
 
     private async Task TryCreateReversedHandlerAliasesAsync(Handler canonicalHandler)
@@ -308,11 +343,20 @@ public class IdentityResolutionService : IIdentityResolutionService
                     "Dog '{RawName}' ({Size}) fuzzy-matched to handler's dog '{CallName}' ({MatchSize}) via containment",
                     rawDogName, size, match.CallName, match.SizeCategory);
 
+                var dogUpdated = false;
+
                 if (match.Breed is null && breed is not null)
                 {
                     match.Breed = breed;
-                    await _dogRepo.UpdateAsync(match);
+                    dogUpdated = true;
                 }
+
+                // Backfill RegisteredName/CallName from the longer/shorter variant
+                dogUpdated |= BackfillDogNames(match, rawDogName, extractedCallName, extractedRegistered);
+
+                if (dogUpdated)
+                    await _dogRepo.UpdateAsync(match);
+
                 await CreateDogAliasesIfNeeded(match.Id, normalizedFull, normalizedCallName, normalizedRegistered, match.NormalizedCallName);
                 return match;
             }
@@ -463,6 +507,48 @@ public class IdentityResolutionService : IIdentityResolutionService
         }
 
         return slug;
+    }
+
+    /// <summary>
+    /// When fuzzy matching connects a short name ("Berta") with a long name ("Berta z Kojca Coli"),
+    /// backfill the dog's CallName/RegisteredName if they were missing.
+    /// Returns true if any field was updated.
+    /// </summary>
+    internal static bool BackfillDogNames(Dog dog, string rawDogName, string? extractedCallName, string? extractedRegistered)
+    {
+        var updated = false;
+        var incomingFull = rawDogName.Trim();
+        var existingCallName = dog.CallName;
+        var existingRegistered = dog.RegisteredName;
+
+        // Collect all known names and pick the shortest as call name, longest as registered
+        var allNames = new List<string> { existingCallName, incomingFull };
+        if (existingRegistered is not null) allNames.Add(existingRegistered);
+        if (extractedCallName is not null) allNames.Add(extractedCallName);
+        if (extractedRegistered is not null) allNames.Add(extractedRegistered);
+
+        var shortest = allNames.OrderBy(n => n.Length).First();
+        var longest = allNames.OrderByDescending(n => n.Length).First();
+
+        if (shortest.Length == longest.Length)
+            return false; // All same length — nothing to infer
+
+        // Backfill RegisteredName if missing and we have a longer variant
+        if (string.IsNullOrEmpty(dog.RegisteredName) && longest.Length > shortest.Length)
+        {
+            dog.RegisteredName = longest;
+            updated = true;
+        }
+
+        // Update CallName to the shorter variant if we found one
+        if (shortest.Length < dog.CallName.Length && shortest.Length >= 2)
+        {
+            dog.CallName = shortest;
+            dog.NormalizedCallName = NameNormalizer.Normalize(shortest);
+            updated = true;
+        }
+
+        return updated;
     }
 
     /// <summary>
