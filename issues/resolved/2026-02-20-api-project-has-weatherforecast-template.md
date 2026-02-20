@@ -2,7 +2,7 @@
 
 - **Type**: improvement
 - **Priority**: medium
-- **Status**: open
+- **Status**: resolved
 
 ## Description
 
@@ -14,9 +14,13 @@
 
 ## Acceptance criteria
 
-- [ ] Remove the WeatherForecast template code
-- [ ] Set up minimal API host or MVC controller pattern ready for real endpoints
-- [ ] Build passes
+- [x] Remove the WeatherForecast template code
+- [x] Set up minimal API host or MVC controller pattern ready for real endpoints
+- [x] Build passes
+
+## Resolution
+
+Removed the WeatherForecast record, summaries array, and /weatherforecast endpoint from Program.cs. The file now contains only the minimal WebApplication builder/run setup with HTTPS redirection, ready for real controllers and endpoints.
 
 ## Notes
 
