@@ -97,13 +97,13 @@ import "helvetic-agility-masters-2025" "Helvetic Agility Masters 2025" "2025-08-
 import "nac-2025" "Nordic Agility Championship 2025" "2025-08-22" 2 "NOR" "nordic_agility_championship_2025/nordic_agility_championship_2025_results.csv" "2025-08-24" "FCI"
 import "awc-2025" "FCI Agility World Championship 2025" "2025-09-17" 1 "SWE" "awc2025/awc2025_results.csv" "2025-09-21" "FCI"
 import "norwegian-open-2025" "Norwegian Open 2025" "2025-10-10" 2 "NOR" "norwegian_open_2025/norwegian_open_2025_results.csv" "2025-10-12" "FCI"
-import "lotw-i-2025-2026" "League of the World I 2025/2026" "2025-10-01" 2 "CZE" "lotw_i_2025_2026/lotw_i_2025_2026_results.csv" "" "FCI"
+import "lotw-i-2025-2026" "Lord of the Winter I 2025/2026" "2025-10-01" 2 "SVK" "lotw_i_2025_2026/lotw_i_2025_2026_results.csv" "" "FCI"
 import "polish-open-soft-2025-inl" "Polish Open SOFT 2025 (I & L)" "2025-11-07" 2 "POL" "polish_open_soft_2025_inl/polish_open_soft_2025_inl_results.csv" "2025-11-09" "FCI"
 import "polish-open-soft-2025-xsm" "Polish Open SOFT 2025 (XS, S & M)" "2025-11-07" 2 "POL" "polish_open_soft_2025_xsm/polish_open_soft_2025_xsm_results.csv" "2025-11-09" "FCI"
-import "lotw-ii-2025-2026" "League of the World II 2025/2026" "2025-12-01" 2 "CZE" "lotw_ii_2025_2026/lotw_ii_2025_2026_results.csv" "" "FCI"
+import "lotw-ii-2025-2026" "Lord of the Winter II 2025/2026" "2025-12-01" 2 "SVK" "lotw_ii_2025_2026/lotw_ii_2025_2026_results.csv" "" "FCI"
 
 # 2026
-import "lotw-iii-2025-2026" "League of the World III 2025/2026" "2026-02-01" 2 "CZE" "lotw_iii_2025_2026/lotw_iii_2025_2026_results.csv" "" "FCI"
+import "lotw-iii-2025-2026" "Lord of the Winter III 2025/2026" "2026-02-01" 2 "SVK" "lotw_iii_2025_2026/lotw_iii_2025_2026_results.csv" "" "FCI"
 import "polish-open-2026-inl" "Polish Open 2026 (I & L)" "2026-02-13" 2 "POL" "polish_open_2026_inl/polish_open_2026_inl_results.csv" "2026-02-15" "FCI"
 import "polish-open-2026-xsm" "Polish Open 2026 (XS, S & M)" "2026-02-13" 2 "POL" "polish_open_2026_xsm/polish_open_2026_xsm_results.csv" "2026-02-15" "FCI"
 
