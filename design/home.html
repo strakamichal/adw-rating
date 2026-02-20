@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADW Rating — Global Agility Team Rankings</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <style>
+    /* ============================================================
+       Layout-specific styles (from layout.html)
+       ============================================================ */
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .page-wrapper > main { flex: 1; }
+
+    /* ---- Hamburger menu (CSS-only) ---- */
+    .hamburger-toggle { display: none; }
+    .hamburger-label {
+      display: none;
+      background: none; border: none;
+      color: var(--color-header-text);
+      font-size: 1.5rem; cursor: pointer;
+      padding: var(--space-2); line-height: 1;
+      user-select: none; -webkit-user-select: none;
+    }
+    .mobile-nav {
+      display: none; position: absolute;
+      top: var(--header-height); left: 0; right: 0;
+      background-color: var(--color-primary-800);
+      box-shadow: var(--shadow-lg); z-index: 99;
+      flex-direction: column; padding: var(--space-2) 0;
+      transform: translateY(-10px); opacity: 0;
+      transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+    .mobile-nav a {
+      display: block; padding: var(--space-3) var(--space-6);
+      color: var(--color-primary-200); font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium); text-decoration: none;
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+    }
+    .mobile-nav a:hover {
+      background-color: var(--color-primary-700);
+      color: var(--color-header-text); text-decoration: none;
+    }
+    .hamburger-toggle:checked ~ .mobile-nav {
+      display: flex; transform: translateY(0); opacity: 1;
+    }
+
+    /* Mobile search toggle */
+    .search-toggle { display: none; }
+    .search-toggle-label {
+      display: none; background: none; border: none;
+      color: var(--color-primary-200); font-size: 1.25rem;
+      cursor: pointer; padding: var(--space-2); line-height: 1;
+      user-select: none; -webkit-user-select: none;
+    }
+    .search-toggle-label:hover { color: var(--color-header-text); }
+    .mobile-search-bar {
+      display: none; position: absolute;
+      top: var(--header-height); left: 0; right: 0;
+      background-color: var(--color-primary-800);
+      padding: var(--space-3) var(--space-4);
+      box-shadow: var(--shadow-lg); z-index: 98;
+      transform: translateY(-10px); opacity: 0;
+      transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+    .search-toggle:checked ~ .mobile-search-bar {
+      display: block; transform: translateY(0); opacity: 1;
+    }
+    .mobile-search-bar .search-input__field {
+      background-color: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.15);
+      color: var(--color-text-inverse);
+    }
+    .mobile-search-bar .search-input__field::placeholder { color: rgba(255,255,255,0.5); }
+    .mobile-search-bar .search-input__field:focus {
+      background-color: rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.3);
+      box-shadow: 0 0 0 3px rgba(255,255,255,0.1);
+    }
+    .mobile-search-bar .search-input__icon { color: rgba(255,255,255,0.5); }
+
+    @media (max-width: 639px) {
+      .hamburger-label { display: block; }
+      .search-toggle-label { display: block; }
+      .site-header__search { display: none; }
+      .site-header__nav { display: none; }
+    }
+    @media (min-width: 640px) {
+      .mobile-nav { display: none !important; }
+      .mobile-search-bar { display: none !important; }
+    }
+
+    /* ---- Footer multi-row ---- */
+    .site-footer__top {
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: flex-start; gap: var(--space-6); margin-bottom: var(--space-6);
+    }
+    .site-footer__brand {
+      font-size: var(--font-size-h4); font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+    }
+    .site-footer__brand span { color: var(--color-secondary-500); }
+    .site-footer__social { display: flex; gap: var(--space-4); list-style: none; }
+    .site-footer__social a {
+      display: inline-flex; align-items: center; gap: var(--space-2);
+      color: var(--color-text-secondary); font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium); transition: color var(--transition-fast);
+    }
+    .site-footer__social a:hover { color: var(--color-primary-500); text-decoration: none; }
+    .site-footer__social-icon { width: 20px; height: 20px; fill: currentColor; }
+    .site-footer__bottom {
+      border-top: 1px solid var(--color-gray-200); padding-top: var(--space-4);
+      display: flex; flex-wrap: wrap; justify-content: space-between;
+      align-items: center; gap: var(--space-3);
+    }
+    @media (max-width: 639px) {
+      .site-footer__top { flex-direction: column; align-items: center; text-align: center; }
+      .site-footer__bottom { flex-direction: column; text-align: center; }
+    }
+
+    /* ============================================================
+       Home page specific styles
+       ============================================================ */
+
+    /* Hero section */
+    .hero {
+      background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-700) 60%, var(--color-primary-600) 100%);
+      color: var(--color-text-inverse);
+      padding: var(--space-16) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -30%; right: -10%;
+      width: 50%; height: 160%;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero__title {
+      font-size: 2.75rem;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-4);
+      color: var(--color-text-inverse);
+      letter-spacing: var(--letter-spacing-tight);
+    }
+    .hero__tagline {
+      font-size: var(--font-size-h4);
+      opacity: 0.85;
+      margin-bottom: var(--space-8);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero__search {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .hero__search .search-input__field {
+      background-color: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.2);
+      color: var(--color-text-inverse);
+    }
+    .hero__search .search-input__field::placeholder {
+      color: rgba(255,255,255,0.55);
+    }
+    .hero__search .search-input__field:focus {
+      background-color: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.1);
+    }
+    .hero__search .search-input__icon {
+      color: rgba(255,255,255,0.55);
+    }
+    @media (max-width: 639px) {
+      .hero { padding: var(--space-10) 0; }
+      .hero__title { font-size: 2rem; }
+      .hero__tagline { font-size: var(--font-size-base); }
+    }
+
+    /* Spotlight section — size tabs for mobile */
+    .size-tabs {
+      display: none;
+    }
+    @media (max-width: 1023px) {
+      .size-tabs {
+        display: flex;
+        margin-bottom: var(--space-4);
+      }
+      .size-tab-content {
+        display: none;
+      }
+      .size-tab-content.active {
+        display: block;
+      }
+    }
+    @media (min-width: 1024px) {
+      .size-tabs { display: none; }
+      .size-tab-content { display: block !important; }
+    }
+
+    /* Spotlight column */
+    .spotlight-col__title {
+      font-size: var(--font-size-h4);
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-3);
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .spotlight-col__title .badge-size {
+      font-size: var(--font-size-sm);
+      padding: var(--space-1) var(--space-3);
+    }
+
+    /* Featured #1 card */
+    .team-card--featured {
+      padding: var(--space-5);
+      margin-bottom: var(--space-3);
+    }
+    .team-card--featured .team-card__rank {
+      font-size: var(--font-size-data-xl);
+      color: var(--color-rank-gold);
+    }
+    .team-card--featured .team-card__rating {
+      font-size: var(--font-size-data-lg);
+    }
+
+    /* Compact #2, #3 cards */
+    .team-card--compact {
+      padding: var(--space-3) var(--space-4);
+      margin-bottom: var(--space-2);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container" style="position: relative;">
+        <a href="/" class="site-header__logo">ADW <span>Rating</span></a>
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="/rankings">Rankings</a>
+          <a href="/competitions">Competitions</a>
+        </nav>
+        <div class="site-header__search">
+          <div class="search-input search-input--header">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+        <input type="checkbox" id="search-toggle" class="search-toggle" aria-hidden="true">
+        <label for="search-toggle" class="search-toggle-label hidden-desktop" aria-label="Toggle search">&#128269;</label>
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-hidden="true">
+        <label for="hamburger-toggle" class="hamburger-label hidden-desktop" aria-label="Toggle menu">&#9776;</label>
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="/rankings">Rankings</a>
+          <a href="/competitions">Competitions</a>
+          <a href="/how-it-works">How it works</a>
+        </nav>
+        <div class="mobile-search-bar">
+          <div class="search-input">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- 3.1 Hero area -->
+      <section class="hero">
+        <div class="container">
+          <h1 class="hero__title">The Global Agility Rating</h1>
+          <p class="hero__tagline">Independent, data-driven rankings for agility teams worldwide. Find your team, track your progress, compare with the best.</p>
+          <div class="hero__search">
+            <div class="search-input search-input--hero">
+              <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+              <input type="search" class="search-input__field" placeholder="Search teams, handlers, competitions..." aria-label="Search">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3.2 Summary stats -->
+      <section class="container" style="margin-top: calc(-1 * var(--space-8)); position: relative; z-index: 10;">
+        <div class="grid-3 mb-8">
+          <div class="stat-card">
+            <div class="stat-card__value">342</div>
+            <div class="stat-card__label">Qualified Teams</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">12</div>
+            <div class="stat-card__label">Competitions Tracked</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">4,817</div>
+            <div class="stat-card__label">Total Runs</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3.3 Top Teams Spotlight -->
+      <section class="container mb-8">
+        <div class="section-header">
+          <h2>Top Teams Spotlight</h2>
+        </div>
+
+        <!-- Mobile: size tabs -->
+        <div class="size-tabs pill-group mb-4">
+          <button class="pill active" onclick="switchTab('small')">S</button>
+          <button class="pill" onclick="switchTab('medium')">M</button>
+          <button class="pill" onclick="switchTab('intermediate')">I</button>
+          <button class="pill" onclick="switchTab('large')">L</button>
+        </div>
+
+        <div class="grid-4">
+
+          <!-- Small -->
+          <div class="size-tab-content active" id="tab-small">
+            <div class="spotlight-col__title"><span class="badge badge-size">S</span> Small</div>
+            <!-- #1 -->
+            <a href="/teams/monika-rylska-pixel" class="team-card team-card--rank-1 team-card--featured">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="team-card__rank">1</div>
+                <div>
+                  <div class="team-card__handler">Monika Rylska 🇵🇱</div>
+                  <div class="team-card__dog">Pixel &middot; Shetland Sheepdog</div>
+                </div>
+              </div>
+              <div class="flex-between">
+                <span class="team-card__rating">1,812</span>
+                <span class="badge badge-elite">Elite</span>
+              </div>
+              <div class="trend trend-up text-small mt-2">&#9650; 2</div>
+            </a>
+            <!-- #2 -->
+            <a href="/teams/anna-hinze-joy" class="team-card team-card--rank-2 team-card--compact">
+              <div class="flex items-center gap-3">
+                <div class="team-card__rank" style="font-size: var(--font-size-h3);">2</div>
+                <div class="flex-1">
+                  <div class="team-card__handler">Anna Hinze 🇩🇪</div>
+                  <div class="team-card__dog">Joy</div>
+                </div>
+                <div class="text-right">
+                  <div class="data-number-md">1,774</div>
+                  <span class="badge badge-elite" style="font-size: 10px;">Elite</span>
+                </div>
+              </div>
+            </a>
+            <!-- #3 -->
+            <a href="/teams/sophie-lafont-fizz" class="team-card team-card--rank-3 team-card--compact">
+              <div class="flex items-center gap-3">
+                <div class="team-card__rank" style="font-size: var(--font-size-h3);">3</div>
+                <div class="flex-1">
+                  <div class="team-card__handler">Sophie Lafont 🇫🇷</div>
+                  <div class="team-card__dog">Fizz</div>
+                </div>
+                <div class="text-right">
+                  <div class="data-number-md">1,738</div>
+                  <span class="badge badge-champion" style="font-size: 10px;">Champion</span>
+                </div>
+              </div>
+            </a>
+            <div class="mt-3"><a href="/rankings?size=S" class="text-small">View full rankings &rarr;</a></div>
+          </div>
+
+          <!-- Medium -->
+          <div class="size-tab-content" id="tab-medium">
+            <div class="spotlight-col__title"><span class="badge badge-size">M</span> Medium</div>
+            <a href="/teams/lisa-frick-jack" class="team-card team-card--rank-1 team-card--featured">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="team-card__rank">1</div>
+                <div>
+                  <div class="team-card__handler">Lisa Frick 🇦🇹</div>
+                  <div class="team-card__dog">Jack &middot; Shetland Sheepdog</div>
+                </div>
+              </div>
+              <div class="flex-between">
+                <span class="team-card__rating">1,856</span>
+                <span class="badge badge-elite">Elite</span>
+              </div>
+              <div class="trend trend-up text-small mt-2">&#9650; 1</div>
+            </a>
+            <a href="/teams/iwona-golab-chica" class="team-card team-card--rank-2 team-card--compact">
+              <div class="flex items-center gap-3">
+                <div class="team-card__rank" style="font-size: var(--font-size-h3);">2</div>
+                <div class="flex-1">
+                  <div class="team-card__handler">Iwona Golab 🇵🇱</div>
+                  <div class="team-card__dog">Chica</div>
+                </div>
+                <div class="text-right">
+                  <div class="data-number-md">1,801</div>
+                  <span class="badge badge-elite" style="font-size: 10px;">Elite</span>
+                </div>
+              </div>
+            </a>
+            <a href="/teams/tobias-wust-nala" class="team-card team-card--rank-3 team-card--compact">
+              <div class="flex items-center gap-3">
+                <div class="team-card__rank" style="font-size: var(--font-size-h3);">3</div>
+                <div class="flex-1">
+                  <div class="team-card__handler">Tobias Wust 🇩🇪</div>
+                  <div class="team-card__dog">Nala</div>
+                </div>
+                <div class="text-right">
+                  <div class="data-number-md">1,762</div>
+                  <span class="badge badge-champion" style="font-size: 10px;">Champion</span>
+                </div>
+              </div>
+            </a>
+            <div class="mt-3"><a href="/rankings?size=M" class="text-small">View full rankings &rarr;</a></div>
+          </div>
+
+          <!-- Intermediate -->
+          <div class="size-tab-content" id="tab-intermediate">
+            <div class="spotlight-col__title"><span class="badge badge-size">I</span> Intermediate</div>
+            <a href="/teams/martina-klimesova-kiki" class="team-card team-card--rank-1 team-card--featured">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="team-card__rank">1</div>
+                <div>
+                  <div class="team-card__handler">Martina Klimesova 🇨🇿</div>
+                  <div class="team-card__dog">Kiki &middot; Parson Russell Terrier</div>
+                </div>
+              </div>
+              <div class="flex-between">
+                <span class="team-card__rating">1,879</span>
+                <span class="badge badge-elite">Elite</span>
+              </div>
+              <div class="trend trend-unchanged text-small mt-2">&mdash;</div>
+            </a>
+            <a href="/teams/jenny-damm-lilli" class="team-card team-card--rank-2 team-card--compact">
+              <div class="flex items-center gap-3">
+                <div class="team-card__rank" style="font-size: var(--font-size-h3);">2</div>
+                <div class="flex-1">
+                  <div class="team-card__handler">Jenny Damm 🇸🇪</div>
+                  <div class="team-card__dog">Lilli</div>
+                </div>
+                <div class="text-right">
+                  <div class="data-number-md">1,834</div>
+                  <span class="badge badge-elite" style="font-size: 10px;">Elite</span>
+                </div>
+              </div>
+            </a>
+            <a href="/teams/max-sprinz-amy" class="team-card team-card--rank-3 team-card--compact">
+              <div class="flex items-center gap-3">
+                <div class="team-card__rank" style="font-size: var(--font-size-h3);">3</div>
+                <div class="flex-1">
+                  <div class="team-card__handler">Max Sprinz 🇩🇪</div>
+                  <div class="team-card__dog">Amy</div>
+                </div>
+                <div class="text-right">
+                  <div class="data-number-md">1,795</div>
+                  <span class="badge badge-champion" style="font-size: 10px;">Champion</span>
+                </div>
+              </div>
+            </a>
+            <div class="mt-3"><a href="/rankings?size=I" class="text-small">View full rankings &rarr;</a></div>
+          </div>
+
+          <!-- Large -->
+          <div class="size-tab-content" id="tab-large">
+            <div class="spotlight-col__title"><span class="badge badge-size">L</span> Large</div>
+            <a href="/teams/katerina-tricova-fame" class="team-card team-card--rank-1 team-card--featured">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="team-card__rank">1</div>
+                <div>
+                  <div class="team-card__handler">Katerina Tricova 🇨🇿</div>
+                  <div class="team-card__dog">Fame &middot; Border Collie</div>
+                </div>
+              </div>
+              <div class="flex-between">
+                <span class="team-card__rating">1,891</span>
+                <span class="badge badge-elite">Elite</span>
+              </div>
+              <div class="trend trend-up text-small mt-2">&#9650; 5</div>
+            </a>
+            <a href="/teams/daniel-schroder-fly" class="team-card team-card--rank-2 team-card--compact">
+              <div class="flex items-center gap-3">
+                <div class="team-card__rank" style="font-size: var(--font-size-h3);">2</div>
+                <div class="flex-1">
+                  <div class="team-card__handler">Daniel Schroder 🇩🇪</div>
+                  <div class="team-card__dog">Fly</div>
+                </div>
+                <div class="text-right">
+                  <div class="data-number-md">1,847</div>
+                  <span class="badge badge-elite" style="font-size: 10px;">Elite</span>
+                </div>
+              </div>
+            </a>
+            <a href="/teams/silas-boogk-beam" class="team-card team-card--rank-3 team-card--compact">
+              <div class="flex items-center gap-3">
+                <div class="team-card__rank" style="font-size: var(--font-size-h3);">3</div>
+                <div class="flex-1">
+                  <div class="team-card__handler">Silas Boogk 🇩🇪</div>
+                  <div class="team-card__dog">Beam</div>
+                </div>
+                <div class="text-right">
+                  <div class="data-number-md">1,823</div>
+                  <span class="badge badge-elite" style="font-size: 10px;">Elite</span>
+                </div>
+              </div>
+            </a>
+            <div class="mt-3"><a href="/rankings?size=L" class="text-small">View full rankings &rarr;</a></div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 3.4 Recent Competitions -->
+      <section class="container mb-8">
+        <div class="section-header">
+          <h2>Recent Competitions</h2>
+          <a href="/competitions" class="section-header__link">View all competitions &rarr;</a>
+        </div>
+
+        <div class="competition-entry competition-entry--major">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">
+              Agility World Championship 2025
+              <span class="badge badge-major" style="margin-left: var(--space-2);">Major</span>
+            </div>
+            <div class="competition-entry__meta">
+              <span>🇮🇹 Oct 3&ndash;6, 2025</span>
+              <span>Turin, Italy</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">248 teams</div>
+        </div>
+
+        <div class="competition-entry competition-entry--major">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">
+              European Open 2025
+              <span class="badge badge-major" style="margin-left: var(--space-2);">Major</span>
+            </div>
+            <div class="competition-entry__meta">
+              <span>🇧🇪 Sep 19&ndash;21, 2025</span>
+              <span>Brussels, Belgium</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">312 teams</div>
+        </div>
+
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Moravia Open 2025</div>
+            <div class="competition-entry__meta">
+              <span>🇨🇿 Sep 12&ndash;14, 2025</span>
+              <span>Brno, Czech Republic</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">186 teams</div>
+        </div>
+
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Deutschen Meisterschaft 2025</div>
+            <div class="competition-entry__meta">
+              <span>🇩🇪 Aug 22&ndash;24, 2025</span>
+              <span>Dortmund, Germany</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">210 teams</div>
+        </div>
+
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Canis Tryskac 2025</div>
+            <div class="competition-entry__meta">
+              <span>🇨🇿 Aug 8&ndash;10, 2025</span>
+              <span>Prague, Czech Republic</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">154 teams</div>
+        </div>
+      </section>
+
+      <!-- 3.5 About the Rating -->
+      <section class="container mb-8">
+        <h2>About the Rating</h2>
+        <p>
+          Ratings are based on the Plackett-Luce model, updated after each competition. Each run is a head-to-head comparison: beat strong teams and your rating goes up more; lose to weaker teams and your rating goes down more. Higher rating equals stronger performance against tough competition.
+        </p>
+        <p>
+          Ratings are comparable across all size categories. The rating scale is centered around 1500, with higher values indicating better performance. Teams are classified into tiers: Elite, Champion, Expert, and Competitor.
+        </p>
+        <p class="mt-4">
+          <a href="/how-it-works">Learn more about how the rating works &rarr;</a>
+        </p>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container" style="display: block;">
+        <div class="site-footer__top">
+          <div>
+            <div class="site-footer__brand mb-3">ADW <span>Rating</span></div>
+            <ul class="site-footer__links">
+              <li><a href="/how-it-works">How it works</a></li>
+              <li><a href="/rankings">Rankings</a></li>
+              <li><a href="/competitions">Competitions</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="site-footer__social">
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p class="site-footer__disclaimer">Data from major international agility competitions.</p>
+          <p class="site-footer__disclaimer">ADW Rating is an independent project &mdash; not affiliated with FCI, AKC, or any official organization.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Simple tab switching for mobile spotlight
+    function switchTab(size) {
+      document.querySelectorAll('.size-tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.size-tabs .pill').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + size).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
