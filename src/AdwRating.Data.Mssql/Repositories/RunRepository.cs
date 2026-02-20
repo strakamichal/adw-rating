@@ -21,10 +21,12 @@ public class RunRepository : IRunRepository
             .ToListAsync();
     }
 
-    public async Task<Run?> GetByCompetitionAndRoundKeyAsync(int competitionId, string roundKey)
+    public async Task<DateOnly?> GetLatestDateAsync()
     {
-        return await _context.Runs
-            .FirstOrDefaultAsync(r => r.CompetitionId == competitionId && r.RoundKey == roundKey);
+        if (!await _context.Runs.AnyAsync())
+            return null;
+
+        return await _context.Runs.MaxAsync(r => r.Date);
     }
 
     public async Task<IReadOnlyList<Run>> GetAllInWindowAsync(DateOnly cutoffDate)

@@ -7,6 +7,8 @@ public interface IHandlerRepository
     Task<Handler?> GetByIdAsync(int id);
     Task<Handler?> GetBySlugAsync(string slug);
     Task<Handler?> FindByNormalizedNameAndCountryAsync(string normalizedName, string country);
+    Task<IReadOnlyList<Handler>> FindByNormalizedNameAsync(string normalizedName);
+    Task<IReadOnlyList<Handler>> FindByNormalizedNameContainingAsync(string normalizedName, string country);
     Task<IReadOnlyList<Handler>> SearchAsync(string query, int limit);
     Task<Handler> CreateAsync(Handler handler);
     Task UpdateAsync(Handler handler);

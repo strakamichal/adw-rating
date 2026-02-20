@@ -13,13 +13,6 @@ public class RunResultRepository : IRunResultRepository
         _context = context;
     }
 
-    public async Task<IReadOnlyList<RunResult>> GetByRunIdAsync(int runId)
-    {
-        return await _context.RunResults
-            .Where(rr => rr.RunId == runId)
-            .ToListAsync();
-    }
-
     public async Task<IReadOnlyList<RunResult>> GetByRunIdsAsync(IEnumerable<int> runIds)
     {
         var idList = runIds.ToList();
@@ -27,19 +20,6 @@ public class RunResultRepository : IRunResultRepository
             .Include(rr => rr.Team)
             .Where(rr => idList.Contains(rr.RunId))
             .ToListAsync();
-    }
-
-    public async Task<IReadOnlyList<RunResult>> GetByTeamIdAsync(int teamId, DateOnly? after = null)
-    {
-        var query = _context.RunResults
-            .Include(rr => rr.Run)
-                .ThenInclude(r => r.Competition)
-            .Where(rr => rr.TeamId == teamId);
-
-        if (after.HasValue)
-            query = query.Where(rr => rr.Run.Date >= after.Value);
-
-        return await query.ToListAsync();
     }
 
     public async Task CreateBatchAsync(IEnumerable<RunResult> results)

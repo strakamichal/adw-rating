@@ -40,7 +40,8 @@ public class ImportService : IImportService
 
         // 1. Parse CSV
         using var stream = File.OpenRead(filePath);
-        var (rows, parseErrors) = CsvResultParser.Parse(stream);
+        var (rows, parseErrors, parseWarnings) = CsvResultParser.Parse(stream);
+        warnings.AddRange(parseWarnings);
 
         // 2. If parse errors, write rejected ImportLog and return failure
         if (parseErrors.Count > 0)
@@ -137,9 +138,9 @@ public class ImportService : IImportService
         var dogCache = new Dictionary<string, Dog>(StringComparer.OrdinalIgnoreCase);
         var teamCache = new Dictionary<string, Team>();
 
-        var allHandlerIds = new HashSet<int>();
-        var allDogIds = new HashSet<int>();
-        var allTeamIds = new HashSet<int>();
+        var newHandlerCount = 0;
+        var newDogCount = 0;
+        var newTeamCount = 0;
 
         var runResults = new List<RunResult>();
 
@@ -158,28 +159,31 @@ public class ImportService : IImportService
                 var handlerKey = $"{row.HandlerName}|{row.HandlerCountry}";
                 if (!handlerCache.TryGetValue(handlerKey, out var handler))
                 {
-                    handler = await _identityService.ResolveHandlerAsync(row.HandlerName, row.HandlerCountry);
+                    var (resolvedHandler, handlerIsNew) = await _identityService.ResolveHandlerAsync(row.HandlerName, row.HandlerCountry);
+                    handler = resolvedHandler;
                     handlerCache[handlerKey] = handler;
+                    if (handlerIsNew) newHandlerCount++;
                 }
-                allHandlerIds.Add(handler.Id);
 
-                // Resolve dog (with cache)
-                var dogKey = $"{row.DogCallName}|{rowSize.Value}";
+                // Resolve dog (with cache, scoped to handler)
+                var dogKey = $"{handler.Id}|{row.DogCallName}|{rowSize.Value}";
                 if (!dogCache.TryGetValue(dogKey, out var dog))
                 {
-                    dog = await _identityService.ResolveDogAsync(row.DogCallName, row.DogBreed, rowSize.Value);
+                    var (resolvedDog, dogIsNew) = await _identityService.ResolveDogAsync(row.DogCallName, row.DogBreed, rowSize.Value, handler.Id);
+                    dog = resolvedDog;
                     dogCache[dogKey] = dog;
+                    if (dogIsNew) newDogCount++;
                 }
-                allDogIds.Add(dog.Id);
 
                 // Resolve team (with cache)
                 var teamKey = $"{handler.Id}-{dog.Id}";
                 if (!teamCache.TryGetValue(teamKey, out var team))
                 {
-                    team = await _identityService.ResolveTeamAsync(handler.Id, dog.Id);
+                    var (resolvedTeam, teamIsNew) = await _identityService.ResolveTeamAsync(handler.Id, dog.Id);
+                    team = resolvedTeam;
                     teamCache[teamKey] = team;
+                    if (teamIsNew) newTeamCount++;
                 }
-                allTeamIds.Add(team.Id);
 
                 var isEliminated = "true".Equals(row.Eliminated, StringComparison.OrdinalIgnoreCase);
 
@@ -212,17 +216,17 @@ public class ImportService : IImportService
             ImportedAt = DateTime.UtcNow,
             Status = status,
             RowCount = rows.Count,
-            NewHandlersCount = allHandlerIds.Count,
-            NewDogsCount = allDogIds.Count,
-            NewTeamsCount = allTeamIds.Count,
+            NewHandlersCount = newHandlerCount,
+            NewDogsCount = newDogCount,
+            NewTeamsCount = newTeamCount,
             Errors = null,
             Warnings = warnings.Count > 0 ? string.Join("\n", warnings) : null
         });
 
         _logger.LogInformation(
-            "Import completed: {RowCount} rows, {Handlers} handlers, {Dogs} dogs, {Teams} teams",
-            rows.Count, allHandlerIds.Count, allDogIds.Count, allTeamIds.Count);
+            "Import completed: {RowCount} rows, {NewHandlers} new handlers, {NewDogs} new dogs, {NewTeams} new teams",
+            rows.Count, newHandlerCount, newDogCount, newTeamCount);
 
-        return new ImportResult(true, rows.Count, allHandlerIds.Count, allDogIds.Count, allTeamIds.Count, [], warnings);
+        return new ImportResult(true, rows.Count, newHandlerCount, newDogCount, newTeamCount, [], warnings);
     }
 }

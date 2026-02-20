@@ -461,35 +461,35 @@
 
 **Goal**: Complete admin tooling so you can import data, inspect it, fix duplicates, and iterate on data quality — all before building the rating engine or web UI.
 
-- [ ] **4.1** MergeService
+- [x] **4.1** MergeService
   - Implement `IMergeService` in Service — `MergeHandlersAsync` (reassign teams + aliases from source to target, delete source, handle slug conflicts), `MergeDogsAsync` (same-size validation, reassign teams + aliases, handle duplicate team merging).
   - Files: `Service/MergeService.cs`
   - Dependencies: 2.1a, 2.2a, 2.3
   - Tests: Unit tests — handler merge (teams reassigned, aliases moved), dog merge (same-size check, duplicate team handling)
   - **Completion gates**: build | tests
 
-- [ ] **4.2a** CLI — list commands
+- [x] **4.2a** CLI — list commands
   - Implement: `list competitions`, `list handlers --search`, `list dogs --search`, `list imports`. Table-formatted console output.
   - Files: `Cli/Commands/ListCommands.cs`
   - Dependencies: 3.5b, Phase 2
   - Tests: Smoke test — commands parse correctly
   - **Completion gates**: build | tests
 
-- [ ] **4.2b** CLI — show and alias list commands
+- [x] **4.2b** CLI — show and alias list commands
   - Implement: `show handler <id>`, `show dog <id>`, `list aliases handler <id>`, `list aliases dog <id>`.
   - Files: `Cli/Commands/ShowCommands.cs`
   - Dependencies: 3.5b, Phase 2
   - Tests: Smoke test — commands parse correctly
   - **Completion gates**: build | tests
 
-- [ ] **4.3a** CLI — merge commands
+- [x] **4.3a** CLI — merge commands
   - Implement `merge handler` and `merge dog` with confirmation prompt and `--dry-run`.
   - Files: `Cli/Commands/MergeCommands.cs`
   - Dependencies: 4.1, 3.5b
   - Tests: Unit test for confirmation prompt logic
   - **Completion gates**: build | tests
 
-- [ ] **4.3b** CLI — delete, update, add-alias commands
+- [x] **4.3b** CLI — delete, update, add-alias commands
   - Implement: `delete competition` (with confirmation), `update handler --country`, `add alias handler`, `add alias dog`.
   - Files: `Cli/Commands/DeleteCommands.cs`, `Cli/Commands/UpdateCommands.cs`, `Cli/Commands/AliasCommands.cs`
   - Dependencies: 3.5b, Phase 2
@@ -502,7 +502,7 @@
 
 **Goal**: Full rating recalculation from run data. After this phase, the system can compute and store ratings.
 
-- [ ] **5.1** OpenSkill integration — RatingEngine wrapper
+- [x] **5.1** OpenSkill integration — RatingEngine wrapper *(done — uses OpenSkillSharp 1.1.0, Tau=0 since we handle sigma decay ourselves)*
   - Add `openskill.net` NuGet package. Create a thin wrapper (`RatingEngine`) in Service that isolates the library: `CreateRating()` → initial (mu=25.0, sigma≈8.333), `ProcessRun(teams, ranks, weight)` → calls PlackettLuce model → returns updated (mu, sigma).
   - Files: `Service/Rating/RatingEngine.cs`
   - Dependencies: 1.1
@@ -510,7 +510,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` sections 3.1–3.3
 
-- [ ] **5.2** Rating recalculation — core loop
+- [x] **5.2** Rating recalculation — core loop
   - Implement `IRatingService.RecalculateAllAsync()` core loop per `08-rating-rules.md` sections 2–3. Load config, reset teams, compute cutoff, load runs in window, batch-load results, process each qualifying run (build rank list, apply weight, update mu/sigma, apply sigma decay, track counts). Save intermediate mu/sigma per team.
   - Files: `Service/Rating/RatingService.cs`
   - Dependencies: 5.1, 2.3, 2.4b, 2.4c, 2.5a, 2.5b
@@ -518,7 +518,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` sections 2 and 3
 
-- [ ] **5.3a** Rating recalculation — display scaling and podium boost
+- [x] **5.3a** Rating recalculation — display scaling and podium boost
   - Add display scaling pipeline to `RatingService`: base rating (`DISPLAY_BASE + DISPLAY_SCALE * (mu - RATING_SIGMA_MULTIPLIER * sigma)`), podium boost (quality factor from top3 percentage).
   - Files: `Service/Rating/RatingService.cs`
   - Dependencies: 5.2
@@ -526,7 +526,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` sections 4.1, 4.2
 
-- [ ] **5.3b** Rating recalculation — cross-size normalization and tiers
+- [x] **5.3b** Rating recalculation — cross-size normalization and tiers
   - Add cross-size normalization (z-score per size category → target mean 1500, std 150), IsActive/IsProvisional flags, tier labels (percentile-based: Elite top 2%, Champion top 10%, Expert top 30%), PeakRating tracking.
   - Files: `Service/Rating/RatingService.cs`
   - Dependencies: 5.3a
@@ -534,7 +534,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` sections 4.3, 5, 6
 
-- [ ] **5.3c** Rating recalculation — snapshots and persistence
+- [x] **5.3c** Rating recalculation — snapshots and persistence
   - Add RatingSnapshot generation (for each team+run, create snapshot with final normalization params) and final persistence (`UpdateBatchAsync` + `ReplaceAllAsync`). Apply normalization to PrevRating for consistent trend display.
   - Files: `Service/Rating/RatingService.cs`
   - Dependencies: 5.3b
@@ -542,7 +542,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `03-domain-and-data.md` RatingSnapshot rules
 
-- [ ] **5.4** CLI recalculate command
+- [x] **5.4** CLI recalculate command
   - Add `recalculate` command to CLI that calls `IRatingService.RecalculateAllAsync()`. Print summary: teams processed, time elapsed, tier distribution.
   - Files: `Cli/Commands/RecalculateCommand.cs`
   - Dependencies: 5.3c, 3.5b

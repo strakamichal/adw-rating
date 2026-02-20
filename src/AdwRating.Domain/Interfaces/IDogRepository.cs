@@ -7,6 +7,7 @@ public interface IDogRepository
 {
     Task<Dog?> GetByIdAsync(int id);
     Task<Dog?> FindByNormalizedNameAndSizeAsync(string normalizedCallName, SizeCategory size);
+    Task<IReadOnlyList<Dog>> FindAllByNormalizedNameAndSizeAsync(string normalizedCallName, SizeCategory size);
     Task<IReadOnlyList<Dog>> SearchAsync(string query, int limit);
     Task<Dog> CreateAsync(Dog dog);
     Task UpdateAsync(Dog dog);

@@ -6,7 +6,7 @@ namespace AdwRating.Tests.Import;
 public class CsvResultParserTests
 {
     private const string Header =
-        "round_key,date,size_category,discipline,is_team_round,handler_name,handler_country,dog_call_name,rank,eliminated";
+        "round_key,date,size,discipline,is_team_round,handler,country,dog,rank,eliminated";
 
     private static Stream CreateCsvStream(string csvContent)
     {
@@ -21,9 +21,10 @@ public class CsvResultParserTests
             R1,2025-01-15,S,Agility,false,John Smith,CZ,Rex,1,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Is.Empty);
+        Assert.That(warnings, Is.Empty);
         Assert.That(rows, Has.Count.EqualTo(1));
 
         var row = rows[0];
@@ -48,7 +49,7 @@ public class CsvResultParserTests
             R1,2025-01-15,M,Jumping,false,Jane Doe,SK,Buddy,2,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Is.Empty);
         Assert.That(rows, Has.Count.EqualTo(1));
@@ -66,7 +67,7 @@ public class CsvResultParserTests
             R2,2025-01-15,M,Jumping,false,Jane Doe,SK,Buddy,2,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Is.Empty);
         Assert.That(rows, Has.Count.EqualTo(2));
@@ -80,7 +81,7 @@ public class CsvResultParserTests
             R1,2025-01-15,S,Agility,false,"Smith, John",CZ,Rex,1,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Is.Empty);
         Assert.That(rows, Has.Count.EqualTo(1));
@@ -95,24 +96,26 @@ public class CsvResultParserTests
             R1,2025-01-15,S,Agility,false,,CZ,Rex,1,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Has.Count.GreaterThanOrEqualTo(1));
-        Assert.That(errors.Any(e => e.Contains("handler_name")), Is.True);
+        Assert.That(errors.Any(e => e.Contains("handler is required")), Is.True);
     }
 
     [Test]
-    public void InvalidRank_WhenNotEliminated_ReturnsError()
+    public void InvalidRank_WhenNotEliminated_TreatedAsEliminatedWithWarning()
     {
         var csv = $"""
             {Header}
             R1,2025-01-15,S,Agility,false,John Smith,CZ,Rex,abc,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
-        Assert.That(errors, Has.Count.GreaterThanOrEqualTo(1));
-        Assert.That(errors.Any(e => e.Contains("rank")), Is.True);
+        Assert.That(errors, Is.Empty);
+        Assert.That(warnings, Has.Count.GreaterThanOrEqualTo(1));
+        Assert.That(warnings.Any(w => w.Contains("treating as eliminated")), Is.True);
+        Assert.That(rows[0].Eliminated, Is.EqualTo("true"));
     }
 
     [Test]
@@ -123,7 +126,7 @@ public class CsvResultParserTests
             R1,2025-01-15,S,Obedience,false,John Smith,CZ,Rex,1,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Has.Count.GreaterThanOrEqualTo(1));
         Assert.That(errors.Any(e => e.Contains("discipline") && e.Contains("Obedience")), Is.True);
@@ -138,7 +141,7 @@ public class CsvResultParserTests
             R1,2025-01-15,S,Agility,false,John Smith,CZ,Rex,2,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Has.Count.GreaterThanOrEqualTo(1));
         Assert.That(errors.Any(e => e.Contains("duplicate")), Is.True);
@@ -152,7 +155,7 @@ public class CsvResultParserTests
             R1,2025-01-15,S,Agility,false,John Smith,CZ,Rex,1,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Is.Empty);
         Assert.That(rows, Has.Count.EqualTo(1));
@@ -167,10 +170,11 @@ public class CsvResultParserTests
             ,2025-01-15,,InvalidDisc,false,,CZ,,abc,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
-        // Should have errors for: round_key, handler_name, dog_call_name, size_category, discipline (invalid), rank (invalid)
-        Assert.That(errors, Has.Count.GreaterThanOrEqualTo(5));
+        // Should have errors for: round_key, handler, dog, size, discipline (invalid)
+        // rank with invalid value + eliminated=false produces a warning, not an error
+        Assert.That(errors, Has.Count.GreaterThanOrEqualTo(4));
     }
 
     [Test]
@@ -181,7 +185,7 @@ public class CsvResultParserTests
             R1,2025-01-15,S,Agility,false,John Smith,CZ,Rex,,true
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Is.Empty);
         Assert.That(rows, Has.Count.EqualTo(1));
@@ -195,9 +199,10 @@ public class CsvResultParserTests
             R1,2025-01-15,S,Agility,false,John Smith,CZ,Rex,3,false
             """;
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Is.Empty);
+        Assert.That(warnings, Is.Empty);
         Assert.That(rows, Has.Count.EqualTo(1));
         Assert.That(rows[0].Rank, Is.EqualTo("3"));
     }
@@ -209,7 +214,7 @@ public class CsvResultParserTests
             "round_key,date,size_category,discipline,is_team_round,handler_name,handler_country,dog_call_name,rank,eliminated,dog_registered_name,dog_breed,faults,refusals,time_faults,total_faults,time,speed,judge,sct,mct,course_length,start_no,run_number\n" +
             "R1,2025-01-15,S,Agility,false,John Smith,CZ,Rex,1,false,Rex von Castle,Border Collie,0,0,0.5,0.5,35.21,4.5,J. Judge,40,60,160,5,1";
 
-        var (rows, errors) = CsvResultParser.Parse(CreateCsvStream(csv));
+        var (rows, errors, warnings) = CsvResultParser.Parse(CreateCsvStream(csv));
 
         Assert.That(errors, Is.Empty);
         Assert.That(rows, Has.Count.EqualTo(1));

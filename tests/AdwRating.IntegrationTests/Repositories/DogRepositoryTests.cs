@@ -45,55 +45,6 @@ public class DogRepositoryTests
     }
 
     [Test]
-    public async Task FindByNormalizedNameAndSizeAsync_Match_ReturnsDog()
-    {
-        // Arrange
-        var suffix = Guid.NewGuid().ToString("N")[..8];
-        await using var context = DatabaseFixture.CreateContext();
-        var dog = new Dog
-        {
-            CallName = $"FindDog {suffix}",
-            NormalizedCallName = $"finddog {suffix}",
-            SizeCategory = SizeCategory.S
-        };
-        context.Dogs.Add(dog);
-        await context.SaveChangesAsync();
-
-        // Act
-        await using var queryContext = DatabaseFixture.CreateContext();
-        var repo = new DogRepository(queryContext);
-        var result = await repo.FindByNormalizedNameAndSizeAsync($"finddog {suffix}", SizeCategory.S);
-
-        // Assert
-        Assert.That(result, Is.Not.Null);
-        Assert.That(result!.Id, Is.EqualTo(dog.Id));
-    }
-
-    [Test]
-    public async Task FindByNormalizedNameAndSizeAsync_WrongSize_ReturnsNull()
-    {
-        // Arrange
-        var suffix = Guid.NewGuid().ToString("N")[..8];
-        await using var context = DatabaseFixture.CreateContext();
-        var dog = new Dog
-        {
-            CallName = $"SizeDog {suffix}",
-            NormalizedCallName = $"sizedog {suffix}",
-            SizeCategory = SizeCategory.M
-        };
-        context.Dogs.Add(dog);
-        await context.SaveChangesAsync();
-
-        // Act
-        await using var queryContext = DatabaseFixture.CreateContext();
-        var repo = new DogRepository(queryContext);
-        var result = await repo.FindByNormalizedNameAndSizeAsync($"sizedog {suffix}", SizeCategory.L);
-
-        // Assert
-        Assert.That(result, Is.Null);
-    }
-
-    [Test]
     public async Task SearchAsync_MatchingQuery_ReturnsResults()
     {
         // Arrange

@@ -151,6 +151,8 @@ public interface IHandlerRepository
     Task<Handler?> GetByIdAsync(int id);
     Task<Handler?> GetBySlugAsync(string slug);
     Task<Handler?> FindByNormalizedNameAndCountryAsync(string normalizedName, string country);
+    Task<IReadOnlyList<Handler>> FindByNormalizedNameAsync(string normalizedName);
+    Task<IReadOnlyList<Handler>> FindByNormalizedNameContainingAsync(string normalizedName, string country);
     Task<IReadOnlyList<Handler>> SearchAsync(string query, int limit);
     Task<Handler> CreateAsync(Handler handler);
     Task UpdateAsync(Handler handler);
@@ -162,6 +164,7 @@ public interface IDogRepository
 {
     Task<Dog?> GetByIdAsync(int id);
     Task<Dog?> FindByNormalizedNameAndSizeAsync(string normalizedCallName, SizeCategory size);
+    Task<IReadOnlyList<Dog>> FindAllByNormalizedNameAndSizeAsync(string normalizedCallName, SizeCategory size);
     Task<IReadOnlyList<Dog>> SearchAsync(string query, int limit);
     Task<Dog> CreateAsync(Dog dog);
     Task UpdateAsync(Dog dog);
@@ -175,6 +178,7 @@ public interface ITeamRepository
     Task<Team?> GetBySlugAsync(string slug);
     Task<Team?> GetByHandlerAndDogAsync(int handlerId, int dogId);
     Task<IReadOnlyList<Team>> GetByHandlerIdAsync(int handlerId);
+    Task<IReadOnlyList<Team>> GetByDogIdAsync(int dogId);
     Task<PagedResult<Team>> GetRankedTeamsAsync(RankingFilter filter);
     Task<IReadOnlyList<Team>> GetAllAsync();   // for full rating recalculation
     Task<Team> CreateAsync(Team team);
@@ -326,7 +330,7 @@ public interface ISearchService
 public interface IIdentityResolutionService
 {
     Task<Handler> ResolveHandlerAsync(string rawName, string country);
-    Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size);
+    Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size, int handlerId);
     Task<Team> ResolveTeamAsync(int handlerId, int dogId);
 }
 

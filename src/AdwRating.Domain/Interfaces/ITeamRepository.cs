@@ -9,6 +9,7 @@ public interface ITeamRepository
     Task<Team?> GetBySlugAsync(string slug);
     Task<Team?> GetByHandlerAndDogAsync(int handlerId, int dogId);
     Task<IReadOnlyList<Team>> GetByHandlerIdAsync(int handlerId);
+    Task<IReadOnlyList<Team>> GetByDogIdAsync(int dogId);
     Task<PagedResult<Team>> GetRankedTeamsAsync(RankingFilter filter);
     Task<IReadOnlyList<Team>> GetAllAsync();
     Task<Team> CreateAsync(Team team);
