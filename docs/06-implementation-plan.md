@@ -699,7 +699,7 @@
 
 **Goal**: Implement all MVP pages as Blazor SSR components, using the approved HTML/CSS design from Phase 7A. Copy CSS from `design/` into `Web/wwwroot/css/`. Convert static HTML structures into Razor components with data binding.
 
-- [ ] **7.3a** Web project setup
+- [x] **7.3a** Web project setup *(done — Static SSR configured, ApiClient registered in DI, CSS copied, App.razor with HeadOutlet)*
   - Set up `AdwRating.Web` with Blazor Static SSR, Enhanced Navigation. Create `App.razor`, `_Imports.razor`, error page. Copy CSS from `design/css/` into `Web/wwwroot/css/`. Configure `ApiBaseUrl` from `appsettings.json`.
   - Files: `Web/Program.cs`, `Web/Components/App.razor`, `Web/appsettings.json`, `Web/wwwroot/css/`
   - Dependencies: 7.2h
@@ -734,7 +734,7 @@
   - Tests: Unit tests — URL construction, deserialization
   - **Completion gates**: build | tests
 
-- [ ] **7.5** Layout — header, footer, navigation
+- [x] **7.5** Layout — header, footer, navigation *(done — NavMenu with NavLink active states, Footer with social SVGs, CSS-only mobile hamburger)*
   - Convert `design/layout.html` into Blazor components: persistent header (logo, nav links, search placeholder), footer (How It Works, disclaimer). Mobile hamburger menu with JS interop.
   - Files: `Web/Components/Layout/MainLayout.razor`, `Web/Components/Layout/NavMenu.razor`, `Web/Components/Layout/Footer.razor`
   - Dependencies: 7.3a
