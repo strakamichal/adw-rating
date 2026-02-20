@@ -344,7 +344,7 @@ public class RatingService : IRatingService
         var snapshotsByTeam = snapshots?.GroupBy(s => s.TeamId)
             .ToDictionary(g => g.Key, g => g.ToList());
 
-        // Get effective size category per team
+        // Group all teams with runs by size category
         var sizeGroups = teams
             .Where(t => t.RunCount > 0)
             .GroupBy(t => GetEffectiveSizeCategory(t));
@@ -353,9 +353,15 @@ public class RatingService : IRatingService
         foreach (var group in sizeGroups)
         {
             var groupTeams = group.ToList();
-            if (groupTeams.Count < 2)
+
+            // Compute mean/std only from qualified teams (matching Python behavior)
+            var qualified = groupTeams
+                .Where(t => t.RunCount >= config.MinRunsForLiveRanking)
+                .ToList();
+
+            if (qualified.Count < 2)
             {
-                // With 0-1 teams, can't compute std; just set to target mean
+                // With 0-1 qualified teams, can't compute std; just set to target mean
                 foreach (var team in groupTeams)
                 {
                     team.Rating = config.NormTargetMean;
@@ -365,9 +371,9 @@ public class RatingService : IRatingService
                 continue;
             }
 
-            // Compute mean and std of raw ratings in this size category
-            double mean = groupTeams.Average(t => (double)t.Rating);
-            double variance = groupTeams.Average(t => Math.Pow(t.Rating - mean, 2));
+            // Compute mean and std from qualified teams only
+            double mean = qualified.Average(t => (double)t.Rating);
+            double variance = qualified.Average(t => Math.Pow(t.Rating - mean, 2));
             double std = Math.Sqrt(variance);
 
             if (std < 1e-6)
@@ -382,6 +388,7 @@ public class RatingService : IRatingService
                 continue;
             }
 
+            // Apply normalization to ALL teams in the group (using qualified mean/std)
             foreach (var team in groupTeams)
             {
                 team.Rating = (float)(config.NormTargetMean + config.NormTargetStd * (team.Rating - mean) / std);
