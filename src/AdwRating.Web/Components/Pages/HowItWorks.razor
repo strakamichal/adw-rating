@@ -1,0 +1,200 @@
+@page "/how-it-works"
+
+<PageTitle>How the Rating Works — ADW Rating</PageTitle>
+
+<!-- Hero -->
+<section class="hiw-hero">
+    <div class="container">
+        <h1>How the Rating Works</h1>
+        <p>An independent, community-driven ranking &mdash; not affiliated with any official organization</p>
+    </div>
+</section>
+
+<!-- What is ADW Rating? -->
+<section class="hiw-section">
+    <div class="container content-narrow">
+        <h2>What is ADW Rating?</h2>
+        <p>
+            ADW Rating is an independent rating system for dog agility teams worldwide. It ranks teams based on their competition results, providing a transparent and objective measure of performance across international events.
+        </p>
+        <p>
+            The system is not official and is not affiliated with FCI, AKC, USDAA, UKI, IFCS, WAO, or any other governing body. It is a community-driven project, open about its methodology so that anyone can understand how ratings are calculated.
+        </p>
+    </div>
+</section>
+
+<!-- How ratings are calculated -->
+<section class="hiw-section hiw-section--alt">
+    <div class="container content-narrow">
+        <h2>How Ratings Are Calculated</h2>
+
+        <h3>The PlackettLuce Model</h3>
+        <p>
+            Ratings use the PlackettLuce model, a well-established statistical method for ranking based on ordered outcomes. In simple terms: each run is a head-to-head comparison. Beat strong teams and your rating goes up more. Lose to weaker teams and your rating goes down more.
+        </p>
+
+        <div class="hiw-callout">
+            <p>
+                Think of it like this: finishing 5th at a World Championship against the best teams in the world tells us more than finishing 1st at a small local trial. The model accounts for who you competed against, not just where you placed.
+            </p>
+        </div>
+
+        <div class="hiw-two-col">
+            <div class="hiw-affects-card hiw-affects-card--yes">
+                <h4>&#10003; What affects your rating</h4>
+                <ul>
+                    <li>Your placement in each run</li>
+                    <li>Strength of competitors in that run</li>
+                    <li>Competition tier (Major events count more)</li>
+                </ul>
+            </div>
+            <div class="hiw-affects-card hiw-affects-card--no">
+                <h4>&#10007; What does NOT affect your rating</h4>
+                <ul>
+                    <li>Time or faults directly (only placement matters)</li>
+                    <li>Breed of dog</li>
+                    <li>Country of origin</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>Rating Scale</h3>
+        <p>
+            Ratings are centered around <strong>1500</strong>, with higher values indicating better performance. Approximately 68% of teams fall between 1350 and 1650. Teams are classified into tiers based on their rating:
+        </p>
+        <ul>
+            <li><strong>Elite</strong> &mdash; the top performers, consistently beating strong competition</li>
+            <li><strong>Champion</strong> &mdash; strong competitors with proven results</li>
+            <li><strong>Expert</strong> &mdash; experienced teams with solid performances</li>
+            <li><strong>Competitor</strong> &mdash; active participants building their record</li>
+        </ul>
+
+        <h3>Size Categories</h3>
+        <p>
+            Dogs compete in four size categories: <strong>S</strong> (Small), <strong>M</strong> (Medium), <strong>I</strong> (Intermediate), and <strong>L</strong> (Large). Each dog competes in one category based on their height. When dogs from different categories meet in the same run (for example, at WAO events), they are all rated against each other. Display ratings are then normalized per category so they are comparable across S, M, I, and L.
+        </p>
+    </div>
+</section>
+
+<!-- Data Sources -->
+<section class="hiw-section">
+    <div class="container content-narrow">
+        <h2>Data Sources</h2>
+        <p>
+            We include results from major international agility competitions spanning the last 2-3 years. Competition types currently tracked:
+        </p>
+
+        <div class="data-sources-grid">
+            <div class="data-source-tag">FCI</div>
+            <div class="data-source-tag">WAO</div>
+            <div class="data-source-tag">AKC</div>
+            <div class="data-source-tag">USDAA</div>
+            <div class="data-source-tag">UKI</div>
+            <div class="data-source-tag">IFCS</div>
+        </div>
+
+        <div class="hiw-callout">
+            <p>
+                Transparency note: not all competitions are included. Results data is manually imported from publicly available sources. We are continually expanding our coverage to include more events and organizations.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Size Categories and Cross-Organization -->
+<section class="hiw-section hiw-section--alt">
+    <div class="container content-narrow">
+        <h2>Size Categories and Cross-Organization Competitions</h2>
+        <p>
+            FCI uses four categories (S/M/I/L) based on the dog's height at the withers. Other organizations such as AKC, USDAA, and WAO use different height categories. Each dog is assigned to one FCI category based on their most recent run, and their rating appears in that category's leaderboard.
+        </p>
+        <p>
+            When a competition mixes dogs from different categories in one run (for example, WAO 500 includes both Intermediate and Large dogs), all competitors are rated against each other. The placement is real &mdash; they ran the same course.
+        </p>
+
+        <h3>Approximate Size Mapping</h3>
+        <table class="mapping-table">
+            <thead>
+                <tr>
+                    <th>FCI Category</th>
+                    <th>FCI Height</th>
+                    <th>AKC</th>
+                    <th>USDAA</th>
+                    <th>WAO</th>
+                    <th>UKI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="badge badge-size">S</span></td>
+                    <td>&lt; 35 cm</td>
+                    <td>8" / 12"</td>
+                    <td>12"</td>
+                    <td>250</td>
+                    <td>250</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-size">M</span></td>
+                    <td>35-43 cm</td>
+                    <td>16"</td>
+                    <td>16"</td>
+                    <td>300</td>
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-size">I</span></td>
+                    <td>43-48 cm</td>
+                    <td>20"</td>
+                    <td>22"</td>
+                    <td>400</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td><span class="badge badge-size">L</span></td>
+                    <td>&gt; 48 cm</td>
+                    <td>24"</td>
+                    <td>26"</td>
+                    <td>500 / 600</td>
+                    <td>500 / 600</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="hiw-callout">
+            <p>
+                <strong>AKC Preferred heights are excluded</strong> because dogs jump lower obstacles, making results incomparable with standard height competition.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Limitations and Disclaimers -->
+<section class="hiw-section">
+    <div class="container content-narrow">
+        <h2>Limitations and Disclaimers</h2>
+        <p>
+            We believe in transparency. Here are the known limitations of the rating system:
+        </p>
+
+        <ul class="disclaimer-list">
+            <li>
+                ADW Rating is an independent project. It is not endorsed by or affiliated with FCI, AKC, USDAA, UKI, IFCS, or any other organization.
+            </li>
+            <li>
+                Ratings are only as good as the data. We rely on publicly available competition results. Errors in source data may affect ratings.
+            </li>
+            <li>
+                The non-FCI size category mapping is approximate. Dogs near category boundaries may be placed in a different category than expected.
+            </li>
+            <li>
+                Not all competitions are included. A team's true strength may not be fully reflected if they primarily compete at events not yet in our database.
+            </li>
+            <li>
+                Rating is based on placement, not absolute performance. A clean run at a weak competition may count less than a faulted run at a strong one.
+            </li>
+            <li>
+                When dogs from different size categories compete in the same run (e.g., at WAO), they are rated against each other directly. Because size categories mostly compete separately, the internal rating scales between categories may not be perfectly aligned. This has minimal impact &mdash; each category has its own leaderboard, and display ratings are normalized independently.
+            </li>
+        </ul>
+    </div>
+</section>
