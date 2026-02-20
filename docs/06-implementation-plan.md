@@ -636,49 +636,49 @@
   - Tests: none (visual validation by user)
   - **Completion gates**: user approval
 
-- [ ] **7.2a** Static prototype — layout (header, footer, nav)
+- [x] **7.2a** Static prototype — layout (header, footer, nav)
   - Create shared layout shell: header (logo + nav + search input), footer (How it works + disclaimer). Mobile: hamburger menu.
   - Files: `design/layout.html`
   - Dependencies: 7.1b
   - Tests: none (visual validation)
   - **Completion gates**: user approval
 
-- [ ] **7.2b** Static prototype — home page
+- [x] **7.2b** Static prototype — home page
   - Hero with search bar, 3 summary stat cards, top 3 teams per size category, recent 5 competitions, about section. Mobile responsive.
   - Files: `design/home.html`
   - Dependencies: 7.2a
   - Tests: none (visual validation)
   - **Completion gates**: user approval
 
-- [ ] **7.2c** Static prototype — rankings page
+- [x] **7.2c** Static prototype — rankings page
   - Sticky filter bar, summary row, rankings table with trend/tier/runs columns, tier distribution, pagination. Include Elite, Champion, provisional, NEW examples.
   - Files: `design/rankings.html`
   - Dependencies: 7.2a
   - Tests: none (visual validation)
   - **Completion gates**: user approval
 
-- [ ] **7.2d** Static prototype — team profile page
+- [x] **7.2d** Static prototype — team profile page
   - Hero card (initials, rating, tier, trend, peak), quick stats row, rating chart placeholder, competition history table with podium highlighting. Both active and inactive variants.
   - Files: `design/team-profile.html`
   - Dependencies: 7.2a
   - Tests: none (visual validation)
   - **Completion gates**: user approval
 
-- [ ] **7.2e** Static prototype — competition list page
+- [x] **7.2e** Static prototype — competition list page
   - Filter bar (year, tier, country, search), entries grouped by year, each with name, dates, location, tier badge, participant count. Major event distinction.
   - Files: `design/competitions.html`
   - Dependencies: 7.2a
   - Tests: none (visual validation)
   - **Completion gates**: user approval
 
-- [ ] **7.2f** Static prototype — How It Works page
+- [x] **7.2f** Static prototype — How It Works page
   - Static content: hero, what is ADW Rating, methodology, data sources, size mapping table, limitations and disclaimers.
   - Files: `design/how-it-works.html`
   - Dependencies: 7.2a
   - Tests: none (visual validation)
   - **Completion gates**: user approval
 
-- [ ] **7.2g** Static prototype — search dropdown + empty/error states
+- [x] **7.2g** Static prototype — search dropdown + empty/error states
   - Search dropdown showing grouped results (Teams, Handlers, Competitions). Empty states: "No teams match", 404, loading skeletons.
   - Files: `design/search-dropdown.html`, `design/states.html`
   - Dependencies: 7.2a
@@ -686,7 +686,7 @@
   - **Completion gates**: user approval
   - **Reference**: `05-ui-structure.md` section 4
 
-- [ ] **7.2h** Page-specific CSS
+- [x] **7.2h** Page-specific CSS *(done — consolidated from inline styles into pages.css)*
   - Create any page-specific styles not covered by the component library.
   - Files: `design/css/pages.css`
   - Dependencies: 7.2b–7.2g
