@@ -62,6 +62,16 @@ public class NameNormalizerTests
         Assert.That(result, Is.EqualTo(expected));
     }
 
+    [TestCase("Kerek-Ful", "kerek ful")]
+    [TestCase("T-REX", "t rex")]
+    [TestCase("Nova`s", "nova's")]
+    [TestCase("Adam-Bokenyi", "adam bokenyi")]
+    public void Normalize_NormalizesHyphensAndBackticks(string input, string expected)
+    {
+        var result = NameNormalizer.Normalize(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
     [Test]
     public void Normalize_PreservesSingleSpacesBetweenWords()
     {

@@ -131,15 +131,15 @@ public class IdentityResolutionServiceTests
     {
         var handler = new Handler
         {
-            Id = 1, Name = "Ádám-Bökényi Andrea", NormalizedName = "adam-bokenyi andrea",
+            Id = 1, Name = "Ádám-Bökényi Andrea", NormalizedName = "adam bokenyi andrea",
             Country = "HUN", Slug = "adam-bokenyi-andrea"
         };
 
-        _handlerAliasRepo.FindByAliasNameAsync("adam-bokenyi andrea")
+        _handlerAliasRepo.FindByAliasNameAsync("adam bokenyi andrea")
             .Returns((HandlerAlias?)null);
-        _handlerRepo.FindByNormalizedNameAndCountryAsync("adam-bokenyi andrea", "AUS")
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("adam bokenyi andrea", "AUS")
             .Returns((Handler?)null);
-        _handlerRepo.FindByNormalizedNameAsync("adam-bokenyi andrea")
+        _handlerRepo.FindByNormalizedNameAsync("adam bokenyi andrea")
             .Returns(new List<Handler> { handler });
 
         var result = await _sut.ResolveHandlerAsync("Ádám-Bökényi Andrea", "AUS");

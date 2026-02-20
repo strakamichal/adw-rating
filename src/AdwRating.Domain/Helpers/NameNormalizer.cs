@@ -23,6 +23,8 @@ public static class NameNormalizer
             return string.Empty;
 
         var normalized = NormalizeTypographicQuotes(name);
+        normalized = normalized.Replace('-', ' ');
+        normalized = normalized.Replace('`', '\'');
         normalized = ReorderLastFirst(normalized);
         normalized = StripDiacritics(normalized);
         normalized = normalized.ToLowerInvariant().Trim();
