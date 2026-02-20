@@ -28,15 +28,19 @@ if (!string.IsNullOrEmpty(adminConnectionString))
     await using var conn = new SqlConnection(adminConnectionString);
     await conn.OpenAsync();
 
+    // DDL statements (CREATE LOGIN/DATABASE/USER) don't support parameterized queries.
+    // Values come from our own environment variables, not user input.
+    var safePassword = appPassword.Replace("'", "''");
+    var safeLogin = appLogin.Replace("]", "]]");
+    var safeDbName = dbName.Replace("]", "]]");
+
     // Create login if not exists
     await using (var cmd = conn.CreateCommand())
     {
         cmd.CommandText = $"""
-            IF NOT EXISTS (SELECT 1 FROM sys.server_principals WHERE name = @login)
-                CREATE LOGIN [{appLogin}] WITH PASSWORD = @password;
+            IF NOT EXISTS (SELECT 1 FROM sys.server_principals WHERE name = '{safeLogin}')
+                CREATE LOGIN [{safeLogin}] WITH PASSWORD = '{safePassword}';
             """;
-        cmd.Parameters.AddWithValue("@login", appLogin);
-        cmd.Parameters.AddWithValue("@password", appPassword);
         await cmd.ExecuteNonQueryAsync();
     }
 
@@ -44,10 +48,9 @@ if (!string.IsNullOrEmpty(adminConnectionString))
     await using (var cmd = conn.CreateCommand())
     {
         cmd.CommandText = $"""
-            IF NOT EXISTS (SELECT 1 FROM sys.databases WHERE name = @dbName)
-                CREATE DATABASE [{dbName}];
+            IF NOT EXISTS (SELECT 1 FROM sys.databases WHERE name = '{safeDbName}')
+                CREATE DATABASE [{safeDbName}];
             """;
-        cmd.Parameters.AddWithValue("@dbName", dbName);
         await cmd.ExecuteNonQueryAsync();
     }
 
@@ -55,14 +58,13 @@ if (!string.IsNullOrEmpty(adminConnectionString))
     await using (var cmd = conn.CreateCommand())
     {
         cmd.CommandText = $"""
-            USE [{dbName}];
-            IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = @login)
+            USE [{safeDbName}];
+            IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = '{safeLogin}')
             BEGIN
-                CREATE USER [{appLogin}] FOR LOGIN [{appLogin}];
-                ALTER ROLE db_owner ADD MEMBER [{appLogin}];
+                CREATE USER [{safeLogin}] FOR LOGIN [{safeLogin}];
+                ALTER ROLE db_owner ADD MEMBER [{safeLogin}];
             END
             """;
-        cmd.Parameters.AddWithValue("@login", appLogin);
         await cmd.ExecuteNonQueryAsync();
     }
 }
