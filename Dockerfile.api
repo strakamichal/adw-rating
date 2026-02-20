@@ -1,0 +1,17 @@
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+COPY Directory.Build.props .
+COPY src/AdwRating.Domain/AdwRating.Domain.csproj src/AdwRating.Domain/
+COPY src/AdwRating.Service/AdwRating.Service.csproj src/AdwRating.Service/
+COPY src/AdwRating.Data.Mssql/AdwRating.Data.Mssql.csproj src/AdwRating.Data.Mssql/
+COPY src/AdwRating.Api/AdwRating.Api.csproj src/AdwRating.Api/
+RUN dotnet restore src/AdwRating.Api/AdwRating.Api.csproj
+COPY src/ src/
+RUN dotnet publish src/AdwRating.Api/AdwRating.Api.csproj -c Release -o /app --no-restore
+
+FROM mcr.microsoft.com/dotnet/aspnet:10.0
+WORKDIR /app
+COPY --from=build /app .
+ENV ASPNETCORE_HTTP_PORTS=8080
+EXPOSE 8080
+ENTRYPOINT ["dotnet", "AdwRating.Api.dll"]

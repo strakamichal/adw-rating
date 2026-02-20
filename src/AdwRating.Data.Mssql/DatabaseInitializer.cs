@@ -12,8 +12,8 @@ public class DatabaseInitializer : IDatabaseInitializer
         _context = context;
     }
 
-    public async Task EnsureCreatedAsync()
+    public async Task MigrateAsync()
     {
-        await _context.Database.EnsureCreatedAsync();
+        await _context.Database.MigrateAsync();
     }
 }

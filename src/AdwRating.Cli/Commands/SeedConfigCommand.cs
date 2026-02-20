@@ -26,7 +26,7 @@ public static class SeedConfigCommand
 
             // Ensure database and schema exist
             var dbInit = provider.GetRequiredService<IDatabaseInitializer>();
-            await dbInit.EnsureCreatedAsync();
+            await dbInit.MigrateAsync();
 
             var configRepo = provider.GetRequiredService<IRatingConfigurationRepository>();
 

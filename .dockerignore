@@ -1,0 +1,10 @@
+**/.git
+**/.vs
+**/.vscode
+**/bin
+**/obj
+**/tests
+**/docs
+**/issues
+**/agents
+**/.claude

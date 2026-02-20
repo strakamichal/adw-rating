@@ -1,15 +1,19 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using AdwRating.Data.Mssql;
+using AdwRating.Domain.Interfaces;
 using AdwRating.Service;
 using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Database + Services
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionString = Environment.GetEnvironmentVariable("ADW_RATING_CONNECTION")
+    ?? builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException(
+        "Connection string not found. Set ADW_RATING_CONNECTION or ConnectionStrings:DefaultConnection.");
 builder.Services.AddDataMssql(connectionString);
 builder.Services.AddServices();
 
@@ -34,6 +38,18 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Run database migrations on startup
+using (var scope = app.Services.CreateScope())
+{
+    var dbInit = scope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
+    await dbInit.MigrateAsync();
+}
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
 
 // Global exception handler
 app.UseExceptionHandler(errorApp =>
