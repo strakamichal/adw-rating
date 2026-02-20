@@ -2,7 +2,7 @@
 
 - **Type**: bug
 - **Priority**: high
-- **Status**: open
+- **Status**: resolved
 
 ## Description
 
@@ -24,4 +24,8 @@ When filtering competitors on the Rankings page, the rank number displayed reset
 
 ## Acceptance criteria
 
-- [ ] Rank number always shows the competitor's global rank regardless of active filters
+- [x] Rank number always shows the competitor's global rank regardless of active filters
+
+## Resolution
+
+`RankingsController` was computing rank as page-relative index (`(page-1)*pageSize + index + 1`). Added `GetGlobalRanksAsync` method to `ITeamRepository` that computes each team's global rank by ordering all active teams in the size category by rating. Controller now uses global ranks instead of page-relative positions.

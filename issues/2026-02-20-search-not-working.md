@@ -2,7 +2,7 @@
 
 - **Type**: bug
 - **Priority**: high
-- **Status**: open
+- **Status**: resolved
 
 ## Description
 
@@ -25,6 +25,10 @@ Same behavior with the navbar search.
 
 ## Acceptance criteria
 
-- [ ] Navbar search navigates to search results page with query
-- [ ] Homepage search navigates to search results page with query
-- [ ] Results are displayed correctly
+- [x] Navbar search navigates to search results page with query
+- [x] Homepage search navigates to search results page with query
+- [x] Results are displayed correctly
+
+## Resolution
+
+The homepage search input was a raw `<input>` element not wrapped in the `.search-wrapper` div that `search.js` requires. Replaced with the `<SearchDropdown>` component (same as navbar) which provides the correct wrapper structure for the JS-based live search dropdown.

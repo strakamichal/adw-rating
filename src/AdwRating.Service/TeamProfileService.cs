@@ -26,11 +26,11 @@ public class TeamProfileService : ITeamProfileService
         var results = await _runResultRepo.GetByTeamIdAsync(team.Id);
 
         var finishedPct = team.RunCount > 0
-            ? (float)team.FinishedRunCount / team.RunCount
+            ? (float)team.FinishedRunCount / team.RunCount * 100f
             : 0f;
 
         var top3Pct = team.RunCount > 0
-            ? (float)team.Top3RunCount / team.RunCount
+            ? (float)team.Top3RunCount / team.RunCount * 100f
             : 0f;
 
         float? avgRank = null;

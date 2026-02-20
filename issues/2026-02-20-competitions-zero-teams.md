@@ -2,7 +2,7 @@
 
 - **Type**: bug
 - **Priority**: high
-- **Status**: open
+- **Status**: resolved
 
 ## Description
 
@@ -24,4 +24,8 @@ On the competition list page, every competition displays "0 teams" even though t
 
 ## Acceptance criteria
 
-- [ ] Each competition displays the correct number of teams
+- [x] Each competition displays the correct number of teams
+
+## Resolution
+
+`CompetitionsController` was hardcoding `ParticipantCount: 0`. Added `GetTeamCountsAsync` method to `ICompetitionRepository` that counts distinct teams per competition via RunResults. Controller now queries these counts and passes them to the DTO.

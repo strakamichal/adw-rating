@@ -216,6 +216,7 @@
 
     private PagedResult<TeamRankingDto>? _rankings;
     private SizeCategory _sizeCategory;
+    private bool _showAllSizes;
     private int _page;
     private int _pageSize;
     private int _totalPages;
@@ -252,11 +253,12 @@
     protected override async Task OnInitializedAsync()
     {
         _sizeCategory = Enum.TryParse<SizeCategory>(Size, true, out var s) ? s : SizeCategory.L;
+        _showAllSizes = string.IsNullOrEmpty(Size) && !string.IsNullOrEmpty(Search);
         _page = Page ?? 1;
         _pageSize = PageSize ?? 20;
 
         var filter = new RankingFilter(
-            _sizeCategory,
+            _showAllSizes ? null : _sizeCategory,
             Country,
             Search,
             _page,
