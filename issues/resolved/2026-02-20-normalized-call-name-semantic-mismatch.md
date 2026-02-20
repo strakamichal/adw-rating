@@ -2,7 +2,7 @@
 
 - **Type**: bug
 - **Priority**: high
-- **Status**: open
+- **Status**: resolved
 
 ## Description
 
@@ -41,6 +41,32 @@ Additionally, `RegisteredName` has no normalized counterpart. During fuzzy match
 - [ ] Fuzzy matching no longer normalizes RegisteredName on-the-fly
 - [ ] Existing data is migrated/backfilled
 - [ ] All existing tests pass, new tests cover the normalized field consistency
+
+## Resolution
+
+Fixed by adding `NormalizedRegisteredName` to the Dog entity and ensuring `NormalizedCallName` always reflects `CallName` (empty when `CallName` is empty).
+
+**Files modified:**
+- `src/AdwRating.Domain/Entities/Dog.cs` -- Added `NormalizedRegisteredName` property (string, default empty)
+- `src/AdwRating.Data.Mssql/Configurations/DogConfiguration.cs` -- Added EF config for new column (max length 300)
+- `src/AdwRating.Service/IdentityResolutionService.cs`:
+  - **Dog creation (3-word heuristic)**: `NormalizedCallName` now set to `""` instead of the full normalized name. `NormalizedRegisteredName` gets the full normalized name.
+  - **Dog creation (with extracted call name)**: `NormalizedRegisteredName` is populated from the registered name.
+  - **BackfillDogNames**: Now maintains `NormalizedRegisteredName` when backfilling `RegisteredName`, and backfills missing `NormalizedRegisteredName` on legacy data.
+  - **Fuzzy matching**: Uses `NormalizedRegisteredName` instead of normalizing `RegisteredName` on-the-fly.
+- `src/AdwRating.Data.Mssql/Repositories/DogRepository.cs` -- `FindAllByNormalizedNameAndSizeAsync` now also searches `NormalizedRegisteredName`.
+- `tests/AdwRating.Tests/Services/IdentityResolutionServiceTests.cs` -- Updated 2 existing tests for new field semantics, added 3 new tests for normalized field consistency.
+- `docs/03-domain-and-data.md` -- Added `NormalizedRegisteredName` to Dog entity spec.
+
+**Acceptance criteria met:**
+- NormalizedCallName is always `Normalize(CallName)` or empty when CallName is empty
+- NormalizedRegisteredName exists and is populated when RegisteredName is set
+- Identity resolution uses both normalized fields for matching
+- Fuzzy matching no longer normalizes RegisteredName on-the-fly
+- BackfillDogNames maintains both normalized fields (handles legacy data migration)
+- All 50 tests pass (47 existing + 3 new)
+
+**Note on data migration:** Existing dogs in the database with `RegisteredName` set but no `NormalizedRegisteredName` will be backfilled automatically via `BackfillDogNames` when those dogs are next encountered during import. A full re-import of all competitions will ensure complete coverage.
 
 ## Notes
 
