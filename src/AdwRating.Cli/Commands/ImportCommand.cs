@@ -56,7 +56,7 @@ public static class ImportCommand
             var services = new ServiceCollection();
             services.AddDataMssql(connectionString);
             services.AddServices();
-            services.AddLogging(builder => builder.AddConsole());
+            services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Warning));
 
             await using var provider = services.BuildServiceProvider();
             var importService = provider.GetRequiredService<IImportService>();
