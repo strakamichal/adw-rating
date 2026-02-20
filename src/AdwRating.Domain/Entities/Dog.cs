@@ -8,7 +8,7 @@ public class Dog
     public string CallName { get; set; } = string.Empty;
     public string NormalizedCallName { get; set; } = string.Empty;
     public string? RegisteredName { get; set; }
-    public string NormalizedRegisteredName { get; set; } = string.Empty;
+    public string? NormalizedRegisteredName { get; set; }
     public string? Breed { get; set; }
     public SizeCategory SizeCategory { get; set; }
     public SizeCategory? SizeCategoryOverride { get; set; }

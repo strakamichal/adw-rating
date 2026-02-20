@@ -95,19 +95,42 @@ def country_from_run(run: dict):
     return COUNTRY_NAME_TO_3.get(country_name, "")
 
 
-def parse_discipline(comp_prefix: str) -> str:
-    if comp_prefix == "H":
-        return "Jumping"
-    if comp_prefix == "FA":
-        return "Final"
-    return "Agility"
+ROUND_LETTER_MAP = {"A": "1", "B": "2", "C": "3", "D": "4", "E": "5"}
 
 
-def parse_size(comp_key: str) -> str:
+def parse_comp_key(comp_key: str):
+    """Parse a Firebase comp key and return (discipline, size, round_key) or None to skip."""
     parts = comp_key.split("-")
-    if len(parts) < 4:
-        return ""
-    return SIZE_MAP.get(parts[3], "")
+    if len(parts) < 6:
+        return None
+
+    prefix = parts[0]   # A, H, or FA
+    grade = parts[1]     # KL1, KL2, KL3, or X (for FA)
+    round_letter = parts[2]  # A, B, C, D, E
+    size_code = parts[3]     # XS, S, M, L, XL
+
+    if prefix == "FA":
+        discipline = "Final"
+    elif prefix == "H":
+        discipline = "Jumping"
+    else:
+        discipline = "Agility"
+
+    size = SIZE_MAP.get(size_code, "")
+    if not size:
+        return None
+
+    round_number = ROUND_LETTER_MAP.get(round_letter, round_letter)
+
+    # Include grade in round_key so KL1/KL2/KL3 don't collide
+    grade_suffix = f"_{grade.lower()}" if grade not in ("X",) else ""
+
+    if discipline == "Final":
+        round_key = f"ind_final_{size.lower()}"
+    else:
+        round_key = f"ind_{discipline.lower()}_{size.lower()}{grade_suffix}_{round_number}"
+
+    return discipline, size, round_key
 
 
 def fetch_event():
@@ -128,10 +151,11 @@ def main():
     runs_by_competition = event.get("runs", {})
 
     for comp_key, comp_runs in runs_by_competition.items():
-        comp_prefix = comp_key.split("-")[0]
-        discipline = parse_discipline(comp_prefix)
-        size = parse_size(comp_key)
-        round_key = re.sub(r"[^a-z0-9_]+", "_", comp_key.lower())
+        parsed = parse_comp_key(comp_key)
+        if parsed is None:
+            print(f"SKIP {comp_key}")
+            continue
+        discipline, size, round_key = parsed
 
         count = 0
         for run in comp_runs.values():
@@ -146,7 +170,7 @@ def main():
                 "round_key": round_key,
                 "size": size,
                 "discipline": discipline,
-                "is_team_round": "True" if bool(run.get("isTeamRun")) else "False",
+                "is_team_round": "False",
                 "rank": rank,
                 "start_no": to_int(run.get("tri")),
                 "handler": (run.get("handlerName") or "").strip(),
