@@ -741,56 +741,56 @@
   - Tests: none (visual — tested via E2E later)
   - **Completion gates**: build
 
-- [ ] **7.6** Home page
+- [x] **7.6** Home page *(done — parallel API calls, size tabs, country flags)*
   - Convert `design/home.html` into Blazor `/` page. Hero with search placeholder, summary stats (3 cards from `GetSummaryAsync`), top 3 per size (4 API calls), recent competitions (last 5), about section. Mobile: size categories as tabs.
   - Files: `Web/Components/Pages/Home.razor`
   - Dependencies: 7.4a, 7.4c, 7.5
   - Tests: E2E — page loads, summary stats visible, top 3 teams per category, search bar present
   - **Completion gates**: build | tests
 
-- [ ] **7.7** Rankings page
+- [x] **7.7** Rankings page *(done — filter bar, tier distribution, pagination, trend indicators)*
   - Convert `design/rankings.html` into Blazor `/rankings` page. Sticky filter bar (size pills, country dropdown, name search), summary row, rankings table (rank, trend, team, rating, tier, runs), tier distribution, pagination. Enhanced Navigation.
   - Files: `Web/Components/Pages/Rankings.razor`
   - Dependencies: 7.4a, 7.5
   - Tests: E2E — default loads Large, switch to Medium, filter by country, click team navigates, pagination
   - **Completion gates**: build | tests
 
-- [ ] **7.8a** Team Profile — hero card and quick stats
+- [x] **7.8a** Team Profile — hero card and quick stats
   - Convert team profile hero card into Blazor: initials avatar, handler+dog info, rating, tier badge, trend, peak rating, FEW RUNS/INACTIVE badges. Quick stats row (4 cards: runs, finish rate, podium rate, avg rank). Handler link.
   - Files: `Web/Components/Pages/TeamProfile.razor`
   - Dependencies: 7.4b, 7.5
   - Tests: E2E — page loads with hero card, rating visible, 404 for invalid slug
   - **Completion gates**: build | tests
 
-- [ ] **7.8b** Team Profile — rating chart
+- [x] **7.8b** Team Profile — rating chart *(done — Chart.js with sigma band, peak marker)*
   - Add rating progression chart using Chart.js (JS interop): line chart with dates on x-axis, rating on y-axis, sigma band, peak marker.
   - Files: `Web/Components/Pages/TeamProfile.razor` (add chart section), `Web/wwwroot/js/rating-chart.js`
   - Dependencies: 7.8a
   - Tests: E2E — chart renders with data points
   - **Completion gates**: build | tests
 
-- [ ] **7.8c** Team Profile — competition history table
+- [x] **7.8c** Team Profile — competition history table *(done — paginated, podium highlights, OG meta)*
   - Add paginated competition history table to team profile: date, competition name, discipline, rank/ELIM, faults, time, speed. Podium highlighting. Open Graph meta tags via `<HeadContent>`.
   - Files: `Web/Components/Pages/TeamProfile.razor` (add history section)
   - Dependencies: 7.8a
   - Tests: E2E — history table has rows, pagination works
   - **Completion gates**: build | tests
 
-- [ ] **7.9** Competition List page
+- [x] **7.9** Competition List page *(done — year grouping, filters, Major badges)*
   - Convert `design/competitions.html` into Blazor `/competitions` page. Filter bar (year pills, tier, country, search), entries grouped by year, date formatting, tier badges, pagination.
   - Files: `Web/Components/Pages/CompetitionList.razor`
   - Dependencies: 7.4c, 7.5
   - Tests: E2E — list loads, year filter works, major events have badge, pagination
   - **Completion gates**: build | tests
 
-- [ ] **7.10** How It Works page
+- [x] **7.10** How It Works page *(done — static content, size mapping table, disclaimers)*
   - Convert `design/how-it-works.html` into Blazor `/how-it-works`. Pure static Razor markup, no API calls. All content sections from `05-ui-structure.md` section 3.18.
   - Files: `Web/Components/Pages/HowItWorks.razor`
   - Dependencies: 7.5
   - Tests: E2E — page loads, key content present, footer link works
   - **Completion gates**: build | tests
 
-- [ ] **7.11** Global search component
+- [x] **7.11** Global search component *(done — JS debounce, keyboard nav, grouped dropdown, click-outside close)*
   - Implement search dropdown: JS interop for debounce (300ms), click-outside-to-close, keyboard navigation. Calls `SearchAsync`. Results grouped by type. Integrate into header and home hero.
   - Files: `Web/Components/Shared/SearchDropdown.razor`, `Web/wwwroot/js/search.js`
   - Dependencies: 7.4c, 7.5
