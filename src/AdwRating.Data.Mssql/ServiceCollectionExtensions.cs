@@ -23,6 +23,7 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IRatingSnapshotRepository, RatingSnapshotRepository>();
         services.AddScoped<IRatingConfigurationRepository, RatingConfigurationRepository>();
         services.AddScoped<IImportLogRepository, ImportLogRepository>();
+        services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
 
         return services;
     }

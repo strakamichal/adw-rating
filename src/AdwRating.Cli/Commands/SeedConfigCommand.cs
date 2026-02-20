@@ -25,8 +25,8 @@ public static class SeedConfigCommand
             await using var provider = services.BuildServiceProvider();
 
             // Ensure database and schema exist
-            var dbContext = provider.GetRequiredService<AppDbContext>();
-            await dbContext.Database.EnsureCreatedAsync();
+            var dbInit = provider.GetRequiredService<IDatabaseInitializer>();
+            await dbInit.EnsureCreatedAsync();
 
             var configRepo = provider.GetRequiredService<IRatingConfigurationRepository>();
 
