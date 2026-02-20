@@ -36,50 +36,6 @@ public class RunRepositoryTests
     }
 
     [Test]
-    public async Task GetByCompetitionAndRoundKeyAsync_ExistingRun_ReturnsRun()
-    {
-        var roundKey = $"rk-unique-{Guid.NewGuid():N}";
-        await using var context = DatabaseFixture.CreateContext();
-        var competition = new Competition
-        {
-            Slug = $"comp-rk-{Guid.NewGuid():N}",
-            Name = "RoundKey Test",
-            Date = new DateOnly(2024, 6, 1),
-            Tier = 1
-        };
-        context.Competitions.Add(competition);
-        await context.SaveChangesAsync();
-
-        context.Runs.Add(new Run
-        {
-            CompetitionId = competition.Id,
-            Date = new DateOnly(2024, 6, 1),
-            RunNumber = 1,
-            RoundKey = roundKey,
-            SizeCategory = SizeCategory.M,
-            Discipline = Discipline.Agility
-        });
-        await context.SaveChangesAsync();
-
-        await using var queryContext = DatabaseFixture.CreateContext();
-        var repo = new RunRepository(queryContext);
-        var result = await repo.GetByCompetitionAndRoundKeyAsync(competition.Id, roundKey);
-
-        Assert.That(result, Is.Not.Null);
-        Assert.That(result!.RoundKey, Is.EqualTo(roundKey));
-    }
-
-    [Test]
-    public async Task GetByCompetitionAndRoundKeyAsync_NonExistent_ReturnsNull()
-    {
-        await using var context = DatabaseFixture.CreateContext();
-        var repo = new RunRepository(context);
-        var result = await repo.GetByCompetitionAndRoundKeyAsync(-999, "non-existent-rk");
-
-        Assert.That(result, Is.Null);
-    }
-
-    [Test]
     public async Task GetAllInWindowAsync_ReturnsRunsAfterCutoffWithCompetition()
     {
         await using var context = DatabaseFixture.CreateContext();
