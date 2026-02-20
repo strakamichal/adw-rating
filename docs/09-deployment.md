@@ -7,9 +7,9 @@ ADW Rating runs as two Docker containers (API + Web) on a Hetzner VPS with Cooli
 ```
 Internet
   │
-  ├── adwrating.example.com ──► Traefik (Coolify) ──► adwrating-web:8080 (Blazor SSR)
+  ├── rating.agilitydogsworld.com ──► Traefik (Coolify) ──► adwrating-web:8080 (Blazor SSR)
   │                                                        │
-  └── api.adwrating.example.com ──► Traefik ──► adwrating-api:8080 (ASP.NET API)
+  └── api.rating.agilitydogsworld.com ──► Traefik ──► adwrating-api:8080 (ASP.NET API)
                                                            │
                                                     MSSQL :1433
 ```
@@ -20,12 +20,12 @@ Internet
 
 ## Docker images
 
-Two Dockerfiles in repo root, both multi-stage (SDK build → ASP.NET runtime):
+Two Dockerfiles in `infra/`, both multi-stage (SDK build → ASP.NET runtime):
 
 | Dockerfile | Image | Entrypoint |
 |---|---|---|
-| `Dockerfile.api` | `ghcr.io/<owner>/adw-rating/api:latest` | `AdwRating.Api.dll` |
-| `Dockerfile.web` | `ghcr.io/<owner>/adw-rating/web:latest` | `AdwRating.Web.dll` |
+| `infra/Dockerfile.api` | `ghcr.io/<owner>/adw-rating/api:latest` | `AdwRating.Api.dll` |
+| `infra/Dockerfile.web` | `ghcr.io/<owner>/adw-rating/web:latest` | `AdwRating.Web.dll` |
 
 Both containers expose port **8080**.
 
@@ -40,17 +40,22 @@ push to main → GitHub Actions → build Dockerfile.api → ghcr.io/.../api:lat
                                → build Dockerfile.web → ghcr.io/.../web:latest
 ```
 
-Coolify does **not** automatically detect new images in the registry. To trigger deploys after CI pushes new images, add webhook calls to the GitHub Actions workflow. Each Coolify service has a webhook URL (found in the service's "Webhooks" tab):
+Coolify does **not** automatically detect new images in the registry. The workflow calls the Coolify deploy API after both images are pushed. This requires three GitHub repository secrets:
 
-```yaml
-- name: Deploy API
-  run: curl -s "${{ secrets.COOLIFY_WEBHOOK_API }}"
+| Secret | Description |
+|---|---|
+| `COOLIFY_TOKEN` | Coolify API token (Settings → API → Generate Token) |
+| `COOLIFY_API_UUID` | UUID of the API service (found in Coolify service URL or Webhooks tab) |
+| `COOLIFY_WEB_UUID` | UUID of the Web service |
 
-- name: Deploy Web
-  run: curl -s "${{ secrets.COOLIFY_WEBHOOK_WEB }}"
+The `deploy` job runs after both builds complete and calls:
+
+```
+GET /api/v1/deploy?uuid={service-uuid}&force=false
+Authorization: Bearer {token}
 ```
 
-Store the webhook URLs as GitHub repository secrets (`COOLIFY_WEBHOOK_API`, `COOLIFY_WEBHOOK_WEB`). Alternatively, deploy manually from the Coolify UI.
+Alternatively, deploy manually from the Coolify UI.
 
 ## Environment variables
 
@@ -89,7 +94,7 @@ Connects as the app user and runs `Database.MigrateAsync()`. This:
 - Applies all pending EF Core migrations
 - Is idempotent — safe to run on every startup
 
-## Coolify setup (step by step)
+## Coolify setup
 
 ### Prerequisites
 
@@ -100,28 +105,49 @@ Connects as the app user and runs `Database.MigrateAsync()`. This:
    docker login ghcr.io -u <github-username>
    # Password: GitHub PAT with read:packages scope
    ```
+3. Coolify API enabled (Settings → API) with a generated token
+4. Firewall open for ports 80, 443 (`ufw allow 80/tcp && ufw allow 443/tcp`)
 
-### Create services
+### Automated setup (recommended)
+
+The `infra/coolify-setup.sh` script creates both services, sets environment variables, and triggers deployment via the Coolify API.
+
+```bash
+cp infra/coolify-setup.env.example infra/coolify-setup.env
+# Edit coolify-setup.env with your values (Coolify token, server/project UUIDs, DB credentials)
+bash infra/coolify-setup.sh
+```
+
+The script outputs the service UUIDs needed for GitHub Actions secrets.
+
+**Manual steps after script** (not available via API):
+1. Set **Container Name** for API service to `adwrating-api` (General tab in Coolify)
+2. Set **Container Name** for Web service to `adwrating-web`
+3. Redeploy both services
+
+### Manual setup
+
+If you prefer to set up manually via the Coolify UI:
 
 1. Create a **Project** in Coolify (e.g., "ADW Rating")
 2. Add resource → **Docker Image** for API:
    - Image: `ghcr.io/<owner>/adw-rating/api:latest`
-   - Domain: `api.adwrating.example.com`
+   - Domain: `https://api.rating.agilitydogsworld.com`
    - Ports Exposes: `8080`
-   - **Container Name**: `adwrating-api` (General tab — this becomes the stable hostname on the Docker network)
+   - **Container Name**: `adwrating-api`
    - Health check: HTTP GET `/health`
    - Set environment variables (see table above)
 3. **Deploy API first** — wait until healthy (migrations create all tables)
-4. Verify: `curl https://api.adwrating.example.com/health` → `{"status":"healthy"}`
+4. Verify: `curl https://api.rating.agilitydogsworld.com/health` → `{"status":"healthy"}`
 5. Add resource → **Docker Image** for Web:
    - Image: `ghcr.io/<owner>/adw-rating/web:latest`
-   - Domain: `adwrating.example.com`
+   - Domain: `https://rating.agilitydogsworld.com`
    - Ports Exposes: `8080`
    - **Container Name**: `adwrating-web`
    - Set environment variables (see table above)
-   - `ApiBaseUrl` = `http://adwrating-api:8080` (uses the container name set above)
+   - `ApiBaseUrl` = `http://adwrating-api:8080`
 6. **Deploy Web**
-7. Verify: open `https://adwrating.example.com` in browser
+7. Verify: open `https://rating.agilitydogsworld.com` in browser
 
 Both services **must be in the same Coolify project** to share a Docker network (`coolify`). Without explicit container names, Coolify generates random hostnames that change on every redeploy — always set a fixed container name.
 

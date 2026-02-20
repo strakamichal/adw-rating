@@ -2,7 +2,7 @@
 
 - **Type**: bug
 - **Priority**: high
-- **Status**: open
+- **Status**: resolved
 
 ## Description
 
@@ -25,6 +25,10 @@ On competitor profile pages, the percentage statistics seem incorrect:
 
 ## Acceptance criteria
 
-- [ ] Finish rate is calculated correctly (finished runs / total runs)
-- [ ] Podium rate is calculated correctly (top-3 finishes / total competitions)
-- [ ] AVG RANK is clearly defined or removed if not meaningful
+- [x] Finish rate is calculated correctly (finished runs / total runs)
+- [x] Podium rate is calculated correctly (top-3 finishes / total competitions)
+- [x] AVG RANK is clearly defined or removed if not meaningful
+
+## Resolution
+
+`TeamProfileService` was computing `finishedPct` and `top3Pct` as fractions (0.0-1.0) but the UI displays them with `ToString("0")%`, expecting 0-100 values. Multiplied by 100 in the service. AVG RANK is the average finishing position across all completed (non-eliminated) runs, which is a meaningful metric -- left as-is.

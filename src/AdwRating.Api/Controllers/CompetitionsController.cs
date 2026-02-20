@@ -27,6 +27,9 @@ public class CompetitionsController : ControllerBase
         var filter = new CompetitionFilter(year, tier, country, search, page, pageSize);
         var result = await _competitionRepo.GetListAsync(filter);
 
+        var competitionIds = result.Items.Select(c => c.Id);
+        var teamCounts = await _competitionRepo.GetTeamCountsAsync(competitionIds);
+
         var items = result.Items.Select(c => new CompetitionDetailDto(
             Id: c.Id,
             Slug: c.Slug,
@@ -38,7 +41,7 @@ public class CompetitionsController : ControllerBase
             Tier: c.Tier,
             Organization: c.Organization,
             RunCount: 0,
-            ParticipantCount: 0
+            ParticipantCount: teamCounts.GetValueOrDefault(c.Id, 0)
         )).ToList();
 
         return Ok(new PagedResult<CompetitionDetailDto>(items, result.TotalCount, result.Page, result.PageSize));

@@ -52,6 +52,17 @@ public class CompetitionRepository : ICompetitionRepository
         return new PagedResult<Competition>(items, totalCount, filter.Page, filter.PageSize);
     }
 
+    public async Task<Dictionary<int, int>> GetTeamCountsAsync(IEnumerable<int> competitionIds)
+    {
+        var ids = competitionIds.ToList();
+        return await _context.Runs
+            .Where(r => ids.Contains(r.CompetitionId))
+            .SelectMany(r => r.RunResults.Select(rr => new { r.CompetitionId, rr.TeamId }))
+            .Distinct()
+            .GroupBy(x => x.CompetitionId)
+            .ToDictionaryAsync(g => g.Key, g => g.Count());
+    }
+
     public async Task<Competition> CreateAsync(Competition competition)
     {
         _context.Competitions.Add(competition);
