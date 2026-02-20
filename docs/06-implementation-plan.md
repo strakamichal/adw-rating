@@ -622,14 +622,14 @@
 
 **Goal**: Create static HTML/CSS prototypes for all MVP pages. These serve as the approved visual reference for Blazor implementation. **The user validates the design before any Blazor code is written.**
 
-- [ ] **7.1a** Design system — color palette and typography
+- [x] **7.1a** Design system — color palette and typography
   - Define ADW Rating visual identity: color palette (primary, secondary, accent, background, surface, text, semantic colors for tiers, trends, status), typography (heading scale, body text, data/numbers font). Create CSS custom properties file.
   - Files: `design/css/variables.css`
   - Dependencies: none
   - Tests: none (visual validation by user)
   - **Completion gates**: user approval
 
-- [ ] **7.1b** Design system — component patterns
+- [x] **7.1b** Design system — component patterns
   - Create reusable CSS component classes: buttons, pills/tabs, badges (tier, status), cards (stat, team), tables, pagination, filter bar, dropdown, search input. Create a visual reference page showing all components.
   - Files: `design/design-system.html`, `design/css/components.css`, `design/css/utilities.css`
   - Dependencies: 7.1a

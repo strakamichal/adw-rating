@@ -1,0 +1,196 @@
+/* ============================================================
+   ADW Rating — Design Tokens
+   Color palette, typography, spacing, breakpoints, shadows
+   ============================================================ */
+
+:root {
+  /* ---- Primary palette ---- */
+  --color-primary-900: #0d1b2a;
+  --color-primary-800: #1b2a4a;
+  --color-primary-700: #1e3a5f;
+  --color-primary-600: #274b76;
+  --color-primary-500: #2c5f8a;  /* main primary */
+  --color-primary-400: #3a7cb8;
+  --color-primary-300: #5a9fd4;
+  --color-primary-200: #8fc1e8;
+  --color-primary-100: #d0e6f6;
+  --color-primary-50:  #eaf3fb;
+
+  /* ---- Secondary / accent ---- */
+  --color-secondary-600: #d45d22;
+  --color-secondary-500: #e8702f;  /* main accent — warm orange */
+  --color-secondary-400: #f0914f;
+  --color-secondary-300: #f4b07a;
+  --color-secondary-200: #f9d0a8;
+  --color-secondary-100: #fde8d2;
+
+  /* ---- Neutrals ---- */
+  --color-gray-950: #111118;
+  --color-gray-900: #1a1a24;
+  --color-gray-800: #2d2d3a;
+  --color-gray-700: #44444f;
+  --color-gray-600: #5c5c68;
+  --color-gray-500: #76768a;
+  --color-gray-400: #9898a8;
+  --color-gray-300: #bcbcc8;
+  --color-gray-200: #dddde4;
+  --color-gray-100: #eeeff2;
+  --color-gray-50:  #f5f5f8;
+
+  /* ---- Semantic: backgrounds & surfaces ---- */
+  --color-bg:            #fafafb;
+  --color-surface:       #ffffff;
+  --color-surface-alt:   var(--color-gray-50);   /* alternate surface for striped rows */
+  --color-header-bg:     var(--color-primary-900);
+  --color-header-text:   #ffffff;
+  --color-footer-bg:     var(--color-gray-100);
+
+  /* ---- Semantic: text ---- */
+  --color-text:           var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-tertiary:  var(--color-gray-400);
+  --color-text-inverse:   #ffffff;
+  --color-link:           var(--color-primary-500);
+  --color-link-hover:     var(--color-primary-700);
+
+  /* ---- Tier badges ---- */
+  --color-tier-elite:          #D4AF37;
+  --color-tier-elite-bg:       #fdf5e0;
+  --color-tier-elite-text:     #5c4a11;
+  --color-tier-champion:       #A0A0A0;
+  --color-tier-champion-bg:    #f0f0f0;
+  --color-tier-champion-text:  #3a3a3a;
+  --color-tier-expert:         #CD7F32;
+  --color-tier-expert-bg:      #fdf0e2;
+  --color-tier-expert-text:    #5a3510;
+  --color-tier-competitor:     var(--color-gray-400);
+  --color-tier-competitor-bg:  var(--color-gray-100);
+  --color-tier-competitor-text: var(--color-gray-700);
+
+  /* ---- Trend indicators ---- */
+  --color-trend-up:         #1a8754;
+  --color-trend-up-bg:      #e6f4ed;
+  --color-trend-down:       #d1293d;
+  --color-trend-down-bg:    #fce8ea;
+  --color-trend-unchanged:  var(--color-gray-400);
+  --color-trend-new:        #2563eb;
+  --color-trend-new-bg:     #e8f0fe;
+
+  /* ---- Status ---- */
+  --color-success:     #1a8754;
+  --color-success-bg:  #e6f4ed;
+  --color-warning:     #d4950a;
+  --color-warning-bg:  #fef7e0;
+  --color-error:       #d1293d;
+  --color-error-bg:    #fce8ea;
+  --color-info:        #2563eb;
+  --color-info-bg:     #e8f0fe;
+
+  /* ---- Rank accent (podium) ---- */
+  --color-rank-gold:    #D4AF37;
+  --color-rank-silver:  #A0A0A0;
+  --color-rank-bronze:  #CD7F32;
+
+  /* ---- Competition tier ---- */
+  --color-major:        var(--color-tier-elite);
+  --color-major-bg:     var(--color-tier-elite-bg);
+  --color-major-text:   var(--color-tier-elite-text);
+
+  /* ============================================================
+     Typography
+     ============================================================ */
+
+  --font-family-base:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji';
+
+  --font-family-mono:
+    'SF Mono', SFMono-Regular, ui-monospace, Menlo, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+
+  /* Heading scale */
+  --font-size-h1: 2rem;       /* 32px */
+  --font-size-h2: 1.625rem;   /* 26px */
+  --font-size-h3: 1.375rem;   /* 22px */
+  --font-size-h4: 1.125rem;   /* 18px */
+  --font-size-h5: 1rem;       /* 16px */
+  --font-size-h6: 0.875rem;   /* 14px */
+
+  /* Body */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-sm:   0.875rem; /* 14px */
+  --font-size-xs:   0.75rem;  /* 12px */
+
+  /* Data / numbers — same family, tabular figures */
+  --font-size-data-xl: 2.5rem;   /* 40px  — big stat number */
+  --font-size-data-lg: 1.75rem;  /* 28px  — rating on hero card */
+  --font-size-data-md: 1.25rem;  /* 20px  — inline rating */
+  --font-size-data-sm: 1rem;     /* 16px  — table rating */
+
+  --font-weight-normal:    400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  --line-height-tight:  1.25;
+  --line-height-base:   1.5;
+  --line-height-loose:  1.75;
+
+  --letter-spacing-tight: -0.01em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide:   0.02em;
+
+  /* ============================================================
+     Spacing scale (4px base)
+     ============================================================ */
+  --space-1:  0.25rem;  /*  4px */
+  --space-2:  0.5rem;   /*  8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+
+  /* ============================================================
+     Breakpoints (used in @media queries, not as vars)
+     Reference values:
+       mobile:  0–639px
+       tablet:  640–1023px
+       desktop: 1024px+
+     ============================================================ */
+
+  /* ============================================================
+     Border radius
+     ============================================================ */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;
+
+  /* ============================================================
+     Shadows
+     ============================================================ */
+  --shadow-sm:   0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md:   0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg:   0 4px 16px rgba(0, 0, 0, 0.12);
+  --shadow-xl:   0 8px 32px rgba(0, 0, 0, 0.16);
+
+  /* ============================================================
+     Transitions
+     ============================================================ */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* ============================================================
+     Layout
+     ============================================================ */
+  --content-max-width: 1200px;
+  --header-height:     64px;
+  --filter-bar-height: 56px;
+}
