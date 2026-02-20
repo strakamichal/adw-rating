@@ -6,6 +6,7 @@ using AdwRating.Service;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,58 @@ var connectionString = Environment.GetEnvironmentVariable("ADW_RATING_CONNECTION
     ?? builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException(
         "Connection string not found. Set ADW_RATING_CONNECTION or ConnectionStrings:DefaultConnection.");
+
+// Bootstrap: create login, database, and user if admin connection is provided
+var adminConnectionString = Environment.GetEnvironmentVariable("ADW_RATING_ADMIN_CONNECTION");
+if (!string.IsNullOrEmpty(adminConnectionString))
+{
+    var appConnBuilder = new SqlConnectionStringBuilder(connectionString);
+    var dbName = appConnBuilder.InitialCatalog;
+    var appLogin = appConnBuilder.UserID;
+    var appPassword = appConnBuilder.Password;
+
+    await using var conn = new SqlConnection(adminConnectionString);
+    await conn.OpenAsync();
+
+    // Create login if not exists
+    await using (var cmd = conn.CreateCommand())
+    {
+        cmd.CommandText = $"""
+            IF NOT EXISTS (SELECT 1 FROM sys.server_principals WHERE name = @login)
+                CREATE LOGIN [{appLogin}] WITH PASSWORD = @password;
+            """;
+        cmd.Parameters.AddWithValue("@login", appLogin);
+        cmd.Parameters.AddWithValue("@password", appPassword);
+        await cmd.ExecuteNonQueryAsync();
+    }
+
+    // Create database if not exists
+    await using (var cmd = conn.CreateCommand())
+    {
+        cmd.CommandText = $"""
+            IF NOT EXISTS (SELECT 1 FROM sys.databases WHERE name = @dbName)
+                CREATE DATABASE [{dbName}];
+            """;
+        cmd.Parameters.AddWithValue("@dbName", dbName);
+        await cmd.ExecuteNonQueryAsync();
+    }
+
+    // Create user and grant db_owner
+    await using (var cmd = conn.CreateCommand())
+    {
+        cmd.CommandText = $"""
+            USE [{dbName}];
+            IF NOT EXISTS (SELECT 1 FROM sys.database_principals WHERE name = @login)
+            BEGIN
+                CREATE USER [{appLogin}] FOR LOGIN [{appLogin}];
+                ALTER ROLE db_owner ADD MEMBER [{appLogin}];
+            END
+            """;
+        cmd.Parameters.AddWithValue("@login", appLogin);
+        await cmd.ExecuteNonQueryAsync();
+    }
+}
+
 builder.Services.AddDataMssql(connectionString);
 builder.Services.AddServices();
 
