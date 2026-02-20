@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using AdwRating.Domain.Entities;
 using AdwRating.Domain.Enums;
 using AdwRating.Domain.Helpers;
@@ -262,7 +263,62 @@ public class IdentityResolutionService : IIdentityResolutionService
             }
         }
 
-        // 3. No handler-scoped match found. Use global match ONLY if the name is
+        // 3. Handler-scoped fuzzy match: containment + size relaxation
+        //    "Berta" ↔ "Berta z Kojca Coli", or same dog in adjacent size (S↔M, I↔L)
+        if (handlerDogIds.Count > 0)
+        {
+            var fuzzyMatches = new List<Dog>();
+            foreach (var dogId in handlerDogIds)
+            {
+                var handlerDog = await _dogRepo.GetByIdAsync(dogId);
+                if (handlerDog is null) continue;
+
+                // Collect all normalized names for this dog
+                var dogNames = new List<string> { handlerDog.NormalizedCallName };
+                if (handlerDog.RegisteredName is not null)
+                    dogNames.Add(NameNormalizer.Normalize(handlerDog.RegisteredName));
+
+                foreach (var nameVariant in namesToTry)
+                {
+                    if (nameVariant.Length < 3) continue;
+
+                    foreach (var dogName in dogNames)
+                    {
+                        if (string.IsNullOrEmpty(dogName)) continue;
+
+                        // Exact name with adjacent size, or word-boundary containment with same/adjacent size
+                        var nameExact = string.Equals(nameVariant, dogName, StringComparison.OrdinalIgnoreCase);
+                        var nameContained = !nameExact && IsWordBoundaryContainment(nameVariant, dogName);
+
+                        if ((nameExact || nameContained)
+                            && IsAdjacentOrSameSize(size, handlerDog.SizeCategory))
+                        {
+                            fuzzyMatches.Add(handlerDog);
+                            goto nextDog; // Only match each dog once
+                        }
+                    }
+                }
+                nextDog:;
+            }
+
+            if (fuzzyMatches.Count == 1)
+            {
+                var match = fuzzyMatches[0];
+                _logger.LogInformation(
+                    "Dog '{RawName}' ({Size}) fuzzy-matched to handler's dog '{CallName}' ({MatchSize}) via containment",
+                    rawDogName, size, match.CallName, match.SizeCategory);
+
+                if (match.Breed is null && breed is not null)
+                {
+                    match.Breed = breed;
+                    await _dogRepo.UpdateAsync(match);
+                }
+                await CreateDogAliasesIfNeeded(match.Id, normalizedFull, normalizedCallName, normalizedRegistered, match.NormalizedCallName);
+                return match;
+            }
+        }
+
+        // 4. No handler-scoped match found. Use global match ONLY if the name is
         //    specific enough (registered name or full name match, NOT just a short call name).
         //    Short call names like "Beat", "Day" are too ambiguous for cross-handler matching.
         var globalHit = aliasGlobalHit ?? exactGlobalHit;
@@ -407,6 +463,44 @@ public class IdentityResolutionService : IIdentityResolutionService
         }
 
         return slug;
+    }
+
+    /// <summary>
+    /// Checks if the shorter string appears as complete word(s) within the longer string.
+    /// "berta" in "berta z kojca coli" → true (word boundary match)
+    /// "lis" in "borealis" → false (not at word boundary)
+    /// Strings must differ (not exact match — that's handled by earlier steps).
+    /// </summary>
+    internal static bool IsWordBoundaryContainment(string a, string b)
+    {
+        if (string.Equals(a, b, StringComparison.OrdinalIgnoreCase))
+            return false;
+
+        var shorter = a.Length <= b.Length ? a : b;
+        var longer = a.Length <= b.Length ? b : a;
+
+        if (shorter.Length < 3)
+            return false;
+
+        // Use word boundary regex: shorter must appear as whole word(s)
+        var pattern = @"(?<!\w)" + Regex.Escape(shorter) + @"(?!\w)";
+        return Regex.IsMatch(longer, pattern, RegexOptions.IgnoreCase);
+    }
+
+    /// <summary>
+    /// Returns true if sizes are the same or adjacent in the FCI progression: S↔M, I↔L.
+    /// </summary>
+    internal static bool IsAdjacentOrSameSize(SizeCategory a, SizeCategory b)
+    {
+        if (a == b) return true;
+        return (a, b) switch
+        {
+            (SizeCategory.S, SizeCategory.M) => true,
+            (SizeCategory.M, SizeCategory.S) => true,
+            (SizeCategory.I, SizeCategory.L) => true,
+            (SizeCategory.L, SizeCategory.I) => true,
+            _ => false
+        };
     }
 
     private async Task<string> GenerateUniqueTeamSlugAsync(string baseSlug)

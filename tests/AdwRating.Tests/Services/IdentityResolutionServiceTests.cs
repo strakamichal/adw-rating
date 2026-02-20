@@ -398,6 +398,148 @@ public class IdentityResolutionServiceTests
         await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
     }
 
+    [Test]
+    public async Task ResolveDogAsync_FuzzyContainment_CallNameMatchesRegisteredName()
+    {
+        // Handler has "Berta z Kojca Coli" (call name "Berta"), new row has just "Berta"
+        var existingDog = new Dog
+        {
+            Id = 5, CallName = "Berta", NormalizedCallName = "berta",
+            RegisteredName = "Berta z Kojca Coli", SizeCategory = SizeCategory.M
+        };
+
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team> { new() { Id = 30, HandlerId = 10, DogId = 5 } });
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("berta", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("berta", SizeCategory.M)
+            .Returns(new List<Dog>()); // No exact match (different name format)
+        _dogRepo.GetByIdAsync(5).Returns(existingDog);
+
+        var result = await _sut.ResolveDogAsync("Berta", null, SizeCategory.M, 10);
+
+        Assert.That(result, Is.SameAs(existingDog));
+        await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
+    }
+
+    [Test]
+    public async Task ResolveDogAsync_FuzzyContainment_LongNameMatchesCallName()
+    {
+        // Handler has "Cinnamon" (call name), new row has "Cinnamon Flycatcher of Noble County"
+        var existingDog = new Dog
+        {
+            Id = 6, CallName = "Cinnamon", NormalizedCallName = "cinnamon",
+            RegisteredName = null, SizeCategory = SizeCategory.S
+        };
+
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team> { new() { Id = 31, HandlerId = 10, DogId = 6 } });
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("cinnamon flycatcher of noble county", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("cinnamon", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("cinnamon flycatcher of noble county", SizeCategory.S)
+            .Returns(new List<Dog>());
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("cinnamon", SizeCategory.S)
+            .Returns(new List<Dog>());
+        _dogRepo.GetByIdAsync(6).Returns(existingDog);
+
+        var result = await _sut.ResolveDogAsync("Cinnamon Flycatcher of Noble County", null, SizeCategory.S, 10);
+
+        Assert.That(result, Is.SameAs(existingDog));
+        await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
+    }
+
+    [Test]
+    public async Task ResolveDogAsync_FuzzyContainment_AdjacentSizeMatches()
+    {
+        // Handler has "Gia" in S, new row has "Gia" in M (adjacent sizes)
+        var existingDog = new Dog
+        {
+            Id = 7, CallName = "Gia", NormalizedCallName = "gia",
+            RegisteredName = null, SizeCategory = SizeCategory.S
+        };
+
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team> { new() { Id = 32, HandlerId = 10, DogId = 7 } });
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("gia", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("gia", SizeCategory.M)
+            .Returns(new List<Dog>()); // Exact match fails (different size)
+        _dogRepo.GetByIdAsync(7).Returns(existingDog);
+
+        var result = await _sut.ResolveDogAsync("Gia", null, SizeCategory.M, 10);
+
+        Assert.That(result, Is.SameAs(existingDog));
+        await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
+    }
+
+    [Test]
+    public async Task ResolveDogAsync_FuzzyContainment_NonWordBoundary_DoesNotMatch()
+    {
+        // Handler has "Borealis", new row has "Lis" — NOT a word-boundary match
+        var existingDog = new Dog
+        {
+            Id = 8, CallName = "Borealis", NormalizedCallName = "borealis",
+            RegisteredName = null, SizeCategory = SizeCategory.L
+        };
+
+        var created = new Dog
+        {
+            Id = 99, CallName = "Lis", NormalizedCallName = "lis",
+            SizeCategory = SizeCategory.L
+        };
+
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team> { new() { Id = 33, HandlerId = 10, DogId = 8 } });
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("lis", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("lis", SizeCategory.L)
+            .Returns(new List<Dog>());
+        _dogRepo.GetByIdAsync(8).Returns(existingDog);
+        _dogRepo.CreateAsync(Arg.Any<Dog>()).Returns(created);
+
+        var result = await _sut.ResolveDogAsync("Lis", null, SizeCategory.L, 10);
+
+        // Should NOT match "Borealis" — should create a new dog
+        Assert.That(result, Is.SameAs(created));
+        await _dogRepo.Received(1).CreateAsync(Arg.Any<Dog>());
+    }
+
+    #endregion
+
+    #region IsWordBoundaryContainment
+
+    [TestCase("berta", "berta z kojca coli", true)]
+    [TestCase("cinnamon", "cinnamon flycatcher of noble county", true)]
+    [TestCase("lis", "borealis", false)]  // Not at word boundary
+    [TestCase("berta", "berta", false)]   // Exact match — not containment
+    [TestCase("ab", "ab cde", false)]     // Too short (< 3 chars)
+    [TestCase("day", "daylight neverending", false)] // Not at word boundary on right
+    [TestCase("day", "birth day party", true)] // Word boundary match
+    public void IsWordBoundaryContainment_ReturnsExpected(string a, string b, bool expected)
+    {
+        Assert.That(IdentityResolutionService.IsWordBoundaryContainment(a, b), Is.EqualTo(expected));
+    }
+
+    #endregion
+
+    #region IsAdjacentOrSameSize
+
+    [TestCase(SizeCategory.S, SizeCategory.S, true)]
+    [TestCase(SizeCategory.S, SizeCategory.M, true)]
+    [TestCase(SizeCategory.M, SizeCategory.S, true)]
+    [TestCase(SizeCategory.I, SizeCategory.L, true)]
+    [TestCase(SizeCategory.L, SizeCategory.I, true)]
+    [TestCase(SizeCategory.S, SizeCategory.I, false)]
+    [TestCase(SizeCategory.S, SizeCategory.L, false)]
+    [TestCase(SizeCategory.M, SizeCategory.I, false)]
+    [TestCase(SizeCategory.M, SizeCategory.L, false)]
+    public void IsAdjacentOrSameSize_ReturnsExpected(SizeCategory a, SizeCategory b, bool expected)
+    {
+        Assert.That(IdentityResolutionService.IsAdjacentOrSameSize(a, b), Is.EqualTo(expected));
+    }
+
     #endregion
 
     #region ResolveTeamAsync
