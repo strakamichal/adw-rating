@@ -1,31 +1,31 @@
 using System.CommandLine;
+using System.CommandLine.Parsing;
 using AdwRating.Cli;
-using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AdwRating.Cli.Commands;
 
 public static class ShowCommands
 {
-    public static Command Create(Option<string?> connectionOption)
+    private static Option<string?>? _connectionOption;
+    private static Option<bool>? _verboseOption;
+
+    public static Command Create(Option<string?> connectionOption, Option<bool> verboseOption)
     {
+        _connectionOption = connectionOption;
+        _verboseOption = verboseOption;
+
         var command = new Command("show", "Show entity details");
-        command.Add(CreateHandlerCommand(connectionOption));
-        command.Add(CreateDogCommand(connectionOption));
+        command.Add(CreateHandlerCommand());
+        command.Add(CreateDogCommand());
         return command;
     }
 
-    private static ServiceProvider BuildProvider(string connectionString)
-    {
-        var services = new ServiceCollection();
-        services.AddDataMssql(connectionString);
-        services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Warning));
-        return services.BuildServiceProvider();
-    }
+    private static ServiceProvider BuildProvider(ParseResult parseResult) =>
+        CliServiceProvider.Build(parseResult, _connectionOption!, _verboseOption!);
 
-    private static Command CreateHandlerCommand(Option<string?> connectionOption)
+    private static Command CreateHandlerCommand()
     {
         var idArg = new Argument<int>("id") { Description = "Handler ID" };
         var command = new Command("handler", "Show handler details");
@@ -33,9 +33,8 @@ public static class ShowCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var id = parseResult.GetValue(idArg);
-            await using var provider = BuildProvider(connectionString);
+            await using var provider = BuildProvider(parseResult);
             var handlerRepo = provider.GetRequiredService<IHandlerRepository>();
             var teamRepo = provider.GetRequiredService<ITeamRepository>();
             var aliasRepo = provider.GetRequiredService<IHandlerAliasRepository>();
@@ -83,7 +82,7 @@ public static class ShowCommands
         return command;
     }
 
-    private static Command CreateDogCommand(Option<string?> connectionOption)
+    private static Command CreateDogCommand()
     {
         var idArg = new Argument<int>("id") { Description = "Dog ID" };
         var command = new Command("dog", "Show dog details");
@@ -91,9 +90,8 @@ public static class ShowCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var id = parseResult.GetValue(idArg);
-            await using var provider = BuildProvider(connectionString);
+            await using var provider = BuildProvider(parseResult);
             var dogRepo = provider.GetRequiredService<IDogRepository>();
             var teamRepo = provider.GetRequiredService<ITeamRepository>();
             var aliasRepo = provider.GetRequiredService<IDogAliasRepository>();

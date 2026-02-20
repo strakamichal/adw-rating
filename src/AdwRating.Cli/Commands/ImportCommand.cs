@@ -1,17 +1,14 @@
 using System.CommandLine;
 using AdwRating.Cli;
-using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
 using AdwRating.Domain.Models;
-using AdwRating.Service;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AdwRating.Cli.Commands;
 
 public static class ImportCommand
 {
-    public static Command Create(Option<string?> connectionOption)
+    public static Command Create(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var fileArgument = new Argument<FileInfo>("file") { Description = "Path to CSV file" };
         var competitionOption = new Option<string>("--competition") { Description = "Competition slug", Required = true };
@@ -37,7 +34,6 @@ public static class ImportCommand
         command.SetAction(async (parseResult, cancellationToken) =>
         {
             var file = parseResult.GetValue(fileArgument);
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var slug = parseResult.GetValue(competitionOption)!;
             var name = parseResult.GetValue(nameOption)!;
             var date = parseResult.GetValue(dateOption);
@@ -53,12 +49,7 @@ public static class ImportCommand
                 return 1;
             }
 
-            var services = new ServiceCollection();
-            services.AddDataMssql(connectionString);
-            services.AddServices();
-            services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Warning));
-
-            await using var provider = services.BuildServiceProvider();
+            await using var provider = CliServiceProvider.Build(parseResult, connectionOption, verboseOption, addServices: true);
             var importService = provider.GetRequiredService<IImportService>();
 
             var metadata = new CompetitionMetadata(name, date, endDate, country, location, tier, organization);

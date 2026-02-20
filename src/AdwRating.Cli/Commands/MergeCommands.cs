@@ -1,33 +1,31 @@
 using System.CommandLine;
+using System.CommandLine.Parsing;
 using AdwRating.Cli;
-using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
-using AdwRating.Service;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AdwRating.Cli.Commands;
 
 public static class MergeCommands
 {
-    public static Command Create(Option<string?> connectionOption)
+    private static Option<string?>? _connectionOption;
+    private static Option<bool>? _verboseOption;
+
+    public static Command Create(Option<string?> connectionOption, Option<bool> verboseOption)
     {
+        _connectionOption = connectionOption;
+        _verboseOption = verboseOption;
+
         var command = new Command("merge", "Merge duplicate entities");
-        command.Add(CreateHandlerCommand(connectionOption));
-        command.Add(CreateDogCommand(connectionOption));
+        command.Add(CreateHandlerCommand());
+        command.Add(CreateDogCommand());
         return command;
     }
 
-    private static ServiceProvider BuildProvider(string connectionString)
-    {
-        var services = new ServiceCollection();
-        services.AddDataMssql(connectionString);
-        services.AddServices();
-        services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Warning));
-        return services.BuildServiceProvider();
-    }
+    private static ServiceProvider BuildProvider(ParseResult parseResult) =>
+        CliServiceProvider.Build(parseResult, _connectionOption!, _verboseOption!, addServices: true);
 
-    private static Command CreateHandlerCommand(Option<string?> connectionOption)
+    private static Command CreateHandlerCommand()
     {
         var sourceArg = new Argument<int>("source-id") { Description = "Source handler ID (will be merged into target)" };
         var targetArg = new Argument<int>("target-id") { Description = "Target handler ID (will be kept)" };
@@ -40,12 +38,11 @@ public static class MergeCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var sourceId = parseResult.GetValue(sourceArg);
             var targetId = parseResult.GetValue(targetArg);
             var dryRun = parseResult.GetValue(dryRunOption);
 
-            await using var provider = BuildProvider(connectionString);
+            await using var provider = BuildProvider(parseResult);
             var handlerRepo = provider.GetRequiredService<IHandlerRepository>();
             var mergeService = provider.GetRequiredService<IMergeService>();
 
@@ -91,7 +88,7 @@ public static class MergeCommands
         return command;
     }
 
-    private static Command CreateDogCommand(Option<string?> connectionOption)
+    private static Command CreateDogCommand()
     {
         var sourceArg = new Argument<int>("source-id") { Description = "Source dog ID (will be merged into target)" };
         var targetArg = new Argument<int>("target-id") { Description = "Target dog ID (will be kept)" };
@@ -104,12 +101,11 @@ public static class MergeCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var sourceId = parseResult.GetValue(sourceArg);
             var targetId = parseResult.GetValue(targetArg);
             var dryRun = parseResult.GetValue(dryRunOption);
 
-            await using var provider = BuildProvider(connectionString);
+            await using var provider = BuildProvider(parseResult);
             var dogRepo = provider.GetRequiredService<IDogRepository>();
             var mergeService = provider.GetRequiredService<IMergeService>();
 

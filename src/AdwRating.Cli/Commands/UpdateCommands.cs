@@ -1,22 +1,20 @@
 using System.CommandLine;
 using AdwRating.Cli;
-using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AdwRating.Cli.Commands;
 
 public static class UpdateCommands
 {
-    public static Command Create(Option<string?> connectionOption)
+    public static Command Create(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var command = new Command("update", "Update entity fields");
-        command.Add(CreateHandlerCommand(connectionOption));
+        command.Add(CreateHandlerCommand(connectionOption, verboseOption));
         return command;
     }
 
-    private static Command CreateHandlerCommand(Option<string?> connectionOption)
+    private static Command CreateHandlerCommand(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var idArg = new Argument<int>("id") { Description = "Handler ID" };
         var countryOption = new Option<string>("--country") { Description = "New country code (ISO 3166-1 alpha-3)", Required = true };
@@ -27,14 +25,10 @@ public static class UpdateCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var id = parseResult.GetValue(idArg);
             var country = parseResult.GetValue(countryOption)!;
 
-            var services = new ServiceCollection();
-            services.AddDataMssql(connectionString);
-            services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Warning));
-            await using var provider = services.BuildServiceProvider();
+            await using var provider = CliServiceProvider.Build(parseResult, connectionOption, verboseOption);
 
             var repo = provider.GetRequiredService<IHandlerRepository>();
             var handler = await repo.GetByIdAsync(id);

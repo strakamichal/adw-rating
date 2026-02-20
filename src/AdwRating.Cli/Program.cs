@@ -8,17 +8,24 @@ var connectionOption = new Option<string?>("--connection")
     HelpName = "connection-string"
 };
 
+var verboseOption = new Option<bool>("--verbose", "-v")
+{
+    Description = "Show detailed EF Core / SQL logging",
+    Recursive = true
+};
+
 var rootCommand = new RootCommand("ADW Rating CLI");
 rootCommand.Add(connectionOption);
+rootCommand.Add(verboseOption);
 
-rootCommand.Add(ImportCommand.Create(connectionOption));
-rootCommand.Add(SeedConfigCommand.Create(connectionOption));
-rootCommand.Add(ListCommands.Create(connectionOption));
-rootCommand.Add(ShowCommands.Create(connectionOption));
-rootCommand.Add(MergeCommands.Create(connectionOption));
-rootCommand.Add(DeleteCommands.Create(connectionOption));
-rootCommand.Add(UpdateCommands.Create(connectionOption));
-rootCommand.Add(AliasCommands.Create(connectionOption));
-rootCommand.Add(RecalculateCommand.Create(connectionOption));
+rootCommand.Add(ImportCommand.Create(connectionOption, verboseOption));
+rootCommand.Add(SeedConfigCommand.Create(connectionOption, verboseOption));
+rootCommand.Add(ListCommands.Create(connectionOption, verboseOption));
+rootCommand.Add(ShowCommands.Create(connectionOption, verboseOption));
+rootCommand.Add(MergeCommands.Create(connectionOption, verboseOption));
+rootCommand.Add(DeleteCommands.Create(connectionOption, verboseOption));
+rootCommand.Add(UpdateCommands.Create(connectionOption, verboseOption));
+rootCommand.Add(AliasCommands.Create(connectionOption, verboseOption));
+rootCommand.Add(RecalculateCommand.Create(connectionOption, verboseOption));
 
 return await rootCommand.Parse(args).InvokeAsync();

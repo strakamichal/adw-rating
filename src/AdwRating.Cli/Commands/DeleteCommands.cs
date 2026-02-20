@@ -1,22 +1,20 @@
 using System.CommandLine;
 using AdwRating.Cli;
-using AdwRating.Data.Mssql;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AdwRating.Cli.Commands;
 
 public static class DeleteCommands
 {
-    public static Command Create(Option<string?> connectionOption)
+    public static Command Create(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var command = new Command("delete", "Delete entities");
-        command.Add(CreateCompetitionCommand(connectionOption));
+        command.Add(CreateCompetitionCommand(connectionOption, verboseOption));
         return command;
     }
 
-    private static Command CreateCompetitionCommand(Option<string?> connectionOption)
+    private static Command CreateCompetitionCommand(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var idArg = new Argument<int>("id") { Description = "Competition ID" };
         var command = new Command("competition", "Delete a competition and all its data");
@@ -24,13 +22,9 @@ public static class DeleteCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var id = parseResult.GetValue(idArg);
 
-            var services = new ServiceCollection();
-            services.AddDataMssql(connectionString);
-            services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Warning));
-            await using var provider = services.BuildServiceProvider();
+            await using var provider = CliServiceProvider.Build(parseResult, connectionOption, verboseOption);
 
             var repo = provider.GetRequiredService<ICompetitionRepository>();
             var competition = await repo.GetByIdAsync(id);

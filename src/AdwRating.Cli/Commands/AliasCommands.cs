@@ -1,27 +1,25 @@
 using System.CommandLine;
 using AdwRating.Cli;
-using AdwRating.Data.Mssql;
 using AdwRating.Domain.Entities;
 using AdwRating.Domain.Enums;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AdwRating.Cli.Commands;
 
 public static class AliasCommands
 {
-    public static Command Create(Option<string?> connectionOption)
+    public static Command Create(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var command = new Command("add", "Add entities");
         var aliasCommand = new Command("alias", "Add alias for a handler or dog");
-        aliasCommand.Add(CreateHandlerAliasCommand(connectionOption));
-        aliasCommand.Add(CreateDogAliasCommand(connectionOption));
+        aliasCommand.Add(CreateHandlerAliasCommand(connectionOption, verboseOption));
+        aliasCommand.Add(CreateDogAliasCommand(connectionOption, verboseOption));
         command.Add(aliasCommand);
         return command;
     }
 
-    private static Command CreateHandlerAliasCommand(Option<string?> connectionOption)
+    private static Command CreateHandlerAliasCommand(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var handlerIdArg = new Argument<int>("handler-id") { Description = "Handler ID" };
         var aliasNameArg = new Argument<string>("alias-name") { Description = "Alias name" };
@@ -32,14 +30,10 @@ public static class AliasCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var handlerId = parseResult.GetValue(handlerIdArg);
             var aliasName = parseResult.GetValue(aliasNameArg)!;
 
-            var services = new ServiceCollection();
-            services.AddDataMssql(connectionString);
-            services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Warning));
-            await using var provider = services.BuildServiceProvider();
+            await using var provider = CliServiceProvider.Build(parseResult, connectionOption, verboseOption);
 
             var handlerRepo = provider.GetRequiredService<IHandlerRepository>();
             var handler = await handlerRepo.GetByIdAsync(handlerId);
@@ -65,7 +59,7 @@ public static class AliasCommands
         return command;
     }
 
-    private static Command CreateDogAliasCommand(Option<string?> connectionOption)
+    private static Command CreateDogAliasCommand(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var dogIdArg = new Argument<int>("dog-id") { Description = "Dog ID" };
         var aliasNameArg = new Argument<string>("alias-name") { Description = "Alias name" };
@@ -78,15 +72,11 @@ public static class AliasCommands
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
             var dogId = parseResult.GetValue(dogIdArg);
             var aliasName = parseResult.GetValue(aliasNameArg)!;
             var aliasType = parseResult.GetValue(typeOption);
 
-            var services = new ServiceCollection();
-            services.AddDataMssql(connectionString);
-            services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Warning));
-            await using var provider = services.BuildServiceProvider();
+            await using var provider = CliServiceProvider.Build(parseResult, connectionOption, verboseOption);
 
             var dogRepo = provider.GetRequiredService<IDogRepository>();
             var dog = await dogRepo.GetByIdAsync(dogId);

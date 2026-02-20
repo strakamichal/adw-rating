@@ -1,29 +1,20 @@
 using System.CommandLine;
 using System.Diagnostics;
-using AdwRating.Data.Mssql;
+using AdwRating.Cli;
 using AdwRating.Domain.Interfaces;
-using AdwRating.Service;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AdwRating.Cli.Commands;
 
 public static class RecalculateCommand
 {
-    public static Command Create(Option<string?> connectionOption)
+    public static Command Create(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var command = new Command("recalculate", "Recalculate all ratings from scratch");
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
-
-            var services = new ServiceCollection();
-            services.AddDataMssql(connectionString);
-            services.AddServices();
-            services.AddLogging(builder => builder.AddConsole().SetMinimumLevel(LogLevel.Information));
-
-            await using var provider = services.BuildServiceProvider();
+            await using var provider = CliServiceProvider.Build(parseResult, connectionOption, verboseOption, addServices: true);
 
             var ratingService = provider.GetRequiredService<IRatingService>();
 

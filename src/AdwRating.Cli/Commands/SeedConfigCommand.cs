@@ -1,28 +1,20 @@
 using System.CommandLine;
 using AdwRating.Cli;
-using AdwRating.Data.Mssql;
 using AdwRating.Domain.Entities;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 namespace AdwRating.Cli.Commands;
 
 public static class SeedConfigCommand
 {
-    public static Command Create(Option<string?> connectionOption)
+    public static Command Create(Option<string?> connectionOption, Option<bool> verboseOption)
     {
         var command = new Command("seed-config", "Create default rating configuration if none exists");
 
         command.SetAction(async (parseResult, cancellationToken) =>
         {
-            var connectionString = ConnectionHelper.Resolve(parseResult, connectionOption);
-
-            var services = new ServiceCollection();
-            services.AddDataMssql(connectionString);
-            services.AddLogging(builder => builder.AddConsole());
-
-            await using var provider = services.BuildServiceProvider();
+            await using var provider = CliServiceProvider.Build(parseResult, connectionOption, verboseOption);
 
             // Ensure database and schema exist
             var dbInit = provider.GetRequiredService<IDatabaseInitializer>();
