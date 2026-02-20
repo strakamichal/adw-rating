@@ -650,6 +650,150 @@ public class RatingServiceTests
 
     #endregion
 
+    #region Snapshot Generation Tests (5.3c)
+
+    [Test]
+    public async Task RecalculateAllAsync_GeneratesSnapshots_OnePerTeamPerRun()
+    {
+        // 6 teams, 1 run → should produce 6 snapshots
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        IEnumerable<RatingSnapshot>? savedSnapshots = null;
+        _snapshotRepo.ReplaceAllAsync(Arg.Do<IEnumerable<RatingSnapshot>>(s => savedSnapshots = s))
+            .Returns(Task.CompletedTask);
+
+        await _service.RecalculateAllAsync();
+
+        Assert.That(savedSnapshots, Is.Not.Null);
+        var snapshotList = savedSnapshots!.ToList();
+        Assert.That(snapshotList, Has.Count.EqualTo(6),
+            "Should have 1 snapshot per team per processed run");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_TwoRuns_DoubleSnapshots()
+    {
+        // 6 teams, 2 runs → should produce 12 snapshots
+        var teams = CreateTeams(6);
+        var comp1 = CreateCompetition(tier: 2, daysAgo: 100);
+        var comp2 = CreateCompetition(tier: 2, daysAgo: 50);
+        var run1 = CreateRun(comp1, teams.Count, runId: 1);
+        var run2 = CreateRun(comp2, teams.Count, runId: 2);
+
+        var results1 = CreateRunResults(run1, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+        var results2 = CreateRunResults(run2, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run1, run2 }, results1.Concat(results2).ToList());
+
+        IEnumerable<RatingSnapshot>? savedSnapshots = null;
+        _snapshotRepo.ReplaceAllAsync(Arg.Do<IEnumerable<RatingSnapshot>>(s => savedSnapshots = s))
+            .Returns(Task.CompletedTask);
+
+        await _service.RecalculateAllAsync();
+
+        var snapshotList = savedSnapshots!.ToList();
+        Assert.That(snapshotList, Has.Count.EqualTo(12),
+            "Should have 2 snapshots per team for 2 runs");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_Snapshots_HaveCorrectFields()
+    {
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        IEnumerable<RatingSnapshot>? savedSnapshots = null;
+        _snapshotRepo.ReplaceAllAsync(Arg.Do<IEnumerable<RatingSnapshot>>(s => savedSnapshots = s))
+            .Returns(Task.CompletedTask);
+
+        await _service.RecalculateAllAsync();
+
+        var snapshot = savedSnapshots!.First();
+        Assert.That(snapshot.TeamId, Is.GreaterThan(0));
+        Assert.That(snapshot.RunResultId, Is.GreaterThan(0));
+        Assert.That(snapshot.CompetitionId, Is.EqualTo(competition.Id));
+        Assert.That(snapshot.Date, Is.EqualTo(run.Date));
+        Assert.That(snapshot.Mu, Is.Not.EqualTo(0));
+        Assert.That(snapshot.Sigma, Is.Not.EqualTo(0));
+        Assert.That(snapshot.Rating, Is.Not.EqualTo(0), "Snapshot rating should be normalized");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_Snapshots_RatingIsNormalized()
+    {
+        // 8 teams so normalization is meaningful
+        var teams = CreateTeams(8);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        IEnumerable<RatingSnapshot>? savedSnapshots = null;
+        _snapshotRepo.ReplaceAllAsync(Arg.Do<IEnumerable<RatingSnapshot>>(s => savedSnapshots = s))
+            .Returns(Task.CompletedTask);
+
+        await _service.RecalculateAllAsync();
+
+        var snapshotRatings = savedSnapshots!.Select(s => (double)s.Rating).ToList();
+        double mean = snapshotRatings.Average();
+
+        // Snapshot ratings should be normalized around 1500
+        Assert.That(mean, Is.EqualTo(1500.0).Within(5.0),
+            "Snapshot ratings should be normalized around target mean");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_NoRuns_ClearsSnapshots()
+    {
+        var teams = CreateTeams(3);
+        _teamRepo.GetAllAsync().Returns(teams);
+        _runRepo.GetAllInWindowAsync(Arg.Any<DateOnly>()).Returns(new List<Run>());
+
+        IEnumerable<RatingSnapshot>? savedSnapshots = null;
+        _snapshotRepo.ReplaceAllAsync(Arg.Do<IEnumerable<RatingSnapshot>>(s => savedSnapshots = s))
+            .Returns(Task.CompletedTask);
+
+        await _service.RecalculateAllAsync();
+
+        Assert.That(savedSnapshots, Is.Not.Null);
+        Assert.That(savedSnapshots!.ToList(), Is.Empty,
+            "No runs = no snapshots, but ReplaceAllAsync should still be called to clear old data");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_SnapshotsPersisted()
+    {
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        await _service.RecalculateAllAsync();
+
+        // Verify ReplaceAllAsync was called
+        await _snapshotRepo.Received(1).ReplaceAllAsync(Arg.Any<IEnumerable<RatingSnapshot>>());
+    }
+
+    #endregion
+
     #region Helper Methods
 
     private static List<Team> CreateTeams(int count, int idOffset = 0, SizeCategory size = SizeCategory.L)

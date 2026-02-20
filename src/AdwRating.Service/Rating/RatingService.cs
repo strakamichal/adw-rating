@@ -68,9 +68,10 @@ public class RatingService : IRatingService
         {
             _logger.LogInformation("No runs found in window. Saving reset teams.");
             ApplyStateToTeams(allTeams, teamState, config);
-            ApplyNormalization(allTeams, config);
+            ApplyNormalization(allTeams, config, null);
             ApplyFlagsAndTiers(allTeams, config);
             await _teamRepo.UpdateBatchAsync(allTeams);
+            await _snapshotRepo.ReplaceAllAsync(new List<RatingSnapshot>());
             return;
         }
 
@@ -85,6 +86,7 @@ public class RatingService : IRatingService
 
         int processedRuns = 0;
         int skippedRuns = 0;
+        var snapshots = new List<RatingSnapshot>();
 
         // 5. Process each run
         foreach (var run in sortedRuns)
@@ -154,6 +156,25 @@ public class RatingService : IRatingService
                 }
             }
 
+            // Collect snapshots for each participating team
+            foreach (var result in dedupedResults)
+            {
+                if (!teamState.ContainsKey(result.TeamId))
+                    continue;
+
+                var state = teamState[result.TeamId];
+                snapshots.Add(new RatingSnapshot
+                {
+                    TeamId = result.TeamId,
+                    RunResultId = result.Id,
+                    CompetitionId = run.CompetitionId,
+                    Date = run.Date,
+                    Mu = (float)state.Mu,
+                    Sigma = (float)state.Sigma,
+                    // Rating will be computed after normalization
+                });
+            }
+
             processedRuns++;
         }
 
@@ -163,14 +184,27 @@ public class RatingService : IRatingService
         // 6. Apply raw ratings (display scaling + podium boost)
         ApplyStateToTeams(allTeams, teamState, config);
 
-        // 7. Cross-size normalization
-        ApplyNormalization(allTeams, config);
+        // 7. Compute raw ratings for snapshots (using each team's final counts for podium boost)
+        var teamLookup = allTeams.ToDictionary(t => t.Id);
+        foreach (var snapshot in snapshots)
+        {
+            if (teamLookup.TryGetValue(snapshot.TeamId, out var team))
+            {
+                snapshot.Rating = ComputeRawRating(
+                    snapshot.Mu, snapshot.Sigma,
+                    team.RunCount, team.Top3RunCount, config);
+            }
+        }
 
-        // 8. Flags, tiers, PeakRating
+        // 8. Cross-size normalization (teams + snapshots)
+        ApplyNormalization(allTeams, config, snapshots);
+
+        // 9. Flags, tiers, PeakRating
         ApplyFlagsAndTiers(allTeams, config);
 
-        // 9. Persist
+        // 10. Persist teams and snapshots
         await _teamRepo.UpdateBatchAsync(allTeams);
+        await _snapshotRepo.ReplaceAllAsync(snapshots);
 
         _logger.LogInformation("Rating recalculation complete. Updated {TeamCount} teams.", allTeams.Count);
     }
@@ -286,8 +320,15 @@ public class RatingService : IRatingService
     /// Rating = NORM_TARGET_MEAN + NORM_TARGET_STD * (rating_raw - size_mean) / size_std
     /// Also normalizes PrevRating for consistent trend display.
     /// </summary>
-    internal static void ApplyNormalization(IReadOnlyList<Team> teams, RatingConfiguration config)
+    internal static void ApplyNormalization(
+        IReadOnlyList<Team> teams,
+        RatingConfiguration config,
+        IList<RatingSnapshot>? snapshots = null)
     {
+        // Build snapshot lookup by team for applying same normalization params
+        var snapshotsByTeam = snapshots?.GroupBy(s => s.TeamId)
+            .ToDictionary(g => g.Key, g => g.ToList());
+
         // Get effective size category per team
         var sizeGroups = teams
             .Where(t => t.RunCount > 0)
@@ -304,6 +345,7 @@ public class RatingService : IRatingService
                 {
                     team.Rating = config.NormTargetMean;
                     team.PrevRating = config.NormTargetMean;
+                    NormalizeTeamSnapshots(snapshotsByTeam, team.Id, config.NormTargetMean, 0, 1);
                 }
                 continue;
             }
@@ -320,6 +362,7 @@ public class RatingService : IRatingService
                 {
                     team.Rating = config.NormTargetMean;
                     team.PrevRating = config.NormTargetMean;
+                    NormalizeTeamSnapshots(snapshotsByTeam, team.Id, config.NormTargetMean, 0, 1);
                 }
                 continue;
             }
@@ -328,8 +371,28 @@ public class RatingService : IRatingService
             {
                 team.Rating = (float)(config.NormTargetMean + config.NormTargetStd * (team.Rating - mean) / std);
                 team.PrevRating = (float)(config.NormTargetMean + config.NormTargetStd * (team.PrevRating - mean) / std);
+
+                // Apply same normalization params to this team's snapshots
+                if (snapshotsByTeam != null && snapshotsByTeam.TryGetValue(team.Id, out var teamSnapshots))
+                {
+                    foreach (var snapshot in teamSnapshots)
+                    {
+                        snapshot.Rating = (float)(config.NormTargetMean + config.NormTargetStd * (snapshot.Rating - mean) / std);
+                    }
+                }
             }
         }
+    }
+
+    private static void NormalizeTeamSnapshots(
+        Dictionary<int, List<RatingSnapshot>>? snapshotsByTeam,
+        int teamId, float targetMean, double mean, double std)
+    {
+        if (snapshotsByTeam == null || !snapshotsByTeam.TryGetValue(teamId, out var teamSnapshots))
+            return;
+
+        foreach (var snapshot in teamSnapshots)
+            snapshot.Rating = targetMean;
     }
 
     /// <summary>

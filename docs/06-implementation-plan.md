@@ -534,7 +534,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` sections 4.3, 5, 6
 
-- [ ] **5.3c** Rating recalculation — snapshots and persistence
+- [x] **5.3c** Rating recalculation — snapshots and persistence
   - Add RatingSnapshot generation (for each team+run, create snapshot with final normalization params) and final persistence (`UpdateBatchAsync` + `ReplaceAllAsync`). Apply normalization to PrevRating for consistent trend display.
   - Files: `Service/Rating/RatingService.cs`
   - Dependencies: 5.3b
