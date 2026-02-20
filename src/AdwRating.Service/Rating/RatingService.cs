@@ -57,9 +57,24 @@ public class RatingService : IRatingService
             };
         }
 
-        // 3. Compute cutoff date and load runs in window
-        var runs = await _runRepo.GetAllInWindowAsync(
-            DateOnly.FromDateTime(DateTime.UtcNow).AddDays(-config.LiveWindowDays));
+        // 3. Compute cutoff date from latest competition date (not current time)
+        var latestDate = await _runRepo.GetLatestDateAsync();
+        if (latestDate is null)
+        {
+            _logger.LogInformation("No runs found in database. Saving reset teams.");
+            ApplyStateToTeams(allTeams, teamState, config);
+            ApplyNormalization(allTeams, config, null);
+            ApplyFlagsAndTiers(allTeams, config);
+            await _teamRepo.UpdateBatchAsync(allTeams);
+            await _snapshotRepo.ReplaceAllAsync(new List<RatingSnapshot>());
+            return;
+        }
+
+        var cutoffDate = latestDate.Value.AddDays(-config.LiveWindowDays);
+        _logger.LogInformation("Cutoff date: {CutoffDate} (latest run: {LatestDate}, window: {Window}d)",
+            cutoffDate, latestDate.Value, config.LiveWindowDays);
+
+        var runs = await _runRepo.GetAllInWindowAsync(cutoffDate);
 
         // Sort runs chronologically (by date, then by id for stable ordering)
         var sortedRuns = runs.OrderBy(r => r.Date).ThenBy(r => r.Id).ToList();
