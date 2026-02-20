@@ -270,6 +270,8 @@ public class IdentityResolutionService : IIdentityResolutionService
                     var canonical = await _dogRepo.GetByIdAsync(alias.CanonicalDogId);
                     _logger.LogDebug("Dog '{RawName}' resolved via alias to handler's dog '{CallName}'",
                         rawDogName, canonical!.CallName);
+                    if (BackfillDogNames(canonical!, cleanedDogName, extractedCallName, extractedRegistered))
+                        await _dogRepo.UpdateAsync(canonical!);
                     return (canonical!, false);
                 }
                 // Remember global hit but don't return yet — keep looking for handler-scoped match
@@ -286,11 +288,15 @@ public class IdentityResolutionService : IIdentityResolutionService
             {
                 if (BelongsToHandler(candidate.Id))
                 {
+                    var exactUpdated = false;
                     if (candidate.Breed is null && breed is not null)
                     {
                         candidate.Breed = breed;
-                        await _dogRepo.UpdateAsync(candidate);
+                        exactUpdated = true;
                     }
+                    exactUpdated |= BackfillDogNames(candidate, cleanedDogName, extractedCallName, extractedRegistered);
+                    if (exactUpdated)
+                        await _dogRepo.UpdateAsync(candidate);
                     await CreateDogAliasesIfNeeded(candidate.Id, normalizedFull, normalizedCallName, normalizedRegistered, candidate.NormalizedCallName);
                     _logger.LogDebug("Dog '{RawName}' resolved via exact match to handler's dog '{CallName}'",
                         rawDogName, candidate.CallName);
@@ -376,11 +382,15 @@ public class IdentityResolutionService : IIdentityResolutionService
 
             if (isSpecificEnough)
             {
+                var globalUpdated = false;
                 if (globalHit.Breed is null && breed is not null)
                 {
                     globalHit.Breed = breed;
-                    await _dogRepo.UpdateAsync(globalHit);
+                    globalUpdated = true;
                 }
+                globalUpdated |= BackfillDogNames(globalHit, cleanedDogName, extractedCallName, extractedRegistered);
+                if (globalUpdated)
+                    await _dogRepo.UpdateAsync(globalHit);
                 await CreateDogAliasesIfNeeded(globalHit.Id, normalizedFull, normalizedCallName, normalizedRegistered, globalHit.NormalizedCallName);
                 _logger.LogInformation("Dog '{RawName}' matched globally to '{CallName}' (no handler association)",
                     rawDogName, globalHit.CallName);
@@ -397,9 +407,11 @@ public class IdentityResolutionService : IIdentityResolutionService
         string? storedRegistered = extractedRegistered ?? (extractedCallName is not null ? cleanedDogName : null);
 
         // Word-count heuristic: 3+ words without explicit call name → treat as registered name
+        // CallName left empty (unknown), NormalizedCallName keeps full name for matching
         if (extractedCallName is null && storedCallName.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length >= 3)
         {
             storedRegistered = storedCallName;
+            storedCallName = string.Empty;
         }
 
         _logger.LogInformation("Dog '{RawName}' not found, creating new record with CallName='{CallName}'",
@@ -526,15 +538,17 @@ public class IdentityResolutionService : IIdentityResolutionService
     internal static bool BackfillDogNames(Dog dog, string rawDogName, string? extractedCallName, string? extractedRegistered)
     {
         var updated = false;
-        var incomingFull = rawDogName.Trim();
-        var existingCallName = dog.CallName;
-        var existingRegistered = dog.RegisteredName;
+        var incomingFull = NameNormalizer.CleanDogName(rawDogName.Trim());
 
-        // Collect all known names and pick the shortest as call name, longest as registered
-        var allNames = new List<string> { existingCallName, incomingFull };
-        if (existingRegistered is not null) allNames.Add(existingRegistered);
-        if (extractedCallName is not null) allNames.Add(extractedCallName);
-        if (extractedRegistered is not null) allNames.Add(extractedRegistered);
+        // Collect all known non-empty names
+        var allNames = new List<string>();
+        if (!string.IsNullOrEmpty(dog.CallName)) allNames.Add(dog.CallName);
+        if (!string.IsNullOrEmpty(dog.RegisteredName)) allNames.Add(dog.RegisteredName);
+        if (!string.IsNullOrEmpty(incomingFull)) allNames.Add(incomingFull);
+        if (!string.IsNullOrEmpty(extractedCallName)) allNames.Add(extractedCallName);
+        if (!string.IsNullOrEmpty(extractedRegistered)) allNames.Add(extractedRegistered);
+
+        if (allNames.Count == 0) return false;
 
         var shortest = allNames.OrderBy(n => n.Length).First();
         var longest = allNames.OrderByDescending(n => n.Length).First();
@@ -549,8 +563,15 @@ public class IdentityResolutionService : IIdentityResolutionService
             updated = true;
         }
 
-        // Update CallName to the shorter variant if we found one
-        if (shortest.Length < dog.CallName.Length && shortest.Length >= 2)
+        // Backfill CallName if empty (3+ word heuristic left it blank) and we now have a short name
+        if (string.IsNullOrEmpty(dog.CallName) && shortest.Length >= 2 && shortest != dog.RegisteredName)
+        {
+            dog.CallName = shortest;
+            dog.NormalizedCallName = NameNormalizer.Normalize(shortest);
+            updated = true;
+        }
+        // Update CallName to shorter variant if we found a shorter one
+        else if (!string.IsNullOrEmpty(dog.CallName) && shortest.Length < dog.CallName.Length && shortest.Length >= 2)
         {
             dog.CallName = shortest;
             dog.NormalizedCallName = NameNormalizer.Normalize(shortest);

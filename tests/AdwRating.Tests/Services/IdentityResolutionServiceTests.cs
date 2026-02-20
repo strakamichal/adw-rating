@@ -662,6 +662,57 @@ public class IdentityResolutionServiceTests
         Assert.That(updated, Is.False);
     }
 
+    [Test]
+    public void BackfillDogNames_EmptyCallName_BackfillsFromShortIncoming()
+    {
+        // Dog created with 3+ word heuristic: CallName="" RegisteredName="Berta z Kojca Coli"
+        // Later import brings just "Berta" → should set CallName
+        var dog = new Dog
+        {
+            Id = 4, CallName = "", NormalizedCallName = "berta z kojca coli",
+            RegisteredName = "Berta z Kojca Coli", SizeCategory = SizeCategory.M
+        };
+
+        var updated = IdentityResolutionService.BackfillDogNames(dog, "Berta", null, null);
+
+        Assert.That(updated, Is.True);
+        Assert.That(dog.CallName, Is.EqualTo("Berta"));
+        Assert.That(dog.NormalizedCallName, Is.EqualTo("berta"));
+    }
+
+    [Test]
+    public void BackfillDogNames_NoRegisteredName_BackfillsFromLongIncoming()
+    {
+        // Dog stored as short "Berta", new import has "Berta z Kojca Coli" → sets RegisteredName
+        var dog = new Dog
+        {
+            Id = 5, CallName = "Berta", NormalizedCallName = "berta",
+            RegisteredName = null, SizeCategory = SizeCategory.M
+        };
+
+        var updated = IdentityResolutionService.BackfillDogNames(dog, "Berta z Kojca Coli", null, null);
+
+        Assert.That(updated, Is.True);
+        Assert.That(dog.CallName, Is.EqualTo("Berta"));
+        Assert.That(dog.RegisteredName, Is.EqualTo("Berta z Kojca Coli"));
+    }
+
+    [Test]
+    public void BackfillDogNames_EmptyCallName_SameAsRegistered_NoChange()
+    {
+        // Dog with empty CallName and RegisteredName set, incoming is same as registered → no call name to set
+        var dog = new Dog
+        {
+            Id = 6, CallName = "", NormalizedCallName = "shadow of aire",
+            RegisteredName = "Shadow of Aire", SizeCategory = SizeCategory.L
+        };
+
+        var updated = IdentityResolutionService.BackfillDogNames(dog, "Shadow of Aire", null, null);
+
+        Assert.That(updated, Is.False);
+        Assert.That(dog.CallName, Is.EqualTo(""));
+    }
+
     #endregion
 
     #region ResolveTeamAsync
