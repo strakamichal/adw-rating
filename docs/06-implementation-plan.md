@@ -526,7 +526,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` sections 4.1, 4.2
 
-- [ ] **5.3b** Rating recalculation — cross-size normalization and tiers
+- [x] **5.3b** Rating recalculation — cross-size normalization and tiers
   - Add cross-size normalization (z-score per size category → target mean 1500, std 150), IsActive/IsProvisional flags, tier labels (percentile-based: Elite top 2%, Champion top 10%, Expert top 30%), PeakRating tracking.
   - Files: `Service/Rating/RatingService.cs`
   - Dependencies: 5.3a

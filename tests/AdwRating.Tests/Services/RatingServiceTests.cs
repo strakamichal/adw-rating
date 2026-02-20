@@ -433,9 +433,226 @@ public class RatingServiceTests
 
     #endregion
 
+    #region Cross-Size Normalization, Flags & Tiers Tests (5.3b)
+
+    [Test]
+    public void ApplyNormalization_SingleSizeCategory_MeanApproxTarget()
+    {
+        var teams = new List<Team>();
+        for (int i = 0; i < 20; i++)
+        {
+            teams.Add(new Team
+            {
+                Id = i + 1,
+                RunCount = 10,
+                Rating = 1400 + i * 20, // 1400..1780 spread
+                PrevRating = 1390 + i * 20,
+                Dog = new Dog { Id = i + 1, CallName = $"D{i}", NormalizedCallName = $"d{i}", SizeCategory = SizeCategory.L },
+            });
+        }
+
+        RatingService.ApplyNormalization(teams, _defaultConfig);
+
+        double mean = teams.Average(t => (double)t.Rating);
+        Assert.That(mean, Is.EqualTo(1500.0).Within(1.0),
+            "Normalized mean should be ~1500");
+    }
+
+    [Test]
+    public void ApplyNormalization_SingleSizeCategory_StdApproxTarget()
+    {
+        var teams = new List<Team>();
+        for (int i = 0; i < 20; i++)
+        {
+            teams.Add(new Team
+            {
+                Id = i + 1,
+                RunCount = 10,
+                Rating = 1400 + i * 20,
+                PrevRating = 1390 + i * 20,
+                Dog = new Dog { Id = i + 1, CallName = $"D{i}", NormalizedCallName = $"d{i}", SizeCategory = SizeCategory.L },
+            });
+        }
+
+        RatingService.ApplyNormalization(teams, _defaultConfig);
+
+        double mean = teams.Average(t => (double)t.Rating);
+        double std = Math.Sqrt(teams.Average(t => Math.Pow(t.Rating - mean, 2)));
+        Assert.That(std, Is.EqualTo(150.0).Within(1.0),
+            "Normalized std should be ~150");
+    }
+
+    [Test]
+    public void ApplyNormalization_PreservesRankOrder()
+    {
+        var teams = new List<Team>();
+        for (int i = 0; i < 10; i++)
+        {
+            teams.Add(new Team
+            {
+                Id = i + 1,
+                RunCount = 10,
+                Rating = 1000 + i * 50,
+                PrevRating = 1000 + i * 50,
+                Dog = new Dog { Id = i + 1, CallName = $"D{i}", NormalizedCallName = $"d{i}", SizeCategory = SizeCategory.L },
+            });
+        }
+
+        RatingService.ApplyNormalization(teams, _defaultConfig);
+
+        for (int i = 0; i < 9; i++)
+        {
+            Assert.That(teams[i].Rating, Is.LessThan(teams[i + 1].Rating),
+                "Normalization should preserve rank order");
+        }
+    }
+
+    [Test]
+    public void ApplyNormalization_ZeroRunCount_NotNormalized()
+    {
+        var teams = new List<Team>
+        {
+            new() { Id = 1, RunCount = 0, Rating = 1200, PrevRating = 1200,
+                Dog = new Dog { Id = 1, CallName = "D1", NormalizedCallName = "d1", SizeCategory = SizeCategory.L } },
+        };
+
+        RatingService.ApplyNormalization(teams, _defaultConfig);
+
+        // Team with 0 runs should not be touched by normalization
+        Assert.That(teams[0].Rating, Is.EqualTo(1200.0f).Within(0.01f));
+    }
+
+    [Test]
+    public void ApplyFlagsAndTiers_ActiveFlag_SetCorrectly()
+    {
+        var teams = new List<Team>
+        {
+            new() { Id = 1, RunCount = 10, Rating = 1700, Sigma = 3.0f,
+                Dog = new Dog { Id = 1, CallName = "D1", NormalizedCallName = "d1", SizeCategory = SizeCategory.L } },
+            new() { Id = 2, RunCount = 3, Rating = 1500, Sigma = 3.0f, // below MinRunsForLiveRanking (5)
+                Dog = new Dog { Id = 2, CallName = "D2", NormalizedCallName = "d2", SizeCategory = SizeCategory.L } },
+        };
+
+        RatingService.ApplyFlagsAndTiers(teams, _defaultConfig);
+
+        Assert.That(teams[0].IsActive, Is.True, "Team with 10 runs should be active");
+        Assert.That(teams[1].IsActive, Is.False, "Team with 3 runs should not be active");
+    }
+
+    [Test]
+    public void ApplyFlagsAndTiers_ProvisionalFlag_BasedOnSigma()
+    {
+        var teams = new List<Team>
+        {
+            new() { Id = 1, RunCount = 10, Rating = 1700, Sigma = 3.0f,
+                Dog = new Dog { Id = 1, CallName = "D1", NormalizedCallName = "d1", SizeCategory = SizeCategory.L } },
+            new() { Id = 2, RunCount = 10, Rating = 1500, Sigma = 8.0f, // above ProvisionalSigmaThreshold (7.8)
+                Dog = new Dog { Id = 2, CallName = "D2", NormalizedCallName = "d2", SizeCategory = SizeCategory.L } },
+        };
+
+        RatingService.ApplyFlagsAndTiers(teams, _defaultConfig);
+
+        Assert.That(teams[0].IsProvisional, Is.False, "Low sigma = not provisional");
+        Assert.That(teams[1].IsProvisional, Is.True, "High sigma = provisional");
+    }
+
+    [Test]
+    public void ApplyFlagsAndTiers_TierLabels_CorrectPercentiles()
+    {
+        // Create 100 active teams with distinct ratings
+        var teams = new List<Team>();
+        for (int i = 0; i < 100; i++)
+        {
+            teams.Add(new Team
+            {
+                Id = i + 1,
+                RunCount = 10,
+                Rating = 1300 + i * 5, // 1300..1795 spread
+                Sigma = 3.0f,
+                Dog = new Dog { Id = i + 1, CallName = $"D{i}", NormalizedCallName = $"d{i}", SizeCategory = SizeCategory.L },
+            });
+        }
+
+        RatingService.ApplyFlagsAndTiers(teams, _defaultConfig);
+
+        // Sort by rating desc to check tiers
+        var sorted = teams.OrderByDescending(t => t.Rating).ToList();
+
+        // Top 2% = top 2 teams → Elite
+        Assert.That(sorted[0].TierLabel, Is.EqualTo(TierLabel.Elite), "Top team should be Elite");
+        Assert.That(sorted[1].TierLabel, Is.EqualTo(TierLabel.Elite), "2nd team should be Elite");
+
+        // 3rd-10th = Champion (top 10%)
+        Assert.That(sorted[2].TierLabel, Is.EqualTo(TierLabel.Champion), "3rd team should be Champion");
+        Assert.That(sorted[9].TierLabel, Is.EqualTo(TierLabel.Champion), "10th team should be Champion");
+
+        // 11th-30th = Expert (top 30%)
+        Assert.That(sorted[10].TierLabel, Is.EqualTo(TierLabel.Expert), "11th team should be Expert");
+        Assert.That(sorted[29].TierLabel, Is.EqualTo(TierLabel.Expert), "30th team should be Expert");
+
+        // 31st+ = Competitor
+        Assert.That(sorted[30].TierLabel, Is.EqualTo(TierLabel.Competitor), "31st team should be Competitor");
+        Assert.That(sorted[99].TierLabel, Is.EqualTo(TierLabel.Competitor), "Last team should be Competitor");
+    }
+
+    [Test]
+    public void ApplyFlagsAndTiers_InactiveTeam_NoTierLabel()
+    {
+        var teams = new List<Team>
+        {
+            new() { Id = 1, RunCount = 2, Rating = 1700, Sigma = 3.0f,
+                Dog = new Dog { Id = 1, CallName = "D1", NormalizedCallName = "d1", SizeCategory = SizeCategory.L } },
+        };
+
+        RatingService.ApplyFlagsAndTiers(teams, _defaultConfig);
+
+        Assert.That(teams[0].TierLabel, Is.Null, "Inactive team should have no tier label");
+    }
+
+    [Test]
+    public void ApplyFlagsAndTiers_PeakRating_OnlyIncreases()
+    {
+        var teams = new List<Team>
+        {
+            new() { Id = 1, RunCount = 10, Rating = 1600, Sigma = 3.0f, PeakRating = 1700,
+                Dog = new Dog { Id = 1, CallName = "D1", NormalizedCallName = "d1", SizeCategory = SizeCategory.L } },
+            new() { Id = 2, RunCount = 10, Rating = 1800, Sigma = 3.0f, PeakRating = 1700,
+                Dog = new Dog { Id = 2, CallName = "D2", NormalizedCallName = "d2", SizeCategory = SizeCategory.L } },
+        };
+
+        RatingService.ApplyFlagsAndTiers(teams, _defaultConfig);
+
+        Assert.That(teams[0].PeakRating, Is.EqualTo(1700),
+            "PeakRating should not decrease when current rating is lower");
+        Assert.That(teams[1].PeakRating, Is.EqualTo(1800),
+            "PeakRating should update when current rating is higher");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_FullPipeline_NormalizedRatings()
+    {
+        // 8 teams, enough for meaningful normalization
+        var teams = CreateTeams(8);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        await _service.RecalculateAllAsync();
+
+        // After normalization, mean should be ~1500
+        double mean = teams.Average(t => (double)t.Rating);
+        Assert.That(mean, Is.EqualTo(1500.0).Within(2.0),
+            "Normalized ratings should have mean ~1500");
+    }
+
+    #endregion
+
     #region Helper Methods
 
-    private static List<Team> CreateTeams(int count, int idOffset = 0)
+    private static List<Team> CreateTeams(int count, int idOffset = 0, SizeCategory size = SizeCategory.L)
     {
         return Enumerable.Range(1, count).Select(i => new Team
         {
@@ -445,6 +662,13 @@ public class RatingServiceTests
             Slug = $"team-{idOffset + i}",
             Mu = 25.0f,
             Sigma = 25.0f / 3,
+            Dog = new Dog
+            {
+                Id = i,
+                CallName = $"Dog{i}",
+                NormalizedCallName = $"dog{i}",
+                SizeCategory = size,
+            },
         }).ToList();
     }
 

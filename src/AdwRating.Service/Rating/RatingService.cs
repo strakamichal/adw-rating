@@ -1,4 +1,5 @@
 using AdwRating.Domain.Entities;
+using AdwRating.Domain.Enums;
 using AdwRating.Domain.Interfaces;
 using Microsoft.Extensions.Logging;
 
@@ -67,6 +68,8 @@ public class RatingService : IRatingService
         {
             _logger.LogInformation("No runs found in window. Saving reset teams.");
             ApplyStateToTeams(allTeams, teamState, config);
+            ApplyNormalization(allTeams, config);
+            ApplyFlagsAndTiers(allTeams, config);
             await _teamRepo.UpdateBatchAsync(allTeams);
             return;
         }
@@ -157,8 +160,16 @@ public class RatingService : IRatingService
         _logger.LogInformation("Processed {Processed} runs, skipped {Skipped} (below MinFieldSize or empty)",
             processedRuns, skippedRuns);
 
-        // 6. Apply final state to team entities and persist
+        // 6. Apply raw ratings (display scaling + podium boost)
         ApplyStateToTeams(allTeams, teamState, config);
+
+        // 7. Cross-size normalization
+        ApplyNormalization(allTeams, config);
+
+        // 8. Flags, tiers, PeakRating
+        ApplyFlagsAndTiers(allTeams, config);
+
+        // 9. Persist
         await _teamRepo.UpdateBatchAsync(allTeams);
 
         _logger.LogInformation("Rating recalculation complete. Updated {TeamCount} teams.", allTeams.Count);
@@ -268,6 +279,112 @@ public class RatingService : IRatingService
             team.Rating = ComputeRawRating(state.Mu, state.Sigma, state.RunCount, state.Top3RunCount, config);
             team.PrevRating = ComputeRawRating(state.PrevMu, state.PrevSigma, state.RunCount, state.Top3RunCount, config);
         }
+    }
+
+    /// <summary>
+    /// Applies z-score normalization per size category to produce final display ratings.
+    /// Rating = NORM_TARGET_MEAN + NORM_TARGET_STD * (rating_raw - size_mean) / size_std
+    /// Also normalizes PrevRating for consistent trend display.
+    /// </summary>
+    internal static void ApplyNormalization(IReadOnlyList<Team> teams, RatingConfiguration config)
+    {
+        // Get effective size category per team
+        var sizeGroups = teams
+            .Where(t => t.RunCount > 0)
+            .GroupBy(t => GetEffectiveSizeCategory(t));
+
+        // Compute normalization params per size category, then apply
+        foreach (var group in sizeGroups)
+        {
+            var groupTeams = group.ToList();
+            if (groupTeams.Count < 2)
+            {
+                // With 0-1 teams, can't compute std; just set to target mean
+                foreach (var team in groupTeams)
+                {
+                    team.Rating = config.NormTargetMean;
+                    team.PrevRating = config.NormTargetMean;
+                }
+                continue;
+            }
+
+            // Compute mean and std of raw ratings in this size category
+            double mean = groupTeams.Average(t => (double)t.Rating);
+            double variance = groupTeams.Average(t => Math.Pow(t.Rating - mean, 2));
+            double std = Math.Sqrt(variance);
+
+            if (std < 1e-6)
+            {
+                // All same rating → just set to target mean
+                foreach (var team in groupTeams)
+                {
+                    team.Rating = config.NormTargetMean;
+                    team.PrevRating = config.NormTargetMean;
+                }
+                continue;
+            }
+
+            foreach (var team in groupTeams)
+            {
+                team.Rating = (float)(config.NormTargetMean + config.NormTargetStd * (team.Rating - mean) / std);
+                team.PrevRating = (float)(config.NormTargetMean + config.NormTargetStd * (team.PrevRating - mean) / std);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Sets IsActive, IsProvisional flags, tier labels, and updates PeakRating.
+    /// </summary>
+    internal static void ApplyFlagsAndTiers(IReadOnlyList<Team> teams, RatingConfiguration config)
+    {
+        foreach (var team in teams)
+        {
+            // IsActive: has minimum runs for ranking
+            team.IsActive = team.RunCount >= config.MinRunsForLiveRanking;
+
+            // IsProvisional: high sigma (uncertain rating)
+            team.IsProvisional = team.Sigma >= config.ProvisionalSigmaThreshold;
+
+            // PeakRating: only increases (preserved across recalculations)
+            if (team.IsActive && team.Rating > team.PeakRating)
+                team.PeakRating = team.Rating;
+
+            // Reset tier for inactive teams
+            if (!team.IsActive)
+            {
+                team.TierLabel = null;
+                continue;
+            }
+        }
+
+        // Assign tier labels per size category (only among active teams)
+        var activeBySizeCategory = teams
+            .Where(t => t.IsActive)
+            .GroupBy(t => GetEffectiveSizeCategory(t));
+
+        foreach (var group in activeBySizeCategory)
+        {
+            var sorted = group.OrderByDescending(t => t.Rating).ToList();
+            int count = sorted.Count;
+
+            for (int i = 0; i < count; i++)
+            {
+                float percentile = (float)(i + 1) / count; // top percentile (1/N for best)
+                sorted[i].TierLabel = percentile <= config.EliteTopPercent ? TierLabel.Elite
+                    : percentile <= config.ChampionTopPercent ? TierLabel.Champion
+                    : percentile <= config.ExpertTopPercent ? TierLabel.Expert
+                    : TierLabel.Competitor;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Gets the effective FCI size category for a team's dog,
+    /// using the override if set.
+    /// </summary>
+    internal static SizeCategory GetEffectiveSizeCategory(Team team)
+    {
+        return team.Dog?.SizeCategoryOverride ?? team.Dog?.SizeCategory ?? SizeCategory.L;
     }
 
     /// <summary>
