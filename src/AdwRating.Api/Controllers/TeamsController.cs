@@ -40,13 +40,7 @@ public class TeamsController : ControllerBase
             return NotFound();
 
         var snapshots = await _snapshotRepo.GetByTeamIdAsync(team.Id);
-        var result = snapshots.Select(s => new
-        {
-            s.Date,
-            s.Mu,
-            s.Sigma,
-            s.Rating
-        });
+        var result = snapshots.Select(s => new RatingSnapshotDto(s.Date, s.Mu, s.Sigma, s.Rating)).ToList();
         return Ok(result);
     }
 
