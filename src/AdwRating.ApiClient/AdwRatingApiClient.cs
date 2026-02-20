@@ -1,6 +1,8 @@
 using System.Net;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using AdwRating.Domain.Enums;
 using AdwRating.Domain.Models;
 using Microsoft.Extensions.Logging;
@@ -16,6 +18,10 @@ public class AdwRatingApiClient
 {
     private readonly HttpClient _http;
     private readonly ILogger<AdwRatingApiClient> _logger;
+    private static readonly JsonSerializerOptions JsonOptions = new(JsonSerializerDefaults.Web)
+    {
+        Converters = { new JsonStringEnumConverter() }
+    };
 
     public AdwRatingApiClient(HttpClient http, ILogger<AdwRatingApiClient> logger)
     {
@@ -39,7 +45,7 @@ public class AdwRatingApiClient
             url.Append($"&page={filter.Page}");
             url.Append($"&pageSize={filter.PageSize}");
 
-            var result = await _http.GetFromJsonAsync<PagedResult<TeamRankingDto>>(url.ToString());
+            var result = await _http.GetFromJsonAsync<PagedResult<TeamRankingDto>>(url.ToString(), JsonOptions);
             return result ?? new PagedResult<TeamRankingDto>([], 0, filter.Page, filter.PageSize);
         }
         catch (HttpRequestException ex)
@@ -56,7 +62,7 @@ public class AdwRatingApiClient
     {
         try
         {
-            var result = await _http.GetFromJsonAsync<RankingSummary>("api/rankings/summary");
+            var result = await _http.GetFromJsonAsync<RankingSummary>("api/rankings/summary", JsonOptions);
             return result ?? new RankingSummary(0, 0, 0);
         }
         catch (HttpRequestException ex)
@@ -80,7 +86,7 @@ public class AdwRatingApiClient
                 return null;
 
             response.EnsureSuccessStatusCode();
-            return await response.Content.ReadFromJsonAsync<TeamDetailDto>();
+            return await response.Content.ReadFromJsonAsync<TeamDetailDto>(JsonOptions);
         }
         catch (HttpRequestException ex)
         {
@@ -103,7 +109,7 @@ public class AdwRatingApiClient
                 return [];
 
             response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadFromJsonAsync<IReadOnlyList<RatingSnapshotDto>>();
+            var result = await response.Content.ReadFromJsonAsync<IReadOnlyList<RatingSnapshotDto>>(JsonOptions);
             return result ?? [];
         }
         catch (HttpRequestException ex)
@@ -127,7 +133,7 @@ public class AdwRatingApiClient
                 return new PagedResult<TeamResultDto>([], 0, page, pageSize);
 
             response.EnsureSuccessStatusCode();
-            var result = await response.Content.ReadFromJsonAsync<PagedResult<TeamResultDto>>();
+            var result = await response.Content.ReadFromJsonAsync<PagedResult<TeamResultDto>>(JsonOptions);
             return result ?? new PagedResult<TeamResultDto>([], 0, page, pageSize);
         }
         catch (HttpRequestException ex)
@@ -173,7 +179,7 @@ public class AdwRatingApiClient
             if (hasParam) url.Append('&');
             url.Append($"page={filter.Page}&pageSize={filter.PageSize}");
 
-            var result = await _http.GetFromJsonAsync<PagedResult<CompetitionDetailDto>>(url.ToString());
+            var result = await _http.GetFromJsonAsync<PagedResult<CompetitionDetailDto>>(url.ToString(), JsonOptions);
             return result ?? new PagedResult<CompetitionDetailDto>([], 0, filter.Page, filter.PageSize);
         }
         catch (HttpRequestException ex)
@@ -191,7 +197,7 @@ public class AdwRatingApiClient
         try
         {
             var url = $"api/search?q={Uri.EscapeDataString(query)}&limit={limit}";
-            var result = await _http.GetFromJsonAsync<IReadOnlyList<SearchResult>>(url);
+            var result = await _http.GetFromJsonAsync<IReadOnlyList<SearchResult>>(url, JsonOptions);
             return result ?? [];
         }
         catch (HttpRequestException ex)
