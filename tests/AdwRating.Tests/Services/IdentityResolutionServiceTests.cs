@@ -89,32 +89,6 @@ public class IdentityResolutionServiceTests
     }
 
     [Test]
-    public async Task ResolveHandlerAsync_FuzzyMatch_CreatesAliasAndReturnsHandler()
-    {
-        var existing = new Handler
-        {
-            Id = 1, Name = "John Smith", NormalizedName = "john smith",
-            Country = "GBR", Slug = "john-smith"
-        };
-
-        _handlerAliasRepo.FindByAliasNameAsync("john smth")
-            .Returns((HandlerAlias?)null);
-        _handlerRepo.FindByNormalizedNameAndCountryAsync("john smth", "GBR")
-            .Returns((Handler?)null);
-        _handlerRepo.SearchAsync("john smth", 50)
-            .Returns(new List<Handler> { existing });
-
-        var result = await _sut.ResolveHandlerAsync("John Smth", "GBR");
-
-        Assert.That(result, Is.SameAs(existing));
-        await _handlerAliasRepo.Received(1).CreateAsync(
-            Arg.Is<HandlerAlias>(a =>
-                a.AliasName == "john smth" &&
-                a.CanonicalHandlerId == 1 &&
-                a.Source == AliasSource.FuzzyMatch));
-    }
-
-    [Test]
     public async Task ResolveHandlerAsync_NoMatch_CreatesNewHandler()
     {
         var created = new Handler
@@ -125,10 +99,10 @@ public class IdentityResolutionServiceTests
 
         _handlerAliasRepo.FindByAliasNameAsync("new person")
             .Returns((HandlerAlias?)null);
+        _handlerAliasRepo.FindByAliasNameAsync("person new")
+            .Returns((HandlerAlias?)null);
         _handlerRepo.FindByNormalizedNameAndCountryAsync("new person", "CZE")
             .Returns((Handler?)null);
-        _handlerRepo.SearchAsync("new person", 50)
-            .Returns(new List<Handler>());
         _handlerRepo.CreateAsync(Arg.Any<Handler>())
             .Returns(created);
 
@@ -141,35 +115,11 @@ public class IdentityResolutionServiceTests
                 h.NormalizedName == "new person" &&
                 h.Country == "CZE" &&
                 h.Slug == "new-person"));
-    }
-
-    [Test]
-    public async Task ResolveHandlerAsync_FuzzyDifferentCountry_CreatesNewHandler()
-    {
-        var differentCountryHandler = new Handler
-        {
-            Id = 1, Name = "John Smith", NormalizedName = "john smith",
-            Country = "USA", Slug = "john-smith"
-        };
-        var created = new Handler
-        {
-            Id = 99, Name = "John Smth", NormalizedName = "john smth",
-            Country = "GBR", Slug = "john-smth"
-        };
-
-        _handlerAliasRepo.FindByAliasNameAsync("john smth")
-            .Returns((HandlerAlias?)null);
-        _handlerRepo.FindByNormalizedNameAndCountryAsync("john smth", "GBR")
-            .Returns((Handler?)null);
-        _handlerRepo.SearchAsync("john smth", 50)
-            .Returns(new List<Handler> { differentCountryHandler });
-        _handlerRepo.CreateAsync(Arg.Any<Handler>())
-            .Returns(created);
-
-        var result = await _sut.ResolveHandlerAsync("John Smth", "GBR");
-
-        Assert.That(result, Is.SameAs(created));
-        await _handlerAliasRepo.DidNotReceive().CreateAsync(Arg.Any<HandlerAlias>());
+        await _handlerAliasRepo.Received(1).CreateAsync(
+            Arg.Is<HandlerAlias>(a =>
+                a.AliasName == "person new" &&
+                a.CanonicalHandlerId == 99 &&
+                a.Source == AliasSource.Import));
     }
 
     #endregion
@@ -190,8 +140,8 @@ public class IdentityResolutionServiceTests
             .Returns(new List<Team> { new() { Id = 30, HandlerId = 10, DogId = 1 } });
         _dogAliasRepo.FindByAliasNameAndTypeAsync("rex", DogAliasType.CallName)
             .Returns((DogAlias?)null);
-        _dogRepo.FindByNormalizedNameAndSizeAsync("rex", SizeCategory.L)
-            .Returns(dog);
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("rex", SizeCategory.L)
+            .Returns(new List<Dog> { dog });
 
         var result = await _sut.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, 10);
 
@@ -213,8 +163,8 @@ public class IdentityResolutionServiceTests
             .Returns(new List<Team> { new() { Id = 30, HandlerId = 10, DogId = 1 } });
         _dogAliasRepo.FindByAliasNameAndTypeAsync("rex", DogAliasType.CallName)
             .Returns((DogAlias?)null);
-        _dogRepo.FindByNormalizedNameAndSizeAsync("rex", SizeCategory.L)
-            .Returns(dog);
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("rex", SizeCategory.L)
+            .Returns(new List<Dog> { dog });
 
         var result = await _sut.ResolveDogAsync("Rex", "Border Collie", SizeCategory.L, 10);
 
@@ -237,9 +187,7 @@ public class IdentityResolutionServiceTests
             .Returns(new List<Team>());
         _dogAliasRepo.FindByAliasNameAndTypeAsync("buddy", DogAliasType.CallName)
             .Returns((DogAlias?)null);
-        _dogRepo.FindByNormalizedNameAndSizeAsync("buddy", SizeCategory.M)
-            .Returns((Dog?)null);
-        _dogRepo.SearchAsync("buddy", 50)
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("buddy", SizeCategory.M)
             .Returns(new List<Dog>());
         _dogRepo.CreateAsync(Arg.Any<Dog>())
             .Returns(created);
@@ -253,6 +201,36 @@ public class IdentityResolutionServiceTests
                 d.NormalizedCallName == "buddy" &&
                 d.Breed == "Sheltie" &&
                 d.SizeCategory == SizeCategory.M));
+    }
+
+    [Test]
+    public async Task ResolveDogAsync_MultipleDogsWithSameName_FindsHandlersDog()
+    {
+        // Two different dogs named "Lucky" in size L, belonging to different handlers
+        var otherHandlersDog = new Dog
+        {
+            Id = 1, CallName = "Lucky", NormalizedCallName = "lucky",
+            Breed = "Border Collie", SizeCategory = SizeCategory.L
+        };
+        var thisHandlersDog = new Dog
+        {
+            Id = 2, CallName = "Lucky", NormalizedCallName = "lucky",
+            Breed = "Sheltie", SizeCategory = SizeCategory.L
+        };
+
+        // Handler 20 owns dog 2 via a team
+        _teamRepo.GetByHandlerIdAsync(20)
+            .Returns(new List<Team> { new() { Id = 50, HandlerId = 20, DogId = 2 } });
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("lucky", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        // Returns BOTH dogs — the old code would only return the first one (wrong handler's dog)
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("lucky", SizeCategory.L)
+            .Returns(new List<Dog> { otherHandlersDog, thisHandlersDog });
+
+        var result = await _sut.ResolveDogAsync("Lucky", "Sheltie", SizeCategory.L, 20);
+
+        Assert.That(result, Is.SameAs(thisHandlersDog));
+        await _dogRepo.DidNotReceive().CreateAsync(Arg.Any<Dog>());
     }
 
     #endregion
@@ -319,6 +297,44 @@ public class IdentityResolutionServiceTests
             Assert.That(result.IsActive, Is.False);
             Assert.That(result.RunCount, Is.EqualTo(0));
         });
+    }
+
+    #endregion
+
+    #region BuildNameRotations
+
+    [Test]
+    public void BuildNameRotations_SingleToken_ReturnsEmpty()
+    {
+        var result = IdentityResolutionService.BuildNameRotations("smith");
+        Assert.That(result, Is.Empty);
+    }
+
+    [Test]
+    public void BuildNameRotations_TwoTokens_ReturnsSwapped()
+    {
+        var result = IdentityResolutionService.BuildNameRotations("john smith");
+        Assert.That(result, Is.EqualTo(new[] { "smith john" }));
+    }
+
+    [Test]
+    public void BuildNameRotations_ThreeTokens_ReturnsBothRotations()
+    {
+        // "de groote andy" → ["andy de groote", "groote andy de"]
+        var result = IdentityResolutionService.BuildNameRotations("de groote andy");
+        Assert.That(result, Has.Count.EqualTo(2));
+        Assert.That(result, Does.Contain("andy de groote"));
+        Assert.That(result, Does.Contain("groote andy de"));
+    }
+
+    [Test]
+    public void BuildNameRotations_FourTokens_ReturnsBothRotations()
+    {
+        // "van der stock thora" → ["thora van der stock", "der stock thora van"]
+        var result = IdentityResolutionService.BuildNameRotations("van der stock thora");
+        Assert.That(result, Has.Count.EqualTo(2));
+        Assert.That(result, Does.Contain("thora van der stock"));
+        Assert.That(result, Does.Contain("der stock thora van"));
     }
 
     #endregion

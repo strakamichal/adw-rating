@@ -25,6 +25,13 @@ public class DogRepository : IDogRepository
             .FirstOrDefaultAsync(d => d.NormalizedCallName == normalizedCallName && d.SizeCategory == size);
     }
 
+    public async Task<IReadOnlyList<Dog>> FindAllByNormalizedNameAndSizeAsync(string normalizedCallName, SizeCategory size)
+    {
+        return await _context.Dogs
+            .Where(d => d.NormalizedCallName == normalizedCallName && d.SizeCategory == size)
+            .ToListAsync();
+    }
+
     public async Task<IReadOnlyList<Dog>> SearchAsync(string query, int limit)
     {
         var normalizedQuery = query.ToLower();

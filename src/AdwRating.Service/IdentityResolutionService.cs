@@ -8,9 +8,6 @@ namespace AdwRating.Service;
 
 public class IdentityResolutionService : IIdentityResolutionService
 {
-    private const int FuzzySearchLimit = 50;
-    private const int MaxLevenshteinDistance = 2;
-
     private readonly IHandlerRepository _handlerRepo;
     private readonly IHandlerAliasRepository _handlerAliasRepo;
     private readonly IDogRepository _dogRepo;
@@ -59,33 +56,7 @@ public class IdentityResolutionService : IIdentityResolutionService
             return exact;
         }
 
-        // 3. Fuzzy match: search candidates, filter same country, Levenshtein <= 2
-        var candidates = await _handlerRepo.SearchAsync(normalizedName, FuzzySearchLimit);
-        foreach (var candidate in candidates)
-        {
-            if (!string.Equals(candidate.Country, country, StringComparison.OrdinalIgnoreCase))
-                continue;
-
-            var distance = LevenshteinDistance.Compute(normalizedName, candidate.NormalizedName);
-            if (distance <= MaxLevenshteinDistance)
-            {
-                _logger.LogInformation(
-                    "Handler '{RawName}' fuzzy-matched to '{CanonicalName}' (distance={Distance})",
-                    rawName, candidate.Name, distance);
-
-                await _handlerAliasRepo.CreateAsync(new HandlerAlias
-                {
-                    AliasName = normalizedName,
-                    CanonicalHandlerId = candidate.Id,
-                    Source = AliasSource.FuzzyMatch,
-                    CreatedAt = DateTime.UtcNow
-                });
-
-                return candidate;
-            }
-        }
-
-        // 4. No match — create new handler
+        // 3. No match — create new handler
         _logger.LogInformation("Handler '{RawName}' not found, creating new record", rawName);
 
         var newHandler = await _handlerRepo.CreateAsync(new Handler
@@ -93,10 +64,79 @@ public class IdentityResolutionService : IIdentityResolutionService
             Name = rawName,
             NormalizedName = normalizedName,
             Country = country,
-            Slug = SlugHelper.GenerateSlug(rawName)
+            Slug = await GenerateUniqueHandlerSlugAsync(SlugHelper.GenerateSlug(rawName))
         });
 
+        await TryCreateReversedHandlerAliasesAsync(newHandler);
+
         return newHandler;
+    }
+
+    private async Task TryCreateReversedHandlerAliasesAsync(Handler canonicalHandler)
+    {
+        var aliases = BuildNameRotations(canonicalHandler.NormalizedName);
+
+        foreach (var alias in aliases)
+        {
+            var existing = await _handlerAliasRepo.FindByAliasNameAsync(alias);
+            if (existing is not null)
+                continue;
+
+            try
+            {
+                await _handlerAliasRepo.CreateAsync(new HandlerAlias
+                {
+                    AliasName = alias,
+                    CanonicalHandlerId = canonicalHandler.Id,
+                    Source = AliasSource.Import,
+                    CreatedAt = DateTime.UtcNow
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogDebug(ex,
+                    "Skipping reversed handler alias creation for handler {HandlerId}", canonicalHandler.Id);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Builds name rotations to match "Firstname Surname" vs "Surname Firstname" patterns.
+    /// For 2 tokens [A B]: returns [B A].
+    /// For 3+ tokens [A B C]: returns [C A B] (last-to-front) and [B C A] (first-to-back).
+    /// This covers "De Groote Andy" ↔ "Andy De Groote" and "Ganzi Karl Heinz" ↔ "Karl Heinz Ganzi".
+    /// </summary>
+    internal static List<string> BuildNameRotations(string normalizedName)
+    {
+        var parts = normalizedName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (parts.Length < 2)
+            return [];
+
+        var result = new List<string>();
+
+        if (parts.Length == 2)
+        {
+            // Simple swap: [A B] → [B A]
+            result.Add($"{parts[1]} {parts[0]}");
+        }
+        else
+        {
+            // Rotate right (last to front): [A B C] → [C A B]
+            var rotateRight = new string[parts.Length];
+            rotateRight[0] = parts[^1];
+            Array.Copy(parts, 0, rotateRight, 1, parts.Length - 1);
+            result.Add(string.Join(' ', rotateRight));
+
+            // Rotate left (first to back): [A B C] → [B C A]
+            var rotateLeft = new string[parts.Length];
+            Array.Copy(parts, 1, rotateLeft, 0, parts.Length - 1);
+            rotateLeft[^1] = parts[0];
+            var leftStr = string.Join(' ', rotateLeft);
+            if (leftStr != result[0]) // avoid duplicate if rotation produces same result
+                result.Add(leftStr);
+        }
+
+        return result;
     }
 
     public async Task<Dog> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size, int handlerId)
@@ -150,54 +190,29 @@ public class IdentityResolutionService : IIdentityResolutionService
         Dog? exactGlobalHit = null;
         foreach (var nameVariant in namesToTry)
         {
-            var exact = await _dogRepo.FindByNormalizedNameAndSizeAsync(nameVariant, size);
-            if (exact is not null)
-            {
-                if (BelongsToHandler(exact.Id))
-                {
-                    if (exact.Breed is null && breed is not null)
-                    {
-                        exact.Breed = breed;
-                        await _dogRepo.UpdateAsync(exact);
-                    }
-                    await CreateDogAliasesIfNeeded(exact.Id, normalizedFull, normalizedCallName, normalizedRegistered, exact.NormalizedCallName);
-                    _logger.LogDebug("Dog '{RawName}' resolved via exact match to handler's dog '{CallName}'",
-                        rawDogName, exact.CallName);
-                    return exact;
-                }
-                exactGlobalHit ??= exact;
-            }
-        }
-
-        // 3. Fuzzy match — prefer handler's dogs
-        Dog? fuzzyGlobalHit = null;
-        foreach (var nameVariant in namesToTry)
-        {
-            var candidates = await _dogRepo.SearchAsync(nameVariant, FuzzySearchLimit);
+            var candidates = await _dogRepo.FindAllByNormalizedNameAndSizeAsync(nameVariant, size);
             foreach (var candidate in candidates)
             {
-                if (candidate.SizeCategory != size)
-                    continue;
-
-                var distance = LevenshteinDistance.Compute(nameVariant, candidate.NormalizedCallName);
-                if (distance <= MaxLevenshteinDistance)
+                if (BelongsToHandler(candidate.Id))
                 {
-                    if (BelongsToHandler(candidate.Id))
+                    if (candidate.Breed is null && breed is not null)
                     {
-                        _logger.LogInformation("Dog '{RawName}' fuzzy-matched to handler's dog '{CallName}'",
-                            rawDogName, candidate.CallName);
-                        await CreateDogAliasesIfNeeded(candidate.Id, normalizedFull, normalizedCallName, normalizedRegistered, candidate.NormalizedCallName);
-                        return candidate;
+                        candidate.Breed = breed;
+                        await _dogRepo.UpdateAsync(candidate);
                     }
-                    fuzzyGlobalHit ??= candidate;
+                    await CreateDogAliasesIfNeeded(candidate.Id, normalizedFull, normalizedCallName, normalizedRegistered, candidate.NormalizedCallName);
+                    _logger.LogDebug("Dog '{RawName}' resolved via exact match to handler's dog '{CallName}'",
+                        rawDogName, candidate.CallName);
+                    return candidate;
                 }
+                exactGlobalHit ??= candidate;
             }
         }
 
-        // 4. No handler-scoped match found. Use global match ONLY if the name is
+        // 3. No handler-scoped match found. Use global match ONLY if the name is
         //    specific enough (registered name or full name match, NOT just a short call name).
         //    Short call names like "Beat", "Day" are too ambiguous for cross-handler matching.
-        var globalHit = aliasGlobalHit ?? exactGlobalHit ?? fuzzyGlobalHit;
+        var globalHit = aliasGlobalHit ?? exactGlobalHit;
         if (globalHit is not null)
         {
             var matchedName = normalizedFull;
@@ -299,7 +314,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         var handler = await _handlerRepo.GetByIdAsync(handlerId);
         var dog = await _dogRepo.GetByIdAsync(dogId);
 
-        var slug = SlugHelper.GenerateSlug($"{handler!.Name} {dog!.CallName}");
+        var slug = await GenerateUniqueTeamSlugAsync(SlugHelper.GenerateSlug($"{handler!.Name} {dog!.CallName}"));
 
         _logger.LogInformation("Creating new team: handler={HandlerName}, dog={DogName}",
             handler.Name, dog.CallName);
@@ -325,5 +340,33 @@ public class IdentityResolutionService : IIdentityResolutionService
         });
 
         return newTeam;
+    }
+
+    private async Task<string> GenerateUniqueHandlerSlugAsync(string baseSlug)
+    {
+        var slug = baseSlug;
+        var suffix = 2;
+
+        while (await _handlerRepo.GetBySlugAsync(slug) is not null)
+        {
+            slug = $"{baseSlug}-{suffix}";
+            suffix++;
+        }
+
+        return slug;
+    }
+
+    private async Task<string> GenerateUniqueTeamSlugAsync(string baseSlug)
+    {
+        var slug = baseSlug;
+        var suffix = 2;
+
+        while (await _teamRepo.GetBySlugAsync(slug) is not null)
+        {
+            slug = $"{baseSlug}-{suffix}";
+            suffix++;
+        }
+
+        return slug;
     }
 }
