@@ -37,6 +37,14 @@ public class HandlerRepository : IHandlerRepository
             .ToListAsync();
     }
 
+    public async Task<IReadOnlyList<Handler>> FindByNormalizedNameContainingAsync(string normalizedName, string country)
+    {
+        return await _context.Handlers
+            .Where(h => h.Country == country &&
+                (h.NormalizedName.Contains(normalizedName) || normalizedName.Contains(h.NormalizedName)))
+            .ToListAsync();
+    }
+
     public async Task<IReadOnlyList<Handler>> SearchAsync(string query, int limit)
     {
         var normalizedQuery = query.ToLower();

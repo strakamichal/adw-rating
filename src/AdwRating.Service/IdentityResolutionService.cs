@@ -72,7 +72,44 @@ public class IdentityResolutionService : IIdentityResolutionService
             }
         }
 
-        // 4. No match — create new handler
+        // 4. Containment/substring match — "Adrian Bajo" ↔ "Adrian Bajo Alonso"
+        //    Requires: name length ≥ 10, 2+ tokens, same country, exactly 1 match
+        if (normalizedName.Length >= 10 && nameTokens.Length >= 2)
+        {
+            var containmentMatches = await _handlerRepo.FindByNormalizedNameContainingAsync(normalizedName, country);
+            // Filter out exact self-match (already checked above)
+            containmentMatches = containmentMatches
+                .Where(h => !string.Equals(h.NormalizedName, normalizedName, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+
+            if (containmentMatches.Count == 1)
+            {
+                var match = containmentMatches[0];
+                _logger.LogInformation(
+                    "Handler '{RawName}' matched via containment to '{MatchName}' ({MatchCountry})",
+                    rawName, match.Name, match.Country);
+
+                // Create alias for instant future lookups
+                try
+                {
+                    await _handlerAliasRepo.CreateAsync(new HandlerAlias
+                    {
+                        AliasName = normalizedName,
+                        CanonicalHandlerId = match.Id,
+                        Source = AliasSource.FuzzyMatch,
+                        CreatedAt = DateTime.UtcNow
+                    });
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogDebug(ex, "Containment alias already exists for '{Name}'", normalizedName);
+                }
+
+                return match;
+            }
+        }
+
+        // 5. No match — create new handler
         _logger.LogInformation("Handler '{RawName}' not found, creating new record", rawName);
 
         var newHandler = await _handlerRepo.CreateAsync(new Handler

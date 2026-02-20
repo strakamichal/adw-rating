@@ -105,6 +105,8 @@ public class IdentityResolutionServiceTests
             .Returns((Handler?)null);
         _handlerRepo.FindByNormalizedNameAsync("new person")
             .Returns(new List<Handler>());
+        _handlerRepo.FindByNormalizedNameContainingAsync("new person", "CZE")
+            .Returns(new List<Handler>());
         _handlerRepo.CreateAsync(Arg.Any<Handler>())
             .Returns(created);
 
@@ -185,6 +187,9 @@ public class IdentityResolutionServiceTests
                 new() { Id = 1, Name = "John Smith", NormalizedName = "john smith", Country = "GBR", Slug = "john-smith" },
                 new() { Id = 2, Name = "John Smith", NormalizedName = "john smith", Country = "USA", Slug = "john-smith-2" }
             });
+        // Containment returns both exact matches (which get filtered as self-matches) — no unique match
+        _handlerRepo.FindByNormalizedNameContainingAsync("john smith", "AUS")
+            .Returns(new List<Handler>());
 
         var created = new Handler
         {
@@ -198,6 +203,88 @@ public class IdentityResolutionServiceTests
 
         Assert.That(result, Is.SameAs(created));
         await _handlerRepo.Received(1).CreateAsync(Arg.Any<Handler>());
+    }
+
+    [Test]
+    public async Task ResolveHandlerAsync_ContainmentMatch_ShorterToLonger()
+    {
+        var existing = new Handler
+        {
+            Id = 1, Name = "Adrian Bajo Alonso", NormalizedName = "adrian bajo alonso",
+            Country = "ESP", Slug = "adrian-bajo-alonso"
+        };
+
+        _handlerAliasRepo.FindByAliasNameAsync("adrian bajo")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("adrian bajo", "ESP")
+            .Returns((Handler?)null);
+        _handlerRepo.FindByNormalizedNameAsync("adrian bajo")
+            .Returns(new List<Handler>());
+        _handlerRepo.FindByNormalizedNameContainingAsync("adrian bajo", "ESP")
+            .Returns(new List<Handler> { existing });
+
+        var result = await _sut.ResolveHandlerAsync("Adrian Bajo", "ESP");
+
+        Assert.That(result, Is.SameAs(existing));
+        await _handlerRepo.DidNotReceive().CreateAsync(Arg.Any<Handler>());
+        // Should create a FuzzyMatch alias
+        await _handlerAliasRepo.Received(1).CreateAsync(
+            Arg.Is<HandlerAlias>(a =>
+                a.AliasName == "adrian bajo" &&
+                a.CanonicalHandlerId == 1 &&
+                a.Source == AliasSource.FuzzyMatch));
+    }
+
+    [Test]
+    public async Task ResolveHandlerAsync_ContainmentMatch_LongerToShorter()
+    {
+        var existing = new Handler
+        {
+            Id = 1, Name = "Adrian Bajo", NormalizedName = "adrian bajo",
+            Country = "ESP", Slug = "adrian-bajo"
+        };
+
+        _handlerAliasRepo.FindByAliasNameAsync("adrian bajo alonso")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("adrian bajo alonso", "ESP")
+            .Returns((Handler?)null);
+        _handlerRepo.FindByNormalizedNameAsync("adrian bajo alonso")
+            .Returns(new List<Handler>());
+        _handlerRepo.FindByNormalizedNameContainingAsync("adrian bajo alonso", "ESP")
+            .Returns(new List<Handler> { existing });
+
+        var result = await _sut.ResolveHandlerAsync("Adrian Bajo Alonso", "ESP");
+
+        Assert.That(result, Is.SameAs(existing));
+        await _handlerRepo.DidNotReceive().CreateAsync(Arg.Any<Handler>());
+    }
+
+    [Test]
+    public async Task ResolveHandlerAsync_ContainmentMatch_ShortName_SkipsFuzzy()
+    {
+        // "Li Wei" is only 6 chars — below the 10-char minimum for containment match
+        _handlerAliasRepo.FindByAliasNameAsync("li wei")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("li wei", "CHN")
+            .Returns((Handler?)null);
+        _handlerRepo.FindByNormalizedNameAsync("li wei")
+            .Returns(new List<Handler>());
+
+        var created = new Handler
+        {
+            Id = 99, Name = "Li Wei", NormalizedName = "li wei",
+            Country = "CHN", Slug = "li-wei"
+        };
+        _handlerAliasRepo.FindByAliasNameAsync("wei li")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.CreateAsync(Arg.Any<Handler>())
+            .Returns(created);
+
+        var result = await _sut.ResolveHandlerAsync("Li Wei", "CHN");
+
+        Assert.That(result, Is.SameAs(created));
+        // Should NOT have called containment search (name too short)
+        await _handlerRepo.DidNotReceive().FindByNormalizedNameContainingAsync(Arg.Any<string>(), Arg.Any<string>());
     }
 
     #endregion
