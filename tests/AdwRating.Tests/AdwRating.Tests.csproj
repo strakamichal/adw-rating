@@ -23,6 +23,7 @@
     <ProjectReference Include="..\..\src\AdwRating.Domain\AdwRating.Domain.csproj" />
     <ProjectReference Include="..\..\src\AdwRating.Service\AdwRating.Service.csproj" />
     <ProjectReference Include="..\..\src\AdwRating.Cli\AdwRating.Cli.csproj" />
+    <ProjectReference Include="..\..\src\AdwRating.ApiClient\AdwRating.ApiClient.csproj" />
   </ItemGroup>
 
 </Project>
