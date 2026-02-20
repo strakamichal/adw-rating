@@ -88,7 +88,8 @@ public class TeamProfileService : ITeamProfileService
                 TimeFaults: rr.TimeFaults,
                 Time: rr.Time,
                 Speed: rr.Speed,
-                Eliminated: rr.Eliminated
+                Eliminated: rr.Eliminated,
+                IsExcluded: rr.Run.IsExcluded
             ))
             .ToList();
 

@@ -14,5 +14,6 @@ public record TeamResultDto(
     float? TimeFaults,
     float? Time,
     float? Speed,
-    bool Eliminated
+    bool Eliminated,
+    bool IsExcluded
 );

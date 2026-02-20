@@ -415,6 +415,12 @@ p {
   border: 1px solid var(--color-error);
 }
 
+.badge-excluded {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-500);
+  border: 1px solid var(--color-neutral-300);
+}
+
 .badge-size {
   background-color: var(--color-primary-50);
   color: var(--color-primary-700);
@@ -773,6 +779,13 @@ p {
   opacity: 0.5;
 }
 
+/* Excluded rows (not counted in rating) */
+.data-table tbody tr.excluded {
+  opacity: 0.35;
+  text-decoration: line-through;
+  text-decoration-color: var(--color-neutral-400);
+}
+
 /* Rank column */
 .data-table .cell-rank {
   font-weight: var(--font-weight-bold);
@@ -796,6 +809,20 @@ p {
 .data-table .cell-team__dog {
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
+}
+
+.data-table .cell-dog {
+  display: flex;
+  flex-direction: column;
+}
+
+.data-table .cell-dog__call {
+  font-weight: var(--font-weight-semibold, 600);
+}
+
+.data-table .cell-dog__reg {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-tertiary, #999);
 }
 
 /* Rating cell */

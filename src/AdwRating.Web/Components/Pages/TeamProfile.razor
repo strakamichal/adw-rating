@@ -143,27 +143,46 @@ else
         </div>
     </div>
 
-    @* 3.12 Rating Progression Chart *@
+    @* 3.12 Competition Timeline *@
     <div class="container mt-8">
-        <h2>Rating Progression</h2>
+        <div class="section-header" style="display: flex; align-items: center; justify-content: space-between;">
+            <h2>Competitions</h2>
+            @if (_history.Count > 0)
+            {
+                <div class="timeline-toggle" style="display: flex; gap: var(--space-1);">
+                    <button id="btn-1y" class="btn btn-sm btn-secondary" onclick="switchTimeline(1)">1 year</button>
+                    <button id="btn-2y" class="btn btn-sm btn-primary" onclick="switchTimeline(2)">2 years</button>
+                </div>
+            }
+        </div>
         @if (_history.Count > 0)
         {
-            <div style="position: relative; height: 300px;">
+            <div style="position: relative; height: 280px;">
                 <canvas id="rating-chart"></canvas>
             </div>
             <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var data = @((MarkupString)SerializeHistory());
-                    var peakRating = @((int)_team.PeakRating != (int)_team.Rating ? ((int)_team.PeakRating).ToString() : "null");
-                    initRatingChart('rating-chart', data, peakRating);
-                });
+                var __timelineData = @((MarkupString)SerializeTimeline());
+                var __timelineYears = 2;
+                function switchTimeline(years) {
+                    __timelineYears = years;
+                    initCompetitionTimeline('rating-chart', __timelineData, years);
+                    document.getElementById('btn-1y').className = years === 1 ? 'btn btn-sm btn-primary' : 'btn btn-sm btn-secondary';
+                    document.getElementById('btn-2y').className = years === 2 ? 'btn btn-sm btn-primary' : 'btn btn-sm btn-secondary';
+                }
+                function __initTimeline() {
+                    if (document.getElementById('rating-chart')) {
+                        switchTimeline(__timelineYears);
+                    }
+                }
+                document.addEventListener('DOMContentLoaded', __initTimeline);
+                document.addEventListener('blazor:enhancedload', __initTimeline);
             </script>
         }
         else
         {
             <div class="chart-placeholder">
                 <div class="chart-placeholder__icon">&#128200;</div>
-                <div>No rating history available yet</div>
+                <div>No competition history available yet</div>
             </div>
         }
     </div>
@@ -192,7 +211,8 @@ else
                     <tbody>
                         @foreach (var r in _results.Items)
                         {
-                            var rowClass = r.Eliminated ? "eliminated"
+                            var rowClass = r.IsExcluded ? "excluded"
+                                : r.Eliminated ? "eliminated"
                                 : r.Rank == 1 ? "rank-1"
                                 : r.Rank == 2 ? "rank-2"
                                 : r.Rank == 3 ? "rank-3"
@@ -201,6 +221,10 @@ else
                                 <td>@r.Date.ToString("MMM d, yyyy")</td>
                                 <td>
                                     @r.CompetitionName
+                                    @if (r.IsExcluded)
+                                    {
+                                        <span class="badge badge-excluded" style="margin-left: var(--space-1);">Excluded</span>
+                                    }
                                     @if (IsMajorCompetition(r.CompetitionName))
                                     {
                                         <span class="badge badge-major" style="margin-left: var(--space-1);">Major</span>
@@ -349,14 +373,20 @@ else
                lower.Contains("ifcs");
     }
 
-    private string SerializeHistory()
+    private string SerializeTimeline()
     {
-        var items = _history.Select(h => new
-        {
-            date = h.Date.ToString("MMM yyyy"),
-            rating = Math.Round(h.Rating, 0),
-            sigma = Math.Round(h.Sigma, 0)
-        });
+        // Group by competition name to get exactly one dot per competition.
+        // Use the last day's last snapshot rating, and the first day as the date.
+        var items = _history
+            .Where(h => h.CompetitionName is not null)
+            .GroupBy(h => h.CompetitionName)
+            .Select(g => new
+            {
+                date = g.Min(h => h.Date).ToString("yyyy-MM-dd"),
+                competitionName = g.Key,
+                rating = Math.Round(g.OrderBy(h => h.Date).Last().Rating, 0)
+            })
+            .OrderBy(x => x.date);
         return System.Text.Json.JsonSerializer.Serialize(items);
     }
 }
