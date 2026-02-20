@@ -58,8 +58,8 @@ public class AdwRatingApiClientTests
     {
         var items = new List<TeamRankingDto>
         {
-            new(1, "john-rex", "John", "CZE", "Rex", SizeCategory.L,
-                1500f, 50f, 1, null, 10, 3, false, TierLabel.Elite)
+            new(1, "john-rex", "John", "CZE", "Rex", "Rex von Haus", SizeCategory.L,
+                1500f, 50f, 1, null, 10, 8, 3, false, TierLabel.Elite)
         };
         var responseData = new PagedResult<TeamRankingDto>(items, 1, 1, 50);
 

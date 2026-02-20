@@ -104,7 +104,8 @@
                     <tr>
                         <th style="width: 3rem;">#</th>
                         <th style="width: 5rem;">Trend</th>
-                        <th>Team</th>
+                        <th>Handler</th>
+                        <th>Dog</th>
                         <th class="col-number" style="width: 7rem;">Rating</th>
                         <th style="width: 7rem;">Tier</th>
                         <th class="col-number" style="width: 5rem;">Runs</th>
@@ -117,9 +118,15 @@
                             <td class="cell-rank">@team.Rank</td>
                             <td>@TrendMarkup(team)</td>
                             <td>
-                                <div class="cell-team">
-                                    <span class="cell-team__handler">@CountryHelper.GetFlag(team.HandlerCountry) @team.HandlerName</span>
-                                    <span class="cell-team__dog">@team.DogCallName</span>
+                                @CountryHelper.GetFlag(team.HandlerCountry) @team.HandlerName
+                            </td>
+                            <td>
+                                <div class="cell-dog">
+                                    <span class="cell-dog__call">@(string.IsNullOrWhiteSpace(team.DogCallName) ? team.DogRegisteredName : team.DogCallName)</span>
+                                    @if (!string.IsNullOrWhiteSpace(team.DogCallName) && !string.IsNullOrWhiteSpace(team.DogRegisteredName))
+                                    {
+                                        <span class="cell-dog__reg">@team.DogRegisteredName</span>
+                                    }
                                 </div>
                             </td>
                             <td class="col-number">
@@ -135,9 +142,9 @@
                                     <span class="badge badge-few-runs" style="margin-left: var(--space-1);">FEW RUNS</span>
                                 }
                             </td>
-                            <td class="col-number">
+                            <td class="col-number" title="@team.FinishedRunCount finished out of @team.RunCount runs">
                                 <div class="cell-runs__total">@team.RunCount</div>
-                                <div class="cell-runs__fraction">@team.Top3RunCount/@team.RunCount</div>
+                                <div class="cell-runs__fraction">@team.FinishedRunCount/@team.RunCount</div>
                             </td>
                         </tr>
                     }

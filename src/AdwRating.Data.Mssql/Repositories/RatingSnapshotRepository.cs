@@ -16,6 +16,7 @@ public class RatingSnapshotRepository : IRatingSnapshotRepository
     public async Task<IReadOnlyList<RatingSnapshot>> GetByTeamIdAsync(int teamId)
     {
         return await _context.RatingSnapshots
+            .Include(rs => rs.Competition)
             .Where(rs => rs.TeamId == teamId)
             .OrderBy(rs => rs.Date)
             .ToListAsync();

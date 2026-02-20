@@ -8,5 +8,6 @@ public record RatingSnapshotDto(
     DateOnly Date,
     float Mu,
     float Sigma,
-    float Rating
+    float Rating,
+    string? CompetitionName = null
 );
