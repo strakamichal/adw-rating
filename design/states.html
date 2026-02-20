@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty &amp; Error States — ADW Rating Design</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <style>
+    /* Page wrapper */
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .page-wrapper > main {
+      flex: 1;
+    }
+
+    /* ---- Hamburger menu (CSS-only) ---- */
+    .hamburger-toggle { display: none; }
+
+    .hamburger-label {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: var(--space-2);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary-800);
+      box-shadow: var(--shadow-lg);
+      z-index: 99;
+      flex-direction: column;
+      padding: var(--space-2) 0;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: var(--space-3) var(--space-6);
+      color: var(--color-primary-200);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      text-decoration: none;
+    }
+
+    .mobile-nav a:hover {
+      background-color: var(--color-primary-700);
+      color: var(--color-header-text);
+      text-decoration: none;
+    }
+
+    .hamburger-toggle:checked ~ .mobile-nav {
+      display: flex;
+    }
+
+    .search-toggle { display: none; }
+
+    .search-toggle-label {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-primary-200);
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: var(--space-2);
+      line-height: 1;
+    }
+
+    .mobile-search-bar {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary-800);
+      padding: var(--space-3) var(--space-4);
+      box-shadow: var(--shadow-lg);
+      z-index: 98;
+    }
+
+    .search-toggle:checked ~ .mobile-search-bar {
+      display: block;
+    }
+
+    .mobile-search-bar .search-input__field {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--color-text-inverse);
+    }
+
+    .mobile-search-bar .search-input__field::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .mobile-search-bar .search-input__icon {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 639px) {
+      .hamburger-label { display: block; }
+      .search-toggle-label { display: block; }
+      .site-header__search { display: none; }
+      .site-header__nav { display: none; }
+    }
+
+    @media (min-width: 640px) {
+      .mobile-nav { display: none !important; }
+      .mobile-search-bar { display: none !important; }
+    }
+
+    /* ---- Footer multi-row layout ---- */
+    .site-footer__top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    .site-footer__brand {
+      font-size: var(--font-size-h4);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+    }
+
+    .site-footer__brand span {
+      color: var(--color-secondary-500);
+    }
+
+    .site-footer__social {
+      display: flex;
+      gap: var(--space-4);
+      list-style: none;
+    }
+
+    .site-footer__social a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      transition: color var(--transition-fast);
+    }
+
+    .site-footer__social a:hover {
+      color: var(--color-primary-500);
+      text-decoration: none;
+    }
+
+    .site-footer__social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .site-footer__bottom {
+      border-top: 1px solid var(--color-gray-200);
+      padding-top: var(--space-4);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    @media (max-width: 639px) {
+      .site-footer__top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .site-footer__bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ---- States page specific ---- */
+    .demo-section {
+      margin-bottom: var(--space-12);
+      padding-bottom: var(--space-12);
+      border-bottom: 2px solid var(--color-gray-100);
+    }
+
+    .demo-section:last-child {
+      border-bottom: none;
+    }
+
+    .demo-label {
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wide);
+      color: var(--color-text-tertiary);
+      margin-bottom: var(--space-2);
+    }
+
+    .demo-description {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+    }
+
+    /* 404 page */
+    .not-found {
+      text-align: center;
+      padding: var(--space-16) var(--space-4);
+    }
+
+    .not-found__code {
+      font-size: 6rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-gray-200);
+      line-height: 1;
+      margin-bottom: var(--space-4);
+    }
+
+    .not-found__title {
+      font-size: var(--font-size-h2);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--space-3);
+    }
+
+    .not-found__description {
+      font-size: var(--font-size-base);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .not-found__links {
+      display: flex;
+      gap: var(--space-4);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Error state */
+    .error-state {
+      text-align: center;
+      padding: var(--space-12) var(--space-4);
+      background-color: var(--color-error-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(209, 41, 61, 0.15);
+    }
+
+    .error-state__icon {
+      font-size: 3rem;
+      margin-bottom: var(--space-4);
+    }
+
+    .error-state__title {
+      font-size: var(--font-size-h3);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--space-2);
+    }
+
+    .error-state__description {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-6);
+    }
+
+    /* Skeleton loading */
+    @keyframes skeleton-shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    .skeleton {
+      background: linear-gradient(
+        90deg,
+        var(--color-gray-100) 25%,
+        var(--color-gray-200) 37%,
+        var(--color-gray-100) 63%
+      );
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.5s ease-in-out infinite;
+      border-radius: var(--radius-sm);
+    }
+
+    .skeleton-bar {
+      height: 14px;
+      margin-bottom: var(--space-3);
+    }
+
+    .skeleton-bar--short { width: 40%; }
+    .skeleton-bar--medium { width: 65%; }
+    .skeleton-bar--long { width: 90%; }
+    .skeleton-bar--full { width: 100%; }
+
+    .skeleton-circle {
+      border-radius: var(--radius-full);
+    }
+
+    /* Skeleton table */
+    .skeleton-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .skeleton-table th {
+      text-align: left;
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 2px solid var(--color-gray-200);
+    }
+
+    .skeleton-table td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--color-gray-100);
+    }
+
+    .skeleton-table .skeleton-bar {
+      margin-bottom: 0;
+    }
+
+    /* Skeleton stat cards */
+    .skeleton-stat-card {
+      background-color: var(--color-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-6);
+      text-align: center;
+    }
+
+    .skeleton-stat-card .skeleton-bar {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Skeleton hero card */
+    .skeleton-hero {
+      background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-700) 100%);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .skeleton-hero .skeleton {
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0.08) 25%,
+        rgba(255,255,255,0.15) 37%,
+        rgba(255,255,255,0.08) 63%
+      );
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    }
+
+    @media (max-width: 639px) {
+      .skeleton-hero {
+        grid-template-columns: 1fr;
+        padding: var(--space-6);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container" style="position: relative;">
+        <a href="layout.html" class="site-header__logo">
+          ADW <span>Rating</span>
+        </a>
+
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+        </nav>
+
+        <div class="site-header__search">
+          <div class="search-input search-input--header">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+
+        <input type="checkbox" id="search-toggle" class="search-toggle" aria-hidden="true">
+        <label for="search-toggle" class="search-toggle-label hidden-desktop" aria-label="Toggle search">&#128269;</label>
+
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-hidden="true">
+        <label for="hamburger-toggle" class="hamburger-label hidden-desktop" aria-label="Toggle menu">&#9776;</label>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+          <a href="how-it-works.html">How it works</a>
+        </nav>
+
+        <div class="mobile-search-bar">
+          <div class="search-input">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <div class="container mt-8">
+        <h1>Empty, Error &amp; Loading States</h1>
+        <p class="text-muted">Design patterns for when content is loading, empty, or something goes wrong.</p>
+      </div>
+
+      <div class="container mt-8">
+
+        <!-- State 1: No results (empty filter) -->
+        <div class="demo-section">
+          <div class="demo-label">State 1</div>
+          <h2>No Results (Empty Filter)</h2>
+          <p class="demo-description">
+            Shown when the user's filter combination returns no results. Includes a clear message and a call-to-action to recover.
+          </p>
+
+          <div class="empty-state">
+            <div class="empty-state__icon">&#128269;</div>
+            <div class="empty-state__title">No teams match your filters</div>
+            <div class="empty-state__description">
+              Try broadening your search or removing some filters to see more results.
+            </div>
+            <button class="btn btn-primary">Clear filters</button>
+          </div>
+        </div>
+
+        <!-- State 2: 404 Page Not Found -->
+        <div class="demo-section">
+          <div class="demo-label">State 2</div>
+          <h2>404 — Page Not Found</h2>
+          <p class="demo-description">
+            Shown when a user navigates to a URL that does not exist (e.g., a deleted team profile or a typo in the URL).
+          </p>
+
+          <div class="not-found">
+            <div class="not-found__code">404</div>
+            <div class="not-found__title">Page Not Found</div>
+            <div class="not-found__description">
+              The page you are looking for does not exist or may have been moved.
+              Check the URL for typos, or use the links below to get back on track.
+            </div>
+            <div class="not-found__links">
+              <a href="layout.html" class="btn btn-primary">Go to Home</a>
+              <a href="layout.html" class="btn btn-secondary">View Rankings</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- State 3: Loading Skeletons -->
+        <div class="demo-section">
+          <div class="demo-label">State 3</div>
+          <h2>Loading Skeletons</h2>
+          <p class="demo-description">
+            Skeleton placeholder blocks shown during initial page load, matching the shape of expected content. The shimmer animation communicates that content is loading.
+          </p>
+
+          <!-- 3a: Stat cards skeleton -->
+          <h3 class="mb-4">Stat Cards</h3>
+          <div class="grid-3 mb-8">
+            <div class="skeleton-stat-card">
+              <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 36px; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 12px;"></div>
+            </div>
+            <div class="skeleton-stat-card">
+              <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 36px; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 12px;"></div>
+            </div>
+            <div class="skeleton-stat-card">
+              <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 36px; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 12px;"></div>
+            </div>
+          </div>
+
+          <!-- 3b: Rankings table skeleton -->
+          <h3 class="mb-4">Rankings Table</h3>
+          <div class="table-responsive mb-8">
+            <table class="skeleton-table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th style="width: 50px;"><div class="skeleton skeleton-bar" style="width: 24px; height: 12px; margin: 0;"></div></th>
+                  <th style="width: 60px;"><div class="skeleton skeleton-bar" style="width: 40px; height: 12px; margin: 0;"></div></th>
+                  <th><div class="skeleton skeleton-bar" style="width: 60px; height: 12px; margin: 0;"></div></th>
+                  <th style="width: 100px;"><div class="skeleton skeleton-bar" style="width: 50px; height: 12px; margin: 0;"></div></th>
+                  <th style="width: 80px;"><div class="skeleton skeleton-bar" style="width: 40px; height: 12px; margin: 0;"></div></th>
+                  <th style="width: 60px;"><div class="skeleton skeleton-bar" style="width: 36px; height: 12px; margin: 0;"></div></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar skeleton-bar--long" style="height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 52px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 75%; height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 64px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 85%; height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 50%; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 52px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar skeleton-bar--long" style="height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 56px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 70%; height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 48px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 3c: Team profile hero card skeleton -->
+          <h3 class="mb-4">Team Profile Hero Card</h3>
+          <div class="skeleton-hero mb-8">
+            <div>
+              <div class="flex items-center gap-4 mb-6">
+                <div class="skeleton skeleton-circle" style="width: 72px; height: 72px; flex-shrink: 0;"></div>
+                <div style="flex: 1;">
+                  <div class="skeleton skeleton-bar" style="width: 180px; height: 22px; margin-bottom: var(--space-2);"></div>
+                  <div class="skeleton skeleton-bar" style="width: 120px; height: 16px; margin-bottom: var(--space-2);"></div>
+                  <div class="skeleton skeleton-bar" style="width: 90px; height: 12px; margin: 0;"></div>
+                </div>
+              </div>
+              <div class="skeleton skeleton-bar" style="width: 80px; height: 22px;"></div>
+            </div>
+            <div style="text-align: right;">
+              <div class="skeleton skeleton-bar" style="width: 120px; height: 48px; margin-left: auto; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar" style="width: 80px; height: 14px; margin-left: auto; margin-bottom: var(--space-4);"></div>
+              <div class="skeleton skeleton-bar" style="width: 72px; height: 24px; margin-left: auto; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar" style="width: 60px; height: 18px; margin-left: auto; margin-bottom: var(--space-2);"></div>
+              <div class="skeleton skeleton-bar" style="width: 100px; height: 12px; margin-left: auto; margin: 0;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- State 4: Error State -->
+        <div class="demo-section">
+          <div class="demo-label">State 4</div>
+          <h2>Error State</h2>
+          <p class="demo-description">
+            Shown when an API call or page load fails unexpectedly. Provides a clear message and a retry action.
+          </p>
+
+          <div class="error-state">
+            <div class="error-state__icon">&#9888;&#65039;</div>
+            <div class="error-state__title">Something went wrong</div>
+            <div class="error-state__description">
+              We could not load the data. This might be a temporary issue. Please try again.
+            </div>
+            <button class="btn btn-primary">Retry</button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <div>
+            <div class="site-footer__brand mb-3">ADW <span>Rating</span></div>
+            <ul class="site-footer__links">
+              <li><a href="how-it-works.html">How it works</a></li>
+              <li><a href="layout.html">Rankings</a></li>
+              <li><a href="competitions.html">Competitions</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="site-footer__social">
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p class="site-footer__disclaimer">Data from major international agility competitions.</p>
+          <p class="site-footer__disclaimer">ADW Rating is an independent project &mdash; not affiliated with FCI, AKC, or any official organization.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

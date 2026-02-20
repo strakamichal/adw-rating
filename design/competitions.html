@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competitions — ADW Rating</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <style>
+    /* Page wrapper */
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .page-wrapper > main {
+      flex: 1;
+    }
+
+    /* ---- Hamburger menu (CSS-only) ---- */
+    .hamburger-toggle { display: none; }
+
+    .hamburger-label {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: var(--space-2);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary-800);
+      box-shadow: var(--shadow-lg);
+      z-index: 99;
+      flex-direction: column;
+      padding: var(--space-2) 0;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: var(--space-3) var(--space-6);
+      color: var(--color-primary-200);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      text-decoration: none;
+    }
+
+    .mobile-nav a:hover {
+      background-color: var(--color-primary-700);
+      color: var(--color-header-text);
+      text-decoration: none;
+    }
+
+    .hamburger-toggle:checked ~ .mobile-nav {
+      display: flex;
+    }
+
+    /* Mobile search */
+    .search-toggle { display: none; }
+
+    .search-toggle-label {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-primary-200);
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: var(--space-2);
+      line-height: 1;
+    }
+
+    .mobile-search-bar {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary-800);
+      padding: var(--space-3) var(--space-4);
+      box-shadow: var(--shadow-lg);
+      z-index: 98;
+    }
+
+    .search-toggle:checked ~ .mobile-search-bar {
+      display: block;
+    }
+
+    .mobile-search-bar .search-input__field {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--color-text-inverse);
+    }
+
+    .mobile-search-bar .search-input__field::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .mobile-search-bar .search-input__icon {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 639px) {
+      .hamburger-label { display: block; }
+      .search-toggle-label { display: block; }
+      .site-header__search { display: none; }
+      .site-header__nav { display: none; }
+    }
+
+    @media (min-width: 640px) {
+      .mobile-nav { display: none !important; }
+      .mobile-search-bar { display: none !important; }
+    }
+
+    /* ---- Footer multi-row layout ---- */
+    .site-footer__top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    .site-footer__brand {
+      font-size: var(--font-size-h4);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+    }
+
+    .site-footer__brand span {
+      color: var(--color-secondary-500);
+    }
+
+    .site-footer__social {
+      display: flex;
+      gap: var(--space-4);
+      list-style: none;
+    }
+
+    .site-footer__social a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      transition: color var(--transition-fast);
+    }
+
+    .site-footer__social a:hover {
+      color: var(--color-primary-500);
+      text-decoration: none;
+    }
+
+    .site-footer__social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .site-footer__bottom {
+      border-top: 1px solid var(--color-gray-200);
+      padding-top: var(--space-4);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    @media (max-width: 639px) {
+      .site-footer__top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .site-footer__bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ---- Competition page specific ---- */
+    .filter-bar .search-input {
+      max-width: 220px;
+    }
+
+    @media (max-width: 639px) {
+      .filter-bar .search-input {
+        max-width: none;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container" style="position: relative;">
+        <a href="layout.html" class="site-header__logo">
+          ADW <span>Rating</span>
+        </a>
+
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html" class="active">Competitions</a>
+        </nav>
+
+        <div class="site-header__search">
+          <div class="search-input search-input--header">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+
+        <input type="checkbox" id="search-toggle" class="search-toggle" aria-hidden="true">
+        <label for="search-toggle" class="search-toggle-label hidden-desktop" aria-label="Toggle search">&#128269;</label>
+
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-hidden="true">
+        <label for="hamburger-toggle" class="hamburger-label hidden-desktop" aria-label="Toggle menu">&#9776;</label>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+          <a href="how-it-works.html">How it works</a>
+        </nav>
+
+        <div class="mobile-search-bar">
+          <div class="search-input">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- Breadcrumbs -->
+      <div class="container">
+        <ol class="breadcrumbs mt-4">
+          <li><a href="layout.html">Home</a></li>
+          <li>Competitions</li>
+        </ol>
+        <div class="breadcrumbs-mobile mt-4">
+          <a href="layout.html">&larr; Back to Home</a>
+        </div>
+      </div>
+
+      <!-- Page heading -->
+      <div class="container mt-4">
+        <h1>Competitions</h1>
+        <p class="text-muted">Browsable archive of all imported agility competitions.</p>
+      </div>
+
+      <!-- Filter bar -->
+      <div class="filter-bar mt-4">
+        <div class="container">
+          <div class="filter-group">
+            <span class="filter-group__label">Year</span>
+            <div class="pill-group">
+              <button class="pill">2024</button>
+              <button class="pill active">2025</button>
+              <button class="pill">2026</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-group__label">Tier</span>
+            <div class="pill-group">
+              <button class="pill active">All</button>
+              <button class="pill">Major Events</button>
+              <button class="pill">Standard</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-group__label">Country</span>
+            <div class="dropdown">
+              <select class="dropdown__select">
+                <option>All Countries</option>
+                <option>Czech Republic</option>
+                <option>Hungary</option>
+                <option>Luxembourg</option>
+                <option>Norway</option>
+                <option>Slovakia</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="search-input">
+              <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+              <input type="search" class="search-input__field" placeholder="Search competitions..." aria-label="Search competitions">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="container">
+        <p class="summary-text">Showing 9 competitions</p>
+      </div>
+
+      <!-- 2025 competitions -->
+      <div class="container">
+        <div class="year-header">2025</div>
+
+        <div class="competition-entry competition-entry--major">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">
+              Norwegian Open 2025
+              <span class="badge badge-major" style="margin-left: var(--space-2);">Major</span>
+            </div>
+            <div class="competition-entry__meta">
+              <span>Jun 12-15, 2025</span>
+              <span>Oslo, Norway &#127475;&#127476;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">523 teams</div>
+        </div>
+
+        <div class="competition-entry competition-entry--major">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">
+              FMBB 2025
+              <span class="badge badge-major" style="margin-left: var(--space-2);">Major</span>
+            </div>
+            <div class="competition-entry__meta">
+              <span>May 14-18, 2025</span>
+              <span>Luxembourg &#127473;&#127482;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">356 teams</div>
+        </div>
+
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Moravia Open 2025</div>
+            <div class="competition-entry__meta">
+              <span>May 2-4, 2025</span>
+              <span>Olomouc, Czech Republic &#127464;&#127487;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">312 teams</div>
+        </div>
+
+        <div class="competition-entry competition-entry--major">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">
+              Hungarian Open 2025
+              <span class="badge badge-major" style="margin-left: var(--space-2);">Major</span>
+            </div>
+            <div class="competition-entry__meta">
+              <span>Apr 24-27, 2025</span>
+              <span>Budapest, Hungary &#127469;&#127482;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">445 teams</div>
+        </div>
+
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Prague Agility Party 2025</div>
+            <div class="competition-entry__meta">
+              <span>Mar 14-16, 2025</span>
+              <span>Prague, Czech Republic &#127464;&#127487;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">278 teams</div>
+        </div>
+      </div>
+
+      <!-- 2024 competitions -->
+      <div class="container">
+        <div class="year-header">2024</div>
+
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Border Collie Classic 2024</div>
+            <div class="competition-entry__meta">
+              <span>Nov 1-3, 2024</span>
+              <span>Amsterdam, Netherlands &#127475;&#127473;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">156 teams</div>
+        </div>
+
+        <div class="competition-entry competition-entry--major">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">
+              AWC 2024
+              <span class="badge badge-major" style="margin-left: var(--space-2);">Major</span>
+            </div>
+            <div class="competition-entry__meta">
+              <span>Oct 3-6, 2024</span>
+              <span>Trnava, Slovakia &#127480;&#127472;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">487 teams</div>
+        </div>
+
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Croatian Open 2024</div>
+            <div class="competition-entry__meta">
+              <span>Sep 5-8, 2024</span>
+              <span>Zagreb, Croatia &#127469;&#127479;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">398 teams</div>
+        </div>
+
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Midsummer Dog Sports Festival 2024</div>
+            <div class="competition-entry__meta">
+              <span>Jun 20-23, 2024</span>
+              <span>Gothenburg, Sweden &#127480;&#127466;</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">601 teams</div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="container">
+        <nav class="pagination" aria-label="Competition list pagination">
+          <button class="pagination__btn disabled" disabled>&laquo; Prev</button>
+          <button class="pagination__btn active">1</button>
+          <button class="pagination__btn">2</button>
+          <button class="pagination__btn">3</button>
+          <span class="pagination__info">Page 1 of 3</span>
+          <button class="pagination__btn">Next &raquo;</button>
+        </nav>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <div>
+            <div class="site-footer__brand mb-3">ADW <span>Rating</span></div>
+            <ul class="site-footer__links">
+              <li><a href="how-it-works.html">How it works</a></li>
+              <li><a href="layout.html">Rankings</a></li>
+              <li><a href="competitions.html">Competitions</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="site-footer__social">
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p class="site-footer__disclaimer">Data from major international agility competitions.</p>
+          <p class="site-footer__disclaimer">ADW Rating is an independent project &mdash; not affiliated with FCI, AKC, or any official organization.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

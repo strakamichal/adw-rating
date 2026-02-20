@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How the Rating Works — ADW Rating</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <style>
+    /* Page wrapper */
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .page-wrapper > main {
+      flex: 1;
+    }
+
+    /* ---- Hamburger menu (CSS-only) ---- */
+    .hamburger-toggle { display: none; }
+
+    .hamburger-label {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: var(--space-2);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary-800);
+      box-shadow: var(--shadow-lg);
+      z-index: 99;
+      flex-direction: column;
+      padding: var(--space-2) 0;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: var(--space-3) var(--space-6);
+      color: var(--color-primary-200);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      text-decoration: none;
+    }
+
+    .mobile-nav a:hover {
+      background-color: var(--color-primary-700);
+      color: var(--color-header-text);
+      text-decoration: none;
+    }
+
+    .hamburger-toggle:checked ~ .mobile-nav {
+      display: flex;
+    }
+
+    .search-toggle { display: none; }
+
+    .search-toggle-label {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-primary-200);
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: var(--space-2);
+      line-height: 1;
+    }
+
+    .mobile-search-bar {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary-800);
+      padding: var(--space-3) var(--space-4);
+      box-shadow: var(--shadow-lg);
+      z-index: 98;
+    }
+
+    .search-toggle:checked ~ .mobile-search-bar {
+      display: block;
+    }
+
+    .mobile-search-bar .search-input__field {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--color-text-inverse);
+    }
+
+    .mobile-search-bar .search-input__field::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .mobile-search-bar .search-input__icon {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 639px) {
+      .hamburger-label { display: block; }
+      .search-toggle-label { display: block; }
+      .site-header__search { display: none; }
+      .site-header__nav { display: none; }
+    }
+
+    @media (min-width: 640px) {
+      .mobile-nav { display: none !important; }
+      .mobile-search-bar { display: none !important; }
+    }
+
+    /* ---- Footer multi-row layout ---- */
+    .site-footer__top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    .site-footer__brand {
+      font-size: var(--font-size-h4);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+    }
+
+    .site-footer__brand span {
+      color: var(--color-secondary-500);
+    }
+
+    .site-footer__social {
+      display: flex;
+      gap: var(--space-4);
+      list-style: none;
+    }
+
+    .site-footer__social a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      transition: color var(--transition-fast);
+    }
+
+    .site-footer__social a:hover {
+      color: var(--color-primary-500);
+      text-decoration: none;
+    }
+
+    .site-footer__social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .site-footer__bottom {
+      border-top: 1px solid var(--color-gray-200);
+      padding-top: var(--space-4);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    @media (max-width: 639px) {
+      .site-footer__top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .site-footer__bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ---- How It Works page styles ---- */
+    .hiw-hero {
+      background: linear-gradient(135deg, var(--color-primary-900) 0%, var(--color-primary-700) 100%);
+      color: var(--color-text-inverse);
+      padding: var(--space-16) 0;
+      text-align: center;
+    }
+
+    .hiw-hero h1 {
+      color: var(--color-text-inverse);
+      font-size: 2.5rem;
+      margin-bottom: var(--space-3);
+    }
+
+    .hiw-hero p {
+      font-size: var(--font-size-h4);
+      opacity: 0.85;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .hiw-section {
+      padding: var(--space-12) 0;
+    }
+
+    .hiw-section--alt {
+      background-color: var(--color-gray-50);
+    }
+
+    .hiw-section h2 {
+      margin-bottom: var(--space-6);
+    }
+
+    .hiw-section h3 {
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-3);
+    }
+
+    .hiw-section p,
+    .hiw-section li {
+      line-height: var(--line-height-loose);
+      color: var(--color-text-secondary);
+    }
+
+    .hiw-section ul,
+    .hiw-section ol {
+      padding-left: var(--space-6);
+      margin-bottom: var(--space-4);
+    }
+
+    .hiw-section li {
+      margin-bottom: var(--space-2);
+    }
+
+    .hiw-callout {
+      background-color: var(--color-primary-50);
+      border-left: 4px solid var(--color-primary-500);
+      padding: var(--space-4) var(--space-6);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin: var(--space-6) 0;
+    }
+
+    .hiw-callout p {
+      color: var(--color-text);
+      margin-bottom: 0;
+    }
+
+    .hiw-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      margin: var(--space-6) 0;
+    }
+
+    @media (max-width: 639px) {
+      .hiw-two-col {
+        grid-template-columns: 1fr;
+      }
+      .hiw-hero h1 {
+        font-size: var(--font-size-h1);
+      }
+    }
+
+    .hiw-affects-card {
+      background-color: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hiw-affects-card h4 {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .hiw-affects-card--yes h4 {
+      color: var(--color-success);
+    }
+
+    .hiw-affects-card--no h4 {
+      color: var(--color-error);
+    }
+
+    /* Size mapping table */
+    .mapping-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--font-size-sm);
+      margin: var(--space-4) 0;
+    }
+
+    .mapping-table th {
+      text-align: left;
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-semibold);
+      text-transform: uppercase;
+      letter-spacing: var(--letter-spacing-wide);
+      color: var(--color-text-secondary);
+      background-color: var(--color-gray-50);
+      border-bottom: 2px solid var(--color-gray-200);
+    }
+
+    .mapping-table td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--color-gray-100);
+      vertical-align: middle;
+    }
+
+    .mapping-table tbody tr:hover {
+      background-color: var(--color-primary-50);
+    }
+
+    /* Data sources list */
+    .data-sources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+      margin: var(--space-4) 0;
+    }
+
+    @media (max-width: 639px) {
+      .data-sources-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .data-source-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-3) var(--space-4);
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-md);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      text-align: center;
+    }
+
+    /* Disclaimer section */
+    .disclaimer-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .disclaimer-list li {
+      position: relative;
+      padding: var(--space-4) var(--space-4) var(--space-4) var(--space-8);
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-gray-100);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-3);
+    }
+
+    .disclaimer-list li::before {
+      content: "!";
+      position: absolute;
+      left: var(--space-3);
+      top: var(--space-4);
+      width: 20px;
+      height: 20px;
+      background-color: var(--color-warning-bg);
+      color: var(--color-warning);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-bold);
+    }
+
+    .content-narrow {
+      max-width: 780px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container" style="position: relative;">
+        <a href="layout.html" class="site-header__logo">
+          ADW <span>Rating</span>
+        </a>
+
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+        </nav>
+
+        <div class="site-header__search">
+          <div class="search-input search-input--header">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+
+        <input type="checkbox" id="search-toggle" class="search-toggle" aria-hidden="true">
+        <label for="search-toggle" class="search-toggle-label hidden-desktop" aria-label="Toggle search">&#128269;</label>
+
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-hidden="true">
+        <label for="hamburger-toggle" class="hamburger-label hidden-desktop" aria-label="Toggle menu">&#9776;</label>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+          <a href="how-it-works.html">How it works</a>
+        </nav>
+
+        <div class="mobile-search-bar">
+          <div class="search-input">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <!-- Hero -->
+      <section class="hiw-hero">
+        <div class="container">
+          <h1>How the Rating Works</h1>
+          <p>An independent, community-driven ranking &mdash; not affiliated with any official organization</p>
+        </div>
+      </section>
+
+      <!-- What is ADW Rating? -->
+      <section class="hiw-section">
+        <div class="container content-narrow">
+          <h2>What is ADW Rating?</h2>
+          <p>
+            ADW Rating is an independent rating system for dog agility teams worldwide. It ranks teams based on their competition results, providing a transparent and objective measure of performance across international events.
+          </p>
+          <p>
+            The system is not official and is not affiliated with FCI, AKC, USDAA, UKI, IFCS, WAO, or any other governing body. It is a community-driven project, open about its methodology so that anyone can understand how ratings are calculated.
+          </p>
+        </div>
+      </section>
+
+      <!-- How ratings are calculated -->
+      <section class="hiw-section hiw-section--alt">
+        <div class="container content-narrow">
+          <h2>How Ratings Are Calculated</h2>
+
+          <h3>The PlackettLuce Model</h3>
+          <p>
+            Ratings use the PlackettLuce model, a well-established statistical method for ranking based on ordered outcomes. In simple terms: each run is a head-to-head comparison. Beat strong teams and your rating goes up more. Lose to weaker teams and your rating goes down more.
+          </p>
+
+          <div class="hiw-callout">
+            <p>
+              Think of it like this: finishing 5th at a World Championship against the best teams in the world tells us more than finishing 1st at a small local trial. The model accounts for who you competed against, not just where you placed.
+            </p>
+          </div>
+
+          <div class="hiw-two-col">
+            <div class="hiw-affects-card hiw-affects-card--yes">
+              <h4>&#10003; What affects your rating</h4>
+              <ul>
+                <li>Your placement in each run</li>
+                <li>Strength of competitors in that run</li>
+                <li>Competition tier (Major events count more)</li>
+              </ul>
+            </div>
+            <div class="hiw-affects-card hiw-affects-card--no">
+              <h4>&#10007; What does NOT affect your rating</h4>
+              <ul>
+                <li>Time or faults directly (only placement matters)</li>
+                <li>Breed of dog</li>
+                <li>Country of origin</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>Rating Scale</h3>
+          <p>
+            Ratings are centered around <strong>1500</strong>, with higher values indicating better performance. Approximately 68% of teams fall between 1350 and 1650. Teams are classified into tiers based on their rating:
+          </p>
+          <ul>
+            <li><strong>Elite</strong> &mdash; the top performers, consistently beating strong competition</li>
+            <li><strong>Champion</strong> &mdash; strong competitors with proven results</li>
+            <li><strong>Expert</strong> &mdash; experienced teams with solid performances</li>
+            <li><strong>Competitor</strong> &mdash; active participants building their record</li>
+          </ul>
+
+          <h3>Size Categories</h3>
+          <p>
+            Dogs compete in four size categories: <strong>S</strong> (Small), <strong>M</strong> (Medium), <strong>I</strong> (Intermediate), and <strong>L</strong> (Large). Each dog competes in one category based on their height. When dogs from different categories meet in the same run (for example, at WAO events), they are all rated against each other. Display ratings are then normalized per category so they are comparable across S, M, I, and L.
+          </p>
+        </div>
+      </section>
+
+      <!-- Data Sources -->
+      <section class="hiw-section">
+        <div class="container content-narrow">
+          <h2>Data Sources</h2>
+          <p>
+            We include results from major international agility competitions spanning the last 2-3 years. Competition types currently tracked:
+          </p>
+
+          <div class="data-sources-grid">
+            <div class="data-source-tag">FCI</div>
+            <div class="data-source-tag">WAO</div>
+            <div class="data-source-tag">AKC</div>
+            <div class="data-source-tag">USDAA</div>
+            <div class="data-source-tag">UKI</div>
+            <div class="data-source-tag">IFCS</div>
+          </div>
+
+          <div class="hiw-callout">
+            <p>
+              Transparency note: not all competitions are included. Results data is manually imported from publicly available sources. We are continually expanding our coverage to include more events and organizations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Size Categories and Cross-Organization -->
+      <section class="hiw-section hiw-section--alt">
+        <div class="container content-narrow">
+          <h2>Size Categories and Cross-Organization Competitions</h2>
+          <p>
+            FCI uses four categories (S/M/I/L) based on the dog's height at the withers. Other organizations such as AKC, USDAA, and WAO use different height categories. Each dog is assigned to one FCI category based on their most recent run, and their rating appears in that category's leaderboard.
+          </p>
+          <p>
+            When a competition mixes dogs from different categories in one run (for example, WAO 500 includes both Intermediate and Large dogs), all competitors are rated against each other. The placement is real &mdash; they ran the same course.
+          </p>
+
+          <h3>Approximate Size Mapping</h3>
+          <table class="mapping-table">
+            <thead>
+              <tr>
+                <th>FCI Category</th>
+                <th>FCI Height</th>
+                <th>AKC</th>
+                <th>USDAA</th>
+                <th>WAO</th>
+                <th>UKI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="badge badge-size">S</span></td>
+                <td>&lt; 35 cm</td>
+                <td>8" / 12"</td>
+                <td>12"</td>
+                <td>250</td>
+                <td>250</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-size">M</span></td>
+                <td>35-43 cm</td>
+                <td>16"</td>
+                <td>16"</td>
+                <td>300</td>
+                <td>300</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-size">I</span></td>
+                <td>43-48 cm</td>
+                <td>20"</td>
+                <td>22"</td>
+                <td>400</td>
+                <td>400</td>
+              </tr>
+              <tr>
+                <td><span class="badge badge-size">L</span></td>
+                <td>&gt; 48 cm</td>
+                <td>24"</td>
+                <td>26"</td>
+                <td>500 / 600</td>
+                <td>500 / 600</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="hiw-callout">
+            <p>
+              <strong>AKC Preferred heights are excluded</strong> because dogs jump lower obstacles, making results incomparable with standard height competition.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Limitations and Disclaimers -->
+      <section class="hiw-section">
+        <div class="container content-narrow">
+          <h2>Limitations and Disclaimers</h2>
+          <p>
+            We believe in transparency. Here are the known limitations of the rating system:
+          </p>
+
+          <ul class="disclaimer-list">
+            <li>
+              ADW Rating is an independent project. It is not endorsed by or affiliated with FCI, AKC, USDAA, UKI, IFCS, or any other organization.
+            </li>
+            <li>
+              Ratings are only as good as the data. We rely on publicly available competition results. Errors in source data may affect ratings.
+            </li>
+            <li>
+              The non-FCI size category mapping is approximate. Dogs near category boundaries may be placed in a different category than expected.
+            </li>
+            <li>
+              Not all competitions are included. A team's true strength may not be fully reflected if they primarily compete at events not yet in our database.
+            </li>
+            <li>
+              Rating is based on placement, not absolute performance. A clean run at a weak competition may count less than a faulted run at a strong one.
+            </li>
+            <li>
+              When dogs from different size categories compete in the same run (e.g., at WAO), they are rated against each other directly. Because size categories mostly compete separately, the internal rating scales between categories may not be perfectly aligned. This has minimal impact &mdash; each category has its own leaderboard, and display ratings are normalized independently.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <div>
+            <div class="site-footer__brand mb-3">ADW <span>Rating</span></div>
+            <ul class="site-footer__links">
+              <li><a href="how-it-works.html">How it works</a></li>
+              <li><a href="layout.html">Rankings</a></li>
+              <li><a href="competitions.html">Competitions</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="site-footer__social">
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p class="site-footer__disclaimer">Data from major international agility competitions.</p>
+          <p class="site-footer__disclaimer">ADW Rating is an independent project &mdash; not affiliated with FCI, AKC, or any official organization.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
