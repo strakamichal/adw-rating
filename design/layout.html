@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADW Rating — Layout Prototype</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <style>
+    /* ============================================================
+       Layout-specific styles (candidates for pages.css)
+       ============================================================ */
+
+    /* Minimum page height: header + content + footer */
+    .page-wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .page-wrapper > main {
+      flex: 1;
+    }
+
+    /* ---- Hamburger menu (CSS-only, no JS) ---- */
+    .hamburger-toggle {
+      display: none; /* hidden checkbox */
+    }
+
+    .hamburger-label {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-header-text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: var(--space-2);
+      line-height: 1;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary-800);
+      box-shadow: var(--shadow-lg);
+      z-index: 99;
+      flex-direction: column;
+      padding: var(--space-2) 0;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: var(--space-3) var(--space-6);
+      color: var(--color-primary-200);
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      text-decoration: none;
+      transition: background-color var(--transition-fast), color var(--transition-fast);
+    }
+
+    .mobile-nav a:hover {
+      background-color: var(--color-primary-700);
+      color: var(--color-header-text);
+      text-decoration: none;
+    }
+
+    /* When checkbox is checked, show the mobile nav */
+    .hamburger-toggle:checked ~ .mobile-nav {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Mobile search icon toggle */
+    .search-toggle {
+      display: none; /* hidden checkbox */
+    }
+
+    .search-toggle-label {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--color-primary-200);
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: var(--space-2);
+      line-height: 1;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .search-toggle-label:hover {
+      color: var(--color-header-text);
+    }
+
+    .mobile-search-bar {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background-color: var(--color-primary-800);
+      padding: var(--space-3) var(--space-4);
+      box-shadow: var(--shadow-lg);
+      z-index: 98;
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: transform var(--transition-base), opacity var(--transition-base);
+    }
+
+    .search-toggle:checked ~ .mobile-search-bar {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mobile-search-bar .search-input__field {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: var(--color-text-inverse);
+    }
+
+    .mobile-search-bar .search-input__field::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .mobile-search-bar .search-input__field:focus {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-search-bar .search-input__icon {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 639px) {
+      .hamburger-label {
+        display: block;
+      }
+
+      .search-toggle-label {
+        display: block;
+      }
+
+      /* Hide desktop search on mobile */
+      .site-header__search {
+        display: none;
+      }
+
+      /* Hide desktop nav on mobile (already in components.css, reinforced here) */
+      .site-header__nav {
+        display: none;
+      }
+    }
+
+    @media (min-width: 640px) {
+      /* Always hide mobile nav & search on desktop */
+      .mobile-nav {
+        display: none !important;
+      }
+      .mobile-search-bar {
+        display: none !important;
+      }
+    }
+
+    /* ---- Footer multi-row layout ---- */
+    .site-footer__top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: var(--space-6);
+      margin-bottom: var(--space-6);
+    }
+
+    .site-footer__brand {
+      font-size: var(--font-size-h4);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+    }
+
+    .site-footer__brand span {
+      color: var(--color-secondary-500);
+    }
+
+    .site-footer__social {
+      display: flex;
+      gap: var(--space-4);
+      list-style: none;
+    }
+
+    .site-footer__social a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: var(--color-text-secondary);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      transition: color var(--transition-fast);
+    }
+
+    .site-footer__social a:hover {
+      color: var(--color-primary-500);
+      text-decoration: none;
+    }
+
+    .site-footer__social-icon {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .site-footer__bottom {
+      border-top: 1px solid var(--color-gray-200);
+      padding-top: var(--space-4);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    @media (max-width: 639px) {
+      .site-footer__top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .site-footer__bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ---- Placeholder content cards ---- */
+    .placeholder-card {
+      background-color: var(--color-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-6);
+      border: 1px solid var(--color-gray-100);
+    }
+
+    .placeholder-card__bar {
+      height: 12px;
+      background-color: var(--color-gray-200);
+      border-radius: var(--radius-sm);
+      margin-bottom: var(--space-3);
+    }
+
+    .placeholder-card__bar--short {
+      width: 60%;
+    }
+
+    .placeholder-card__bar--medium {
+      width: 80%;
+    }
+
+    .placeholder-card__bar--long {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+      <div class="container" style="position: relative;">
+
+        <!-- Logo -->
+        <a href="/" class="site-header__logo">
+          ADW <span>Rating</span>
+        </a>
+
+        <!-- Desktop nav links -->
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="/rankings" class="active">Rankings</a>
+          <a href="/competitions">Competitions</a>
+        </nav>
+
+        <!-- Desktop search -->
+        <div class="site-header__search">
+          <div class="search-input search-input--header">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+
+        <!-- Mobile: search icon toggle -->
+        <input type="checkbox" id="search-toggle" class="search-toggle" aria-hidden="true">
+        <label for="search-toggle" class="search-toggle-label hidden-desktop" aria-label="Toggle search">
+          &#128269;
+        </label>
+
+        <!-- Mobile: hamburger toggle -->
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-hidden="true">
+        <label for="hamburger-toggle" class="hamburger-label hidden-desktop" aria-label="Toggle menu">
+          &#9776;
+        </label>
+
+        <!-- Mobile navigation dropdown -->
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="/rankings">Rankings</a>
+          <a href="/competitions">Competitions</a>
+          <a href="/how-it-works">How it works</a>
+        </nav>
+
+        <!-- Mobile search bar (full-width, expands below header) -->
+        <div class="mobile-search-bar">
+          <div class="search-input">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+    <main>
+
+      <!-- Breadcrumbs -->
+      <div class="container">
+        <ol class="breadcrumbs mt-4">
+          <li><a href="/">Home</a></li>
+          <li>Rankings</li>
+        </ol>
+        <div class="breadcrumbs-mobile mt-4">
+          <a href="/">&larr; Back to Home</a>
+        </div>
+      </div>
+
+      <!-- Page heading -->
+      <div class="container mt-4">
+        <h1>Rankings</h1>
+        <p class="text-muted">The definitive leaderboard of agility teams worldwide.</p>
+      </div>
+
+      <!-- Placeholder filter bar -->
+      <div class="filter-bar mt-4">
+        <div class="container">
+          <div class="filter-group">
+            <span class="filter-group__label">Size</span>
+            <div class="pill-group">
+              <button class="pill">S</button>
+              <button class="pill">M</button>
+              <button class="pill">I</button>
+              <button class="pill active">L</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <span class="filter-group__label">Country</span>
+            <div class="dropdown">
+              <select class="dropdown__select">
+                <option>All Countries</option>
+                <option>Czech Republic</option>
+                <option>Germany</option>
+                <option>France</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary text -->
+      <div class="container">
+        <p class="summary-text">Showing 342 qualified teams in Large</p>
+      </div>
+
+      <!-- Placeholder stat cards -->
+      <div class="container">
+        <div class="grid-3 mb-8">
+          <div class="stat-card">
+            <div class="stat-card__value">1,247</div>
+            <div class="stat-card__label">Qualified Teams</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">86</div>
+            <div class="stat-card__label">Competitions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">24,531</div>
+            <div class="stat-card__label">Total Runs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder ranking cards -->
+      <div class="container">
+        <div class="section-header">
+          <h2>Top Teams</h2>
+          <a href="/rankings?size=L" class="section-header__link">View full rankings &rarr;</a>
+        </div>
+
+        <div class="grid-3 mb-8">
+          <div class="placeholder-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar--md">JS</div>
+              <div>
+                <div class="text-semibold">Jane Smith</div>
+                <div class="text-small text-muted">Flash</div>
+              </div>
+            </div>
+            <div class="flex-between">
+              <span class="data-number-md">1,847</span>
+              <span class="badge badge-elite">Elite</span>
+            </div>
+            <div class="trend trend-up text-small mt-2">&#9650; 3</div>
+          </div>
+
+          <div class="placeholder-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar--md">MK</div>
+              <div>
+                <div class="text-semibold">Maria Kovacs</div>
+                <div class="text-small text-muted">Blitz</div>
+              </div>
+            </div>
+            <div class="flex-between">
+              <span class="data-number-md">1,802</span>
+              <span class="badge badge-elite">Elite</span>
+            </div>
+            <div class="trend trend-down text-small mt-2">&#9660; 1</div>
+          </div>
+
+          <div class="placeholder-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="avatar avatar--md">PL</div>
+              <div>
+                <div class="text-semibold">Pierre Laurent</div>
+                <div class="text-small text-muted">Turbo</div>
+              </div>
+            </div>
+            <div class="flex-between">
+              <span class="data-number-md">1,756</span>
+              <span class="badge badge-champion">Champion</span>
+            </div>
+            <div class="trend trend-up text-small mt-2">&#9650; 7</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder paragraphs to test scroll behavior (sticky header) -->
+      <div class="container mb-8">
+        <h2>About the Rating</h2>
+        <p>
+          Ratings are based on the Plackett-Luce model, updated after each competition.
+          Higher rating equals stronger performance against tough competition. Ratings are
+          comparable across all size categories. Each run is a head-to-head comparison: beat
+          strong teams and your rating goes up more; lose to weaker teams and your rating
+          goes down more.
+        </p>
+        <p>
+          What affects rating: placement in each run, strength of competitors in that run,
+          and competition tier (Major events count more). What does not affect rating: time
+          or faults directly (only placement matters), breed, or country.
+        </p>
+        <p>
+          The rating scale is centered around 1500, with higher values indicating better
+          performance. Approximately 68% of teams fall between 1350 and 1650. Teams are
+          classified into tiers: Elite, Champion, Expert, and Competitor.
+        </p>
+        <p class="mt-4">
+          <a href="/how-it-works">Learn more about how the rating works &rarr;</a>
+        </p>
+      </div>
+
+      <!-- Extra content to demonstrate scroll / sticky -->
+      <div class="container mb-8">
+        <h2>Recent Competitions</h2>
+        <div class="competition-entry competition-entry--major">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">
+              Agility World Championship 2025
+              <span class="badge badge-major" style="margin-left: var(--space-2);">Major</span>
+            </div>
+            <div class="competition-entry__meta">
+              <span>Oct 3-6, 2025</span>
+              <span>Turin, Italy</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">248 teams</div>
+        </div>
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Moravia Open 2025</div>
+            <div class="competition-entry__meta">
+              <span>Sep 12-14, 2025</span>
+              <span>Brno, Czech Republic</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">186 teams</div>
+        </div>
+        <div class="competition-entry">
+          <div class="competition-entry__info">
+            <div class="competition-entry__name">Deutschen Meisterschaft 2025</div>
+            <div class="competition-entry__meta">
+              <span>Aug 22-24, 2025</span>
+              <span>Dortmund, Germany</span>
+            </div>
+          </div>
+          <div class="competition-entry__participants">210 teams</div>
+        </div>
+        <div class="mt-4">
+          <a href="/competitions">View all competitions &rarr;</a>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+      <div class="container">
+
+        <div class="site-footer__top">
+          <!-- Brand + nav links -->
+          <div>
+            <div class="site-footer__brand mb-3">ADW <span>Rating</span></div>
+            <ul class="site-footer__links">
+              <li><a href="/how-it-works">How it works</a></li>
+              <li><a href="/rankings">Rankings</a></li>
+              <li><a href="/competitions">Competitions</a></li>
+            </ul>
+          </div>
+
+          <!-- Social media -->
+          <div>
+            <ul class="site-footer__social">
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <p class="site-footer__disclaimer">
+            Data from major international agility competitions.
+          </p>
+          <p class="site-footer__disclaimer">
+            ADW Rating is an independent project &mdash; not affiliated with FCI, AKC, or any official organization.
+          </p>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
