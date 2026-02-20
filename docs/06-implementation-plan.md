@@ -518,7 +518,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `08-rating-rules.md` sections 2 and 3
 
-- [ ] **5.3a** Rating recalculation — display scaling and podium boost
+- [x] **5.3a** Rating recalculation — display scaling and podium boost
   - Add display scaling pipeline to `RatingService`: base rating (`DISPLAY_BASE + DISPLAY_SCALE * (mu - RATING_SIGMA_MULTIPLIER * sigma)`), podium boost (quality factor from top3 percentage).
   - Files: `Service/Rating/RatingService.cs`
   - Dependencies: 5.2

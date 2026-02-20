@@ -211,6 +211,41 @@ public class RatingService : IRatingService
         return (teamIds, ratings, ranks);
     }
 
+    /// <summary>
+    /// Computes the base display rating from mu/sigma.
+    /// rating_base = DISPLAY_BASE + DISPLAY_SCALE * (mu - RATING_SIGMA_MULTIPLIER * sigma)
+    /// </summary>
+    internal static float ComputeBaseRating(double mu, double sigma, RatingConfiguration config)
+    {
+        return (float)(config.DisplayBase + config.DisplayScale * (mu - config.RatingSigmaMultiplier * sigma));
+    }
+
+    /// <summary>
+    /// Computes the podium boost quality factor from top-3 placement percentage.
+    /// quality_norm = clamp(top3_pct / PODIUM_BOOST_TARGET, 0, 1)
+    /// quality_factor = PODIUM_BOOST_BASE + PODIUM_BOOST_RANGE * quality_norm
+    /// </summary>
+    internal static float ComputeQualityFactor(int runCount, int top3RunCount, RatingConfiguration config)
+    {
+        if (runCount == 0)
+            return config.PodiumBoostBase; // No runs → minimum factor
+
+        double top3Pct = (double)top3RunCount / runCount;
+        double qualityNorm = Math.Clamp(top3Pct / config.PodiumBoostTarget, 0.0, 1.0);
+        return (float)(config.PodiumBoostBase + config.PodiumBoostRange * qualityNorm);
+    }
+
+    /// <summary>
+    /// Computes the raw display rating (before cross-size normalization).
+    /// rating_raw = rating_base * quality_factor
+    /// </summary>
+    internal static float ComputeRawRating(double mu, double sigma, int runCount, int top3RunCount, RatingConfiguration config)
+    {
+        float baseRating = ComputeBaseRating(mu, sigma, config);
+        float qualityFactor = ComputeQualityFactor(runCount, top3RunCount, config);
+        return baseRating * qualityFactor;
+    }
+
     private static void ApplyStateToTeams(
         IReadOnlyList<Team> teams,
         Dictionary<int, TeamRatingState> teamState,
@@ -228,6 +263,10 @@ public class RatingService : IRatingService
             team.RunCount = state.RunCount;
             team.FinishedRunCount = state.FinishedRunCount;
             team.Top3RunCount = state.Top3RunCount;
+
+            // Display scaling + podium boost → raw rating (before normalization)
+            team.Rating = ComputeRawRating(state.Mu, state.Sigma, state.RunCount, state.Top3RunCount, config);
+            team.PrevRating = ComputeRawRating(state.PrevMu, state.PrevSigma, state.RunCount, state.Top3RunCount, config);
         }
     }
 

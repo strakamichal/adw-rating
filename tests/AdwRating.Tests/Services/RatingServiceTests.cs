@@ -313,6 +313,126 @@ public class RatingServiceTests
             "PrevMu should reflect state after first run, not initial state");
     }
 
+    #region Display Scaling & Podium Boost Tests (5.3a)
+
+    [Test]
+    public void ComputeBaseRating_KnownInputs_ReturnsExpectedValue()
+    {
+        // rating_base = 1000 + 40 * (25.0 - 1.0 * 8.333) = 1000 + 40 * 16.667 = 1666.68
+        float result = RatingService.ComputeBaseRating(25.0, 25.0 / 3, _defaultConfig);
+        Assert.That(result, Is.EqualTo(1666.67f).Within(1.0f));
+    }
+
+    [Test]
+    public void ComputeBaseRating_HigherMu_ProducesHigherRating()
+    {
+        float low = RatingService.ComputeBaseRating(20.0, 8.0, _defaultConfig);
+        float high = RatingService.ComputeBaseRating(30.0, 8.0, _defaultConfig);
+        Assert.That(high, Is.GreaterThan(low));
+    }
+
+    [Test]
+    public void ComputeBaseRating_HigherSigma_ProducesLowerRating()
+    {
+        float lowSigma = RatingService.ComputeBaseRating(25.0, 5.0, _defaultConfig);
+        float highSigma = RatingService.ComputeBaseRating(25.0, 10.0, _defaultConfig);
+        Assert.That(lowSigma, Is.GreaterThan(highSigma));
+    }
+
+    [Test]
+    public void ComputeQualityFactor_ZeroTop3_ReturnsBase()
+    {
+        // 0% top3 → quality_norm = 0 → factor = 0.85
+        float factor = RatingService.ComputeQualityFactor(10, 0, _defaultConfig);
+        Assert.That(factor, Is.EqualTo(0.85f).Within(0.001f));
+    }
+
+    [Test]
+    public void ComputeQualityFactor_FiftyPercentTop3_ReturnsMaxFactor()
+    {
+        // 50% top3 = PODIUM_BOOST_TARGET → quality_norm = 1.0 → factor = 0.85 + 0.20 = 1.05
+        float factor = RatingService.ComputeQualityFactor(10, 5, _defaultConfig);
+        Assert.That(factor, Is.EqualTo(1.05f).Within(0.001f));
+    }
+
+    [Test]
+    public void ComputeQualityFactor_AboveTarget_ClampedToMax()
+    {
+        // 80% top3 > 50% target → should still clamp to 1.05
+        float factor = RatingService.ComputeQualityFactor(10, 8, _defaultConfig);
+        Assert.That(factor, Is.EqualTo(1.05f).Within(0.001f));
+    }
+
+    [Test]
+    public void ComputeQualityFactor_TwentyFivePercentTop3_ReturnsMidFactor()
+    {
+        // 25% top3 / 50% target = 0.5 norm → factor = 0.85 + 0.20 * 0.5 = 0.95
+        float factor = RatingService.ComputeQualityFactor(20, 5, _defaultConfig);
+        Assert.That(factor, Is.EqualTo(0.95f).Within(0.001f));
+    }
+
+    [Test]
+    public void ComputeQualityFactor_ZeroRuns_ReturnsBase()
+    {
+        float factor = RatingService.ComputeQualityFactor(0, 0, _defaultConfig);
+        Assert.That(factor, Is.EqualTo(0.85f).Within(0.001f));
+    }
+
+    [Test]
+    public void ComputeRawRating_CombinesBaseAndQualityFactor()
+    {
+        // base = 1000 + 40 * (30 - 1.0 * 5) = 1000 + 40 * 25 = 2000
+        // top3_pct = 5/10 = 0.5 = target → factor = 1.05
+        // raw = 2000 * 1.05 = 2100
+        float raw = RatingService.ComputeRawRating(30.0, 5.0, 10, 5, _defaultConfig);
+        Assert.That(raw, Is.EqualTo(2100.0f).Within(1.0f));
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_SetsRatingFromDisplayScaling()
+    {
+        var teams = CreateTeams(6);
+        var competition = CreateCompetition(tier: 2);
+        var run = CreateRun(competition, teams.Count);
+        var results = CreateRunResults(run, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run }, results);
+
+        await _service.RecalculateAllAsync();
+
+        // Rating should be set (not zero) and winner should have higher rating
+        Assert.That(teams[0].Rating, Is.GreaterThan(0), "Rating should be computed");
+        Assert.That(teams[0].Rating, Is.GreaterThan(teams[5].Rating),
+            "Winner should have higher display rating than loser");
+    }
+
+    [Test]
+    public async Task RecalculateAllAsync_PrevRatingComputed()
+    {
+        var teams = CreateTeams(6);
+        var comp1 = CreateCompetition(tier: 2, daysAgo: 100);
+        var comp2 = CreateCompetition(tier: 2, daysAgo: 50);
+        var run1 = CreateRun(comp1, teams.Count, runId: 1);
+        var run2 = CreateRun(comp2, teams.Count, runId: 2);
+
+        var results1 = CreateRunResults(run1, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+        var results2 = CreateRunResults(run2, teams,
+            eliminated: new[] { false, false, false, false, false, false });
+
+        SetupMocks(teams, new[] { run1, run2 }, results1.Concat(results2).ToList());
+
+        await _service.RecalculateAllAsync();
+
+        // PrevRating should be set and differ from Rating
+        Assert.That(teams[0].PrevRating, Is.GreaterThan(0), "PrevRating should be computed");
+        Assert.That(teams[0].PrevRating, Is.Not.EqualTo(teams[0].Rating).Within(0.01f),
+            "PrevRating should differ from Rating after 2 runs");
+    }
+
+    #endregion
+
     #region Helper Methods
 
     private static List<Team> CreateTeams(int count, int idOffset = 0)
