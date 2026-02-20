@@ -230,10 +230,12 @@ public class IdentityResolutionService : IIdentityResolutionService
 
     public async Task<(Dog Dog, bool IsNew)> ResolveDogAsync(string rawDogName, string? breed, SizeCategory size, int handlerId)
     {
-        var normalizedFull = NameNormalizer.Normalize(rawDogName);
+        // Clean titles and suffixes: "A3Ch Dagny Ballarat (cp)" → "Dagny Ballarat"
+        var cleanedDogName = NameNormalizer.CleanDogName(rawDogName);
+        var normalizedFull = NameNormalizer.Normalize(cleanedDogName);
 
         // Extract call name from parentheses/quotes if present
-        var (extractedCallName, extractedRegistered) = NameNormalizer.ExtractCallName(rawDogName);
+        var (extractedCallName, extractedRegistered) = NameNormalizer.ExtractCallName(cleanedDogName);
         var normalizedCallName = extractedCallName is not null
             ? NameNormalizer.Normalize(extractedCallName)
             : null;
@@ -390,8 +392,15 @@ public class IdentityResolutionService : IIdentityResolutionService
         }
 
         // 5. No match — create new dog (prefer extracted call name)
-        var storedCallName = extractedCallName ?? rawDogName;
+        var storedCallName = extractedCallName ?? cleanedDogName;
         var storedNormalized = normalizedCallName ?? normalizedFull;
+        string? storedRegistered = extractedRegistered ?? (extractedCallName is not null ? cleanedDogName : null);
+
+        // Word-count heuristic: 3+ words without explicit call name → treat as registered name
+        if (extractedCallName is null && storedCallName.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length >= 3)
+        {
+            storedRegistered = storedCallName;
+        }
 
         _logger.LogInformation("Dog '{RawName}' not found, creating new record with CallName='{CallName}'",
             rawDogName, storedCallName);
@@ -400,7 +409,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         {
             CallName = storedCallName,
             NormalizedCallName = storedNormalized,
-            RegisteredName = extractedRegistered ?? (extractedCallName is not null ? rawDogName : null),
+            RegisteredName = storedRegistered,
             Breed = breed,
             SizeCategory = size
         });

@@ -69,6 +69,47 @@ public static class NameNormalizer
     }
 
     /// <summary>
+    /// Strips known agility title prefixes from a dog name.
+    /// "A3Ch Dagny Ballarat" → "Dagny Ballarat", "Ag Ch Bibbien" → "Bibbien"
+    /// </summary>
+    public static string StripDogTitles(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return name;
+
+        // Strip leading title prefixes (case-insensitive)
+        var stripped = Regex.Replace(name.Trim(), @"^(A3Ch|Ag\.?\s*Ch\.?|AGCh|MACH\d*|PACH\d*|GCh|C\.A\.C\.T)\s+", "", RegexOptions.IgnoreCase);
+        return stripped.Length > 0 ? stripped : name.Trim();
+    }
+
+    /// <summary>
+    /// Strips trailing metadata tags like (cp), (FCI), (None) from dog names.
+    /// "BECKY G (cp)" → "BECKY G"
+    /// </summary>
+    public static string StripDogSuffixes(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return name;
+
+        // Remove known trailing parenthetical suffixes
+        var stripped = Regex.Replace(name.Trim(), @"\s*\((cp|FCI|FCI registration|AKC|KC|UKC|CKC|None)\)\s*$", "", RegexOptions.IgnoreCase);
+        return stripped.Length > 0 ? stripped : name.Trim();
+    }
+
+    /// <summary>
+    /// Full dog name cleanup: strip titles, suffixes, normalize whitespace.
+    /// </summary>
+    public static string CleanDogName(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            return name;
+
+        var cleaned = StripDogTitles(name);
+        cleaned = StripDogSuffixes(cleaned);
+        return Regex.Replace(cleaned.Trim(), @"\s+", " ");
+    }
+
+    /// <summary>
     /// Extracts a call name from a dog name that may contain a registered name
     /// with the call name in parentheses or double quotes.
     /// Examples:

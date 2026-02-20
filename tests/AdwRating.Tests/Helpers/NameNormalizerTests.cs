@@ -195,4 +195,44 @@ public class NameNormalizerTests
         var result = NameNormalizer.CleanDisplayName(input);
         Assert.That(result, Is.EqualTo(expected));
     }
+
+    // StripDogTitles tests
+
+    [TestCase("A3Ch Dagny Ballarat", "Dagny Ballarat")]
+    [TestCase("Ag Ch Bibbien", "Bibbien")]
+    [TestCase("Ag. Ch. Bibbien", "Bibbien")]
+    [TestCase("AGCh Fido", "Fido")]
+    [TestCase("MACH2 Turbo", "Turbo")]
+    [TestCase("Rex", "Rex")]
+    [TestCase("a3ch lowercase", "lowercase")]
+    public void StripDogTitles_RemovesTitlePrefixes(string input, string expected)
+    {
+        var result = NameNormalizer.StripDogTitles(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    // StripDogSuffixes tests
+
+    [TestCase("BECKY G (cp)", "BECKY G")]
+    [TestCase("Some Dog (FCI)", "Some Dog")]
+    [TestCase("Granda (None)", "Granda")]
+    [TestCase("Rex", "Rex")]
+    [TestCase("Let's Rock (FCI registration)", "Let's Rock")]
+    public void StripDogSuffixes_RemovesMetadataTags(string input, string expected)
+    {
+        var result = NameNormalizer.StripDogSuffixes(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    // CleanDogName tests
+
+    [TestCase("A3Ch Dagny Ballarat (cp)", "Dagny Ballarat")]
+    [TestCase("BECKY G (cp)", "BECKY G")]
+    [TestCase("Ag Ch Rex (FCI)", "Rex")]
+    [TestCase("Simple Name", "Simple Name")]
+    public void CleanDogName_StripsAllJunk(string input, string expected)
+    {
+        var result = NameNormalizer.CleanDogName(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
 }
