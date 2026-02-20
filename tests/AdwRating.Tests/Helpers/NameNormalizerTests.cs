@@ -69,6 +69,18 @@ public class NameNormalizerTests
         Assert.That(result, Is.EqualTo("first last"));
     }
 
+    [TestCase("Jessi Jessi", "jessi")]
+    [TestCase("Lucky Lucky", "lucky")]
+    [TestCase("word word word", "word")]
+    [TestCase("hello world world", "hello world")]
+    [TestCase("hello hello world", "hello world")]
+    [TestCase("hello world", "hello world")]
+    public void Normalize_DeduplicatesConsecutiveWords(string input, string expected)
+    {
+        var result = NameNormalizer.Normalize(input);
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
     [Test]
     public void Normalize_CollapsesVariousWhitespace()
     {
@@ -140,6 +152,22 @@ public class NameNormalizerTests
     {
         // Single char in parens is too short to be a call name
         var (callName, _) = NameNormalizer.ExtractCallName("Some Dog (X)");
+        Assert.That(callName, Is.Null);
+    }
+
+    [Test]
+    public void ExtractCallName_Cp_IsIgnored()
+    {
+        // (cp) = Italian "conduttore proprietario", not a call name
+        var (callName, _) = NameNormalizer.ExtractCallName("BECKY G (cp)");
+        Assert.That(callName, Is.Null);
+    }
+
+    [Test]
+    public void ExtractCallName_None_IsIgnored()
+    {
+        // (None) = no call name provided, not a call name
+        var (callName, _) = NameNormalizer.ExtractCallName("Granda (None)");
         Assert.That(callName, Is.Null);
     }
 }

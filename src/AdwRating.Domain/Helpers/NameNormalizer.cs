@@ -27,6 +27,7 @@ public static class NameNormalizer
         normalized = StripDiacritics(normalized);
         normalized = normalized.ToLowerInvariant().Trim();
         normalized = Regex.Replace(normalized, @"\s+", " ");
+        normalized = DeduplicateConsecutiveWords(normalized);
 
         return normalized;
     }
@@ -70,7 +71,9 @@ public static class NameNormalizer
         // Ignored parenthetical tokens (not call names)
         var ignored = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
-            "FCI", "FCI registration", "AKC", "KC", "UKC", "CKC"
+            "FCI", "FCI registration", "AKC", "KC", "UKC", "CKC",
+        "cp",   // Italian: conduttore proprietario (handler is the owner)
+        "None"  // No call name provided
         };
 
         // Try double-quoted call name: Registered Name ""CallName""
@@ -101,6 +104,24 @@ public static class NameNormalizer
         }
 
         return (null, null);
+    }
+
+    /// <summary>
+    /// Collapses consecutive duplicate words: "jessi jessi" → "jessi".
+    /// Only removes exact consecutive repeats, not non-adjacent duplicates.
+    /// </summary>
+    private static string DeduplicateConsecutiveWords(string text)
+    {
+        var words = text.Split(' ');
+        var result = new List<string>(words.Length) { words[0] };
+
+        for (int i = 1; i < words.Length; i++)
+        {
+            if (!string.Equals(words[i], words[i - 1], StringComparison.Ordinal))
+                result.Add(words[i]);
+        }
+
+        return string.Join(' ', result);
     }
 
     private static string StripDiacritics(string text)
