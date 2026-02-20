@@ -21,6 +21,11 @@ public class Run
 
     public string? OriginalSizeCategory { get; set; }
 
+    /// <summary>
+    /// When true, this run is excluded from rating calculation (e.g. lower-level domestic classes).
+    /// </summary>
+    public bool IsExcluded { get; set; }
+
     // Navigation properties
     public Competition Competition { get; set; } = null!;
     public ICollection<RunResult> RunResults { get; set; } = new List<RunResult>();
