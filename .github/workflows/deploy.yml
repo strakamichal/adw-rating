@@ -1,4 +1,4 @@
-name: Build & Push
+name: Build, Push & Deploy
 
 on:
   push:
@@ -45,3 +45,16 @@ jobs:
           file: Dockerfile.web
           push: true
           tags: ghcr.io/${{ github.repository }}/web:latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build-api, build-web]
+    steps:
+      - name: Deploy API
+        run: |
+          curl -sf -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
+            "http://46.225.216.96:8000/api/v1/deploy?uuid=${{ secrets.COOLIFY_API_UUID }}&force=false"
+      - name: Deploy Web
+        run: |
+          curl -sf -H "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}" \
+            "http://46.225.216.96:8000/api/v1/deploy?uuid=${{ secrets.COOLIFY_WEB_UUID }}&force=false"

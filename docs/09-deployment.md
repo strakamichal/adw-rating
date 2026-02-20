@@ -40,7 +40,17 @@ push to main → GitHub Actions → build Dockerfile.api → ghcr.io/.../api:lat
                                → build Dockerfile.web → ghcr.io/.../web:latest
 ```
 
-Coolify can auto-deploy when a new image appears (enable "Auto Deploy" per service), or you deploy manually from the Coolify UI.
+Coolify does **not** automatically detect new images in the registry. To trigger deploys after CI pushes new images, add webhook calls to the GitHub Actions workflow. Each Coolify service has a webhook URL (found in the service's "Webhooks" tab):
+
+```yaml
+- name: Deploy API
+  run: curl -s "${{ secrets.COOLIFY_WEBHOOK_API }}"
+
+- name: Deploy Web
+  run: curl -s "${{ secrets.COOLIFY_WEBHOOK_WEB }}"
+```
+
+Store the webhook URLs as GitHub repository secrets (`COOLIFY_WEBHOOK_API`, `COOLIFY_WEBHOOK_WEB`). Alternatively, deploy manually from the Coolify UI.
 
 ## Environment variables
 
@@ -98,6 +108,7 @@ Connects as the app user and runs `Database.MigrateAsync()`. This:
    - Image: `ghcr.io/<owner>/adw-rating/api:latest`
    - Domain: `api.adwrating.example.com`
    - Ports Exposes: `8080`
+   - **Container Name**: `adwrating-api` (General tab — this becomes the stable hostname on the Docker network)
    - Health check: HTTP GET `/health`
    - Set environment variables (see table above)
 3. **Deploy API first** — wait until healthy (migrations create all tables)
@@ -106,12 +117,13 @@ Connects as the app user and runs `Database.MigrateAsync()`. This:
    - Image: `ghcr.io/<owner>/adw-rating/web:latest`
    - Domain: `adwrating.example.com`
    - Ports Exposes: `8080`
+   - **Container Name**: `adwrating-web`
    - Set environment variables (see table above)
-   - `ApiBaseUrl` — use the internal container hostname of the API (visible in Coolify after API deploy)
+   - `ApiBaseUrl` = `http://adwrating-api:8080` (uses the container name set above)
 6. **Deploy Web**
 7. Verify: open `https://adwrating.example.com` in browser
 
-Both services **must be in the same Coolify project** to share a Docker network.
+Both services **must be in the same Coolify project** to share a Docker network (`coolify`). Without explicit container names, Coolify generates random hostnames that change on every redeploy — always set a fixed container name.
 
 ## Seeding data
 
