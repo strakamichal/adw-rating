@@ -35,7 +35,7 @@
             <div class="filter-group">
                 <span class="filter-group__label">Size</span>
                 <div class="pill-group">
-                    @foreach (var s in new[] { "S", "M", "I", "L" })
+                    @foreach (var s in new[] { "L", "I", "M", "S" })
                     {
                         <a class="pill@(s == _sizeCategory.ToString() ? " active" : "")"
                            href="@BuildUrl(size: s, page: 1)">@s</a>
@@ -70,7 +70,7 @@
             </div>
             <!-- Hidden fields to preserve filter state on form submit -->
             <input type="hidden" name="size" value="@Size" />
-            <input type="hidden" name="pageSize" value="@(PageSize ?? 20)" />
+            <input type="hidden" name="pageSize" value="@(PageSize ?? 50)" />
         </form>
     </div>
 </div>
@@ -124,9 +124,8 @@
                             </td>
                             <td class="col-number">
                                 <div class="cell-rating__value">@team.Rating.ToString("N0")</div>
-                                <div class="cell-rating__sigma">&plusmn; @team.Sigma.ToString("N0")</div>
                             </td>
-                            <td>
+                            <td style="white-space: nowrap;">
                                 @if (team.TierLabel != null)
                                 {
                                     <span class="badge badge-@team.TierLabel.Value.ToString().ToLowerInvariant()">@team.TierLabel</span>
@@ -253,7 +252,7 @@
     {
         _sizeCategory = Enum.TryParse<SizeCategory>(Size, true, out var s) ? s : SizeCategory.L;
         _page = Page ?? 1;
-        _pageSize = PageSize ?? 20;
+        _pageSize = PageSize ?? 50;
 
         var filter = new RankingFilter(
             _sizeCategory,
@@ -284,7 +283,7 @@
             url += $"&search={Uri.EscapeDataString(Search)}";
         if (p > 1)
             url += $"&page={p}";
-        if (_pageSize != 20)
+        if (_pageSize != 50)
             url += $"&pageSize={_pageSize}";
         return url;
     }

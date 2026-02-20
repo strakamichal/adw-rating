@@ -58,16 +58,16 @@
 
     <!-- Mobile: size tabs -->
     <div class="size-tabs pill-group mb-4">
-        <a class="pill active" href="#" onclick="switchTab('small', this); return false;">S</a>
-        <a class="pill" href="#" onclick="switchTab('medium', this); return false;">M</a>
+        <a class="pill active" href="#" onclick="switchTab('large', this); return false;">L</a>
         <a class="pill" href="#" onclick="switchTab('intermediate', this); return false;">I</a>
-        <a class="pill" href="#" onclick="switchTab('large', this); return false;">L</a>
+        <a class="pill" href="#" onclick="switchTab('medium', this); return false;">M</a>
+        <a class="pill" href="#" onclick="switchTab('small', this); return false;">S</a>
     </div>
 
     <div class="grid-4">
         @foreach (var col in _spotlightColumns)
         {
-            <div class="size-tab-content@(col.SizeCode == "S" ? " active" : "")" id="tab-@col.TabId">
+            <div class="size-tab-content@(col.SizeCode == "L" ? " active" : "")" id="tab-@col.TabId">
                 <div class="spotlight-col__title"><span class="badge badge-size">@col.SizeCode</span> @col.SizeName</div>
                 @for (var i = 0; i < col.Teams.Count; i++)
                 {
@@ -198,10 +198,10 @@
         _summary = summaryTask.Result;
         _spotlightColumns =
         [
-            new("small", "S", "Small", smallTask.Result.Items),
-            new("medium", "M", "Medium", mediumTask.Result.Items),
-            new("intermediate", "I", "Intermediate", intermediateTask.Result.Items),
             new("large", "L", "Large", largeTask.Result.Items),
+            new("intermediate", "I", "Intermediate", intermediateTask.Result.Items),
+            new("medium", "M", "Medium", mediumTask.Result.Items),
+            new("small", "S", "Small", smallTask.Result.Items),
         ];
         _recentCompetitions = competitionsTask.Result;
         _loaded = true;

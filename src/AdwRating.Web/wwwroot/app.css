@@ -1,7 +1,24 @@
 /* App-specific overrides (beyond the design system CSS files) */
 
-h1:focus {
+h1:focus,
+h2:focus,
+h3:focus,
+h4:focus,
+h5:focus,
+h6:focus,
+p:focus,
+div:focus,
+section:focus {
     outline: none;
+}
+
+h1:focus-visible,
+h2:focus-visible,
+h3:focus-visible,
+h4:focus-visible,
+h5:focus-visible,
+h6:focus-visible {
+    outline: revert;
 }
 
 .blazor-error-boundary {
