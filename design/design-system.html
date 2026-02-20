@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADW Rating — Design System</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <style>
+    /* Design-system-page-only styles */
+    .ds-section {
+      margin-bottom: var(--space-16);
+    }
+    .ds-section > h2 {
+      font-size: var(--font-size-h2);
+      color: var(--color-primary-700);
+      border-bottom: 2px solid var(--color-primary-100);
+      padding-bottom: var(--space-2);
+      margin-bottom: var(--space-6);
+    }
+    .ds-subsection {
+      margin-bottom: var(--space-8);
+    }
+    .ds-subsection > h3 {
+      font-size: var(--font-size-h4);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-4);
+    }
+    .ds-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      align-items: flex-start;
+      margin-bottom: var(--space-4);
+    }
+    .ds-swatch {
+      width: 80px;
+      text-align: center;
+    }
+    .ds-swatch__color {
+      width: 80px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-gray-200);
+      margin-bottom: var(--space-1);
+    }
+    .ds-swatch__label {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-secondary);
+      line-height: var(--line-height-tight);
+    }
+    .ds-spacer {
+      height: var(--space-6);
+    }
+    .ds-demo-box {
+      padding: var(--space-4);
+      background: var(--color-surface);
+      border: 1px solid var(--color-gray-100);
+      border-radius: var(--radius-md);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER DEMO
+       ============================================================ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="site-header__logo">ADW <span>Rating</span></a>
+      <nav>
+        <ul class="site-header__nav">
+          <li><a href="#" class="active">Rankings</a></li>
+          <li><a href="#">Competitions</a></li>
+          <li><a href="#">How It Works</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__search">
+        <div class="search-input search-input--header">
+          <span class="search-input__icon">&#x1F50D;</span>
+          <input type="text" class="search-input__field" placeholder="Search teams, handlers...">
+        </div>
+      </div>
+      <button class="site-header__hamburger" aria-label="Menu">&#9776;</button>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
+
+    <h1 class="mb-8">ADW Rating Design System</h1>
+    <p class="text-muted mb-12">Visual reference for all design tokens and reusable components. Open this file in a browser to preview.</p>
+
+    <!-- ============================================================
+         1. COLOR PALETTE
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>1. Color Palette</h2>
+
+      <div class="ds-subsection">
+        <h3>Primary</h3>
+        <div class="ds-row">
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-900);"></div>
+            <div class="ds-swatch__label">900</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-800);"></div>
+            <div class="ds-swatch__label">800</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-700);"></div>
+            <div class="ds-swatch__label">700</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-600);"></div>
+            <div class="ds-swatch__label">600</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-500);"></div>
+            <div class="ds-swatch__label">500 (main)</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-400);"></div>
+            <div class="ds-swatch__label">400</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-300);"></div>
+            <div class="ds-swatch__label">300</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-200);"></div>
+            <div class="ds-swatch__label">200</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-100);"></div>
+            <div class="ds-swatch__label">100</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-primary-50);"></div>
+            <div class="ds-swatch__label">50</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Secondary / Accent</h3>
+        <div class="ds-row">
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-secondary-600);"></div>
+            <div class="ds-swatch__label">600</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-secondary-500);"></div>
+            <div class="ds-swatch__label">500 (main)</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-secondary-400);"></div>
+            <div class="ds-swatch__label">400</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-secondary-300);"></div>
+            <div class="ds-swatch__label">300</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-secondary-200);"></div>
+            <div class="ds-swatch__label">200</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-secondary-100);"></div>
+            <div class="ds-swatch__label">100</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Neutrals</h3>
+        <div class="ds-row">
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-950);"></div>
+            <div class="ds-swatch__label">950</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-900);"></div>
+            <div class="ds-swatch__label">900</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-800);"></div>
+            <div class="ds-swatch__label">800</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-700);"></div>
+            <div class="ds-swatch__label">700</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-600);"></div>
+            <div class="ds-swatch__label">600</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-500);"></div>
+            <div class="ds-swatch__label">500</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-400);"></div>
+            <div class="ds-swatch__label">400</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-300);"></div>
+            <div class="ds-swatch__label">300</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-200);"></div>
+            <div class="ds-swatch__label">200</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-100);"></div>
+            <div class="ds-swatch__label">100</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-gray-50);"></div>
+            <div class="ds-swatch__label">50</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Tier Colors</h3>
+        <div class="ds-row">
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-tier-elite);"></div>
+            <div class="ds-swatch__label">Elite (Gold)</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-tier-champion);"></div>
+            <div class="ds-swatch__label">Champion (Silver)</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-tier-expert);"></div>
+            <div class="ds-swatch__label">Expert (Bronze)</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-tier-competitor);"></div>
+            <div class="ds-swatch__label">Competitor</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Trend &amp; Status Colors</h3>
+        <div class="ds-row">
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-trend-up);"></div>
+            <div class="ds-swatch__label">Up (Green)</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-trend-down);"></div>
+            <div class="ds-swatch__label">Down (Red)</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-trend-unchanged);"></div>
+            <div class="ds-swatch__label">Unchanged</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-trend-new);"></div>
+            <div class="ds-swatch__label">New (Blue)</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-success);"></div>
+            <div class="ds-swatch__label">Success</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-warning);"></div>
+            <div class="ds-swatch__label">Warning</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-error);"></div>
+            <div class="ds-swatch__label">Error</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-info);"></div>
+            <div class="ds-swatch__label">Info</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Rank Accents (Podium)</h3>
+        <div class="ds-row">
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-rank-gold);"></div>
+            <div class="ds-swatch__label">#1 Gold</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-rank-silver);"></div>
+            <div class="ds-swatch__label">#2 Silver</div>
+          </div>
+          <div class="ds-swatch">
+            <div class="ds-swatch__color" style="background: var(--color-rank-bronze);"></div>
+            <div class="ds-swatch__label">#3 Bronze</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. TYPOGRAPHY
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>2. Typography</h2>
+
+      <div class="ds-subsection">
+        <h3>Heading Scale</h3>
+        <div class="ds-demo-box">
+          <h1 class="mb-4">h1 — The Global Agility Rating (2rem / 32px)</h1>
+          <h2 class="mb-4">h2 — Large Rankings (1.625rem / 26px)</h2>
+          <h3 class="mb-4">h3 — Team Profile Section (1.375rem / 22px)</h3>
+          <h4 class="mb-4">h4 — Competition Name (1.125rem / 18px)</h4>
+          <h5 class="mb-3">h5 — Subsection Heading (1rem / 16px)</h5>
+          <h6 class="mb-0">h6 — Label Heading (0.875rem / 14px)</h6>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Body &amp; Small Text</h3>
+        <div class="ds-demo-box">
+          <p style="font-size: var(--font-size-base);">Body text (16px) — Ratings are based on the PlackettLuce model, updated after each competition. Higher rating = stronger performance against tough competition.</p>
+          <p class="text-small text-muted">Small text (14px) — Oct 3-6, 2024 | Prague, Czech Republic</p>
+          <p style="font-size: var(--font-size-xs);" class="text-light mb-0">Extra small text (12px) — Last updated 3 days ago</p>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Data / Numbers</h3>
+        <div class="ds-demo-box">
+          <div class="ds-row" style="align-items: baseline;">
+            <span class="data-number-xl">1,687</span>
+            <span class="data-number-lg">1,523</span>
+            <span class="data-number-md">1,412</span>
+            <span class="data-number">1,308</span>
+          </div>
+          <p class="text-small text-muted mt-4 mb-0">All numeric data uses tabular-nums for aligned columns in tables.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. BUTTONS
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>3. Buttons</h2>
+
+      <div class="ds-row">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-secondary">Secondary</button>
+        <button class="btn btn-ghost">Ghost</button>
+        <button class="btn btn-primary btn-sm">Small Primary</button>
+        <button class="btn btn-secondary btn-sm">Small Secondary</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. PILLS / TABS
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>4. Pills / Tabs</h2>
+
+      <div class="ds-subsection">
+        <h3>Size Category Selector</h3>
+        <div class="pill-group">
+          <button class="pill">S</button>
+          <button class="pill">M</button>
+          <button class="pill">I</button>
+          <button class="pill active">L</button>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Year Filter</h3>
+        <div class="pill-group">
+          <button class="pill active">2026</button>
+          <button class="pill">2025</button>
+          <button class="pill">2024</button>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Tier Filter</h3>
+        <div class="pill-group">
+          <button class="pill active">All</button>
+          <button class="pill">Major</button>
+          <button class="pill">Standard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. BADGES
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>5. Badges</h2>
+
+      <div class="ds-row">
+        <span class="badge badge-elite">Elite</span>
+        <span class="badge badge-champion">Champion</span>
+        <span class="badge badge-expert">Expert</span>
+        <span class="badge badge-competitor">Competitor</span>
+      </div>
+      <div class="ds-spacer"></div>
+      <div class="ds-row">
+        <span class="badge badge-new">NEW</span>
+        <span class="badge badge-few-runs">FEW RUNS</span>
+        <span class="badge badge-inactive">INACTIVE</span>
+        <span class="badge badge-major">Major</span>
+        <span class="badge badge-elim">ELIM</span>
+        <span class="badge badge-size">L</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         6. TREND INDICATORS
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>6. Trend Indicators</h2>
+
+      <div class="ds-row" style="gap: var(--space-6);">
+        <span class="trend trend-up">&#9650; 5</span>
+        <span class="trend trend-down">&#9660; 3</span>
+        <span class="trend trend-unchanged">&mdash;</span>
+        <span class="badge badge-new">NEW</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. AVATAR
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>7. Avatar</h2>
+
+      <div class="ds-row" style="align-items: center;">
+        <div class="avatar avatar--sm">JS</div>
+        <div class="avatar avatar--md">JS</div>
+        <div class="avatar avatar--lg">JS</div>
+        <div class="avatar avatar--xl">JS</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         8. CARDS
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>8. Cards</h2>
+
+      <div class="ds-subsection">
+        <h3>Stat Cards (Summary Row)</h3>
+        <div class="grid-3">
+          <div class="stat-card">
+            <div class="stat-card__value">2,847</div>
+            <div class="stat-card__label">Qualified Teams</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">156</div>
+            <div class="stat-card__label">Competitions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">48,203</div>
+            <div class="stat-card__label">Total Runs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Stat Cards with Context (Team Quick Stats)</h3>
+        <div class="grid-4">
+          <div class="stat-card">
+            <div class="stat-card__value">47</div>
+            <div class="stat-card__label">Runs</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">94%</div>
+            <div class="stat-card__label">Finish Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">38%</div>
+            <div class="stat-card__label">Podium Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__value">3.2</div>
+            <div class="stat-card__label">Avg Rank</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-subsection">
+        <h3>Team Cards (Spotlight)</h3>
+        <div class="grid-4">
+          <a href="#" class="team-card team-card--rank-1">
+            <div class="flex-between mb-2">
+              <span class="team-card__rank">#1</span>
+              <span class="badge badge-elite">Elite</span>
+            </div>
+            <div class="team-card__handler">Lisa Frick &#127462;&#127481;</div>
+            <div class="team-card__dog">Jack</div>
+            <div class="team-card__rating mt-2">1,812</div>
+          </a>
+          <a href="#" class="team-card team-card--rank-2">
+            <div class="flex-between mb-2">
+              <span class="team-card__rank">#2</span>
+              <span class="badge badge-elite">Elite</span>
+            </div>
+            <div class="team-card__handler">Tereza Kralova &#127464;&#127487;</div>
+            <div class="team-card__dog">Mia</div>
+            <div class="team-card__rating mt-2">1,798</div>
+          </a>
+          <a href="#" class="team-card team-card--rank-3">
+            <div class="flex-between mb-2">
+              <span class="team-card__rank">#3</span>
+              <span class="badge badge-champion">Champion</span>
+            </div>
+            <div class="team-card__handler">Tobias Wuest &#127465;&#127466;</div>
+            <div class="team-card__dog">Fury</div>
+            <div class="team-card__rating mt-2">1,756</div>
+          </a>
+          <a href="#" class="team-card">
+            <div class="flex-between mb-2">
+              <span class="team-card__rank text-light">#4</span>
+              <span class="badge badge-champion">Champion</span>
+            </div>
+            <div class="team-card__handler">Martina Klimesova &#127464;&#127487;</div>
+            <div class="team-card__dog">Kiki</div>
+            <div class="team-card__rating mt-2">1,723</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         9. HERO CARD (Team Profile)
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>9. Hero Card (Team Profile)</h2>
+
+      <div class="hero-card mb-6">
+        <div class="hero-card__left">
+          <div class="avatar avatar--xl avatar--hero">TK</div>
+          <div class="hero-card__handler">Tereza Kralova &#127464;&#127487;</div>
+          <div class="hero-card__dog">Mia</div>
+          <div class="hero-card__meta">Border Collie &middot; Large</div>
+        </div>
+        <div class="hero-card__right">
+          <div class="hero-card__rating">1,798</div>
+          <div class="hero-card__sigma">&plusmn; 42</div>
+          <span class="badge badge-elite" style="align-self: flex-end;">Elite</span>
+          <div class="hero-card__trend hero-card__trend--up" style="align-self: flex-end;">+23 &#9650;</div>
+          <div class="hero-card__peak" style="align-self: flex-end;">Peak: 1,812</div>
+        </div>
+      </div>
+
+      <h3 class="text-muted mb-4">Hero Card with FEW RUNS badge</h3>
+      <div class="hero-card mb-6">
+        <div class="hero-card__left">
+          <div class="avatar avatar--xl avatar--hero">JN</div>
+          <div class="hero-card__handler">Jan Novak &#127464;&#127487;</div>
+          <div class="hero-card__dog">Rex</div>
+          <div class="hero-card__meta">Border Collie &middot; Medium <span class="badge badge-few-runs" style="margin-left: var(--space-2);">FEW RUNS</span></div>
+        </div>
+        <div class="hero-card__right">
+          <div class="hero-card__rating">1,423</div>
+          <div class="hero-card__sigma">&plusmn; 98</div>
+          <span class="badge badge-expert" style="align-self: flex-end;">Expert</span>
+          <div class="hero-card__trend hero-card__trend--down" style="align-self: flex-end;">-12 &#9660;</div>
+        </div>
+      </div>
+
+      <h3 class="text-muted mb-4">Hero Card — Inactive Team</h3>
+      <div class="hero-card" style="opacity: 0.75;">
+        <div class="hero-card__banner hero-card__banner--inactive">INACTIVE</div>
+        <div class="hero-card__left">
+          <div class="avatar avatar--xl avatar--hero">MK</div>
+          <div class="hero-card__handler">Martin Kovar &#127464;&#127487;</div>
+          <div class="hero-card__dog">Benny</div>
+          <div class="hero-card__meta">Shetland Sheepdog &middot; Small</div>
+        </div>
+        <div class="hero-card__right">
+          <div class="hero-card__rating">1,356</div>
+          <div class="hero-card__sigma">&plusmn; 120</div>
+          <span class="badge badge-inactive" style="align-self: flex-end;">INACTIVE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         10. DATA TABLE (Rankings)
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>10. Data Table (Rankings)</h2>
+
+      <div class="summary-text">Showing 342 qualified teams in Large</div>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Trend</th>
+              <th>Team</th>
+              <th>Rating</th>
+              <th>Tier</th>
+              <th class="col-number">Runs</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="rank-1 tier-elite clickable">
+              <td class="cell-rank">1</td>
+              <td><span class="trend trend-up">&#9650; 2</span></td>
+              <td>
+                <div class="cell-team">
+                  <span class="cell-team__handler">Lisa Frick &#127462;&#127481;</span>
+                  <span class="cell-team__dog">Jack</span>
+                </div>
+              </td>
+              <td>
+                <div class="cell-rating__value">1,812</div>
+                <div class="cell-rating__sigma">&plusmn; 38</div>
+              </td>
+              <td><span class="badge badge-elite">Elite</span></td>
+              <td class="col-number">52</td>
+            </tr>
+            <tr class="rank-2 tier-elite clickable">
+              <td class="cell-rank">2</td>
+              <td><span class="trend trend-down">&#9660; 1</span></td>
+              <td>
+                <div class="cell-team">
+                  <span class="cell-team__handler">Tereza Kralova &#127464;&#127487;</span>
+                  <span class="cell-team__dog">Mia</span>
+                </div>
+              </td>
+              <td>
+                <div class="cell-rating__value">1,798</div>
+                <div class="cell-rating__sigma">&plusmn; 42</div>
+              </td>
+              <td><span class="badge badge-elite">Elite</span></td>
+              <td class="col-number">47</td>
+            </tr>
+            <tr class="rank-3 tier-champion clickable">
+              <td class="cell-rank">3</td>
+              <td><span class="trend trend-unchanged">&mdash;</span></td>
+              <td>
+                <div class="cell-team">
+                  <span class="cell-team__handler">Tobias Wuest &#127465;&#127466;</span>
+                  <span class="cell-team__dog">Fury</span>
+                </div>
+              </td>
+              <td>
+                <div class="cell-rating__value">1,756</div>
+                <div class="cell-rating__sigma">&plusmn; 35</div>
+              </td>
+              <td><span class="badge badge-champion">Champion</span></td>
+              <td class="col-number">61</td>
+            </tr>
+            <tr class="clickable">
+              <td class="cell-rank">4</td>
+              <td><span class="badge badge-new">NEW</span></td>
+              <td>
+                <div class="cell-team">
+                  <span class="cell-team__handler">Sophie Laurent &#127467;&#127479;</span>
+                  <span class="cell-team__dog">Pixel</span>
+                </div>
+              </td>
+              <td>
+                <div class="cell-rating__value">1,723</div>
+                <div class="cell-rating__sigma">&plusmn; 55</div>
+              </td>
+              <td><span class="badge badge-champion">Champion</span></td>
+              <td class="col-number">28</td>
+            </tr>
+            <tr class="provisional clickable">
+              <td class="cell-rank">5</td>
+              <td><span class="trend trend-up">&#9650; 8</span></td>
+              <td>
+                <div class="cell-team">
+                  <span class="cell-team__handler">Erik Johansson &#127480;&#127466;</span>
+                  <span class="cell-team__dog">Storm</span>
+                </div>
+              </td>
+              <td>
+                <div class="cell-rating__value">1,701</div>
+                <div class="cell-rating__sigma">&plusmn; 94</div>
+              </td>
+              <td>
+                <span class="badge badge-champion">Champion</span>
+                <span class="badge badge-few-runs" style="margin-left: var(--space-1);">FEW RUNS</span>
+              </td>
+              <td class="col-number">6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="ds-subsection mt-6">
+        <h3>Tier Distribution</h3>
+        <div class="tier-distribution">
+          <div class="tier-distribution__item">
+            <span class="tier-distribution__dot tier-distribution__dot--elite"></span>
+            <span>Elite: 7</span>
+          </div>
+          <div class="tier-distribution__item">
+            <span class="tier-distribution__dot tier-distribution__dot--champion"></span>
+            <span>Champion: 27</span>
+          </div>
+          <div class="tier-distribution__item">
+            <span class="tier-distribution__dot tier-distribution__dot--expert"></span>
+            <span>Expert: 88</span>
+          </div>
+          <div class="tier-distribution__item">
+            <span class="tier-distribution__dot tier-distribution__dot--competitor"></span>
+            <span>Competitor: 220</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         11. PAGINATION
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>11. Pagination</h2>
+
+      <div class="pagination">
+        <a href="#" class="pagination__btn disabled">&laquo; Prev</a>
+        <a href="#" class="pagination__btn active">1</a>
+        <a href="#" class="pagination__btn">2</a>
+        <a href="#" class="pagination__btn">3</a>
+        <span class="pagination__info">Page 1 of 12</span>
+        <a href="#" class="pagination__btn">Next &raquo;</a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         12. FILTER BAR
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>12. Filter Bar</h2>
+
+      <div class="ds-demo-box p-0">
+        <div class="filter-bar" style="position: relative; top: 0;">
+          <div class="container">
+            <div class="filter-group">
+              <span class="filter-group__label">Size</span>
+              <div class="pill-group">
+                <button class="pill">S</button>
+                <button class="pill">M</button>
+                <button class="pill">I</button>
+                <button class="pill active">L</button>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <span class="filter-group__label">Country</span>
+              <div class="dropdown">
+                <select class="dropdown__select">
+                  <option>All Countries</option>
+                  <option>Czech Republic</option>
+                  <option>Germany</option>
+                  <option>Austria</option>
+                  <option>France</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="filter-group flex-1">
+              <div class="search-input" style="max-width: 240px;">
+                <span class="search-input__icon">&#x1F50D;</span>
+                <input type="text" class="search-input__field" placeholder="Search by name...">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         13. SEARCH DROPDOWN
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>13. Search Dropdown</h2>
+
+      <div style="position: relative; max-width: 400px;">
+        <div class="search-input search-input--hero">
+          <span class="search-input__icon">&#x1F50D;</span>
+          <input type="text" class="search-input__field" value="Tercova">
+        </div>
+        <!-- Dropdown shown statically for reference -->
+        <div class="search-dropdown" style="position: relative; margin-top: var(--space-2);">
+          <div class="search-dropdown__group">
+            <div class="search-dropdown__group-title">Teams</div>
+            <a href="#" class="search-dropdown__item">
+              <span class="search-dropdown__item-name">Nikola Tercova &amp; Dash</span>
+              <span class="search-dropdown__item-detail">1,687 | CZE | Large</span>
+            </a>
+            <a href="#" class="search-dropdown__item">
+              <span class="search-dropdown__item-name">Nikola Tercova &amp; Bliss</span>
+              <span class="search-dropdown__item-detail">1,524 | CZE | Medium</span>
+            </a>
+          </div>
+          <div class="search-dropdown__group">
+            <div class="search-dropdown__group-title">Handlers</div>
+            <a href="#" class="search-dropdown__item">
+              <span class="search-dropdown__item-name">Nikola Tercova</span>
+              <span class="search-dropdown__item-detail">CZE &middot; 2 teams</span>
+            </a>
+          </div>
+          <div class="search-dropdown__group">
+            <div class="search-dropdown__group-title">Competitions</div>
+            <a href="#" class="search-dropdown__item">
+              <span class="search-dropdown__item-name">Tercova Cup 2025</span>
+              <span class="search-dropdown__item-detail">Sep 12-14, 2025</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-spacer"></div>
+      <h3 class="text-muted mb-4">Empty State</h3>
+      <div style="position: relative; max-width: 400px;">
+        <div class="search-input">
+          <span class="search-input__icon">&#x1F50D;</span>
+          <input type="text" class="search-input__field" value="xyznonexistent">
+        </div>
+        <div class="search-dropdown" style="position: relative; margin-top: var(--space-2);">
+          <div class="search-dropdown__empty">No results found for "xyznonexistent"</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         14. COMPETITION ENTRY
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>14. Competition Entries</h2>
+
+      <div class="year-header">2025</div>
+
+      <div class="competition-entry competition-entry--major">
+        <div class="competition-entry__info">
+          <div class="competition-entry__name">FCI Agility World Championship 2025 <span class="badge badge-major">Major</span></div>
+          <div class="competition-entry__meta">
+            <span>Nov 6-9, 2025</span>
+            <span>&middot;</span>
+            <span>Budapest, Hungary &#127469;&#127482;</span>
+          </div>
+        </div>
+        <div class="competition-entry__participants">342 teams</div>
+      </div>
+
+      <div class="competition-entry competition-entry--major">
+        <div class="competition-entry__info">
+          <div class="competition-entry__name">WAO 2025 <span class="badge badge-major">Major</span></div>
+          <div class="competition-entry__meta">
+            <span>May 15-18, 2025</span>
+            <span>&middot;</span>
+            <span>Ermelo, Netherlands &#127475;&#127473;</span>
+          </div>
+        </div>
+        <div class="competition-entry__participants">220 teams</div>
+      </div>
+
+      <div class="competition-entry">
+        <div class="competition-entry__info">
+          <div class="competition-entry__name">Moravia Open 2025</div>
+          <div class="competition-entry__meta">
+            <span>Mar 28-30, 2025</span>
+            <span>&middot;</span>
+            <span>Brno, Czech Republic &#127464;&#127487;</span>
+          </div>
+        </div>
+        <div class="competition-entry__participants">189 teams</div>
+      </div>
+
+      <div class="year-header mt-8">2024</div>
+
+      <div class="competition-entry competition-entry--major">
+        <div class="competition-entry__info">
+          <div class="competition-entry__name">FCI Agility World Championship 2024 <span class="badge badge-major">Major</span></div>
+          <div class="competition-entry__meta">
+            <span>Oct 3-6, 2024</span>
+            <span>&middot;</span>
+            <span>Rouen, France &#127467;&#127479;</span>
+          </div>
+        </div>
+        <div class="competition-entry__participants">356 teams</div>
+      </div>
+
+      <div class="competition-entry">
+        <div class="competition-entry__info">
+          <div class="competition-entry__name">Czech Agility Open 2024</div>
+          <div class="competition-entry__meta">
+            <span>Aug 15-17, 2024</span>
+            <span>&middot;</span>
+            <span>Prague, Czech Republic &#127464;&#127487;</span>
+          </div>
+        </div>
+        <div class="competition-entry__participants">145 teams</div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         15. COMPETITION RESULTS TABLE
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>15. Competition Results Table</h2>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Competition</th>
+              <th>Discipline</th>
+              <th class="col-number">#</th>
+              <th class="col-number">Faults</th>
+              <th class="col-number">Time</th>
+              <th class="col-number">Speed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="rank-1">
+              <td>Nov 8, 2025</td>
+              <td>AWC 2025 <span class="badge badge-major">Major</span></td>
+              <td>Agility</td>
+              <td class="col-number cell-rank">1</td>
+              <td class="col-number">0</td>
+              <td class="col-number">32.45</td>
+              <td class="col-number">5.87</td>
+            </tr>
+            <tr class="rank-2">
+              <td>Nov 7, 2025</td>
+              <td>AWC 2025 <span class="badge badge-major">Major</span></td>
+              <td>Jumping</td>
+              <td class="col-number cell-rank">2</td>
+              <td class="col-number">0</td>
+              <td class="col-number">28.92</td>
+              <td class="col-number">5.54</td>
+            </tr>
+            <tr>
+              <td>May 17, 2025</td>
+              <td>WAO 2025 <span class="badge badge-major">Major</span></td>
+              <td>Agility</td>
+              <td class="col-number cell-rank">5</td>
+              <td class="col-number">5</td>
+              <td class="col-number">34.12</td>
+              <td class="col-number">5.62</td>
+            </tr>
+            <tr class="rank-3">
+              <td>Mar 29, 2025</td>
+              <td>Moravia Open 2025</td>
+              <td>Jumping</td>
+              <td class="col-number cell-rank">3</td>
+              <td class="col-number">0</td>
+              <td class="col-number">31.07</td>
+              <td class="col-number">5.43</td>
+            </tr>
+            <tr class="eliminated">
+              <td>Mar 28, 2025</td>
+              <td>Moravia Open 2025</td>
+              <td>Agility</td>
+              <td class="col-number"><span class="badge badge-elim">ELIM</span></td>
+              <td class="col-number">10</td>
+              <td class="col-number">38.21</td>
+              <td class="col-number">4.98</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         16. BREADCRUMBS
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>16. Breadcrumbs</h2>
+
+      <ul class="breadcrumbs">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Rankings</a></li>
+        <li>Tereza Kralova &amp; Mia</li>
+      </ul>
+      <div class="breadcrumbs-mobile">
+        <a href="#">&larr; Back to Rankings</a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         17. EMPTY STATE
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>17. Empty State</h2>
+
+      <div class="empty-state">
+        <div class="empty-state__icon">&#128269;</div>
+        <div class="empty-state__title">No teams match your filters</div>
+        <div class="empty-state__description">Try broadening your search or clearing some filters.</div>
+        <button class="btn btn-secondary">Clear filters</button>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         18. DROPDOWN
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>18. Dropdown</h2>
+
+      <div class="ds-row" style="gap: var(--space-6);">
+        <div class="dropdown">
+          <select class="dropdown__select">
+            <option>All Countries</option>
+            <option>Czech Republic</option>
+            <option>Germany</option>
+            <option>Austria</option>
+          </select>
+        </div>
+        <div class="dropdown">
+          <select class="dropdown__select">
+            <option>Most Challenging</option>
+            <option>Most Experienced</option>
+            <option>Most Lenient</option>
+            <option>Alphabetical</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         19. SPACING SCALE
+         ============================================================ -->
+    <section class="ds-section">
+      <h2>19. Spacing Scale</h2>
+
+      <div class="ds-demo-box">
+        <div class="flex gap-3 items-center mb-3" style="flex-wrap: wrap;">
+          <div style="width: var(--space-1); height: 24px; background: var(--color-primary-400); border-radius: 2px;" title="4px"></div>
+          <span class="text-xs text-muted">4px (space-1)</span>
+
+          <div style="width: var(--space-2); height: 24px; background: var(--color-primary-400); border-radius: 2px;" title="8px"></div>
+          <span class="text-xs text-muted">8px (space-2)</span>
+
+          <div style="width: var(--space-3); height: 24px; background: var(--color-primary-400); border-radius: 2px;" title="12px"></div>
+          <span class="text-xs text-muted">12px (space-3)</span>
+
+          <div style="width: var(--space-4); height: 24px; background: var(--color-primary-400); border-radius: 2px;" title="16px"></div>
+          <span class="text-xs text-muted">16px (space-4)</span>
+
+          <div style="width: var(--space-6); height: 24px; background: var(--color-primary-400); border-radius: 2px;" title="24px"></div>
+          <span class="text-xs text-muted">24px (space-6)</span>
+
+          <div style="width: var(--space-8); height: 24px; background: var(--color-primary-400); border-radius: 2px;" title="32px"></div>
+          <span class="text-xs text-muted">32px (space-8)</span>
+
+          <div style="width: var(--space-12); height: 24px; background: var(--color-primary-400); border-radius: 2px;" title="48px"></div>
+          <span class="text-xs text-muted">48px (space-12)</span>
+
+          <div style="width: var(--space-16); height: 24px; background: var(--color-primary-400); border-radius: 2px;" title="64px"></div>
+          <span class="text-xs text-muted">64px (space-16)</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER DEMO
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <ul class="site-footer__links">
+        <li><a href="#">How It Works</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+      <p class="site-footer__disclaimer">
+        ADW Rating is an independent project. Data from major international agility competitions.
+        Not affiliated with FCI, AKC, USDAA, UKI, or IFCS.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
