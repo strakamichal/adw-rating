@@ -30,6 +30,13 @@ public class HandlerRepository : IHandlerRepository
             .FirstOrDefaultAsync(h => h.NormalizedName == normalizedName && h.Country == country);
     }
 
+    public async Task<IReadOnlyList<Handler>> FindByNormalizedNameAsync(string normalizedName)
+    {
+        return await _context.Handlers
+            .Where(h => h.NormalizedName == normalizedName)
+            .ToListAsync();
+    }
+
     public async Task<IReadOnlyList<Handler>> SearchAsync(string query, int limit)
     {
         var normalizedQuery = query.ToLower();

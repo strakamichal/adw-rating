@@ -103,6 +103,8 @@ public class IdentityResolutionServiceTests
             .Returns((HandlerAlias?)null);
         _handlerRepo.FindByNormalizedNameAndCountryAsync("new person", "CZE")
             .Returns((Handler?)null);
+        _handlerRepo.FindByNormalizedNameAsync("new person")
+            .Returns(new List<Handler>());
         _handlerRepo.CreateAsync(Arg.Any<Handler>())
             .Returns(created);
 
@@ -120,6 +122,82 @@ public class IdentityResolutionServiceTests
                 a.AliasName == "person new" &&
                 a.CanonicalHandlerId == 99 &&
                 a.Source == AliasSource.Import));
+    }
+
+    [Test]
+    public async Task ResolveHandlerAsync_CountryMismatch_SingleNameOnlyMatch_ReturnsFallback()
+    {
+        var handler = new Handler
+        {
+            Id = 1, Name = "Ádám-Bökényi Andrea", NormalizedName = "adam-bokenyi andrea",
+            Country = "HUN", Slug = "adam-bokenyi-andrea"
+        };
+
+        _handlerAliasRepo.FindByAliasNameAsync("adam-bokenyi andrea")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("adam-bokenyi andrea", "AUS")
+            .Returns((Handler?)null);
+        _handlerRepo.FindByNormalizedNameAsync("adam-bokenyi andrea")
+            .Returns(new List<Handler> { handler });
+
+        var result = await _sut.ResolveHandlerAsync("Ádám-Bökényi Andrea", "AUS");
+
+        Assert.That(result, Is.SameAs(handler));
+        await _handlerRepo.DidNotReceive().CreateAsync(Arg.Any<Handler>());
+    }
+
+    [Test]
+    public async Task ResolveHandlerAsync_SingleTokenName_SkipsCountryFallback()
+    {
+        _handlerAliasRepo.FindByAliasNameAsync("martin")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("martin", "CZE")
+            .Returns((Handler?)null);
+
+        var created = new Handler
+        {
+            Id = 99, Name = "Martin", NormalizedName = "martin",
+            Country = "CZE", Slug = "martin"
+        };
+        _handlerRepo.CreateAsync(Arg.Any<Handler>())
+            .Returns(created);
+
+        var result = await _sut.ResolveHandlerAsync("Martin", "CZE");
+
+        Assert.That(result, Is.SameAs(created));
+        // Should NOT have called FindByNormalizedNameAsync (single token)
+        await _handlerRepo.DidNotReceive().FindByNormalizedNameAsync(Arg.Any<string>());
+    }
+
+    [Test]
+    public async Task ResolveHandlerAsync_CountryFallback_MultipleMatches_CreatesNew()
+    {
+        _handlerAliasRepo.FindByAliasNameAsync("john smith")
+            .Returns((HandlerAlias?)null);
+        _handlerAliasRepo.FindByAliasNameAsync("smith john")
+            .Returns((HandlerAlias?)null);
+        _handlerRepo.FindByNormalizedNameAndCountryAsync("john smith", "AUS")
+            .Returns((Handler?)null);
+        // Two handlers with same name in different countries — ambiguous
+        _handlerRepo.FindByNormalizedNameAsync("john smith")
+            .Returns(new List<Handler>
+            {
+                new() { Id = 1, Name = "John Smith", NormalizedName = "john smith", Country = "GBR", Slug = "john-smith" },
+                new() { Id = 2, Name = "John Smith", NormalizedName = "john smith", Country = "USA", Slug = "john-smith-2" }
+            });
+
+        var created = new Handler
+        {
+            Id = 99, Name = "John Smith", NormalizedName = "john smith",
+            Country = "AUS", Slug = "john-smith-3"
+        };
+        _handlerRepo.CreateAsync(Arg.Any<Handler>())
+            .Returns(created);
+
+        var result = await _sut.ResolveHandlerAsync("John Smith", "AUS");
+
+        Assert.That(result, Is.SameAs(created));
+        await _handlerRepo.Received(1).CreateAsync(Arg.Any<Handler>());
     }
 
     #endregion

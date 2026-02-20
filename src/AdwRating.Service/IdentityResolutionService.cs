@@ -56,7 +56,23 @@ public class IdentityResolutionService : IIdentityResolutionService
             return exact;
         }
 
-        // 3. No match — create new handler
+        // 3. Country-agnostic fallback — same name, different country
+        //    Only for multi-token names to avoid false matches on single names like "Martin"
+        var nameTokens = normalizedName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (nameTokens.Length >= 2)
+        {
+            var nameOnlyMatches = await _handlerRepo.FindByNormalizedNameAsync(normalizedName);
+            if (nameOnlyMatches.Count == 1)
+            {
+                var match = nameOnlyMatches[0];
+                _logger.LogInformation(
+                    "Handler '{RawName}' ({Country}) matched country-agnostic to '{MatchName}' ({MatchCountry})",
+                    rawName, country, match.Name, match.Country);
+                return match;
+            }
+        }
+
+        // 4. No match — create new handler
         _logger.LogInformation("Handler '{RawName}' not found, creating new record", rawName);
 
         var newHandler = await _handlerRepo.CreateAsync(new Handler
