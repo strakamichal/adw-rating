@@ -3,6 +3,7 @@ using System.Text.Json;
 using AdwRating.ApiClient;
 using AdwRating.Domain.Enums;
 using AdwRating.Domain.Models;
+using Microsoft.Extensions.Logging.Abstractions;
 
 namespace AdwRating.Tests.ApiClient;
 
@@ -21,7 +22,7 @@ public class AdwRatingApiClientTests
         {
             BaseAddress = new Uri("https://api.example.com/")
         };
-        return new AdwRatingApiClient(httpClient);
+        return new AdwRatingApiClient(httpClient, NullLogger<AdwRatingApiClient>.Instance);
     }
 
     #region Rankings
