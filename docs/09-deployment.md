@@ -1,170 +1,169 @@
 # Deployment
 
-ADW Rating runs as two Docker containers (API + Web) on a Hetzner VPS with Coolify. MSSQL runs separately in its own container. GitHub Actions builds Docker images and pushes them to GitHub Container Registry (ghcr.io). Coolify pulls the images and manages TLS, reverse proxy (Traefik), and container lifecycle.
+ADW Rating runs on a Hetzner VPS managed by [Coolify](https://coolify.io). The stack consists of three Docker containers: API (ASP.NET), Web (Blazor SSR), and MSSQL. Coolify handles TLS certificates (Let's Encrypt), reverse proxy (Traefik), and container lifecycle. GitHub Actions builds and pushes Docker images, then triggers Coolify to redeploy.
 
 ## Architecture
 
 ```
 Internet
   │
-  ├── rating.agilitydogsworld.com ──► Traefik (Coolify) ──► adwrating-web:8080 (Blazor SSR)
-  │                                                        │
-  └── api.rating.agilitydogsworld.com ──► Traefik ──► adwrating-api:8080 (ASP.NET API)
+  ├── rating.agilitydogsworld.com ──► Traefik (Coolify) ──► adwrating-web:8080
+  │                                                              │
+  └── api.rating.agilitydogsworld.com ──► Traefik ──► adwrating-api:8080
                                                            │
                                                     MSSQL :1433
 ```
 
-- **TLS terminates at Traefik** — containers receive plain HTTP
-- **Web calls API** over internal Docker network (not via public URL)
-- **MSSQL** is accessible via Docker bridge IP (runs outside Coolify project, port 1433 published on host). Find the IP with `ip addr show docker0 | grep inet` on the VPS (typically `172.17.0.1` or `10.0.0.1`)
+- **TLS terminates at Traefik** — Coolify auto-provisions Let's Encrypt certificates. Containers receive plain HTTP.
+- **Web → API** communication goes over the internal Docker network (`coolify`), not via the public URL. Web calls `http://adwrating-api:8080`.
+- **MSSQL** runs in a separate container outside the Coolify project, accessible via Docker bridge IP (typically `172.17.0.1`, find with `ip addr show docker0 | grep inet`).
 
-## Docker images
+## Infrastructure files
 
-Two Dockerfiles in `infra/`, both multi-stage (SDK build → ASP.NET runtime):
+All deployment-related files live in `infra/`:
 
-| Dockerfile | Image | Entrypoint |
-|---|---|---|
-| `infra/Dockerfile.api` | `ghcr.io/<owner>/adw-rating/api:latest` | `AdwRating.Api.dll` |
-| `infra/Dockerfile.web` | `ghcr.io/<owner>/adw-rating/web:latest` | `AdwRating.Web.dll` |
+| File | Purpose |
+|---|---|
+| `infra/Dockerfile.api` | Multi-stage build for API image |
+| `infra/Dockerfile.web` | Multi-stage build for Web image |
+| `infra/coolify-setup.sh` | Automated Coolify setup via API (creates project, services, env vars, deploys) |
+| `infra/coolify-setup.env.example` | Template for setup script configuration |
+| `.dockerignore` | Docker build exclusions (must stay in repo root) |
 
-Both containers expose port **8080**.
+Both Dockerfiles use the repo root as build context — only the `file:` path changes.
 
 ## CI/CD pipeline
 
 **File:** `.github/workflows/deploy.yml`
 
-Triggers on push to `main`. Builds both images in parallel and pushes to ghcr.io using the built-in `GITHUB_TOKEN` (no manual secrets needed).
+Every push to `main` triggers the full pipeline:
 
 ```
-push to main → GitHub Actions → build Dockerfile.api → ghcr.io/.../api:latest
-                               → build Dockerfile.web → ghcr.io/.../web:latest
+push to main
+  └─► GitHub Actions
+        ├─► build-api (parallel) ──► ghcr.io/.../api:latest
+        ├─► build-web (parallel) ──► ghcr.io/.../web:latest
+        └─► deploy (after both builds)
+              ├─► Coolify API: redeploy API service
+              └─► Coolify API: redeploy Web service
 ```
 
-Coolify does **not** automatically detect new images in the registry. The workflow calls the Coolify deploy API after both images are pushed. This requires three GitHub repository secrets:
+Coolify does **not** poll the registry for new images. The `deploy` job calls the Coolify deploy API with a bearer token after both images are pushed.
+
+### GitHub repository secrets
 
 | Secret | Description |
 |---|---|
-| `COOLIFY_TOKEN` | Coolify API token (Settings → API → Generate Token) |
-| `COOLIFY_API_UUID` | UUID of the API service (found in Coolify service URL or Webhooks tab) |
+| `COOLIFY_TOKEN` | Coolify API token (Settings → API → Generate Token, Read & Write permissions) |
+| `COOLIFY_API_UUID` | UUID of the API service (output by setup script or found in Coolify URL) |
 | `COOLIFY_WEB_UUID` | UUID of the Web service |
 
-The `deploy` job runs after both builds complete and calls:
+`GITHUB_TOKEN` is used automatically for pushing images to ghcr.io — no manual setup needed.
 
-```
-GET /api/v1/deploy?uuid={service-uuid}&force=false
-Authorization: Bearer {token}
+## Initial setup from scratch
+
+### 1. VPS prerequisites
+
+- MSSQL container running on port 1433
+- Docker logged into ghcr.io:
+  ```bash
+  docker login ghcr.io -u <github-username>
+  # Password: GitHub PAT with read:packages scope
+  ```
+- Firewall open for HTTP/HTTPS:
+  ```bash
+  ufw allow 80/tcp && ufw allow 443/tcp
+  ```
+- Coolify API enabled with a generated token (Settings → API)
+- DNS A records for `rating.agilitydogsworld.com` and `api.rating.agilitydogsworld.com` pointing to the VPS IP
+
+### 2. Run setup script
+
+The script creates a Coolify project, both services with environment variables, health checks, and triggers the first deployment.
+
+```bash
+cp infra/coolify-setup.env.example infra/coolify-setup.env
+# Fill in: COOLIFY_URL, COOLIFY_TOKEN, SERVER_UUID, ENVIRONMENT_NAME,
+#          GHCR_OWNER, domains, DB connection strings
+vim infra/coolify-setup.env
+bash infra/coolify-setup.sh
 ```
 
-Alternatively, deploy manually from the Coolify UI.
+The script will:
+- Create a Coolify project (if `PROJECT_UUID` is not set)
+- Create API service with domain, health check, and env vars
+- Create Web service with domain and env vars
+- Deploy both services
+
+Required env vars are documented in `infra/coolify-setup.env.example`. The `coolify-setup.env` file is gitignored (contains secrets).
+
+### 3. Manual steps after script
+
+Container names cannot be set via the Coolify API. After the script completes:
+
+1. In Coolify UI → API service → General tab → set **Container Name** to `adwrating-api`
+2. In Coolify UI → Web service → General tab → set **Container Name** to `adwrating-web`
+3. Redeploy both services
+
+This gives containers stable hostnames on the Docker network. Without this, Coolify generates random names that change on every redeploy, breaking Web → API communication.
+
+### 4. Set GitHub secrets
+
+Use the UUIDs from the script output:
+
+```bash
+# In GitHub repo → Settings → Secrets and variables → Actions
+COOLIFY_TOKEN    = <your Coolify API token>
+COOLIFY_API_UUID = <UUID from script output>
+COOLIFY_WEB_UUID = <UUID from script output>
+```
+
+### 5. Verify
+
+```bash
+curl https://api.rating.agilitydogsworld.com/health
+# → {"status":"healthy"}
+
+open https://rating.agilitydogsworld.com
+```
 
 ## Environment variables
 
-### API (`adwrating-api`)
+### API container (`adwrating-api`)
 
 | Variable | Required | Description |
 |---|---|---|
-| `ADW_RATING_CONNECTION` | Yes | App connection string. Example: `Server=DOCKER_BRIDGE_IP,1433;Database=AdwRating;User Id=adwrating;Password=...;TrustServerCertificate=True` |
-| `ADW_RATING_ADMIN_CONNECTION` | No | SA connection string for initial bootstrap. When set, API creates the login, database, and user from `ADW_RATING_CONNECTION` automatically. Can be removed after first successful deploy. Example: `Server=DOCKER_BRIDGE_IP,1433;Database=master;User Id=sa;Password=...;TrustServerCertificate=True` |
-| `ASPNETCORE_ENVIRONMENT` | No | Set to `Production` (default in container). |
+| `ADW_RATING_CONNECTION` | Yes | App connection string. Example: `Server=172.17.0.1,1433;Database=AdwRating;User Id=adwrating;Password=...;TrustServerCertificate=True` |
+| `ADW_RATING_ADMIN_CONNECTION` | No | SA connection string for initial bootstrap (creates login, database, user). Remove after first successful deploy. |
+| `ASPNETCORE_ENVIRONMENT` | No | Defaults to `Production` in the container. |
 
-### Web (`adwrating-web`)
+### Web container (`adwrating-web`)
 
 | Variable | Required | Description |
 |---|---|---|
-| `ApiBaseUrl` | Yes | Internal URL of the API container. Example: `http://adwrating-api:8080` (use the Docker container name/hostname visible in Coolify) |
-| `ASPNETCORE_ENVIRONMENT` | No | Set to `Production`. |
+| `ApiBaseUrl` | Yes | `http://adwrating-api:8080` — internal Docker hostname of the API container |
+| `ASPNETCORE_ENVIRONMENT` | No | Defaults to `Production` in the container. |
 
 ## Database bootstrap
 
 On startup, the API performs two steps:
 
-### 1. Bootstrap (optional, when `ADW_RATING_ADMIN_CONNECTION` is set)
+**1. Bootstrap** (only when `ADW_RATING_ADMIN_CONNECTION` is set): connects as `sa` and creates the SQL Server login, database, and user with `db_owner` role. All operations are idempotent. Remove the env var after first successful deploy.
 
-Connects as `sa` and creates:
-- SQL Server login (from `ADW_RATING_CONNECTION` User Id)
-- Database (from `ADW_RATING_CONNECTION` Initial Catalog)
-- Database user with `db_owner` role
-
-All operations are idempotent — safe to run on every startup. Once the login/database/user exist, you can remove `ADW_RATING_ADMIN_CONNECTION` and the bootstrap is skipped.
-
-### 2. Migrations (always)
-
-Connects as the app user and runs `Database.MigrateAsync()`. This:
-- Creates the database if it doesn't exist (but won't have permissions without bootstrap or manual setup)
-- Applies all pending EF Core migrations
-- Is idempotent — safe to run on every startup
-
-## Coolify setup
-
-### Prerequisites
-
-1. MSSQL running in a container on the VPS (port 1433)
-2. Docker logged into ghcr.io on the VPS:
-   ```bash
-   ssh root@your-vps
-   docker login ghcr.io -u <github-username>
-   # Password: GitHub PAT with read:packages scope
-   ```
-3. Coolify API enabled (Settings → API) with a generated token
-4. Firewall open for ports 80, 443 (`ufw allow 80/tcp && ufw allow 443/tcp`)
-
-### Automated setup (recommended)
-
-The `infra/coolify-setup.sh` script creates both services, sets environment variables, and triggers deployment via the Coolify API.
-
-```bash
-cp infra/coolify-setup.env.example infra/coolify-setup.env
-# Edit coolify-setup.env with your values (Coolify token, server/project UUIDs, DB credentials)
-bash infra/coolify-setup.sh
-```
-
-The script outputs the service UUIDs needed for GitHub Actions secrets.
-
-**Manual steps after script** (not available via API):
-1. Set **Container Name** for API service to `adwrating-api` (General tab in Coolify)
-2. Set **Container Name** for Web service to `adwrating-web`
-3. Redeploy both services
-
-### Manual setup
-
-If you prefer to set up manually via the Coolify UI:
-
-1. Create a **Project** in Coolify (e.g., "ADW Rating")
-2. Add resource → **Docker Image** for API:
-   - Image: `ghcr.io/<owner>/adw-rating/api:latest`
-   - Domain: `https://api.rating.agilitydogsworld.com`
-   - Ports Exposes: `8080`
-   - **Container Name**: `adwrating-api`
-   - Health check: HTTP GET `/health`
-   - Set environment variables (see table above)
-3. **Deploy API first** — wait until healthy (migrations create all tables)
-4. Verify: `curl https://api.rating.agilitydogsworld.com/health` → `{"status":"healthy"}`
-5. Add resource → **Docker Image** for Web:
-   - Image: `ghcr.io/<owner>/adw-rating/web:latest`
-   - Domain: `https://rating.agilitydogsworld.com`
-   - Ports Exposes: `8080`
-   - **Container Name**: `adwrating-web`
-   - Set environment variables (see table above)
-   - `ApiBaseUrl` = `http://adwrating-api:8080`
-6. **Deploy Web**
-7. Verify: open `https://rating.agilitydogsworld.com` in browser
-
-Both services **must be in the same Coolify project** to share a Docker network (`coolify`). Without explicit container names, Coolify generates random hostnames that change on every redeploy — always set a fixed container name.
+**2. Migrations** (always): connects as the app user and runs `Database.MigrateAsync()` to apply all pending EF Core migrations. Idempotent — safe on every startup.
 
 ## Seeding data
 
-After first deploy the database is empty. Import competition data using the CLI:
+After first deploy the database is empty. Import competition data using the CLI via SSH tunnel:
 
-Option A — **SSH tunnel** from local machine:
 ```bash
 ssh -L 1433:localhost:1433 root@your-vps
 # In another terminal, run CLI locally against localhost:1433
 ```
 
-Option B — copy CSV data to VPS and run a one-off container.
-
 ## Reverse proxy notes
 
 - **Forwarded headers** middleware is enabled in both API and Web so the app sees the real client IP and HTTPS scheme through Traefik
-- **HTTPS redirect is removed** from Web — Traefik handles TLS termination, adding redirect in the app would cause a loop
+- **HTTPS redirect is not in the app** — Traefik handles TLS termination and HTTP→HTTPS redirect
 - **CORS** is set to allow any origin (MVP setting)
+- **Container names matter** — Web resolves `adwrating-api` via Docker DNS on the `coolify` network. Both services must be in the same Coolify project to share this network.
