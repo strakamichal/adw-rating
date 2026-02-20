@@ -91,7 +91,6 @@ else
             @* Right side *@
             <div class="hero-card__right">
                 <div class="hero-card__rating">@((int)_team.Rating)</div>
-                <div class="hero-card__sigma">&plusmn; @((int)_team.Sigma) uncertainty</div>
                 <div class="mt-2">
                     <span class="badge @GetTierBadgeCss(_team.TierLabel)" style="font-size: var(--font-size-sm); padding: var(--space-1) var(--space-3);">
                         @(_team.TierLabel?.ToString() ?? "Competitor")
@@ -229,9 +228,9 @@ else
                                         }
                                     }
                                 </td>
-                                <td class="col-number">@(r.Faults?.ToString() ?? "&mdash;")</td>
-                                <td class="col-number">@(r.Time.HasValue ? $"{r.Time:0.00}s" : "&mdash;")</td>
-                                <td class="col-number">@(r.Speed.HasValue ? $"{r.Speed:0.00} m/s" : "&mdash;")</td>
+                                <td class="col-number">@(r.Faults?.ToString() ?? "—")</td>
+                                <td class="col-number">@(r.Time.HasValue ? $"{r.Time:0.00}s" : "—")</td>
+                                <td class="col-number">@(r.Speed.HasValue ? $"{r.Speed:0.00} m/s" : "—")</td>
                             </tr>
                         }
                     </tbody>
