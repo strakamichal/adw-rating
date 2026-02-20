@@ -1,0 +1,31 @@
+@* Global error boundary that catches unhandled exceptions in child components.
+   Wraps Blazor's built-in ErrorBoundary with styled error UI. *@
+
+<ErrorBoundary @ref="_errorBoundary">
+    <ChildContent>
+        @ChildContent
+    </ChildContent>
+    <ErrorContent Context="exception">
+        <div class="container mt-8">
+            <div class="error-state">
+                <div class="error-state__icon">&#9888;</div>
+                <div class="error-state__title">Something went wrong</div>
+                <p class="error-state__description">
+                    An unexpected error occurred while loading this page. Please try refreshing.
+                </p>
+                <button class="btn btn-primary" @onclick="Recover">Try again</button>
+            </div>
+        </div>
+    </ErrorContent>
+</ErrorBoundary>
+
+@code {
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+
+    private ErrorBoundary? _errorBoundary;
+
+    private void Recover()
+    {
+        _errorBoundary?.Recover();
+    }
+}

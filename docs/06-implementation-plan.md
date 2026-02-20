@@ -803,23 +803,23 @@
 
 **Goal**: SEO, performance, deployment configuration, final integration testing.
 
-- [ ] **8.1** SEO — page titles, meta descriptions, Open Graph tags
+- [x] **8.1** SEO — page titles, meta descriptions, Open Graph tags *(done — HeadContent with meta description + OG tags on all 5 MVP pages)*
   - Add `<title>`, `<meta name="description">`, and OG tags to all pages per `05-ui-structure.md` section 6. Use `HeadContent` component.
   - Files: Modify all page components in `Web/Components/Pages/`
   - Dependencies: Phase 7
   - Tests: E2E — verify title and meta tags on key pages
   - **Completion gates**: build | tests
 
-- [ ] **8.2a** Error handling — 404 and empty states
+- [x] **8.2a** Error handling — 404 and empty states *(done — styled NotFound.razor, EmptyState.razor shared component, improved Error.razor)*
   - Add 404 pages (team not found, competition not found). Add empty states ("No teams match your filters", "No competitions found").
   - Files: `Web/Components/Pages/NotFound.razor`, `Web/Components/Shared/EmptyState.razor`, modifications to existing pages
   - Dependencies: Phase 7
   - Tests: E2E — 404 shown for invalid slug, empty state with no-match filters
   - **Completion gates**: build | tests
 
-- [ ] **8.2b** Loading skeletons and error boundary
+- [x] **8.2b** Loading skeletons and error boundary *(done — LoadingSkeleton.razor with 4 variants, AppErrorBoundary.razor wrapping MainLayout)*
   - Add loading skeleton patterns for Enhanced Navigation transitions. Global error boundary component.
-  - Files: `Web/Components/Shared/LoadingSkeleton.razor`, `Web/Components/Shared/ErrorBoundary.razor`
+  - Files: `Web/Components/Shared/LoadingSkeleton.razor`, `Web/Components/Shared/AppErrorBoundary.razor`
   - Dependencies: Phase 7
   - Tests: none (visual)
   - **Completion gates**: build

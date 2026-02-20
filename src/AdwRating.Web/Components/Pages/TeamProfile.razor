@@ -2,9 +2,24 @@
 @using AdwRating.Web.Components.Shared
 @inject AdwRatingApiClient Api
 
-@if (_team is null)
+@if (!_loaded)
+{
+    <PageTitle>Loading... — ADW Rating</PageTitle>
+
+    <div class="container mt-6">
+        <LoadingSkeleton Variant="LoadingSkeleton.SkeletonVariant.HeroCard" />
+    </div>
+    <div class="container mt-6">
+        <LoadingSkeleton Variant="LoadingSkeleton.SkeletonVariant.StatCards" Count="4" />
+    </div>
+}
+else if (_team is null)
 {
     <PageTitle>Team Not Found — ADW Rating</PageTitle>
+
+    <HeadContent>
+        <meta name="description" content="The team you are looking for does not exist." />
+    </HeadContent>
 
     <div class="container mt-8">
         <div class="not-found">
@@ -15,6 +30,7 @@
             </p>
             <div class="not-found__links">
                 <a href="/rankings" class="btn btn-primary">Browse Rankings</a>
+                <a href="/" class="btn btn-secondary">Go Home</a>
             </div>
         </div>
     </div>
@@ -24,8 +40,10 @@ else
     <PageTitle>@_team.HandlerName &amp; @_team.DogCallName — ADW Rating</PageTitle>
 
     <HeadContent>
+        <meta name="description" content="Rating: @((int)_team.Rating) | @(_team.TierLabel?.ToString() ?? "Competitor") | @_team.SizeCategory category | @_team.RunCount runs | @(_team.Top3Pct.ToString("0"))% podium rate" />
         <meta property="og:title" content="@_team.HandlerName & @_team.DogCallName — ADW Rating" />
         <meta property="og:description" content="Rating: @((int)_team.Rating) | @(_team.TierLabel?.ToString() ?? "Competitor") | @_team.SizeCategory | @_team.RunCount runs" />
+        <meta property="og:url" content="/teams/@Slug" />
     </HeadContent>
 
     @* Breadcrumbs *@
@@ -275,6 +293,7 @@ else
     [Parameter] public string Slug { get; set; } = "";
     [SupplyParameterFromQuery(Name = "resultsPage")] public int? ResultsPage { get; set; }
 
+    private bool _loaded;
     private TeamDetailDto? _team;
     private IReadOnlyList<RatingSnapshotDto> _history = [];
     private PagedResult<TeamResultDto> _results = new([], 0, 1, 20);
@@ -298,6 +317,8 @@ else
             _history = historyTask.Result;
             _results = resultsTask.Result;
         }
+
+        _loaded = true;
     }
 
     private static string GetInitials(string name)

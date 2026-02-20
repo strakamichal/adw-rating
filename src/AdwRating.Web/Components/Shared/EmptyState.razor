@@ -1,0 +1,22 @@
+@* Reusable empty state component for when no data matches filters *@
+
+<div class="empty-state">
+    @if (!string.IsNullOrEmpty(Icon))
+    {
+        <div class="empty-state__icon">@((MarkupString)Icon)</div>
+    }
+    <div class="empty-state__title">@Title</div>
+    <p class="empty-state__description">@Description</p>
+    @if (!string.IsNullOrEmpty(ActionUrl))
+    {
+        <a href="@ActionUrl" class="btn btn-secondary">@ActionLabel</a>
+    }
+</div>
+
+@code {
+    [Parameter] public string Title { get; set; } = "No results found";
+    [Parameter] public string Description { get; set; } = "Try broadening your search or clearing filters.";
+    [Parameter] public string? Icon { get; set; }
+    [Parameter] public string? ActionUrl { get; set; }
+    [Parameter] public string ActionLabel { get; set; } = "Clear all filters";
+}

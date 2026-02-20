@@ -4,7 +4,9 @@
     <NavMenu />
 
     <main>
-        @Body
+        <AppErrorBoundary>
+            @Body
+        </AppErrorBoundary>
     </main>
 
     <Footer />

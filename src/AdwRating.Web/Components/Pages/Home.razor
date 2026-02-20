@@ -4,6 +4,13 @@
 
 <PageTitle>ADW Rating — Global Agility Team Rankings</PageTitle>
 
+<HeadContent>
+    <meta name="description" content="Independent, data-driven agility team rankings worldwide. Track ratings, compare teams, and explore competition results across all size categories." />
+    <meta property="og:title" content="ADW Rating — Global Agility Team Rankings" />
+    <meta property="og:description" content="Independent, data-driven agility team rankings worldwide. Track ratings, compare teams, and explore competition results." />
+    <meta property="og:url" content="/" />
+</HeadContent>
+
 <!-- 3.1 Hero area -->
 <section class="hero">
     <div class="container">
@@ -20,20 +27,27 @@
 
 <!-- 3.2 Summary stats -->
 <section class="container" style="margin-top: calc(-1 * var(--space-8)); position: relative; z-index: 10;">
-    <div class="grid-3 mb-8">
-        <div class="stat-card">
-            <div class="stat-card__value">@_summary.QualifiedTeams.ToString("N0")</div>
-            <div class="stat-card__label">Qualified Teams</div>
+    @if (!_loaded)
+    {
+        <LoadingSkeleton Variant="LoadingSkeleton.SkeletonVariant.StatCards" Count="3" />
+    }
+    else
+    {
+        <div class="grid-3 mb-8">
+            <div class="stat-card">
+                <div class="stat-card__value">@_summary.QualifiedTeams.ToString("N0")</div>
+                <div class="stat-card__label">Qualified Teams</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__value">@_summary.Competitions.ToString("N0")</div>
+                <div class="stat-card__label">Competitions Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__value">@_summary.Runs.ToString("N0")</div>
+                <div class="stat-card__label">Total Runs</div>
+            </div>
         </div>
-        <div class="stat-card">
-            <div class="stat-card__value">@_summary.Competitions.ToString("N0")</div>
-            <div class="stat-card__label">Competitions Tracked</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-card__value">@_summary.Runs.ToString("N0")</div>
-            <div class="stat-card__label">Total Runs</div>
-        </div>
-    </div>
+    }
 </section>
 
 <!-- 3.3 Top Teams Spotlight -->
@@ -165,6 +179,7 @@
 @code {
     private record SpotlightColumn(string TabId, string SizeCode, string SizeName, IReadOnlyList<TeamRankingDto> Teams);
 
+    private bool _loaded;
     private RankingSummary _summary = new(0, 0, 0);
     private List<SpotlightColumn> _spotlightColumns = [];
     private PagedResult<CompetitionDetailDto>? _recentCompetitions;
@@ -189,6 +204,7 @@
             new("large", "L", "Large", largeTask.Result.Items),
         ];
         _recentCompetitions = competitionsTask.Result;
+        _loaded = true;
     }
 
     private static MarkupString TrendMarkup(TeamRankingDto team)

@@ -4,6 +4,13 @@
 
 <PageTitle>Competitions — ADW Rating</PageTitle>
 
+<HeadContent>
+    <meta name="description" content="Browse all imported agility competitions. Filter by year, tier, and country. View major international events and standard competitions." />
+    <meta property="og:title" content="Competitions — ADW Rating" />
+    <meta property="og:description" content="Browse all imported agility competitions. Filter by year, tier, and country." />
+    <meta property="og:url" content="/competitions" />
+</HeadContent>
+
 @* Breadcrumbs *@
 <div class="container">
     <ol class="breadcrumbs mt-4">
@@ -93,10 +100,9 @@
 @if (_competitions.Items.Count == 0)
 {
     <div class="container mt-6">
-        <div class="empty-state">
-            <p class="text-muted">No competitions match your filters. Try broadening your search or clearing filters.</p>
-            <a href="/competitions" class="btn btn-secondary mt-4">Clear all filters</a>
-        </div>
+        <EmptyState Title="No competitions found"
+                    Description="No competitions match your filters. Try broadening your search or clearing filters."
+                    ActionUrl="/competitions" ActionLabel="Clear all filters" />
     </div>
 }
 else

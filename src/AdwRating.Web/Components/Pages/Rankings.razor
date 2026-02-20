@@ -4,6 +4,13 @@
 
 <PageTitle>@(_sizeCategory) Rankings — ADW Rating</PageTitle>
 
+<HeadContent>
+    <meta name="description" content="@GetSizeName(_sizeCategory) category agility team rankings. Browse the definitive leaderboard of active teams, filter by country, and track rank changes." />
+    <meta property="og:title" content="@(_sizeCategory) Rankings — ADW Rating" />
+    <meta property="og:description" content="@GetSizeName(_sizeCategory) category agility team rankings. Browse the definitive leaderboard of active teams worldwide." />
+    <meta property="og:url" content="/rankings?size=@_sizeCategory" />
+</HeadContent>
+
 <!-- Breadcrumbs -->
 <div class="container">
     <ol class="breadcrumbs mt-4">
@@ -85,7 +92,11 @@
 
 <!-- 3.8 Rankings table -->
 <div class="container">
-    @if (_rankings != null && _rankings.Items.Count > 0)
+    @if (_rankings is null)
+    {
+        <LoadingSkeleton Variant="LoadingSkeleton.SkeletonVariant.Table" Count="10" Columns="6" />
+    }
+    else if (_rankings.Items.Count > 0)
     {
         <div class="table-responsive">
             <table class="data-table">
@@ -190,11 +201,9 @@
     }
     else if (_rankings != null)
     {
-        <div class="empty-state">
-            <p>No teams match your filters.</p>
-            <p class="text-muted">Try broadening your search or clearing filters.</p>
-            <a href="/rankings" class="btn">Clear all filters</a>
-        </div>
+        <EmptyState Title="No teams match your filters"
+                    Description="Try broadening your search or clearing filters."
+                    ActionUrl="/rankings" ActionLabel="Clear all filters" />
     }
 </div>
 
