@@ -37,12 +37,26 @@ public class AdwRatingApiClient
         try
         {
             var url = new StringBuilder("api/rankings?");
-            url.Append($"size={filter.Size}");
+            var hasParam = false;
+            if (filter.Size.HasValue)
+            {
+                url.Append($"size={filter.Size.Value}");
+                hasParam = true;
+            }
             if (!string.IsNullOrEmpty(filter.Country))
-                url.Append($"&country={Uri.EscapeDataString(filter.Country)}");
+            {
+                if (hasParam) url.Append('&');
+                url.Append($"country={Uri.EscapeDataString(filter.Country)}");
+                hasParam = true;
+            }
             if (!string.IsNullOrEmpty(filter.Search))
-                url.Append($"&search={Uri.EscapeDataString(filter.Search)}");
-            url.Append($"&page={filter.Page}");
+            {
+                if (hasParam) url.Append('&');
+                url.Append($"search={Uri.EscapeDataString(filter.Search)}");
+                hasParam = true;
+            }
+            if (hasParam) url.Append('&');
+            url.Append($"page={filter.Page}");
             url.Append($"&pageSize={filter.PageSize}");
 
             var result = await _http.GetFromJsonAsync<PagedResult<TeamRankingDto>>(url.ToString(), JsonOptions);

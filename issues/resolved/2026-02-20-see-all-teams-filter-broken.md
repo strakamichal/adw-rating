@@ -2,7 +2,7 @@
 
 - **Type**: bug
 - **Priority**: medium
-- **Status**: open
+- **Status**: resolved
 
 ## Description
 
@@ -25,4 +25,8 @@ On a competitor's profile, the "See all teams by [Handler Name]" link navigates 
 
 ## Acceptance criteria
 
-- [ ] Clicking "See all teams" shows all teams for that handler across all dog size categories
+- [x] Clicking "See all teams" shows all teams for that handler across all dog size categories
+
+## Resolution
+
+The link was navigating to `/rankings?search=HandlerName` which always filtered within the default size category (L). Made `RankingFilter.Size` nullable throughout the stack (Domain, Data.Mssql, Api, ApiClient, Web). When the Rankings page has a search but no explicit size parameter, it now queries across all sizes. The "See all teams" link no longer constrains to a single size category.

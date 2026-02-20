@@ -10,15 +10,17 @@ namespace AdwRating.Api.Controllers;
 public class RankingsController : ControllerBase
 {
     private readonly IRankingService _rankingService;
+    private readonly ITeamRepository _teamRepo;
 
-    public RankingsController(IRankingService rankingService)
+    public RankingsController(IRankingService rankingService, ITeamRepository teamRepo)
     {
         _rankingService = rankingService;
+        _teamRepo = teamRepo;
     }
 
     [HttpGet]
     public async Task<ActionResult<PagedResult<TeamRankingDto>>> GetList(
-        [FromQuery] SizeCategory size = SizeCategory.L,
+        [FromQuery] SizeCategory? size = null,
         [FromQuery] string? country = null,
         [FromQuery] string? search = null,
         [FromQuery] int page = 1,
@@ -27,10 +29,14 @@ public class RankingsController : ControllerBase
         var filter = new RankingFilter(size, country, search, page, pageSize);
         var result = await _rankingService.GetRankingsAsync(filter);
 
+        // Get global ranks for the teams on this page
+        var teamIds = result.Items.Select(t => t.Id);
+        var globalRanks = await _teamRepo.GetGlobalRanksAsync(size, teamIds);
+
         // Map Team entities to TeamRankingDto
-        var items = result.Items.Select((team, index) =>
+        var items = result.Items.Select(team =>
         {
-            var rank = (result.Page - 1) * result.PageSize + index + 1;
+            var (rank, prevRank) = globalRanks.GetValueOrDefault(team.Id, (0, null));
             return new TeamRankingDto(
                 Id: team.Id,
                 Slug: team.Slug,
@@ -41,7 +47,7 @@ public class RankingsController : ControllerBase
                 Rating: team.Rating,
                 Sigma: team.Sigma,
                 Rank: rank,
-                PrevRank: null, // TODO: compute from PrevRating ordering
+                PrevRank: prevRank,
                 RunCount: team.RunCount,
                 Top3RunCount: team.Top3RunCount,
                 IsProvisional: team.IsProvisional,
