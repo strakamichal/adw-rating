@@ -542,7 +542,7 @@
   - **Completion gates**: build | tests
   - **Reference**: `03-domain-and-data.md` RatingSnapshot rules
 
-- [ ] **5.4** CLI recalculate command
+- [x] **5.4** CLI recalculate command
   - Add `recalculate` command to CLI that calls `IRatingService.RecalculateAllAsync()`. Print summary: teams processed, time elapsed, tier distribution.
   - Files: `Cli/Commands/RecalculateCommand.cs`
   - Dependencies: 5.3c, 3.5b

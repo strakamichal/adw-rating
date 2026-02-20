@@ -31,6 +31,7 @@ public class CliCommandTests
         _rootCommand.Add(DeleteCommands.Create(_connectionOption));
         _rootCommand.Add(UpdateCommands.Create(_connectionOption));
         _rootCommand.Add(AliasCommands.Create(_connectionOption));
+        _rootCommand.Add(RecalculateCommand.Create(_connectionOption));
     }
 
     private ParseResult Parse(string commandLine)
@@ -246,6 +247,15 @@ public class CliCommandTests
     public void SeedConfig_ParsesCorrectly()
     {
         var result = Parse("--connection test seed-config");
+        Assert.That(result.Errors, Is.Empty);
+    }
+
+    // RECALCULATE command
+
+    [Test]
+    public void Recalculate_ParsesCorrectly()
+    {
+        var result = Parse("--connection test recalculate");
         Assert.That(result.Errors, Is.Empty);
     }
 

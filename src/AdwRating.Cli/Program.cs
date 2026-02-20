@@ -19,5 +19,6 @@ rootCommand.Add(MergeCommands.Create(connectionOption));
 rootCommand.Add(DeleteCommands.Create(connectionOption));
 rootCommand.Add(UpdateCommands.Create(connectionOption));
 rootCommand.Add(AliasCommands.Create(connectionOption));
+rootCommand.Add(RecalculateCommand.Create(connectionOption));
 
 return await rootCommand.Parse(args).InvokeAsync();
