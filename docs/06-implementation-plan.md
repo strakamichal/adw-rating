@@ -502,7 +502,7 @@
 
 **Goal**: Full rating recalculation from run data. After this phase, the system can compute and store ratings.
 
-- [ ] **5.1** OpenSkill integration — RatingEngine wrapper
+- [x] **5.1** OpenSkill integration — RatingEngine wrapper *(done — uses OpenSkillSharp 1.1.0, Tau=0 since we handle sigma decay ourselves)*
   - Add `openskill.net` NuGet package. Create a thin wrapper (`RatingEngine`) in Service that isolates the library: `CreateRating()` → initial (mu=25.0, sigma≈8.333), `ProcessRun(teams, ranks, weight)` → calls PlackettLuce model → returns updated (mu, sigma).
   - Files: `Service/Rating/RatingEngine.cs`
   - Dependencies: 1.1
