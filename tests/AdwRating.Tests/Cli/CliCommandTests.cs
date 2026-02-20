@@ -9,6 +9,7 @@ namespace AdwRating.Tests.Cli;
 public class CliCommandTests
 {
     private Option<string?> _connectionOption = null!;
+    private Option<bool> _verboseOption = null!;
     private RootCommand _rootCommand = null!;
 
     [SetUp]
@@ -20,18 +21,24 @@ public class CliCommandTests
             Required = true,
             Recursive = true
         };
+        _verboseOption = new Option<bool>("--verbose")
+        {
+            Description = "Enable verbose logging",
+            Recursive = true
+        };
 
         _rootCommand = new RootCommand("ADW Rating CLI");
         _rootCommand.Add(_connectionOption);
-        _rootCommand.Add(ImportCommand.Create(_connectionOption));
-        _rootCommand.Add(SeedConfigCommand.Create(_connectionOption));
-        _rootCommand.Add(ListCommands.Create(_connectionOption));
-        _rootCommand.Add(ShowCommands.Create(_connectionOption));
-        _rootCommand.Add(MergeCommands.Create(_connectionOption));
-        _rootCommand.Add(DeleteCommands.Create(_connectionOption));
-        _rootCommand.Add(UpdateCommands.Create(_connectionOption));
-        _rootCommand.Add(AliasCommands.Create(_connectionOption));
-        _rootCommand.Add(RecalculateCommand.Create(_connectionOption));
+        _rootCommand.Add(_verboseOption);
+        _rootCommand.Add(ImportCommand.Create(_connectionOption, _verboseOption));
+        _rootCommand.Add(SeedConfigCommand.Create(_connectionOption, _verboseOption));
+        _rootCommand.Add(ListCommands.Create(_connectionOption, _verboseOption));
+        _rootCommand.Add(ShowCommands.Create(_connectionOption, _verboseOption));
+        _rootCommand.Add(MergeCommands.Create(_connectionOption, _verboseOption));
+        _rootCommand.Add(DeleteCommands.Create(_connectionOption, _verboseOption));
+        _rootCommand.Add(UpdateCommands.Create(_connectionOption, _verboseOption));
+        _rootCommand.Add(AliasCommands.Create(_connectionOption, _verboseOption));
+        _rootCommand.Add(RecalculateCommand.Create(_connectionOption, _verboseOption));
     }
 
     private ParseResult Parse(string commandLine)
