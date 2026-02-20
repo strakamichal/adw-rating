@@ -10,3 +10,6 @@ obj/
 *.user
 *.suo
 *.DotSettings.user
+
+# Infrastructure secrets
+infra/coolify-setup.env

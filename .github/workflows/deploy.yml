@@ -23,7 +23,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: .
-          file: Dockerfile.api
+          file: infra/Dockerfile.api
           push: true
           tags: ghcr.io/${{ github.repository }}/api:latest
 
@@ -42,7 +42,7 @@ jobs:
       - uses: docker/build-push-action@v6
         with:
           context: .
-          file: Dockerfile.web
+          file: infra/Dockerfile.web
           push: true
           tags: ghcr.io/${{ github.repository }}/web:latest
 
