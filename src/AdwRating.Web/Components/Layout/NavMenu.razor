@@ -1,0 +1,45 @@
+<header class="site-header">
+    <div class="container" style="position: relative;">
+
+        @* Logo *@
+        <a href="/" class="site-header__logo">
+            ADW <span>Rating</span>
+        </a>
+
+        @* Desktop nav links *@
+        <nav class="site-header__nav" aria-label="Main navigation">
+            <NavLink href="rankings" Match="NavLinkMatch.Prefix">Rankings</NavLink>
+            <NavLink href="competitions" Match="NavLinkMatch.Prefix">Competitions</NavLink>
+        </nav>
+
+        @* Desktop search *@
+        <div class="site-header__search">
+            <SearchDropdown CssClass="search-input--header" />
+        </div>
+
+        @* Mobile: search icon toggle (CSS-only) *@
+        <input type="checkbox" id="search-toggle" class="search-toggle" aria-hidden="true" />
+        <label for="search-toggle" class="search-toggle-label hidden-desktop" aria-label="Toggle search">
+            &#128269;
+        </label>
+
+        @* Mobile: hamburger toggle (CSS-only) *@
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-hidden="true" />
+        <label for="hamburger-toggle" class="hamburger-label hidden-desktop" aria-label="Toggle menu">
+            &#9776;
+        </label>
+
+        @* Mobile navigation dropdown *@
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+            <NavLink href="rankings" Match="NavLinkMatch.Prefix">Rankings</NavLink>
+            <NavLink href="competitions" Match="NavLinkMatch.Prefix">Competitions</NavLink>
+            <NavLink href="how-it-works" Match="NavLinkMatch.All">How it works</NavLink>
+        </nav>
+
+        @* Mobile search bar (full-width, expands below header) *@
+        <div class="mobile-search-bar">
+            <SearchDropdown />
+        </div>
+
+    </div>
+</header>

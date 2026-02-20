@@ -300,13 +300,13 @@ def normalize_round_key_from_existing(round_key: str, size: str, discipline: str
         sz = normalize_size(size).lower()
         base = f"{'team' if is_team_bool else 'ind'}_{disc}_{sz}"
 
-        # Preserve _ind suffix for team individual results
-        if is_team_bool and rk.endswith("_ind"):
+        # Preserve existing run suffixes (e.g. _1, _kl1_3, _ind).
+        # This avoids collapsing distinct rounds into one key.
+        suffix_parts = parts[3:]
+        if is_team_bool and suffix_parts == ["ind"]:
             return base + "_ind"
-
-        # Preserve trailing number if present
-        if parts[-1].isdigit():
-            return base + f"_{parts[-1]}"
+        if suffix_parts:
+            return base + "_" + "_".join(suffix_parts)
 
         return base
 
@@ -318,6 +318,32 @@ def normalize_round_key_from_existing(round_key: str, size: str, discipline: str
         disc = normalize_discipline(discipline).lower()
         sz = normalize_size(size).lower()
         typ = "team" if is_team_bool else "ind"
+
+        day_prefixes = {
+            "mon", "tue", "wed", "thu", "fri", "sat", "sun",
+            "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday",
+        }
+
+        # Tolleri-style keys: yyyymmdd_{competition_id}_{class_code}
+        # Keep all identifying parts to avoid merging classes/rings.
+        if re.fullmatch(r"\d{8}", parts[0]) and re.fullmatch(r"-?\d+", parts[1]):
+            class_code = re.sub(r"[^a-z0-9]+", "", parts[2].lower())
+            suffix = f"{parts[0]}_{parts[1]}"
+            if class_code:
+                suffix += f"_{class_code}"
+            return f"{typ}_{disc}_{sz}_{suffix}"
+
+        # Day-prefixed keys (e.g. fri_a1_in, sat_jumping_open_2_l):
+        # preserve the full suffix so different runs don't collapse.
+        if parts[0].lower() in day_prefixes:
+            suffix_parts = []
+            for p in parts:
+                clean = re.sub(r"[^a-z0-9]+", "", p.lower())
+                if clean:
+                    suffix_parts.append(clean)
+            if suffix_parts:
+                return f"{typ}_{disc}_{sz}_{'_'.join(suffix_parts)}"
+            return f"{typ}_{disc}_{sz}"
 
         # Extract number from parts if present (e.g., fri_agility_1_in → number=1)
         number = None

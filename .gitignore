@@ -2,3 +2,11 @@ __pycache__/
 *.pyc
 .DS_Store
 .claude/
+.idea/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.DotSettings.user

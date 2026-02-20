@@ -1,0 +1,353 @@
+@page "/rankings"
+@using AdwRating.Web.Components.Shared
+@inject AdwRatingApiClient Api
+
+<PageTitle>@(_sizeCategory) Rankings — ADW Rating</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="@GetSizeName(_sizeCategory) category agility team rankings. Browse the definitive leaderboard of active teams, filter by country, and track rank changes." />
+    <meta property="og:title" content="@(_sizeCategory) Rankings — ADW Rating" />
+    <meta property="og:description" content="@GetSizeName(_sizeCategory) category agility team rankings. Browse the definitive leaderboard of active teams worldwide." />
+    <meta property="og:url" content="/rankings?size=@_sizeCategory" />
+</HeadContent>
+
+<!-- Breadcrumbs -->
+<div class="container">
+    <ol class="breadcrumbs mt-4">
+        <li><a href="/">Home</a></li>
+        <li>Rankings</li>
+    </ol>
+    <div class="breadcrumbs-mobile mt-4">
+        <a href="/">&larr; Back to Home</a>
+    </div>
+</div>
+
+<!-- Page heading -->
+<div class="container mt-4">
+    <h1>Rankings</h1>
+    <p class="text-muted">The definitive leaderboard of agility teams worldwide.</p>
+</div>
+
+<!-- 3.6 Filter bar (sticky) -->
+<div class="filter-bar mt-4">
+    <div class="container">
+        <form method="get" action="/rankings" class="filter-group-row">
+            <div class="filter-group">
+                <span class="filter-group__label">Size</span>
+                <div class="pill-group">
+                    @foreach (var s in new[] { "S", "M", "I", "L" })
+                    {
+                        <a class="pill@(s == _sizeCategory.ToString() ? " active" : "")"
+                           href="@BuildUrl(size: s, page: 1)">@s</a>
+                    }
+                </div>
+            </div>
+            <div class="filter-group">
+                <span class="filter-group__label">Country</span>
+                <div class="dropdown">
+                    <select class="dropdown__select" name="country" onchange="this.form.submit()">
+                        <option value="">All Countries</option>
+                        @foreach (var (code, name) in _countries)
+                        {
+                            if (Country == code)
+                            {
+                                <option value="@(code)" selected>@CountryHelper.GetFlag(code) @name</option>
+                            }
+                            else
+                            {
+                                <option value="@(code)">@CountryHelper.GetFlag(code) @name</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="filter-group filter-bar__search">
+                <div class="search-input">
+                    <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+                    <input type="search" class="search-input__field" name="search" value="@Search"
+                           placeholder="Search by name..." aria-label="Search by name">
+                </div>
+            </div>
+            <!-- Hidden fields to preserve filter state on form submit -->
+            <input type="hidden" name="size" value="@Size" />
+            <input type="hidden" name="pageSize" value="@(PageSize ?? 20)" />
+        </form>
+    </div>
+</div>
+
+<!-- 3.7 Summary row -->
+<div class="container">
+    @if (_rankings != null)
+    {
+        @if (!string.IsNullOrEmpty(Country))
+        {
+            <p class="summary-text">Showing @_rankings.TotalCount qualified @Country teams in @GetSizeName(_sizeCategory)</p>
+        }
+        else
+        {
+            <p class="summary-text">Showing @_rankings.TotalCount qualified teams in @GetSizeName(_sizeCategory)</p>
+        }
+    }
+</div>
+
+<!-- 3.8 Rankings table -->
+<div class="container">
+    @if (_rankings is null)
+    {
+        <LoadingSkeleton Variant="LoadingSkeleton.SkeletonVariant.Table" Count="10" Columns="6" />
+    }
+    else if (_rankings.Items.Count > 0)
+    {
+        <div class="table-responsive">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 3rem;">#</th>
+                        <th style="width: 5rem;">Trend</th>
+                        <th>Team</th>
+                        <th class="col-number" style="width: 7rem;">Rating</th>
+                        <th style="width: 7rem;">Tier</th>
+                        <th class="col-number" style="width: 5rem;">Runs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var team in _rankings.Items)
+                    {
+                        <tr class="@GetRowClass(team) clickable" onclick="window.location.href='/teams/@team.Slug'">
+                            <td class="cell-rank">@team.Rank</td>
+                            <td>@TrendMarkup(team)</td>
+                            <td>
+                                <div class="cell-team">
+                                    <span class="cell-team__handler">@CountryHelper.GetFlag(team.HandlerCountry) @team.HandlerName</span>
+                                    <span class="cell-team__dog">@team.DogCallName</span>
+                                </div>
+                            </td>
+                            <td class="col-number">
+                                <div class="cell-rating__value">@team.Rating.ToString("N0")</div>
+                                <div class="cell-rating__sigma">&plusmn; @team.Sigma.ToString("N0")</div>
+                            </td>
+                            <td>
+                                @if (team.TierLabel != null)
+                                {
+                                    <span class="badge badge-@team.TierLabel.Value.ToString().ToLowerInvariant()">@team.TierLabel</span>
+                                }
+                                @if (team.IsProvisional)
+                                {
+                                    <span class="badge badge-few-runs" style="margin-left: var(--space-1);">FEW RUNS</span>
+                                }
+                            </td>
+                            <td class="col-number">
+                                <div class="cell-runs__total">@team.RunCount</div>
+                                <div class="cell-runs__fraction">@team.Top3RunCount/@team.RunCount</div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 3.9 Tier distribution -->
+        <div class="tier-distribution">
+            @foreach (var (label, count) in _tierCounts)
+            {
+                <div class="tier-distribution__item">
+                    <span class="tier-distribution__dot tier-distribution__dot--@label.ToString().ToLowerInvariant()"></span>
+                    @label: @count
+                </div>
+            }
+        </div>
+
+        <!-- Pagination -->
+        @if (_totalPages > 1)
+        {
+            <div class="pagination">
+                @if (_page > 1)
+                {
+                    <a class="pagination__btn" href="@BuildUrl(page: _page - 1)">&laquo; Prev</a>
+                }
+                else
+                {
+                    <span class="pagination__btn disabled">&laquo; Prev</span>
+                }
+
+                @foreach (var p in GetPageNumbers(_page, _totalPages))
+                {
+                    @if (p == -1)
+                    {
+                        <span class="pagination__info">&hellip;</span>
+                    }
+                    else if (p == _page)
+                    {
+                        <span class="pagination__btn active">@p</span>
+                    }
+                    else
+                    {
+                        <a class="pagination__btn" href="@BuildUrl(page: p)">@p</a>
+                    }
+                }
+
+                @if (_page < _totalPages)
+                {
+                    <a class="pagination__btn" href="@BuildUrl(page: _page + 1)">Next &raquo;</a>
+                }
+                else
+                {
+                    <span class="pagination__btn disabled">Next &raquo;</span>
+                }
+
+                <span class="pagination__info">Page @_page of @_totalPages</span>
+            </div>
+        }
+    }
+    else if (_rankings != null)
+    {
+        <EmptyState Title="No teams match your filters"
+                    Description="Try broadening your search or clearing filters."
+                    ActionUrl="/rankings" ActionLabel="Clear all filters" />
+    }
+</div>
+
+@code {
+    [SupplyParameterFromQuery] public string? Size { get; set; }
+    [SupplyParameterFromQuery] public string? Country { get; set; }
+    [SupplyParameterFromQuery] public string? Search { get; set; }
+    [SupplyParameterFromQuery] public int? Page { get; set; }
+    [SupplyParameterFromQuery] public int? PageSize { get; set; }
+
+    private PagedResult<TeamRankingDto>? _rankings;
+    private SizeCategory _sizeCategory;
+    private int _page;
+    private int _pageSize;
+    private int _totalPages;
+    private List<(TierLabel Label, int Count)> _tierCounts = [];
+
+    private static readonly (string Code, string Name)[] _countries =
+    [
+        ("AUT", "Austria"),
+        ("AUS", "Australia"),
+        ("BEL", "Belgium"),
+        ("BRA", "Brazil"),
+        ("CAN", "Canada"),
+        ("CHE", "Switzerland"),
+        ("CZE", "Czech Republic"),
+        ("DEU", "Germany"),
+        ("DNK", "Denmark"),
+        ("ESP", "Spain"),
+        ("FIN", "Finland"),
+        ("FRA", "France"),
+        ("GBR", "United Kingdom"),
+        ("HRV", "Croatia"),
+        ("HUN", "Hungary"),
+        ("ITA", "Italy"),
+        ("JPN", "Japan"),
+        ("LUX", "Luxembourg"),
+        ("NLD", "Netherlands"),
+        ("NOR", "Norway"),
+        ("POL", "Poland"),
+        ("SVK", "Slovakia"),
+        ("SWE", "Sweden"),
+        ("USA", "United States"),
+    ];
+
+    protected override async Task OnInitializedAsync()
+    {
+        _sizeCategory = Enum.TryParse<SizeCategory>(Size, true, out var s) ? s : SizeCategory.L;
+        _page = Page ?? 1;
+        _pageSize = PageSize ?? 20;
+
+        var filter = new RankingFilter(
+            _sizeCategory,
+            Country,
+            Search,
+            _page,
+            _pageSize
+        );
+
+        _rankings = await Api.GetRankingsAsync(filter);
+        _totalPages = _pageSize > 0 ? (int)Math.Ceiling((double)_rankings.TotalCount / _pageSize) : 1;
+
+        // Compute tier distribution from current page results
+        _tierCounts = Enum.GetValues<TierLabel>()
+            .Select(t => (Label: t, Count: _rankings.Items.Count(r => r.TierLabel == t)))
+            .Where(x => x.Count > 0)
+            .ToList();
+    }
+
+    private string BuildUrl(string? size = null, int? page = null)
+    {
+        var s = size ?? Size ?? _sizeCategory.ToString();
+        var p = page ?? _page;
+        var url = $"/rankings?size={s}";
+        if (!string.IsNullOrEmpty(Country))
+            url += $"&country={Uri.EscapeDataString(Country)}";
+        if (!string.IsNullOrEmpty(Search))
+            url += $"&search={Uri.EscapeDataString(Search)}";
+        if (p > 1)
+            url += $"&page={p}";
+        if (_pageSize != 20)
+            url += $"&pageSize={_pageSize}";
+        return url;
+    }
+
+    private static string GetRowClass(TeamRankingDto team)
+    {
+        var classes = new List<string>();
+
+        if (team.Rank <= 3)
+            classes.Add($"rank-{team.Rank}");
+
+        if (team.TierLabel == TierLabel.Elite)
+            classes.Add("tier-elite");
+        else if (team.TierLabel == TierLabel.Champion)
+            classes.Add("tier-champion");
+
+        if (team.IsProvisional)
+            classes.Add("provisional");
+
+        return string.Join(' ', classes);
+    }
+
+    private static MarkupString TrendMarkup(TeamRankingDto team)
+    {
+        if (team.PrevRank == null)
+            return new MarkupString("<span class=\"badge badge-new\">NEW</span>");
+
+        var diff = team.PrevRank.Value - team.Rank;
+        if (diff > 0)
+            return new MarkupString($"<span class=\"trend trend-up\">&#9650; {diff}</span>");
+        if (diff < 0)
+            return new MarkupString($"<span class=\"trend trend-down\">&#9660; {Math.Abs(diff)}</span>");
+        return new MarkupString("<span class=\"trend trend-unchanged\">&mdash;</span>");
+    }
+
+    private static string GetSizeName(SizeCategory size) => size switch
+    {
+        SizeCategory.S => "Small",
+        SizeCategory.M => "Medium",
+        SizeCategory.I => "Intermediate",
+        SizeCategory.L => "Large",
+        _ => size.ToString()
+    };
+
+    private static List<int> GetPageNumbers(int current, int total)
+    {
+        var pages = new List<int>();
+        if (total <= 7)
+        {
+            for (var i = 1; i <= total; i++) pages.Add(i);
+            return pages;
+        }
+
+        pages.Add(1);
+        if (current > 3) pages.Add(-1); // ellipsis
+
+        var start = Math.Max(2, current - 1);
+        var end = Math.Min(total - 1, current + 1);
+        for (var i = start; i <= end; i++) pages.Add(i);
+
+        if (current < total - 2) pages.Add(-1); // ellipsis
+        pages.Add(total);
+
+        return pages;
+    }
+}

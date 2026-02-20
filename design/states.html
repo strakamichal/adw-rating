@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empty &amp; Error States — ADW Rating Design</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body class="states-page">
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container" style="position: relative;">
+        <a href="layout.html" class="site-header__logo">
+          ADW <span>Rating</span>
+        </a>
+
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+        </nav>
+
+        <div class="site-header__search">
+          <div class="search-input search-input--header">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+
+        <input type="checkbox" id="search-toggle" class="search-toggle" aria-hidden="true">
+        <label for="search-toggle" class="search-toggle-label hidden-desktop" aria-label="Toggle search">&#128269;</label>
+
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-hidden="true">
+        <label for="hamburger-toggle" class="hamburger-label hidden-desktop" aria-label="Toggle menu">&#9776;</label>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+          <a href="how-it-works.html">How it works</a>
+        </nav>
+
+        <div class="mobile-search-bar">
+          <div class="search-input">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <div class="container mt-8">
+        <h1>Empty, Error &amp; Loading States</h1>
+        <p class="text-muted">Design patterns for when content is loading, empty, or something goes wrong.</p>
+      </div>
+
+      <div class="container mt-8">
+
+        <!-- State 1: No results (empty filter) -->
+        <div class="demo-section">
+          <div class="demo-label">State 1</div>
+          <h2>No Results (Empty Filter)</h2>
+          <p class="demo-description">
+            Shown when the user's filter combination returns no results. Includes a clear message and a call-to-action to recover.
+          </p>
+
+          <div class="empty-state">
+            <div class="empty-state__icon">&#128269;</div>
+            <div class="empty-state__title">No teams match your filters</div>
+            <div class="empty-state__description">
+              Try broadening your search or removing some filters to see more results.
+            </div>
+            <button class="btn btn-primary">Clear filters</button>
+          </div>
+        </div>
+
+        <!-- State 2: 404 Page Not Found -->
+        <div class="demo-section">
+          <div class="demo-label">State 2</div>
+          <h2>404 — Page Not Found</h2>
+          <p class="demo-description">
+            Shown when a user navigates to a URL that does not exist (e.g., a deleted team profile or a typo in the URL).
+          </p>
+
+          <div class="not-found">
+            <div class="not-found__code">404</div>
+            <div class="not-found__title">Page Not Found</div>
+            <div class="not-found__description">
+              The page you are looking for does not exist or may have been moved.
+              Check the URL for typos, or use the links below to get back on track.
+            </div>
+            <div class="not-found__links">
+              <a href="layout.html" class="btn btn-primary">Go to Home</a>
+              <a href="layout.html" class="btn btn-secondary">View Rankings</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- State 3: Loading Skeletons -->
+        <div class="demo-section">
+          <div class="demo-label">State 3</div>
+          <h2>Loading Skeletons</h2>
+          <p class="demo-description">
+            Skeleton placeholder blocks shown during initial page load, matching the shape of expected content. The shimmer animation communicates that content is loading.
+          </p>
+
+          <!-- 3a: Stat cards skeleton -->
+          <h3 class="mb-4">Stat Cards</h3>
+          <div class="grid-3 mb-8">
+            <div class="skeleton-stat-card">
+              <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 36px; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 12px;"></div>
+            </div>
+            <div class="skeleton-stat-card">
+              <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 36px; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 12px;"></div>
+            </div>
+            <div class="skeleton-stat-card">
+              <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 36px; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 12px;"></div>
+            </div>
+          </div>
+
+          <!-- 3b: Rankings table skeleton -->
+          <h3 class="mb-4">Rankings Table</h3>
+          <div class="table-responsive mb-8">
+            <table class="skeleton-table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th style="width: 50px;"><div class="skeleton skeleton-bar" style="width: 24px; height: 12px; margin: 0;"></div></th>
+                  <th style="width: 60px;"><div class="skeleton skeleton-bar" style="width: 40px; height: 12px; margin: 0;"></div></th>
+                  <th><div class="skeleton skeleton-bar" style="width: 60px; height: 12px; margin: 0;"></div></th>
+                  <th style="width: 100px;"><div class="skeleton skeleton-bar" style="width: 50px; height: 12px; margin: 0;"></div></th>
+                  <th style="width: 80px;"><div class="skeleton skeleton-bar" style="width: 40px; height: 12px; margin: 0;"></div></th>
+                  <th style="width: 60px;"><div class="skeleton skeleton-bar" style="width: 36px; height: 12px; margin: 0;"></div></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar skeleton-bar--long" style="height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 52px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 75%; height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 64px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 85%; height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 50%; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 52px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar skeleton-bar--long" style="height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 56px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+                <tr>
+                  <td><div class="skeleton skeleton-bar" style="width: 20px; height: 16px; margin: 0;"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 36px; height: 16px; margin: 0;"></div></td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 70%; height: 14px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 10px; margin: 0;"></div>
+                  </td>
+                  <td>
+                    <div class="skeleton skeleton-bar" style="width: 56px; height: 16px; margin-bottom: var(--space-1);"></div>
+                    <div class="skeleton skeleton-bar" style="width: 36px; height: 10px; margin: 0;"></div>
+                  </td>
+                  <td><div class="skeleton skeleton-bar" style="width: 48px; height: 20px; margin: 0; border-radius: var(--radius-sm);"></div></td>
+                  <td><div class="skeleton skeleton-bar" style="width: 28px; height: 16px; margin: 0;"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 3c: Team profile hero card skeleton -->
+          <h3 class="mb-4">Team Profile Hero Card</h3>
+          <div class="skeleton-hero mb-8">
+            <div>
+              <div class="flex items-center gap-4 mb-6">
+                <div class="skeleton skeleton-circle" style="width: 72px; height: 72px; flex-shrink: 0;"></div>
+                <div style="flex: 1;">
+                  <div class="skeleton skeleton-bar" style="width: 180px; height: 22px; margin-bottom: var(--space-2);"></div>
+                  <div class="skeleton skeleton-bar" style="width: 120px; height: 16px; margin-bottom: var(--space-2);"></div>
+                  <div class="skeleton skeleton-bar" style="width: 90px; height: 12px; margin: 0;"></div>
+                </div>
+              </div>
+              <div class="skeleton skeleton-bar" style="width: 80px; height: 22px;"></div>
+            </div>
+            <div style="text-align: right;">
+              <div class="skeleton skeleton-bar" style="width: 120px; height: 48px; margin-left: auto; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar" style="width: 80px; height: 14px; margin-left: auto; margin-bottom: var(--space-4);"></div>
+              <div class="skeleton skeleton-bar" style="width: 72px; height: 24px; margin-left: auto; margin-bottom: var(--space-3);"></div>
+              <div class="skeleton skeleton-bar" style="width: 60px; height: 18px; margin-left: auto; margin-bottom: var(--space-2);"></div>
+              <div class="skeleton skeleton-bar" style="width: 100px; height: 12px; margin-left: auto; margin: 0;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- State 4: Error State -->
+        <div class="demo-section">
+          <div class="demo-label">State 4</div>
+          <h2>Error State</h2>
+          <p class="demo-description">
+            Shown when an API call or page load fails unexpectedly. Provides a clear message and a retry action.
+          </p>
+
+          <div class="error-state">
+            <div class="error-state__icon">&#9888;&#65039;</div>
+            <div class="error-state__title">Something went wrong</div>
+            <div class="error-state__description">
+              We could not load the data. This might be a temporary issue. Please try again.
+            </div>
+            <button class="btn btn-primary">Retry</button>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <div>
+            <div class="site-footer__brand mb-3">ADW <span>Rating</span></div>
+            <ul class="site-footer__links">
+              <li><a href="how-it-works.html">How it works</a></li>
+              <li><a href="layout.html">Rankings</a></li>
+              <li><a href="competitions.html">Competitions</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="site-footer__social">
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p class="site-footer__disclaimer">Data from major international agility competitions.</p>
+          <p class="site-footer__disclaimer">ADW Rating is an independent project &mdash; not affiliated with FCI, AKC, or any official organization.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

@@ -65,12 +65,14 @@
 | `CallName` | string(100) | yes | Short everyday name (e.g., "Fame", "Ray") |
 | `NormalizedCallName` | string(100) | yes | Lowercased, diacritics-stripped call name |
 | `RegisteredName` | string(300) | no | Full registered/kennel name (e.g., "Border Star Hall of Fame") |
+| `NormalizedRegisteredName` | string(300) | no | Lowercased, diacritics-stripped registered name for matching. Empty when RegisteredName is null |
 | `Breed` | string(100) | no | Dog breed (e.g., "Border Collie") |
 | `SizeCategory` | SizeCategory | yes | FCI size category: S, M, I, L |
 | `SizeCategoryOverride` | SizeCategory | no | Admin override. If set, takes precedence over automatic category determination. Null means auto-detect from run data |
 
 **Rules**:
-- `NormalizedCallName` is derived automatically from `CallName`.
+- `NormalizedCallName` is derived automatically from `CallName`. Empty when `CallName` is empty.
+- `NormalizedRegisteredName` is derived automatically from `RegisteredName`. Empty when `RegisteredName` is null.
 - A dog's size category is determined by priority:
   1. `SizeCategoryOverride` (if set by admin) — takes absolute precedence.
   2. Otherwise, the category from the dog's **most recent run** (by run date, then by import order within the same date). This ensures that remeasured dogs or dogs switching organizations immediately reflect their current category.

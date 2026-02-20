@@ -1,0 +1,363 @@
+@page "/teams/{Slug}"
+@using AdwRating.Web.Components.Shared
+@inject AdwRatingApiClient Api
+
+@if (!_loaded)
+{
+    <PageTitle>Loading... — ADW Rating</PageTitle>
+
+    <div class="container mt-6">
+        <LoadingSkeleton Variant="LoadingSkeleton.SkeletonVariant.HeroCard" />
+    </div>
+    <div class="container mt-6">
+        <LoadingSkeleton Variant="LoadingSkeleton.SkeletonVariant.StatCards" Count="4" />
+    </div>
+}
+else if (_team is null)
+{
+    <PageTitle>Team Not Found — ADW Rating</PageTitle>
+
+    <HeadContent>
+        <meta name="description" content="The team you are looking for does not exist." />
+    </HeadContent>
+
+    <div class="container mt-8">
+        <div class="not-found">
+            <div class="not-found__code">404</div>
+            <h1 class="not-found__title">Team not found</h1>
+            <p class="not-found__description">
+                The team you are looking for does not exist or may have been removed.
+            </p>
+            <div class="not-found__links">
+                <a href="/rankings" class="btn btn-primary">Browse Rankings</a>
+                <a href="/" class="btn btn-secondary">Go Home</a>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <PageTitle>@_team.HandlerName &amp; @_team.DogCallName — ADW Rating</PageTitle>
+
+    <HeadContent>
+        <meta name="description" content="Rating: @((int)_team.Rating) | @(_team.TierLabel?.ToString() ?? "Competitor") | @_team.SizeCategory category | @_team.RunCount runs | @(_team.Top3Pct.ToString("0"))% podium rate" />
+        <meta property="og:title" content="@_team.HandlerName & @_team.DogCallName — ADW Rating" />
+        <meta property="og:description" content="Rating: @((int)_team.Rating) | @(_team.TierLabel?.ToString() ?? "Competitor") | @_team.SizeCategory | @_team.RunCount runs" />
+        <meta property="og:url" content="/teams/@Slug" />
+    </HeadContent>
+
+    @* Breadcrumbs *@
+    <div class="container">
+        <ol class="breadcrumbs mt-4">
+            <li><a href="/">Home</a></li>
+            <li><a href="/rankings">Rankings</a></li>
+            <li>@_team.HandlerName &amp; @_team.DogCallName</li>
+        </ol>
+        <div class="breadcrumbs-mobile mt-4">
+            <a href="/rankings">&larr; Back to Rankings</a>
+        </div>
+    </div>
+
+    @* 3.10 Hero Card *@
+    <div class="container mt-6">
+        <div class="hero-card @(_team.IsActive ? "" : "hero-card--inactive")">
+            @if (!_team.IsActive)
+            {
+                <div class="hero-card__banner hero-card__banner--inactive">INACTIVE</div>
+            }
+
+            @* Left side *@
+            <div class="hero-card__left">
+                <div class="flex items-center gap-4">
+                    <div class="avatar avatar--xl avatar--hero">@GetInitials(_team.HandlerName)</div>
+                    <div>
+                        <div class="hero-card__handler">@_team.HandlerName @CountryFlag.ToEmoji(_team.HandlerCountry)</div>
+                        <div class="hero-card__dog">@_team.DogCallName</div>
+                        @if (!string.IsNullOrEmpty(_team.DogBreed))
+                        {
+                            <div class="hero-card__meta">@_team.DogBreed</div>
+                        }
+                        <div class="mt-2" style="display: flex; gap: var(--space-2); align-items: center;">
+                            <span class="badge badge-size" style="background-color: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white;">@_team.SizeCategory</span>
+                            @if (_team.IsProvisional)
+                            {
+                                <span class="badge badge-few-runs" style="background-color: rgba(212,149,10,0.2); border-color: rgba(212,149,10,0.4); color: #fbbf24;">FEW RUNS</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @* Right side *@
+            <div class="hero-card__right">
+                <div class="hero-card__rating">@((int)_team.Rating)</div>
+                <div class="hero-card__sigma">&plusmn; @((int)_team.Sigma) uncertainty</div>
+                <div class="mt-2">
+                    <span class="badge @GetTierBadgeCss(_team.TierLabel)" style="font-size: var(--font-size-sm); padding: var(--space-1) var(--space-3);">
+                        @(_team.TierLabel?.ToString() ?? "Competitor")
+                    </span>
+                </div>
+                @if (RatingChange > 0)
+                {
+                    <div class="hero-card__trend hero-card__trend--up">+@RatingChange &#9650;</div>
+                }
+                else if (RatingChange < 0)
+                {
+                    <div class="hero-card__trend hero-card__trend--down">@RatingChange &#9660;</div>
+                }
+                @if (_team.PeakRating != _team.Rating && (int)_team.PeakRating != (int)_team.Rating)
+                {
+                    <div class="hero-card__peak">Peak: @((int)_team.PeakRating)</div>
+                }
+            </div>
+        </div>
+    </div>
+
+    @if (!_team.IsActive)
+    {
+        <div class="container mt-4" style="text-align: center;">
+            <p class="text-muted text-small">
+                This team is inactive &mdash; not enough recent runs to maintain an active ranking.
+            </p>
+        </div>
+    }
+
+    @* 3.11 Quick Stats Row *@
+    <div class="container mt-6">
+        <div class="grid-4">
+            <div class="stat-card">
+                <div class="stat-card__value">@_team.RunCount</div>
+                <div class="stat-card__label">Runs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__value">@(_team.FinishedPct.ToString("0"))%</div>
+                <div class="stat-card__label">Finish Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__value">@(_team.Top3Pct.ToString("0"))%</div>
+                <div class="stat-card__label">Podium Rate</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card__value">@(_team.AvgRank?.ToString("0.0") ?? "—")</div>
+                <div class="stat-card__label">Avg Rank</div>
+            </div>
+        </div>
+    </div>
+
+    @* 3.12 Rating Progression Chart *@
+    <div class="container mt-8">
+        <h2>Rating Progression</h2>
+        @if (_history.Count > 0)
+        {
+            <div style="position: relative; height: 300px;">
+                <canvas id="rating-chart"></canvas>
+            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var data = @((MarkupString)SerializeHistory());
+                    var peakRating = @((int)_team.PeakRating != (int)_team.Rating ? ((int)_team.PeakRating).ToString() : "null");
+                    initRatingChart('rating-chart', data, peakRating);
+                });
+            </script>
+        }
+        else
+        {
+            <div class="chart-placeholder">
+                <div class="chart-placeholder__icon">&#128200;</div>
+                <div>No rating history available yet</div>
+            </div>
+        }
+    </div>
+
+    @* 3.13 Competition History Table *@
+    <div class="container mt-8">
+        <div class="section-header">
+            <h2>Competition History</h2>
+        </div>
+
+        @if (_results.Items.Count > 0)
+        {
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Competition</th>
+                            <th>Discipline</th>
+                            <th class="col-number">Rank</th>
+                            <th class="col-number">Faults</th>
+                            <th class="col-number">Time</th>
+                            <th class="col-number">Speed</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var r in _results.Items)
+                        {
+                            var rowClass = r.Eliminated ? "eliminated"
+                                : r.Rank == 1 ? "rank-1"
+                                : r.Rank == 2 ? "rank-2"
+                                : r.Rank == 3 ? "rank-3"
+                                : "";
+                            <tr class="@rowClass">
+                                <td>@r.Date.ToString("MMM d, yyyy")</td>
+                                <td>
+                                    @r.CompetitionName
+                                    @if (IsMajorCompetition(r.CompetitionName))
+                                    {
+                                        <span class="badge badge-major" style="margin-left: var(--space-1);">Major</span>
+                                    }
+                                    @if (r.IsTeamRound)
+                                    {
+                                        <span class="badge" style="margin-left: var(--space-1);">Team</span>
+                                    }
+                                </td>
+                                <td>@r.Discipline</td>
+                                <td class="col-number">
+                                    @if (r.Eliminated)
+                                    {
+                                        <span class="badge badge-elim">ELIM</span>
+                                    }
+                                    else if (r.Rank.HasValue)
+                                    {
+                                        @if (r.Rank <= 3)
+                                        {
+                                            <strong>@r.Rank</strong>
+                                        }
+                                        else
+                                        {
+                                            @r.Rank
+                                        }
+                                    }
+                                </td>
+                                <td class="col-number">@(r.Faults?.ToString() ?? "&mdash;")</td>
+                                <td class="col-number">@(r.Time.HasValue ? $"{r.Time:0.00}s" : "&mdash;")</td>
+                                <td class="col-number">@(r.Speed.HasValue ? $"{r.Speed:0.00} m/s" : "&mdash;")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            @* Pagination *@
+            <div class="results-info">Showing @ResultsShowStart&ndash;@ResultsShowEnd of @_results.TotalCount results</div>
+            @if (ResultsTotalPages > 1)
+            {
+                <nav class="pagination" aria-label="Results pagination">
+                    @if (ResultsCurrentPage > 1)
+                    {
+                        <a href="/teams/@Slug?resultsPage=@(ResultsCurrentPage - 1)" class="pagination__btn">&laquo; Prev</a>
+                    }
+                    else
+                    {
+                        <span class="pagination__btn disabled">&laquo; Prev</span>
+                    }
+
+                    @for (int p = 1; p <= ResultsTotalPages; p++)
+                    {
+                        @if (p == ResultsCurrentPage)
+                        {
+                            <span class="pagination__btn active">@p</span>
+                        }
+                        else
+                        {
+                            <a href="/teams/@Slug?resultsPage=@p" class="pagination__btn">@p</a>
+                        }
+                    }
+
+                    @if (ResultsCurrentPage < ResultsTotalPages)
+                    {
+                        <a href="/teams/@Slug?resultsPage=@(ResultsCurrentPage + 1)" class="pagination__btn">Next &raquo;</a>
+                    }
+                    else
+                    {
+                        <span class="pagination__btn disabled">Next &raquo;</span>
+                    }
+
+                    <span class="pagination__info">Page @ResultsCurrentPage of @ResultsTotalPages</span>
+                </nav>
+            }
+        }
+        else
+        {
+            <p class="text-muted">No competition results recorded yet.</p>
+        }
+    </div>
+
+    @* 3.14 Handler link *@
+    <div class="container mt-6 mb-8">
+        <a href="/rankings?search=@Uri.EscapeDataString(_team.HandlerName)">See all teams by @_team.HandlerName &rarr;</a>
+    </div>
+}
+
+@code {
+    [Parameter] public string Slug { get; set; } = "";
+    [SupplyParameterFromQuery(Name = "resultsPage")] public int? ResultsPage { get; set; }
+
+    private bool _loaded;
+    private TeamDetailDto? _team;
+    private IReadOnlyList<RatingSnapshotDto> _history = [];
+    private PagedResult<TeamResultDto> _results = new([], 0, 1, 20);
+
+    private int RatingChange => _team is not null ? (int)(_team.Rating - _team.PrevRating) : 0;
+    private int ResultsTotalPages => (_results.TotalCount + 19) / 20;
+    private int ResultsCurrentPage => ResultsPage ?? 1;
+    private int ResultsShowStart => (ResultsCurrentPage - 1) * 20 + 1;
+    private int ResultsShowEnd => Math.Min(ResultsCurrentPage * 20, _results.TotalCount);
+
+    protected override async Task OnInitializedAsync()
+    {
+        _team = await Api.GetTeamAsync(Slug);
+
+        if (_team is not null)
+        {
+            var historyTask = Api.GetTeamHistoryAsync(Slug);
+            var resultsTask = Api.GetTeamResultsAsync(Slug, ResultsPage ?? 1, 20);
+            await Task.WhenAll(historyTask, resultsTask);
+
+            _history = historyTask.Result;
+            _results = resultsTask.Result;
+        }
+
+        _loaded = true;
+    }
+
+    private static string GetInitials(string name)
+    {
+        var parts = name.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        return string.Concat(parts.Select(p => p[0])).ToUpperInvariant();
+    }
+
+    private static string GetTierBadgeCss(TierLabel? tier) => tier switch
+    {
+        TierLabel.Elite => "badge-elite",
+        TierLabel.Champion => "badge-champion",
+        TierLabel.Expert => "badge-expert",
+        _ => "badge-competitor"
+    };
+
+    /// <summary>
+    /// Heuristic: competitions with known major keywords are flagged.
+    /// In a future version, this could come from a Tier field on TeamResultDto.
+    /// </summary>
+    private static bool IsMajorCompetition(string name)
+    {
+        var lower = name.ToLowerInvariant();
+        return lower.Contains("world championship") ||
+               lower.Contains("awc") ||
+               lower.Contains("european open") ||
+               lower.Contains("fmbb") ||
+               lower.Contains("wao") ||
+               lower.Contains("ifcs");
+    }
+
+    private string SerializeHistory()
+    {
+        var items = _history.Select(h => new
+        {
+            date = h.Date.ToString("MMM yyyy"),
+            rating = Math.Round(h.Rating, 0),
+            sigma = Math.Round(h.Sigma, 0)
+        });
+        return System.Text.Json.JsonSerializer.Serialize(items);
+    }
+}

@@ -1,0 +1,30 @@
+@page "/Error"
+@using System.Diagnostics
+
+<PageTitle>Error — ADW Rating</PageTitle>
+
+<div class="container mt-8">
+    <div class="error-state">
+        <div class="error-state__icon">&#9888;</div>
+        <div class="error-state__title">Something went wrong</div>
+        <p class="error-state__description">
+            An error occurred while processing your request. Please try again later.
+        </p>
+        @if (ShowRequestId)
+        {
+            <p class="text-small text-muted">Request ID: <code>@RequestId</code></p>
+        }
+        <a href="/" class="btn btn-primary mt-4">Go Home</a>
+    </div>
+</div>
+
+@code{
+    [CascadingParameter]
+    private HttpContext? HttpContext { get; set; }
+
+    private string? RequestId { get; set; }
+    private bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+    protected override void OnInitialized() =>
+        RequestId = Activity.Current?.Id ?? HttpContext?.TraceIdentifier;
+}

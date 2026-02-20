@@ -109,10 +109,16 @@ def parse_eliminated_row(text: str):
     if not text:
         return []
 
-    # Split by comma, but commas inside parentheses are fault data
-    # Strategy: split on ", " followed by an uppercase letter (new entry)
-    # Better: match "Name & Dog (faults)" or "Name & Dog" patterns
+    # Replace commas inside parentheses with placeholder before splitting
+    def _protect_parens(m):
+        return m.group(0).replace(",", "\x00")
+    text = re.sub(r'\([^)]*\)', _protect_parens, text)
+
+    # Split on ", " followed by an uppercase letter (new entry)
     parts = re.split(r",\s*(?=[A-ZÄÖÜÉÈÊËÀÁÂÃÅÆÇÐÑÒÓÔÕØÙÚÛÝÞ])", text)
+
+    # Restore commas from placeholder
+    parts = [p.replace("\x00", ",") for p in parts]
 
     results = []
     for part in parts:

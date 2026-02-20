@@ -1,0 +1,264 @@
+@page "/competitions"
+@using AdwRating.Web.Components.Shared
+@inject AdwRatingApiClient Api
+
+<PageTitle>Competitions — ADW Rating</PageTitle>
+
+<HeadContent>
+    <meta name="description" content="Browse all imported agility competitions. Filter by year, tier, and country. View major international events and standard competitions." />
+    <meta property="og:title" content="Competitions — ADW Rating" />
+    <meta property="og:description" content="Browse all imported agility competitions. Filter by year, tier, and country." />
+    <meta property="og:url" content="/competitions" />
+</HeadContent>
+
+@* Breadcrumbs *@
+<div class="container">
+    <ol class="breadcrumbs mt-4">
+        <li><a href="/">Home</a></li>
+        <li>Competitions</li>
+    </ol>
+    <div class="breadcrumbs-mobile mt-4">
+        <a href="/">&larr; Back to Home</a>
+    </div>
+</div>
+
+@* Page heading *@
+<div class="container mt-4">
+    <h1>Competitions</h1>
+    <p class="text-muted">Browsable archive of all imported agility competitions.</p>
+</div>
+
+@* Filter bar *@
+<div class="filter-bar mt-4">
+    <div class="container">
+        @* Year pills *@
+        <div class="filter-group">
+            <span class="filter-group__label">Year</span>
+            <div class="pill-group">
+                <a href="@BuildFilterUrl(year: null)" class="pill @(Year is null ? "active" : "")">All</a>
+                @for (int y = _maxYear; y >= _minYear; y--)
+                {
+                    var yearVal = y;
+                    <a href="@BuildFilterUrl(year: yearVal)" class="pill @(Year == yearVal ? "active" : "")">@yearVal</a>
+                }
+            </div>
+        </div>
+
+        @* Tier filter *@
+        <div class="filter-group">
+            <span class="filter-group__label">Tier</span>
+            <div class="pill-group">
+                <a href="@BuildFilterUrl(tier: null, clearTier: true)" class="pill @(Tier is null ? "active" : "")">All</a>
+                <a href="@BuildFilterUrl(tier: 1)" class="pill @(Tier == 1 ? "active" : "")">Major Events</a>
+                <a href="@BuildFilterUrl(tier: 2)" class="pill @(Tier == 2 ? "active" : "")">Standard</a>
+            </div>
+        </div>
+
+        @* Country filter and search *@
+        <form method="get" action="/competitions" style="display: contents;">
+            @if (Year.HasValue)
+            {
+                <input type="hidden" name="year" value="@Year" />
+            }
+            @if (Tier.HasValue)
+            {
+                <input type="hidden" name="tier" value="@Tier" />
+            }
+
+            <div class="filter-group">
+                <span class="filter-group__label">Country</span>
+                <div class="dropdown">
+                    <select class="dropdown__select" name="country" onchange="this.form.submit()">
+                        <option value="">All Countries</option>
+                        @* Common agility countries *@
+                        @foreach (var c in _countries)
+                        {
+                            <option value="@c.code" selected="@(Country == c.code)">@c.name @CountryFlag.ToEmoji(c.code)</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <div class="search-input">
+                    <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+                    <input type="search" name="search" class="search-input__field"
+                           placeholder="Search competitions..."
+                           value="@Search"
+                           aria-label="Search competitions" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@* Summary *@
+<div class="container">
+    <p class="summary-text">Showing @_competitions.TotalCount competition@(_competitions.TotalCount == 1 ? "" : "s")</p>
+</div>
+
+@if (_competitions.Items.Count == 0)
+{
+    <div class="container mt-6">
+        <EmptyState Title="No competitions found"
+                    Description="No competitions match your filters. Try broadening your search or clearing filters."
+                    ActionUrl="/competitions" ActionLabel="Clear all filters" />
+    </div>
+}
+else
+{
+    @* Grouped by year *@
+    @foreach (var yearGroup in _competitions.Items.GroupBy(c => c.Date.Year).OrderByDescending(g => g.Key))
+    {
+        <div class="container">
+            <div class="year-header">@yearGroup.Key</div>
+
+            @foreach (var comp in yearGroup.OrderByDescending(c => c.Date))
+            {
+                var isMajor = comp.Tier == 1;
+                <div class="competition-entry @(isMajor ? "competition-entry--major" : "")">
+                    <div class="competition-entry__info">
+                        <div class="competition-entry__name">
+                            @comp.Name
+                            @if (isMajor)
+                            {
+                                <span class="badge badge-major" style="margin-left: var(--space-2);">Major</span>
+                            }
+                        </div>
+                        <div class="competition-entry__meta">
+                            <span>@FormatDateRange(comp.Date, comp.EndDate)</span>
+                            <span>
+                                @if (!string.IsNullOrEmpty(comp.Location))
+                                {
+                                    @comp.Location@(string.IsNullOrEmpty(comp.Country) ? "" : ", ")
+                                }
+                                @if (!string.IsNullOrEmpty(comp.Country))
+                                {
+                                    @comp.Country @CountryFlag.ToEmoji(comp.Country)
+                                }
+                            </span>
+                        </div>
+                    </div>
+                    <div class="competition-entry__participants">@comp.ParticipantCount teams</div>
+                </div>
+            }
+        </div>
+    }
+
+    @* Pagination *@
+    @if (PaginationTotalPages > 1)
+    {
+        <div class="container">
+            <nav class="pagination" aria-label="Competition list pagination">
+                @if (PaginationCurrentPage > 1)
+                {
+                    <a href="@BuildFilterUrl(page: PaginationCurrentPage - 1)" class="pagination__btn">&laquo; Prev</a>
+                }
+                else
+                {
+                    <span class="pagination__btn disabled">&laquo; Prev</span>
+                }
+
+                @for (int p = 1; p <= PaginationTotalPages; p++)
+                {
+                    @if (p == PaginationCurrentPage)
+                    {
+                        <span class="pagination__btn active">@p</span>
+                    }
+                    else
+                    {
+                        <a href="@BuildFilterUrl(page: p)" class="pagination__btn">@p</a>
+                    }
+                }
+
+                <span class="pagination__info">Page @PaginationCurrentPage of @PaginationTotalPages</span>
+
+                @if (PaginationCurrentPage < PaginationTotalPages)
+                {
+                    <a href="@BuildFilterUrl(page: PaginationCurrentPage + 1)" class="pagination__btn">Next &raquo;</a>
+                }
+                else
+                {
+                    <span class="pagination__btn disabled">Next &raquo;</span>
+                }
+            </nav>
+        </div>
+    }
+}
+
+@code {
+    [SupplyParameterFromQuery] public int? Year { get; set; }
+    [SupplyParameterFromQuery] public int? Tier { get; set; }
+    [SupplyParameterFromQuery] public string? Country { get; set; }
+    [SupplyParameterFromQuery] public string? Search { get; set; }
+    [SupplyParameterFromQuery] public int? Page { get; set; }
+
+    private PagedResult<CompetitionDetailDto> _competitions = new([], 0, 1, 20);
+    private const int _pageSize = 20;
+
+    private int PaginationTotalPages => (_competitions.TotalCount + _pageSize - 1) / _pageSize;
+    private int PaginationCurrentPage => Page ?? 1;
+
+    private int _currentYear = DateTime.UtcNow.Year;
+    private int _minYear => _currentYear - 2;
+    private int _maxYear => _currentYear;
+
+    private static readonly (string code, string name)[] _countries =
+    [
+        ("AUS", "Australia"), ("AUT", "Austria"), ("BEL", "Belgium"), ("BGR", "Bulgaria"),
+        ("BRA", "Brazil"), ("CAN", "Canada"), ("CHE", "Switzerland"), ("CZE", "Czech Republic"),
+        ("DEU", "Germany"), ("DNK", "Denmark"), ("ESP", "Spain"), ("EST", "Estonia"),
+        ("FIN", "Finland"), ("FRA", "France"), ("GBR", "Great Britain"), ("HRV", "Croatia"),
+        ("HUN", "Hungary"), ("IRL", "Ireland"), ("ITA", "Italy"), ("JPN", "Japan"),
+        ("LTU", "Lithuania"), ("LUX", "Luxembourg"), ("LVA", "Latvia"), ("NLD", "Netherlands"),
+        ("NOR", "Norway"), ("POL", "Poland"), ("PRT", "Portugal"), ("ROU", "Romania"),
+        ("SRB", "Serbia"), ("SVK", "Slovakia"), ("SVN", "Slovenia"), ("SWE", "Sweden"),
+        ("USA", "United States")
+    ];
+
+    protected override async Task OnInitializedAsync()
+    {
+        var filter = new CompetitionFilter(
+            Year: Year,
+            Tier: Tier,
+            Country: Country,
+            Search: Search,
+            Page: Page ?? 1,
+            PageSize: _pageSize
+        );
+        _competitions = await Api.GetCompetitionsAsync(filter);
+    }
+
+    private string BuildFilterUrl(int? year = -1, int? tier = -1, int? page = null, bool clearTier = false)
+    {
+        var parts = new List<string>();
+
+        var y = year == -1 ? Year : year;
+        var t = clearTier ? null : (tier == -1 ? Tier : tier);
+
+        if (y.HasValue) parts.Add($"year={y}");
+        if (t.HasValue) parts.Add($"tier={t}");
+        if (!string.IsNullOrEmpty(Country)) parts.Add($"country={Uri.EscapeDataString(Country)}");
+        if (!string.IsNullOrEmpty(Search)) parts.Add($"search={Uri.EscapeDataString(Search)}");
+        if (page.HasValue && page > 1) parts.Add($"page={page}");
+
+        return parts.Count > 0 ? $"/competitions?{string.Join("&", parts)}" : "/competitions";
+    }
+
+    private static string FormatDateRange(DateOnly start, DateOnly? end)
+    {
+        if (!end.HasValue || end.Value == start)
+        {
+            return start.ToString("MMM d, yyyy");
+        }
+
+        if (start.Year == end.Value.Year && start.Month == end.Value.Month)
+        {
+            // Same month: "Oct 3-6, 2024"
+            return $"{start:MMM} {start.Day}-{end.Value.Day}, {start.Year}";
+        }
+
+        // Different months: "Sep 30 - Oct 3, 2024"
+        return $"{start:MMM} {start.Day} - {end.Value:MMM} {end.Value.Day}, {end.Value.Year}";
+    }
+}

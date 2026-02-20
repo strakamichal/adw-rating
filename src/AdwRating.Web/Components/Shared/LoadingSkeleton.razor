@@ -1,0 +1,77 @@
+@* Loading skeleton patterns for Enhanced Navigation transitions and initial page loads.
+   Uses CSS shimmer animation defined in pages.css. *@
+
+@if (Variant == SkeletonVariant.StatCards)
+{
+    <div class="grid-3 mb-8">
+        @for (int i = 0; i < Count; i++)
+        {
+            <div class="skeleton-stat-card">
+                <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 32px; margin-bottom: var(--space-3);"></div>
+                <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 12px;"></div>
+            </div>
+        }
+    </div>
+}
+else if (Variant == SkeletonVariant.Table)
+{
+    <div class="table-responsive">
+        <table class="skeleton-table">
+            <thead>
+                <tr>
+                    @for (int c = 0; c < Columns; c++)
+                    {
+                        <th><div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 10px;"></div></th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @for (int r = 0; r < Count; r++)
+                {
+                    <tr>
+                        @for (int c = 0; c < Columns; c++)
+                        {
+                            <td>
+                                <div class="skeleton skeleton-bar @(c == 0 ? "skeleton-bar--short" : "skeleton-bar--medium")" style="height: 14px;"></div>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else if (Variant == SkeletonVariant.HeroCard)
+{
+    <div class="skeleton-hero">
+        <div>
+            <div style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-4);">
+                <div class="skeleton skeleton-circle" style="width: 96px; height: 96px;"></div>
+                <div style="flex: 1;">
+                    <div class="skeleton skeleton-bar skeleton-bar--long" style="height: 24px; margin-bottom: var(--space-2);"></div>
+                    <div class="skeleton skeleton-bar skeleton-bar--medium" style="height: 16px;"></div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: right;">
+            <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 48px; margin-left: auto; margin-bottom: var(--space-3);"></div>
+            <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 14px; margin-left: auto; margin-bottom: var(--space-3);"></div>
+            <div class="skeleton skeleton-bar skeleton-bar--short" style="height: 24px; margin-left: auto;"></div>
+        </div>
+    </div>
+}
+else @* Default: generic bars *@
+{
+    @for (int i = 0; i < Count; i++)
+    {
+        <div class="skeleton skeleton-bar @(i % 3 == 0 ? "skeleton-bar--long" : i % 3 == 1 ? "skeleton-bar--medium" : "skeleton-bar--short")"></div>
+    }
+}
+
+@code {
+    public enum SkeletonVariant { Bars, StatCards, Table, HeroCard }
+
+    [Parameter] public SkeletonVariant Variant { get; set; } = SkeletonVariant.Bars;
+    [Parameter] public int Count { get; set; } = 5;
+    [Parameter] public int Columns { get; set; } = 6;
+}

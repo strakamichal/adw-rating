@@ -1,0 +1,15 @@
+/* App-specific overrides (beyond the design system CSS files) */
+
+h1:focus {
+    outline: none;
+}
+
+.blazor-error-boundary {
+    background: #b32121;
+    padding: 1rem;
+    color: white;
+}
+
+.blazor-error-boundary::after {
+    content: "An error has occurred.";
+}

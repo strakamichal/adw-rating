@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Dropdown — ADW Rating Design</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <div class="page-wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container" style="position: relative;">
+        <a href="layout.html" class="site-header__logo">
+          ADW <span>Rating</span>
+        </a>
+
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+        </nav>
+
+        <!-- Desktop search with dropdown open -->
+        <div class="site-header__search" style="position: relative;">
+          <div class="search-input search-input--header">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" value="Tercova" aria-label="Search">
+          </div>
+          <!-- Live dropdown from header -->
+          <div class="search-dropdown">
+            <div class="search-dropdown__group">
+              <div class="search-dropdown__group-title">Teams</div>
+              <a href="#" class="search-dropdown__item">
+                <span class="search-dropdown__item-name">Martina Tercova &amp; Fiona</span>
+                <span class="search-dropdown__item-detail">1687 | CZE</span>
+              </a>
+              <a href="#" class="search-dropdown__item">
+                <span class="search-dropdown__item-name">Martina Tercova &amp; Kix</span>
+                <span class="search-dropdown__item-detail">1542 | CZE</span>
+              </a>
+              <a href="#" class="search-dropdown__item">
+                <span class="search-dropdown__item-name">Martina Tercova &amp; Brava</span>
+                <span class="search-dropdown__item-detail">1423 | CZE</span>
+              </a>
+            </div>
+            <div class="search-dropdown__group">
+              <div class="search-dropdown__group-title">Handlers</div>
+              <a href="#" class="search-dropdown__item">
+                <span class="search-dropdown__item-name">Martina Tercova</span>
+                <span class="search-dropdown__item-detail">Czech Republic</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <input type="checkbox" id="search-toggle" class="search-toggle" aria-hidden="true">
+        <label for="search-toggle" class="search-toggle-label hidden-desktop" aria-label="Toggle search">&#128269;</label>
+
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" aria-hidden="true">
+        <label for="hamburger-toggle" class="hamburger-label hidden-desktop" aria-label="Toggle menu">&#9776;</label>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a href="layout.html">Rankings</a>
+          <a href="competitions.html">Competitions</a>
+          <a href="how-it-works.html">How it works</a>
+        </nav>
+
+        <div class="mobile-search-bar">
+          <div class="search-input">
+            <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-input__field" placeholder="Search teams, handlers..." aria-label="Search">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+      <div class="container mt-8">
+        <h1>Search Dropdown Demos</h1>
+        <p class="text-muted">Showing the search dropdown behavior in various states.</p>
+      </div>
+
+      <!-- Demo 1: Full results dropdown -->
+      <div class="container mt-8">
+        <div class="demo-section">
+          <div class="demo-label">Demo 1</div>
+          <h2>Search with Grouped Results</h2>
+          <p class="demo-description">
+            User has typed "Tercova" into the search bar. Results are grouped by type: Teams, Handlers, and Competitions. Each result shows a display name and subtitle. Maximum ~10 results in the dropdown.
+          </p>
+
+          <div class="search-demo-wrapper">
+            <div class="search-input">
+              <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+              <input type="search" class="search-input__field" value="Tercova" aria-label="Search" style="border-color: var(--color-primary-400); box-shadow: 0 0 0 3px rgba(44, 95, 138, 0.15);">
+            </div>
+            <div class="search-dropdown">
+              <div class="search-dropdown__group">
+                <div class="search-dropdown__group-title">Teams</div>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Martina Tercova &amp; Fiona</span>
+                  <span class="search-dropdown__item-detail">1687 | CZE</span>
+                </a>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Martina Tercova &amp; Kix</span>
+                  <span class="search-dropdown__item-detail">1542 | CZE</span>
+                </a>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Martina Tercova &amp; Brava</span>
+                  <span class="search-dropdown__item-detail">1423 | CZE</span>
+                </a>
+              </div>
+              <div class="search-dropdown__group">
+                <div class="search-dropdown__group-title">Handlers</div>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Martina Tercova</span>
+                  <span class="search-dropdown__item-detail">Czech Republic</span>
+                </a>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Jan Tercov</span>
+                  <span class="search-dropdown__item-detail">Slovakia</span>
+                </a>
+              </div>
+              <div class="search-dropdown__group">
+                <div class="search-dropdown__group-title">Competitions</div>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Tercova Agility Cup 2024</span>
+                  <span class="search-dropdown__item-detail">Aug 10-11, 2024</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo 2: Empty state -->
+      <div class="container mt-8">
+        <div class="demo-section">
+          <div class="demo-label">Demo 2</div>
+          <h2>Search with No Results</h2>
+          <p class="demo-description">
+            User typed a query with no matches. The dropdown shows a friendly "no results" message.
+          </p>
+
+          <div class="search-demo-wrapper">
+            <div class="search-input">
+              <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+              <input type="search" class="search-input__field" value="xyzqwerty" aria-label="Search" style="border-color: var(--color-primary-400); box-shadow: 0 0 0 3px rgba(44, 95, 138, 0.15);">
+            </div>
+            <div class="search-dropdown">
+              <div class="search-dropdown__empty">
+                No results found for "xyzqwerty"
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Demo 3: Hero search (home page style) -->
+      <div class="container mt-8">
+        <div class="demo-section">
+          <div class="demo-label">Demo 3</div>
+          <h2>Hero Search (Home Page)</h2>
+          <p class="demo-description">
+            The large search bar used on the home page hero section, with a dropdown showing results.
+          </p>
+
+          <div class="search-demo-wrapper" style="max-width: 600px;">
+            <div class="search-input search-input--hero">
+              <span class="search-input__icon" aria-hidden="true">&#128269;</span>
+              <input type="search" class="search-input__field" value="Norwegian" aria-label="Search" style="border-color: var(--color-primary-400); box-shadow: 0 0 0 3px rgba(44, 95, 138, 0.15);">
+            </div>
+            <div class="search-dropdown">
+              <div class="search-dropdown__group">
+                <div class="search-dropdown__group-title">Teams</div>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Erik Normann &amp; Blitz</span>
+                  <span class="search-dropdown__item-detail">1723 | NOR</span>
+                </a>
+              </div>
+              <div class="search-dropdown__group">
+                <div class="search-dropdown__group-title">Competitions</div>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Norwegian Open 2025</span>
+                  <span class="search-dropdown__item-detail">Jun 12-15, 2025</span>
+                </a>
+                <a href="#" class="search-dropdown__item">
+                  <span class="search-dropdown__item-name">Norwegian Open 2024</span>
+                  <span class="search-dropdown__item-detail">Jun 6-9, 2024</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__top">
+          <div>
+            <div class="site-footer__brand mb-3">ADW <span>Rating</span></div>
+            <ul class="site-footer__links">
+              <li><a href="how-it-works.html">How it works</a></li>
+              <li><a href="layout.html">Rankings</a></li>
+              <li><a href="competitions.html">Competitions</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="site-footer__social">
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                  <svg class="site-footer__social-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  Facebook
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p class="site-footer__disclaimer">Data from major international agility competitions.</p>
+          <p class="site-footer__disclaimer">ADW Rating is an independent project &mdash; not affiliated with FCI, AKC, or any official organization.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>

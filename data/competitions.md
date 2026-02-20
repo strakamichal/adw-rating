@@ -1,6 +1,6 @@
 # Competitions — FCI Size Categories Only
 
-> **Updated**: 2026-02-16
+> **Updated**: 2026-02-19
 > **Filter**: Only competitions using FCI size categories (S / M / I / L with FCI boundaries).
 > Non-FCI events (WAO, IFCS, UKI, Crufts/KC) are listed at the bottom as excluded.
 
@@ -301,6 +301,19 @@ These are serious agility events with verified 200+ participation, but not all f
 > These competitions may be included in Phase 2 with size category mapping.
 
 ---
+
+## Known data issues
+
+| Competition | Issue | Count | Detail |
+|---|---|---|---|
+| **Midsummer 2024** | Resolved (duplicate rows fixed) | 0 | Fixed on 2026-02-19 by regenerating from cached Tolleri JSON and deduplicating (`4681 -> 4624`). |
+| **Midsummer 2025** | Resolved (duplicate rows fixed) | 0 | Fixed on 2026-02-19 by regenerating from cached Tolleri JSON and deduplicating (`3121 -> 3120`). |
+| **Croatian Open 2024** | Resolved (duplicate rows fixed) | 0 | Fixed on 2026-02-19 by re-downloading from SmarterAgility and normalizing with round-specific day/type suffixes (`1883` rows, `0` duplicates). |
+| **Moravia Open 2024** | Resolved (duplicate registrations deduplicated) | 0 | Fixed on 2026-02-19 by deduplicating source duplicates (`2252 -> 2246`), keeping one best result per `round_key + handler + dog`. |
+| **Moravia Open 2025** | Resolved (duplicate registrations deduplicated) | 0 | Fixed on 2026-02-19 by deduplicating source duplicates (`2594 -> 2590`), keeping one best result per `round_key + handler + dog`. |
+| **Hungarian Open 2025** | Resolved (duplicate rows deduplicated) | 0 | Fixed on 2026-02-19 by deduplicating source duplicates (`1452 -> 1450`), keeping one best result per `round_key + handler + dog`. |
+| **FMBB 2025** | Resolved (duplicate row deduplicated) | 0 | Fixed on 2026-02-19 by deduplicating source duplicate (`524 -> 523`), keeping one row for `ind_agility_large_3` (Denise von Tobel / Play with Madness Iceman). |
+| **Norwegian Open 2024** | Resolved (duplicate row deduplicated) | 0 | Fixed on 2026-02-19 by deduplicating source duplicate (`5330 -> 5329`), keeping one best row in `ind_agility_small_kl1_3` (Maja Szymańska / Monti). |
 
 ## Results sources
 

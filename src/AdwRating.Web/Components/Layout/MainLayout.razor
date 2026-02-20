@@ -1,0 +1,13 @@
+@inherits LayoutComponentBase
+
+<div class="page-wrapper">
+    <NavMenu />
+
+    <main>
+        <AppErrorBoundary>
+            @Body
+        </AppErrorBoundary>
+    </main>
+
+    <Footer />
+</div>
