@@ -318,8 +318,8 @@ public class IdentityResolutionService : IIdentityResolutionService
 
                 // Collect all normalized names for this dog
                 var dogNames = new List<string> { handlerDog.NormalizedCallName };
-                if (handlerDog.RegisteredName is not null)
-                    dogNames.Add(NameNormalizer.Normalize(handlerDog.RegisteredName));
+                if (!string.IsNullOrEmpty(handlerDog.NormalizedRegisteredName))
+                    dogNames.Add(handlerDog.NormalizedRegisteredName);
 
                 foreach (var nameVariant in namesToTry)
                 {
@@ -403,16 +403,23 @@ public class IdentityResolutionService : IIdentityResolutionService
 
         // 5. No match — create new dog (prefer extracted call name)
         var storedCallName = extractedCallName ?? cleanedDogName;
-        var storedNormalized = normalizedCallName ?? normalizedFull;
+        var storedNormalizedCall = normalizedCallName ?? normalizedFull;
         string? storedRegistered = extractedRegistered ?? (extractedCallName is not null ? cleanedDogName : null);
+        var storedNormalizedRegistered = string.Empty;
 
         // Word-count heuristic: 3+ words without explicit call name → treat as registered name
-        // CallName left empty (unknown), NormalizedCallName keeps full name for matching
+        // CallName left empty (unknown), NormalizedCallName is empty (call name unknown)
         if (extractedCallName is null && storedCallName.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length >= 3)
         {
             storedRegistered = storedCallName;
             storedCallName = string.Empty;
+            storedNormalizedCall = string.Empty;
+            storedNormalizedRegistered = normalizedFull;
         }
+
+        // Populate NormalizedRegisteredName when we have a registered name
+        if (!string.IsNullOrEmpty(storedRegistered) && string.IsNullOrEmpty(storedNormalizedRegistered))
+            storedNormalizedRegistered = NameNormalizer.Normalize(storedRegistered);
 
         _logger.LogInformation("Dog '{RawName}' not found, creating new record with CallName='{CallName}'",
             rawDogName, storedCallName);
@@ -420,14 +427,15 @@ public class IdentityResolutionService : IIdentityResolutionService
         var newDog = await _dogRepo.CreateAsync(new Dog
         {
             CallName = storedCallName,
-            NormalizedCallName = storedNormalized,
+            NormalizedCallName = storedNormalizedCall,
             RegisteredName = storedRegistered,
+            NormalizedRegisteredName = storedNormalizedRegistered,
             Breed = breed,
             SizeCategory = size
         });
 
         // Create aliases for all name variants
-        await CreateDogAliasesIfNeeded(newDog.Id, normalizedFull, normalizedCallName, normalizedRegistered, storedNormalized);
+        await CreateDogAliasesIfNeeded(newDog.Id, normalizedFull, normalizedCallName, normalizedRegistered, storedNormalizedCall);
 
         return (newDog, true);
     }
@@ -560,6 +568,7 @@ public class IdentityResolutionService : IIdentityResolutionService
         if (string.IsNullOrEmpty(dog.RegisteredName) && longest.Length > shortest.Length)
         {
             dog.RegisteredName = longest;
+            dog.NormalizedRegisteredName = NameNormalizer.Normalize(longest);
             updated = true;
         }
 
@@ -575,6 +584,13 @@ public class IdentityResolutionService : IIdentityResolutionService
         {
             dog.CallName = shortest;
             dog.NormalizedCallName = NameNormalizer.Normalize(shortest);
+            updated = true;
+        }
+
+        // Ensure NormalizedRegisteredName is consistent if RegisteredName exists but normalized form is missing
+        if (!string.IsNullOrEmpty(dog.RegisteredName) && string.IsNullOrEmpty(dog.NormalizedRegisteredName))
+        {
+            dog.NormalizedRegisteredName = NameNormalizer.Normalize(dog.RegisteredName);
             updated = true;
         }
 

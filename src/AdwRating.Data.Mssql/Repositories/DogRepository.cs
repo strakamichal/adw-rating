@@ -22,7 +22,9 @@ public class DogRepository : IDogRepository
     public async Task<IReadOnlyList<Dog>> FindAllByNormalizedNameAndSizeAsync(string normalizedCallName, SizeCategory size)
     {
         return await _context.Dogs
-            .Where(d => d.NormalizedCallName == normalizedCallName && d.SizeCategory == size)
+            .Where(d => (d.NormalizedCallName == normalizedCallName
+                         || d.NormalizedRegisteredName == normalizedCallName)
+                        && d.SizeCategory == size)
             .ToListAsync();
     }
 

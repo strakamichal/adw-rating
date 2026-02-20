@@ -665,12 +665,13 @@ public class IdentityResolutionServiceTests
     [Test]
     public void BackfillDogNames_EmptyCallName_BackfillsFromShortIncoming()
     {
-        // Dog created with 3+ word heuristic: CallName="" RegisteredName="Berta z Kojca Coli"
+        // Dog created with 3+ word heuristic: CallName="" NormalizedCallName="" NormalizedRegisteredName set
         // Later import brings just "Berta" → should set CallName
         var dog = new Dog
         {
-            Id = 4, CallName = "", NormalizedCallName = "berta z kojca coli",
-            RegisteredName = "Berta z Kojca Coli", SizeCategory = SizeCategory.M
+            Id = 4, CallName = "", NormalizedCallName = "",
+            RegisteredName = "Berta z Kojca Coli", NormalizedRegisteredName = "berta z kojca coli",
+            SizeCategory = SizeCategory.M
         };
 
         var updated = IdentityResolutionService.BackfillDogNames(dog, "Berta", null, null);
@@ -695,6 +696,7 @@ public class IdentityResolutionServiceTests
         Assert.That(updated, Is.True);
         Assert.That(dog.CallName, Is.EqualTo("Berta"));
         Assert.That(dog.RegisteredName, Is.EqualTo("Berta z Kojca Coli"));
+        Assert.That(dog.NormalizedRegisteredName, Is.EqualTo("berta z kojca coli"));
     }
 
     [Test]
@@ -703,14 +705,105 @@ public class IdentityResolutionServiceTests
         // Dog with empty CallName and RegisteredName set, incoming is same as registered → no call name to set
         var dog = new Dog
         {
-            Id = 6, CallName = "", NormalizedCallName = "shadow of aire",
-            RegisteredName = "Shadow of Aire", SizeCategory = SizeCategory.L
+            Id = 6, CallName = "", NormalizedCallName = "",
+            RegisteredName = "Shadow of Aire", NormalizedRegisteredName = "shadow of aire",
+            SizeCategory = SizeCategory.L
         };
 
         var updated = IdentityResolutionService.BackfillDogNames(dog, "Shadow of Aire", null, null);
 
         Assert.That(updated, Is.False);
         Assert.That(dog.CallName, Is.EqualTo(""));
+    }
+
+    [Test]
+    public void BackfillDogNames_MissingNormalizedRegisteredName_BackfillsIt()
+    {
+        // Dog has RegisteredName but NormalizedRegisteredName is empty (legacy data)
+        var dog = new Dog
+        {
+            Id = 7, CallName = "Rex", NormalizedCallName = "rex",
+            RegisteredName = "Rex of Noble County", NormalizedRegisteredName = "",
+            SizeCategory = SizeCategory.L
+        };
+
+        var updated = IdentityResolutionService.BackfillDogNames(dog, "Rex", null, null);
+
+        Assert.That(updated, Is.True);
+        Assert.That(dog.NormalizedRegisteredName, Is.EqualTo("rex of noble county"));
+    }
+
+    [Test]
+    public async Task ResolveDogAsync_ThreeWordName_SetsNormalizedFieldsCorrectly()
+    {
+        // 3+ word name without call name extraction → CallName="", NormalizedCallName=""
+        // NormalizedRegisteredName should be set
+        var created = new Dog
+        {
+            Id = 99, CallName = "", NormalizedCallName = "",
+            RegisteredName = "Daylight Neverending Force",
+            NormalizedRegisteredName = "daylight neverending force",
+            SizeCategory = SizeCategory.L
+        };
+
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team>());
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("daylight neverending force", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("daylight neverending force", SizeCategory.L)
+            .Returns(new List<Dog>());
+        _dogRepo.CreateAsync(Arg.Any<Dog>())
+            .Returns(created);
+
+        var result = await _sut.ResolveDogAsync("Daylight Neverending Force", null, SizeCategory.L, 10);
+
+        Assert.That(result.IsNew, Is.True);
+        await _dogRepo.Received(1).CreateAsync(
+            Arg.Is<Dog>(d =>
+                d.CallName == "" &&
+                d.NormalizedCallName == "" &&
+                d.RegisteredName == "Daylight Neverending Force" &&
+                d.NormalizedRegisteredName == "daylight neverending force"));
+    }
+
+    [Test]
+    public async Task ResolveDogAsync_WithCallNameExtraction_SetsNormalizedRegisteredName()
+    {
+        // "Daylight Neverending Force (Day)" → CallName="Day", RegisteredName="Daylight Neverending Force"
+        var created = new Dog
+        {
+            Id = 99, CallName = "Day", NormalizedCallName = "day",
+            RegisteredName = "Daylight Neverending Force",
+            NormalizedRegisteredName = "daylight neverending force",
+            SizeCategory = SizeCategory.L
+        };
+
+        _teamRepo.GetByHandlerIdAsync(10)
+            .Returns(new List<Team>());
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("day", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("daylight neverending force (day)", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogAliasRepo.FindByAliasNameAndTypeAsync("daylight neverending force", DogAliasType.CallName)
+            .Returns((DogAlias?)null);
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("day", SizeCategory.L)
+            .Returns(new List<Dog>());
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("daylight neverending force (day)", SizeCategory.L)
+            .Returns(new List<Dog>());
+        _dogRepo.FindAllByNormalizedNameAndSizeAsync("daylight neverending force", SizeCategory.L)
+            .Returns(new List<Dog>());
+        _dogRepo.CreateAsync(Arg.Any<Dog>())
+            .Returns(created);
+
+        var result = await _sut.ResolveDogAsync("Daylight Neverending Force (Day)", null, SizeCategory.L, 10);
+
+        Assert.That(result.IsNew, Is.True);
+        await _dogRepo.Received(1).CreateAsync(
+            Arg.Is<Dog>(d =>
+                d.CallName == "Day" &&
+                d.NormalizedCallName == "day" &&
+                d.RegisteredName == "Daylight Neverending Force" &&
+                d.NormalizedRegisteredName == "daylight neverending force"));
     }
 
     #endregion

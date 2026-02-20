@@ -13,6 +13,7 @@ public class DogConfiguration : IEntityTypeConfiguration<Dog>
         builder.Property(d => d.CallName).HasMaxLength(100).IsRequired();
         builder.Property(d => d.NormalizedCallName).HasMaxLength(100).IsRequired();
         builder.Property(d => d.RegisteredName).HasMaxLength(300);
+        builder.Property(d => d.NormalizedRegisteredName).HasMaxLength(300);
         builder.Property(d => d.Breed).HasMaxLength(100);
         builder.Property(d => d.SizeCategory).HasConversion<string>().HasMaxLength(1);
         builder.Property(d => d.SizeCategoryOverride).HasConversion<string>().HasMaxLength(1);
